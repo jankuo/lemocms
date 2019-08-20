@@ -79,7 +79,7 @@
                 layer.close(loading);
                 if (res.code > 0) {
                     layer.msg(res.msg, {time: 1800, icon: 1}, function () {
-                        location.href = res.url;
+                        parent.location.href = res.url;
                     });
                 } else {
                     layer.msg(res.msg, {time: 1800, icon: 2});

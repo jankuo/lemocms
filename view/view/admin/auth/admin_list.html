@@ -7,7 +7,7 @@
 
                 <blockquote class="layui-elem-quote">
                         <div class="layui-btn-group">
-                            <button  class="layui-btn layui-btn-normal LM-add">{:lang('add')}{:lang('admin')}</button>
+                            <a href="{:url('adminAdd')}" class="layui-btn layui-btn-normal">{:lang('add')}{:lang('admin')}</a>
                         </div>
                         <div class="layui-inline">
 
@@ -92,11 +92,11 @@
                 });
             }
         });
-        $('.LM-add').click(function () {
+        $('#LM-add').click(function () {
             var index = layer.open({
                 type: 2,
                 content: '{:url("adminAdd")}',
-                area: ['800px', '800px'],
+                area: ['800px', '600px'],
                 maxmin: true
             });
             layer.full(index);
