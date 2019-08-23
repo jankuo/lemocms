@@ -334,6 +334,28 @@ function get_tree($arr,$pid=0){
     }
     return $list;
 }
+
+/**
+ * 无限分类-权限
+ * @param $cate            栏目
+ * @param string $lefthtml 分隔符
+ * @param int $pid         父ID
+ * @param int $lvl         层级
+ * @return array
+ */
+function cate_tree($cate , $lefthtml = '|— ' , $pid = 0 , $level = 0 ){
+    $arr = array();
+    foreach ($cate as $v){
+        if ($v['pid'] == $pid) {
+            $v['level']      = $level + 1;
+            $v['lefthtml'] = str_repeat($lefthtml,$level);
+            $v['ltitle']   = $v['lefthtml'].$v['title'];
+            $arr[] = $v;
+            $arr = array_merge($arr, cate_tree($cate, $lefthtml, $v['id'], $level+1));
+        }
+    }
+    return $arr;
+}
 /**
  * 传递一个父级分类ID返回所有子分类
  * @param $cate
