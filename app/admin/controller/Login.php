@@ -41,11 +41,11 @@ class Login extends BaseController {
             return View::fetch();
 
         } else {
-            //验证表单登录token
-            $check = Request::checkToken(config('admin.token'));
-            if(false === $check) {
-                $this->error("登陆失败：invalid token");
-            }
+//            //验证表单登录token
+//            $check = Request::checkToken(config('admin.token'));
+//            if(false === $check) {
+//                $this->error("登陆失败：invalid token");
+//            }
             $username = Request::post('username', '', 'util\Filter::filterWords');
             $password = Request::post('password', '', 'util\Filter::filterWords');
             $captcha = Request::post('captcha', '', 'util\Filter::filterWords');
