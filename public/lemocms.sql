@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： localhost
--- 生成日期： 2019-08-18 10:26:14
+-- 生成日期： 2019-08-26 06:48:31
 -- 服务器版本： 5.7.26
--- PHP 版本： 7.2.1
+-- PHP 版本： 7.1.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -49,7 +49,7 @@ CREATE TABLE `lm_admin` (
 --
 
 INSERT INTO `lm_admin` (`id`, `username`, `password`, `group_id`, `email`, `realname`, `mobile`, `ip`, `mdemail`, `status`, `avatar`, `create_time`, `update_time`) VALUES
-(1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 1, '994927909@qq.com', '', '18397423845', '127.0.0.1', '0', 1, '/storage/uploads/20190817\\294faa45405fa24da59c311f55ce313f.png', 1482132862, 1566111856),
+(1, 'admin', '25d55ad283aa400af464c76d713c07ad', 1, '994927909@qq.com', '', '18397423845', '127.0.0.1', '0', 1, '/storage/uploads/20190817\\294faa45405fa24da59c311f55ce313f.png', 1482132862, 1566111856),
 (2, 'yuege', 'e10adc3949ba59abbe56e057f20f883e', 2, '994927909@qq.com', '', '18397423845', '127.0.0.1', '0', 1, '/storage/uploads/20190817\\dc25c2714c46a0d2bee894a7d05eb15f.png', 1535512393, 1566030896),
 (3, 'dandan', '69d9387a9f1e957872943a2b957e4947', 2, '994927909@qq.com', NULL, '18397423845', '119.122.91.146', '0', 1, '/storage/uploads/20190817\\a17c794ac7fae7db012aa6e997cf3400.jpg', 1564041575, 1566001700),
 (4, 'admin1', 'e10adc3949ba59abbe56e057f20f883e', 1, '994927909@qq.com', NULL, '18397423845', '119.122.91.146', '0', 1, '/storage/uploads/20190816\\824fbacce27ce094eb3b1e115dfdb709.png', 1565941890, 1565942219),
@@ -69,13 +69,12 @@ CREATE TABLE `lm_admin_log` (
   `log_url` varchar(100) DEFAULT NULL,
   `log_content` varchar(255) DEFAULT NULL,
   `log_title` varchar(100) DEFAULT NULL COMMENT '日志描述',
-  `log_agent` varchar(50) DEFAULT NULL,
+  `log_agent` varchar(100) DEFAULT NULL,
   `log_ip` varchar(30) DEFAULT NULL COMMENT 'ip地址',
   `create_time` int(11) DEFAULT NULL COMMENT '日志时间',
   `update_time` int(11) DEFAULT NULL,
   `status` tinyint(1) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 
 -- --------------------------------------------------------
 
@@ -218,6 +217,76 @@ INSERT INTO `lm_adv_position` (`id`, `position_name`, `ad_width`, `ad_height`, `
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `lm_article`
+--
+
+CREATE TABLE `lm_article` (
+  `id` mediumint(8) UNSIGNED NOT NULL,
+  `pid` smallint(5) NOT NULL DEFAULT '0' COMMENT '类别ID',
+  `title` varchar(150) NOT NULL DEFAULT '' COMMENT '文章标题',
+  `description` longtext COMMENT '文章摘要',
+  `content` longtext NOT NULL,
+  `author` varchar(30) NOT NULL DEFAULT '' COMMENT '文章作者',
+  `author_email` varchar(60) NOT NULL DEFAULT '' COMMENT '作者邮箱',
+  `keywords` varchar(255) NOT NULL DEFAULT '' COMMENT '关键字,用逗号隔开',
+  `article_type` tinyint(1) UNSIGNED NOT NULL DEFAULT '1',
+  `status` tinyint(1) UNSIGNED NOT NULL DEFAULT '1' COMMENT '是否显示,1:显示;0:不显示',
+  `file_url` varchar(255) NOT NULL DEFAULT '' COMMENT '附件地址',
+  `open_type` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `link` varchar(255) NOT NULL DEFAULT '' COMMENT '链接地址',
+  `click` int(11) DEFAULT '0' COMMENT '浏览量',
+  `publish_time` int(11) DEFAULT NULL COMMENT '文章预告发布时间',
+  `sort` tinyint(1) DEFAULT '0',
+  `thumb` varchar(255) DEFAULT '' COMMENT '文章缩略图',
+  `create_time` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `update_time` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 转存表中的数据 `lm_article`
+--
+
+INSERT INTO `lm_article` (`id`, `pid`, `title`, `description`, `content`, `author`, `author_email`, `keywords`, `article_type`, `status`, `file_url`, `open_type`, `link`, `click`, `publish_time`, `sort`, `thumb`, `create_time`, `update_time`) VALUES
+(1, 1, '基于TP6 layui开发的cms 后台管理系统', '基于TP6 layui开发的cms 后台管理系统', '<p>基于TP6 layui开发的cms 后台管理系统</p>', '', '994927909@qq.com', 'tp6 layui', 1, 1, '', 0, '', 1206, NULL, 0, '/storage/uploads/20190826\\b183bf1681077d0bafd37bc17caf2cdc.png', 1566799075, 1566801008);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `lm_article_cate`
+--
+
+CREATE TABLE `lm_article_cate` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(20) DEFAULT NULL COMMENT '类别名称',
+  `title_alias` varchar(20) DEFAULT NULL COMMENT '别名',
+  `title_type` smallint(6) DEFAULT '0' COMMENT '默认分组',
+  `pid` smallint(6) DEFAULT '0' COMMENT '上级ID',
+  `show_in_nav` tinyint(1) DEFAULT '0' COMMENT '是否导航显示',
+  `status` tinyint(1) DEFAULT '1' COMMENT '状态',
+  `sort` smallint(6) DEFAULT '50' COMMENT '排序',
+  `cat_desc` varchar(255) DEFAULT NULL COMMENT '分类描述',
+  `keywords` varchar(30) DEFAULT NULL COMMENT '搜索关键词',
+  `create_time` int(11) NOT NULL,
+  `update_time` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 转存表中的数据 `lm_article_cate`
+--
+
+INSERT INTO `lm_article_cate` (`id`, `title`, `title_alias`, `title_type`, `pid`, `show_in_nav`, `status`, `sort`, `cat_desc`, `keywords`, `create_time`, `update_time`) VALUES
+(1, '新手上路', NULL, 1, 0, 0, 0, 0, '1233', '', 0, 1566801852),
+(2, '购物指南', NULL, 1, 0, 0, 1, 2, '', '', 0, 0),
+(3, '售后服务', NULL, 1, 0, 0, 1, 2, '', '', 0, 0),
+(4, '支付方式', NULL, 1, 0, 0, 1, 4, '', '', 0, 0),
+(5, '配送方式', NULL, 1, 0, 0, 1, 5, '', '', 0, 0),
+(6, '系统公告', NULL, 1, 0, 0, 1, 6, '', '', 0, 0),
+(7, '关于我们', NULL, 1, 0, 0, 1, 7, '', '', 0, 0),
+(8, '测试分类', '测试分类', 0, 7, 0, 1, 50, NULL, NULL, 1566801126, 1566801126);
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `lm_auth_group`
 --
 
@@ -324,7 +393,6 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (57, 'Adv/posState', '广告位状态', 1, 1, 0, 0, NULL, '', 54, 0, 0, NULL),
 (58, 'Adv/posOrder', '广告位排序', 1, 1, 0, 0, NULL, '', 54, 0, 0, NULL);
 
-
 -- --------------------------------------------------------
 
 --
@@ -428,7 +496,6 @@ INSERT INTO `lm_link` (`id`, `name`, `url`, `type_id`, `email`, `qq`, `sort`, `s
 (25, '百度', 'https://www.baidu.com', NULL, '994927909@qq.com', '994927909', 50, 1, 1566103165, 1566103165),
 (26, '新浪', 'https://www.sina.com', NULL, '994927909@qq.com', '994927909', 50, 1, 1566103233, 1566103233);
 
-
 --
 -- 转储表的索引
 --
@@ -464,6 +531,21 @@ ALTER TABLE `lm_adv_position`
   ADD UNIQUE KEY `position_id` (`id`);
 
 --
+-- 表的索引 `lm_article`
+--
+ALTER TABLE `lm_article`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`),
+  ADD KEY `pid` (`pid`) USING BTREE;
+
+--
+-- 表的索引 `lm_article_cate`
+--
+ALTER TABLE `lm_article_cate`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`) USING BTREE;
+
+--
 -- 表的索引 `lm_auth_group`
 --
 ALTER TABLE `lm_auth_group`
@@ -478,7 +560,6 @@ ALTER TABLE `lm_auth_rule`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`),
   ADD KEY `href` (`href`);
-
 
 --
 -- 表的索引 `lm_config`
@@ -508,7 +589,7 @@ ALTER TABLE `lm_admin`
 -- 使用表AUTO_INCREMENT `lm_admin_log`
 --
 ALTER TABLE `lm_admin_log`
-  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=1600;
+  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id';
 
 --
 -- 使用表AUTO_INCREMENT `lm_adv`
@@ -523,6 +604,18 @@ ALTER TABLE `lm_adv_position`
   MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=540;
 
 --
+-- 使用表AUTO_INCREMENT `lm_article`
+--
+ALTER TABLE `lm_article`
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- 使用表AUTO_INCREMENT `lm_article_cate`
+--
+ALTER TABLE `lm_article_cate`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- 使用表AUTO_INCREMENT `lm_auth_group`
 --
 ALTER TABLE `lm_auth_group`
@@ -533,7 +626,6 @@ ALTER TABLE `lm_auth_group`
 --
 ALTER TABLE `lm_auth_rule`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
-
 
 --
 -- 使用表AUTO_INCREMENT `lm_config`
@@ -546,6 +638,7 @@ ALTER TABLE `lm_config`
 --
 ALTER TABLE `lm_link`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
