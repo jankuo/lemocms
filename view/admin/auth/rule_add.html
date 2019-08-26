@@ -1,4 +1,5 @@
 {include file="common/header"/}
+<style> .layui-iconpicker-body.layui-iconpicker-body-page .hide {display: none;}</style>
 <div class="LM-container">
     <div class="LM-main">
         <div class="admin-main layui-anim layui-anim-upbit">
@@ -37,7 +38,8 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">图标名称</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="icon" placeholder="{:lang('pleaseEnter')}图标名称" class="layui-input">
+                        <input type="text" name="icon" id="iconPicker" lay-filter="iconPicker" class="hide">
+<!--                        <input type="text" name="icon" placeholder="{:lang('pleaseEnter')}图标名称" class="layui-input">-->
                     </div>
                     <div class="layui-form-mid layui-word-aux"><a target="_blank" href="http://www.fontawesome.com.cn/">点击查看图标</a></div>
                 </div>
@@ -69,8 +71,13 @@
 
 {include file="common/footer"/}
 <script>
-    layui.use(['form', 'layer'], function () {
+    layui.config({
+        base: '/static/plugins/layui/extend/'
+    }).extend({
+        iconPickerFa: 'iconPicker/iconPickerFa'
+    }).use(['form', 'layer','iconPickerFa'], function () {
         var form = layui.form,layer = layui.layer,$= layui.jquery;
+        var iconPickerFa = layui.iconPickerFa;
         var info  = {:json_encode($info)};
         var url = "{:url('ruleAdd')}";
         if(info){
@@ -78,6 +85,26 @@
             form.val('form',info)
             url = "{:url('ruleEdit')}";
         }
+        iconPickerFa.render({
+            // 选择器，推荐使用input
+            elem: '#iconPicker',
+            // fa 图标接口
+            url: "/static/plugins/font-awesome-4.7.0/less/variables.less",
+            // 是否开启搜索：true/false，默认true
+            search: true,
+            // 是否开启分页：true/false，默认true
+            page: true,
+            // 每页显示数量，默认12
+            limit: 12,
+            // 点击回调
+            click: function (data) {
+                $('#iconPicker').val('fa '+ data.icon);
+            },
+            // 渲染成功后的回调
+            success: function (d) {
+                $('#iconPicker').val('fa '+ d.icon);
+            }
+        });
         form.on('submit(submit)', function (data) {
             // 提交到方法 默认为本身
             $.post(url,data.field,function(res){
