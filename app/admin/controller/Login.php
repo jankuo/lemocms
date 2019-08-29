@@ -77,13 +77,13 @@ class Login extends BaseController {
             $password = strip_tags(trim($password));
             $where['password']  = md5($password);
             $info = Admin::where($where)->find();
-            if($info['status']==0){
-                throw new \Exception("账号已经被禁用");
-            }
+           
             if(!$info){
                 throw new \Exception("请检查用户名或者密码");
             }
-
+            if($info['status']==0){
+                throw new \Exception("账号已经被禁用");
+            }
             if(!$info['group_id']){
                 $info['group_id'] = 1;
 
