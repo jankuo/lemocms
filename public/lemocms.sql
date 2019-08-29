@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： localhost
--- 生成日期： 2019-08-26 06:48:31
+-- 生成日期： 2019-08-29 09:55:16
 -- 服务器版本： 5.7.26
 -- PHP 版本： 7.1.13
 
@@ -49,7 +49,7 @@ CREATE TABLE `lm_admin` (
 --
 
 INSERT INTO `lm_admin` (`id`, `username`, `password`, `group_id`, `email`, `realname`, `mobile`, `ip`, `mdemail`, `status`, `avatar`, `create_time`, `update_time`) VALUES
-(1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 1, '994927909@qq.com', '', '18397423845', '127.0.0.1', '0', 1, '/storage/uploads/20190817\\294faa45405fa24da59c311f55ce313f.png', 1482132862, 1566111856),
+(1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 1, '994927909@qq.com', '', '18397423845', '127.0.0.1', '0', 1, '/storage/uploads/20190817\\294faa45405fa24da59c311f55ce313f.png', 1482132862, 1566131029),
 (2, 'yuege', 'e10adc3949ba59abbe56e057f20f883e', 2, '994927909@qq.com', '', '18397423845', '127.0.0.1', '0', 1, '/storage/uploads/20190817\\dc25c2714c46a0d2bee894a7d05eb15f.png', 1535512393, 1566030896),
 (3, 'dandan', '69d9387a9f1e957872943a2b957e4947', 2, '994927909@qq.com', NULL, '18397423845', '119.122.91.146', '0', 1, '/storage/uploads/20190817\\a17c794ac7fae7db012aa6e997cf3400.jpg', 1564041575, 1566001700),
 (4, 'admin1', 'e10adc3949ba59abbe56e057f20f883e', 1, '994927909@qq.com', NULL, '18397423845', '119.122.91.146', '0', 1, '/storage/uploads/20190816\\824fbacce27ce094eb3b1e115dfdb709.png', 1565941890, 1565942219),
@@ -75,6 +75,124 @@ CREATE TABLE `lm_admin_log` (
   `update_time` int(11) DEFAULT NULL,
   `status` tinyint(1) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 转存表中的数据 `lm_admin_log`
+--
+
+INSERT INTO `lm_admin_log` (`id`, `admin_id`, `username`, `log_url`, `log_content`, `log_title`, `log_agent`, `log_ip`, `create_time`, `update_time`, `status`) VALUES
+(1753, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"luvc\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; ', '127.0.0.1', 1566546358, 1566546358, 1),
+(1754, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"fu7b\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; ', '127.0.0.1', 1566546365, 1566546365, 1),
+(1755, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"fcfj\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; ', '127.0.0.1', 1566546376, 1566546376, 1),
+(1756, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"apyn\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; ', '127.0.0.1', 1566546412, 1566546412, 1),
+(1757, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"rmrd\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566785805, 1566785805, 1),
+(1758, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"mkyn\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566785810, 1566785810, 1),
+(1759, 1, 'admin', '/index.php/admin/system/site.html', NULL, '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566786642, 1566786642, 1),
+(1760, 1, 'admin', '/index.php/admin/system/site.html', NULL, '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566786643, 1566786643, 1),
+(1761, 1, 'admin', '/index.php/admin/database/index.html', NULL, '数据库列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566786647, 1566786647, 1),
+(1762, 1, 'admin', '/index.php/admin/database/index.html', NULL, '数据库列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566786647, 1566786647, 1),
+(1763, 1, 'admin', '/index.php/admin/adminlog/index.html', NULL, '日志管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566786648, 1566786648, 1),
+(1764, 1, 'admin', '/index.php/admin/adminlog/index.html', NULL, '日志管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566786648, 1566786648, 1),
+(1765, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566786653, 1566786653, 1),
+(1766, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566786653, 1566786653, 1),
+(1767, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566787482, 1566787482, 1),
+(1768, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566787482, 1566787482, 1),
+(1769, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566787483, 1566787483, 1),
+(1770, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566787483, 1566787483, 1),
+(1771, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566787516, 1566787516, 1),
+(1772, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566787516, 1566787516, 1),
+(1773, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566787720, 1566787720, 1),
+(1774, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566787720, 1566787720, 1),
+(1775, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566787780, 1566787780, 1),
+(1776, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566787780, 1566787780, 1),
+(1777, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566787781, 1566787781, 1),
+(1778, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566787781, 1566787781, 1),
+(1779, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566787854, 1566787854, 1),
+(1780, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566787854, 1566787854, 1),
+(1781, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566787914, 1566787914, 1),
+(1782, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566787915, 1566787915, 1),
+(1783, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566787959, 1566787959, 1),
+(1784, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566788233, 1566788233, 1),
+(1785, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566788267, 1566788267, 1),
+(1786, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566788322, 1566788322, 1),
+(1787, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566788373, 1566788373, 1),
+(1788, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566788565, 1566788565, 1),
+(1789, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566788575, 1566788575, 1),
+(1790, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566788604, 1566788604, 1),
+(1791, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566788613, 1566788613, 1),
+(1792, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566789999, 1566789999, 1),
+(1793, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566789999, 1566789999, 1),
+(1794, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566790884, 1566790884, 1),
+(1795, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566790885, 1566790885, 1),
+(1796, 1, 'admin', '/index.php/admin/uploads/uploads.html', NULL, '上传文件', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566793561, 1566793561, 1),
+(1797, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566793858, 1566793858, 1),
+(1798, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566793859, 1566793859, 1),
+(1799, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566795112, 1566795112, 1),
+(1800, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566795112, 1566795112, 1),
+(1801, 1, 'admin', '/index.php/admin/uploads/uploads.html', NULL, '上传文件', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566799065, 1566799065, 1),
+(1802, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566799474, 1566799474, 1),
+(1803, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566799475, 1566799475, 1),
+(1804, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566799476, 1566799476, 1),
+(1805, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566799514, 1566799514, 1),
+(1806, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566799514, 1566799514, 1),
+(1807, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566799854, 1566799854, 1),
+(1808, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566799854, 1566799854, 1),
+(1809, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800023, 1566800023, 1),
+(1810, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '分类列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800030, 1566800030, 1),
+(1811, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '分类列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800030, 1566800030, 1),
+(1812, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '分类列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800048, 1566800048, 1),
+(1813, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '分类列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800126, 1566800126, 1),
+(1814, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800136, 1566800136, 1),
+(1815, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800136, 1566800136, 1),
+(1816, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '分类列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800188, 1566800188, 1),
+(1817, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '分类列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800190, 1566800190, 1),
+(1818, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '分类列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800236, 1566800236, 1),
+(1819, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '分类列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800302, 1566800302, 1),
+(1820, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '分类列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800564, 1566800564, 1),
+(1821, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800571, 1566800571, 1),
+(1822, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800571, 1566800571, 1),
+(1823, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800596, 1566800596, 1),
+(1824, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800649, 1566800649, 1),
+(1825, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800665, 1566800665, 1),
+(1826, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800723, 1566800723, 1),
+(1827, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800746, 1566800746, 1),
+(1828, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800747, 1566800747, 1),
+(1829, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800749, 1566800749, 1),
+(1830, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800777, 1566800777, 1),
+(1831, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800802, 1566800802, 1),
+(1832, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800802, 1566800802, 1),
+(1833, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800887, 1566800887, 1),
+(1834, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800890, 1566800890, 1),
+(1835, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800890, 1566800890, 1),
+(1836, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800979, 1566800979, 1),
+(1837, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566800979, 1566800979, 1),
+(1838, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566801033, 1566801033, 1),
+(1839, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566801037, 1566801037, 1),
+(1840, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566801038, 1566801038, 1),
+(1841, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566801065, 1566801065, 1),
+(1842, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566801074, 1566801074, 1),
+(1843, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566801080, 1566801080, 1),
+(1844, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566801081, 1566801081, 1),
+(1845, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566801082, 1566801082, 1),
+(1846, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566802455, 1566802455, 1),
+(1847, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566802456, 1566802456, 1),
+(1848, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566802458, 1566802458, 1),
+(1849, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566802459, 1566802459, 1),
+(1850, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566802464, 1566802464, 1),
+(1851, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566802491, 1566802491, 1),
+(1852, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566802492, 1566802492, 1),
+(1853, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566803059, 1566803059, 1),
+(1854, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566803061, 1566803061, 1),
+(1855, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566803077, 1566803077, 1),
+(1856, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566803080, 1566803080, 1),
+(1857, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566803081, 1566803081, 1),
+(1858, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566804618, 1566804618, 1),
+(1859, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566804618, 1566804618, 1),
+(1860, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566804619, 1566804619, 1),
+(1861, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566804619, 1566804619, 1),
+(1862, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566804626, 1566804626, 1),
+(1863, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566804710, 1566804710, 1),
+(1864, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566804710, 1566804710, 1);
 
 -- --------------------------------------------------------
 
@@ -223,21 +341,21 @@ INSERT INTO `lm_adv_position` (`id`, `position_name`, `ad_width`, `ad_height`, `
 CREATE TABLE `lm_article` (
   `id` mediumint(8) UNSIGNED NOT NULL,
   `pid` smallint(5) NOT NULL DEFAULT '0' COMMENT '类别ID',
-  `title` varchar(150) NOT NULL DEFAULT '' COMMENT '文章标题',
-  `description` longtext COMMENT '文章摘要',
-  `content` longtext NOT NULL,
-  `author` varchar(30) NOT NULL DEFAULT '' COMMENT '文章作者',
-  `author_email` varchar(60) NOT NULL DEFAULT '' COMMENT '作者邮箱',
-  `keywords` varchar(255) NOT NULL DEFAULT '' COMMENT '关键字,用逗号隔开',
+  `title` varchar(150) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT '文章标题',
+  `description` mediumtext CHARACTER SET utf8 COMMENT '文章摘要',
+  `content` longtext CHARACTER SET utf8 NOT NULL,
+  `author` varchar(30) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT '文章作者',
+  `author_email` varchar(60) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT '作者邮箱',
+  `keywords` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT '关键字,用逗号隔开',
   `article_type` tinyint(1) UNSIGNED NOT NULL DEFAULT '1',
   `status` tinyint(1) UNSIGNED NOT NULL DEFAULT '1' COMMENT '是否显示,1:显示;0:不显示',
-  `file_url` varchar(255) NOT NULL DEFAULT '' COMMENT '附件地址',
+  `file_url` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT '附件地址',
   `open_type` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
-  `link` varchar(255) NOT NULL DEFAULT '' COMMENT '链接地址',
+  `link` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT '链接地址',
   `click` int(11) DEFAULT '0' COMMENT '浏览量',
   `publish_time` int(11) DEFAULT NULL COMMENT '文章预告发布时间',
   `sort` tinyint(1) DEFAULT '0',
-  `thumb` varchar(255) DEFAULT '' COMMENT '文章缩略图',
+  `thumb` varchar(255) CHARACTER SET utf8 DEFAULT '' COMMENT '文章缩略图',
   `create_time` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `update_time` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -257,15 +375,15 @@ INSERT INTO `lm_article` (`id`, `pid`, `title`, `description`, `content`, `autho
 
 CREATE TABLE `lm_article_cate` (
   `id` int(10) UNSIGNED NOT NULL,
-  `title` varchar(20) DEFAULT NULL COMMENT '类别名称',
-  `title_alias` varchar(20) DEFAULT NULL COMMENT '别名',
+  `title` varchar(20) CHARACTER SET utf8 DEFAULT NULL COMMENT '类别名称',
+  `title_alias` varchar(20) CHARACTER SET utf8 DEFAULT NULL COMMENT '别名',
   `title_type` smallint(6) DEFAULT '0' COMMENT '默认分组',
   `pid` smallint(6) DEFAULT '0' COMMENT '上级ID',
   `show_in_nav` tinyint(1) DEFAULT '0' COMMENT '是否导航显示',
   `status` tinyint(1) DEFAULT '1' COMMENT '状态',
   `sort` smallint(6) DEFAULT '50' COMMENT '排序',
-  `cat_desc` varchar(255) DEFAULT NULL COMMENT '分类描述',
-  `keywords` varchar(30) DEFAULT NULL COMMENT '搜索关键词',
+  `cat_desc` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '分类描述',
+  `keywords` varchar(30) CHARACTER SET utf8 DEFAULT NULL COMMENT '搜索关键词',
   `create_time` int(11) NOT NULL,
   `update_time` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -388,10 +506,22 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (52, 'Adv/order', '广告排序', 1, 1, 0, 0, NULL, '', 48, 0, 0, NULL),
 (53, 'Link/order', '链接排序', 1, 1, 0, 0, NULL, '', 46, 0, 0, NULL),
 (54, 'Adv/pos', '广告位置', 1, 1, 0, 1, 'fa fa-audio-description', '', 47, 0, 0, NULL),
-(55, 'Adv/posAdd', '广告位添加/编辑', 1, 1, 0, 0, NULL, '', 54, 0, 0, NULL),
+(55, 'Adv/posAdd', '广告位添加', 1, 1, 0, 0, '', '', 54, 0, 0, 1566263212),
 (56, 'Adv/posDel', '广告位删除', 1, 1, 0, 0, NULL, '', 54, 0, 0, NULL),
 (57, 'Adv/posState', '广告位状态', 1, 1, 0, 0, NULL, '', 54, 0, 0, NULL),
-(58, 'Adv/posOrder', '广告位排序', 1, 1, 0, 0, NULL, '', 54, 0, 0, NULL);
+(58, 'Adv/posOrder', '广告位排序', 1, 1, 0, 0, NULL, '', 54, 0, 0, NULL),
+(59, 'Article', '文章管理', 1, 1, 0, 1, 'fa fa-align-left', '', 41, 50, 1566262787, 1566787746),
+(60, 'Article/index', '文章列表', 1, 1, 0, 1, 'fa fa-bars', '', 59, 50, 1566262825, 1566799505),
+(61, 'Article/add', '添加文章', 1, 1, 0, 0, '', '', 60, 50, 1566262896, 1566263088),
+(62, 'Article/delete', '删除文章', 1, 1, 0, 0, '', '', 60, 50, 1566262920, 1566263087),
+(65, 'Article/edit', '文章编辑', 1, 1, 0, 0, '', '', 60, 50, 1566263048, 1566263082),
+(66, 'Adv/posEdit', '广告编辑', 1, 1, 0, 1, '', '', 54, 50, 1566264182, 1566264226),
+(67, 'Adv/edit', '广告编辑', 1, 1, 0, 1, '', '', 48, 50, 1566264200, 1566264243),
+(68, 'Link/edit', '链接编辑', 1, 1, 0, 0, '', '', 46, 50, 1566264281, 1566264281),
+(69, 'Article/articleCate', '文章分类', 1, 1, 0, 1, 'fa fa-folder-o', '', 59, 50, 1566799875, 1566800015),
+(70, 'Article/cateAdd', '添加文章分类', 1, 1, 0, 0, NULL, '', 69, 0, 0, NULL),
+(71, 'Article/cateEdit', '编辑文章分类', 1, 1, 0, 0, NULL, '', 69, 0, 0, NULL),
+(72, 'Article/cateDel', '删除文章分类', 1, 1, 0, 0, NULL, '', 69, 0, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -589,7 +719,7 @@ ALTER TABLE `lm_admin`
 -- 使用表AUTO_INCREMENT `lm_admin_log`
 --
 ALTER TABLE `lm_admin_log`
-  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id';
+  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=1865;
 
 --
 -- 使用表AUTO_INCREMENT `lm_adv`
@@ -625,7 +755,7 @@ ALTER TABLE `lm_auth_group`
 -- 使用表AUTO_INCREMENT `lm_auth_rule`
 --
 ALTER TABLE `lm_auth_rule`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- 使用表AUTO_INCREMENT `lm_config`
