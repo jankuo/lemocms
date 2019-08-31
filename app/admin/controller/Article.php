@@ -104,7 +104,19 @@ class Article extends  Base{
 
 
     }
+    public function state(){
+        $data =  Request::post();
+        $id = Request::post('id');
+        if (empty($id)) {
+            $this->error('数据不存在!');
+        }
+        $info  = \app\common\model\Article::find($id);
+        $status = $info['status'] == 1 ? 0 : 1;
+        $info->status = $status;
+        $info->save();
+        $this->success('修改成功!');
 
+    }
     public function delete(){
 
         if(Request::isPost()){
@@ -194,6 +206,20 @@ class Article extends  Base{
             return View::fetch('cate_add');
         }
 
+
+    }
+
+    public function cateState(){
+        $data =  Request::post();
+        $id = Request::post('id');
+        if (empty($id)) {
+            $this->error('数据不存在!');
+        }
+        $info  = \app\common\model\ArticleCate::find($id);
+        $status = $info['status'] == 1 ? 0 : 1;
+        $info->status = $status;
+        $info->save();
+        $this->success('修改成功!');
 
     }
     public function cateDel(){

@@ -116,7 +116,7 @@
         form.on('switch(status)', function(data){
                 loading =layer.load(1, {shade: [0.1,'#fff']});
                 var status = $(this).attr('checked')?0:1;
-                $.post("{:url('cateEdit')}",{id:data.value,status:status},function(res){
+                $.post("{:url('cateState')}",{id:data.value,status:status},function(res){
                     layer.close(loading);
                     if(res.code>0){
                         layer.msg(res.msg,{time:1000,icon:1});
