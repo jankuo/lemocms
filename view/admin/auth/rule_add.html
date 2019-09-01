@@ -95,7 +95,7 @@
             // 是否开启分页：true/false，默认true
             page: true,
             // 每页显示数量，默认12
-            limit: 12,
+            limit: 20,
             // 点击回调
             click: function (data) {
                 $('#iconPicker').val('fa '+ data.icon);
@@ -107,6 +107,7 @@
         });
         form.on('submit(submit)', function (data) {
             // 提交到方法 默认为本身
+            console.log(data.field);
             $.post(url,data.field,function(res){
                 if(res.code > 0){
                     layer.msg(res.msg,{time:1000,icon:1},function(){
