@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： localhost
--- 生成日期： 2019-08-29 09:55:16
+-- 生成日期： 2019-08-31 05:11:02
 -- 服务器版本： 5.7.26
 -- PHP 版本： 7.1.13
 
@@ -192,7 +192,25 @@ INSERT INTO `lm_admin_log` (`id`, `admin_id`, `username`, `log_url`, `log_conten
 (1861, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566804619, 1566804619, 1),
 (1862, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566804626, 1566804626, 1),
 (1863, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566804710, 1566804710, 1),
-(1864, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566804710, 1566804710, 1);
+(1864, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.10', '127.0.0.1', 1566804710, 1566804710, 1),
+(1865, 1, 'admin', '/index.php/admin/adminlog/index.html', NULL, '日志管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567227750, 1567227750, 1),
+(1866, 1, 'admin', '/index.php/admin/adminlog/index.html', NULL, '日志管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567227750, 1567227750, 1),
+(1867, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567227755, 1567227755, 1),
+(1868, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567227755, 1567227755, 1),
+(1869, 1, 'admin', '/index.php/admin/system/index.html', NULL, '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567227777, 1567227777, 1),
+(1870, 1, 'admin', '/index.php/admin/system/index.html', NULL, '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567227777, 1567227777, 1),
+(1871, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567227780, 1567227780, 1),
+(1872, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567227780, 1567227780, 1),
+(1873, 1, 'admin', '/index.php/admin/system/index.html', NULL, '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567227803, 1567227803, 1),
+(1874, 1, 'admin', '/index.php/admin/system/index.html', NULL, '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567227803, 1567227803, 1),
+(1875, 1, 'admin', '/index.php/admin/system/index.html', NULL, '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567227842, 1567227842, 1),
+(1876, 1, 'admin', '/index.php/admin/system/index.html', NULL, '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567227842, 1567227842, 1),
+(1877, 1, 'admin', '/index.php/admin/adminlog/index.html', NULL, '日志管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567227842, 1567227842, 1),
+(1878, 1, 'admin', '/index.php/admin/adminlog/index.html', NULL, '日志管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567227843, 1567227843, 1),
+(1879, 0, 'Unknown', '/index.php/admin/login/index', '{\"username\":\"admin\",\"captcha\":\"vqph\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567228111, 1567228111, 1),
+(1880, 1, 'admin', '/index.php/admin/system/index.html', NULL, '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567228118, 1567228118, 1),
+(1881, 1, 'admin', '/index.php/admin/system/index.html', NULL, '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567228118, 1567228118, 1),
+(1882, 1, 'admin', '/index.php/admin/system/index.html', NULL, '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3829.0 ', '127.0.0.1', 1567228127, 1567228127, 1);
 
 -- --------------------------------------------------------
 
@@ -471,7 +489,7 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (17, 'Auth/ruleDel', '权限删除', 2, 1, 0, 0, NULL, '', 7, 0, 0, NULL),
 (18, 'Auth/ruleSelectDel', '权限批量删除', 2, 1, 0, 0, NULL, '', 7, 0, 0, NULL),
 (19, 'Auth/ruleAdd', '权限增加', 2, 1, 0, 0, NULL, '', 7, 0, 0, NULL),
-(20, 'System/site', '站点设置', 1, 1, 0, 1, 'fa fa-gears', '', 2, 0, 0, NULL),
+(20, 'System/index', '站点设置', 1, 1, 0, 1, 'fa fa-asterisk', '', 2, 0, 0, 1567227798),
 (21, 'Adminlog/index', '日志管理', 1, 1, 0, 1, 'fa fa-life-ring', '', 2, 0, 0, 1566007925),
 (22, 'Database/optimize', '数据库优化', 1, 1, 0, 0, NULL, '', 3, 0, 0, NULL),
 (23, 'Addons', '插件管理', 1, 1, 0, 1, 'fa fa-flickr', '', 0, 0, 0, 1566053592),
@@ -521,7 +539,10 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (69, 'Article/articleCate', '文章分类', 1, 1, 0, 1, 'fa fa-folder-o', '', 59, 50, 1566799875, 1566800015),
 (70, 'Article/cateAdd', '添加文章分类', 1, 1, 0, 0, NULL, '', 69, 0, 0, NULL),
 (71, 'Article/cateEdit', '编辑文章分类', 1, 1, 0, 0, NULL, '', 69, 0, 0, NULL),
-(72, 'Article/cateDel', '删除文章分类', 1, 1, 0, 0, NULL, '', 69, 0, 0, NULL);
+(72, 'Article/cateDel', '删除文章分类', 1, 1, 0, 0, NULL, '', 69, 0, 0, NULL),
+(73, 'System/site', '站点修改', 1, 1, 0, 0, 'fa undefined', '', 20, 50, 1567225373, 1567225410),
+(74, 'Article/state', '文章状态', 1, 1, 0, 0, 'fa undefined', '', 60, 50, 1567225947, 1567225947),
+(75, 'Article/cateState', '文章分类状态', 1, 1, 0, 0, 'fa undefined', '', 69, 50, 1567225975, 1567225975);
 
 -- --------------------------------------------------------
 
@@ -719,7 +740,7 @@ ALTER TABLE `lm_admin`
 -- 使用表AUTO_INCREMENT `lm_admin_log`
 --
 ALTER TABLE `lm_admin_log`
-  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=1865;
+  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=1883;
 
 --
 -- 使用表AUTO_INCREMENT `lm_adv`
@@ -755,7 +776,7 @@ ALTER TABLE `lm_auth_group`
 -- 使用表AUTO_INCREMENT `lm_auth_rule`
 --
 ALTER TABLE `lm_auth_rule`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- 使用表AUTO_INCREMENT `lm_config`
