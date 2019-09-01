@@ -14,4 +14,3 @@ Route::get('think', function () {
     return 'hello,lemocms!';
 });
 Route::post('admin/login/index','admin/login/index')->token(config('admin.token'));
-Route::get('hello/:name', 'index/hello');

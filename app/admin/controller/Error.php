@@ -2,11 +2,12 @@
 namespace app\admin\controller;
 
 use app\BaseController;
+use think\facade\View;
 
 class Error extends BaseController{
 
     public function __call($method, $args)
     {
-        return '404 页面不存在';
+        return View::fetch('error/error');
     }
 }

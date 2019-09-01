@@ -5,7 +5,7 @@ use think\facade\Config;
 use think\facade\Request;
 use app\admin\model\AdminLog as LogModel;
 use think\facade\View;
-class AdminLog extends Base{
+class Adminlog extends Base{
 
     public function initialize()
     {
