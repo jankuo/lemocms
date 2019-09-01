@@ -22,6 +22,7 @@ Lemocms1.0.2管理系统：为二次开发而生，让开发变得更简单
 
  + 后台访问地址 域名/index.php/admin 后台账号 admin 密码 123456
 
+ + 后台示例地址 http://demo.lemocms.com/index.php/admin   账号demo 密码123456
 
 ### 系统快照
 
