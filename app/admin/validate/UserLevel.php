@@ -10,3 +10,25 @@
  * Author: yuege
  * Date: 2019/9/2
  */
+namespace app\admin\validate;
+
+use think\Validate;
+
+class UserLevel extends Validate
+{
+    protected $rule = [
+        'level_name|会员组名称' => [
+            'require' => 'require',
+            'max'     => '255',
+            'unique'  => 'user_level',
+        ],
+
+        'description|描述' => [
+            'max' => '255',
+        ],
+        'sort|排序' => [
+            'require' => 'require',
+            'number'  => 'number'
+        ],
+    ];
+}

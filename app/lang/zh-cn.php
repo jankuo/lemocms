@@ -32,5 +32,6 @@ return [
     'username' => '用户名',
     'admin' => '管理员',
     'search' => '搜索',
+    'user' => '用户',
 
 ];
