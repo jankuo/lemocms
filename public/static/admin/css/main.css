@@ -7,3 +7,20 @@ body {margin:15px 15px 15px 15px;background:#f2f2f2;}
 .LM-form>.layui-form-item>.layui-form-label {width:120px !important;}
 .LM-form>.layui-form-item>.layui-input-block {margin-left:150px !important;}
 .LM-form>.layui-form-item>.layui-input-block >tip {display:inline-block;margin-top:10px;line-height:10px;font-size:10px;color:#a29c9c;}
+/**
+ 手机自适应样式
+*/
+@media screen and (max-width: 768px){
+    .LM-table .layui-inline {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .LM-table .layui-btn, .LM-table .layui-btn+.layui-btn, .layui-elem-quote .layui-btn {
+        width: 100%;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        margin-left: 0;
+        float: none!important;
+    }
+
+}

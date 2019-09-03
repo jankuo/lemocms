@@ -117,7 +117,7 @@
 /**
  手机自适应样式
 */
-@media screen and (max-width:768px) {
+@media screen and (max-width:750px) {
     #top_tabs_box {border-bottom:0px!important;}
     .layui-layout-admin .layui-body .layui-tab-item.layui-show{border-top:1px solid #e2e2e2;}
     .LM-mini .LM-tool {left:15px !important;}
@@ -133,6 +133,4 @@
     .layui-layout-admin .layui-body .clildFrame.layui-tab-content {overflow:scroll;able-layout:fixed;word-wrap:break-word;word-break:break-all;-webkit-overflow-scrolling:touch!important;}
     .LM-all .layui-nav.layui-layout-right,.LM-mini .layui-layout-admin .layui-logo ,.LM-mini .layui-side.layui-bg-black,.LM-mini .layui-left-menu,.layui-layout-admin .layui-body #top_tabs,.layui-layout-admin .layui-body .layui-nav.closeBox{
         transition:all .2s;display:none;}
-    .layui-layout-admin .layui-footer{width: 100%;left: 0}
-
 }
