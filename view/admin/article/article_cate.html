@@ -5,18 +5,22 @@
             <fieldset class="layui-elem-field layui-field-title">
                 <legend>文章分类{:lang('list')}</legend>
                 <blockquote class="layui-elem-quote">
-                        <div class="layui-btn-group">
-                            <a href="{:url('cateAdd')}"  class="layui-btn layui-btn-sm">{:lang('add')}文章分类</a>
-                            <a class="layui-btn layui-btn-sm layui-btn-warm" onclick="openAll();">展开或折叠全部</a>
+                    <div class="LM-table">
+                        <div class="layui-inline">
+                            <!--   <input type="text" id='keys' name="keys" lay-verify="required" placeholder="{:lang('pleaseEnter')}" autocomplete="off" class="layui-input">-->
 
                         </div>
-<!--                        <div class="layui-inline">-->
-<!--                            <div class="layui-input-inline">-->
-<!--                                <input type="text" id='keys' name="keys" lay-verify="required" placeholder="{:lang('pleaseEnter')}" autocomplete="off" class="layui-input">-->
-<!--                            </div>-->
-<!--                            <button class="layui-btn data-add-btn" lay-submit="" lay-filter="add" id="search">{:lang('search')}</button>-->
-<!--                        </div>-->
-                  </blockquote>
+                        <a href="{:url('cateAdd')}" class="layui-btn layui-btn-sm">{:lang('add')}文章分类</a>
+                        <a class="layui-btn layui-btn-sm layui-btn-warm" onclick="openAll();">展开或折叠全部</a>
+
+                    </div>
+                    <!--                        <div class="layui-inline">-->
+                    <!--                            <div class="layui-input-inline">-->
+                    <!--                                <input type="text" id='keys' name="keys" lay-verify="required" placeholder="{:lang('pleaseEnter')}" autocomplete="off" class="layui-input">-->
+                    <!--                            </div>-->
+                    <!--                            <button class="layui-btn data-add-btn" lay-submit="" lay-filter="add" id="search">{:lang('search')}</button>-->
+                    <!--                        </div>-->
+                </blockquote>
 
             </fieldset>
 

@@ -1,29 +1,25 @@
 {include file="common/header"/}
 <div class="LM-container">
     <div class="LM-main">
-        <div class="admin-main layui-anim layui-anim-upbit">
-            <fieldset class="layui-elem-field layui-field-title">
-                <legend>{:lang('admin')}{:lang('list')}</legend>
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend>{:lang('admin')}{:lang('list')}</legend>
 
-                <blockquote class="layui-elem-quote">
-                        <div class="layui-btn-group">
-                            <a href="{:url('adminAdd')}" class="layui-btn layui-btn-sm layui-btn-warm">{:lang('add')}{:lang('admin')}</a>
-                        </div>
-                        <div class="layui-inline">
+            <blockquote class="layui-elem-quote">
+                <div class="LM-table">
+                    <div class="layui-inline">
+                        <input type="text" name="keys" id="keys" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
 
-                            <label class="layui-form-label">用户组名</label>
-                            <div class="layui-input-inline">
-                                <input type="text" name="keys" id="keys" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
-                            </div>
-                            <button class="layui-btn data-add-btn layui-btn-sm" lay-submit="" lay-filter="add" id="search">搜索</button>
-                        </div>
-                </blockquote>
+                    </div>
+                    <button class="layui-btn data-add-btn layui-btn-sm" lay-submit="" lay-filter="add" id="search">搜索</button>
+                    <a href="{:url('adminAdd')}" class="layui-btn layui-btn-sm layui-btn-warm">{:lang('add')}{:lang('admin')}</a>
 
-            </fieldset>
+                </div>
 
-            <table class="layui-table" id="list" lay-filter="list"></table>
-        </div>
+            </blockquote>
 
+        </fieldset>
+
+        <table class="layui-table" id="list" lay-filter="list"></table>
     </div>
 </div>
 {include file="common/footer"/}
@@ -59,7 +55,7 @@
                 ,{field:'mobile', title: '{:lang("mobile")}', width:150}
                 ,{field:'ip', title: '{:lang("ip")}',width:150,hide:true}
                 ,{field:'status', title: '{:lang("status")}',width:150,toolbar: '#status'}
-                ,{width:160, align:'center', toolbar: '#action'}
+                ,{title:'操作',width:160, align:'center', toolbar: '#action'}
             ]]
         });
         form.on('switch(status)', function(obj){
