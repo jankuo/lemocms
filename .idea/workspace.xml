@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9df45793-8969-4a03-b4f7-ff19d345e5e4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/view/admin/auth/rule_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/auth/rule_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,15 +70,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/database/restore.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="37" selection-start-line="37" selection-end-line="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/admin/auth/admin_rule.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
@@ -86,11 +78,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/admin/auth/rule_add.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="516">
               <caret line="111" column="39" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="31">
+                <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -209,7 +213,6 @@
         <option value="$PROJECT_DIR$/app/admin/validate/UserLevel.php" />
         <option value="$PROJECT_DIR$/app/admin/controller/User.php" />
         <option value="$PROJECT_DIR$/view/admin/user/level_add.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/view/admin/index/main.html" />
         <option value="$PROJECT_DIR$/app/lang/zh-cn.php" />
         <option value="$PROJECT_DIR$/view/admin/user/index.html" />
@@ -224,6 +227,7 @@
         <option value="$PROJECT_DIR$/view/admin/link/index.html" />
         <option value="$PROJECT_DIR$/view/admin/user/level_index.html" />
         <option value="$PROJECT_DIR$/view/admin/auth/rule_add.html" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -373,12 +377,12 @@
       <workItem from="1567384485636" duration="688000" />
       <workItem from="1567412276846" duration="3799000" />
       <workItem from="1567470613901" duration="17679000" />
-      <workItem from="1567556814827" duration="9475000" />
+      <workItem from="1567556814827" duration="9912000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49727000" />
+    <option name="totallyTimeSpent" value="50164000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -585,16 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="288">
-            <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/lang.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -794,6 +788,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="516">
           <caret line="111" column="39" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="31">
+            <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
