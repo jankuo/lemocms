@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： localhost
--- 生成日期： 2019-09-04 03:11:31
--- 服务器版本： 5.7.26
--- PHP 版本： 7.1.13
+-- 生成日期： 2019-09-04 11:41:43
+-- 服务器版本： 5.6.45-log
+-- PHP 版本： 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 数据库： `lemocms`
+-- 数据库： `demo_lemocms_com`
 --
 
 -- --------------------------------------------------------
@@ -1004,7 +1004,121 @@ INSERT INTO `lm_admin_log` (`id`, `admin_id`, `username`, `log_url`, `log_conten
 (2682, 1, 'admin', '/index.php/admin/user/levelindex.html', NULL, '会员等级', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '127.0.0.1', 1567566433, 1567566433, 1),
 (2683, 1, 'admin', '/index.php/admin/user/levelindex.html', NULL, '会员等级', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '127.0.0.1', 1567566445, 1567566445, 1),
 (2684, 1, 'admin', '/index.php/admin/user/levelindex.html', NULL, '会员等级', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '127.0.0.1', 1567566502, 1567566502, 1),
-(2685, 1, 'admin', '/index.php/admin/user/levelindex.html', NULL, '会员等级', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '127.0.0.1', 1567566502, 1567566502, 1);
+(2685, 1, 'admin', '/index.php/admin/user/levelindex.html', NULL, '会员等级', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '127.0.0.1', 1567566502, 1567566502, 1),
+(2686, 1, 'admin', '/index.php/admin/system/index.html', NULL, '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567402, 1567567402, 1),
+(2687, 1, 'admin', '/index.php/admin/system/index.html', NULL, '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567402, 1567567402, 1),
+(2688, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567404, 1567567404, 1),
+(2689, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567404, 1567567404, 1),
+(2690, 1, 'admin', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567405, 1567567405, 1),
+(2691, 1, 'admin', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567405, 1567567405, 1),
+(2692, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567406, 1567567406, 1),
+(2693, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567406, 1567567406, 1),
+(2694, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567409, 1567567409, 1),
+(2695, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567423, 1567567423, 1),
+(2696, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567423, 1567567423, 1),
+(2697, 1, 'admin', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567424, 1567567424, 1),
+(2698, 1, 'admin', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567424, 1567567424, 1),
+(2699, 1, 'admin', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567432, 1567567432, 1),
+(2700, 3, 'demo', '/index.php/admin/database/index.html', NULL, '数据库列表', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '113.67.224.30', 1567567601, 1567567601, 1),
+(2701, 3, 'demo', '/index.php/admin/database/index.html', NULL, '数据库列表', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '113.67.224.30', 1567567601, 1567567601, 1),
+(2702, 3, 'demo', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '113.67.224.30', 1567567602, 1567567602, 1),
+(2703, 3, 'demo', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '113.67.224.30', 1567567602, 1567567602, 1),
+(2704, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567603, 1567567603, 1),
+(2705, 3, 'demo', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '113.67.224.30', 1567567604, 1567567604, 1),
+(2706, 3, 'demo', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '113.67.224.30', 1567567604, 1567567604, 1),
+(2707, 3, 'demo', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '113.67.224.30', 1567567618, 1567567618, 1),
+(2708, 3, 'demo', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '113.67.224.30', 1567567618, 1567567618, 1),
+(2709, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567644, 1567567644, 1),
+(2710, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567648, 1567567648, 1),
+(2711, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567654, 1567567654, 1),
+(2712, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567672, 1567567672, 1),
+(2713, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567672, 1567567672, 1),
+(2714, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567679, 1567567679, 1),
+(2715, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567679, 1567567679, 1),
+(2716, 1, 'admin', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567686, 1567567686, 1),
+(2717, 1, 'admin', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567686, 1567567686, 1),
+(2718, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"xszg\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0', '110.184.132.14', 1567567726, 1567567726, 1),
+(2719, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"nnys\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0', '110.184.132.14', 1567567739, 1567567739, 1),
+(2720, 1, 'admin', '/index.php/admin/system/index.html', NULL, '站点设置', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0', '110.184.132.14', 1567567747, 1567567747, 1),
+(2721, 1, 'admin', '/index.php/admin/system/index.html', NULL, '站点设置', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0', '110.184.132.14', 1567567747, 1567567747, 1),
+(2722, 1, 'admin', '/index.php/admin/adminlog/index.html', NULL, '日志管理', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0', '110.184.132.14', 1567567748, 1567567748, 1),
+(2723, 1, 'admin', '/index.php/admin/adminlog/index.html', NULL, '日志管理', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0', '110.184.132.14', 1567567749, 1567567749, 1),
+(2724, 1, 'admin', '/index.php/admin/addons/index.html', NULL, '插件列表', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0', '110.184.132.14', 1567567753, 1567567753, 1),
+(2725, 1, 'admin', '/index.php/admin/addons/index.html', NULL, '插件列表', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0', '110.184.132.14', 1567567753, 1567567753, 1),
+(2726, 1, 'admin', '/index.php/admin/link/index.html', NULL, '链接列表', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0', '110.184.132.14', 1567567758, 1567567758, 1),
+(2727, 1, 'admin', '/index.php/admin/link/index.html', NULL, '链接列表', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0', '110.184.132.14', 1567567758, 1567567758, 1),
+(2728, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0', '110.184.132.14', 1567567759, 1567567759, 1),
+(2729, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0', '110.184.132.14', 1567567760, 1567567760, 1),
+(2730, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0', '110.184.132.14', 1567567760, 1567567760, 1),
+(2731, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0', '110.184.132.14', 1567567760, 1567567760, 1),
+(2732, 1, 'admin', '/index.php/admin/user/levelindex.html', NULL, '会员等级', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0', '110.184.132.14', 1567567769, 1567567769, 1),
+(2733, 1, 'admin', '/index.php/admin/user/levelindex.html', NULL, '会员等级', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0', '110.184.132.14', 1567567770, 1567567770, 1),
+(2734, 1, 'admin', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567775, 1567567775, 1),
+(2735, 1, 'admin', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567797, 1567567797, 1),
+(2736, 1, 'admin', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567567800, 1567567800, 1),
+(2737, 3, 'demo', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '61.138.255.132', 1567567822, 1567567822, 1),
+(2738, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"xszg\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36', '220.162.225.210', 1567567972, 1567567972, 1),
+(2739, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"qd8x\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36', '220.162.225.210', 1567567980, 1567567980, 1),
+(2740, 1, 'admin', '/index.php/admin/database/index.html', NULL, '数据库列表', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36', '220.162.225.210', 1567567999, 1567567999, 1),
+(2741, 1, 'admin', '/index.php/admin/database/index.html', NULL, '数据库列表', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36', '220.162.225.210', 1567567999, 1567567999, 1),
+(2742, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36', '220.162.225.210', 1567568008, 1567568008, 1),
+(2743, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36', '220.162.225.210', 1567568008, 1567568008, 1),
+(2744, 1, 'admin', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36', '220.162.225.210', 1567568011, 1567568011, 1),
+(2745, 1, 'admin', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36', '220.162.225.210', 1567568011, 1567568011, 1),
+(2746, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"evlg\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36', '111.121.76.3', 1567568012, 1567568012, 1),
+(2747, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36', '220.162.225.210', 1567568013, 1567568013, 1),
+(2748, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36', '220.162.225.210', 1567568014, 1567568014, 1),
+(2749, 1, 'admin', '/index.php/admin/system/index.html', NULL, '站点设置', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36', '111.121.76.3', 1567568020, 1567568020, 1),
+(2750, 1, 'admin', '/index.php/admin/system/index.html', NULL, '站点设置', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36', '111.121.76.3', 1567568020, 1567568020, 1),
+(2751, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36', '111.121.76.3', 1567568026, 1567568026, 1),
+(2752, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36', '111.121.76.3', 1567568026, 1567568026, 1),
+(2753, 1, 'admin', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567568045, 1567568045, 1),
+(2754, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"pueq\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568051, 1567568051, 1),
+(2755, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567568072, 1567568072, 1),
+(2756, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567568073, 1567568073, 1),
+(2757, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36', '111.121.76.3', 1567568092, 1567568092, 1),
+(2758, 1, 'admin', '/index.php/admin/auth/adminlist.html', NULL, '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36', '111.121.76.3', 1567568092, 1567568092, 1),
+(2759, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568101, 1567568101, 1),
+(2760, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568101, 1567568101, 1),
+(2761, 1, 'admin', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568102, 1567568102, 1),
+(2762, 1, 'admin', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568102, 1567568102, 1),
+(2763, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568104, 1567568104, 1),
+(2764, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568108, 1567568108, 1),
+(2765, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568115, 1567568115, 1),
+(2766, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568115, 1567568115, 1),
+(2767, 1, 'admin', '/index.php/admin/database/restore.html', NULL, '还原数据库', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568341, 1567568341, 1),
+(2768, 1, 'admin', '/index.php/admin/database/restore.html', NULL, '还原数据库', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568341, 1567568341, 1),
+(2769, 1, 'admin', '/index.php/admin/database/index.html', NULL, '数据库列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568342, 1567568342, 1),
+(2770, 1, 'admin', '/index.php/admin/database/index.html', NULL, '数据库列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568342, 1567568342, 1),
+(2771, 1, 'admin', '/index.php/admin/user/index.html', NULL, '会员管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568380, 1567568380, 1),
+(2772, 1, 'admin', '/index.php/admin/user/index.html', NULL, '会员管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568381, 1567568381, 1),
+(2773, 1, 'admin', '/index.php/admin/user/levelindex.html', NULL, '会员等级', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568381, 1567568381, 1),
+(2774, 1, 'admin', '/index.php/admin/user/levelindex.html', NULL, '会员等级', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568381, 1567568381, 1),
+(2775, 1, 'admin', '/index.php/admin/auth/group.html', NULL, '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567568384, 1567568384, 1),
+(2776, 1, 'admin', '/index.php/admin/link/index.html', NULL, '链接列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568384, 1567568384, 1),
+(2777, 1, 'admin', '/index.php/admin/link/index.html', NULL, '链接列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568384, 1567568384, 1),
+(2778, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568386, 1567568386, 1),
+(2779, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568386, 1567568386, 1),
+(2780, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568387, 1567568387, 1),
+(2781, 1, 'admin', '/index.php/admin/article/articlecate.html', NULL, '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568387, 1567568387, 1),
+(2782, 1, 'admin', '/index.php/admin/article/index.html', NULL, '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568388, 1567568388, 1),
+(2783, 1, 'admin', '/index.php/admin/addons/index.html', NULL, '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568413, 1567568413, 1),
+(2784, 1, 'admin', '/index.php/admin/addons/index.html', NULL, '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568413, 1567568413, 1),
+(2785, 0, 'Unknown', '/index.php/admin/login/index', '{\"username\":\"demo\",\"captcha\":\"pync\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567568414, 1567568414, 1),
+(2786, 1, 'admin', '/index.php/admin/database/restore.html', NULL, '还原数据库', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568418, 1567568418, 1),
+(2787, 1, 'admin', '/index.php/admin/database/restore.html', NULL, '还原数据库', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568418, 1567568418, 1),
+(2788, 0, 'Unknown', '/index.php/admin/login/index', '{\"username\":\"demo\",\"captcha\":\"bnft\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567568420, 1567568420, 1),
+(2789, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568420, 1567568420, 1),
+(2790, 1, 'admin', '/index.php/admin/auth/adminrule.html', NULL, '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568420, 1567568420, 1),
+(2791, 3, 'demo', '/index.php/admin/user/index.html', NULL, '会员管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567568428, 1567568428, 1),
+(2792, 3, 'demo', '/index.php/admin/user/index.html', NULL, '会员管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567568428, 1567568428, 1),
+(2793, 3, 'demo', '/index.php/admin/user/levelindex.html', NULL, '会员等级', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567568440, 1567568440, 1),
+(2794, 3, 'demo', '/index.php/admin/user/levelindex.html', NULL, '会员等级', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567568440, 1567568440, 1),
+(2795, 1, 'admin', '/index.php/admin/adv/index.html', NULL, '广告列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568442, 1567568442, 1),
+(2796, 1, 'admin', '/index.php/admin/adv/index.html', NULL, '广告列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568442, 1567568442, 1),
+(2797, 1, 'admin', '/index.php/admin/adv/pos.html', NULL, '广告位置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568443, 1567568443, 1),
+(2798, 1, 'admin', '/index.php/admin/adv/pos.html', NULL, '广告位置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36', '111.121.76.3', 1567568443, 1567568443, 1),
+(2799, 3, 'demo', '/index.php/admin/user/levelindex.html', NULL, '会员等级', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36', '121.35.103.229', 1567568446, 1567568446, 1);
 
 -- --------------------------------------------------------
 
@@ -1235,7 +1349,7 @@ CREATE TABLE `lm_auth_group` (
 
 INSERT INTO `lm_auth_group` (`id`, `title`, `status`, `rules`, `create_time`, `update_time`) VALUES
 (1, '超级管理员', 1, '1,2,20,21,40,34,39,73,3,4,5,9,10,11,12,22,13,6,7,8,14,15,16,17,18,19,26,27,28,29,30,31,32,33,35,36,37,38,23,24,25,41,47,48,49,50,51,52,54,55,56,57,58,66,59,60,61,62,65,74,69,72,70,71,75,42,46,53,44,45,68,43,', 1465114224, 1567327402),
-(2, '测试1', 1, '1,2,34,39,3,13,6,7,16,26,30,35,38,41,47,48,51,54,57,59,60,74,69,75,42,46,45,', 1565929191, 1567300163),
+(2, '测试1', 1, '1,6,35,38,26,30,7,16,2,39,34,3,13,76,77,81,82,83,41,47,48,51,54,57,59,60,74,69,75,42,46,45,', 1565929191, 1567568398),
 (3, '测试2', 1, NULL, 1567485941, 1567485943);
 
 -- --------------------------------------------------------
@@ -1344,7 +1458,11 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (79, 'User/del', '会员删除', 1, 1, 0, 0, NULL, '', 77, 0, 0, NULL),
 (80, 'User/edit', '会员编辑', 1, 1, 0, 0, NULL, '', 77, 0, 0, NULL),
 (81, 'User/state', '会员状态', 1, 1, 0, 0, NULL, '', 77, 0, 0, NULL),
-(82, 'User/levelIndex', '会员等级', 1, 1, 0, 1, 'fa fa-align-center', '', 76, 50, 1567563846, 1567565085);
+(82, 'User/levelIndex', '会员等级', 1, 1, 0, 1, 'fa fa-align-center', '', 76, 50, 1567563846, 1567565085),
+(83, 'User/levelState', '会员等级状态', 1, 1, 0, 0, '', '', 82, 50, 1567568251, 1567568323),
+(84, 'User/levelDel', '会员等级删除', 1, 1, 0, 0, '', '', 82, 50, 1567568283, 1567568283),
+(85, 'User/levelAdd', '会员等级添加', 1, 1, 0, 0, '', '', 82, 50, 1567568305, 1567568333),
+(86, 'User/levelEdit', '会员等级编辑', 1, 1, 0, 0, '', '', 82, 50, 1567568357, 1567568372);
 
 -- --------------------------------------------------------
 
@@ -1812,7 +1930,7 @@ ALTER TABLE `lm_admin`
 -- 使用表AUTO_INCREMENT `lm_admin_log`
 --
 ALTER TABLE `lm_admin_log`
-  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=2686;
+  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=2800;
 
 --
 -- 使用表AUTO_INCREMENT `lm_adv`
@@ -1848,7 +1966,7 @@ ALTER TABLE `lm_auth_group`
 -- 使用表AUTO_INCREMENT `lm_auth_rule`
 --
 ALTER TABLE `lm_auth_rule`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- 使用表AUTO_INCREMENT `lm_config`
