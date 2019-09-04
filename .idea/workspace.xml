@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9df45793-8969-4a03-b4f7-ff19d345e5e4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/lang/zh-cn.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lang/zh-cn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/adminlog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/adminlog/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/adv/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/adv/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/adv/pos.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/adv/pos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/article/article_cate.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/article/article_cate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/article/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/article/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/auth/admin_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/auth/admin_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/auth/admin_rule.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/auth/admin_rule.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/auth/group.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/auth/group.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/link/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/link/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/user/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin/user/level_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/user/level_index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/auth/rule_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/auth/rule_add.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +18,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/admin/controller/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="198" column="30" selection-start-line="198" selection-start-column="20" selection-end-line="198" selection-end-column="30" />
+              <folding>
+                <element signature="e#420#445#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/admin/link/index.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -58,40 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/admin/user/level_index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
+            <state relative-caret-position="-10">
               <caret line="78" selection-start-line="78" selection-end-line="78" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/auth/group_edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1716">
-              <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/auth/rule_add.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="113" column="46" lean-forward="true" selection-start-line="113" selection-start-column="46" selection-end-line="113" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/database/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1085">
-              <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -101,6 +73,24 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="496">
               <caret line="37" selection-start-line="37" selection-end-line="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/admin/auth/admin_rule.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="26" column="21" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/admin/auth/rule_add.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="516">
+              <caret line="111" column="39" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -129,8 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>get_input_param</find>
-      <find>return input('param.');</find>
       <find>{'title':'操作',minWidth:50, toolbar: '#action',align:&quot;center&quot;}</find>
       <find>{title:'操作',minWidth:50, toolbar: '#action',align:&quot;center&quot;}</find>
       <find>parent.l</find>
@@ -159,6 +147,8 @@
       <find>pos</find>
       <find>Are you sure you want to delete it</find>
       <find>del</find>
+      <find>levelState</find>
+      <find>icon</find>
     </findStrings>
     <replaceStrings>
       <replace>1.0.2</replace>
@@ -215,7 +205,6 @@
         <option value="$PROJECT_DIR$/public/static/admin/css/main.css" />
         <option value="$PROJECT_DIR$/view/admin/adv/add.html" />
         <option value="$PROJECT_DIR$/app/admin/validate/User.php" />
-        <option value="$PROJECT_DIR$/view/admin/auth/rule_add.html" />
         <option value="$PROJECT_DIR$/view/admin/user/add.html" />
         <option value="$PROJECT_DIR$/app/admin/validate/UserLevel.php" />
         <option value="$PROJECT_DIR$/app/admin/controller/User.php" />
@@ -234,6 +223,7 @@
         <option value="$PROJECT_DIR$/view/admin/auth/admin_rule.html" />
         <option value="$PROJECT_DIR$/view/admin/link/index.html" />
         <option value="$PROJECT_DIR$/view/admin/user/level_index.html" />
+        <option value="$PROJECT_DIR$/view/admin/auth/rule_add.html" />
       </list>
     </option>
   </component>
@@ -291,6 +281,24 @@
             <path>
               <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
               <item name="lemocms" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -298,27 +306,6 @@
               <item name="lemocms" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="adminlog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="adv" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="article" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
@@ -326,48 +313,6 @@
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="error" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="link" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -428,12 +373,12 @@
       <workItem from="1567384485636" duration="688000" />
       <workItem from="1567412276846" duration="3799000" />
       <workItem from="1567470613901" duration="17679000" />
-      <workItem from="1567556814827" duration="9235000" />
+      <workItem from="1567556814827" duration="9475000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49487000" />
+    <option name="totallyTimeSpent" value="49727000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -633,16 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/controller/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="212" column="28" selection-start-line="212" selection-start-column="28" selection-end-line="212" selection-end-column="28" />
-          <folding>
-            <element signature="e#420#445#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/admin/validate/UserLevel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
@@ -764,13 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/auth/admin_rule.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/admin/auth/group_access.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2026" />
@@ -782,13 +710,6 @@
           <folding>
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/auth/rule_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="113" column="46" lean-forward="true" selection-start-line="113" selection-start-column="46" selection-end-line="113" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -847,8 +768,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/admin/user/level_index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="-10">
           <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/admin/controller/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="198" column="30" selection-start-line="198" selection-start-column="20" selection-end-line="198" selection-end-column="30" />
+          <folding>
+            <element signature="e#420#445#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin/auth/admin_rule.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin/auth/rule_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="111" column="39" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="39" />
         </state>
       </provider>
     </entry>
