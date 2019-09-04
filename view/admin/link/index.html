@@ -71,7 +71,7 @@
             var data = obj.data;
 
             if(obj.event === 'del'){
-                layer.confirm('你确定要删除该分组吗？', function(index){
+                layer.confirm('{:lang("Are you sure you want to delete it")}', function(index){
                     loading =layer.load(1, {shade: [0.1,'#fff']});
                     $.post("{:url('delete')}",{id:data.id},function(res){
                         layer.close(loading);

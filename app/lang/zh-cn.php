@@ -35,5 +35,7 @@ return [
     'user' => '用户',
     'sex' => '性别',
     'level' => '等级',
+    'Are you sure you want to delete it'=>'确定删除吗',
+
 
 ];

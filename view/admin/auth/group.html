@@ -92,11 +92,12 @@
         })
 
         table.on('tool(list)', function(data){
-            var data = data.data;
+            console.log(data);
+            var obj = data.data;
             if(data.event === 'del'){
-                layer.confirm('你确定要删除该分组吗？', function(index){
+                layer.confirm('{:lang("Are you sure you want to delete it")}', function(index){
                     loading =layer.load(1, {shade: [0.1,'#fff']});
-                    $.post("{:url('groupDel')}",{id:data.id},function(res){
+                    $.post("{:url('groupDel')}",{id:obj.id},function(res){
                         layer.close(loading);
                         layer.close(index);
                         if(res.code>0){

@@ -87,7 +87,7 @@
         treeGrid.on('tool('+tableId+')',function (obj) {
             var data = obj.data;
             if(obj.event === 'del'){
-                layer.confirm('您确定要删除吗？', function(index){
+                layer.confirm('{:lang("Are you sure you want to delete it")}', function(index){
                     var loading = layer.load(1, {shade: [0.1, '#fff']});
                     $.post("{:url('cateDel')}",{id:data.id},function(res){
                         layer.close(loading);
