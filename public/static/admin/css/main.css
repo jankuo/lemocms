@@ -10,6 +10,8 @@ body {margin:15px 15px 15px 15px;background:#f2f2f2;}
 /**
  手机自适应样式
 */
+/*图片大小*/
+.layui-upload-img{width: 100px; max-height: 120px;}
 @media screen and (max-width: 768px){
     .LM-table .layui-inline {
         width: 100%;

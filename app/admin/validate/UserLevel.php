@@ -26,9 +26,6 @@ class UserLevel extends Validate
         'description|描述' => [
             'max' => '255',
         ],
-        'sort|排序' => [
-            'require' => 'require',
-            'number'  => 'number'
-        ],
+
     ];
 }

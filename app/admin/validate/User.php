@@ -18,7 +18,7 @@ use think\Validate;
 class User extends Validate
 {
     protected $rule = [
-        'type_id|会员等级' => [
+        'level_id|会员等级' => [
             'require' => 'require',
         ],
         'email|邮箱账号' => [

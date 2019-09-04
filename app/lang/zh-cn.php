@@ -33,5 +33,7 @@ return [
     'admin' => '管理员',
     'search' => '搜索',
     'user' => '用户',
+    'sex' => '性别',
+    'level' => '等级',
 
 ];

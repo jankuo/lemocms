@@ -12,13 +12,9 @@
 
 ```
 [
-    'default'=>'sync' //驱动类型，可选择 sync(默认):同步执行，database:数据库驱动,redis:Redis驱动,topthink:Topthink驱动
-                   //或其他自定义的完整的类名
+    'default'=>'sync' //驱动类型，可选择 sync(默认):同步执行，database:数据库驱动,redis:Redis驱动//或其他自定义的完整的类名
 ]
 ```
-
-### 驱动配置
-> 各个驱动的具体可用配置项在`think\queue\connector`目录下各个驱动类里的`options`属性中，写在上面的`queue`配置里即可覆盖
 
 
 ## 创建任务类
@@ -95,7 +91,7 @@ class Job2{
 
 
 ## 发布任务
-> `think\Queue::push($job, $data = '', $queue = null)` 和 `think\Queue::later($delay, $job, $data = '', $queue = null)` 两个方法，前者是立即执行，后者是在`$delay`秒后执行
+> `think\facade\Queue::push($job, $data = '', $queue = null)` 和 `think\facade\Queue::later($delay, $job, $data = '', $queue = null)` 两个方法，前者是立即执行，后者是在`$delay`秒后执行
 
 `$job` 是任务名  
 单模块的，且命名空间是`app\job`的，比如上面的例子一,写`Job1`类名即可  

@@ -27,11 +27,10 @@
             ,url: '{:url("restore")}',
             method:'post'
             ,cols: [[
-                 {field:'name', title: '文件名称', width:250}
-                ,{field:'size', title: '文件大小', width:200,sort:true}
-                ,{field:'time', title: '备份时间', width:200,sort:true,templet: '#time'}
-                ,{width:160, align:'center', toolbar: '#action'}
-            ]]
+                {field:'name', title: '文件名称', width:250},
+                {field:'size', title: '文件大小', width:200,sort:true},
+                {field:'time', title: '备份时间', width:200,sort:true,templet: '#time'},
+                {title:'操作',width:150, toolbar: '#action',align:"center"} ,           ]]
         });
         table.on('tool(list)', function(obj) {
             var data = obj.data;

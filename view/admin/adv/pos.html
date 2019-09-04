@@ -10,8 +10,6 @@
                                     </div>
                         <button class="layui-btn data-add-btn layui-btn-sm" lay-submit="" lay-filter="add" id="search">{:lang('search')}</button>
                         <a href="{:url('add')}"  class="layui-btn layui-btn-sm layui-btn-warm" >{:lang('add')}广告位</a>
-
-
                     </div>
 
                 </blockquote>
@@ -58,7 +56,7 @@
                 {field: 'status', title: '状态', width: 180, templet:'#status'},
                 {field: 'create_time', title: '添加时间', width: 180,templet:'#create_time'},
                 // {field: 'update_time', title: '修改时间', width: 180,templet:'#update_time'},
-                {width:200, align:'center', toolbar: '#action'}
+                {title:'操作',width:150, toolbar: '#action',align:"center"}
 
             ]],
 

@@ -28,6 +28,7 @@ use think\model\relation\HasOneThrough;
 use think\model\relation\MorphMany;
 use think\model\relation\MorphOne;
 use think\model\relation\MorphTo;
+use think\model\relation\OneToOne;
 
 /**
  * 模型关联处理
@@ -214,6 +215,30 @@ trait RelationShip
     }
 
     /**
+     * 预载入关联查询 JOIN方式
+     * @access public
+     * @param  Query   $query    Query对象
+     * @param  string  $relation 关联方法名
+     * @param  mixed   $field    字段
+     * @param  string  $joinType JOIN类型
+     * @param  Closure $closure  闭包
+     * @param  bool    $first
+     * @return bool
+     */
+    public function eagerly(Query $query, string $relation, $field, string $joinType = '', Closure $closure = null, bool $first = false): bool
+    {
+        $relation = Str::camel($relation);
+        $class    = $this->$relation();
+
+        if ($class instanceof OneToOne) {
+            $class->eagerly($query, $relation, $field, $joinType, $closure, $first);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
      * 预载入关联查询 返回数据集
      * @access public
      * @param  array  $resultSet 数据集
@@ -255,7 +280,7 @@ trait RelationShip
             if (is_scalar($cache)) {
                 $relationCache = [$cache];
             } else {
-                $relationCache = $cache[$relationName] ?? [];
+                $relationCache = $cache[$relationName] ?? $cache;
             }
 
             $relationResult->eagerlyResultSet($resultSet, $relation, $subRelation, $closure, $relationCache, $join);
@@ -340,13 +365,14 @@ trait RelationShip
     /**
      * 关联统计
      * @access public
-     * @param  Model    $result     数据对象
-     * @param  array    $relations  关联名
-     * @param  string   $aggregate  聚合查询方法
-     * @param  string   $field      字段
+     * @param  Query  $query       查询对象
+     * @param  array  $relations   关联名
+     * @param  string $aggregate   聚合查询方法
+     * @param  string $field       字段
+     * @param  bool   $useSubQuery 子查询
      * @return void
      */
-    public function relationCount(Model $result, array $relations, string $aggregate = 'sum', string $field = '*'): void
+    public function relationCount(Query $query, array $relations, string $aggregate = 'sum', string $field = '*', bool $useSubQuery = true): void
     {
         foreach ($relations as $key => $relation) {
             $closure = $name = null;
@@ -360,13 +386,22 @@ trait RelationShip
             }
 
             $relation = Str::camel($relation);
-            $count    = $this->$relation()->relationCount($result, $closure, $aggregate, $field, $name);
+
+            if ($useSubQuery) {
+                $count = $this->$relation()->getRelationCountQuery($closure, $aggregate, $field, $name);
+            } else {
+                $count = $this->$relation()->relationCount($this, $closure, $aggregate, $field, $name);
+            }
 
             if (empty($name)) {
                 $name = Str::snake($relation) . '_' . $aggregate;
             }
 
-            $result->setAttr($name, $count);
+            if ($useSubQuery) {
+                $query->field(['(' . $count . ')' => $name]);
+            } else {
+                $this->setAttr($name, $count);
+            }
         }
     }
 

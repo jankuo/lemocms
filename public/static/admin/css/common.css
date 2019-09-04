@@ -112,8 +112,7 @@
 * {touch-action:pan-y;}
 
 .layui-layout-admin .layui-footer{ font-size: 12px;text-align: center;width: 100%;height: 30px;line-height: 30px;}
-/*图片大小*/
-.layui-upload-img{width: 92px; max-height: 120px;}
+
 /**
  手机自适应样式
 */

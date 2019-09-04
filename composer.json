@@ -22,11 +22,11 @@
         "topthink/think-orm": "2.0.*-dev",
         "topthink/think-view": "^1.0",
         "topthink/think-image": "^1.0",
-        "phpoffice/phpexcel": "^1.8",
         "topthink/think-queue": "^3.0",
         "zoujingli/wechat-developer": "^1.2",
         "topthink/think-captcha": "^3.0",
-        "tp5er/tp5-databackup": "^1.0"
+        "tp5er/tp5-databackup": "dev-master",
+        "phpoffice/phpspreadsheet": "^1.9"
     },
     "require-dev": {
         "symfony/var-dumper": "^4.2"
