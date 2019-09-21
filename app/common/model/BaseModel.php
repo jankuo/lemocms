@@ -30,4 +30,6 @@ class BaseModel extends Model
 
         return self::find($id);
     }
+
+    
 }

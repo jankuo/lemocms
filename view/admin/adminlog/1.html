@@ -1,0 +1,30 @@
+<!Doctype html>
+<html>
+<head>
+    <title>我的主页</title>
+    <script type="text/javascript" src="https://files.cnblogs.com/wangdetian168/jquery-1.4.2.min.js"></script>
+    <script>
+        function check() {
+            if ($("#fruitA").attr("checked") && $("#fruitB").attr("checked")) {
+                window.location.href = "www.baidu.com";
+                return;
+            }
+            if ($("#fruitB").attr("checked") && $("#fruitC").attr("checked") && $("#fruitD").attr("checked")) {
+                window.location.href = "www.qq.com";
+                return;
+            } else {
+
+                window.location.href = "www.163.com";
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <input id="fruitA" type="checkbox" name="fruit" value="A">A<br>
+    <input id="fruitB" type="checkbox" name="fruit" value="B">B<br>
+    <input id="fruitC" type="checkbox" name="C" value="mango">C<br>
+    <input id="fruitD" type="checkbox" name="D" value="peach">D<br>
+    <input type="submit" value="提交" onclick="check();"></div>
+</body>
+</html>

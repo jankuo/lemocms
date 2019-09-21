@@ -120,6 +120,10 @@ class Auth extends Base
             if ($id == 1) {
                 $this->error('超级管理员不可修改状态!');
             }
+            if(Session::get('admin.id')==3){
+                $this->error('测试数据不可更改!');
+
+            }
 
             $admin = Admin::find($id);
             $status = $admin['status'] == 1 ? 0 : 1;

@@ -16,8 +16,9 @@ use app\admin\model\AuthGroup;
 use app\BaseController;
 use think\facade\Session;
 use think\facade\View;
-use think\facade\Db;
 use think\facade\Request;
+use think\captcha\facade\Captcha;
+
 class Login extends BaseController {
     /*
      * 登录
@@ -28,7 +29,7 @@ class Login extends BaseController {
     }
 
 
-    public function index( ){
+    public function index(){
         if (!Request::isPost()) {
             $admin= Session::get('admin');
             $admin_sign= Session::get('admin_sign') == auth_sign($admin) ? $admin['id'] : 0;
@@ -36,21 +37,17 @@ class Login extends BaseController {
             if ($admin && $admin_sign) {
                 return redirect('index/index');
             }
-            $token =Request::buildToken(config('admin.token'), 'sha1');
-            View::assign('token', $token);
+
             return View::fetch();
 
         } else {
-            //验证表单登录token
-//            $check = Request::checkToken(config('admin.token'));
-//            if(false === $check) {
-//                $this->error("登陆失败：invalid token");
-//            }
+
             $username = Request::post('username', '', 'util\Filter::filterWords');
             $password = Request::post('password', '', 'util\Filter::filterWords');
             $captcha = Request::post('captcha', '', 'util\Filter::filterWords');
             $rememberMe = Request::post('rememberMe');
             // 用户信息验证
+
             try {
                 if(!captcha_check($captcha)){
                     throw new \Exception('验证码错误');
@@ -67,9 +64,10 @@ class Login extends BaseController {
      * 验证码
      *
      */
-    public function captcha()
+    public function verify()
     {
-        return captcha();
+
+        return Captcha::create();
     }
 
 

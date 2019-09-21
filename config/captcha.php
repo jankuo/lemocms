@@ -3,10 +3,14 @@
  * 验证码配置
  */
 return [
-        'codeSet'  => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY',         // 验证码字体大小(px)5.
+//        'config_name'=>[
+//            'fontttf'=>'1.ttf'
+//        ],
+
+        'codeSet'  => '12345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY',         // 验证码字体大小(px)5.
         'fontSize' => 50,         // 是否画混淆曲线7.
         'useCurve' => true,         //是否画混淆曲线.
-        'useNoise' => true,         //是否添加杂点.
+        'useNoise' => false,         //是否添加杂点.
 //        'useImgBg' => true,         //是否添加背景图.
 //        'imageH'   => 50,        // 验证码图片高度
 //        'imageW'   => 200,         // 验证码图片宽度11.

@@ -17,7 +17,7 @@ use League\Flysystem\Adapter\AbstractAdapter;
 use League\Flysystem\Cached\CachedAdapter;
 use League\Flysystem\Cached\Storage\Memory as MemoryStore;
 use League\Flysystem\Filesystem;
-use think\App;
+use think\Cache;
 use think\File;
 
 /**
@@ -28,8 +28,8 @@ use think\File;
 abstract class Driver
 {
 
-    /** @var App */
-    protected $app;
+    /** @var Cache */
+    protected $cache;
 
     /** @var Filesystem */
     protected $filesystem;
@@ -40,9 +40,9 @@ abstract class Driver
      */
     protected $config = [];
 
-    public function __construct(App $app, array $config)
+    public function __construct(Cache $cache, array $config)
     {
-        $this->app    = $app;
+        $this->cache  = $cache;
         $this->config = array_merge($this->config, $config);
 
         $adapter          = $this->createAdapter();
@@ -56,7 +56,7 @@ abstract class Driver
         }
 
         return new CacheStore(
-            $this->app->cache->store($config['store']),
+            $this->cache->store($config['store']),
             $config['prefix'] ?? 'flysystem',
             $config['expire'] ?? null
         );
@@ -93,10 +93,10 @@ abstract class Driver
 
     /**
      * 保存文件
-     * @param string               $path
-     * @param File                 $file
-     * @param null|string|\Closure $rule
-     * @param array                $options
+     * @param string               $path    路径
+     * @param File                 $file    文件
+     * @param null|string|\Closure $rule    文件名规则
+     * @param array                $options 参数
      * @return bool|string
      */
     public function putFile(string $path, File $file, $rule = null, array $options = [])
@@ -106,19 +106,18 @@ abstract class Driver
 
     /**
      * 指定文件名保存文件
-     * @param string $path
-     * @param File   $file
-     * @param string $name
-     * @param array  $options
+     * @param string $path    路径
+     * @param File   $file    文件
+     * @param string $name    文件名
+     * @param array  $options 参数
      * @return bool|string
      */
     public function putFileAs(string $path, File $file, string $name, array $options = [])
     {
         $stream = fopen($file->getRealPath(), 'r');
+        $path = trim($path . '/' . $name, '/');
 
-        $result = $this->putStream(
-            $path = trim($path . '/' . $name, '/'), $stream, $options
-        );
+        $result = $this->putStream($path, $stream, $options);
 
         if (is_resource($stream)) {
             fclose($stream);

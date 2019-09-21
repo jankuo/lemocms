@@ -1,4 +1,5 @@
 body {margin:15px 15px 15px 15px;background:#f2f2f2;}
+.fr{float: right}  .fl{float: left} .clearfix{clear: both;}
 .LM-container {border:1px solid #f2f2f2;border-radius:5px;background-color:#ffffff}
 .LM-main {margin:10px 10px 10px 10px;}
 
@@ -17,7 +18,7 @@ body {margin:15px 15px 15px 15px;background:#f2f2f2;}
         width: 100%;
         margin-bottom: 5px;
     }
-    .LM-table .layui-btn, .LM-table .layui-btn+.layui-btn, .layui-elem-quote .layui-btn {
+    .LM-table .layui-btn, .LM-table .layui-btn+.layui-btn, .LM-table .layui-input-inline, .layui-elem-quote .layui-btn {
         width: 100%;
         margin-bottom: 5px;
         margin-top: 5px;

@@ -4,7 +4,7 @@
 
     <div class="admin-main layui-anim layui-anim-upbit">
     <fieldset class="layui-elem-field layui-field-title">
-        <legend>备份文件列表</legend>
+        <legend>备份文件{:lang('list')}</legend>
     </fieldset>
     <table class="layui-table" id="list" lay-filter="list"></table>
 </div>
@@ -30,7 +30,7 @@
                 {field:'name', title: '文件名称', width:250},
                 {field:'size', title: '文件大小', width:200,sort:true},
                 {field:'time', title: '备份时间', width:200,sort:true,templet: '#time'},
-                {title:'操作',width:150, toolbar: '#action',align:"center"} ,           ]]
+                {title:'操作',minWidth:150, toolbar: '#action',align:"center"} ,           ]]
         });
         table.on('tool(list)', function(obj) {
             var data = obj.data;

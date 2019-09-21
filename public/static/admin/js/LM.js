@@ -813,7 +813,29 @@ layui.define(["element", "jquery"], function (exports) {
         });
 
     });
+    // 语言切换
+    $('.lang').on("click", function () {
+        var url = '/admin/system/enlang';
+        var lang = 'zh-cn';
+        if($(this).hasClass('en')){
+            lang = 'en-us';
+        }
+        $.get(url,{lang:lang}, function (res) {
+            if (res.code == 0) {
+                LM.msg_error(res.msg);
+            } else {
+                layer.msg(res.msg, function () {
+                    location.reload();
+                });
+                // window.location.href=res.url;
+                LM.initMenu(menus);
+                LM.initTab();
+            }
+        }).fail(function () {
+            LM.msg_error('菜单接口有误');
+        });
 
+    });
 
     /**
      * 选项卡操作

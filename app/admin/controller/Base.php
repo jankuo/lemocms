@@ -13,12 +13,13 @@
 namespace app\admin\controller;
 use app\admin\model\Admin;
 use app\admin\model\AuthRule;
-use app\BaseController;
+use app\common\controller\Base as B;
 use think\facade\Db;
 use think\facade\Request;
 use think\facade\Session;
 use think\facade\View;
-class Base extends BaseController{
+
+class Base extends B{
     public $pageSize=15;
     public $menu = '';
     public $adminRules='';
@@ -49,7 +50,7 @@ class Base extends BaseController{
         if(session('admin.id')!==1){
             $this->hrefId = Db::name('auth_rule')->where('href',$route)->value('id');
             //当前管理员权限
-            $map['a.id'] = session('admin.id');
+            $map['a.id'] = Session::get('admin.id');
 
             $rules=Db::name('admin')->alias('a')
                 ->join('auth_group ag','a.group_id = ag.id','left')
@@ -61,7 +62,8 @@ class Base extends BaseController{
             $noruls = AuthRule::where('auth_open',1)->column('id');
             $this->adminRules = array_merge($adminRules,$noruls);
             if($this->hrefId){
-                if(!in_array($this->hrefId,$this->adminRules)){
+                // 不在权限里面，并且请求为post
+                if(!in_array($this->hrefId,$this->adminRules) and Request::isPost()){
                     $this->error('您无此操作权限');exit();
                 }
             }else{
@@ -158,8 +160,6 @@ class Base extends BaseController{
         }
     }
 
-    public function _empty()
-    {
-        $this->error('页面不存在');
-    }
+
+
 }

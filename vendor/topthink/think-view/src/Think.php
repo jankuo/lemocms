@@ -26,17 +26,17 @@ class Think
     // 模板引擎参数
     protected $config = [
         // 默认模板渲染规则 1 解析为小写+下划线 2 全部转换小写 3 保持操作方法
-        'auto_rule'   => 1,
-        // 视图基础目录（集中式）
-        'view_base'   => '',
+        'auto_rule'     => 1,
+        // 视图目录名
+        'view_dir_name' => 'view',
         // 模板起始路径
-        'view_path'   => '',
+        'view_path'     => '',
         // 模板文件后缀
-        'view_suffix' => 'html',
+        'view_suffix'   => 'html',
         // 模板文件名分隔符
-        'view_depr'   => DIRECTORY_SEPARATOR,
+        'view_depr'     => DIRECTORY_SEPARATOR,
         // 是否开启模板编译缓存,设为false则每次都会重新编译
-        'tpl_cache'   => true,
+        'tpl_cache'     => true,
     ];
 
     public function __construct(App $app, array $config = [])
@@ -45,16 +45,42 @@ class Think
 
         $this->config = array_merge($this->config, (array) $config);
 
-        if (empty($this->config['view_base'])) {
-            $this->config['view_base'] = $app->getRootPath() . 'view' . DIRECTORY_SEPARATOR;
-        }
-
         if (empty($this->config['cache_path'])) {
             $this->config['cache_path'] = $app->getRuntimePath() . 'temp' . DIRECTORY_SEPARATOR;
         }
 
         $this->template = new Template($this->config);
         $this->template->setCache($app->cache);
+        $this->template->extend('$Think', function (array $vars) {
+            $type  = strtoupper(trim(array_shift($vars)));
+            $param = implode('.', $vars);
+
+            switch ($type) {
+                case 'CONST':
+                    $parseStr = strtoupper($param);
+                    break;
+                case 'CONFIG':
+                    $parseStr = 'config(\'' . $param . '\')';
+                    break;
+                case 'LANG':
+                    $parseStr = 'lang(\'' . $param . '\')';
+                    break;
+                case 'NOW':
+                    $parseStr = "date('Y-m-d g:i a',time())";
+                    break;
+                case 'LDELIM':
+                    $parseStr = '\'' . ltrim($this->getConfig('tpl_begin'), '\\') . '\'';
+                    break;
+                case 'RDELIM':
+                    $parseStr = '\'' . ltrim($this->getConfig('tpl_end'), '\\') . '\'';
+                    break;
+                default:
+                    $parseStr = defined($type) ? $type : '\'\'';
+            }
+
+            return $parseStr;
+        });
+
         $this->template->extend('$Request', function (array $vars) {
             // 获取Request请求对象参数
             $method = array_shift($vars);
@@ -90,12 +116,26 @@ class Think
     /**
      * 渲染模板文件
      * @access public
-     * @param  string    $template 模板文件
-     * @param  array     $data 模板变量
+     * @param  string $template 模板文件
+     * @param  array  $data 模板变量
      * @return void
      */
     public function fetch(string $template, array $data = []): void
     {
+        if (empty($this->config['view_path'])) {
+            $view = $this->config['view_dir_name'];
+
+            if (is_dir($this->app->getAppPath() . $view)) {
+                $path = $this->app->getAppPath() . $view . DIRECTORY_SEPARATOR;
+            } else {
+                $appName = $this->app['request']->app();
+                $path    = $this->app->getRootPath() . $view . DIRECTORY_SEPARATOR . ($appName ? $appName . DIRECTORY_SEPARATOR : '');
+            }
+
+            $this->config['view_path'] = $path;
+            $this->template->view_path = $path;
+        }
+
         if ('' == pathinfo($template, PATHINFO_EXTENSION)) {
             // 获取模板文件名
             $template = $this->parseTemplate($template);
@@ -116,8 +156,8 @@ class Think
     /**
      * 渲染模板内容
      * @access public
-     * @param  string    $template 模板内容
-     * @param  array     $data 模板变量
+     * @param  string $template 模板内容
+     * @param  array  $data 模板变量
      * @return void
      */
     public function display(string $template, array $data = []): void
@@ -142,14 +182,19 @@ class Think
             list($app, $template) = explode('@', $template);
         }
 
-        if ($this->config['view_path'] && !isset($app)) {
-            $path = $this->config['view_path'];
-        } else {
-            $app = isset($app) ? $app : $request->app();
-            // 基础视图目录
-            $path = $this->config['view_base'] . ($app ? $app . DIRECTORY_SEPARATOR : '');
+        if (isset($app)) {
+            $view     = $this->config['view_dir_name'];
+            $viewPath = $this->app->getBasePath() . $app . DIRECTORY_SEPARATOR . $view . DIRECTORY_SEPARATOR;
+
+            if (is_dir($viewPath)) {
+                $path = $viewPath;
+            } else {
+                $path = $this->app->getRootPath() . $view . DIRECTORY_SEPARATOR . $app . DIRECTORY_SEPARATOR;
+            }
 
             $this->template->view_path = $path;
+        } else {
+            $path = $this->config['view_path'];
         }
 
         $depr = $this->config['view_depr'];

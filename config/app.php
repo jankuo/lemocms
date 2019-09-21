@@ -46,7 +46,7 @@ return [
     'dispatch_error_tmpl'   => app()->getThinkPath() . 'tpl/dispatch_jump.tpl',
 
     // 错误显示信息,非调试模式有效
-    'error_message'    => '页面错误！请稍后再试～',
+    'error_message'    => '您访问的内容不存在',
     // 显示错误信息
     'show_error_msg'   => true,
 

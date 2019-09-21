@@ -13,4 +13,4 @@ use think\facade\Route;
 Route::get('think', function () {
     return 'hello,lemocms!';
 });
-Route::post('admin/login/index','admin/login/index')->token(config('admin.token'));
+//Route::post('admin/login/index','admin/login/index')->token(config('admin.token'));

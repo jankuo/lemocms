@@ -22,7 +22,6 @@ class UserAddress extends Base{
     public function index(){
 
 
-
     }
 
     public function add(){

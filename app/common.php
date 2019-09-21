@@ -27,6 +27,11 @@ function site_logo(){
         ->value('value');
 }
 
+function getConfigByCode($code){
+    return Db::name('config')->where('code',$code)
+        ->value('value');
+
+}
 /***
  * 对象转数组
  * @param $object
@@ -252,17 +257,17 @@ function build_ueditor($params = array())
     /* 指定使用哪种主题 */
     $themes = array(
         'normal' => "[   
-           'fullscreen', 'source', '|', 'undo', 'redo', '|',   
-           'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',   
-           'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',   
-           'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',   
-           'directionalityltr', 'directionalityrtl', 'indent', '|',   
-           'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',   
-           'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',   
-           'emotion',  'map', 'gmap',  'insertcode', 'template',  '|',   
-           'horizontal', 'date', 'time', 'spechars', '|',   
-           'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',   
-           'searchreplace', 'help', 'drafts', 'charts'
+           'fullscreen', 'source', '|', 'undo', 'redo', '|',
+            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
+            'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
+            'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
+            'directionalityltr', 'directionalityrtl', 'indent', '|',
+            'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
+            'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
+            'simpleupload', 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'map', 'gmap', 'insertframe', 'insertcode', 'webapp', 'pagebreak', 'template', 'background', '|',
+            'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
+            'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',
+            'print', 'preview', 'searchreplace', 'drafts', 'help'
        ]", 'simple' => " ['fullscreen', 'source', 'undo', 'redo', 'bold']",
     );
     switch ($theme) {
@@ -594,7 +599,6 @@ function now($time){
 	return date('Y-m-d H:i:s',$time);
 }
 
-
 /**
  * tp官方数组查询方法废弃，数组转化为现有支持的查询方法
  * @param array $data 原始查询条件
@@ -617,24 +621,6 @@ function formatWhere($data){
 		}	
 	}
 	return $where;
-}
-
-
-/*
-db 助手函数
- */
-if (!function_exists('db')) {
-    /**
-     * 实例化数据库类
-     * @param string        $name 操作的数据表名称（不含前缀）
-     * @param array|string  $config 数据库配置参数
-     * @param bool          $force 是否强制重新连接
-     * @return \think\db\Query
-     */
-    function db($name = '')
-    {
-        return Db::connect($config = [],false)->name($name);
-    }
 }
 
 
@@ -767,3 +753,4 @@ function get_total_address($province_id, $city_id, $district_id, $twon_id, $addr
     $total_address .= $address ?: '';
     return $total_address;
 }
+

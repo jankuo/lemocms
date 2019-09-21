@@ -33,6 +33,7 @@ class Index extends Base{
     public function index(){
         // 所有显示的菜单；
         $menus = Cache::get('adminMenus');
+
         if(!$menus){
             $cate = AuthRule::where('menu_status',1)->order('sort asc')->select()->toArray();
             $menus = Menu::authMenu($cate);

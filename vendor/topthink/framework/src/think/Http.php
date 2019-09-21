@@ -420,10 +420,11 @@ class Http
     {
         $this->app->event->trigger('HttpEnd', $response);
 
+        //执行中间件
+        $this->app->middleware->end($response);
+
         // 写入日志
         $this->app->log->save();
-        // 写入Session
-        $this->app->session->save();
     }
 
     public function __debugInfo()

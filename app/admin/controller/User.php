@@ -17,6 +17,8 @@ use think\facade\View;
 use app\common\model\UserLevel;
 use app\common\model\User as UserModel;
 use think\facade\Db;
+use util\Excel;
+
 class User extends Base{
 
     public function initialize()
@@ -222,4 +224,6 @@ class User extends Base{
             $this->error('非法数据');
         }
     }
+
+
 }

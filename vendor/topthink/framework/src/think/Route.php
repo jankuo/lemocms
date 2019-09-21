@@ -14,7 +14,6 @@ namespace think;
 
 use Closure;
 use think\cache\Driver;
-use think\exception\HttpResponseException;
 use think\exception\RouteNotFoundException;
 use think\route\Dispatch;
 use think\route\dispatch\Url as UrlDispatch;
@@ -278,6 +277,7 @@ class Route
     /**
      * 获取指定标识的路由分组 不指定则获取当前分组
      * @access public
+     * @param string $name 分组标识
      * @return RuleGroup
      */
     public function getGroup(string $name = null)
@@ -759,16 +759,11 @@ class Route
 
         $dispatch->init($this->app);
 
-        $this->app->middleware->add(function () use ($dispatch) {
-            try {
-                $response = $dispatch->run();
-            } catch (HttpResponseException $exception) {
-                $response = $exception->getResponse();
-            }
-            return $response;
-        });
-
-        return $this->app->middleware->dispatch($request);
+        return $this->app->middleware->pipeline()
+            ->send($request)
+            ->then(function () use ($dispatch) {
+                return $dispatch->run();
+            });
     }
 
     /**

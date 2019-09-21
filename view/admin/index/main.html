@@ -114,53 +114,53 @@
                                 <div class="welcome-module">
                                     <div class="layui-row layui-col-space10 LM-qiuck">
                                         <div class="layui-col-xs3 LM-qiuck-module">
-                                            <a href="javascript:;" data-iframe-tab="{:url('system/site')}" data-title="菜单管理" data-icon="fa fa-window-maximize">
+                                            <a href="javascript:;" data-iframe-tab="{:url('system/index')}" data-title="菜单管理" data-icon="fa fa-window-maximize">
                                                 <i class="fa fa-window-maximize"></i>
-                                                <cite>系统设置</cite>
+                                                <cite>系统</cite>
                                             </a>
                                         </div>
                                         <div class="layui-col-xs3 LM-qiuck-module">
-                                            <a href="javascript:;" data-iframe-tab="{:url('system/site')}" data-title="系统设置" data-icon="fa fa-gears">
+                                            <a href="javascript:;" data-iframe-tab="{:url('user/index')}" data-title="系统设置" data-icon="fa fa-gears">
                                                 <i class="fa fa-gears"></i>
-                                                <cite>系统设置</cite>
+                                                <cite>会员</cite>
                                             </a>
                                         </div>
                                         <div class="layui-col-xs3 LM-qiuck-module">
-                                            <a href="javascript:;" data-iframe-tab="{:url('system/site')}" data-title="表格示例" data-icon="fa fa-file-text">
+                                            <a href="javascript:;" data-iframe-tab="{:url('article/index')}" data-title="表格示例" data-icon="fa fa-file-text">
                                                 <i class="fa fa-file-text"></i>
-                                                <cite>系统设置</cite>
+                                                <cite>内容</cite>
                                             </a>
                                         </div>
                                         <div class="layui-col-xs3 LM-qiuck-module">
-                                            <a href="javascript:;" data-iframe-tab="{:url('system/site')}" data-title="图标列表" data-icon="fa fa-dot-circle-o">
+                                            <a href="javascript:;" data-iframe-tab="{:url('wechat/index')}" data-title="图标列表" data-icon="fa fa-dot-circle-o">
                                                 <i class="fa fa-dot-circle-o"></i>
-                                                <cite>系统设置</cite>
+                                                <cite>微信</cite>
                                             </a>
                                         </div>
-                                        <div class="layui-col-xs3 LM-qiuck-module">
-                                            <a href="javascript:;" data-iframe-tab="{:url('system/site')}" data-title="表单示例" data-icon="fa fa-calendar">
-                                                <i class="fa fa-calendar"></i>
-                                                <cite>系统设置</cite>
-                                            </a>
-                                        </div>
-                                        <div class="layui-col-xs3 LM-qiuck-module">
-                                            <a href="javascript:;" data-iframe-tab="{:url('system/site')}" data-title="404页面" data-icon="fa fa-hourglass-end">
-                                                <i class="fa fa-hourglass-end"></i>
-                                                <cite>系统设置</cite>
-                                            </a>
-                                        </div>
-                                        <div class="layui-col-xs3 LM-qiuck-module">
-                                            <a href="javascript:;" data-iframe-tab="{:url('system/site')}" data-title="按钮示例" data-icon="fa fa-snowflake-o">
-                                                <i class="fa fa-snowflake-o"></i>
-                                                <cite>系统设置</cite>
-                                            </a>
-                                        </div>
-                                        <div class="layui-col-xs3 LM-qiuck-module">
-                                            <a href="javascript:;" data-iframe-tab="{:url('system/site')}" data-title="弹出层" data-icon="fa fa-shield">
-                                                <i class="fa fa-shield"></i>
-                                                <cite>系统设置</cite>
-                                            </a>
-                                        </div>
+<!--                                        <div class="layui-col-xs3 LM-qiuck-module">-->
+<!--                                            <a href="javascript:;" data-iframe-tab="{:url('system/site')}" data-title="表单示例" data-icon="fa fa-calendar">-->
+<!--                                                <i class="fa fa-calendar"></i>-->
+<!--                                                <cite>系统设置</cite>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--                                        <div class="layui-col-xs3 LM-qiuck-module">-->
+<!--                                            <a href="javascript:;" data-iframe-tab="{:url('system/site')}" data-title="404页面" data-icon="fa fa-hourglass-end">-->
+<!--                                                <i class="fa fa-hourglass-end"></i>-->
+<!--                                                <cite>系统设置</cite>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--                                        <div class="layui-col-xs3 LM-qiuck-module">-->
+<!--                                            <a href="javascript:;" data-iframe-tab="{:url('system/site')}" data-title="按钮示例" data-icon="fa fa-snowflake-o">-->
+<!--                                                <i class="fa fa-snowflake-o"></i>-->
+<!--                                                <cite>系统设置</cite>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--                                        <div class="layui-col-xs3 LM-qiuck-module">-->
+<!--                                            <a href="javascript:;" data-iframe-tab="{:url('system/site')}" data-title="弹出层" data-icon="fa fa-shield">-->
+<!--                                                <i class="fa fa-shield"></i>-->
+<!--                                                <cite>系统设置</cite>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
                                     </div>
                                 </div>
                             </div>
@@ -183,6 +183,15 @@
                 <div class="layui-card">
                     <div class="layui-card-header"><i class="fa fa-bullhorn icon icon-tip"></i>系统公告</div>
                     <div class="layui-card-body layui-text">
+                        <div class="LM-notice">
+                            <div class="LM-notice-title">新增微信管理，修复其他bug</div>
+                            <div class="LM-notice-extra">2019-09-20 11:06</div>
+                            <div class="LM-notice-content layui-hide">
+                                新增微信管理。<br>
+                                使用easywechat开发，以便更加容易进行开发<br>
+                                修复其他bug。<br>
+                            </div>
+                        </div>
                         <div class="LM-notice">
                             <div class="LM-notice-title">新增会员管理，修复其他bug</div>
                             <div class="LM-notice-extra">2019-09-4 11:06</div>
@@ -239,12 +248,13 @@
                             <tr>
                                 <td>框架名称</td>
                                 <td>
-                                    LEMOCMS
+                                    {:getConfigByCode('site_name')}
                                 </td>
                             </tr>
                             <tr>
                                 <td>当前版本</td>
-                                <td>v1.0.3</td>
+                                <td>{:getConfigByCode('site_version')}
+                                </td>
                             </tr>
                             <tr>
                                 <td>主要特色</td>
@@ -254,8 +264,8 @@
                                 <td>Gitee</td>
                                 <td style="padding-bottom: 0;">
                                     <div class="layui-btn-container">
-                                        <a href="https://github.com/limingyue0312/lemocms" target="_blank" style="margin-right: 15px"><img src="https://gitee.com/limingyue0312/lemocms/badge/star.svg?theme=dark" alt="star"></a>
-                                        <a href="https://github.com/limingyue0312/lemocms" target="_blank"><img src="https://gitee.com/limingyue0312/LEMOCMS/lemocms/fork.svg?theme=dark" alt="fork"></a>
+                                        <a href="https://github.com/yue909/lemocms" target="_blank" style="margin-right: 15px"><img src="https://gitee.com/limingyue0312/lemocms/badge/star.svg?theme=dark" alt="star"></a>
+                                        <a href="https://github.com/yue909/lemocms" target="_blank"><img src="https://gitee.com/limingyue0312/LEMOCMS/lemocms/fork.svg?theme=dark" alt="fork"></a>
                                     </div>
                                 </td>
                             </tr>
@@ -276,7 +286,7 @@
                 <div class="layui-card">
                     <div class="layui-card-header"><i class="fa fa-paper-plane-o icon"></i>作者心语</div>
                     <div class="layui-card-body layui-text layadmin-text">
-                        <p>本套CMS基于最新thinkphp6,layui2.5.4以及font-awesome-4.7.0进行实现。LEMOCNS地址：<a class="layui-btn layui-btn-xs layui-btn-danger" target="_blank" href="https://github.com/yue909/LEMOCMS">LEMOCMS文档</a></p>
+                        <p>本套CMS基于最新thinkphp6,easywechat,layui2.5.5以及font-awesome-4.7.0进行实现。LEMOCMS地址：<a class="layui-btn layui-btn-xs layui-btn-danger" target="_blank" href="https://github.com/yue909/lemocms">LEMOCMS文档</a></p>
                         <p>技术交流QQ群（455018252）：<a href="https://jq.qq.com/?_wv=1027&k=5RWLxx7"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="LEMOCMS" title="LEMOCMS">（加群请备注来源：如gitee、github、官网等）</a></p>
                         <p>喜欢此后台框架的可以给我的GitHub和Gitee加个Star支持一下</p>
                         <p class="layui-red">备注：此后台框架永久开源并长期更新。您可以方便的进行二次开发。以用于企业或个人项目中</p>

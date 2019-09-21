@@ -1,9 +1,837 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9df45793-8969-4a03-b4f7-ff19d345e5e4" name="Default Changelist" comment="">
+    <list default="true" id="8da7b9f8-3cca-4ec8-8eb8-610459dfdd1f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/admin/controller/Addons.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/admin/controller/Backup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/admin/controller/Wechat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/admin/validate/WxAccount.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/admin/validate/WxTag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/common/model/WxAccount.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/common/model/WxFans.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/common/model/WxMaterial.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/common/model/WxMaterialInfo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/common/model/WxMenu.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/common/model/WxMsgHistory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/common/model/WxReply.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/h5/controller/Index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/h5/middleware.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/h5/middleware/InAppCheck.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/lang/en-us.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/wechat/controller/WechatApi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/middleware.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extend/util/Excel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extend/util/Predis.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extend/util/WechatApp.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/demo_lemocms_com.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/css/menu/bottom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/css/menu/scroll.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/css/menu/selfmenu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/css/menu/weui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/css/menu/wx-audiocopy.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/css/menu/wx-custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/images/add-img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/images/bg_mobile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/images/bg_mobile_head_default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/images/keyboard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/images/message.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/images/test/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/images/test/wechat1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/images/test/wechat2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/images/test/wechat3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/images/test/wechat4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/images/test/wechat5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/10.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/100.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/101.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/101.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/102.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/102.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/103.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/103.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/104.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/104.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/11.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/12.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/13.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/14.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/15.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/17.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/18.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/19.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/20.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/21.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/22.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/23.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/25.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/26.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/27.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/28.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/29.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/30.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/31.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/32.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/33.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/34.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/35.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/35.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/36.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/37.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/37.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/38.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/39.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/40.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/41.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/41.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/42.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/43.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/44.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/44.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/45.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/45.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/46.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/46.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/47.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/47.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/48.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/49.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/49.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/5.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/50.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/51.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/52.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/52.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/53.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/53.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/54.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/54.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/55.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/55.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/56.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/56.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/57.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/58.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/58.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/59.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/59.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/6.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/60.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/61.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/61.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/62.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/62.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/63.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/63.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/64.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/65.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/65.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/66.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/66.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/67.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/67.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/68.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/68.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/69.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/69.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/7.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/70.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/70.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/71.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/71.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/72.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/73.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/73.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/74.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/74.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/75.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/75.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/76.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/76.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/77.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/77.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/78.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/78.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/79.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/79.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/8.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/80.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/80.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/81.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/81.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/82.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/82.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/83.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/83.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/84.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/84.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/85.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/85.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/86.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/86.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/87.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/87.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/88.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/88.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/89.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/89.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/9.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/90.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/90.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/91.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/91.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/92.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/92.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/93.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/93.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/94.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/94.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/95.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/95.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/96.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/96.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/97.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/97.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/98.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/98.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/99.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/common/emoji/99.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/plugins/bootstrap-3.3.7/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/plugins/bootstrap-3.3.7/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/plugins/bootstrap-3.3.7/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/plugins/bootstrap-3.3.7/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/plugins/bootstrap-3.3.7/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/plugins/bootstrap-3.3.7/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/plugins/bootstrap-3.3.7/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/plugins/bootstrap-3.3.7/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/plugins/bootstrap-3.3.7/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/plugins/bootstrap-3.3.7/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/plugins/bootstrap-3.3.7/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/plugins/bootstrap-3.3.7/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/plugins/bootstrap-3.3.7/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/plugins/bootstrap-3.3.7/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/plugins/bootstrap-3.3.7/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/plugins/bootstrap-3.3.7/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/plugins/emoji/qq-wechat-emotion-parser.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/admin/adminlog/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/admin/wechat/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/admin/wechat/fans.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/admin/wechat/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/admin/wechat/level_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/admin/wechat/level_index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/admin/wechat/material_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/admin/wechat/menu_api.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/admin/wechat/message.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/admin/wechat/message_reply.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/admin/wechat/reply.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/admin/wechat/tag.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/admin/wechat/tag_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/common/dispatch_jump.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/lemocms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lemocms.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/controller/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/controller/Auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/controller/Base.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/controller/Base.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/controller/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/controller/Database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/controller/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/controller/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/controller/Login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/controller/Uploads.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/controller/Uploads.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/controller/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/controller/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/controller/UserAddress.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/controller/UserAddress.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/middleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/middleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/Api.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/Api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/controller/v1/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/controller/v1/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/common.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/common/controller/Base.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/controller/Base.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/common/model/BaseModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/model/BaseModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/h5/controller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/admin/css/material/material.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/lang/zh-cn.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/lang/zh-cn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/middleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/admin/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/admin/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/cache.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cache.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/captcha.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/captcha.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/lang.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/route.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/route.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lemocms_com.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/admin/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/admin/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/admin/images/content.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/admin/images/test/content.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/admin/images/index.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/admin/images/test/index.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/admin/images/pay.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/admin/images/test/pay.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/admin/js/LM.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/admin/js/LM.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/css/layui.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/css/layui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/css/layui.mobile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/css/layui.mobile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/css/modules/code.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/css/modules/code.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/css/modules/laydate/default/laydate.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/css/modules/layer/default/layer.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/css/modules/layer/default/layer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/code.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/code.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/colorpicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/colorpicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/element.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/element.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/flow.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/flow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/laydate.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/laydate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/layedit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/layedit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/layer.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/layer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/laypage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/laypage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/laytpl.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/laytpl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/mobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/mobile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/rate.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/rate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/transfer.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/transfer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/tree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/upload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/lay/modules/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/layui.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/layui.all.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/plugins/layui/layui.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/plugins/layui/layui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/route/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/route/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/phpunit.xml.dist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/helper.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/lang/zh-cn.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/App.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Cache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Config.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Console.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Container.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Cookie.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Db.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Env.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Event.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Exception.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Facade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/File.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Filesystem.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Http.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Lang.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Log.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Manager.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Middleware.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Request.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Response.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Route.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Service.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Session.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/Validate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/View.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/cache/Driver.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/cache/TagSet.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/cache/driver/File.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/cache/driver/Memcache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/cache/driver/Memcached.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/cache/driver/Redis.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/cache/driver/Wincache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/Command.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/Input.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/Output.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/Table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/bin/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/Build.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/Clear.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/Help.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/Lists.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/Make.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/RouteList.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/RunServer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/ServiceDiscover.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/VendorPublish.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/Version.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/Command.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/Event.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/Listener.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/Middleware.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/Model.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/Service.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/Subscribe.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/Validate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/stubs/command.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/stubs/controller.api.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/stubs/controller.plain.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/stubs/controller.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/stubs/event.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/stubs/listener.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/stubs/middleware.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/stubs/model.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/stubs/service.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/stubs/subscribe.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/make/stubs/validate.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/optimize/Route.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/command/optimize/Schema.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/input/Argument.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/input/Definition.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/input/Option.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/output/Ask.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/output/Descriptor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/output/Formatter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/output/Question.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/output/descriptor/Console.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/output/driver/Buffer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/output/driver/Console.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/output/driver/Nothing.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/output/formatter/Stack.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/output/formatter/Style.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/output/question/Choice.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/console/output/question/Confirmation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/contract/CacheHandlerInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/contract/LogHandlerInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/contract/ModelRelationInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/contract/SessionHandlerInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/contract/TemplateHandlerInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/debug/Console.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/debug/Html.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/event/AppInit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/event/HttpEnd.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/event/HttpRun.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/event/LogWrite.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/event/RouteLoaded.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/exception/ClassNotFoundException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/exception/ErrorException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/exception/FileException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/exception/Handle.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/exception/HttpException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/exception/HttpResponseException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/exception/InvalidArgumentException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/exception/RouteNotFoundException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/exception/ValidateException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/facade/App.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/facade/Cache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/facade/Config.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/facade/Console.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/facade/Cookie.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/facade/Env.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/facade/Event.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/facade/Filesystem.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/facade/Lang.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/facade/Log.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/facade/Middleware.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/facade/Request.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/facade/Route.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/facade/Session.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/facade/Validate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/facade/View.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/file/UploadedFile.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/filesystem/CacheStore.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/filesystem/Driver.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/filesystem/driver/Local.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/initializer/BootService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/initializer/Error.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/initializer/RegisterService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/log/Channel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/log/ChannelSet.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/log/driver/File.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/log/driver/Socket.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/middleware/AllowCrossDomain.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/middleware/CheckRequestCache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/middleware/FormTokenCheck.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/middleware/LoadLangPack.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/middleware/SessionInit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/middleware/TraceDebug.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/response/File.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/response/Json.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/response/Jsonp.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/response/Redirect.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/response/View.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/response/Xml.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/route/Dispatch.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/route/Domain.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/route/Resource.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/route/Rule.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/route/RuleGroup.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/route/RuleItem.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/route/RuleName.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/route/Url.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/route/dispatch/Callback.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/route/dispatch/Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/route/dispatch/Redirect.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/route/dispatch/Response.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/route/dispatch/Url.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/route/dispatch/View.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/service/ModelService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/service/PaginatorService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/service/ValidateService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/session/driver/File.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/session/driver/Memcache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/session/driver/Memcached.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/session/driver/Redis.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/validate/ValidateRule.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/think/view/driver/Php.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/tpl/default_index.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/tpl/dispatch_jump.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/tpl/page_trace.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/src/tpl/think_exception.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/tests/AppTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/tests/CacheTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/tests/ConfigTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/tests/ContainerTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/tests/DbTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/tests/EnvTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/tests/FilesystemTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/tests/HttpTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/tests/LogTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/framework/tests/bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-captcha/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-captcha/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-captcha/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-captcha/assets/bgs/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-captcha/assets/bgs/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-captcha/assets/bgs/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-captcha/assets/bgs/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-captcha/assets/bgs/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-captcha/assets/bgs/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-captcha/assets/bgs/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-captcha/assets/bgs/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-captcha/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-captcha/src/Captcha.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-captcha/src/CaptchaController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-captcha/src/CaptchaService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-captcha/src/facade/Captcha.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-captcha/src/helper.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-factory/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-factory/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-factory/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-factory/src/Factory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-helper/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-helper/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-helper/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-helper/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-helper/src/Collection.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-helper/src/contract/Arrayable.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-helper/src/contract/Jsonable.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-helper/src/helper.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-helper/src/helper/Arr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-helper/src/helper/Str.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/phpunit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/src/Image.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/src/image/Exception.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/src/image/gif/Decoder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/src/image/gif/Encoder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/src/image/gif/Gif.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/tests/CropTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/tests/FlipTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/tests/InfoTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/tests/RotateTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/tests/TestCase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/tests/TextTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/tests/ThumbTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/tests/WaterTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/tests/autoload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/tests/images/test.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/wechat/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/tests/images/test.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/tests/images/test.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/tests/images/test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-image/tests/tmp/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/DbManager.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/Model.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/Paginator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/BaseQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/Builder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/CacheItem.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/Connection.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/Fetch.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/Mongo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/PDOConnection.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/Query.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/Raw.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/Where.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/builder/Mongo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/builder/Mysql.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/builder/Oracle.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/builder/Pgsql.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/builder/Sqlite.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/builder/Sqlsrv.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/concern/AggregateQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/concern/JoinAndViewQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/concern/ModelRelationQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/concern/PDOQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/concern/ParamsBind.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/concern/ResultOperation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/concern/TableFieldInfo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/concern/TimeFieldQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/concern/Transaction.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/concern/WhereQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/connector/Mongo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/connector/Mysql.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/connector/Oracle.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/connector/Pgsql.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/connector/Sqlite.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/connector/Sqlsrv.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/connector/pgsql.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/exception/BindParamException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/exception/DataNotFoundException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/exception/DbException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/exception/InvalidArgumentException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/exception/ModelEventException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/exception/ModelNotFoundException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/db/exception/PDOException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/facade/Db.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/Collection.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/Pivot.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/Relation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/concern/Attribute.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/concern/Conversion.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/concern/ModelEvent.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/concern/OptimLock.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/concern/RelationShip.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/concern/SoftDelete.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/concern/TimeStamp.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/relation/BelongsTo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/relation/BelongsToMany.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/relation/HasMany.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/relation/HasManyThrough.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/relation/HasOne.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/relation/HasOneThrough.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/relation/MorphMany.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/relation/MorphOne.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/relation/MorphTo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/model/relation/OneToOne.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-orm/src/paginator/driver/Bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/phpunit.xml.dist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/Queue.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/common.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/config.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/facade/Queue.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/CallQueuedHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/Connector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/FailedJob.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/InteractsWithTime.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/Job.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/Listener.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/Queueable.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/Service.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/ShouldQueue.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/Worker.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/command/FailedTable.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/command/FlushFailed.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/command/ForgetFailed.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/command/ListFailed.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/command/Listen.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/command/Restart.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/command/Retry.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/command/Table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/command/Work.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/command/stubs/failed_jobs.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/command/stubs/jobs.stub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/connector/Database.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/connector/Redis.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/connector/Sync.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/event/JobExceptionOccurred.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/event/JobFailed.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/event/JobProcessed.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/event/JobProcessing.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/event/WorkerStopping.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/exception/MaxAttemptsExceededException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/failed/Database.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/failed/None.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/job/Database.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/job/Redis.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/src/queue/job/Sync.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/tests/DatabaseConnectorTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/tests/ListenerTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/tests/QueueTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/tests/TestCase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/tests/WorkerTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-queue/tests/bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-template/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-template/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-template/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-template/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-template/src/Template.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-template/src/template/TagLib.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-template/src/template/driver/File.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-template/src/template/exception/TemplateNotFoundException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-template/src/template/taglib/Cx.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-view/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-view/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-view/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-view/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-view/src/Think.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/topthink/think-view/src/config/template.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/AliPay/App.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/AliPay/Bill.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/AliPay/Pos.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/AliPay/Scan.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/AliPay/Transfer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/AliPay/Wap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/AliPay/Web.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/MIT-LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/We.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Card.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Contracts/BasicAliPay.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Contracts/BasicPushEvent.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Contracts/BasicWeChat.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Contracts/BasicWePay.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Contracts/DataArray.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Contracts/DataError.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Contracts/MyCurlFile.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Contracts/Prpcrypt.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Contracts/Tools.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Custom.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Exceptions/InvalidArgumentException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Exceptions/InvalidDecryptException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Exceptions/InvalidInstanceException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Exceptions/InvalidResponseException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Exceptions/LocalCacheException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Limit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Media.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Menu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Oauth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Pay.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Product.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Qrcode.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Receive.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Scan.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Script.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Shake.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Tags.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Template.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeChat/Wifi.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeMini/Crypt.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeMini/Plugs.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeMini/Poi.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeMini/Qrcode.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeMini/Template.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeMini/Total.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeMini/crypt/errorCode.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WeMini/crypt/wxBizDataCrypt.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WePay/Bill.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WePay/Coupon.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WePay/Order.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WePay/Redpack.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WePay/Refund.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WePay/Transfers.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/WePay/TransfersBank.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/alipay-app.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/alipay-bill.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/alipay-notify.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/alipay-pos.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/alipay-refund.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/alipay-scan.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/alipay-transfer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/alipay-wap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/alipay-web.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/alipay.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/config.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/mini-login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/mini-qrc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/pay-download-bill.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/pay-order-close.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/pay-order-create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/pay-order-notify.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/pay-order-query.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/pay-redpack-create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/pay-refund-create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/pay-refund-query.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/pay-transfers-create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/pay-transfersbank-create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/wechat-jssdk-sign.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/wechat-menu-get.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/wechat-qrcode-create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/_test/wechat-user-get.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/include.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zoujingli/wechat-developer/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/database/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/database/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/database/restore.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/database/restore.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/index/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/index/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/index/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/login/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/login/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin/user/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,324 +839,75 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/admin/controller/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="198" column="30" selection-start-line="198" selection-start-column="20" selection-end-line="198" selection-end-column="30" />
-              <folding>
-                <element signature="e#420#445#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/link/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="74" selection-start-line="74" selection-end-line="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/system/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/user/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="95" column="27" selection-start-line="95" selection-start-column="27" selection-end-line="95" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/user/level_index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10">
-              <caret line="78" selection-start-line="78" selection-end-line="78" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/auth/admin_rule.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="26" column="21" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/auth/rule_add.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="111" column="39" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="31">
-                <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/index/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2770">
-              <caret line="1" column="53" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/link/group_edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>{'title':'操作',minWidth:50, toolbar: '#action',align:&quot;center&quot;}</find>
-      <find>{title:'操作',minWidth:50, toolbar: '#action',align:&quot;center&quot;}</find>
-      <find>parent.l</find>
-      <find>connect</find>
-      <find>{{# if(d</find>
-      <find>reg_time</find>
-      <find>1</find>
-      <find>gr</find>
-      <find>phone</find>
-      <find>llayui-form-item</find>
-      <find>radio</find>
-      <find>addPic</find>
-      <find>form</find>
-      <find>iconPicker</find>
-      <find>name=&quot;icon</find>
-      <find>ruleEdit</find>
-      <find>levelindex</find>
-      <find>rad</find>
-      <find>levelAdd</find>
-      <find>ADD</find>
-      <find>posState</find>
-      <find>ra</find>
-      <find>1.0.2</find>
-      <find>1.0.</find>
-      <find>系统公告</find>
-      <find>pos</find>
-      <find>Are you sure you want to delete it</find>
-      <find>del</find>
-      <find>levelState</find>
-      <find>icon</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>1.0.2</replace>
-      <replace>LM</replace>
-      <replace>{title:'操作',minWidth:50, toolbar: '#action',align:&quot;center&quot;}</replace>
-      <replace>,{title:'操作',minWidth:50, toolbar: '#action',align:&quot;center&quot;}</replace>
-      <replace>1.0.3</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>D:\phpStudy\PHPTutorial\WWW\lemocms\public\static</dir>
-      <dir>D:\phpStudy\PHPTutorial\WWW\lemocms\app\admin\controller</dir>
-      <dir>D:\phpStudy\PHPTutorial\WWW\lemocms\app</dir>
-      <dir>D:\phpStudy\PHPTutorial\WWW\lemocms\view\admin</dir>
-      <dir>D:\phpStudy\PHPTutorial\WWW\lemocms</dir>
-      <dir>D:\phpStudy\PHPTutorial\WWW\lemocms\view</dir>
-      <dir>D:\phpStudy\PHPTutorial\WWW\lemocms\view\admin\auth</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/app/admin/controller/Menu.php" />
-        <option value="$PROJECT_DIR$/app/admin/controller/System.php" />
-        <option value="$PROJECT_DIR$/app/admin/controller/Uploads.php" />
-        <option value="$PROJECT_DIR$/app/admin/model/Admin.php" />
-        <option value="$PROJECT_DIR$/app/admin/model/AdminLog.php" />
-        <option value="$PROJECT_DIR$/app/admin/model/AdminModel.php" />
-        <option value="$PROJECT_DIR$/app/admin/model/AuthGroup.php" />
-        <option value="$PROJECT_DIR$/app/admin/model/AuthRule.php" />
-        <option value="$PROJECT_DIR$/app/admin/validate/Admin.php" />
-        <option value="$PROJECT_DIR$/app/admin/validate/Adv.php" />
-        <option value="$PROJECT_DIR$/app/admin/validate/AdvPosition.php" />
-        <option value="$PROJECT_DIR$/app/admin/validate/AuthGroup.php" />
-        <option value="$PROJECT_DIR$/app/admin/validate/Link.php" />
-        <option value="$PROJECT_DIR$/app/admin/middleware.php" />
-        <option value="$PROJECT_DIR$/app/index/controller/Index.php" />
-        <option value="$PROJECT_DIR$/app/admin/controller/UserAddress.php" />
-        <option value="$PROJECT_DIR$/app/common/model/BaseModel.php" />
-        <option value="$PROJECT_DIR$/app/common/model/UserLevel.php" />
-        <option value="$PROJECT_DIR$/app/common/model/User.php" />
-        <option value="$PROJECT_DIR$/app/admin/controller/Link.php" />
-        <option value="$PROJECT_DIR$/app/admin/controller/Base.php" />
-        <option value="$PROJECT_DIR$/view/admin/index/index.html" />
-        <option value="$PROJECT_DIR$/view/admin/database/index.html" />
-        <option value="$PROJECT_DIR$/view/admin/common/header.html" />
-        <option value="$PROJECT_DIR$/view/admin/database/restore.html" />
-        <option value="$PROJECT_DIR$/view/admin/link/add.html" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/vendor/tp5er/tp5-databackup/src/Backup.php" />
-        <option value="$PROJECT_DIR$/public/static/admin/css/common.css" />
-        <option value="$PROJECT_DIR$/public/static/admin/css/main.css" />
-        <option value="$PROJECT_DIR$/view/admin/adv/add.html" />
-        <option value="$PROJECT_DIR$/app/admin/validate/User.php" />
-        <option value="$PROJECT_DIR$/view/admin/user/add.html" />
-        <option value="$PROJECT_DIR$/app/admin/validate/UserLevel.php" />
-        <option value="$PROJECT_DIR$/app/admin/controller/User.php" />
-        <option value="$PROJECT_DIR$/view/admin/user/level_add.html" />
-        <option value="$PROJECT_DIR$/view/admin/index/main.html" />
-        <option value="$PROJECT_DIR$/app/lang/zh-cn.php" />
-        <option value="$PROJECT_DIR$/view/admin/user/index.html" />
-        <option value="$PROJECT_DIR$/view/admin/auth/admin_list.html" />
-        <option value="$PROJECT_DIR$/view/admin/auth/group.html" />
-        <option value="$PROJECT_DIR$/view/admin/adminlog/index.html" />
-        <option value="$PROJECT_DIR$/view/admin/adv/index.html" />
-        <option value="$PROJECT_DIR$/view/admin/adv/pos.html" />
-        <option value="$PROJECT_DIR$/view/admin/article/article_cate.html" />
-        <option value="$PROJECT_DIR$/view/admin/article/index.html" />
-        <option value="$PROJECT_DIR$/view/admin/auth/admin_rule.html" />
-        <option value="$PROJECT_DIR$/view/admin/link/index.html" />
-        <option value="$PROJECT_DIR$/view/admin/user/level_index.html" />
-        <option value="$PROJECT_DIR$/view/admin/auth/rule_add.html" />
-        <option value="$PROJECT_DIR$/README.md" />
-      </list>
-    </option>
-  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
-      <path value="$PROJECT_DIR$/vendor/league/flysystem-cached-adapter" />
-      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
-      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
-      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
-      <path value="$PROJECT_DIR$/vendor/zoujingli/wechat-developer" />
-      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
-      <path value="$PROJECT_DIR$/vendor/opis/closure" />
-      <path value="$PROJECT_DIR$/vendor/topthink/think-template" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-exporter" />
       <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/topthink/framework" />
-      <path value="$PROJECT_DIR$/vendor/topthink/think-orm" />
-      <path value="$PROJECT_DIR$/vendor/topthink/think-view" />
-      <path value="$PROJECT_DIR$/vendor/topthink/think-image" />
-      <path value="$PROJECT_DIR$/vendor/topthink/think-helper" />
-      <path value="$PROJECT_DIR$/vendor/topthink/think-queue" />
-      <path value="$PROJECT_DIR$/vendor/topthink/think-captcha" />
-      <path value="$PROJECT_DIR$/vendor/topthink/think-factory" />
-      <path value="$PROJECT_DIR$/vendor/psr/container" />
-      <path value="$PROJECT_DIR$/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/vendor/psr/cache" />
-      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
-      <path value="$PROJECT_DIR$/vendor/tp5er/tp5-databackup" />
+      <path value="$PROJECT_DIR$/vendor/easywechat-composer/easywechat-composer" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem-cached-adapter" />
       <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
       <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/overtrue/socialite" />
+      <path value="$PROJECT_DIR$/vendor/topthink/framework" />
+      <path value="$PROJECT_DIR$/vendor/overtrue/wechat" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-captcha" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-factory" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-helper" />
       <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-image" />
+      <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-orm" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-queue" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-template" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-view" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="y" value="2" />
-    <option name="width" value="1932" />
-    <option name="height" value="1045" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lemocms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lemocms" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
-  </component>
+  <component name="ProjectId" id="1R8hbPyLgG5Qf7TN1AnLeLIqEP4" />
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/static/admin/images" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/admin/controller" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -337,15 +916,15 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\phpStudy\PHPTutorial\WWW\lemocms\vendor" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\phpStudy\PHPTutorial\WWW\lemocms\public\static\admin\images" />
-      <recent name="D:\phpStudy\PHPTutorial\WWW\lemocms\vendor\topthink\framework\src\tpl" />
-      <recent name="D:\phpStudy\PHPTutorial\WWW\lemocms\public\static\plugins" />
-      <recent name="D:\phpStudy\PHPTutorial\WWW\lemocms\view\admin" />
-      <recent name="D:\phpStudy\PHPTutorial\WWW\lemocms\public" />
+      <recent name="D:\phpStudy\PHPTutorial\WWW\lemocms\app\admin\controller" />
+      <recent name="D:\phpStudy\PHPTutorial\WWW\lemocms\view\common" />
+      <recent name="D:\phpStudy\PHPTutorial\WWW\lemocms" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -365,441 +944,27 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9df45793-8969-4a03-b4f7-ff19d345e5e4" name="Default Changelist" comment="" />
-      <created>1567224507402</created>
+      <changelist id="8da7b9f8-3cca-4ec8-8eb8-610459dfdd1f" name="Default Changelist" comment="" />
+      <created>1569054700989</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1567224507402</updated>
-      <workItem from="1567224508572" duration="3499000" />
-      <workItem from="1567229553989" duration="482000" />
-      <workItem from="1567251918876" duration="1064000" />
-      <workItem from="1567296590129" duration="13041000" />
-      <workItem from="1567384485636" duration="688000" />
-      <workItem from="1567412276846" duration="3799000" />
-      <workItem from="1567470613901" duration="17679000" />
-      <workItem from="1567556814827" duration="9912000" />
+      <updated>1569054700989</updated>
+      <workItem from="1569054702135" duration="4381000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50164000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24920128" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Migrations" order="9" />
-      <window_info anchor="bottom" id="File Transfer" order="10" />
-      <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Mongo Explorer" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/common/model/BaseModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/common/model/Common.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/common/model/UserLevel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="20" column="5" selection-start-line="17" selection-start-column="2" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/common/model/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#6#386#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/controller/System.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding>
-            <element signature="e#6#386#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/controller/Link.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1674">
-          <caret line="67" column="29" selection-start-line="46" selection-start-column="8" selection-end-line="67" selection-end-column="29" />
-          <folding>
-            <element signature="e#6#386#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/controller/Error.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-          <folding>
-            <element signature="e#6#386#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/controller/Database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="42" selection-start-line="42" selection-end-line="43" />
-          <folding>
-            <element signature="e#7#387#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/controller/Base.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#6#386#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/topthink/framework/src/helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="504" column="13" selection-start-line="504" selection-start-column="13" selection-end-line="504" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/controller/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
-          <folding>
-            <element signature="e#6#386#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/plugins/layui/layui.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/common/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="12" column="70" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/tp5er/tp5-databackup/src/Backup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-284">
-          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-          <folding>
-            <element signature="e#232#252#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/link/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="778">
-          <caret line="72" column="7" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/admin/images/images.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/admin/css/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="114" selection-start-line="114" selection-end-line="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/admin/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/validate/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/controller/Auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="468" column="34" selection-start-line="468" selection-start-column="29" selection-end-line="468" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/validate/UserLevel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/lang.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lang/zh-cn.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="30" column="26" lean-forward="true" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/user/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-445">
-          <caret line="89" column="14" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/index/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="191" column="44" lean-forward="true" selection-start-line="191" selection-start-column="44" selection-end-line="191" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/user/level_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="65" column="50" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/adminlog/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/adv/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/adv/pos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/article/article_cate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/article/cate_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-558" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/article/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/auth/admin_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1064">
-          <caret line="30" column="6" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/auth/group.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="97" selection-start-line="97" selection-end-line="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/auth/group_access.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2026" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/auth/group_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1716">
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/database/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1085">
-          <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/database/restore.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="37" selection-start-line="37" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/index/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2770">
-          <caret line="1" column="53" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/link/group_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/link/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/system/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/user/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="95" column="27" selection-start-line="95" selection-start-column="27" selection-end-line="95" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/user/level_index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/admin/controller/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="198" column="30" selection-start-line="198" selection-start-column="20" selection-end-line="198" selection-end-column="30" />
-          <folding>
-            <element signature="e#420#445#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/auth/admin_rule.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="26" column="21" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/auth/rule_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="111" column="39" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="31">
-            <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

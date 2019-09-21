@@ -203,8 +203,10 @@ class Mongo extends Connection
         // 生成MongoQuery对象
         $mongoQuery = $this->builder->select($query);
 
+        $master = $query->getOptions('master') ? true : false;
+
         // 执行查询操作
-        return $this->getCursor($query, $mongoQuery);
+        return $this->getCursor($query, $mongoQuery, $master);
     }
 
     /**
@@ -212,15 +214,16 @@ class Mongo extends Connection
      * @access public
      * @param BaseQuery          $query 查询对象
      * @param MongoQuery|Closure $mongoQuery Mongo查询对象
+     * @param bool               $master 是否主库操作
      * @return Cursor
      * @throws AuthenticationException
      * @throws InvalidArgumentException
      * @throws ConnectionException
      * @throws RuntimeException
      */
-    public function getCursor(BaseQuery $query, $mongoQuery): Cursor
+    public function getCursor(BaseQuery $query, $mongoQuery, bool $master = false): Cursor
     {
-        $this->initConnect(false);
+        $this->initConnect($master);
         $this->db->updateQueryTimes();
 
         $options   = $query->getOptions();
@@ -281,7 +284,8 @@ class Mongo extends Connection
             $mongoQuery = $mongoQuery($query);
         }
 
-        $this->getCursor($query, $mongoQuery);
+        $master = $query->getOptions('master') ? true : false;
+        $this->getCursor($query, $mongoQuery, $master);
 
         $resultSet = $this->getResult($options['typeMap']);
 
@@ -359,15 +363,16 @@ class Mongo extends Connection
      * @param  string         $dbName 当前数据库名
      * @param  ReadPreference $readPreference readPreference
      * @param  string|array   $typeMap 指定返回的typeMap
+     * @param  bool           $master 是否主库操作
      * @return array
      * @throws AuthenticationException
      * @throws InvalidArgumentException
      * @throws ConnectionException
      * @throws RuntimeException
      */
-    public function command(Command $command, string $dbName = '', ReadPreference $readPreference = null, $typeMap = null): array
+    public function command(Command $command, string $dbName = '', ReadPreference $readPreference = null, $typeMap = null, bool $master = false): array
     {
-        $this->initConnect(false);
+        $this->initConnect($master);
         $this->db->updateQueryTimes();
 
         $this->queryStartTime = microtime(true);

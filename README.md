@@ -1,20 +1,23 @@
 ### 导读
-Lemocms 1.0.3 本系统长期更新,欢迎star和提出和反馈问题 
+Lemocms 1.0.5 本系统长期更新,欢迎star和提出和反馈问题 
 QQ群 455018252
 ### 前言
-Lemocms1.0.3管理系统：为二次开发而生，让开发变得更简单
+Lemocms1.0.5管理系统：为二次开发而生，让开发变得更简单
  + 这是一款快速、高效、便捷、灵活的应用开发框架。
  + 采用最新TP6.0.4 框架，后续随官网升级而升级
+ + layui采用最新layui2.5.5 框架
+ + easywechat 采用最新的4.*版本
  + 后台RBAC权限
  + 站点管理
  + 管理员登录LOG
  + 插件管理
  + 内容管理
  + 会员管理
+ + 微信管理
  + ...更多
   
 ## 使用环境以及和部署  
- + Lemocms 1.0.3 的运行环境要求必须PHP7.1以及以上。
+ + Lemocms 1.0.5 的运行环境要求必须PHP7.1以及以上。
     
  + 配置apache，nginx 虚拟目录，把根目录指向public/（请务必将域名解析到public目录，通过域名来访问项目。用“域名+public”来访问，会导致页面错乱）
  
@@ -29,15 +32,28 @@ Lemocms1.0.3管理系统：为二次开发而生，让开发变得更简单
 ### 系统快照
 
 【系统 - 首页】
-![image](public/static/admin/images/index.png)
+![image](public/static/admin/images/test/index.png)
 
 【系统 - 内容管理】
-![image](public/static/admin/images/content.png)
+![image](public/static/admin/images/test/content.png)
+
+【系统 - 会员管理】
+![image](public/static/admin/images/user.png)
+
+
+【系统 - 微信管理】
+![image](public/static/admin/images/test/wechat1.png)
+![image](public/static/admin/images/test/wechat2.png)
+![image](public/static/admin/images/test/wechat3.png)
+![image](public/static/admin/images/test/wechat4.png)
+![image](public/static/admin/images/test/wechat5.png)
+
+
 
 
 若此项目能得到你的青睐，支持开源项目，可以捐赠支持作者持续开发与维护,这样小哥哥小姐姐更加努力哦。
 
-![image](public/static/admin/images/pay.png)
+![image](public/static/admin/images/test/pay.png)
 
 
 ### 问题反馈
@@ -46,15 +62,15 @@ Lemocms1.0.3管理系统：为二次开发而生，让开发变得更简单
 
 QQ群：[455018252](https://jq.qq.com/?_wv=1027&k=5RWLxx7)
 
-Github：https://github.com/yue909/LEMOCMS/issues
+Github：https://github.com/yue909/lemocms/issues
 
 ### 版权信息
 
-lemocms遵循Apache2开源协议发布，并提供免费使用。
+lemocms遵循Apache2开源协议发布，并提供免费使用到自己或企业的项目中，商业开发出售另需授权;
 
 本项目包含的第三方源码和二进制文件之版权信息另行标注。
 
-版权所有Copyright © 2018-2019 by lemocms遵循Apache2开源协议发布 [www.lemocms.com](https://www.lemocms.com)
+版权所有Copyright © 2018-2020 by lemocms遵循Apache2开源协议发布 [www.lemocms.com](https://www.lemocms.com)
 
 All rights reserved。
 

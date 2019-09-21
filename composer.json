@@ -1,9 +1,10 @@
 {
     "name": "yue909/lemocms",
-    "description": "一个基于最新的tp6框架的极速后台开发框架",
+    "description": "一个基于最新的tp6(thinkphp)框架的极速后台开发框架",
     "type": "project",
     "keywords": [
         "Lemocms",
+        "easywechat",
         "framework",
         "thinkphp",
         "ORM"
@@ -23,10 +24,9 @@
         "topthink/think-view": "^1.0",
         "topthink/think-image": "^1.0",
         "topthink/think-queue": "^3.0",
-        "zoujingli/wechat-developer": "^1.2",
-        "topthink/think-captcha": "^3.0",
-        "tp5er/tp5-databackup": "dev-master",
-        "phpoffice/phpspreadsheet": "^1.9"
+        "phpoffice/phpspreadsheet": "^1.9",
+        "overtrue/wechat": "~4.0",
+        "topthink/think-captcha": "^3.0"
     },
     "require-dev": {
         "symfony/var-dumper": "^4.2"

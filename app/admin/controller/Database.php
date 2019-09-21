@@ -14,8 +14,7 @@
 namespace app\admin\controller;
 use think\facade\Request;
 use think\facade\View;
-
-use \tp5er\Backup;
+use app\admin\controller\Backup;
 // 需要修改\tp5er\backup connect()
 //以及 $info['name'] = $file->getFilename();
 class Database extends Base
