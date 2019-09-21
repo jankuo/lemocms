@@ -26,6 +26,8 @@ return [
     'back' => '返回',
     'cancel' => '取消',
     'reset' => '重置',
+    'open' =>"开启",
+    'close' =>"关闭",
     'email' => '邮箱',
     'ip' => 'ip地址',
     'mobile' => '手机号',
@@ -44,4 +46,24 @@ return [
     'material'=>'素材',
     'tag'=>'标签',
     'fans'=>'粉丝',
+    'reply'=>'回复',
+
+
+
+    'add success'=>'新增成功',
+    'delete success'=>'删除成功',
+    'delete all success'=>'全部删除成功',
+    'edit success'=>'修改成功',
+    'asny success'=>'同步成功',
+    'empty success'=>'清除成功',
+
+
+    'add fail'=>'新增失败',
+    'delete fail'=>'删除失败',
+    'delete all fail'=>'全部删除失败',
+    'edit fail'=>'修改失败',
+    'asny fail'=>'同步失败',
+    'empty fail'=>'清除失败'
+
+
 ];
