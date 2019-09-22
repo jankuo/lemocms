@@ -14,8 +14,7 @@ namespace util;
 use think\facade\Log;
 /**
  * Class Redis redis操作类，集成了redis常用的操作方法
- * Power by Mikkle
- * @time,2017/12/24
+ * @time,2018/12/24
  */
 class Predis
 {
