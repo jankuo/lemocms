@@ -39,11 +39,17 @@ return [
 
     // 空控制器名
     'empty_controller'      => 'Error',
-    // 异常页面的模板文件
+    // 默认异常页面的模板文件
     'exception_tmpl'   => app()->getThinkPath() . 'tpl/think_exception.tpl',
+
+
+//    // 默认跳转页面对应的模板文件
+//    'dispatch_success_tmpl' => app()->getThinkPath() . 'tpl/dispatch_jump.tpl',
+//    'dispatch_error_tmpl'   => app()->getThinkPath() . 'tpl/dispatch_jump.tpl',
+
     // 默认跳转页面对应的模板文件
-    'dispatch_success_tmpl' => app()->getThinkPath() . 'tpl/dispatch_jump.tpl',
-    'dispatch_error_tmpl'   => app()->getThinkPath() . 'tpl/dispatch_jump.tpl',
+    'dispatch_success_tmpl' => \think\facade\App::getAppPath(). '../view/template/dispatch_jump.tpl',
+    'dispatch_error_tmpl'   => \think\facade\App::getAppPath(). '../view/template/dispatch_jump.tpl',
 
     // 错误显示信息,非调试模式有效
     'error_message'    => '您访问的内容不存在',

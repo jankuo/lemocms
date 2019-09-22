@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8da7b9f8-3cca-4ec8-8eb8-610459dfdd1f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/extend/util/ArrayHelper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extend/util/DataHelper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/Api.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/common/dispatch_jump.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/view/template/dispatch_jump.tpl" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +89,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/vendor/topthink/framework/src/tpl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -101,10 +101,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\phpStudy\PHPTutorial\WWW\lemocms\app" />
+      <recent name="D:\phpStudy\PHPTutorial\WWW\lemocms\view\template" />
+      <recent name="D:\phpStudy\PHPTutorial\WWW\lemocms\vendor\topthink\framework\src\tpl" />
       <recent name="D:\phpStudy\PHPTutorial\WWW\lemocms\app\api" />
       <recent name="D:\phpStudy\PHPTutorial\WWW\lemocms\app\admin\controller" />
-      <recent name="D:\phpStudy\PHPTutorial\WWW\lemocms\view\common" />
-      <recent name="D:\phpStudy\PHPTutorial\WWW\lemocms" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\phpStudy\PHPTutorial\WWW\lemocms\vendor" />
@@ -135,6 +136,8 @@
       <workItem from="1569054702135" duration="8740000" />
       <workItem from="1569108748417" duration="3001000" />
       <workItem from="1569118297885" duration="2866000" />
+      <workItem from="1569125385447" duration="2028000" />
+      <workItem from="1569127594176" duration="1884000" />
     </task>
     <servers />
   </component>
