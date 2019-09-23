@@ -42,7 +42,9 @@
 
 <script type="text/html" id="action">
     <a href="{:url('replyEdit')}?id={{d.id}}" class="layui-btn  layui-btn-xs" lay-event="edit">{:lang('edit')}</a>
+    {{# if(d.type=='keyword') { }}
     <a  class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">{:lang('del')}</a>
+    {{# } }}
 </script>
 
 
@@ -60,7 +62,6 @@
             table = layui.table,
             element = layui.element;
         var info = {:json_encode($info)};
-        console.log(info)
         var tableIn = table.render({
             elem: '#list',
             data:info,
@@ -80,9 +81,25 @@
 
         });
 
+        table.on('tool(list)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'del'){
+                layer.confirm('{:lang("Are you sure you want to delete it")}', function(index){
+                    loading =layer.load(1, {shade: [0.1,'#fff']});
+                    $.post("{:url('replayDel')}",{id:data.id},function(res){
+                        layer.close(loading);
+                        layer.close(index);
+                        if(res.code>0){
+                            layer.msg(res.msg,{time:1000,icon:1});
+                            obj.del();
+                        }else{
+                            layer.msg(res.msg,{time:1000,icon:2});
+                        }
+                    });
+                });
+            }
 
-
-
+        });
 
     });
 
