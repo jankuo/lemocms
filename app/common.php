@@ -26,12 +26,13 @@ function site_logo(){
     return Db::name('config')->where('code','site_logo')
         ->value('value');
 }
-
+//获取配置信息
 function getConfigByCode($code){
     return Db::name('config')->where('code',$code)
         ->value('value');
 
 }
+
 /***
  * 对象转数组
  * @param $object
@@ -70,11 +71,6 @@ function array_xml($arr){
  * @param $arr
  * @return string
  */
-
-function xml_array($xml) {
-    $array_data = json_decode(json_encode(simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
-    return $array_data;
-}
 
 /**
  * rc4加解密
