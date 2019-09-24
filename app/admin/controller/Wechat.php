@@ -310,7 +310,7 @@ class Wechat extends Base{
         if(!$wx_aid){
             $this->error('请求错误');
         }
-        $wxAccount = WxAccount::where('status',1)->where('store_id',$this->store_id)->find($wx_aid);
+        $wxAccount = $this->wechatAccount;
         if(!$wxAccount){
             $this->error('公众号还未对接成功，请先对接');
         }
@@ -322,23 +322,27 @@ class Wechat extends Base{
             }
         }
         $WxFansModel = new WxFans();
+
         Db::startTrans();
         try {
             foreach ($users as $k=>$v){
                 $v['wx_aid'] = $wx_aid;
-                $fans = $WxFansModel::where('store_id',$this->store_id)
+                $v['tagid_list'] = json_encode($v['tagid_list']);
+
+                $fans = $WxFansModel::where($this->where)
                     ->where('openid',$v['openid'])
                     ->find();
                 if($fans){
-                    $res = $WxFansModel::where('store_id',$this->store_id)
+                    $res = $WxFansModel::where($this->where)
                         ->where('openid',$v['openid'])
                         ->where('fans_id',$fans['fans_id'])
-                        ->save($v);
-                    if($res ===false){
+                        ->update($v);
+                    if($res){
                         Db::rollback();
                     }
                 }else{
                     $v['store_id'] = $this->store_id;
+                    $v['update_time'] = time();
                     $v['nickname_encode'] = json_encode($v['nickname']);
                     $WxFansModel::create($v);
                 }
@@ -1123,6 +1127,9 @@ class Wechat extends Base{
 
     }
 
+    /**
+     ************************二维码管理***************************
+     */
 
 
     /**
