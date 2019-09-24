@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： localhost
--- 生成日期： 2019-09-24 14:16:55
+-- 生成日期： 2019-09-24 16:36:38
 -- 服务器版本： 5.6.45-log
 -- PHP 版本： 7.3.8
 
@@ -72,6 +72,14 @@ CREATE TABLE `lm_admin_log` (
   `update_time` int(11) DEFAULT NULL,
   `status` tinyint(1) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 转存表中的数据 `lm_admin_log`
+--
+
+INSERT INTO `lm_admin_log` (`id`, `admin_id`, `username`, `log_url`, `log_content`, `log_title`, `log_agent`, `log_ip`, `create_time`, `update_time`, `status`) VALUES
+(1, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"demo\",\"captcha\":\"4yfh\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 UBrowser/6.2.4098.3 Safari/537.36', '171.15.105.118', 1569314188, 1569314188, 1),
+(2, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"demo\",\"captcha\":\"kmey\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 UBrowser/6.2.4098.3 Safari/537.36', '171.15.105.118', 1569314196, 1569314196, 1);
 
 -- --------------------------------------------------------
 
@@ -767,10 +775,8 @@ CREATE TABLE `lm_wx_account` (
 --
 
 INSERT INTO `lm_wx_account` (`id`, `store_id`, `wxname`, `aeskey`, `encode`, `app_id`, `app_secret`, `origin_id`, `weixin`, `logo`, `token`, `w_token`, `related`, `create_time`, `update_time`, `tplcontentid`, `share_ticket`, `share_dated`, `authorizer_access_token`, `authorizer_refresh_token`, `authorizer_expires`, `type`, `web_access_token`, `web_refresh_token`, `web_expires`, `qr`, `menu_config`, `status`) VALUES
-(31, 1, 'lemocms', 'adsfda', '0', 'wxecd04cbbfc06a972', 'ec83a45f2a561a90cf5f63e7476bae36', 'gh_e29462503ebe', 'lemomcms', '/storage/uploads/20190905/dfdcecfa905e2858ae45b87542c0c5ab.png', 'b96561beca83877b0df8eda9f0cea2b4', 'b96561beca83877b0df8eda9f0cea2b4', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1490691329, 1569301205, '', '', '', '', '', '', 4, '9_ztdL3qhqHHAgFTIANDMStPvneUubYL0sANeFHEYDXu_qzElDwaQeSNwwhi1EfpDXzFwOeP05e0wMRpsJvQVVjnmhiWtZIqOwj4RwIdhXQnB1WPP0yw4pv8x2c_NA2ykcPKD-V6aTa3mFDKO9YJSaAAALWF', '', 1524884051, '/storage/uploads/20190905/2790a6a9cbb9ca1bcdfaca9b25d0316a.jpg', NULL, 0),
-(32, 1, 'asdfsdf', 'asf', '0', 'asdf', 'adsf', 'asdfasdg', '', '', '', 'asdf', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1567648856, 1569301205, '', '', '', '', '', '', 4, '', '', 0, '', NULL, 1),
-(33, 1, 'asdf', 'sdfasdf', '0', 'asdfas', 'dasdfasdf', 'asdfasdf', '', '', '', 'sdfasdf', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1569304103, 1569304103, '', '', '', '', '', '', 1, '', '', 0, '', NULL, 1),
-(34, 1, 'asdf12312', 'sadf', '', 'asdf123121241', 'asdfasdf', 'asdfasdf234234', '', '', '', 'asdf', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1569305046, 1569305046, '', '', '', '', '', '', 4, '', '', 0, '', NULL, 1);
+(31, 1, 'lemocms', 'adsfda', '0', 'wxecd04cbbfc06a972', 'ec83a45f2a561a90cf5f63e7476bae36', 'gh_e29462503ebe', 'lemomcms', '/storage/uploads/20190905/dfdcecfa905e2858ae45b87542c0c5ab.png', 'b96561beca83877b0df8eda9f0cea2b4', 'b96561beca83877b0df8eda9f0cea2b4', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1490691329, 1569311714, '', '', '', '', '', '', 4, '9_ztdL3qhqHHAgFTIANDMStPvneUubYL0sANeFHEYDXu_qzElDwaQeSNwwhi1EfpDXzFwOeP05e0wMRpsJvQVVjnmhiWtZIqOwj4RwIdhXQnB1WPP0yw4pv8x2c_NA2ykcPKD-V6aTa3mFDKO9YJSaAAALWF', '', 1524884051, '/storage/uploads/20190905/2790a6a9cbb9ca1bcdfaca9b25d0316a.jpg', NULL, 1),
+(34, 1, 'asdf12312', 'sadf', '', 'asdf123121241', 'asdfasdf', 'asdfasdf234234', '', '', '', 'asdf', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1569305046, 1569311585, '', '', '', '', '', '', 4, '', '', 0, '', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -835,7 +841,7 @@ CREATE TABLE `lm_wx_material` (
   `file_name` varchar(255) DEFAULT NULL COMMENT '视频文件名',
   `media_url` varchar(255) DEFAULT NULL,
   `type` varchar(10) NOT NULL COMMENT '图片（image）、视频（video）、语音 （voice）、图文（news）音乐（music）',
-  `des` varchar(150) NOT NULL COMMENT '视频描述',
+  `des` varchar(150) DEFAULT '' COMMENT '视频描述',
   `create_time` int(11) DEFAULT NULL,
   `update_time` int(10) UNSIGNED DEFAULT NULL COMMENT '更新时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -855,7 +861,9 @@ INSERT INTO `lm_wx_material` (`id`, `store_id`, `wx_aid`, `media_id`, `file_name
 (26, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vf4uLVp3tFomLPazcjB6IOM', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOafHyBKbh42d34tu7iagashY3TkAG8vQGvkn0jKYur0219iaibtkvyMP2UrXxPA6QcZOfkgBmd2kOZZA/0?wx_fmt=png', 'image', '', 1568856598, 1568856598),
 (32, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vZ7L6evjz2HyZQWuwq_JBLI', NULL, NULL, 'news', '', 1568858056, 1568858056),
 (37, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vWtBCrMpwwR_IHX2MpGrpoc', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOYE5UibSIrwLn6mFYy8L2SN7HvCEAvQAGna6ZxmLotrx93hfqof9aoRmICxfIJjkTn8ZFdvO4wiaPAg/0?wx_fmt=png', 'image', '', 1568946808, 1568946808),
-(38, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vY2nYvRwar_haUm9ks0LoJw', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOYE5UibSIrwLn6mFYy8L2SN7HvCEAvQAGna6ZxmLotrx93hfqof9aoRmICxfIJjkTn8ZFdvO4wiaPAg/0?wx_fmt=png', 'image', '', 1568947771, 1568947771);
+(38, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vY2nYvRwar_haUm9ks0LoJw', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOYE5UibSIrwLn6mFYy8L2SN7HvCEAvQAGna6ZxmLotrx93hfqof9aoRmICxfIJjkTn8ZFdvO4wiaPAg/0?wx_fmt=png', 'image', '', 1568947771, 1568947771),
+(39, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vVbkgEGXVWwEIhWU1UAqLTg', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOaoSmicTHWTebJGx7b1sZe833Gzyt43TTwGdrJ1J1U6PNtXrQU8YBuoa703PdI2Ye62cxXOz0spKCQ/0?wx_fmt=png', 'image', '', 1569311736, 1569311736),
+(40, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vYvKCa97MeIyGRQM4b2F0ic', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOaoSmicTHWTebJGx7b1sZe833Gzyt43TTwGdrJ1J1U6PNtXrQU8YBuoa703PdI2Ye62cxXOz0spKCQ/0?wx_fmt=png', 'image', '', 1569313687, 1569313687);
 
 -- --------------------------------------------------------
 
@@ -1671,7 +1679,7 @@ ALTER TABLE `lm_admin`
 -- 使用表AUTO_INCREMENT `lm_admin_log`
 --
 ALTER TABLE `lm_admin_log`
-  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id';
+  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=3;
 
 --
 -- 使用表AUTO_INCREMENT `lm_adv`
@@ -1755,7 +1763,7 @@ ALTER TABLE `lm_wx_fans`
 -- 使用表AUTO_INCREMENT `lm_wx_material`
 --
 ALTER TABLE `lm_wx_material`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '微信公众号素材', AUTO_INCREMENT=39;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '微信公众号素材', AUTO_INCREMENT=42;
 
 --
 -- 使用表AUTO_INCREMENT `lm_wx_material_info`
