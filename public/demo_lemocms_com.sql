@@ -540,7 +540,7 @@ INSERT INTO `lm_config` (`id`, `code`, `value`, `remark`, `type`, `status`, `cre
 (51, 'upload_water_position', '', '水印位置', 'upload', 1, 0, 0),
 (52, 'sms_product', 'lemocms', '产品', 'sms', 1, 0, 0),
 (53, 'sms_template', 'SMS_158941284', '模板id', 'sms', 1, 0, 0),
-(54, 'site_version', 'v1.0.5', '版本', 'site', 1, NULL, NULL);
+(54, 'site_version', 'v1.0.7', '版本', 'site', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
