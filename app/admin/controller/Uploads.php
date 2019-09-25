@@ -74,7 +74,7 @@ class Uploads extends Base{
             } else {
                 $result["url"] = $path;
             }
-            $result['msg'] = '上传成功';
+            $result['msg'] = lang('upload success');
             return $result;
         } else {
             //上传失败获取错误信息
@@ -116,7 +116,7 @@ class Uploads extends Base{
             } else {
                 $result["url"] = $path;
             }
-            $result['msg'] = '上传成功';
+            $result['msg'] =lang('upload success');
             return $result;
         } else {
             //上传失败获取错误信息
@@ -159,7 +159,7 @@ class Uploads extends Base{
             } else {
                 $result["url"] = $path;
             }
-            $result['msg'] = '上传成功';
+            $result['msg'] = lang('upload success');
             return $result;
         } else {
             //上传失败获取错误信息
@@ -201,7 +201,7 @@ class Uploads extends Base{
             } else {
                 $result["url"] = $path;
             }
-            $result['msg'] = '上传成功';
+            $result['msg'] = lang('upload success');
             return $result;
         } else {
             //上传失败获取错误信息
@@ -211,6 +211,5 @@ class Uploads extends Base{
             return $result;
         }
     }
-
 
 }

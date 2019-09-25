@@ -13,6 +13,7 @@
                             {:lang('search')}
                         </a>
                         <a href="{:url('add')}" class="layui-btn layui-btn-sm layui-btn-warm">{:lang('add')}{:lang('user')}</a>
+                        <a href="javascript:;"  class="layui-btn layui-btn-sm layui-btn-danger" id="delAll">批量删除</a>
 
                     </div>
 
@@ -75,6 +76,7 @@
             method: 'post',
             title: '用户数据表',
             toolbar: '#toolbar', //开启头部工具栏，并为其绑定左侧模板
+
             defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
                 title: '提示'
                 ,layEvent: 'LAYTABLE_TIPS'
@@ -145,7 +147,31 @@
             tableIn.reload({ page: {page: 1},where: {keys: $keys}});
 
         })
-
+        $('#delAll').click(function(){
+            layer.confirm("{:lang('Are you sure you want to delete it')}", {icon: 3}, function(index) {
+                layer.close(index);
+                var checkStatus = table.checkStatus('list'); //test即为参数id设定的值
+                var ids = [];
+                console.log(checkStatus.data)
+                $(checkStatus.data).each(function (index, item) {
+                    ids.push(item.id);
+                });
+                if(ids==''){
+                    layer.msg("{:lang('please choose data')}", {time: 1000, icon: 2});
+                    return false;
+                }
+                var loading = layer.load(1, {shade: [0.1, '#fff']});
+                $.post("{:url('delAll')}", {ids: ids}, function (res) {
+                    layer.close(loading);
+                    if (res.code > 0) {
+                        layer.msg(res.msg, {time: 1000, icon: 1});
+                        tableIn.reload();
+                    } else {
+                        layer.msg(res.msg, {time: 1000, icon: 2});
+                    }
+                });
+            });
+        })
 
     });
 

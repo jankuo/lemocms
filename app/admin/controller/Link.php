@@ -35,7 +35,7 @@ class Link extends Base
                 ->paginate(['list_rows' => $this->pageSize, 'page' => $page])
                 ->toArray();
 
-            return $result = ['code' => 0, 'msg' => '获取成功!', 'data' => $list['data'], 'count' => $list['total']];
+            return $result = ['code' => 0, 'msg' => lang('get info success'), 'data' => $list['data'], 'count' => $list['total']];
         }
 
         return View::fetch();
@@ -55,14 +55,14 @@ class Link extends Base
 
             $res = LinkModel::create($data);
             if ($res) {
-                $this->success('添加成功',url('index'));
+                $this->success(lang('add success'),url('index'));
             } else {
-                $this->success('添加失败');
+                $this->error(lang('add fail'));
             }
         }
         $view = [
             'info' => '',
-            'title' => '添加链接',
+            'title' => lang('add'),
         ];
         View::assign($view);
         return View::fetch();
@@ -70,7 +70,6 @@ class Link extends Base
 
     public function edit()
     {
-
         if (Request::isPost()) {
             $data = Request::post();
             try {
@@ -80,34 +79,31 @@ class Link extends Base
             }
             $res = LinkModel::update($data);
             if ($res) {
-                $this->success('修改成功', url('index'));
+                $this->success(lang('edit success'), url('index'));
             } else {
-                $this->success('修改失败');
+                $this->error(lang('edit fail'));
             }
         }
         $info = LinkModel::find(Request::get('id'));
         $view = [
             'info' => $info,
-            'title' => '修改链接',
+            'title' => lang('edit'),
         ];
         View::assign($view);
         return View::fetch('add');
 
     }
-
     public function delete()
     {
         $id = Request::post('id');
         if ($id) {
 
             LinkModel::destroy($id);
-            $this->success('删除成功');
+            $this->success(lang('delete success'));
         } else {
-            $this->error('删除失败');
+            $this->error(lang('delete fail'));
 
         }
-
-
     }
 
     public function state()
@@ -120,10 +116,10 @@ class Link extends Base
             $where['status'] = $link['status'] ? 0 : 1;
             LinkModel::update($where);
 
-            $this->success('修改成功');
+            $this->success(lang('edit success'));
 
         } else {
-            $this->error('修改失败');
+            $this->error(lang('edit fail'));
 
         }
 

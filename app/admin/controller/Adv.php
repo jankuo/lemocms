@@ -36,7 +36,7 @@ class Adv extends Base{
                 ->order('a.sort desc,a.id desc')
                 ->paginate(['list_rows' => $this->pageSize, 'page' => $page])
                 ->toArray();
-            return $result = ['code'=>0,'msg'=>'获取成功!','data'=>$list['data'],'count'=>$list['total']];
+            return $result = ['code'=>0,'msg'=>lang('get info success'),'data'=>$list['data'],'count'=>$list['total']];
         }
 
         return View::fetch();
@@ -64,9 +64,9 @@ class Adv extends Base{
             //添加
             $result = AdvModel::create($data);
             if ($result) {
-                $this->success('广告添加成功', url('index'));
+                $this->success(lang('add success'), url('index'));
             } else {
-                $this->error('广告添加失败');
+                $this->error(lang('add fail'));
             }
         } else {
             $info = '';
@@ -74,7 +74,7 @@ class Adv extends Base{
             $view = [
                 'info'  =>$info,
                 'posGroup' => $posGroup,
-                'title' => '添加广告',
+                'title' => lang('add'),
             ];
             View::assign($view);
             return View::fetch();
@@ -93,7 +93,7 @@ class Adv extends Base{
                 $this->error($e->getMessage());
             }
             AdvModel::update($data);
-            $this->success('广告修改成功!', url('index'));
+            $this->success(lang('edit success'), url('index'));
 
         } else {
             $id = Request::param('id');
@@ -118,7 +118,7 @@ class Adv extends Base{
     {
         $id = Request::post('id');
         AdvModel::destroy($id);
-        $this->success('删除成功!');
+        $this->success(lang('delete success'));
 
     }
 
@@ -130,13 +130,13 @@ class Adv extends Base{
         if (Request::isPost()) {
             $id = Request::post('id');
             if (empty($id)) {
-                $this->error('ID不存在!');
+                $this->error('id'.lang('not exist'));
             }
             $adv = AdvModel::find($id);
             $status = $adv['status'] == 1 ? 0 : 1;
             $adv->status = $status;
             $adv->save();
-            $this->success('修改成功!');
+            $this->success(lang('edit success'));
         }
     }
 
@@ -157,7 +157,7 @@ class Adv extends Base{
                     $this->pageSize, false,
                     ['query' => Request::param()]
                 )->toArray();
-            return $result = ['code'=>0,'msg'=>'获取成功!','data'=>$list['data'],'count'=>$list['total']];
+            return $result = ['code'=>0,'msg'=>lang('get info success'),'data'=>$list['data'],'count'=>$list['total']];
 
         }
 
@@ -180,15 +180,15 @@ class Adv extends Base{
             }
             $result = AdvPosition::create($data);
             if ($result) {
-                $this->success('广告位置添加成功', url('pos'));
+                $this->success(lang('add  success'), url('pos'));
             } else {
-                $this->error('广告位置添加失败');
+                $this->error(lang('add fail'));
             }
 
         } else {
             $view = [
                 'info' => null,
-                'title' => '添加'
+                'title' => lang('add')
             ];
             View::assign($view);
             return View::fetch('pos_add');
@@ -210,9 +210,9 @@ class Adv extends Base{
             $res = AdvPosition::update($data, $where);
             if($res){
 
-                $this->success('修改成功!', url('pos'));
+                $this->success(lang('edit success'), url('pos'));
             }else{
-                $this->error('修改失败');
+                $this->error(lang('edit fail'));
 
             }
 
@@ -221,7 +221,7 @@ class Adv extends Base{
             $info = AdvPosition::find(['id' => $id]);
             $view = [
                 'info' => $info,
-                'title' => '广告位编辑'
+                'title' => lang('edit')
             ];
             View::assign($view);
             return View::fetch('pos_add');
@@ -236,7 +236,7 @@ class Adv extends Base{
             $info = AdvPosition::find($id);
             $info->status = $info['status'] == 1 ? 0 : 1;
             $info->save();
-            $this->success('修改成功!');
+            $this->success(lang('edit success'));
 
         }
     }
@@ -246,7 +246,7 @@ class Adv extends Base{
         $id = Request::post('id');
 
         AdvPosition::destroy($id);
-        $this->success('删除成功!');
+        $this->success(lang('delete success'));
 
 
     }

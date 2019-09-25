@@ -42,11 +42,11 @@ class System extends Base {
                $res =  Db::name('config')->where('code',$k)->update(['value'=>$v]);
             }
 
-            $this->success('保存成功');
+            $this->success('save success');
 
 
         } else {
-            $this->error('非法操作');
+            $this->error('invalid options');
         }
     }
 

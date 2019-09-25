@@ -42,7 +42,7 @@ class Adminlog extends Base{
                     $list['data'][$k]['log_agent'] = $useragent[0];
                 }
             }
-            $result = ['code'=>0,'msg'=>'获取成功!','data'=>$list['data'],'count'=>$list['total']];
+            $result = ['code'=>0,'msg'=>lang('get info success'),'data'=>$list['data'],'count'=>$list['total']];
             return $result;
         }
 
@@ -56,9 +56,9 @@ class Adminlog extends Base{
     public function delete(){
 
         if(LogModel::destroy(Request::post('id'))){
-             $this->success('删除成功');
+             $this->success(lang('delete success'));
         }else{
-            $this->error('删除失败');
+            $this->error(lang('delete fail'));
         }
 
     }

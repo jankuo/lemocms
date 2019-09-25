@@ -47,24 +47,24 @@ class Database extends Base
     public function optimize() {
         $tables = Request::param('tables');
         if (empty($tables)) {
-            $this->success('请选择要优化的表') ;
+            $this->success(lang('please choose table')) ;
         }
         if($this->db->optimize($tables)){
-            $this->success('数据表优化成功') ;
+            $this->success(lang('optimize success')) ;
         }else{
-            $this->error('数据表优化出错请重试');
+            $this->error(lang('optimize fail'));
         }
     }
     //修复
     public function repair() {
         $tables = Request::param('tables');
         if (empty($tables)) {
-            $this->error('请选择要修复的表');
+            $this->error(lang('please choose table'));
         }
         if($this->db->repair($tables)){
-            $this->success('数据表修复成功') ;
+            $this->success(lang('repair success')) ;
         }else{
-            $this->error('数据表修复出错请重试');
+            $this->error(lang('repair fail'));
         }
     }
     //备份
@@ -74,10 +74,10 @@ class Database extends Base
             foreach ($tables as $table) {
                 $this->db->setFile()->backup($table, 0);
             }
-            $this->success('备份成功') ;
+            $this->success(lang('backup success')) ;
 
         } else {
-            $this->error('请选择要备份的表') ;
+            $this->error(lang('please choose table')) ;
 
         }
     }
@@ -85,7 +85,7 @@ class Database extends Base
     public function restore(){
         if(Request::isPost()){
             $list =  $this->db->fileList();
-            return $result = ['code'=>0,'msg'=>'获取成功!','data'=>$list,'rel'=>1];
+            return $result = ['code'=>0,'msg'=>lang('get info success'),'data'=>$list,'rel'=>1];
         }
         return View::fetch();
     }
@@ -93,7 +93,7 @@ class Database extends Base
     public function import($time) {
         $list  = $this->db->getFile('timeverif',$time);
         $this->db->setFile($list)->import(1);
-        $this->success('还原成功') ;
+        $this->success('restore success') ;
     }
 
     //下载
@@ -104,10 +104,10 @@ class Database extends Base
     public function delSqlFiles() {
         $time = input('post.time');
         if($this->db->delFile($time)){
-            $this->success('备份文件删除成功') ;
+            $this->success(lang('delete success')) ;
 
         }else{
-            $this->error('备份文件删除失败，请检查权限！') ;
+            $this->error(lang('delete fail')) ;
 
         }
     }

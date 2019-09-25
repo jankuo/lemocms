@@ -40,7 +40,7 @@ class User extends Base{
             foreach ($list['data'] as $k=>$v){
                 $list['data'][$k]['create_time'] = date('Y-m-d H:s',$v['create_time']);
             }
-            return $result = ['code' => 0, 'msg' => '获取成功!', 'data' => $list['data'], 'count' => $list['total']];
+            return $result = ['code' => 0, 'msg' => lang('get info success'), 'data' => $list['data'], 'count' => $list['total']];
         }
         return View::fetch();
 
@@ -58,16 +58,16 @@ class User extends Base{
 
             $res = UserModel::create($data);
             if ($res) {
-                $this->success('添加成功',url('index'));
+                $this->success(lang('add success'),url('index'));
             } else {
-                $this->success('添加失败');
+                $this->error(lang('add fail'));
             }
         }
         $userLevel = UserLevel::where('status',1)->select();
 
         $view = [
             'info' => '',
-            'title' => '添加',
+            'title' => lang('add'),
             'userLevel'=>$userLevel,
         ];
         View::assign($view);
@@ -84,9 +84,9 @@ class User extends Base{
             }
             $res = UserModel::update($data);
             if ($res) {
-                $this->success('修改成功', url('index'));
+                $this->success(lang('edit success'), url('index'));
             } else {
-                $this->success('修改失败');
+                $this->error(lang('edit fail'));
             }
         }
         $info = UserModel::find(Request::get('id'));
@@ -107,10 +107,10 @@ class User extends Base{
             $info = UserModel::find($id);
             $info->status = $info->status==1?0:1;
             $info->save();
-            $this->success('修改成功');
+            $this->success(lang('edit success'));
 
         }else{
-            $this->error('非法数据');
+            $this->error(lang('invalid data'));
         }
     }
     public function delete(){
@@ -118,10 +118,21 @@ class User extends Base{
         if($id){
 
             UserModel::destroy($id);
-            $this->success('删除成功');
+            $this->success(lang('delete success'));
 
         }else{
-            $this->error('非法数据');
+            $this->error(lang('invalid data'));
+        }
+    }
+    public function delAll(){
+        $ids = Request::post('ids');
+        if($ids){
+            $res = \app\common\model\User::destroy($ids);
+            if(!$res)$this->error(lang('delete fail'));
+
+            $this->success(lang('delete success'));
+        }else{
+            $this->error(lang('invalid data'));
         }
 
     }
@@ -134,17 +145,13 @@ class User extends Base{
             $page = Request::post('page') ? Request::post('page') : 1;
             $list = Db::name('user_level')
                 ->where('level_name','like',"%".$keys."%")
-
                 ->order('id desc')
                 ->paginate(['list_rows' => $this->pageSize, 'page' => $page])
                 ->toArray();
 
-            return $result = ['code' => 0, 'msg' => '获取成功!', 'data' => $list['data'], 'count' => $list['total']];
+            return $result = ['code' => 0, 'msg' => lang('get info success'), 'data' => $list['data'], 'count' => $list['total']];
         }
         return View::fetch();
-
-
-
     }
 
     public function levelAdd(){
@@ -156,18 +163,17 @@ class User extends Base{
                 $this->error($e->getMessage());
             }
 
-
             $res = UserLevel::create($data);
             if ($res) {
-                $this->success('添加成功',url('levelIndex'));
+                $this->success(lang('add success'),url('levelIndex'));
             } else {
-                $this->success('添加失败');
+                $this->error(lang('add fail'));
             }
         }
 
         $view = [
             'info' => '',
-            'title' => '添加',
+            'title' => lang('add'),
         ];
         View::assign($view);
         return View::fetch();
@@ -183,15 +189,15 @@ class User extends Base{
             }
             $res = UserLevel::update($data);
             if ($res) {
-                $this->success('修改成功', url('levelIndex'));
+                $this->success(lang('edit success'), url('levelIndex'));
             } else {
-                $this->success('修改失败');
+                $this->error(lang('edit fail'));
             }
         }
         $info = UserLevel::find(Request::get('id'));
         $view = [
             'info' => $info,
-            'title' => '修改',
+            'title' => lang('edit'),
         ];
         View::assign($view);
         return View::fetch('level_add');
@@ -205,10 +211,9 @@ class User extends Base{
             $info = UserLevel::find($id);
             $info->status = $info->status==1?0:1;
             $info->save();
-            $this->success('修改成功');
-
+            $this->success(lang('edit success'));
         }else{
-            $this->error('非法数据');
+            $this->error(lang('invalid data'));
         }
     }
 
@@ -216,12 +221,10 @@ class User extends Base{
 
         $id = Request::post('id');
         if($id){
-
             UserLevel::destroy($id);
-            $this->success('删除成功');
-
+            $this->success(lang('delete success'));
         }else{
-            $this->error('非法数据');
+            $this->error(lang('invalid data'));
         }
     }
 

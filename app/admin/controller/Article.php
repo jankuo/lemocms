@@ -13,6 +13,7 @@
 namespace app\admin\controller;
 use app\common\model\ArticleCate;
 use think\facade\Db;
+use think\facade\Lang;
 use think\facade\Request;
 use think\facade\View;
 
@@ -35,7 +36,7 @@ class Article extends  Base{
                 ->order('a.sort desc,a.id desc')
                 ->paginate(['list_rows' => $this->pageSize, 'page' => $page])
                 ->toArray();
-            return $result = ['code'=>0,'msg'=>'获取成功!','data'=>$list['data'],'count'=>$list['total']];
+            return $result = ['code'=>0,'msg'=>lang('get info success'),'data'=>$list['data'],'count'=>$list['total']];
 
         }
         return View::fetch();
@@ -47,9 +48,9 @@ class Article extends  Base{
             $data = Request::post();
             $res = \app\common\model\Article::create($data);
             if ($res) {
-                $this->success('添加成功');
+                $this->success(lang('add success'));
             } else {
-                $this->error('添加失败');
+                $this->error(lang('add fail'));
 
             }
         }else{
@@ -61,7 +62,7 @@ class Article extends  Base{
             $view = [
                 'info' => '',
                 'ArticleCate' => $ArticleCate,
-                'title' => '添加',
+                'title' => lang('add'),
                 'ueditor'=>build_ueditor($params),
             ];
             View::assign($view);
@@ -74,14 +75,14 @@ class Article extends  Base{
         if(Request::isPost()){
             $data = Request::post();
             if(!$data['id']){
-                $this->error('非法数据');
+                $this->error(lang('invalid data'));
             }
 
             $res = \app\common\model\Article::update($data);
             if($res){
-                $this->success('修改成功');
+                $this->success(lang('edit success'));
             }else{
-                $this->error('修改失败');
+                $this->error(lang('edit fail'));
 
             }
         }else{
@@ -95,7 +96,7 @@ class Article extends  Base{
             $view = [
                 'info' => $info,
                 'ArticleCate' => $ArticleCate,
-                'title' => '编辑',
+                'title' => lang('edit'),
                 'ueditor'=>build_ueditor($params),
             ];
             View::assign($view);
@@ -108,13 +109,13 @@ class Article extends  Base{
         $data =  Request::post();
         $id = Request::post('id');
         if (empty($id)) {
-            $this->error('数据不存在!');
+            $this->error('data not exist');
         }
         $info  = \app\common\model\Article::find($id);
         $status = $info['status'] == 1 ? 0 : 1;
         $info->status = $status;
         $info->save();
-        $this->success('修改成功!');
+        $this->success(lang('edit success'));
 
     }
     public function delete(){
@@ -123,7 +124,7 @@ class Article extends  Base{
 
             $id = Request::post('id');
             \app\common\model\Article::destroy($id);
-            $this->success('删除成功');
+            $this->success('delete success');
         }
 
     }
@@ -145,7 +146,7 @@ class Article extends  Base{
             }
 
 
-            return $result = ['code'=>0,'msg'=>'获取成功!','data'=>$list['data'],'count'=>$list['total']];
+            return $result = ['code'=>0,'msg'=>lang('get info success'),'data'=>$list['data'],'count'=>$list['total']];
 
         }
         return View::fetch();
@@ -156,9 +157,9 @@ class Article extends  Base{
             $data = Request::post();
             $res = \app\common\model\ArticleCate::create($data);
             if ($res) {
-                $this->success('添加成功');
+                $this->success(lang('add success'));
             } else {
-                $this->error('添加失败');
+                $this->error(lang('add fail'));
 
             }
         }else{
@@ -169,7 +170,7 @@ class Article extends  Base{
             $view = [
                 'info' => '',
                 'ArticleCate' => $ArticleCate,
-                'title' => '添加',
+                'title' =>lang('add'),
             ];
             View::assign($view);
             return View::fetch('cate_add');
@@ -180,14 +181,14 @@ class Article extends  Base{
         if(Request::isPost()){
             $data = Request::post();
             if(!$data['id']){
-                $this->error('非法数据');
+                $this->error(lang('invalid data'));
             }
 
             $res = \app\common\model\ArticleCate::update($data);
             if($res){
-                $this->success('修改成功');
+                $this->success(lang('edit success'));
             }else{
-                $this->error('修改失败');
+                $this->error(lang('edit fail'));
 
             }
         }else{
@@ -200,7 +201,7 @@ class Article extends  Base{
             $view = [
                 'info' => $info,
                 'ArticleCate' => $ArticleCate,
-                'title' => '编辑',
+                'title' => lang('edit'),
             ];
             View::assign($view);
             return View::fetch('cate_add');
@@ -213,13 +214,13 @@ class Article extends  Base{
         $data =  Request::post();
         $id = Request::post('id');
         if (empty($id)) {
-            $this->error('数据不存在!');
+            $this->error(lang('data not exist'));
         }
         $info  = \app\common\model\ArticleCate::find($id);
         $status = $info['status'] == 1 ? 0 : 1;
         $info->status = $status;
         $info->save();
-        $this->success('修改成功!');
+        $this->success(lang('edit success'));
 
     }
     public function cateDel(){
@@ -229,10 +230,10 @@ class Article extends  Base{
             $id = Request::post('id');
             $child = \app\common\model\ArticleCate::where('pid',$id)->find();
             if($child){
-                $this->error('请先删除下级');
+                $this->error(lang('delete child first'));
             }
             \app\common\model\Article::destroy($id);
-            $this->success('删除成功');
+            $this->success(lang('delete success'));
         }
 
     }

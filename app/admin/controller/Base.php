@@ -63,12 +63,12 @@ class Base extends B{
             $this->adminRules = array_merge($adminRules,$noruls);
             if($this->hrefId){
                 // 不在权限里面，并且请求为post
-                if(!in_array($this->hrefId,$this->adminRules) and Request::isPost()){
-                    $this->error('您无此操作权限');exit();
+                if(!in_array($this->hrefId,$this->adminRules)){
+                    $this->error(lang('permission denied'));exit();
                 }
             }else{
                 if(!in_array($route,$allow)) {
-                    $this->error('没有权限');
+                    $this->error(lang('permission denied'));
                     exit();
                 }
 
@@ -83,7 +83,7 @@ class Base extends B{
     public function logout()
     {
         Session::clear();
-        $this->success('退出登录成功！', '@admin/login');
+        $this->success(lang('logout success'), '@admin/login');
     }
 
     /*
@@ -91,13 +91,19 @@ class Base extends B{
      */
     public function password(){
         if (!Request::isPost()){
+
             return View::fetch('login/password');
+
         }else{
+            if( Request::isPost() and Session::get('admin.id')===3){
+                $this->error(lang('test data cannot edit'));
+            }
+
             $data =  Request::post();
             $oldpassword = Request::post('oldpassword',  'strval');
             $admin = Admin::find($data['id']);
             if($admin['password']!=md5(trim($oldpassword))) {
-                $this->error('原密码错误');
+                $this->error(lang('origin password error'));
             }
             $password = Request::post('password', '123456', 'strval');
             try {
@@ -109,13 +115,13 @@ class Base extends B{
                 }elseif(Session::get('admin.id')==$data['id']){
                     Admin::update($data);
                 }else{
-                    $this->error('没有权限');
+                    $this->error(lang('permission denied'));
                 }
 
             } catch (\Exception $e) {
                 $this->error($e->getMessage());
             }
-            $this->success('修改成功');
+            $this->success(lang('edit success'));
 
         }
     }
@@ -127,7 +133,7 @@ class Base extends B{
             $oldpassword = Request::post('oldpassword',  'strval');
             $admin = Admin::find($data['id']);
             if($admin['password']!=md5(trim($oldpassword))) {
-                $this->error('原密码错误');
+                $this->error(lang('origin password error'));
             }
             $password = Request::post('password', '123456', 'strval');
             try {
@@ -139,13 +145,13 @@ class Base extends B{
                 }elseif(Session::get('admin.id')==$data['id']){
                     Admin::update($data);
                 }else{
-                    $this->error('没有权限');
+                    $this->error(lang('permission denied'));
                 }
 
             } catch (\Exception $e) {
                 $this->error($e->getMessage());
             }
-            $this->success('修改成功');
+            $this->success(lang('edit success'));
 
         }
     }

@@ -88,7 +88,7 @@ class Wechat extends Base{
                 ->field('a.*,t.name as type_name')
                 ->select()->toArray();
 
-            return $result = ['code' => 0, 'msg' => '获取成功!', 'data' => $list,];
+            return $result = ['code' => 0, 'msg' =>lang('get info success'), 'data' => $list,];
         }
         return View::fetch();
 
@@ -102,19 +102,16 @@ class Wechat extends Base{
             }catch (\Exception $e){
                 $this->error($e->getMessage());
             }
-
-
             $res = WxAccount::create($data);
             if ($res) {
-                $this->success('添加成功',url('index'));
+                $this->success(lang('add success'),url('index'));
             } else {
-                $this->success('添加失败');
+                $this->error(lang('add fail'));
             }
         }
-
         $view = [
             'info' => '',
-            'title' => '添加',
+            'title' => lang('add'),
         ];
         View::assign($view);
         return View::fetch();
@@ -130,9 +127,9 @@ class Wechat extends Base{
             }
             $res = WxAccount::update($data);
             if ($res) {
-                $this->success('修改成功', url('index'));
+                $this->success(lang('edit success'), url('index'));
             } else {
-                $this->success('修改失败');
+                $this->error(lang('edit fail'));
             }
         }
         $info = WxAccount::find(Request::get('id'));
@@ -151,20 +148,16 @@ class Wechat extends Base{
             $info = WxAccount::find($id);
             $info->status = $info->status==1?0:1;
             if($info->status==1){
-
                 $list = WxAccount::where('status',1)->where('id','<>',$info->id)->select();
                 if($list){
                     foreach ($list as $k=>$v){
-
                         $v->status=0;
-
                         $v->save();
                     }
                 }
             }
             $info->save();
-            $this->success('修改成功');
-
+            $this->success(lang('edit success'));
         }else{
             $this->error('非法数据');
         }
@@ -173,7 +166,7 @@ class Wechat extends Base{
         $id = Request::post('id');
         if($id){
             WxAccount::destroy($id);
-            $this->success('删除成功');
+            $this->success(lang('delete success'));
 
         }else{
             $this->error('非法数据');
@@ -223,45 +216,40 @@ class Wechat extends Base{
 
     }
 
-
-
     // 添加微信菜单
     public function addWeixinMenu(){
         $data = Request::post();
         $app_id = $data['app_id'];
         $isApp = WxAccount::where('store_id',$this->store_id)->where('app_id',$app_id)->value('status');
         if($isApp !=1){
-            $this->error('公众号没有对接成功');
+            $this->error(lang('account is not accessed'));
         }
         $menu = $data['menu'];
         if (!empty($menu)) {
             $res = $this->wechatApp->menu->create($menu['button']);
             if($res['errcode']==0){
-                $this->success('添加成功');
+                $this->success(lang('add success'));
                 //WxMenu::create($menu['button']);
             }else{
-
-                $this->error('创建失败');
+                $this->error(lang('create fai'));
             }
-
-
         }
-        $this->error('创建失败');
+        $this->error(lang('create fai'));
     }
 
     public function updataWechatMenu()
     {
         $menu =  $this->wechatApp->menu->list();
-        $this->success('更新成功');
+        $this->success(lang('update success'));
 
     }
     public function menuDel(){
 
         $res = $this->wechatApp->menu->delete(); // 全部
         if($res['errcode']==0){
-            $this->success('删除成功');
+            $this->success(lang('delete success'));
         }else{
-            $this->error('删除失败');
+            $this->error(lang('delete fai'));
         }
     }
 
@@ -276,8 +264,7 @@ class Wechat extends Base{
                 $wx_aid =  $this->wechatAccount->id;
             }
             if(!$wx_aid){
-                return $result = ['code' => 0,'msg' => '获取失败!请对接公众号',];
-
+                return $result = ['code' => 0,'msg' => lang('account is not accessed'),];
             }
             $keys = Request::post('keys','','trim');
             $page = Request::post('page') ? Request::post('page') : 1;
@@ -293,10 +280,9 @@ class Wechat extends Base{
             foreach ($list['data'] as $k=>$v){
                 $list['data'][$k]['tag_list'] = $tag;
             }
-            return $result = ['code' => 0, 'msg' => '获取成功!', 'data' => $list['data'],'count'=>$list['total'],'tag'=>$tag];
+            return $result = ['code' => 0, 'msg' =>lang('get info success'), 'data' => $list['data'],'count'=>$list['total'],'tag'=>$tag];
         }
-        $wxAccount = WxAccount:: where('store_id',$this->store_id)
-            ->select();
+        $wxAccount = WxAccount:: where('store_id',$this->store_id)->select();
         $view = [
                 'title'=>'粉丝',
                 'info'=>'',
@@ -314,7 +300,7 @@ class Wechat extends Base{
         }
         $wxAccount = $this->wechatAccount;
         if(!$wxAccount){
-            $this->error('公众号还未对接成功，请先对接');
+            $this->error(lang('account is not accessed'));
         }
         $usersOpenidList = $this->wechatApp->user->list();
         $users = [];
@@ -344,8 +330,8 @@ class Wechat extends Base{
                 }
             }
 
-//            // 提交事务
-//            Db::commit();
+//          // 提交事务
+//          Db::commit();
             $this->success('同步成功');
 //        } catch (\Exception $e) {
 //             //回滚事务
@@ -367,11 +353,10 @@ class Wechat extends Base{
             $wxFans->tag = $tag;
             $res = $this->wechatApp->user_tag->tagUsers([$wxFans->openid],$tags['tag_id']);
             if($res){
-
                 $wxFans->save();
-                $this->success('更新成功');
+                $this->success(lang('update success'));
             }else{
-                $this->error('更新失败');
+                $this->error(lang('update fail'));
 
             }
         }
@@ -385,7 +370,7 @@ class Wechat extends Base{
                 $wx_aid =  $this->wechatAccount->id;
             }
             if(!$wx_aid){
-                return $result = ['code' => 0,'msg' => '获取失败!请对接公众号',];
+                return $result = ['code' => 0,'msg' => lang('account is not accessed'),];
 
             }
             $keys = Request::post('keys','','trim');
@@ -397,13 +382,13 @@ class Wechat extends Base{
                 ->paginate(['list_rows' => $this->pageSize, 'page' => $page])
                 ->toArray();
 
-            return $result = ['code' => 0, 'msg' => '获取成功!', 'data' => $list['data'],'count'=>$list['total']];
+            return $result = ['code' => 0, 'msg' =>lang('get info success'), 'data' => $list['data'],'count'=>$list['total']];
         }
 
 
         $wxaccount = WxAccount::where('store_id',$this->store_id)->select();
 
-        $view = ['title'=>'标签', 'info'=>'', 'wxaccount'=>$wxaccount];
+        $view = ['title'=>lang('tag'), 'info'=>'', 'wxaccount'=>$wxaccount];
         View::assign($view);
         return View::fetch();
 
@@ -413,13 +398,13 @@ class Wechat extends Base{
         if (Request::isPost()) {
             $id = Request::post('id');
             if (empty($id)) {
-                $this->error('ID不存在!');
+                $this->error('id'.lang('not exist'));
             }
             $adv = WxTag::find($id);
             $status = $adv['status'] == 1 ? 0 : 1;
             $adv->status = $status;
             $adv->save();
-            $this->success('修改成功!');
+            $this->success(lang('edit success'));
         }
 
     }
@@ -445,16 +430,16 @@ class Wechat extends Base{
                 }
 
             }
-            $this->success('同步成功');
+            $this->success(lang('aysn success'));
 
         }
 
-        $this->error('非法操作');
+        $this->error(lang('invalid options'));
 
     }
+    
     public function tagAdd()
     {
-
         if(Request::isPost()){
             $data  = Request::post();
             if($data){
@@ -465,20 +450,20 @@ class Wechat extends Base{
                 $data['tag_id'] = $res['tag']['id'];
                 if($res){
                     WxTag::create($data);
-                    $this->success('添加成功');
+                    $this->success(lang('add success'));
                 }else{
-                    $this->error('添加失败');
+                    $this->error(lang('add fail'));
                 }
 
             }else{
-                $this->error('添加失败');
+                $this->error(lang('add fail'));
             }
 
 
         }
         $wx_aid = Request::get('wx_aid');
         $view = [
-            'title'=>'添加',
+            'title'=>lang('add'),
             'info'=>['wx_aid'=>$wx_aid],
         ];
 
@@ -497,16 +482,14 @@ class Wechat extends Base{
                 $res = $this->wechatApp->user_tag->update($tag['tag_id'],$data['name']);
                 if($res['errcode']==0){
                     WxTag::update($data);
-                    $this->success('修改成功');
+                    $this->success(lang('edit success'));
                 }else{
-                    $this->error('修改失败');
+                    $this->error(lang('edit fail'));
                 }
 
             }else{
-                $this->error('修改失败');
+                $this->error(lang('edit fail'));
             }
-
-
         }
         $id = Request::get('id');
         $info  = WxTag::find($id);
@@ -531,9 +514,9 @@ class Wechat extends Base{
         if($res['errcode']==0){
             WxTag::destroy($id);
         }else{
-            $this->error('删除失败');
+            $this->error(lang('delete fai'));
         }
-        $this->success('删除成功!');
+        $this->success(lang('delete success'));
 
     }
 
@@ -565,7 +548,7 @@ class Wechat extends Base{
         if(Request::isPost()){
             $id = Request::post('id');
             WxMsgHistory::destroy($id);
-            $this->success('成功');
+            $this->success(lang('delete success'));
         }
 
     }
@@ -614,10 +597,8 @@ class Wechat extends Base{
                     break;
                 case 'video':
                     if(WxMaterial::where('media_id',$media_id)->find()) {
-
                         $message =  new Video($media_id, $material->file_name, $material->des);
                     }
-
                     break;
                 case 'voice':
                     if(WxMaterial::where('media_id',$media_id)->find()) {
@@ -626,16 +607,15 @@ class Wechat extends Base{
                     }
                     break;
                 default:
-
                     break;
             }
 
             $result = $this->wechatApp->customer_service->message($message)->to($openid)->send();
 
             if ($result['errcode'] == 0) {
-                $this->success('发送成功');
+                $this->success(lang('send success'));
             } else {
-                $this->error('发送失败');
+                $this->error(lang('send fail'));
 
             }
         }else{
@@ -644,8 +624,7 @@ class Wechat extends Base{
             $info = WxMsgHistory::where('store_id',$this->store_id)->find($id);
             $user = $this->wechatApp->user->get($info->openid);
             $materialGroup = $this->getMaterialGroup();
-
-            $view = ['title'=>'回复','user'=>$user,'info'=>$info,'materialGroup'=>$materialGroup];
+            $view = ['title'=>lang('reply'),'user'=>$user,'info'=>$info,'materialGroup'=>$materialGroup];
             View::assign($view);
             return View::fetch();
         }
@@ -665,7 +644,7 @@ class Wechat extends Base{
                     ->value('id');
             }
             if(!$wx_aid){
-                return $result = ['code' => 0,'msg' => '获取失败!请对接公众号',];
+                return $result = ['code' => 0,'msg' => lang('account is not accessed'),];
 
             }
             $keys = Request::post('keys','','trim');
@@ -676,11 +655,11 @@ class Wechat extends Base{
                 ->order('fans_id desc')
                 ->paginate(['list_rows' => $this->pageSize, 'page' => $page])
                 ->toArray();
-            return $result = ['code' => 0, 'msg' => '获取成功!', 'data' => $list['data'],'count'=>$list['total']];
+            return $result = ['code' => 0, 'msg' =>lang('get info success'), 'data' => $list['data'],'count'=>$list['total']];
         }
         $materialGroup = $this->getMaterialGroup();
         $view = [
-            'title'=>'素材',
+            'title'=>lang('material'),
             'info'=>'',
             'materialGroup'=>$materialGroup,
         ];
@@ -691,21 +670,15 @@ class Wechat extends Base{
     }
     //添加图文素材
     public function materialAdd(){
-
         if(Request::isPost()){
-
             $data = Request::post('content');
-
-
-
+            
             foreach ($data as $k => $v) {
                 $article= new Article($data[$k]);
                 $articles[$k] = $article;
-
             }
             $res = $this->wechatApp->material->uploadArticle($articles);
             $this->showError($res);
-
             $WxMaterialData = [
                 'store_id'=>$this->store_id,
                 'wx_aid'=>$this->wechatAccount->id,
@@ -748,7 +721,7 @@ class Wechat extends Base{
         $params['content'] = '';
         $view = [
             'info' => [],
-            'title' => '添加',
+            'title' => lang('add'),
             'ueditor'=>build_ueditor($params),
         ];
         View::assign($view);
@@ -799,15 +772,14 @@ class Wechat extends Base{
                 $this->error($e->getMessage());
 
             }
-
-
+            
         }
         $id = Request::get('id');
         $info = WxMaterialInfo::where('material_id',$id)->select()->toArray();
         $params['name'] = 'container';
         $params['content'] = '';
         $view = [
-            'title'=>'修改',
+            'title'=>lang('edit'),
             'info'=>$info,
             'ueditor'=>build_ueditor($params),
         ];
@@ -826,17 +798,17 @@ class Wechat extends Base{
         if($material['type']=='news'){
             $info = WxMaterialInfo::where($this->where)->where('material_id',$id)->delete();
             if($info && $material->delete()){
-                $this->success('删除成功');
+                $this->success(lang('delete success'));
             }else{
-                $this->error('删除失败');
+                $this->error(lang('delete fail'));
 
             }
         }else{
             if($material->delete()){
 
-                $this->success('删除成功');
+                $this->success(lang('delete success'));
             }else{
-                $this->error('删除失败');
+                $this->error(lang('delete fail'));
 
             }
         }
@@ -849,9 +821,9 @@ class Wechat extends Base{
             $info = WxMaterial::find($id);
             $res = $this->sendAll($info);
             $this->showError($res);
-            $this->success('发送成功');
+            $this->success(lang('send success'));
         } else {
-            $this->error('发送失败');
+            $this->error(lang('send fail'));
 
         }
 
@@ -866,10 +838,10 @@ class Wechat extends Base{
             $res = $this->preview($info,$wxname);
 
             $this->showError($res);
-            $this->success('发送成功');
+            $this->success(lang('send success'));
 
         }else{
-            $this->error('发送失败');
+            $this->error(lang('send fail'));
 
         }
 
@@ -964,10 +936,7 @@ class Wechat extends Base{
 
                 break;
         }
-
         return $res;
-
-
 
     }
     /**
@@ -1036,24 +1005,21 @@ class Wechat extends Base{
             }
             $res = WxReply::create($data);
             if ($res) {
-                $this->success('添加成功',url('index'));
+                $this->success(lang('add success'),url('index'));
             } else {
-                $this->success('添加失败');
+                $this->error(lang('add fail'));
             }
         }
 
         $view = [
             'info' => [],
-            'title' => '添加',
+            'title' => lang('add'),
             'materialGroup' => $this->getMaterialGroup(),
 
         ];
         View::assign($view);
-
-
         return View::fetch();
-
-
+        
     }
 
     public function replyEdit(){
@@ -1063,15 +1029,15 @@ class Wechat extends Base{
             $data['wx_aid'] = $this->wechatAccount->id;
             $res = WxReply::update($data);
             if ($res) {
-                $this->success('修改成功',url('index'));
+                $this->success(lang('edit success'),url('index'));
             } else {
-                $this->success('修改失败');
+                $this->error(lang('edit fail'));
             }
         }
         $info = WxReply::find(Request::get('id'));
         $view = [
             'info' => $info,
-            'title' => '修改',
+            'title' => lang('edit'),
             'materialGroup' => $this->getMaterialGroup(),
         ];
         View::assign($view);
@@ -1082,7 +1048,7 @@ class Wechat extends Base{
 
         $id = Request::post('id');
         WxReply::destroy($id);
-        $this->success('删除成功');
+        $this->success(lang('delete success'));
 
     }
 
@@ -1108,7 +1074,7 @@ class Wechat extends Base{
                 $res[$k]['groupList'] = WxMaterialInfo::where($this->where)->where('material_id',$v['id'])->select()->toArray();
             }
         }
-        $this->success('成功','',$res);
+        $this->success(lang('get info success'),'',$res);
 
 
     }
@@ -1176,7 +1142,7 @@ class Wechat extends Base{
             } else {
                 $result["url"] = $path[0];
             }
-            $result['msg'] = '上传成功';
+            $result['msg'] = lang('upload success');
             return $result;
         } else {
             //上传失败获取错误信息
@@ -1206,7 +1172,7 @@ class Wechat extends Base{
 
             $r = WxMaterial::create($data);
             if($r){
-                $this->success('上传成功','',$result);
+                $this->success(lang('upload success'),'',$result);
             }else{
                 $this->error('上传失败');
 
@@ -1239,7 +1205,7 @@ class Wechat extends Base{
 
         $r = WxMaterial::create($datas);
         if($r){
-            $this->success('上传成功','',$result);
+            $this->success(lang('upload success'),'',$result);
         }else{
             $this->error('上传失败');
 
@@ -1268,7 +1234,7 @@ class Wechat extends Base{
             $result['url'] = $resource['down_url'];
             $r = WxMaterial::create($data);
             if($r){
-                $this->success('上传成功','',$result);
+                $this->success(lang('upload success'),'',$result);
             }else{
                 $this->error('上传失败');
 
@@ -1298,13 +1264,13 @@ class Wechat extends Base{
 
             $r = WxMaterial::create($data);
             if($r){
-                $this->success('上传成功',$result['url']);
+                $this->success(lang('upload success'),$result['url']);
             }else{
-                $this->error('上传失败');
+                $this->error(lang('upload fail'));
 
             }
         }else{
-            $this->error('上传失败');
+            $this->error(lang('upload fail'));
 
         }
 
@@ -1396,8 +1362,6 @@ class Wechat extends Base{
 
         }
         return json_encode($data);
-
-
     }
     public function getListImage(){
             $list = WxMaterial::where($this->where)->where('type','image')->select();

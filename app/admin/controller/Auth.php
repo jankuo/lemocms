@@ -56,7 +56,7 @@ class Auth extends Base
                 ->whereOr($map,$map1,$map2)
                 ->select();
 
-            return $result = ['code'=>0,'msg'=>'获取成功!','data'=>$list];
+            return $result = ['code'=>0,'msg'=>lang('get info success'),'data'=>$list];
         }
 
         return View::fetch();
@@ -76,9 +76,9 @@ class Auth extends Base
             //添加
             $result = Admin::create($data);
             if ($result) {
-                $this->success('管理员添加成功', url('adminList'));
+                $this->success(lang('add success'), url('adminList'));
             } else {
-                $this->error('管理员添加失败');
+                $this->error(lang('add fail'));
             }
         } else {
             $info = '';
@@ -87,7 +87,7 @@ class Auth extends Base
             $view = [
                 'info'  =>$info,
                 'authGroup' => $auth_group,
-                'title' => '添加管理员',
+                'title' => lang('add'),
             ];
             View::assign($view);
             return View::fetch();
@@ -100,9 +100,9 @@ class Auth extends Base
         $id = Request::post('id');
         if ($id > 1) {
             Admin::destroy($id);
-            $this->success('删除成功!');
+            $this->success(lang('delete success'));
         } else {
-            $this->error('超级管理员不可删除');
+            $this->error(lang('supper man cannot delete'));
 
         }
     }
@@ -115,21 +115,21 @@ class Auth extends Base
         if (Request::isPost()) {
             $id = Request::post('id');
             if (empty($id)) {
-                $this->error('用户ID不存在!');
+                $this->error('id'.lang('not exist'));
             }
             if ($id == 1) {
-                $this->error('超级管理员不可修改状态!');
+                $this->error(lang('supper man cannot edit state'));
             }
-            if(Session::get('admin.id')==3){
-                $this->error('测试数据不可更改!');
-
-            }
+//            if(Session::get('admin.id')==3){
+//                $this->error(lang('test data cannot edit'));
+//
+//            }
 
             $admin = Admin::find($id);
             $status = $admin['status'] == 1 ? 0 : 1;
             $admin->status = $status;
             $admin->save();
-            $this->success('修改成功!');
+            $this->success(lang('edit success'));
         }
     }
 
@@ -140,9 +140,9 @@ class Auth extends Base
     {
         if (Request::isPost()) {
             $data = Request::post();
-            if(!$data['username']) $this->error('用户名不能为空');
-            if(!$data['password']) $this->error('密码不能为空');
-            if(!$data['group_id']) $this->error('用户组不能为空');
+            if(!$data['username']) $this->error(lang('username').lang('cannot null'));
+            if(!$data['password']) $this->error(lang('password').lang('cannot null'));
+            if(!$data['group_id']) $this->error(lang('adminGroup').lang('cannot null'));
             $admin = Admin::find($data['id']);
             if($admin['password']==$data['password']){
                 unset($data['password']);
@@ -153,7 +153,7 @@ class Auth extends Base
             if(Session::get('admin.id')==$data['id']){
                 Session::set('admin',null);
             }
-            $this->success('管理员修改成功!', url('Auth/adminList'));
+            $this->success(lang('edit success'), url('Auth/adminList'));
 
         } else {
             $id = Request::param('id')?Request::param('id'):Session::get('admin.id');
@@ -163,7 +163,7 @@ class Auth extends Base
                 $view = [
                     'info' => $admin,
                     'authGroup' => $auth_group,
-                    'title' => '编辑用户',
+                    'title' => lang('edit'),
                 ];
                 View::assign($view);
                 return View::fetch('admin_add');
@@ -193,13 +193,9 @@ class Auth extends Base
                     $this->pageSize, false,
                     ['query' => Request::param()]
                 )->toArray();
-            return $result = ['code'=>0,'msg'=>'获取成功!','data'=>$list['data']];
-
+            return $result = ['code'=>0,'msg'=>lang('get info success'),'data'=>$list['data']];
         }
-
-
         return View::fetch();
-
     }
 
     // 用户组删除
@@ -208,9 +204,9 @@ class Auth extends Base
         $id = Request::post('id');
         if ($id > 1) {
             AuthGroup::destroy($id);
-            $this->success('删除成功!');
+            $this->success(lang('delete success'));
         } else {
-            $this->error('超级管理员组不可删除!');
+            $this->error(lang('supper man cannot delete'));
         }
 
     }
@@ -227,9 +223,9 @@ class Auth extends Base
             }
             $result = AuthGroup::create($data);
             if ($result) {
-                $this->success('用户组添加成功', 'Auth/adminGroup');
+                $this->success(lang('add success'), 'Auth/adminGroup');
             } else {
-                $this->error('用户组添加失败');
+                $this->error(lang('add fail'));
             }
 
         } else {
@@ -247,7 +243,7 @@ class Auth extends Base
         if (Request::isPost()) {
             $data = Request::post();
             if($data['id']==1){
-                $this->error('超级管理员不可以更改');
+                $this->error(lang('supper man cannot edit'));
             }
             try{
                 $this->validate($data, 'AuthGroup');
@@ -258,9 +254,9 @@ class Auth extends Base
             $res = AuthGroup::update($data, $where);
             if($res){
 
-                $this->success('修改成功!', url('group'));
+                $this->success(lang('edit success'), url('group'));
             }else{
-                $this->error('修改失败');
+                $this->error(lang('edit fail'));
 
             }
 
@@ -269,7 +265,7 @@ class Auth extends Base
             $info = AuthGroup::find(['id' => $id]);
             $view = [
                 'info' => $info,
-                'title' => '权限组编辑'
+                'title' => lang('edit')
             ];
             View::assign($view);
             return View::fetch();
@@ -284,7 +280,7 @@ class Auth extends Base
             $info = AuthGroup::find($id);
             $info->status = $info['status'] == 1 ? 0 : 1;
             $info->save();
-            $this->success('修改成功!');
+            $this->success(lang('edit success'));
 
         }
     }
@@ -295,9 +291,9 @@ class Auth extends Base
         $id = Request::post('id');
         if ($id > 1) {
             AuthGroup::destroy($id);
-            $this->success('删除成功!');
+            $this->success(lang('delete success'));
         } else {
-            $this->error('超级管理员组不可删除!');
+            $this->error(lang('delete fail'));
         }
     }
 
@@ -311,7 +307,6 @@ class Auth extends Base
         $rules = AuthGroup::where('id', Request::param('id'))
             ->where('status',1)
             ->value('rules');
-
         $group_id = Request::param('id');
         $idList = AuthRule::column('id');
         $list = auth_checked($admin_rule, $pid = 0, $rules);
@@ -324,13 +319,12 @@ class Auth extends Base
         View::assign($view);
         return View::fetch('group_access');
     }
-
     // 用户组保存权限
     public function groupSetaccess()
     {
         $rules = Request::post('rules');
         if (empty($rules)) {
-            $this->error('请选择权限');
+            $this->error(lang('please choose rule'));
         }
         $data = Request::post();
         $rules = auth_normal($rules);
@@ -341,9 +335,9 @@ class Auth extends Base
         $where['id'] = $data['group_id'];
         $where['rules'] = $rls;
         if (AuthGroup::update($where)) {
-            $this->success('权限配置成功!',url('group'));
+            $this->success(lang('rule assign success'),url('group'));
         } else {
-            $this->error('保存错误!');
+            $this->error(lang('rule assign fail'));
         }
     }
 
@@ -362,7 +356,7 @@ class Auth extends Base
                 }
                 cache('authRuleList', $arr, 3600);
             }
-            return $result = ['code'=>0,'msg'=>'获取成功!','data'=>$arr,'is'=>true,'tip'=>'操作成功'];
+            return $result = ['code'=>0,'msg'=>lang('get info success'),'data'=>$arr,'is'=>true,'tip'=>'操作成功'];
         }
         return View::fetch('admin_rule');
     }
@@ -375,7 +369,7 @@ class Auth extends Base
             $info = AuthRule::find($id);
             $info->menu_status = $info['menu_status'] == 1 ? 0 : 1;
             $info->save();
-            $this->success('修改成功');
+            $this->success(lang('edit success'));
 
         }
     }
@@ -388,7 +382,7 @@ class Auth extends Base
             $info = AuthRule::find($id);
             $info->auth_open = $info['auth_open'] == 1 ? 0 : 1;
             $info->save();
-            $this->success('修改成功');
+            $this->success(lang('edit success'));
         }
     }
 
@@ -401,7 +395,7 @@ class Auth extends Base
             $info = AuthRule::find($id);
             $info->sort = $sort;
             $info->save();
-            $this->success('修改成功');
+            $this->success(lang('edit success'));
         }
     }
 
@@ -412,12 +406,12 @@ class Auth extends Base
         $child = AuthRule::where('pid',$id)->find();
         if ($id && !$child) {
             AuthRule::destroy($id);
-            $this->success('删除成功');
+            $this->success(lang('delete success'));
         }elseif($child){
-            $this->error('有下级，先删除下级');
+            $this->error(lang('delete child first'));
 
         }else{
-            $this->error('id 不存在');
+            $this->error('id'.lang('not exist'));
         }
     }
 
@@ -427,7 +421,7 @@ class Auth extends Base
         $id = Request::param('id');
         if ($id) {
             AuthRule::destroy($id);
-            $this->success('删除成功');
+            $this->success(lang('delete success'));
         }
 
     }
@@ -438,15 +432,15 @@ class Auth extends Base
         if (Request::isPost()) {
             $data = Request::post();
             if (empty($data['title'])) {
-                $this->error('权限名称不可为空');
+                $this->error(lang('rule name cannot null'));
             }
             if (empty($data['sort'])) {
-                $this->error('排序不可为空');
+                $this->error(lang('sort').lang(' cannot null'));
             }
             if (AuthRule::create($data)) {
-                $this->success('权限添加成功', url('adminRule'));
+                $this->success(lang('add success'), url('adminRule'));
             } else {
-                $this->error('权限添加失败');
+                $this->error(lang('add fail'));
             }
         } else {
             $list = Db::name('auth_rule')
@@ -471,7 +465,7 @@ class Auth extends Base
             $data = Request::param();
             $where['id'] = $data['id'];
             AuthRule::update($data);
-            $this->success('修改成功!', url('Auth/adminRule'));
+            $this->success(lang('edit success'), url('Auth/adminRule'));
         } else {
             $list = Db::name('auth_rule')
                 ->order('sort asc')

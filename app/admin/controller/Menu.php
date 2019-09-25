@@ -50,12 +50,10 @@ class Menu extends Base
 
     }
 
-
-
     /*
     * 自定义菜单排列
     */
-    static public function menu($cate, $lefthtml = '|— ', $pid = 0, $lvl = 0, $leftpin = 0)
+    public static function menu($cate, $lefthtml = '|— ', $pid = 0, $lvl = 0, $leftpin = 0)
     {
         $arr = array();
         foreach ($cate as $v) {
@@ -72,7 +70,7 @@ class Menu extends Base
         return $arr;
     }
 
-    static public function cate($cate, $lefthtml = '|— ', $pid = 0, $lvl = 0, $leftpin = 0)
+   public  static  function cate($cate, $lefthtml = '|— ', $pid = 0, $lvl = 0, $leftpin = 0)
     {
         $arr = array();
         foreach ($cate as $v) {
@@ -88,7 +86,7 @@ class Menu extends Base
         return $arr;
     }
 
-    static public function auth($cate, $rules, $pid = 0)
+   public  static  function auth($cate, $rules, $pid = 0)
     {
         $arr = array();
         $rulesArr = explode(',', $rules);
@@ -106,33 +104,6 @@ class Menu extends Base
     }
 
 
-    /*
-     * $column_one 顶级栏目
-     * $column_two 所有栏目
-     * 用法匹配column_leftid 进行数组组合
-     */
-    static public function index_top($column_one, $column_two)
-    {
-        $arr = array();
-        foreach ($column_one as $v) {
-            $v['sub'] = self::index_toptwo($column_two, $v['id']);
-            $v['url'] = url('home/' . $v['catdir'] . '/index', ['catId' => $v['id']]);
-            $arr[] = $v;
-        }
-        return $arr;
-    }
-
-    static public function index_toptwo($column_two, $c_id)
-    {
-        $arry = array();
-        foreach ($column_two as $v) {
-            if ($v['pid'] == $c_id) {
-                $v['url'] = url('home/' . $v['catdir'] . '/index', ['catId' => $v['id']]);
-                $arry[] = $v;
-            }
-        }
-        return $arry;
-    }
 
 
 }
