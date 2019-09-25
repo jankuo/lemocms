@@ -11,24 +11,26 @@
  * Date: 2019/9/4
  */
 namespace app\admin\controller;
+use think\facade\Db;
+use think\facade\Request;
+use think\facade\View;
+use app\common\model\WxAccount;
+use util\WechatApp;
+
 use app\common\model\WxFans;
 use app\common\model\WxMaterial;
 use app\common\model\WxMaterialInfo;
 use app\common\model\WxMsgHistory;
 use app\common\model\WxReply;
 use app\common\model\WxTag;
-use EasyWeChat\Kernel\Messages\News;
-use EasyWeChat\Kernel\Messages\NewsItem;
-use think\facade\Db;
-use think\facade\Request;
-use think\facade\View;
-use app\common\model\WxAccount;
-use util\WechatApp;
+
 use EasyWeChat\Kernel\Messages\Text;
 use EasyWeChat\Kernel\Messages\Article;
 use EasyWeChat\Kernel\Messages\Image;
 use EasyWeChat\Kernel\Messages\Video;
 use EasyWeChat\Kernel\Messages\Voice;
+use EasyWeChat\Kernel\Messages\News;
+use EasyWeChat\Kernel\Messages\NewsItem;
 
 class Wechat extends Base{
     //图片（image）: 2M，支持bmp/png/jpeg/jpg/gif格式
@@ -322,9 +324,8 @@ class Wechat extends Base{
             }
         }
         $WxFansModel = new WxFans();
-
-        Db::startTrans();
-        try {
+//        Db::startTrans();
+//        try {
             foreach ($users as $k=>$v){
                 $v['wx_aid'] = $wx_aid;
                 $v['tagid_list'] = json_encode($v['tagid_list']);
@@ -333,30 +334,26 @@ class Wechat extends Base{
                     ->where('openid',$v['openid'])
                     ->find();
                 if($fans){
-                    $res = $WxFansModel::where($this->where)
-                        ->where('openid',$v['openid'])
-                        ->where('fans_id',$fans['fans_id'])
-                        ->update($v);
-                    if($res){
-                        Db::rollback();
-                    }
+                    $v['update_time'] = time();
+                    $res = $fans->force()->save($v);
                 }else{
                     $v['store_id'] = $this->store_id;
                     $v['update_time'] = time();
                     $v['nickname_encode'] = json_encode($v['nickname']);
-                    $WxFansModel::create($v);
+                    $res = $WxFansModel::create($v);
                 }
             }
-            // 提交事务
-            Db::commit();
-            $this->success('同步成功');
-        } catch (\Exception $e) {
-             //回滚事务
-            Db::rollback();
-            $this->error('同步失败');
-        }
 
-        $this->success('同步成功');
+//            // 提交事务
+//            Db::commit();
+            $this->success('同步成功');
+//        } catch (\Exception $e) {
+//             //回滚事务
+//            Db::rollback();
+//            $this->error('同步失败');
+//        }
+
+//        $this->success('同步成功');
 
     }
     //粉丝标签
@@ -699,20 +696,15 @@ class Wechat extends Base{
 
             $data = Request::post('content');
 
-            try{
 
-                foreach ($data as $k => $v) {
-                    $info = explode('`-`',$v);
-                    $article= new Article($data[$k]);
-                    $articles[$k] = $article;
 
-                }
-                $res = $this->wechatApp->material->uploadArticle($articles);
+            foreach ($data as $k => $v) {
+                $article= new Article($data[$k]);
+                $articles[$k] = $article;
 
-            }catch (\Exception $e){
-
-                $this->error($e->getMessage());
             }
+            $res = $this->wechatApp->material->uploadArticle($articles);
+            $this->showError($res);
 
             $WxMaterialData = [
                 'store_id'=>$this->store_id,
@@ -727,7 +719,7 @@ class Wechat extends Base{
             Db::startTrans();
             try {
                 $mat= WxMaterial::create($WxMaterialData);
-                if(isset($data[0])){
+//                if(isset($data[0])){
                     //多图文
                     foreach ($data as $k=>$v) {
 
@@ -737,22 +729,10 @@ class Wechat extends Base{
                         $data[$k]['wx_aid'] = $this->wechatAccount->id;
                         $data[$k]['url'] = $material['news_item'][$k]['url'];
                         $data[$k]['material_id'] = $mat->id;
-                    }
-
-                    $matinfo=  Db::name('WxMaterialInfo')->insertAll($data);
-
-                    }else{
-
-//                    单图文
-                    $data['cover'] = WxMaterial::where('media_id', $data['thumb_media_id'] )->value('media_url');
-                    $data['local_cover'] = WxMaterial::where('media_id', $data['thumb_media_id'])->value('local_cover');
-                    $data['store_id'] =$this->store_id;
-                    $data['wx_aid'] = $this->wechatAccount->id;
-                    $data['url'] = $material['news_item'][0]['url'];
-                    $data['material_id'] = $mat->id;
-                        $matinfo=  Db::name('WxMaterialInfo')->insert($data);
+                        $matinfo=  Db::name('WxMaterialInfo')->save($data[$k]);
 
                     }
+
                 // 提交事务
                 Db::commit();
                 $this->success('成功');
@@ -763,8 +743,6 @@ class Wechat extends Base{
                 $this->error($e->getMessage());
 
             }
-
-
         }
         $params['name'] = 'container';
         $params['content'] = '';
@@ -782,54 +760,35 @@ class Wechat extends Base{
             $data = Request::post('content');
             $id = Request::post('mediaId');
             $mediaId = WxMaterial::where('id', $id)->value('media_id');
-            try {
 
+            foreach ($data as $k => $v) {
 
-                foreach ($data as $k => $v) {
+                $article = new Article($data[$k]);
 
-                    $article = new Article($data[$k]);
+                $res = $this->wechatApp->material->updateArticle($mediaId, $article, $k);
 
-                    $res = $this->wechatApp->material->updateArticle($mediaId, $article, $k);
-
-                }
-
-            } catch (\Exception $e) {
-
-                $this->error($e->getMessage());
             }
 
+            $this->showError($res);
 
             $material =  $this->getMaterialByMediaId($mediaId);
 
             // 启动事务
             Db::startTrans();
             try {
-                if(isset($data[0])){
-                    //多图文
+//
                     foreach ($data as $k=>$v) {
-                        $data[$k]['id'] =
+                        $data[$k]['id'] = WxMaterialInfo::where($this->where)->where('thumb_media_id', $v['thumb_media_id'])->value('id');
                         $data[$k]['cover'] = WxMaterial::where('media_id', $data[$k]['thumb_media_id'])->value('media_url');
                         $data[$k]['store_id'] = $this->store_id;
                         $data[$k]['wx_aid'] = $this->wechatAccount->id;
                         $data[$k]['url'] = $material['news_item'][$k]['url'];
-                        $data[$k]['material_id'] =$id;
+                        $data[$k]['material_id'] = $id;
                         $data[$k]['update_time'] = time();
+                        $WxMaterialInfoModel = WxMaterialInfo::find($data[$k]['id']);
+                        $r[$k] = $WxMaterialInfoModel->force()->save($data[$k]);
                     }
-                    $WxMaterialInfoModel = new WxMaterialInfo();
-                    $matinfo=  $WxMaterialInfoModel->saveAll($data);
 
-                }else{
-
-//                    单图文
-                    $data['cover'] = WxMaterial::where('media_id', $data['thumb_media_id'] )->value('media_url');
-                    $data['store_id'] =$this->store_id;
-                    $data['wx_aid'] = $this->wechatAccount->id;
-                    $data['url'] = $material['news_item'][0]['url'];
-                    $data['material_id'] = $id;
-                    $data['update_time'] = time();
-                    $matinfo=  Db::name('WxMaterialInfo')->save($data);
-
-                }
                 // 提交事务
                 Db::commit();
                 $this->success('成功');
@@ -1271,6 +1230,7 @@ class Wechat extends Base{
             'wx_aid'=> $this->wechatAccount->id,
             'media_id'=> $result['media_id'],
             'media_url'=> $resource['down_url'],
+            'local_cover'=> $data['url'],
             'type'=> 'video',
             'file_name'=> $data['file_name'],
             'des'=> $data['des'],
@@ -1301,6 +1261,8 @@ class Wechat extends Base{
                 'wx_aid'=> $this->wechatAccount->id,
                 'media_id'=> $result['media_id'],
                 'media_url'=> $resource['down_url'],
+                'local_cover'=> $res['url'],
+
                 'type'=> 'image',
             ];
             $result['url'] = $resource['down_url'];
@@ -1330,6 +1292,7 @@ class Wechat extends Base{
                 'wx_aid'=> $this->wechatAccount->id,
                 'media_id'=> $result['media_id'],
                 'media_url'=> $result['url'],
+                'local_cover'=> $res['url'],
                 'type'=> 'image',
             ];
 
@@ -1389,6 +1352,7 @@ class Wechat extends Base{
                 'wx_aid'=> $this->wechatAccount->id,
                 'media_id'=> $result['media_id'],
                 'media_url'=> $resource['down_url'],
+                'local_cover'=> $res['url'],
                 'type'=> 'video',
                 'file_name'=> $res['url'],
                 'des'=> $res['url'],
@@ -1420,6 +1384,7 @@ class Wechat extends Base{
                 'wx_aid'=> $this->wechatAccount->id,
                 'media_id'=> $result['media_id'],
                 'media_url'=> $resource['down_url'],
+                'local_cover'=> $res['url'],
                 'type'=> 'image',
             ];
             $result['url'] = $resource['down_url'];

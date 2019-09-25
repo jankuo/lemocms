@@ -138,7 +138,7 @@
                             <div class="layui-form-item layui-form-text">
                                 <label class="layui-form-label"><span style="color:red;"> *</span> 摘要</label>
                                 <div class="layui-input-block">
-                                    <textarea id="form_digest" class="layui-textarea" onchange="changeElement('digest')"></textarea>
+                                    <textarea id="form_digest" name="digest" class="layui-textarea" onchange="changeElement('digest')"></textarea>
                                 </div>
                             </div>
                             <div class="layui-form-item layui-form-text" style="">
@@ -407,7 +407,7 @@
         $("#dir").attr('dir', num);
         var title = $("#title" + num).val();
         var author = $("#author" + num).val();
-        var cover = $("#cover" + num).val();
+        var cover = $(".type-img-" + num).attr('src');
         var need_open_comment = $("#need_open_comment" + num).val();
         var only_fans_can_comment = $("#only_fans_can_comment" + num).val();
         var digest = $("#digest" + num).val();
@@ -416,15 +416,15 @@
         $("#form_title").val(title);
         $("#form_author").val(author);
         $("#imgLogo1").attr('src', '');
+
         if (cover != "") {
             $("#coverImage").attr('src', cover);
         }else{
             $("#coverImage").attr('src', '');
 
         }
-        obj = {need_open_comment:need_open_comment,only_fans_can_comment:only_fans_can_comment}
+        obj = {need_open_comment:need_open_comment,only_fans_can_comment:only_fans_can_comment,digest:digest};
         form.val("form", obj);
-        $("#form_digest").val(digest);
         UE.getEditor('container').setContent(content);
         $("#form_content_source_url").val(content_source_url);
     }
@@ -461,14 +461,15 @@
             var author =  $("input[name='hidden" + i + "']").eq(1).val();
             var show_cover =  $("input[name='hidden" + i + "']").eq(2).val();
             var content_source_url =  $("input[name='hidden" + i + "']").eq(3).val();
-            var cover =  $("input[name='hidden" + i + "']").eq(4).val();
+            var thumb_media_id =  $("input[name='hidden" + i + "']").eq(4).val();
             var need_open_comment =  $("input[name='hidden" + i + "']").eq(5).val();
             var only_fans_can_comment =  $("input[name='hidden" + i + "']").eq(6).val();
             var digest =  $("input[name='hidden" + i + "']").eq(7).val();
             var content =  $("input[name='hidden" + i + "']").eq(8).val();
+
             contents[i] = {title:title,author:author,show_cover:show_cover,content_source_url:content_source_url
-            ,cover:cover,need_open_comment:need_open_comment,only_fans_can_comment:only_fans_can_comment,
-            digest:digest,content:content};
+                    ,thumb_media_id:thumb_media_id,need_open_comment:need_open_comment,only_fans_can_comment:only_fans_can_comment,
+                    digest:digest,content:content};
 
 
         }
