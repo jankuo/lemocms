@@ -1,6 +1,6 @@
 ### 导读
-Lemocms 1.0.7 本系统长期更新,欢迎star和提出和反馈问题 
-QQ群 455018252
++ Lemocms 1.0.7 本系统长期更新,欢迎star和提出和反馈问题 
++ QQ群：[455018252](https://jq.qq.com/?_wv=1027&k=5RWLxx7)
 ### 前言
 Lemocms1.0.7管理系统：为二次开发而生，让开发变得更简单
  + 这是一款快速、高效、便捷、灵活的应用开发框架。
@@ -16,8 +16,9 @@ Lemocms1.0.7管理系统：为二次开发而生，让开发变得更简单
  + 微信管理
  + ...更多
   
-##[开发文档](docs/developer.md)
-##[更新历史](docs/start-log.md) 
+###[开发文档](docs/developer.md)
+
+###[更新历史](docs/start-log.md) 
 
 
 
