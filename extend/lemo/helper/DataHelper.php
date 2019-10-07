@@ -11,7 +11,7 @@
  * Date: 2019/9/22
  */
 
-namespace utils;
+namespace lemo\helper;
 class DataHelper
 {
     /**
@@ -74,6 +74,23 @@ class DataHelper
         }else{
             return '';
         }
+    }
+    /**
+     * 将OBJ或者对象转为ARRAY
+     * @param string $xml
+     * @return array|false
+     */
+    public static function objToArray($object)
+    {
+        $array = array();
+        if (is_object($object)) {
+            foreach ($object as $key => $value) {
+                $array[$key] = $value;
+            }
+        } else {
+            $array = $object;
+        }
+        return $array;
     }
 
     /**

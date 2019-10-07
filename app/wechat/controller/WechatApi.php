@@ -28,7 +28,7 @@ use EasyWeChat\Kernel\Messages\Voice;
 use think\Exception;
 use think\facade\Db;
 use think\facade\Request;
-use util\WechatApp;
+use lemo\service\WechatApp;
 
 class WechatApi extends Base
 {

@@ -11,7 +11,7 @@
  * Date: 2019/9/7
  */
 
-namespace util;
+namespace lemo\service;
 
 use app\common\model\WxAccount;
 use EasyWeChat\Factory;
@@ -19,7 +19,6 @@ use think\facade\Request;
 
 class WechatApp
 {
-
     protected $config = [
                         'log' => [
                             'default' => 'dev', // 默认使用的 channel，生产环境可以改为下面的 prod

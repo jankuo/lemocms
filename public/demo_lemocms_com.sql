@@ -2,10 +2,10 @@
 -- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- 主机： localhost
--- 生成日期： 2019-09-24 16:36:38
--- 服务器版本： 5.6.45-log
--- PHP 版本： 7.3.8
+-- Host: localhost
+-- Generation Time: Oct 07, 2019 at 03:01 PM
+-- Server version: 5.6.45-log
+-- PHP Version: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 数据库： `demo_lemocms_com`
+-- Database: `demo_lemocms_com`
 --
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_admin`
+-- Table structure for table `lm_admin`
 --
 
 CREATE TABLE `lm_admin` (
@@ -45,18 +45,18 @@ CREATE TABLE `lm_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='后台管理员';
 
 --
--- 转存表中的数据 `lm_admin`
+-- Dumping data for table `lm_admin`
 --
 
 INSERT INTO `lm_admin` (`id`, `username`, `password`, `group_id`, `email`, `realname`, `mobile`, `ip`, `mdemail`, `status`, `avatar`, `create_time`, `update_time`) VALUES
-(1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 1, '994927909@qq.com', '', '18397423845', '127.0.0.1', '0', 1, '/storage/uploads/20190817\\294faa45405fa24da59c311f55ce313f.png', 1482132862, 1567843792),
-(2, 'yuege', 'e10adc3949ba59abbe56e057f20f883e', 2, '994927909@qq.com', '', '18397423845', '127.0.0.1', '0', 1, '/storage/uploads/20190817\\dc25c2714c46a0d2bee894a7d05eb15f.png', 1535512393, 1568968847),
-(3, 'demo', 'e10adc3949ba59abbe56e057f20f883e', 2, '994927909@qq.com', '', '18397423845', '119.122.91.146', '0', 1, '/storage/uploads/20190817\\a17c794ac7fae7db012aa6e997cf3400.jpg', 1564041575, 1569246839);
+(1, 'admin', '$2y$12$ZyfZvn0qOhs0qmvKmKcIPO2db0p3ak2cem9PlBRKv7p5tV/eZ/bTO', 1, '994927909@qq.com', '', '18397423845', '127.0.0.1', '0', 1, '/storage/uploads/20190817\\294faa45405fa24da59c311f55ce313f.png', 1482132862, 1569466673),
+(2, 'yuege', '$2y$12$0sQy3Yc8wt9hKYmPJKVmwOcr6FASBzroq0lJA7XsIFR6fydohrZEC', 3, '994927909@qq.com', '', '18397423845', '127.0.0.1', '0', 1, '/storage/uploads/20190817\\dc25c2714c46a0d2bee894a7d05eb15f.png', 1535512393, 1570111746),
+(3, 'demo', '$2y$12$ZyfZvn0qOhs0qmvKmKcIPO2db0p3ak2cem9PlBRKv7p5tV/eZ/bTO', 2, '994927909@qq.com', '', '18397423845', '119.122.91.146', '0', 1, '/storage/uploads/20190817\\a17c794ac7fae7db012aa6e997cf3400.jpg', 1564041575, 1570148665);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_admin_log`
+-- Table structure for table `lm_admin_log`
 --
 
 CREATE TABLE `lm_admin_log` (
@@ -64,7 +64,7 @@ CREATE TABLE `lm_admin_log` (
   `admin_id` int(10) DEFAULT NULL COMMENT '管理员id',
   `username` varchar(100) DEFAULT NULL,
   `log_url` varchar(100) DEFAULT NULL,
-  `log_content` text COMMENT 'log 内容',
+  `log_content` longtext COMMENT 'log 内容',
   `log_title` varchar(100) DEFAULT NULL COMMENT '日志描述',
   `log_agent` varchar(200) DEFAULT NULL,
   `log_ip` varchar(30) DEFAULT NULL COMMENT 'ip地址',
@@ -73,18 +73,10 @@ CREATE TABLE `lm_admin_log` (
   `status` tinyint(1) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- 转存表中的数据 `lm_admin_log`
---
-
-INSERT INTO `lm_admin_log` (`id`, `admin_id`, `username`, `log_url`, `log_content`, `log_title`, `log_agent`, `log_ip`, `create_time`, `update_time`, `status`) VALUES
-(1, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"demo\",\"captcha\":\"4yfh\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 UBrowser/6.2.4098.3 Safari/537.36', '171.15.105.118', 1569314188, 1569314188, 1),
-(2, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"demo\",\"captcha\":\"kmey\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 UBrowser/6.2.4098.3 Safari/537.36', '171.15.105.118', 1569314196, 1569314196, 1);
-
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_adv`
+-- Table structure for table `lm_adv`
 --
 
 CREATE TABLE `lm_adv` (
@@ -110,7 +102,7 @@ CREATE TABLE `lm_adv` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转存表中的数据 `lm_adv`
+-- Dumping data for table `lm_adv`
 --
 
 INSERT INTO `lm_adv` (`id`, `pid`, `media_type`, `ad_name`, `ad_link`, `ad_image`, `start_time`, `end_time`, `link_admin`, `link_email`, `link_phone`, `click_count`, `sort`, `status`, `orderby`, `target`, `bgcolor`, `create_time`, `update_time`) VALUES
@@ -120,17 +112,17 @@ INSERT INTO `lm_adv` (`id`, `pid`, `media_type`, `ad_name`, `ad_link`, `ad_image
 (4, 2, 0, '轮播', 'javascript:void(0);', '/public/upload/ad/2018/04-13/8099744a886c2cfad7c837e28aee9d52.jpg', 1451577600, 1767283200, '', '', '', 0, 0, 1, 0, 0, '#f1e6d2', 0, 0),
 (7, 2, 0, '其他', 'javascript:void(0);', '/public/upload/ad/2018/04-13/7009c820b93bcf31d3e42df31d78ed71.jpg', 1451577600, 1767283200, '', '', '', 0, 0, 1, 0, 0, '#f1dcf7', 0, 1567574061),
 (12, 2, 0, '其他', 'javascript:void(0);', '/public/upload/ad/2018/04-24/44aa330b056f5b090b6d6ac8a9a072dd.jpg', 1451577600, 1767283200, '', '', '', 0, 0, 1, 0, 0, '#000000', 0, 0),
-(82, 1, 0, '', 'https://www.baidu.com', '/storage/uploads/20190818\\0c2a7f85348cd9ae508ca860388fa021.png', 0, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566107420, 1566107420),
+(82, 1, 0, '其他', 'https://www.baidu.com', '/storage/uploads/20190818\\0c2a7f85348cd9ae508ca860388fa021.png', 0, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566107420, 1569480715),
 (83, 1, 0, '组合套餐', 'https://www.baidu.com', '/storage/uploads/20190818\\2db9e450c251d0d21dac3d3384134bb0.png', 1566130740, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566107921, 1567934004),
 (84, 4, 0, 'banner6 ', 'https://www.baidu.com', '/storage/uploads/20190818\\8ebd41bd38db53338af00026cb592bc3.png', 1566130740, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566107968, 1569160489),
 (85, 1, 0, '组合套餐', 'https://www.baidu.com', '/storage/uploads/20190818\\674ca52c87c4552352f35d820c3ce33e.png', 0, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566108105, 1567584671),
 (86, 2, 0, '组合套餐', 'https://www.baidu.com', '/storage/uploads/20190818\\cd986a75a1be03d8a7af558fda044ca4.png', 1566130740, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566108149, 1568273418),
-(87, 2, 0, 'banner6 ', 'https://www.baidu.com', '/storage/uploads/20190818\\7e2ca2635af1031871ab121938818a4d.png', 1564588800, 1568908800, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566108542, 1568814075);
+(87, 2, 0, 'banner6 ', 'https://www.baidu.com', '/storage/uploads/20190818\\7e2ca2635af1031871ab121938818a4d.png', 1564588800, 1568908800, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566108542, 1570271748);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_adv_position`
+-- Table structure for table `lm_adv_position`
 --
 
 CREATE TABLE `lm_adv_position` (
@@ -146,7 +138,7 @@ CREATE TABLE `lm_adv_position` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转存表中的数据 `lm_adv_position`
+-- Dumping data for table `lm_adv_position`
 --
 
 INSERT INTO `lm_adv_position` (`id`, `position_name`, `ad_width`, `ad_height`, `position_desc`, `position_style`, `status`, `create_time`, `update_time`) VALUES
@@ -210,19 +202,19 @@ INSERT INTO `lm_adv_position` (`id`, `position_name`, `ad_width`, `ad_height`, `
 (512, 'Ad页面自动增加广告位 512 ', 0, 0, 'Ad页面', '', 1, 0, 1568708267),
 (513, 'Ad页面自动增加广告位 513 ', 0, 0, 'Ad页面', '', 1, 0, 1568708267),
 (514, 'Ad页面自动增加广告位 514 ', 0, 0, 'Ad页面', '', 1, 0, 1568708268),
-(515, 'Ad页面自动增加广告位 515 ', 0, 0, 'Ad页面', '', 1, 0, 1568708268),
-(516, 'Ad页面自动增加广告位 516 ', 0, 0, 'Ad页面', '', 1, 0, 1568708268),
-(517, 'Ad页面自动增加广告位 517 ', 0, 0, 'Ad页面', '', 1, 0, 1569130134),
-(518, 'Ad页面自动增加广告位 518 ', 0, 0, 'Ad页面', '', 1, 0, 1569130133),
-(531, 'Ad页面自动增加广告位 531 ', 0, 0, 'Ad页面', '', 1, 0, 1569130132),
-(533, 'Ad页面自动增加广告位 533 ', 0, 0, 'Ad页面', '', 1, 0, 1568708269),
-(534, 'Ad页面自动增加广告位 534 ', 0, 0, 'Ad页面', '', 1, 0, 1568708270),
-(539, '首页', 1080, 300, '其他1', '', 1, 1566111321, 1569224516);
+(515, 'Ad页面自动增加广告位 515 ', 0, 0, 'Ad页面', '', 1, 0, 1569482211),
+(516, 'Ad页面自动增加广告位 516 ', 0, 0, 'Ad页面', '', 1, 0, 1570414306),
+(517, 'Ad页面自动增加广告位 517 ', 0, 0, 'Ad页面', '', 1, 0, 1570414305),
+(518, 'Ad页面自动增加广告位 518 ', 0, 0, 'Ad页面', '', 1, 0, 1570414303),
+(531, 'Ad页面自动增加广告位 531 ', 0, 0, 'Ad页面', '', 1, 0, 1570414302),
+(533, 'Ad页面自动增加广告位 533 ', 0, 0, 'Ad页面', '', 1, 0, 1569838085),
+(534, 'Ad页面自动增加广告位 534 ', 0, 0, 'Ad页面', '', 1, 0, 1569838084),
+(539, '首页', 1080, 300, '其他1', '', 1, 1566111321, 1569838081);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_article`
+-- Table structure for table `lm_article`
 --
 
 CREATE TABLE `lm_article` (
@@ -248,16 +240,16 @@ CREATE TABLE `lm_article` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转存表中的数据 `lm_article`
+-- Dumping data for table `lm_article`
 --
 
 INSERT INTO `lm_article` (`id`, `pid`, `title`, `description`, `content`, `author`, `author_email`, `keywords`, `article_type`, `status`, `file_url`, `open_type`, `link`, `click`, `publish_time`, `sort`, `thumb`, `create_time`, `update_time`) VALUES
-(1, 1, '基于TP6 layui开发的cms 后台管理系统', '基于TP6 layui开发的cms 后台管理系统', '<p>基于TP6 layui开发的cms 后台管理系统</p>', '', '994927909@qq.com', 'tp6 layui', 1, 1, '', 0, '', 1206, 0, 0, '/storage/uploads/20190826\\b183bf1681077d0bafd37bc17caf2cdc.png', 1566799075, 1569288401);
+(1, 1, '基于TP6 easywechat layui开发的cms 后台管理系统', '基于TP6 easywechat layui开发的cms 后台管理系统', '<p>基于TP6 layui开发的cms 后台管理系统</p>', '', '994927909@qq.com', 'tp6 layui easywechat', 1, 1, '', 0, '', 1206, 0, 0, '/storage/uploads/20190826\\b183bf1681077d0bafd37bc17caf2cdc.png', 1566799075, 1570184149);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_article_cate`
+-- Table structure for table `lm_article_cate`
 --
 
 CREATE TABLE `lm_article_cate` (
@@ -276,23 +268,24 @@ CREATE TABLE `lm_article_cate` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转存表中的数据 `lm_article_cate`
+-- Dumping data for table `lm_article_cate`
 --
 
 INSERT INTO `lm_article_cate` (`id`, `title`, `title_alias`, `title_type`, `pid`, `show_in_nav`, `status`, `sort`, `cat_desc`, `keywords`, `create_time`, `update_time`) VALUES
 (1, '新手上路', '', 1, 0, 0, 1, 0, '1233', '', 0, 1569301180),
 (2, '购物指南', '', 1, 0, 0, 1, 2, '', '', 0, 0),
-(3, '售后服务', '', 1, 0, 0, 1, 2, '', '', 0, 1568279565),
+(3, '售后服务', '', 1, 0, 0, 1, 2, '', '', 0, 1569471200),
 (4, '支付方式', '', 1, 0, 0, 1, 4, '', '', 0, 0),
 (5, '配送方式', '', 1, 0, 0, 1, 5, '', '', 0, 0),
 (6, '系统公告', '', 1, 0, 0, 1, 6, '', '', 0, 0),
-(7, '关于我们', '', 1, 0, 0, 1, 7, '', '', 0, 0),
-(8, '测试分类', '测试分类', 0, 7, 0, 1, 50, '', '', 1566801126, 1568276268);
+(7, '关于我们', '', 1, 0, 0, 0, 7, '', '', 0, 1570414322),
+(8, '测试分类', '测试分类', 0, 7, 0, 1, 50, '', '', 1566801126, 1568276268),
+(14, 'adfas', 'asdfa', 0, 0, 0, 0, 50, NULL, NULL, 1569471673, 1570414322);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_auth_group`
+-- Table structure for table `lm_auth_group`
 --
 
 CREATE TABLE `lm_auth_group` (
@@ -305,18 +298,18 @@ CREATE TABLE `lm_auth_group` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='管理员分组';
 
 --
--- 转存表中的数据 `lm_auth_group`
+-- Dumping data for table `lm_auth_group`
 --
 
 INSERT INTO `lm_auth_group` (`id`, `title`, `status`, `rules`, `create_time`, `update_time`) VALUES
 (1, '超级管理员', 1, '1,2,20,21,40,34,39,73,3,4,5,9,10,11,12,22,13,6,7,8,14,15,16,17,18,19,26,27,28,29,30,31,32,33,35,36,37,38,23,24,25,41,47,48,49,50,51,52,67,54,55,56,57,58,66,42,46,53,43,44,45,68,59,60,61,62,65,74,69,70,71,72,75,76,77,78,79,80,81,82,83,84,85,86,87,120,121,122,123,124,125,126,127,88,95,96,97,98,89,99,100,101,102,90,103,104,91,112,113,114,115,116,92,117,118,119,93,105,106,107,108,109,94,110,111,', 1465114224, 1569030382),
-(2, '测试1', 1, '1,2,20,21,40,34,39,129,3,9,22,13,6,7,16,26,30,35,38,41,47,48,51,54,57,42,46,45,59,60,74,69,75,76,77,81,82,83,87,120,121,122,123,124,125,126,127,128,88,97,89,99,100,101,102,90,103,104,91,112,113,114,115,116,92,117,118,119,93,105,106,107,108,109,94,110,111,', 1565929191, 1569291829),
-(3, '测试2', 1, NULL, 1567485941, 1569291832);
+(2, '测试1', 1, '1,2,20,21,40,34,39,129,3,9,22,13,6,7,16,26,30,35,38,41,47,48,51,54,55,57,58,66,42,46,53,43,45,68,59,60,61,65,74,69,70,71,75,76,77,81,82,83,87,120,121,122,123,124,125,126,127,128,88,97,89,99,100,101,102,90,103,104,91,112,113,114,115,116,92,117,118,119,93,105,106,107,108,109,94,110,111,', 1565929191, 1570420529),
+(3, '测试2', 1, '1,2,20,21,40,34,39,73,129,3,4,5,9,10,11,12,22,13,', 1567485941, 1569563359);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_auth_rule`
+-- Table structure for table `lm_auth_rule`
 --
 
 CREATE TABLE `lm_auth_rule` (
@@ -336,11 +329,11 @@ CREATE TABLE `lm_auth_rule` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='权限节点';
 
 --
--- 转存表中的数据 `lm_auth_rule`
+-- Dumping data for table `lm_auth_rule`
 --
 
 INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`, `menu_status`, `icon`, `condition`, `pid`, `sort`, `create_time`, `update_time`) VALUES
-(1, 'System', '系统', 1, 1, 0, 1, 'fa fa-home', '', 0, 0, 1446535750, 0),
+(1, 'System', '系统', 1, 1, 0, 1, 'fa fa-home', '', 0, 0, 1446535750, 1569401425),
 (2, 'System', '系统设置', 1, 1, 0, 1, 'fa fa-gears', '', 1, 0, 1446535789, 0),
 (3, 'Database', '数据库管理', 1, 1, 0, 1, 'fa fa-database', '', 1, 0, 1446535805, 0),
 (4, 'Database/restore', '还原数据库', 2, 1, 0, 1, 'fa fa-database', '', 3, 0, 1446535750, 0),
@@ -363,8 +356,7 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (21, 'Adminlog/index', '日志管理', 1, 1, 0, 1, 'fa fa-life-ring', '', 2, 0, 0, 1566007925),
 (22, 'Database/optimize', '数据库优化', 1, 1, 0, 0, '', '', 3, 0, 0, 0),
 (23, 'Addons', '插件', 1, 1, 0, 1, 'fa fa-flickr', '', 0, 0, 0, 1566053592),
-(24, 'Addons', '插件设置', 1, 1, 0, 1, 'fa fa-flickr', '', 23, 0, 0, 0),
-(25, 'Addons/index', '插件列表', 1, 1, 0, 1, 'fa fa-globe', '', 24, 0, 0, 0),
+(25, 'Addons/index', '插件列表', 1, 1, 0, 1, 'fa fa-flickr', '', 23, 0, 0, 0),
 (26, 'Auth/group', '权限组', 1, 1, 0, 1, 'fa fa-globe', '', 6, 0, 0, 0),
 (27, 'Auth/groupDel', '用户组删除', 1, 1, 0, 0, '', '', 26, 0, 0, 0),
 (28, 'Auth/groupAdd', '用户组添加', 1, 1, 0, 0, '', '', 26, 0, 0, 0),
@@ -471,7 +463,7 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_config`
+-- Table structure for table `lm_config`
 --
 
 CREATE TABLE `lm_config` (
@@ -486,7 +478,7 @@ CREATE TABLE `lm_config` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='配置参数表';
 
 --
--- 转存表中的数据 `lm_config`
+-- Dumping data for table `lm_config`
 --
 
 INSERT INTO `lm_config` (`id`, `code`, `value`, `remark`, `type`, `status`, `create_time`, `update_time`) VALUES
@@ -540,12 +532,12 @@ INSERT INTO `lm_config` (`id`, `code`, `value`, `remark`, `type`, `status`, `cre
 (51, 'upload_water_position', '', '水印位置', 'upload', 1, 0, 0),
 (52, 'sms_product', 'lemocms', '产品', 'sms', 1, 0, 0),
 (53, 'sms_template', 'SMS_158941284', '模板id', 'sms', 1, 0, 0),
-(54, 'site_version', 'v1.0.7', '版本', 'site', 1, NULL, NULL);
+(54, 'site_version', 'v1.0.5', '版本', 'site', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_link`
+-- Table structure for table `lm_link`
 --
 
 CREATE TABLE `lm_link` (
@@ -562,18 +554,45 @@ CREATE TABLE `lm_link` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转存表中的数据 `lm_link`
+-- Dumping data for table `lm_link`
 --
 
 INSERT INTO `lm_link` (`id`, `name`, `url`, `type_id`, `email`, `qq`, `sort`, `status`, `create_time`, `update_time`) VALUES
-(23, 'lemocms', 'https://www.lemocms.com', 0, '994927909@qq.com', '994927909', 50, 0, 1566102829, 1569305479),
-(25, '百度', 'https://www.baidu.com', 0, '994927909@qq.com', '994927909', 50, 1, 1566103165, 1566103165),
+(23, 'lemocms', 'https://www.lemocms.com', 0, '994927909@qq.com', '994927909', 50, 1, 1566102829, 1570264844),
+(25, '百度', 'https://www.baidu.com', 0, '994927909@qq.com', '994927909', 50, 1, 1566103165, 1569595197),
 (26, '新浪', 'https://www.sina.com', 0, '994927909@qq.com', '994927909', 50, 1, 1566103233, 1566103233);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_user`
+-- Table structure for table `lm_oauth2_client`
+--
+
+CREATE TABLE `lm_oauth2_client` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `store_id` int(10) UNSIGNED DEFAULT '1' COMMENT '商户id',
+  `title` varchar(100) NOT NULL DEFAULT '' COMMENT '标题',
+  `appid` varchar(64) NOT NULL,
+  `appsecret` varchar(150) NOT NULL,
+  `redirect_uri` varchar(2000) NOT NULL DEFAULT '' COMMENT '回调Url',
+  `remark` varchar(200) DEFAULT NULL COMMENT '备注',
+  `group` varchar(30) DEFAULT '' COMMENT '组别',
+  `status` tinyint(4) DEFAULT '1' COMMENT '状态[0:禁用;1启用]',
+  `create_time` int(10) UNSIGNED DEFAULT '0' COMMENT '创建时间',
+  `update_time` int(10) UNSIGNED DEFAULT '0' COMMENT '修改时间'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='oauth2_授权客户端';
+
+--
+-- Dumping data for table `lm_oauth2_client`
+--
+
+INSERT INTO `lm_oauth2_client` (`id`, `store_id`, `title`, `appid`, `appsecret`, `redirect_uri`, `remark`, `group`, `status`, `create_time`, `update_time`) VALUES
+(1, 1, 'lemocms', 'lemocms', '123456', '', NULL, '', 1, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lm_user`
 --
 
 CREATE TABLE `lm_user` (
@@ -626,56 +645,38 @@ CREATE TABLE `lm_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
 
 --
--- 转存表中的数据 `lm_user`
+-- Dumping data for table `lm_user`
 --
 
 INSERT INTO `lm_user` (`id`, `store_id`, `email`, `username`, `password`, `paypwd`, `sex`, `birthday`, `user_money`, `frozen_money`, `distribut_money`, `underling_number`, `pay_points`, `address_id`, `create_time`, `update_time`, `last_login`, `login_num`, `last_ip`, `qq`, `mobile`, `mobile_validated`, `oauth`, `openid`, `unionid`, `avatar`, `province`, `city`, `district`, `email_validated`, `nickname`, `level_id`, `discount`, `total_amount`, `status`, `is_distribut`, `first_leader`, `second_leader`, `third_leader`, `token`, `message_mask`, `push_id`, `distribut_level`, `is_vip`, `min_qrcode`, `poster`) VALUES
 (1, 1, '15915407513@163.com', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, -28800, '100000.00', '0.00', '0.00', 0, 100000, 0, 1523235674, NULL, 1523235674, 0, '', '', '', 0, '', NULL, NULL, '/public/upload/user/1/head_pic//1673d08c39ff9d1103611a7585a8ae0f.jpg', 0, 0, 0, 1, '15915407513@163.com', 4, '0.94', '4939.90', 1, 0, 0, 0, 0, '81953a80817fdf7c25e682ca3311abc9', 63, '0', 0, 0, NULL, NULL),
 (2, 1, '123', NULL, '519475228fe35ad067744465c42a19b2', '5317bc949fb15f19cdf1be43cf9a5ae6', 2, 662659200, '1376.12', '100.00', '1120.00', 1, 57409, 0, 1523238708, NULL, 1524877594, 0, '', '', '15915407513', 1, '', NULL, NULL, '/public/upload/head_pic/20180426/a803dc7558982208df046e7e9e558125.jpg', 0, 0, 0, 0, '15915407513', 7, '0.91', '135988.54', 1, 1, 0, 0, 0, 'e9f5a1dc07f3674e5234667126f14d6a', 63, '140fe1da9e8bbcb28d2', 3, 0, NULL, NULL),
-(3, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '90600d68b0f56d90c4c34284d8dfd138', 0, 1524067200, '4057.47', '0.00', '0.00', 0, 49513, 0, 1523266058, NULL, 0, 0, '', '', '18515156363', 1, '', NULL, NULL, '/public/upload/head_pic/20180419/fec83644525cdd715416db8789cfe222.jpg', 0, 0, 0, 0, '青春', 4, '0.94', '9559.07', 1, 1, 0, 0, 0, '', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
-(4, 1, '15636363522@qq.com', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, -28800, '0.00', '0.00', '0.00', 0, 110, 0, 1523266117, NULL, 1523266117, 0, '', '', '', 0, '', NULL, NULL, '/public/upload/user/4/head_pic//7268f1d4ce9879694c2ec7da77d4dfbb.png', 0, 0, 0, 1, '15636363522@qq.com', 1, '1.00', '0.00', 1, 0, 0, 0, 0, 'eaf8b23d80d7513ab4ffcf3b1129f668', 63, '0', 0, 0, NULL, NULL),
-(5, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '49830.22', '0.00', '0.00', 0, 2410, 0, 1523588976, NULL, 1523588976, 0, '', '', '15766212618', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '15766212618', 4, '0.94', '7687.08', 1, 1, 0, 0, 0, '91fa24fa9b42dfc79fc37d0acec4ba51', 63, '0', 0, 0, NULL, NULL),
-(6, 1, '461799220@qq.com', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '1000.00', '0.00', '0.00', 0, 100, 0, 1523601798, NULL, 0, 0, '', '461799220', '18664316869', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '单测试1', 1, '1.00', '0.00', 1, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
-(7, 1, '', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1523608222, NULL, 1523608222, 0, '', '', '15274857485', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '15274857485', 1, '1.00', '0.00', 1, 0, 3, 0, 0, '001b3f89dc686ad2f53f5481e8c9fb30', 63, '0', 0, 0, NULL, NULL),
+(3, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '90600d68b0f56d90c4c34284d8dfd138', 0, 1524067200, '4057.47', '0.00', '0.00', 0, 49513, 0, 1523266058, 1569480979, 0, 0, '', '', '18515156363', 1, '', NULL, NULL, '/public/upload/head_pic/20180419/fec83644525cdd715416db8789cfe222.jpg', 0, 0, 0, 0, '青春', 4, '0.94', '9559.07', 0, 1, 0, 0, 0, '', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
+(4, 1, '15636363522@qq.com', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, -28800, '0.00', '0.00', '0.00', 0, 110, 0, 1523266117, 1569480978, 1523266117, 0, '', '', '', 0, '', NULL, NULL, '/public/upload/user/4/head_pic//7268f1d4ce9879694c2ec7da77d4dfbb.png', 0, 0, 0, 1, '15636363522@qq.com', 1, '1.00', '0.00', 0, 0, 0, 0, 0, 'eaf8b23d80d7513ab4ffcf3b1129f668', 63, '0', 0, 0, NULL, NULL),
+(5, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '49830.22', '0.00', '0.00', 0, 2410, 0, 1523588976, 1569480974, 1523588976, 0, '', '', '15766212618', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '15766212618', 4, '0.94', '7687.08', 0, 1, 0, 0, 0, '91fa24fa9b42dfc79fc37d0acec4ba51', 63, '0', 0, 0, NULL, NULL),
+(6, 1, '461799220@qq.com', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '1000.00', '0.00', '0.00', 0, 100, 0, 1523601798, 1569480972, 0, 0, '', '461799220', '18664316869', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '单测试1', 1, '1.00', '0.00', 0, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
+(7, 1, '', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1523608222, 1569480970, 1523608222, 0, '', '', '15274857485', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '15274857485', 1, '1.00', '0.00', 0, 0, 3, 0, 0, '001b3f89dc686ad2f53f5481e8c9fb30', 63, '0', 0, 0, NULL, NULL),
 (8, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '100000.00', '0.00', '0.00', 0, 100000, 0, 1523857661, 1568191348, 1540191996, 0, '', '', '13800138006', 1, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/vi_32/c58Iiaib1aPodvKHMMGR9ZYmq7XGFUgppvhxgQKrJxdlZTAauZ8dTucEguiamsncVDR3h32TMO4YzppDmSuHIGI9w/132', 0, 0, 0, 0, 'summer', 2, '1.00', '55.00', 0, 0, 3, 0, 0, '', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
-(9, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 2, 1524153600, '18527.80', '0.00', '0.00', 0, 100210, 0, 1523861478, NULL, 0, 0, '', '1546515984', '15274851525', 0, '', NULL, NULL, '/public/upload/head_pic/20180420/b147d911d2d5b3ff252fa948d96fb5d3.jpg', 0, 0, 0, 0, 'nana', 2, '1.00', '871.20', 1, 1, 0, 0, 0, '', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
+(9, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 2, 1524153600, '18527.80', '0.00', '0.00', 0, 100210, 0, 1523861478, 1569480995, 0, 0, '', '1546515984', '15274851525', 0, '', NULL, NULL, '/public/upload/head_pic/20180420/b147d911d2d5b3ff252fa948d96fb5d3.jpg', 0, 0, 0, 0, 'nana', 2, '1.00', '871.20', 0, 1, 0, 0, 0, '', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
 (10, 1, '1522585@qq.com', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 2, -28800, '5649.60', '0.00', '0.00', 0, 1100, 0, 1523864842, 1568191345, 1524801341, 0, '', '', '15919919433', 0, '', NULL, NULL, '/public/upload/head_pic/20180423/a20e71149cc243fc2df4c6eb5caadbbd.jpg', 0, 0, 0, 0, '等待', 4, '0.94', '6808.66', 0, 1, 0, 0, 0, 'cedbd4ca79a15888d4fd3a636834294f', 63, '140fe1da9e8bbcb28d2', 0, 0, NULL, NULL),
 (11, 1, '', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1523933777, 1568191292, 1523933777, 0, '', '', '18585859674', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '18585859674', 1, '1.00', '0.00', 0, 1, 0, 0, 0, '2ba708bb3b18ff3b133d19802ddc8559', 63, '0', 0, 0, NULL, NULL),
-(12, 1, '1546515984@11.com', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '1824.00', '0.00', '0.00', 0, 2400, 0, 1524023190, NULL, 1524023190, 0, '', '', '18576762477', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '18576762477', 2, '1.00', '88.00', 1, 1, 0, 0, 0, '55a01f6a994fa693a5c6364839475bc9', 63, '0', 0, 0, NULL, NULL),
-(13, 1, '15274851694@qq.co', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524188790, NULL, 0, 0, '', '', '', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '32', 1, '1.00', '0.00', 1, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
-(14, 1, '18516589423@qq.com', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524188838, NULL, 0, 0, '', '', '', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '3434', 1, '1.00', '0.00', 1, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
-(15, 1, '', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524189831, NULL, 1524189831, 0, '', '', '15274851515', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '15274851515', 2, '1.00', '0.00', 1, 1, 0, 0, 0, '002322068d39e76fbc9afbaa98001828', 63, '0', 0, 0, NULL, NULL),
-(16, 1, '123@qq.com', NULL, '519475228fe35ad067744465c42a19b2', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524470536, NULL, 0, 0, '', '', '13978520397', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '125', 3, '1.00', '0.00', 1, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
-(17, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 1524499200, '8977.90', '0.00', '0.00', 0, 190, 0, 1524554349, NULL, 1524822517, 0, '', '', '15247471414', 1, '', NULL, NULL, '/public/upload/head_pic/20180424/47684cc3e684a14cc2aae4a9294bf87e.jpg', 0, 0, 0, 0, '15247471414', 3, '0.99', '1266.00', 1, 1, 0, 0, 0, 'af20aa77641d815ff645ee524d2cdd73', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
-(18, 1, '', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524623385, NULL, 1524623385, 0, '', '', '15889560679', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '15889560679', 2, '1.00', '0.00', 1, 1, 0, 0, 0, '94c54e14ccdddf8f39ffa86262ea2b2e', 63, '0', 0, 0, NULL, NULL),
-(19, 1, '258282@163.com', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524706705, NULL, 0, 0, '', '', '15915407591', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '添加会员', 2, '1.00', '0.00', 1, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
-(20, 1, '', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524714610, NULL, 1524714610, 0, '', '', '18515858596', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '18515858596', 2, '1.00', '0.00', 1, 1, 0, 0, 0, '2ffa0713419b11ca86b8f3c81744a387', 63, '0', 0, 0, NULL, NULL),
-(21, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 1524672000, '49256.00', '0.00', '0.00', 0, 100, 0, 1524723726, NULL, 0, 0, '', '', '15274851596', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '路人甲', 2, '1.00', '744.00', 1, 1, 3, 0, 0, '', 63, '100d855909727631376', 0, 0, NULL, NULL),
-(22, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '57.62', '0.00', '0.00', 0, 44985, 0, 1524726905, NULL, 1524738073, 0, '', '', '13243434343', 1, '', NULL, NULL, '/public/upload/head_pic/20180427/dd96cecf4bc0bd6414351cd9574d01e7.jpg', 0, 0, 0, 0, '13243434343', 3, '0.99', '1760.14', 1, 1, 0, 0, 0, '16bc4823350241a1d942777f58e74457', 63, '', 0, 0, NULL, NULL),
-(23, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '996778.79', '0.00', '0.00', 0, 1997520, 0, 1524730504, NULL, 1524824026, 0, '', '', '18679683657', 1, '', NULL, NULL, 'https://thirdqq.qlogo.cn/qqapp/1106296395/B0C344E52B6012FDABEE9ECD0557C0CC/100', 0, 0, 0, 0, '18679683657', 2, '1.00', '973.60', 1, 1, 0, 0, 0, '4ce10de3f32357294373107e321a8b60', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
-(24, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '98942.66', '0.00', '210.00', 1, 700, 0, 1524795728, NULL, 1524877186, 0, '', '', '18516589423', 1, '', NULL, NULL, '/public/upload/head_pic/20180427/76c696c4fef54d356f31ac6ac5e7836b.png', 0, 0, 0, 0, '18516589423', 3, '0.99', '1503.34', 1, 1, 0, 0, 0, '7eb905f8c6a08e6400e9d3d3e2c5e8f7', 63, '100d855909727631376', 3, 0, NULL, NULL),
-(25, 1, '424077952@qq.com', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 1524758400, '900.00', '100.00', '0.00', 0, 1650, 0, 1524801616, NULL, 0, 0, '', '', '15915407197', 0, '', NULL, NULL, '/public/upload/head_pic/20180427/349394fbb68b9b83d84acc8ea8b9bcae.jpg', 0, 0, 0, 0, '15915407197', 4, '0.94', '8406.10', 1, 0, 0, 0, 0, '', 63, '140fe1da9e8bbcb28d2', 0, 0, NULL, NULL),
-(26, 1, '', NULL, '', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524807993, NULL, 0, 0, '', '', '', 0, 'wx', 'oGMnQ1HqUFRg4dum-GVONjO5jnno', NULL, 'http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIia8vDXHVeygaglict2Dl5T083zryibRSQznmOp5lpgjbyR8fwMcwgNhPAaY5LPHYGM0eOePV2icCJ2g/132', 0, 0, 0, 0, '咻咻', 2, '1.00', '152.00', 1, 1, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
-(28, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524823542, NULL, 1524823548, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaELISygfibpicKgw6UDPAMkC8heWGaoia4UWwzwKXfCOJ2yWPLMKVmPUAeeHdicOCGSniccDOiaRr7ribAxeQ/132', 0, 0, 0, 0, '承诺', 1, '1.00', '0.00', 1, 1, 0, 0, 0, 'd1ebce2f921d4d6a976523dc6c4c0bb8', 63, '', 0, 0, NULL, NULL),
-(29, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524823620, NULL, 1524823620, 0, '', '', '', 0, 'weixin', 'o9cTBwb9m33ZB0MCH3N816ZKAjfg', NULL, 'http://thirdwx.qlogo.cn/mmopen/vi_32/h3xnlXLyIUwuUdl1tlHZGiatDgjthtMHUVkFg8tX9VPUGfnWHjDaynTKs0fMfWpoPLSOmCaVL5Es92iar7BPtnaA/132', 0, 0, 0, 0, '海南本土歌手陈建强', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '6f953ee36d49c10eada4b030feb57336', 63, '', 0, 0, NULL, NULL),
-(30, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524823875, NULL, 1524823901, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/uJrMaWkMNhuNZVicusbq7252Wb3ia2mz9R5d4GYs7niatXvibiafDJQlcicTT9QEcFu8uMgia25yLRtlNyVOIo483KPLsuPaQEbIO4ic/132', 0, 0, 0, 0, '独一无二', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '3cafd0658e0a7184e63b252fc07023cf', 63, '', 0, 0, NULL, NULL),
-(31, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '99498.00', '0.00', '0.00', 0, 100, 0, 1524825281, 1567846512, 1524825281, 0, '', '', '18516589633', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '18516589633', 3, '0.99', '1019.00', 1, 1, 24, 0, 0, '4f5b5aa5d7aed92baabd8a80616846e0', 63, '0', 0, 0, NULL, NULL),
-(32, 1, '', NULL, '', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524825369, NULL, 1524877618, 0, '', '', '', 0, 'weixin', 'o9cTBwS0VxKjNkxe6NM9sYIorhAM', NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '傅傅', 3, '0.99', '2378.60', 1, 1, 2, 0, 0, 'a552ca2c3b6ad9c02cf45afb44d7d6e4', 63, '', 0, 0, NULL, NULL),
-(33, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '4710767206f1985084aee312c1e8c15c', 2, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524825395, 1568273466, 1524827692, 0, '', '', '13923797247', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '你值得拥有', 1, '1.00', '0.00', 1, 0, 0, 0, 0, '7a790bd2706dc332db102b6b2080d2b1', 63, '', 0, 0, NULL, NULL),
-(34, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524828616, 1568786997, 1524828729, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/1eiaFuQxQFhwfU2lUVgOuoLudu9NbLgOZB6GtoRAG5ZtOeOeMW9iaqegd2zF3ltgLmpQYmpF6xZGCPoibzMVT5PyVVuFQbLRpics/132', 0, 0, 0, 0, '哦', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '5479315adb1092740b3533f5747355c0', 63, '', 0, 0, NULL, NULL),
-(35, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524834667, 1568070975, 1524834676, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/1eiaFuQxQFhxicd52FQVGFnVc8HPcwxversDFAjm9MvIO0vibtiaGibrjnMyN7EnN9uEpJ8J4iaLeicw2z35wwmVZ8CPQnEMibh1YSF6/132', 0, 0, 0, 0, '呼拉耶', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '70a24136b0a7608762722d8ccd8900a9', 63, '', 0, 0, NULL, NULL),
-(36, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524841123, NULL, 1524841142, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/kYOuNqHYNuAHbhuCfOrlyDqibMK5Za5HRl7AVuq2ib0Je0UPMozwY9xQHxVcoIYUFvFhmgo1GeRViaxqXvAk8yhu61NBxLhmXF1/132', 0, 0, 0, 0, '睿佳科技李健', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '78a50ff12ab85f8bc8221ecc2994306d', 63, '', 0, 0, NULL, NULL),
-(37, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524841193, 1568070971, 1524841203, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM7Pct41m8E7oTHtGt6XncCmDgttK7s6Ftws0JibWNhQaC1vVpLrdbbqUKkwIAOxZIKtF30O235LKkw/132', 0, 0, 0, 0, '猪鼓励', 1, '1.00', '0.00', 1, 1, 0, 0, 0, 'd1c78c6eed15cc6f90cd00b4160c1a95', 63, '', 0, 0, NULL, NULL),
-(38, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524842949, 1568711142, 1524842982, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaEIXMLyayEJ2ehsKcQQ1qYmZxJUQs0bAbLk1KOd9QKnVU1dWrX6ZD2F6wDBWtn3xDLl0TlaDCeibSmw/132', 0, 0, 0, 0, '小胡科技&趣闪租', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '774231d44f815bf2380f196d63d18c15', 63, '', 0, 0, NULL, NULL),
-(39, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524877064, 1569232526, 1524877079, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaEJeHCYeLS7zGtp9yP3G7R6v2BH3sLCQvUgfNnlk7oqm1rHq11btzP96dnBF510PVbTpZDzF3yMfLQ/132', 0, 0, 0, 0, '[爱心]等待…', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '3d2660223342811f4f09170aed8d696b', 63, '', 0, 0, NULL, NULL),
-(40, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524877295, 1569232525, 1524877295, 0, '', '', '', 0, 'weixin', 'o9cTBwUDY08LVZUAXIvagXZrrp10', NULL, 'http://thirdwx.qlogo.cn/mmopen/vi_32/cTRpAMg0XXiaeh8tSPPjib3dwobK7N79OzKL1ic42S9KbEKHuvTgWfRjPYphc7kXDsazdJAhlbDCseOPuenjC9KIg/132', 0, 0, 0, 0, '王', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '54a80199155e63b5cc4a3dbc2a27dc84', 63, '', 0, 0, NULL, NULL),
-(41, 1, '994927909@qq.com', '心之所向', '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524877656, 1569232523, 1524877664, 0, '', '', '18397423845', 0, '', NULL, NULL, '/storage/uploads/20190904\\454cd1e3d232615e1cab49a54abe1274.png', 0, 0, 0, 0, 'AM༊྄ཻ ㎕࿐', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '9ca781b13e3dd896fd809ba46ddd9734', 63, '', 0, 0, NULL, NULL),
-(43, 1, '9949279099@qq.com', 'ny8zxovm', '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1567563788, 1569223067, 0, 0, '', '', '18397423846', 0, '', NULL, NULL, '/storage/uploads/20190904\\1b44b01f2becc018458ca9a995871fb8.jpg', 0, 0, 0, 0, NULL, 1, '1.00', '0.00', 1, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL);
+(12, 1, '1546515984@11.com', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '1824.00', '0.00', '0.00', 0, 2400, 0, 1524023190, 1569480994, 1524023190, 0, '', '', '18576762477', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '18576762477', 2, '1.00', '88.00', 0, 1, 0, 0, 0, '55a01f6a994fa693a5c6364839475bc9', 63, '0', 0, 0, NULL, NULL),
+(13, 1, '15274851694@qq.co', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524188790, 1569480994, 0, 0, '', '', '', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '32', 1, '1.00', '0.00', 0, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
+(14, 1, '18516589423@qq.com', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524188838, 1569480993, 0, 0, '', '', '', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '3434', 1, '1.00', '0.00', 0, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
+(15, 1, '', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524189831, 1569480993, 1524189831, 0, '', '', '15274851515', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '15274851515', 2, '1.00', '0.00', 0, 1, 0, 0, 0, '002322068d39e76fbc9afbaa98001828', 63, '0', 0, 0, NULL, NULL),
+(16, 1, '123@qq.com', NULL, '519475228fe35ad067744465c42a19b2', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524470536, 1569480993, 0, 0, '', '', '13978520397', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '125', 3, '1.00', '0.00', 0, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
+(17, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 1524499200, '8977.90', '0.00', '0.00', 0, 190, 0, 1524554349, 1569483226, 1524822517, 0, '', '', '15247471414', 1, '', NULL, NULL, '/public/upload/head_pic/20180424/47684cc3e684a14cc2aae4a9294bf87e.jpg', 0, 0, 0, 0, '15247471414', 3, '0.99', '1266.00', 0, 1, 0, 0, 0, 'af20aa77641d815ff645ee524d2cdd73', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
+(18, 1, '', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524623385, 1569480992, 1524623385, 0, '', '', '15889560679', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '15889560679', 2, '1.00', '0.00', 0, 1, 0, 0, 0, '94c54e14ccdddf8f39ffa86262ea2b2e', 63, '0', 0, 0, NULL, NULL),
+(19, 1, '258282@163.com', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524706705, 1569480991, 0, 0, '', '', '15915407591', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '添加会员', 2, '1.00', '0.00', 0, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
+(20, 1, '', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524714610, 1570264886, 1524714610, 0, '', '', '18515858596', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '18515858596', 2, '1.00', '0.00', 1, 1, 0, 0, 0, '2ffa0713419b11ca86b8f3c81744a387', 63, '0', 0, 0, NULL, NULL),
+(21, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 1524672000, '49256.00', '0.00', '0.00', 0, 100, 0, 1524723726, 1570264883, 0, 0, '', '', '15274851596', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '路人甲', 2, '1.00', '744.00', 1, 1, 3, 0, 0, '', 63, '100d855909727631376', 0, 0, NULL, NULL),
+(22, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '57.62', '0.00', '0.00', 0, 44985, 0, 1524726905, 1570264881, 1524738073, 0, '', '', '13243434343', 1, '', NULL, NULL, '/public/upload/head_pic/20180427/dd96cecf4bc0bd6414351cd9574d01e7.jpg', 0, 0, 0, 0, '13243434343', 3, '0.99', '1760.14', 1, 1, 0, 0, 0, '16bc4823350241a1d942777f58e74457', 63, '', 0, 0, NULL, NULL),
+(23, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '996778.79', '0.00', '0.00', 0, 1997520, 0, 1524730504, 1569545656, 1524824026, 0, '', '', '18679683657', 1, '', NULL, NULL, 'https://thirdqq.qlogo.cn/qqapp/1106296395/B0C344E52B6012FDABEE9ECD0557C0CC/100', 0, 0, 0, 0, '18679683657', 2, '1.00', '973.60', 1, 1, 0, 0, 0, '4ce10de3f32357294373107e321a8b60', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_user_level`
+-- Table structure for table `lm_user_level`
 --
 
 CREATE TABLE `lm_user_level` (
@@ -691,23 +692,23 @@ CREATE TABLE `lm_user_level` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户等级表';
 
 --
--- 转存表中的数据 `lm_user_level`
+-- Dumping data for table `lm_user_level`
 --
 
 INSERT INTO `lm_user_level` (`id`, `level_name`, `amount`, `discount`, `status`, `sort`, `description`, `create_time`, `update_time`) VALUES
-(1, '倔强青铜', '0.00', 100, 0, NULL, '人生若只如初相见', NULL, 1568795954),
-(2, '秩序白银', '1000.00', 99, 1, NULL, '', NULL, 1568622837),
-(3, '荣耀黄金', '3000.00', 94, 1, NULL, '', NULL, NULL),
+(1, '倔强青铜', '0.00', 100, 0, NULL, '人生若只如初相见', NULL, 1570414332),
+(2, '秩序白银', '1000.00', 99, 0, NULL, '', NULL, 1570414331),
+(3, '荣耀黄金', '3000.00', 94, 0, NULL, '', NULL, 1570414330),
 (4, '尊贵铂金', '10000.00', 95, 1, NULL, '', NULL, NULL),
-(5, '永恒钻石', '50000.00', 93, 1, NULL, '', NULL, 1568621710),
-(6, '至尊星耀', '100000.00', 91, 0, NULL, '', NULL, 1568795951),
-(7, '最强王者', '3000000.00', 90, 1, NULL, '', NULL, 1568278658),
-(8, '任性', '99999999.99', 70, 0, 0, '', 1568098240, 1568795943);
+(5, '永恒钻石', '50000.00', 93, 0, NULL, '', NULL, 1570256743),
+(6, '至尊星耀', '100000.00', 91, 0, NULL, '', NULL, 1570414329),
+(7, '最强王者', '3000000.00', 90, 0, NULL, '', NULL, 1570414329),
+(8, '任性', '99999999.99', 70, 0, 0, '', 1568098240, 1570414330);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_user_sign`
+-- Table structure for table `lm_user_sign`
 --
 
 CREATE TABLE `lm_user_sign` (
@@ -722,7 +723,7 @@ CREATE TABLE `lm_user_sign` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='签到表';
 
 --
--- 转存表中的数据 `lm_user_sign`
+-- Dumping data for table `lm_user_sign`
 --
 
 INSERT INTO `lm_user_sign` (`id`, `user_id`, `sign_total`, `sign_count`, `sign_last`, `sign_time`, `points`, `this_month`) VALUES
@@ -736,7 +737,7 @@ INSERT INTO `lm_user_sign` (`id`, `user_id`, `sign_total`, `sign_count`, `sign_l
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_wx_account`
+-- Table structure for table `lm_wx_account`
 --
 
 CREATE TABLE `lm_wx_account` (
@@ -771,17 +772,17 @@ CREATE TABLE `lm_wx_account` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='微信公共帐号';
 
 --
--- 转存表中的数据 `lm_wx_account`
+-- Dumping data for table `lm_wx_account`
 --
 
 INSERT INTO `lm_wx_account` (`id`, `store_id`, `wxname`, `aeskey`, `encode`, `app_id`, `app_secret`, `origin_id`, `weixin`, `logo`, `token`, `w_token`, `related`, `create_time`, `update_time`, `tplcontentid`, `share_ticket`, `share_dated`, `authorizer_access_token`, `authorizer_refresh_token`, `authorizer_expires`, `type`, `web_access_token`, `web_refresh_token`, `web_expires`, `qr`, `menu_config`, `status`) VALUES
-(31, 1, 'lemocms', 'adsfda', '0', 'wxecd04cbbfc06a972', 'ec83a45f2a561a90cf5f63e7476bae36', 'gh_e29462503ebe', 'lemomcms', '/storage/uploads/20190905/dfdcecfa905e2858ae45b87542c0c5ab.png', 'b96561beca83877b0df8eda9f0cea2b4', 'b96561beca83877b0df8eda9f0cea2b4', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1490691329, 1569311714, '', '', '', '', '', '', 4, '9_ztdL3qhqHHAgFTIANDMStPvneUubYL0sANeFHEYDXu_qzElDwaQeSNwwhi1EfpDXzFwOeP05e0wMRpsJvQVVjnmhiWtZIqOwj4RwIdhXQnB1WPP0yw4pv8x2c_NA2ykcPKD-V6aTa3mFDKO9YJSaAAALWF', '', 1524884051, '/storage/uploads/20190905/2790a6a9cbb9ca1bcdfaca9b25d0316a.jpg', NULL, 1),
-(34, 1, 'asdf12312', 'sadf', '', 'asdf123121241', 'asdfasdf', 'asdfasdf234234', '', '', '', 'asdf', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1569305046, 1569311585, '', '', '', '', '', '', 4, '', '', 0, '', NULL, 0);
+(31, 1, 'lemocms', 'adsfda', '0', 'wxecd04cbbfc06a972', 'ec83a45f2a561a90cf5f63e7476bae36', 'gh_e29462503ebe', 'lemomcms', '/storage/uploads/20190905/dfdcecfa905e2858ae45b87542c0c5ab.png', 'b96561beca83877b0df8eda9f0cea2b4', 'b96561beca83877b0df8eda9f0cea2b4', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1490691329, 1569572524, '', '', '', '', '', '', 4, '9_ztdL3qhqHHAgFTIANDMStPvneUubYL0sANeFHEYDXu_qzElDwaQeSNwwhi1EfpDXzFwOeP05e0wMRpsJvQVVjnmhiWtZIqOwj4RwIdhXQnB1WPP0yw4pv8x2c_NA2ykcPKD-V6aTa3mFDKO9YJSaAAALWF', '', 1524884051, '/storage/uploads/20190905/2790a6a9cbb9ca1bcdfaca9b25d0316a.jpg', NULL, 1),
+(34, 1, 'asdf12312', 'sadf', '', 'asdf123121241', 'asdfasdf', 'asdfasdf234234', '', '', '', 'asdf', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1569305046, 1569572524, '', '', '', '', '', '', 4, '', '', 0, '', NULL, 0);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_wx_fans`
+-- Table structure for table `lm_wx_fans`
 --
 
 CREATE TABLE `lm_wx_fans` (
@@ -817,20 +818,29 @@ CREATE TABLE `lm_wx_fans` (
 ) ENGINE=InnoDB AVG_ROW_LENGTH=1638 DEFAULT CHARSET=utf8mb4 COMMENT='微信公众号获取粉丝列表';
 
 --
--- 转存表中的数据 `lm_wx_fans`
+-- Dumping data for table `lm_wx_fans`
 --
 
 INSERT INTO `lm_wx_fans` (`fans_id`, `wx_aid`, `uid`, `source_uid`, `store_id`, `nickname`, `nickname_encode`, `headimgurl`, `sex`, `language`, `country`, `province`, `city`, `district`, `openid`, `unionid`, `groupid`, `subscribe`, `subscribe_scene`, `remark`, `tag`, `tagid_list`, `subscribe_time`, `unsubscribe_time`, `qr_scene`, `qr_scene_str`, `status`, `update_time`, `create_time`) VALUES
-(1, 31, 0, 0, 1, '🐘 心之所向🐘', '\"\\ud83d\\udc18 \\u5fc3\\u4e4b\\u6240\\u5411\\ud83d\\udc18\"', 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM4VFiaYnBD77jqvXaG55kz8cYgynjUAic5oNcrjkicjIGvVVyRYfLsiceojIlI709OKWPAQr95E2y2Ick6jSHSrIJXgtcn1VnDM4qE/132', 1, 'zh_CN', '中国', '湖南', '衡阳', '', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '其他', '[2]', 1568970767, 0, '0', '', 1, 1569232869, 1567909800),
-(2, 31, 0, 0, 1, '、ζ低调ゐ走这条 街る', '\"\\u3001\\u03b6\\u4f4e\\u8c03\\u3090\\u8d70\\u8fd9\\u6761 \\u8857\\u308b\"', 'http://thirdwx.qlogo.cn/mmopen/ajNVdqHZLLCTcaZ5Hx9VMicLSMyBKMG20SJwFLf4kjvWGrbPIwbleo3gick4ic6wa93PJvF6patZgyslRUffXmaXw/132', 1, 'zh_CN', '中国', '河南', '郑州', '', 'oBSasxK1y2TGZk_xKIf-ZxWYM5rM', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1568970306, 0, '0', '', 1, 1569035960, 1569035960),
-(3, 31, 0, 0, 1, '橙皮', '\"\\u6a59\\u76ae\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPI2sYCzCn2t5ezUU3Utl9RxgIPwtmN76SOafpHOyqgIAhibQaH2hlHibIPLFvZvwe3fIwtngSbc2xibjdXLhxxXvmic/132', 1, 'zh_CN', '中国', '', '', '', 'oBSasxOGadD6Gd5-HF6FjtUJNXZs', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1569224897, 0, '0', '', 1, 1569287958, 1569287958),
-(4, 31, 0, 0, 1, '何若焱', '\"\\u4f55\\u82e5\\u7131\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPIhorsAYYgpicQYAnYDBNicEic5iayaxnIZq4RbybVNeiad7beZXKVpDDicK5Esq43tgPBWDoJuFC1lhVluBFk8AWJf2Z/132', 0, 'zh_CN', '', '', '', '', 'oBSasxBU2xk2JPnP1x_5mtbDlQ1M', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1569163118, 0, '0', '', 1, 1569287958, 1569287958),
-(5, 31, 0, 0, 1, 'flystone', '\"flystone\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6e5erQKVrgMOEP1x3FKM94q0k7HAALibB0WwOLhLRPVRJJDRcLo5RXua1fytBsRwhM3cYcCbNsnOH7ibcSrvuo5ic/132', 1, 'zh_CN', '中国', '广东', '广州', '', 'oBSasxPs-IA9dp03EcmHmPmQ88Mw', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1569231878, 0, '0', '', 1, 1569287958, 1569287958);
+(1, 34, 0, 0, 1, '🐘 心之所向🐘', '\"\\ud83d\\udc18 \\u5fc3\\u4e4b\\u6240\\u5411\\ud83d\\udc18\"', 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM4VFiaYnBD77jqvXaG55kz8cYgynjUAic5oNcrjkicjIGvVVyRYfLsiceojIlI709OKWPAQr95E2y2Ick6jSHSrIJXgtcn1VnDM4qE/132', 1, 'zh_CN', '中国', '湖南', '衡阳', '', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '其他', '[2]', 1568970767, 0, '0', '', 1, 1570254145, 1567909800),
+(2, 34, 0, 0, 1, '、ζ低调ゐ走这条 街る', '\"\\u3001\\u03b6\\u4f4e\\u8c03\\u3090\\u8d70\\u8fd9\\u6761 \\u8857\\u308b\"', 'http://thirdwx.qlogo.cn/mmopen/BA8GZZ2EGwWjjLn9bP76eEhmg9zfsYuVlbdJT9y3Z5KJFrINxlCHvFX2sTxiaskvJAcAORVibwQQVpJictIv7icH9Q/132', 1, 'zh_CN', '中国', '河南', '郑州', '', 'oBSasxK1y2TGZk_xKIf-ZxWYM5rM', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1568970306, 0, '0', '', 1, 1570254145, 1569035960),
+(3, 34, 0, 0, 1, '橙皮', '\"\\u6a59\\u76ae\"', 'http://thirdwx.qlogo.cn/mmopen/0YNSjjHibkfmbsIFFFqR5qRBdObAWLsjzLWtGGIencXPzTLveiaQwwiciapF7FgLlcIia9NUaViavQBdv6P3FzviaegmZtJSXfxl0wib/132', 1, 'zh_CN', '中国', '', '', '', 'oBSasxOGadD6Gd5-HF6FjtUJNXZs', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '星标组', '[2]', 1569224897, 0, '0', '', 1, 1570254145, 1569287958),
+(4, 34, 0, 0, 1, '何若焱', '\"\\u4f55\\u82e5\\u7131\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPIhorsAYYgpicQYAnYDBNicEic5iayaxnIZq4RbybVNeiad7beZXKVpDDicK5Esq43tgPBWDoJuFC1lhVluBFk8AWJf2Z/132', 0, 'zh_CN', '', '', '', '', 'oBSasxBU2xk2JPnP1x_5mtbDlQ1M', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '星标组', '[2]', 1569163118, 0, '0', '', 1, 1570254145, 1569287958),
+(5, 34, 0, 0, 1, 'flystone', '\"flystone\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6e5erQKVrgMOEP1x3FKM94q0k7HAALibB0WwOLhLRPVRJJDRcLo5RXua1fytBsRwhM3cYcCbNsnOH7ibcSrvuo5ic/132', 1, 'zh_CN', '中国', '广东', '广州', '', 'oBSasxPs-IA9dp03EcmHmPmQ88Mw', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '其他', '[2]', 1569231878, 0, '0', '', 1, 1570254145, 1569287958),
+(6, 34, 0, 0, 1, 'UI中国', '\"UI\\u4e2d\\u56fd\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6RxhlicynFsqzHSC3CVaAdkzDJibg8MQQRcia4vwZt2ap2uXKCrE6pQEjR3hERXROHjPUBgdHyYRZ3aOnAWsIWR1s/132', 0, 'zh_CN', '', '', '', '', 'oBSasxGjfo7053Gelemw58C4oAwc', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '星标组', '[2]', 1569297240, 0, '0', '', 1, 1570254145, 1569315518),
+(7, 34, 0, 0, 1, '周凯', '\"\\u5468\\u51ef\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPKU8tXPlI2HO2oCEPEq5rRBZDwQ9PgESvrBvI2tkIpJG2NGNhA0unHbsxP3ImJjnSRVzMu4MscIbAmR8W7beDjB/132', 1, 'zh_CN', '中国', '四川', '成都', '', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '粉丝', '[2]', 1569384811, 0, '0', '', 1, 1570254145, 1569386740),
+(8, 31, 0, 0, 1, '🐘 心之所向🐘', '\"\\ud83d\\udc18 \\u5fc3\\u4e4b\\u6240\\u5411\\ud83d\\udc18\"', 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM4VFiaYnBD77jqvXaG55kz8cYgynjUAic5oNcrjkicjIGvVVyRYfLsiceojIlI709OKWPAQr95E2y2Ick6jSHSrIJXgtcn1VnDM4qE/132', 1, 'zh_CN', '中国', '湖南', '衡阳', '', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1568970767, 0, '0', '', 1, 1570430152, 1570277099),
+(9, 31, 0, 0, 1, '、ζ低调ゐ走这条 街る', '\"\\u3001\\u03b6\\u4f4e\\u8c03\\u3090\\u8d70\\u8fd9\\u6761 \\u8857\\u308b\"', 'http://thirdwx.qlogo.cn/mmopen/BA8GZZ2EGwWjjLn9bP76eEhmg9zfsYuVlbdJT9y3Z5KJFrINxlCHvFX2sTxiaskvJAcAORVibwQQVpJictIv7icH9Q/132', 1, 'zh_CN', '中国', '河南', '郑州', '', 'oBSasxK1y2TGZk_xKIf-ZxWYM5rM', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1568970306, 0, '0', '', 1, 1570430152, 1570277099),
+(10, 31, 0, 0, 1, '周凯', '\"\\u5468\\u51ef\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPKU8tXPlI2HO2oCEPEq5rRBZDwQ9PgESvrBvI2tkIpJG2NGNhA0unHbsxP3ImJjnSRVzMu4MscIbAmR8W7beDjB/132', 1, 'zh_CN', '中国', '四川', '成都', '', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569384811, 0, '0', '', 1, 1570430152, 1570277099),
+(11, 31, 0, 0, 1, '橙皮', '\"\\u6a59\\u76ae\"', 'http://thirdwx.qlogo.cn/mmopen/0YNSjjHibkfmbsIFFFqR5qRBdObAWLsjzLWtGGIencXPzTLveiaQwwiciapF7FgLlcIia9NUaViavQBdv6P3FzviaegmZtJSXfxl0wib/132', 1, 'zh_CN', '中国', '', '', '', 'oBSasxOGadD6Gd5-HF6FjtUJNXZs', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569224897, 0, '0', '', 1, 1570430153, 1570277099),
+(12, 31, 0, 0, 1, '何若焱', '\"\\u4f55\\u82e5\\u7131\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPIhorsAYYgpicQYAnYDBNicEic5iayaxnIZq4RbybVNeiad7beZXKVpDDicK5Esq43tgPBWDoJuFC1lhVluBFk8AWJf2Z/132', 0, 'zh_CN', '', '', '', '', 'oBSasxBU2xk2JPnP1x_5mtbDlQ1M', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569163118, 0, '0', '', 1, 1570430153, 1570277099),
+(13, 31, 0, 0, 1, 'flystone', '\"flystone\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6e5erQKVrgMOEP1x3FKM94q0k7HAALibB0WwOLhLRPVRJJDRcLo5RXua1fytBsRwhM3cYcCbNsnOH7ibcSrvuo5ic/132', 1, 'zh_CN', '中国', '广东', '广州', '', 'oBSasxPs-IA9dp03EcmHmPmQ88Mw', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569231878, 0, '0', '', 1, 1570430153, 1570277099),
+(14, 31, 0, 0, 1, 'UI中国', '\"UI\\u4e2d\\u56fd\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6RxhlicynFsqzHSC3CVaAdkzDJibg8MQQRcia4vwZt2ap2uXKCrE6pQEjR3hERXROHjPUBgdHyYRZ3aOnAWsIWR1s/132', 0, 'zh_CN', '', '', '', '', 'oBSasxGjfo7053Gelemw58C4oAwc', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569297240, 0, '0', '', 1, 1570430153, 1570277099);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_wx_material`
+-- Table structure for table `lm_wx_material`
 --
 
 CREATE TABLE `lm_wx_material` (
@@ -839,6 +849,7 @@ CREATE TABLE `lm_wx_material` (
   `wx_aid` int(11) DEFAULT NULL,
   `media_id` varchar(64) DEFAULT '' COMMENT '微信媒体id',
   `file_name` varchar(255) DEFAULT NULL COMMENT '视频文件名',
+  `local_cover` varchar(255) NOT NULL DEFAULT '',
   `media_url` varchar(255) DEFAULT NULL,
   `type` varchar(10) NOT NULL COMMENT '图片（image）、视频（video）、语音 （voice）、图文（news）音乐（music）',
   `des` varchar(150) DEFAULT '' COMMENT '视频描述',
@@ -847,28 +858,30 @@ CREATE TABLE `lm_wx_material` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转存表中的数据 `lm_wx_material`
+-- Dumping data for table `lm_wx_material`
 --
 
-INSERT INTO `lm_wx_material` (`id`, `store_id`, `wx_aid`, `media_id`, `file_name`, `media_url`, `type`, `des`, `create_time`, `update_time`) VALUES
-(12, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vdbn80qbO14UQcNSOMmJhd0', NULL, 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZgdnibLXpLOJpNQJceeNicswYUsKqe8IialcHA9tSkGq6m8AD4E58dxIlQ/0?wx_fmt=jpeg', 'image', '', 1568707569, 1568707569),
-(13, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vb3MwnW37vEF4yLXEsztgao', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZpuoImzdQPGVticJY8cwP9neeiaOFTxOKmYzia2nPJiabgeESiavIuUmnUEw/0?wx_fmt=png', 'image', '', 1568708249, 1568708249),
-(14, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vdzNbXT6nfF5icgcGBMWVfI', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZpuoImzdQPGVticJY8cwP9neeiaOFTxOKmYzia2nPJiabgeESiavIuUmnUEw/0?wx_fmt=png', 'image', '', 1568708380, 1568708380),
-(15, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vcw1Ic8rbsNrgOsnszx0OJI', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZpuoImzdQPGVticJY8cwP9neeiaOFTxOKmYzia2nPJiabgeESiavIuUmnUEw/0?wx_fmt=png', 'image', '', 1568708436, 1568708436),
-(16, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vYTODIACSEV3c_UjoJlQoNo', NULL, 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZgdnibLXpLOJpNQJceeNicswYUsKqe8IialcHA9tSkGq6m8AD4E58dxIlQ/0?wx_fmt=jpeg', 'image', '', 1568708449, 1568708449),
-(17, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vWJohUlSRgKE0O3vNSzysB0', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibObCXqbVj5SL2ZsDxlJ7iaic7iaL0ubiac0ZceFOJ9LybTGsSM563OGB5IDfK7tvpczBEjLj9dyb06mI8g/0?wx_fmt=png', 'image', '', 1568768779, 1568768779),
-(19, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vTeRfZgpyG6WM3xEIYMqs4g', NULL, 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibObCXqbVj5SL2ZsDxlJ7iaic7iaDqkayiaz14l4AHVlCAYyVicFqb0Q95iaaYabtveniag4mNUICBbaypPXjA/0?wx_fmt=jpeg', 'image', '', 1568770822, 1568770822),
-(26, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vf4uLVp3tFomLPazcjB6IOM', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOafHyBKbh42d34tu7iagashY3TkAG8vQGvkn0jKYur0219iaibtkvyMP2UrXxPA6QcZOfkgBmd2kOZZA/0?wx_fmt=png', 'image', '', 1568856598, 1568856598),
-(32, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vZ7L6evjz2HyZQWuwq_JBLI', NULL, NULL, 'news', '', 1568858056, 1568858056),
-(37, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vWtBCrMpwwR_IHX2MpGrpoc', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOYE5UibSIrwLn6mFYy8L2SN7HvCEAvQAGna6ZxmLotrx93hfqof9aoRmICxfIJjkTn8ZFdvO4wiaPAg/0?wx_fmt=png', 'image', '', 1568946808, 1568946808),
-(38, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vY2nYvRwar_haUm9ks0LoJw', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOYE5UibSIrwLn6mFYy8L2SN7HvCEAvQAGna6ZxmLotrx93hfqof9aoRmICxfIJjkTn8ZFdvO4wiaPAg/0?wx_fmt=png', 'image', '', 1568947771, 1568947771),
-(39, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vVbkgEGXVWwEIhWU1UAqLTg', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOaoSmicTHWTebJGx7b1sZe833Gzyt43TTwGdrJ1J1U6PNtXrQU8YBuoa703PdI2Ye62cxXOz0spKCQ/0?wx_fmt=png', 'image', '', 1569311736, 1569311736),
-(40, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vYvKCa97MeIyGRQM4b2F0ic', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOaoSmicTHWTebJGx7b1sZe833Gzyt43TTwGdrJ1J1U6PNtXrQU8YBuoa703PdI2Ye62cxXOz0spKCQ/0?wx_fmt=png', 'image', '', 1569313687, 1569313687);
+INSERT INTO `lm_wx_material` (`id`, `store_id`, `wx_aid`, `media_id`, `file_name`, `local_cover`, `media_url`, `type`, `des`, `create_time`, `update_time`) VALUES
+(17, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vWJohUlSRgKE0O3vNSzysB0', NULL, '', 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibObCXqbVj5SL2ZsDxlJ7iaic7iaL0ubiac0ZceFOJ9LybTGsSM563OGB5IDfK7tvpczBEjLj9dyb06mI8g/0?wx_fmt=png', 'image', '', 1568768779, 1568768779),
+(19, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vTeRfZgpyG6WM3xEIYMqs4g', NULL, '', 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibObCXqbVj5SL2ZsDxlJ7iaic7iaDqkayiaz14l4AHVlCAYyVicFqb0Q95iaaYabtveniag4mNUICBbaypPXjA/0?wx_fmt=jpeg', 'image', '', 1568770822, 1568770822),
+(26, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vf4uLVp3tFomLPazcjB6IOM', NULL, '', 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOafHyBKbh42d34tu7iagashY3TkAG8vQGvkn0jKYur0219iaibtkvyMP2UrXxPA6QcZOfkgBmd2kOZZA/0?wx_fmt=png', 'image', '', 1568856598, 1568856598),
+(32, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vZ7L6evjz2HyZQWuwq_JBLI', NULL, '', NULL, 'news', '', 1568858056, 1568858056),
+(37, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vWtBCrMpwwR_IHX2MpGrpoc', NULL, '', 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOYE5UibSIrwLn6mFYy8L2SN7HvCEAvQAGna6ZxmLotrx93hfqof9aoRmICxfIJjkTn8ZFdvO4wiaPAg/0?wx_fmt=png', 'image', '', 1568946808, 1568946808),
+(40, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vYvKCa97MeIyGRQM4b2F0ic', NULL, '', 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOaoSmicTHWTebJGx7b1sZe833Gzyt43TTwGdrJ1J1U6PNtXrQU8YBuoa703PdI2Ye62cxXOz0spKCQ/0?wx_fmt=png', 'image', '', 1569313687, 1569313687),
+(46, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vbu13GxWU-Q2o6WYU1f0uS4', NULL, '', 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibOaoSmicTHWTebJGx7b1sZe83bcB5njdJprxnhhx1w2OJjzM0cQrvuG1FOlYAS7P9GkDdVENLicxT9OQ/0?wx_fmt=jpeg', 'image', '', 1569315715, 1569315715),
+(48, 1, 31, 'Mkk-XekVsp2Cvr5VktS-valalpsXZ8Msh0VomkhdN4o', NULL, '', NULL, 'news', '', 1569315796, 1569315796),
+(49, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vfTtk2zqU3dV--4mLOwAK_0', NULL, '', NULL, 'news', '', 1569316866, 1569316866),
+(50, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vXTcP7375tpy32tuqnLX5XI', NULL, '', NULL, 'news', '', 1569317000, 1569317000),
+(51, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vYj8kWWMwGkbQRS-UDft53w', NULL, '', NULL, 'news', '', 1569317008, 1569317008),
+(52, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vYkXRp0qtw4yZ1uSv6xslQo', NULL, '', NULL, 'news', '', 1569317017, 1569317017),
+(57, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vbwGKUplOdrPabWWMKmT9V0', NULL, '/storage/uploads/20190925/d8f277c81eada3c8dbfbf4da5e6166ec.jpg', 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibObBPLOQXuxRjEQT8Q8cksQeFEJQ6IMYDx9WXKLBcSk8s7DbEb6AbPABnsjPzJK9RVPOkrNfxVOy6A/0?wx_fmt=jpeg', 'image', '', 1569390216, 1569390216),
+(58, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vUiITu7E_h8B1SciMb-J8-o', NULL, '/storage/uploads/20190925/a51d175fd8238a39551518fc0474542a.jpg', 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibObBPLOQXuxRjEQT8Q8cksQeZW2iaKdoiaG1JskE6MS0PfbAJPzMxt3lWHNGMibicthq2HmjiaSEnTpaLTg/0?wx_fmt=jpeg', 'image', '', 1569396856, 1569396856),
+(59, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vehQwCZXzWdVq0qC8NjOXAk', NULL, '/storage/uploads/20190925/de6a43a895bc773dfcb2e6df58e8cfe6.jpg', 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibObBPLOQXuxRjEQT8Q8cksQenMzm9HCHcjzrkuc9eMMxBTgetwSAR1BhiaAH9ibUmoE1ibnvGfrpRNjZA/0?wx_fmt=jpeg', 'image', '', 1569396859, 1569396859);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_wx_material_info`
+-- Table structure for table `lm_wx_material_info`
 --
 
 CREATE TABLE `lm_wx_material_info` (
@@ -893,17 +906,21 @@ CREATE TABLE `lm_wx_material_info` (
 ) ENGINE=InnoDB AVG_ROW_LENGTH=712 DEFAULT CHARSET=utf8mb4;
 
 --
--- 转存表中的数据 `lm_wx_material_info`
+-- Dumping data for table `lm_wx_material_info`
 --
 
 INSERT INTO `lm_wx_material_info` (`id`, `store_id`, `wx_aid`, `material_id`, `thumb_media_id`, `local_cover`, `cover`, `title`, `author`, `show_cover`, `digest`, `content`, `url`, `content_source_url`, `need_open_comment`, `only_fans_can_comment`, `sort`, `hits`) VALUES
-(53, 1, 31, 32, 'Mkk-XekVsp2Cvr5VktS-vf4uLVp3tFomLPazcjB6IOM', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOafHyBKbh42d34tu7iagashY3TkAG8vQGvkn0jKYur0219iaibtkvyMP2UrXxPA6QcZOfkgBmd2kOZZA/0?wx_fmt=png', '1', '1', 1, '1', '<p>1</p>', 'http://mp.weixin.qq.com/s?__biz=MzI5OTYxNjI2MQ==&mid=100000046&idx=1&sn=1e6384955fbc4351557633554e7b6778&chksm=6c9290445be519522f735cf999721ba0a4c2d170f585639c1367c2f34e5e4aa59d16609253b6#rd', '1', 1, 0, 0, 0),
-(54, 1, 31, 32, 'Mkk-XekVsp2Cvr5VktS-vZUxI_gpEP8F61ypD7kPKao', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOafHyBKbh42d34tu7iagashYhus2hLcovAMWBqQllicMeQKyiaQABFn4wibLtUyBdK8BXeQ945BSoia4eg/0?wx_fmt=png', '2', '2', 0, '2', '<p>2</p>', 'http://mp.weixin.qq.com/s?__biz=MzI5OTYxNjI2MQ==&mid=100000046&idx=2&sn=cb91de1204dc89ee0fb01732545a70c8&chksm=6c9290445be51952d2580b1e9fee7edb2df8bc8d55be597489e6a30fdd3ab1784e4c9a916238#rd', '2', 1, 0, 0, 0);
+(53, 1, 31, 32, 'Mkk-XekVsp2Cvr5VktS-vf4uLVp3tFomLPazcjB6IOM', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOafHyBKbh42d34tu7iagashY3TkAG8vQGvkn0jKYur0219iaibtkvyMP2UrXxPA6QcZOfkgBmd2kOZZA/0?wx_fmt=png', '2', '1', 1, '1', '<p>1</p>', 'http://mp.weixin.qq.com/s?__biz=MzI5OTYxNjI2MQ==&mid=100000046&idx=1&sn=1e6384955fbc4351557633554e7b6778&chksm=6c9290445be519526ae64449e5026b1bbad6d170f585639c1367c2f34e5e4aa59d16609253b6#rd', '1', 1, 0, 0, 0),
+(54, 1, 31, 32, 'Mkk-XekVsp2Cvr5VktS-vZUxI_gpEP8F61ypD7kPKao', NULL, '', '2', '2', 0, '2', '<p>2</p>', 'http://mp.weixin.qq.com/s?__biz=MzI5OTYxNjI2MQ==&mid=100000046&idx=2&sn=cb91de1204dc89ee0fb01732545a70c8&chksm=6c9290445be51952d2580b1e9fee7edb2df8bc8d55be597489e6a30fdd3ab1784e4c9a916238#rd', '2', 1, 0, 0, 0),
+(56, 1, 31, 52, 'Mkk-XekVsp2Cvr5VktS-vSxbv_o0dCdKsECT5_AI3NE', '', 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOaoSmicTHWTebJGx7b1sZe83eII0woTg24p0PxjZltYLMrIbmbtsth9At2WvSL7gRbTnkCFzuQibxXA/0?wx_fmt=png', '测试', '测试', 1, '2', '<p>2</p>', 'http://mp.weixin.qq.com/s?__biz=MzI5OTYxNjI2MQ==&mid=100000080&idx=1&sn=3460a29e1fb0c0dfa610367fa81f4981&chksm=6c92903a5be5192c3c79fa346d4d73e273c513f3d268345b1641cfb6a03c7719cf8290d8bf72#rd', '', 1, 0, 0, 0),
+(57, 1, 31, 50, 'Mkk-XekVsp2Cvr5VktS-vSxbv_o0dCdKsECT5_AI3NE', '', 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOaoSmicTHWTebJGx7b1sZe83eII0woTg24p0PxjZltYLMrIbmbtsth9At2WvSL7gRbTnkCFzuQibxXA/0?wx_fmt=png', '测试', '测试', 1, '1', '<p><img class=\"loadingclass\" id=\"loading_k0xm21s9\" src=\"https://demo.lemocms.com/static/plugins/ueditor/themes/default/images/spacer.gif\" title=\"正在上传...\"/></p>', 'http://mp.weixin.qq.com/s?__biz=MzI5OTYxNjI2MQ==&mid=100000078&idx=1&sn=fbbcc858628e9f53b465442a67c371ab&chksm=6c9290245be519321bb15aed12220c99bc8aa67e3bfc872be896e26a2d0559df237e2c38cec2#rd', '', 1, 0, 0, 0),
+(58, 1, 31, 51, 'Mkk-XekVsp2Cvr5VktS-vSxbv_o0dCdKsECT5_AI3NE', '', 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOaoSmicTHWTebJGx7b1sZe83eII0woTg24p0PxjZltYLMrIbmbtsth9At2WvSL7gRbTnkCFzuQibxXA/0?wx_fmt=png', '测试', '测试', 1, '1', '<p><img class=\"loadingclass\" id=\"loading_k0xm21s9\" src=\"https://demo.lemocms.com/static/plugins/ueditor/themes/default/images/spacer.gif\" title=\"正在上传...\"/></p>', 'http://mp.weixin.qq.com/s?__biz=MzI5OTYxNjI2MQ==&mid=100000079&idx=1&sn=93dcfe2c22ee22b4a1e2c5ebaeb88a5e&chksm=6c9290255be519331634c392cf7de7445cb9699d0d3d2c484b08f7e54b93dc6987bae9debdd0#rd', '', 1, 0, 0, 0),
+(59, 1, 31, 52, 'Mkk-XekVsp2Cvr5VktS-vSxbv_o0dCdKsECT5_AI3NE', '', 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOaoSmicTHWTebJGx7b1sZe83eII0woTg24p0PxjZltYLMrIbmbtsth9At2WvSL7gRbTnkCFzuQibxXA/0?wx_fmt=png', '测试', '测试', 1, '1', '<p><img class=\"loadingclass\" id=\"loading_k0xm21s9\" src=\"https://demo.lemocms.com/static/plugins/ueditor/themes/default/images/spacer.gif\" title=\"正在上传...\"/></p>', 'http://mp.weixin.qq.com/s?__biz=MzI5OTYxNjI2MQ==&mid=100000080&idx=1&sn=3460a29e1fb0c0dfa610367fa81f4981&chksm=6c92903a5be5192c3c79fa346d4d73e273c560cf03b768a616662b71a03c7719cf8290d8bf72#rd', '', 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_wx_menu`
+-- Table structure for table `lm_wx_menu`
 --
 
 CREATE TABLE `lm_wx_menu` (
@@ -920,10 +937,10 @@ CREATE TABLE `lm_wx_menu` (
   `sort` int(11) NOT NULL DEFAULT '0' COMMENT '排序',
   `create_time` int(11) DEFAULT '0' COMMENT '创建日期',
   `update_time` int(11) DEFAULT '0' COMMENT '修改日期'
-) ENGINE=InnoDB AVG_ROW_LENGTH=1638 DEFAULT CHARSET=utf8mb4 COMMENT='微信设置->微信菜单';
+) ENGINE=InnoDB AVG_ROW_LENGTH=1638 DEFAULT CHARSET=utf8mb4 COMMENT='微信菜单';
 
 --
--- 转存表中的数据 `lm_wx_menu`
+-- Dumping data for table `lm_wx_menu`
 --
 
 INSERT INTO `lm_wx_menu` (`id`, `store_id`, `wx_aid`, `menu_name`, `ico`, `pid`, `menu_event_type`, `media_id`, `menu_event_url`, `hits`, `sort`, `create_time`, `update_time`) VALUES
@@ -935,7 +952,7 @@ INSERT INTO `lm_wx_menu` (`id`, `store_id`, `wx_aid`, `menu_name`, `ico`, `pid`,
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_wx_msg_history`
+-- Table structure for table `lm_wx_msg_history`
 --
 
 CREATE TABLE `lm_wx_msg_history` (
@@ -956,7 +973,7 @@ CREATE TABLE `lm_wx_msg_history` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='微信_历史记录表';
 
 --
--- 转存表中的数据 `lm_wx_msg_history`
+-- Dumping data for table `lm_wx_msg_history`
 --
 
 INSERT INTO `lm_wx_msg_history` (`id`, `store_id`, `wx_aid`, `media_id`, `keyword_id`, `nickname`, `openid`, `content_json`, `content`, `type`, `event`, `status`, `create_time`, `update_time`) VALUES
@@ -1378,13 +1395,106 @@ INSERT INTO `lm_wx_msg_history` (`id`, `store_id`, `wx_aid`, `media_id`, `keywor
 (454, 1, 31, 0, 0, 'flystone', 'oBSasxPs-IA9dp03EcmHmPmQ88Mw', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxPs-IA9dp03EcmHmPmQ88Mw\",\"CreateTime\":\"1569232916\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.445280\",\"Longitude\":\"114.396667\",\"Precision\":\"100.000000\"}', '', 'event', 'LOCATION', 1, 1569232916, 1569232916),
 (455, 1, 31, 0, 0, 'flystone', 'oBSasxPs-IA9dp03EcmHmPmQ88Mw', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxPs-IA9dp03EcmHmPmQ88Mw\",\"CreateTime\":\"1569232922\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.445280\",\"Longitude\":\"114.396667\",\"Precision\":\"50.000000\"}', '', 'event', 'LOCATION', 1, 1569232922, 1569232922),
 (456, 1, 31, 0, 0, '。。。', 'oBSasxH0DUpC2-UHWeRrFwULX7U0', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxH0DUpC2-UHWeRrFwULX7U0\",\"CreateTime\":\"1569294533\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1569294533, 1569294534),
-(457, 1, 31, 0, 0, '。。。', 'oBSasxH0DUpC2-UHWeRrFwULX7U0', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxH0DUpC2-UHWeRrFwULX7U0\",\"CreateTime\":\"1569294540\",\"MsgType\":\"text\",\"Content\":\"11\",\"MsgId\":\"22466893590680165\"}', '11', 'text', '', 1, 1569294540, 1569294542),
-(458, 1, 31, 0, 2, '。。。', 'oBSasxH0DUpC2-UHWeRrFwULX7U0', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxH0DUpC2-UHWeRrFwULX7U0\",\"CreateTime\":\"1569294557\",\"MsgType\":\"text\",\"Content\":\"\\u4f60\\u597d\",\"MsgId\":\"22466896556933818\"}', '你好', 'text', '', 1, 1569294557, 1569294558);
+(458, 1, 31, 0, 2, '。。。', 'oBSasxH0DUpC2-UHWeRrFwULX7U0', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxH0DUpC2-UHWeRrFwULX7U0\",\"CreateTime\":\"1569294557\",\"MsgType\":\"text\",\"Content\":\"\\u4f60\\u597d\",\"MsgId\":\"22466896556933818\"}', '你好', 'text', '', 1, 1569294557, 1569294558),
+(459, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384812\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1569384812, 1569384812),
+(460, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384820\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568455\",\"Longitude\":\"104.014328\",\"Precision\":\"30.000000\"}', '', 'event', 'LOCATION', 1, 1569384820, 1569384820),
+(461, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384826\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568455\",\"Longitude\":\"104.014343\",\"Precision\":\"30.000000\"}', '', 'event', 'LOCATION', 1, 1569384826, 1569384826),
+(462, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384833\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568455\",\"Longitude\":\"104.014336\",\"Precision\":\"30.000000\"}', '', 'event', 'LOCATION', 1, 1569384833, 1569384833),
+(463, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384837\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568270\",\"Longitude\":\"104.014343\",\"Precision\":\"36.000000\"}', '', 'event', 'LOCATION', 1, 1569384837, 1569384837),
+(464, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384842\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014343\",\"Precision\":\"13.000000\"}', '', 'event', 'LOCATION', 1, 1569384842, 1569384842),
+(465, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384847\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568296\",\"Longitude\":\"104.014366\",\"Precision\":\"19.000000\"}', '', 'event', 'LOCATION', 1, 1569384847, 1569384847),
+(466, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384852\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568295\",\"Longitude\":\"104.014374\",\"Precision\":\"11.000000\"}', '', 'event', 'LOCATION', 1, 1569384852, 1569384852),
+(467, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384857\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568295\",\"Longitude\":\"104.014374\",\"Precision\":\"9.000000\"}', '', 'event', 'LOCATION', 1, 1569384857, 1569384857),
+(468, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384862\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568296\",\"Longitude\":\"104.014374\",\"Precision\":\"11.000000\"}', '', 'event', 'LOCATION', 1, 1569384862, 1569384862),
+(469, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384867\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568296\",\"Longitude\":\"104.014374\",\"Precision\":\"23.000000\"}', '', 'event', 'LOCATION', 1, 1569384867, 1569384867),
+(470, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384872\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568296\",\"Longitude\":\"104.014374\",\"Precision\":\"35.000000\"}', '', 'event', 'LOCATION', 1, 1569384872, 1569384872),
+(471, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384877\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568296\",\"Longitude\":\"104.014374\",\"Precision\":\"24.000000\"}', '', 'event', 'LOCATION', 1, 1569384877, 1569384877),
+(472, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384882\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568298\",\"Longitude\":\"104.014381\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1569384882, 1569384882),
+(473, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384887\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568298\",\"Longitude\":\"104.014374\",\"Precision\":\"12.000000\"}', '', 'event', 'LOCATION', 1, 1569384887, 1569384887),
+(474, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384892\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1569384892, 1569384892),
+(475, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384897\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"25.000000\"}', '', 'event', 'LOCATION', 1, 1569384897, 1569384897),
+(476, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384902\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"38.000000\"}', '', 'event', 'LOCATION', 1, 1569384902, 1569384902),
+(477, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384907\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"79.000000\"}', '', 'event', 'LOCATION', 1, 1569384907, 1569384907),
+(478, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384912\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"134.000000\"}', '', 'event', 'LOCATION', 1, 1569384912, 1569384912),
+(479, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384917\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"165.000000\"}', '', 'event', 'LOCATION', 1, 1569384917, 1569384917),
+(480, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384922\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"219.000000\"}', '', 'event', 'LOCATION', 1, 1569384922, 1569384922),
+(481, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384929\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"256.000000\"}', '', 'event', 'LOCATION', 1, 1569384929, 1569384929),
+(482, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384933\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"210.000000\"}', '', 'event', 'LOCATION', 1, 1569384933, 1569384933),
+(483, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384938\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"128.000000\"}', '', 'event', 'LOCATION', 1, 1569384938, 1569384938),
+(484, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384943\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"64.000000\"}', '', 'event', 'LOCATION', 1, 1569384943, 1569384943),
+(485, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384948\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"65.000000\"}', '', 'event', 'LOCATION', 1, 1569384948, 1569384948),
+(486, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384953\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"61.000000\"}', '', 'event', 'LOCATION', 1, 1569384953, 1569384953),
+(487, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384958\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"51.000000\"}', '', 'event', 'LOCATION', 1, 1569384958, 1569384958),
+(488, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384963\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"49.000000\"}', '', 'event', 'LOCATION', 1, 1569384963, 1569384963);
+INSERT INTO `lm_wx_msg_history` (`id`, `store_id`, `wx_aid`, `media_id`, `keyword_id`, `nickname`, `openid`, `content_json`, `content`, `type`, `event`, `status`, `create_time`, `update_time`) VALUES
+(489, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384968\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"48.000000\"}', '', 'event', 'LOCATION', 1, 1569384968, 1569384968),
+(490, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384973\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"80.000000\"}', '', 'event', 'LOCATION', 1, 1569384973, 1569384973),
+(491, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384978\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"58.000000\"}', '', 'event', 'LOCATION', 1, 1569384978, 1569384979),
+(492, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384983\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"36.000000\"}', '', 'event', 'LOCATION', 1, 1569384983, 1569384983),
+(493, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384988\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"62.000000\"}', '', 'event', 'LOCATION', 1, 1569384988, 1569384988),
+(494, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384993\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"68.000000\"}', '', 'event', 'LOCATION', 1, 1569384993, 1569384993),
+(495, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384997\",\"MsgType\":\"text\",\"Content\":\"\\/:jump\\ue415\\ue409\\/:shake\",\"MsgId\":\"22468192571415760\"}', '/:jump/:shake', 'text', '', 1, 1569384997, 1569384998),
+(496, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569384998\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"40.000000\"}', '', 'event', 'LOCATION', 1, 1569384998, 1569384998),
+(497, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385003\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"39.000000\"}', '', 'event', 'LOCATION', 1, 1569385003, 1569385003),
+(498, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385008\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"32.000000\"}', '', 'event', 'LOCATION', 1, 1569385008, 1569385008),
+(499, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385013\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"31.000000\"}', '', 'event', 'LOCATION', 1, 1569385013, 1569385013),
+(500, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385018\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"32.000000\"}', '', 'event', 'LOCATION', 1, 1569385018, 1569385018),
+(501, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385024\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"40.000000\"}', '', 'event', 'LOCATION', 1, 1569385024, 1569385024),
+(502, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385028\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"60.000000\"}', '', 'event', 'LOCATION', 1, 1569385028, 1569385029),
+(503, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385033\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"87.000000\"}', '', 'event', 'LOCATION', 1, 1569385033, 1569385033),
+(504, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385038\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014381\",\"Precision\":\"158.000000\"}', '', 'event', 'LOCATION', 1, 1569385038, 1569385038),
+(505, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385043\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"53.000000\"}', '', 'event', 'LOCATION', 1, 1569385043, 1569385043),
+(506, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385048\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"27.000000\"}', '', 'event', 'LOCATION', 1, 1569385048, 1569385048),
+(507, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385053\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"24.000000\"}', '', 'event', 'LOCATION', 1, 1569385053, 1569385053),
+(508, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385058\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"23.000000\"}', '', 'event', 'LOCATION', 1, 1569385058, 1569385058),
+(509, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385063\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"23.000000\"}', '', 'event', 'LOCATION', 1, 1569385063, 1569385063),
+(510, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385068\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"24.000000\"}', '', 'event', 'LOCATION', 1, 1569385068, 1569385068),
+(511, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385073\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"46.000000\"}', '', 'event', 'LOCATION', 1, 1569385073, 1569385073),
+(512, 1, 31, 0, 2, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385077\",\"MsgType\":\"text\",\"Content\":\"\\u4f60\\u597d\",\"MsgId\":\"22468193191567922\"}', '你好', 'text', '', 1, 1569385077, 1569385078),
+(513, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385078\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"98.000000\"}', '', 'event', 'LOCATION', 1, 1569385078, 1569385078),
+(514, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385083\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"155.000000\"}', '', 'event', 'LOCATION', 1, 1569385083, 1569385083),
+(515, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385088\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"236.000000\"}', '', 'event', 'LOCATION', 1, 1569385088, 1569385089),
+(516, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385093\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"228.000000\"}', '', 'event', 'LOCATION', 1, 1569385093, 1569385093),
+(517, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385098\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"186.000000\"}', '', 'event', 'LOCATION', 1, 1569385098, 1569385098),
+(518, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385103\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"91.000000\"}', '', 'event', 'LOCATION', 1, 1569385103, 1569385103),
+(519, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385108\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"62.000000\"}', '', 'event', 'LOCATION', 1, 1569385108, 1569385108),
+(520, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385113\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568300\",\"Longitude\":\"104.014374\",\"Precision\":\"76.000000\"}', '', 'event', 'LOCATION', 1, 1569385113, 1569385113),
+(521, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385118\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"108.000000\"}', '', 'event', 'LOCATION', 1, 1569385118, 1569385118),
+(522, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385130\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568302\",\"Longitude\":\"104.014374\",\"Precision\":\"107.000000\"}', '', 'event', 'LOCATION', 1, 1569385130, 1569385131),
+(523, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385135\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568382\",\"Longitude\":\"104.014320\",\"Precision\":\"30.000000\"}', '', 'event', 'LOCATION', 1, 1569385135, 1569385135),
+(524, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385141\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568371\",\"Longitude\":\"104.014305\",\"Precision\":\"30.000000\"}', '', 'event', 'LOCATION', 1, 1569385141, 1569385141),
+(525, 1, 31, 0, 3, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385146\",\"MsgType\":\"text\",\"Content\":\"\\u67e5\\u8be2\",\"MsgId\":\"22468191612790841\"}', '查询', 'text', '', 1, 1569385146, 1569385146),
+(526, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385147\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568371\",\"Longitude\":\"104.014305\",\"Precision\":\"30.000000\"}', '', 'event', 'LOCATION', 1, 1569385147, 1569385147),
+(527, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385153\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568405\",\"Longitude\":\"104.014336\",\"Precision\":\"30.000000\"}', '', 'event', 'LOCATION', 1, 1569385153, 1569385153),
+(528, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385159\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568405\",\"Longitude\":\"104.014336\",\"Precision\":\"30.000000\"}', '', 'event', 'LOCATION', 1, 1569385159, 1569385159),
+(529, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385164\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568340\",\"Longitude\":\"104.014359\",\"Precision\":\"57.000000\"}', '', 'event', 'LOCATION', 1, 1569385164, 1569385164),
+(530, 1, 31, 0, 8, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385165\",\"MsgType\":\"text\",\"Content\":\"\\u56fe\\u7247\",\"MsgId\":\"22468192501389591\"}', '图片', 'text', '', 1, 1569385165, 1569385165),
+(531, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385169\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568340\",\"Longitude\":\"104.014359\",\"Precision\":\"48.000000\"}', '', 'event', 'LOCATION', 1, 1569385169, 1569385169),
+(532, 1, 31, 0, 2, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385174\",\"MsgType\":\"text\",\"Content\":\"\\u4f60\\u597d\",\"MsgId\":\"22468189958877220\"}', '你好', 'text', '', 1, 1569385174, 1569385174),
+(533, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385174\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568340\",\"Longitude\":\"104.014351\",\"Precision\":\"28.000000\"}', '', 'event', 'LOCATION', 1, 1569385174, 1569385174),
+(534, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385179\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568340\",\"Longitude\":\"104.014351\",\"Precision\":\"27.000000\"}', '', 'event', 'LOCATION', 1, 1569385179, 1569385180),
+(535, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385185\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568342\",\"Longitude\":\"104.014336\",\"Precision\":\"30.000000\"}', '', 'event', 'LOCATION', 1, 1569385185, 1569385185),
+(536, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385189\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568342\",\"Longitude\":\"104.014343\",\"Precision\":\"22.000000\"}', '', 'event', 'LOCATION', 1, 1569385189, 1569385189),
+(537, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385194\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568342\",\"Longitude\":\"104.014343\",\"Precision\":\"20.000000\"}', '', 'event', 'LOCATION', 1, 1569385194, 1569385194),
+(538, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385199\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568342\",\"Longitude\":\"104.014343\",\"Precision\":\"26.000000\"}', '', 'event', 'LOCATION', 1, 1569385199, 1569385199),
+(539, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385204\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568342\",\"Longitude\":\"104.014343\",\"Precision\":\"75.000000\"}', '', 'event', 'LOCATION', 1, 1569385204, 1569385204),
+(540, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385209\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568342\",\"Longitude\":\"104.014343\",\"Precision\":\"136.000000\"}', '', 'event', 'LOCATION', 1, 1569385209, 1569385209),
+(541, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385214\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568342\",\"Longitude\":\"104.014343\",\"Precision\":\"127.000000\"}', '', 'event', 'LOCATION', 1, 1569385214, 1569385214),
+(542, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385219\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568342\",\"Longitude\":\"104.014343\",\"Precision\":\"48.000000\"}', '', 'event', 'LOCATION', 1, 1569385219, 1569385219),
+(543, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385224\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568342\",\"Longitude\":\"104.014343\",\"Precision\":\"72.000000\"}', '', 'event', 'LOCATION', 1, 1569385224, 1569385224),
+(544, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569385229\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568342\",\"Longitude\":\"104.014343\",\"Precision\":\"57.000000\"}', '', 'event', 'LOCATION', 1, 1569385229, 1569385229),
+(545, 1, 31, 0, 0, '周凯', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxOrNTAGtcrkOFG_8gKQ7HfI\",\"CreateTime\":\"1569386617\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"30.568359\",\"Longitude\":\"104.014313\",\"Precision\":\"53.000000\"}', '', 'event', 'LOCATION', 1, 1569386617, 1569386617),
+(546, 1, 31, 0, 0, '小康啊我是', 'oBSasxEcCdsysBO1YWJnaW82KiRM', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxEcCdsysBO1YWJnaW82KiRM\",\"CreateTime\":\"1569460668\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1569460668, 1569460669),
+(547, 1, 31, 0, 0, '小康啊我是', 'oBSasxEcCdsysBO1YWJnaW82KiRM', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxEcCdsysBO1YWJnaW82KiRM\",\"CreateTime\":\"1569460674\",\"MsgType\":\"text\",\"Content\":\"\\u6d4b\\u8bd5\",\"MsgId\":\"22469274753078859\"}', '测试', 'text', '', 1, 1569460674, 1569460674),
+(548, 1, 31, 0, 0, '小康啊我是', 'oBSasxEcCdsysBO1YWJnaW82KiRM', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxEcCdsysBO1YWJnaW82KiRM\",\"CreateTime\":\"1569460688\",\"MsgType\":\"image\",\"PicUrl\":\"http:\\/\\/mmbiz.qpic.cn\\/mmbiz_jpg\\/4bSxwia4PWPgut6KbEDD4Tz7QyFzgJYRiaS18j7t01OLGtW1pzmcXbGricMdFiaDJeRHU2R0JGnrz9OSNYbw5InhRA\\/0\",\"MsgId\":\"22469275571813930\",\"MediaId\":\"HjWu_rFYUQnGWWzc59ceCL9ZWUIwglFIOUp8NslWXMCUFE6yy03TYfbjnCqcNu9S\"}', 'http://mmbiz.qpic.cn/mmbiz_jpg/4bSxwia4PWPgut6KbEDD4Tz7QyFzgJYRiaS18j7t01OLGtW1pzmcXbGricMdFiaDJeRHU2R0JGnrz9OSNYbw5InhRA/0', 'image', '', 1, 1569460688, 1569460689),
+(549, 1, 31, 0, 0, ' ', 'oBSasxM45uQA71o5C6HcItTMG2RI', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxM45uQA71o5C6HcItTMG2RI\",\"CreateTime\":\"1569466266\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1569466266, 1569466266),
+(550, 1, 31, 0, 0, '七王爷', 'oBSasxGKWw4B0ABfi2GGDnClap-M', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxGKWw4B0ABfi2GGDnClap-M\",\"CreateTime\":\"1569551993\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1569551993, 1569551993),
+(551, 1, 31, 0, 0, '七王爷', 'oBSasxGKWw4B0ABfi2GGDnClap-M', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxGKWw4B0ABfi2GGDnClap-M\",\"CreateTime\":\"1569551996\",\"MsgType\":\"text\",\"Content\":\"hello\",\"MsgId\":\"22470579401836481\"}', 'hello', 'text', '', 1, 1569551996, 1569551997);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_wx_qrcode`
+-- Table structure for table `lm_wx_qrcode`
 --
 
 CREATE TABLE `lm_wx_qrcode` (
@@ -1410,7 +1520,7 @@ CREATE TABLE `lm_wx_qrcode` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_wx_reply`
+-- Table structure for table `lm_wx_reply`
 --
 
 CREATE TABLE `lm_wx_reply` (
@@ -1426,10 +1536,10 @@ CREATE TABLE `lm_wx_reply` (
   `status` tinyint(1) DEFAULT '1',
   `create_time` int(11) DEFAULT NULL,
   `update_time` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='回复表';
 
 --
--- 转存表中的数据 `lm_wx_reply`
+-- Dumping data for table `lm_wx_reply`
 --
 
 INSERT INTO `lm_wx_reply` (`id`, `store_id`, `wx_aid`, `rule`, `keyword`, `type`, `msg_type`, `data`, `material_id`, `status`, `create_time`, `update_time`) VALUES
@@ -1445,7 +1555,7 @@ INSERT INTO `lm_wx_reply` (`id`, `store_id`, `wx_aid`, `rule`, `keyword`, `type`
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_wx_tag`
+-- Table structure for table `lm_wx_tag`
 --
 
 CREATE TABLE `lm_wx_tag` (
@@ -1460,19 +1570,19 @@ CREATE TABLE `lm_wx_tag` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='粉丝标签表';
 
 --
--- 转存表中的数据 `lm_wx_tag`
+-- Dumping data for table `lm_wx_tag`
 --
 
 INSERT INTO `lm_wx_tag` (`id`, `tag_id`, `name`, `store_id`, `wx_aid`, `status`, `create_time`, `update_time`) VALUES
-(1, 2, '星标组', 1, 31, 1, 1568000723, 1569221546),
-(2, 100, '粉丝', 1, 31, 1, 1568011092, 1569221546),
-(3, 101, '其他', 1, 31, 1, 1568011258, 1569221546),
-(4, 102, '好友', 1, 31, 1, 1568011277, 1569232795);
+(1, 2, '星标组', 1, 31, 1, 1568000723, 1569723107),
+(2, 100, '粉丝', 1, 31, 1, 1568011092, 1569723107),
+(3, 101, '其他', 1, 31, 1, 1568011258, 1569723107),
+(4, 102, '好友', 1, 31, 1, 1568011277, 1569723107);
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `lm_wx_type`
+-- Table structure for table `lm_wx_type`
 --
 
 CREATE TABLE `lm_wx_type` (
@@ -1483,7 +1593,7 @@ CREATE TABLE `lm_wx_type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转存表中的数据 `lm_wx_type`
+-- Dumping data for table `lm_wx_type`
 --
 
 INSERT INTO `lm_wx_type` (`type_id`, `name`, `create_time`, `update_time`) VALUES
@@ -1493,18 +1603,18 @@ INSERT INTO `lm_wx_type` (`type_id`, `name`, `create_time`, `update_time`) VALUE
 (4, '认证服务号/认证媒体/政府订阅号', 0, 0);
 
 --
--- 转储表的索引
+-- Indexes for dumped tables
 --
 
 --
--- 表的索引 `lm_admin`
+-- Indexes for table `lm_admin`
 --
 ALTER TABLE `lm_admin`
   ADD PRIMARY KEY (`id`),
   ADD KEY `admin_username` (`username`);
 
 --
--- 表的索引 `lm_admin_log`
+-- Indexes for table `lm_admin_log`
 --
 ALTER TABLE `lm_admin_log`
   ADD PRIMARY KEY (`id`),
@@ -1512,7 +1622,7 @@ ALTER TABLE `lm_admin_log`
   ADD KEY `admin_id` (`admin_id`);
 
 --
--- 表的索引 `lm_adv`
+-- Indexes for table `lm_adv`
 --
 ALTER TABLE `lm_adv`
   ADD PRIMARY KEY (`id`),
@@ -1520,14 +1630,14 @@ ALTER TABLE `lm_adv`
   ADD KEY `position_id` (`pid`) USING BTREE;
 
 --
--- 表的索引 `lm_adv_position`
+-- Indexes for table `lm_adv_position`
 --
 ALTER TABLE `lm_adv_position`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `position_id` (`id`);
 
 --
--- 表的索引 `lm_article`
+-- Indexes for table `lm_article`
 --
 ALTER TABLE `lm_article`
   ADD PRIMARY KEY (`id`),
@@ -1535,14 +1645,14 @@ ALTER TABLE `lm_article`
   ADD KEY `pid` (`pid`) USING BTREE;
 
 --
--- 表的索引 `lm_article_cate`
+-- Indexes for table `lm_article_cate`
 --
 ALTER TABLE `lm_article_cate`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`) USING BTREE;
 
 --
--- 表的索引 `lm_auth_group`
+-- Indexes for table `lm_auth_group`
 --
 ALTER TABLE `lm_auth_group`
   ADD PRIMARY KEY (`id`),
@@ -1550,7 +1660,7 @@ ALTER TABLE `lm_auth_group`
   ADD UNIQUE KEY `title` (`title`);
 
 --
--- 表的索引 `lm_auth_rule`
+-- Indexes for table `lm_auth_rule`
 --
 ALTER TABLE `lm_auth_rule`
   ADD PRIMARY KEY (`id`),
@@ -1558,7 +1668,7 @@ ALTER TABLE `lm_auth_rule`
   ADD KEY `href` (`href`);
 
 --
--- 表的索引 `lm_config`
+-- Indexes for table `lm_config`
 --
 ALTER TABLE `lm_config`
   ADD PRIMARY KEY (`id`),
@@ -1566,13 +1676,20 @@ ALTER TABLE `lm_config`
   ADD UNIQUE KEY `code` (`code`);
 
 --
--- 表的索引 `lm_link`
+-- Indexes for table `lm_link`
 --
 ALTER TABLE `lm_link`
   ADD PRIMARY KEY (`id`);
 
 --
--- 表的索引 `lm_user`
+-- Indexes for table `lm_oauth2_client`
+--
+ALTER TABLE `lm_oauth2_client`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `client_id` (`appid`);
+
+--
+-- Indexes for table `lm_user`
 --
 ALTER TABLE `lm_user`
   ADD PRIMARY KEY (`id`),
@@ -1584,20 +1701,20 @@ ALTER TABLE `lm_user`
   ADD KEY `unionid` (`unionid`);
 
 --
--- 表的索引 `lm_user_level`
+-- Indexes for table `lm_user_level`
 --
 ALTER TABLE `lm_user_level`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`);
 
 --
--- 表的索引 `lm_user_sign`
+-- Indexes for table `lm_user_sign`
 --
 ALTER TABLE `lm_user_sign`
   ADD PRIMARY KEY (`id`);
 
 --
--- 表的索引 `lm_wx_account`
+-- Indexes for table `lm_wx_account`
 --
 ALTER TABLE `lm_wx_account`
   ADD PRIMARY KEY (`id`),
@@ -1605,7 +1722,7 @@ ALTER TABLE `lm_wx_account`
   ADD KEY `uid_2` (`store_id`) USING BTREE;
 
 --
--- 表的索引 `lm_wx_fans`
+-- Indexes for table `lm_wx_fans`
 --
 ALTER TABLE `lm_wx_fans`
   ADD PRIMARY KEY (`fans_id`),
@@ -1613,20 +1730,20 @@ ALTER TABLE `lm_wx_fans`
   ADD KEY `IDX_sys_weixin_fans_unionid` (`unionid`(191));
 
 --
--- 表的索引 `lm_wx_material`
+-- Indexes for table `lm_wx_material`
 --
 ALTER TABLE `lm_wx_material`
   ADD PRIMARY KEY (`id`),
   ADD KEY `media_id` (`media_id`);
 
 --
--- 表的索引 `lm_wx_material_info`
+-- Indexes for table `lm_wx_material_info`
 --
 ALTER TABLE `lm_wx_material_info`
   ADD PRIMARY KEY (`id`);
 
 --
--- 表的索引 `lm_wx_menu`
+-- Indexes for table `lm_wx_menu`
 --
 ALTER TABLE `lm_wx_menu`
   ADD PRIMARY KEY (`id`),
@@ -1634,13 +1751,13 @@ ALTER TABLE `lm_wx_menu`
   ADD KEY `IDX_biz_shop_menu_shopId` (`store_id`);
 
 --
--- 表的索引 `lm_wx_msg_history`
+-- Indexes for table `lm_wx_msg_history`
 --
 ALTER TABLE `lm_wx_msg_history`
   ADD PRIMARY KEY (`id`);
 
 --
--- 表的索引 `lm_wx_qrcode`
+-- Indexes for table `lm_wx_qrcode`
 --
 ALTER TABLE `lm_wx_qrcode`
   ADD PRIMARY KEY (`id`),
@@ -1648,161 +1765,167 @@ ALTER TABLE `lm_wx_qrcode`
   ADD KEY `ticket` (`ticket`(191));
 
 --
--- 表的索引 `lm_wx_reply`
+-- Indexes for table `lm_wx_reply`
 --
 ALTER TABLE `lm_wx_reply`
   ADD PRIMARY KEY (`id`);
 
 --
--- 表的索引 `lm_wx_tag`
+-- Indexes for table `lm_wx_tag`
 --
 ALTER TABLE `lm_wx_tag`
   ADD PRIMARY KEY (`id`);
 
 --
--- 表的索引 `lm_wx_type`
+-- Indexes for table `lm_wx_type`
 --
 ALTER TABLE `lm_wx_type`
   ADD PRIMARY KEY (`type_id`);
 
 --
--- 在导出的表使用AUTO_INCREMENT
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- 使用表AUTO_INCREMENT `lm_admin`
+-- AUTO_INCREMENT for table `lm_admin`
 --
 ALTER TABLE `lm_admin`
   MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '管理员ID', AUTO_INCREMENT=4;
 
 --
--- 使用表AUTO_INCREMENT `lm_admin_log`
+-- AUTO_INCREMENT for table `lm_admin_log`
 --
 ALTER TABLE `lm_admin_log`
-  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=3;
+  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id';
 
 --
--- 使用表AUTO_INCREMENT `lm_adv`
+-- AUTO_INCREMENT for table `lm_adv`
 --
 ALTER TABLE `lm_adv`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '广告id', AUTO_INCREMENT=88;
 
 --
--- 使用表AUTO_INCREMENT `lm_adv_position`
+-- AUTO_INCREMENT for table `lm_adv_position`
 --
 ALTER TABLE `lm_adv_position`
   MODIFY `id` int(3) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=540;
 
 --
--- 使用表AUTO_INCREMENT `lm_article`
+-- AUTO_INCREMENT for table `lm_article`
 --
 ALTER TABLE `lm_article`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- 使用表AUTO_INCREMENT `lm_article_cate`
+-- AUTO_INCREMENT for table `lm_article_cate`
 --
 ALTER TABLE `lm_article_cate`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- 使用表AUTO_INCREMENT `lm_auth_group`
+-- AUTO_INCREMENT for table `lm_auth_group`
 --
 ALTER TABLE `lm_auth_group`
   MODIFY `id` smallint(8) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '分组id', AUTO_INCREMENT=4;
 
 --
--- 使用表AUTO_INCREMENT `lm_auth_rule`
+-- AUTO_INCREMENT for table `lm_auth_rule`
 --
 ALTER TABLE `lm_auth_rule`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
 
 --
--- 使用表AUTO_INCREMENT `lm_config`
+-- AUTO_INCREMENT for table `lm_config`
 --
 ALTER TABLE `lm_config`
   MODIFY `id` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
--- 使用表AUTO_INCREMENT `lm_link`
+-- AUTO_INCREMENT for table `lm_link`
 --
 ALTER TABLE `lm_link`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- 使用表AUTO_INCREMENT `lm_user`
+-- AUTO_INCREMENT for table `lm_oauth2_client`
+--
+ALTER TABLE `lm_oauth2_client`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `lm_user`
 --
 ALTER TABLE `lm_user`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=44;
 
 --
--- 使用表AUTO_INCREMENT `lm_user_level`
+-- AUTO_INCREMENT for table `lm_user_level`
 --
 ALTER TABLE `lm_user_level`
   MODIFY `id` smallint(4) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=9;
 
 --
--- 使用表AUTO_INCREMENT `lm_user_sign`
+-- AUTO_INCREMENT for table `lm_user_sign`
 --
 ALTER TABLE `lm_user_sign`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- 使用表AUTO_INCREMENT `lm_wx_account`
+-- AUTO_INCREMENT for table `lm_wx_account`
 --
 ALTER TABLE `lm_wx_account`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=35;
 
 --
--- 使用表AUTO_INCREMENT `lm_wx_fans`
+-- AUTO_INCREMENT for table `lm_wx_fans`
 --
 ALTER TABLE `lm_wx_fans`
-  MODIFY `fans_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '粉丝ID', AUTO_INCREMENT=6;
+  MODIFY `fans_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '粉丝ID', AUTO_INCREMENT=15;
 
 --
--- 使用表AUTO_INCREMENT `lm_wx_material`
+-- AUTO_INCREMENT for table `lm_wx_material`
 --
 ALTER TABLE `lm_wx_material`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '微信公众号素材', AUTO_INCREMENT=42;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '微信公众号素材', AUTO_INCREMENT=60;
 
 --
--- 使用表AUTO_INCREMENT `lm_wx_material_info`
+-- AUTO_INCREMENT for table `lm_wx_material_info`
 --
 ALTER TABLE `lm_wx_material_info`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=55;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=64;
 
 --
--- 使用表AUTO_INCREMENT `lm_wx_menu`
+-- AUTO_INCREMENT for table `lm_wx_menu`
 --
 ALTER TABLE `lm_wx_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键', AUTO_INCREMENT=5;
 
 --
--- 使用表AUTO_INCREMENT `lm_wx_msg_history`
+-- AUTO_INCREMENT for table `lm_wx_msg_history`
 --
 ALTER TABLE `lm_wx_msg_history`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=459;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=552;
 
 --
--- 使用表AUTO_INCREMENT `lm_wx_qrcode`
+-- AUTO_INCREMENT for table `lm_wx_qrcode`
 --
 ALTER TABLE `lm_wx_qrcode`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- 使用表AUTO_INCREMENT `lm_wx_reply`
+-- AUTO_INCREMENT for table `lm_wx_reply`
 --
 ALTER TABLE `lm_wx_reply`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '微信关键词回复表', AUTO_INCREMENT=9;
 
 --
--- 使用表AUTO_INCREMENT `lm_wx_tag`
+-- AUTO_INCREMENT for table `lm_wx_tag`
 --
 ALTER TABLE `lm_wx_tag`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- 使用表AUTO_INCREMENT `lm_wx_type`
+-- AUTO_INCREMENT for table `lm_wx_type`
 --
 ALTER TABLE `lm_wx_type`
   MODIFY `type_id` tinyint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;

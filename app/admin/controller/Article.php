@@ -16,7 +16,7 @@ use think\facade\Db;
 use think\facade\Lang;
 use think\facade\Request;
 use think\facade\View;
-
+use lemo\helper\TreeHelper;
 class Article extends  Base{
 
     public function initialize()
@@ -56,7 +56,7 @@ class Article extends  Base{
         }else{
 
             $ArticleCate = ArticleCate::where('status',1)->select()->toArray();
-            $ArticleCate= cate_tree($ArticleCate);
+            $ArticleCate= TreeHelper::cateTree($ArticleCate);
             $params['name'] = 'container';
             $params['content'] = '';
             $view = [
@@ -88,7 +88,7 @@ class Article extends  Base{
         }else{
             $id =  Request::get('id');
             $ArticleCate = ArticleCate::where('status',1)->select()->toArray();
-            $ArticleCate= cate_tree($ArticleCate);
+            $ArticleCate= TreeHelper::cateTree($ArticleCate);
 
             $info = \app\common\model\Article::find($id);
             $params['name'] = 'container';
@@ -165,7 +165,7 @@ class Article extends  Base{
         }else{
 
             $ArticleCate = ArticleCate::where('status',1)->select()->toArray();
-            $ArticleCate= cate_tree($ArticleCate);
+            $ArticleCate= TreeHelper::cateTree($ArticleCate);
 
             $view = [
                 'info' => '',
@@ -194,7 +194,7 @@ class Article extends  Base{
         }else{
             $id =  Request::get('id');
             $ArticleCate = ArticleCate::where('status',1)->select()->toArray();
-            $ArticleCate= cate_tree($ArticleCate);
+            $ArticleCate= TreeHelper::cateTree($ArticleCate);
 
             $info = \app\common\model\ArticleCate::find($id);
 

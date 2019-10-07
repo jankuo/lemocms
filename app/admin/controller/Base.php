@@ -14,6 +14,8 @@ namespace app\admin\controller;
 use app\admin\model\Admin;
 use app\admin\model\AuthRule;
 use app\common\controller\Base as B;
+use lemo\helper\FileHelper;
+use lemo\helper\SignHelper;
 use think\facade\Db;
 use think\facade\Request;
 use think\facade\Session;
@@ -100,15 +102,14 @@ class Base extends B{
             }
 
             $data =  Request::post();
-            $oldpassword = Request::post('oldpassword',  'strval');
+            $oldpassword = Request::post('oldpassword', '123456', 'lemo\helper\StringHelper::filterWords');
             $admin = Admin::find($data['id']);
-            if($admin['password']!=md5(trim($oldpassword))) {
+            if(!password_verify($oldpassword, $admin['password'])){
                 $this->error(lang('origin password error'));
             }
-            $password = Request::post('password', '123456', 'strval');
+            $password = Request::post('password', '123456','lemo\helper\StringHelper::filterWords');
             try {
-                $password = trim($password);
-                $data['password'] = md5($password);
+                $data['password'] = password_hash($password,PASSWORD_BCRYPT, SignHelper::passwordSalt());
 
                 if(Session::get('admin.id')==1){
                     Admin::update($data);
@@ -130,15 +131,14 @@ class Base extends B{
             return View::fetch('admin/password');
         }else{
             $data =  Request::post();
-            $oldpassword = Request::post('oldpassword',  'strval');
             $admin = Admin::find($data['id']);
-            if($admin['password']!=md5(trim($oldpassword))) {
+            $oldpassword = Request::post('oldpassword', '123456', 'lemo\helper\StringHelper::filterWords');
+            if(!password_verify($oldpassword, $admin['password'])){
                 $this->error(lang('origin password error'));
             }
-            $password = Request::post('password', '123456', 'strval');
+            $password = Request::post('password', '123456','lemo\helper\StringHelper::filterWords');
             try {
-                $password = trim($password);
-                $data['password'] = md5($password);
+                $data['password'] = password_hash($password,PASSWORD_BCRYPT, SignHelper::passwordSalt());
 
                 if(Session::get('admin.id')==1){
                     Admin::update($data);
@@ -161,7 +161,7 @@ class Base extends B{
      */
     public function clearData(){
         $dir = config('admin.clear_cache_dir') ? '../runtime/admin' : '../runtime';
-        if(deldir($dir)){
+        if(FileHelper::delDir($dir)){
             $this->success('清除成功');
         }
     }

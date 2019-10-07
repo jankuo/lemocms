@@ -56,7 +56,7 @@ class Uploads extends Base{
             $file = request()->file($fileKey[$i]);
             try {
                 validate($this->uploadValidate)
-                    ->check(object_array($file));
+                    ->check(DataHelper::objToArray($file));
                 $savename = \think\facade\Filesystem::disk('public')->putFile('uploads', $file);
 
                 $path[] = '/storage/' . $savename;
@@ -98,7 +98,7 @@ class Uploads extends Base{
             $file = request()->file($fileKey[$i]);
             try {
                 validate($this->imageValidate)
-                    ->check(object_array($file));
+                    ->check(DataHelper::objToArray($file));
                 $savename = \think\facade\Filesystem::disk('public')->putFile('uploads', $file);
 
                 $path[] = '/storage/' . $savename;
@@ -141,7 +141,7 @@ class Uploads extends Base{
             $file = request()->file($fileKey[$i]);
             try {
                 validate($this->videoValidate)
-                    ->check(object_array($file));
+                    ->check(DataHelper::objToArray($file));
                 $savename = \think\facade\Filesystem::disk('public')->putFile('uploads', $file);
 
                 $path[] = '/storage/' . $savename;
@@ -183,7 +183,7 @@ class Uploads extends Base{
             $file = request()->file($fileKey[$i]);
             try {
                 validate($this->voiceValidate)
-                    ->check(object_array($file));
+                    ->check(DataHelper::objToArray($file));
                 $savename = \think\facade\Filesystem::disk('public')->putFile('uploads', $file);
 
                 $path[] = '/storage/' . $savename;

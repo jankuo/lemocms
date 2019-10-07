@@ -1,8 +1,8 @@
 ### 导读
-+ Lemocms 1.0.7 本系统长期更新,欢迎star和提出和反馈问题 
++ Lemocms 1.0.8 本系统长期更新,欢迎star和提出和反馈问题 
 + QQ群：[455018252](https://jq.qq.com/?_wv=1027&k=5RWLxx7)
 ### 前言
-Lemocms1.0.7管理系统：为二次开发而生，让开发变得更简单
+Lemocms1.0.8管理系统：为二次开发而生，让开发变得更简单
  + 这是一款快速、高效、便捷、灵活的应用开发框架。
  + 采用最新TP6.0.4 框架，后续随官网升级而升级
  + layui采用最新layui2.5.5 框架
@@ -14,6 +14,7 @@ Lemocms1.0.7管理系统：为二次开发而生，让开发变得更简单
  + 内容管理
  + 会员管理
  + 微信管理
+ + restful api 接口
  + ...更多
   
 ###[开发文档](docs/developer.md)
@@ -25,28 +26,28 @@ Lemocms1.0.7管理系统：为二次开发而生，让开发变得更简单
 ### 系统快照
 
 【系统 - 首页】
-![image](public/static/admin/images/test/index.png)
+![image](docs/images/index.png)
 
 【系统 - 内容管理】
-![image](public/static/admin/images/test/content.png)
+![image](docs/images/content.png)
 
 【系统 - 会员管理】
-![image](public/static/admin/images/user.png)
+![image](docs/images/user.png)
 
 
 【系统 - 微信管理】
-![image](public/static/admin/images/test/wechat1.png)
-![image](public/static/admin/images/test/wechat2.png)
-![image](public/static/admin/images/test/wechat3.png)
-![image](public/static/admin/images/test/wechat4.png)
-![image](public/static/admin/images/test/wechat5.png)
+![image](docs/images/wechat1.png)
+![image](docs/images/wechat2.png)
+![image](docs/images/wechat3.png)
+![image](docs/images/wechat4.png)
+![image](docs/images/wechat5.png)
 
 
 
 
 若此项目能得到你的青睐，支持开源项目，可以捐赠支持作者持续开发与维护,这样小哥哥小姐姐更加努力哦。
 
-![image](public/static/admin/images/test/pay.png)
+![image](docs/images/pay.png)
 
 
 ### 问题反馈

@@ -10,8 +10,7 @@
  * Author: yuege
  * Date: 2019/9/22
  */
-
-namespace utils;
+namespace lemo\helper;
 class ArrayHelper
 {
     /**

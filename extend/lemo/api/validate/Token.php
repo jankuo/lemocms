@@ -11,7 +11,7 @@
  * Date: 2019/8/2
  */
 
-namespace app\api\validate;
+namespace lemo\api\validate;
 use think\Validate;
 /**
  * 生成token参数验证器
@@ -20,15 +20,15 @@ class Token extends Validate
 {
 
     protected $rule = [
-        'appId'       =>  'require',
-        'appSecret'   =>  'require',
+        'appid'       =>  'require',
+        'mobile'      =>    'require',
         'nonce'       =>  'require',
         'timestamp'   =>  'number|require',
         'sign'        =>  'require'
     ];
     protected $message  =   [
-        'appId.require'    => 'appid不能为空',
-        'appSecret.require' => 'appSecret不能为空',
+        'appid.require'    => 'appid不能为空',
+        'mobile.require'   =>'mobile不能为空',
         'nonce.require'    => '随机数不能为空',
         'timestamp.number' => '时间戳格式错误',
         'sign.require'     => '签名不能为空',

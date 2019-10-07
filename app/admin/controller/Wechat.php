@@ -15,7 +15,7 @@ use think\facade\Db;
 use think\facade\Request;
 use think\facade\View;
 use app\common\model\WxAccount;
-use util\WechatApp;
+use lemo\service\WechatApp;
 
 use app\common\model\WxFans;
 use app\common\model\WxMaterial;
@@ -1125,7 +1125,7 @@ class Wechat extends Base{
             $file = request()->file($fileKey[$i]);
             try {
                 validate($type)
-                    ->check(object_array($file));
+                    ->check(DataHelper::objToArray($file));
                 $savename = \think\facade\Filesystem::disk('public')->putFile('uploads', $file);
 
                 $path[] = '/storage/' . $savename;

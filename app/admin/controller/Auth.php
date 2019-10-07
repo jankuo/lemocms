@@ -15,6 +15,9 @@ namespace app\admin\controller;
 use app\admin\model\AuthGroup;
 use app\admin\model\AuthRule;
 use app\admin\model\Admin;
+use lemo\helper\SignHelper;
+use lemo\helper\StringHelper;
+use lemo\helper\TreeHelper;
 use think\facade\Config;
 use think\facade\Db;
 use think\facade\Request;
@@ -72,7 +75,11 @@ class Auth extends Base
             }catch (\Exception $e){
                 $this->error($e->getMessage());
             }
-            $data['password'] = md5(trim($data['password']));
+            $data['password'] = StringHelper::filterWords($data['password']);
+            if(!$data['password']){
+                $data['password']='123456';
+            }
+            $data['password'] = password_hash($data['password'],PASSWORD_BCRYPT, SignHelper::passwordSalt());
             //添加
             $result = Admin::create($data);
             if ($result) {
@@ -144,10 +151,11 @@ class Auth extends Base
             if(!$data['password']) $this->error(lang('password').lang('cannot null'));
             if(!$data['group_id']) $this->error(lang('adminGroup').lang('cannot null'));
             $admin = Admin::find($data['id']);
-            if($admin['password']==$data['password']){
+            if(password_verify($data['password'],$admin['password'])){
                 unset($data['password']);
             }else{
-                $data['password'] = Request::post('password', '123456', 'md5');
+                $data['password'] = Request::post('password', '123456', 'lemo\helper\StringHelper::filterWords');
+                $data['password'] = password_hash($data['password'],PASSWORD_BCRYPT, SignHelper::passwordSalt());
             }
             Admin::update($data);
             if(Session::get('admin.id')==$data['id']){
@@ -279,6 +287,9 @@ class Auth extends Base
             $id = Request::param('id');
             $info = AuthGroup::find($id);
             $info->status = $info['status'] == 1 ? 0 : 1;
+//            if(Session::get('admin.id')==3){
+//                $this->error(lang('test data cannot edit'));
+//            }
             $info->save();
             $this->success(lang('edit success'));
 
@@ -309,7 +320,7 @@ class Auth extends Base
             ->value('rules');
         $group_id = Request::param('id');
         $idList = AuthRule::column('id');
-        $list = auth_checked($admin_rule, $pid = 0, $rules);
+        $list = TreeHelper::authChecked($admin_rule, $pid = 0, $rules);
         sort($idList);
         $view = [
             'list' => $list,
@@ -327,7 +338,7 @@ class Auth extends Base
             $this->error(lang('please choose rule'));
         }
         $data = Request::post();
-        $rules = auth_normal($rules);
+        $rules = TreeHelper::authNormal($rules);
         $rls = '';
         foreach ($rules as $k=>$v){
             $rls.=$v['id'].',';
@@ -446,7 +457,7 @@ class Auth extends Base
             $list = Db::name('auth_rule')
                 ->order('sort ASC')
                 ->select();
-            $list = cate_tree($list);
+            $list = TreeHelper::cateTree($list);
             $pid = Request::param('id') ? Request::param('id') : 0;
             $view = [
                 'info' => null,
@@ -470,7 +481,7 @@ class Auth extends Base
             $list = Db::name('auth_rule')
                 ->order('sort asc')
                 ->select();
-            $list = cate_tree($list);
+            $list = TreeHelper::cateTree($list);
             $id = Request::param('id');
             $info = AuthRule::find($id)->toArray();
             $view = [

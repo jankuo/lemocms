@@ -12,6 +12,7 @@
  * Date: 2019/8/2
  */
 namespace app\admin\controller;
+use lemo\helper\StringHelper;
 use think\facade\Request;
 use think\facade\View;
 use app\admin\controller\Backup;
@@ -35,11 +36,11 @@ class Database extends Base
             $list = $this->db->dataList();
             $total = 0;
             foreach ($list as $k => $v) {
-                $list[$k]['size'] = format_bytes($v['data_length']);
+                $list[$k]['size'] = StringHelper::formatBytes($v['data_length']);
                 $total += $v['data_length'];
             }
 
-            return $result = ['code'=>0,'msg'=>'获取成功!','data'=>$list,'total'=>format_bytes($total),'tableNum'=>count($list),'rel'=>1];
+            return $result = ['code'=>0,'msg'=>'获取成功!','data'=>$list,'total'=>StringHelper::formatBytes($total),'tableNum'=>count($list),'rel'=>1];
         }
         return View::fetch();
     }

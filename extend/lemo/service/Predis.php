@@ -10,12 +10,9 @@
  * Author: yuege
  * Date: 2019/9/6
  */
-namespace util;
+namespace lemo\service;
 use think\facade\Log;
-/**
- * Class Redis redis操作类，集成了redis常用的操作方法
- * @time,2018/12/24
- */
+
 class Predis
 {
     public $redisObj = null;//redis实例化时静态变量
