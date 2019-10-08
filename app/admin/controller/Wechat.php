@@ -16,6 +16,7 @@ use think\facade\Request;
 use think\facade\View;
 use app\common\model\WxAccount;
 use lemo\service\WechatApp;
+use lemo\helper\DataHelper;
 
 use app\common\model\WxFans;
 use app\common\model\WxMaterial;
