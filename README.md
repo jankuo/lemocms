@@ -51,22 +51,21 @@ Lemocms1.0.8管理系统：为二次开发而生，让开发变得更简单
 
 
 ### 问题反馈
-
 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
-
 QQ群：[455018252](https://jq.qq.com/?_wv=1027&k=5RWLxx7)
 
 Github：https://github.com/yue909/lemocms/issues
+Gitee : https://gitee.com/limingyue0312/lemocms/issues
 
 ### 版权信息
-
-lemocms遵循Apache2开源协议发布，并提供免费使用到自己或企业的项目中，商业开发出售另需授权;
+lemocms 方便二次开发，您可以免费使用到自己或企业的项目中无限制；
+###备注
+二次开发并再次发布的产品必须保留底部版权信息；
+商业开发盈利需要授权;请联系 qq : 994927909；
 
 本项目包含的第三方源码和二进制文件之版权信息另行标注。
 
-版权所有Copyright © 2018-2020 by lemocms遵循Apache2开源协议发布 [www.lemocms.com](https://www.lemocms.com)
-
-All rights reserved。
+版权所有Copyright © 2018-2020 by lemocms [www.lemocms.com](https://www.lemocms.com) All rights reserved。
 
 ## 项目目录结构
 
@@ -74,7 +73,14 @@ All rights reserved。
 
 ~~~
 www  WEB部署目录（或者子目录）
-
+├─app           应用目录
+│  ├─controller      控制器目录
+│  ├─model           模型目录
+│  ├─ ...            更多类库目录
+│  │
+│  ├─common.php         公共函数文件
+│  └─event.php          事件定义文件
+│
 ├─config                应用配置目录
 │  ├─app_name           应用配置目录
 │  │  ├─database.php    数据库配置
