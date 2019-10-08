@@ -14,6 +14,8 @@ namespace app\admin\controller;
 use think\facade\Config;
 use think\facade\Env;
 use think\facade\Request;
+use lemo\helper\DataHelper;
+
 class Uploads extends Base{
 
     //上传验证规则
