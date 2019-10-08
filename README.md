@@ -1,6 +1,9 @@
 ### 导读
 + Lemocms 1.0.8 本系统长期更新,欢迎star和提出和反馈问题 
-+ QQ群：[455018252](https://jq.qq.com/?_wv=1027&k=5RWLxx7)
++ QQ群：[455018252](https://jq.qq.com/?_wv=1027&k=5RWLxx7) 加群获取账号密码
+
++ 演示地址 ： https://demo.lemocms.com/index.php/admin/login/index.html
+ 
 ### 前言
 Lemocms1.0.8管理系统：为二次开发而生，让开发变得更简单
  + 这是一款快速、高效、便捷、灵活的应用开发框架。
@@ -59,8 +62,7 @@ Gitee : https://gitee.com/limingyue0312/lemocms/issues
 
 ### 版权信息
 lemocms 方便二次开发，您可以免费使用到自己或企业的项目中无限制；
-
-### 备注
+###备注
 二次开发并再次发布的产品必须保留底部版权信息；
 商业开发盈利需要授权;请联系 qq : 994927909；
 
