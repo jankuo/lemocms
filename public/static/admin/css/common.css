@@ -2,16 +2,16 @@
 配色方案（如有需要，请自行配置）
  */
 /**头部-配色*/
-.layui-layout-admin .layui-header{background-color:#1aa094!important;}
-.layui-header>ul>.layui-nav-item.layui-this,.LM-tool i:hover{background-color:#197971!important;}
+.layui-layout-admin .layui-header{background-color:#1aa094}
+.layui-header>ul>.layui-nav-item.layui-this,.LM-tool i:hover{background-color:#197971;}
 /**logo-配色*/
-.layui-layout-admin .layui-logo {background-color:#243346!important;}
+.layui-layout-admin .layui-logo {background-color:#243346}
 /**左侧-配色*/
-.layui-side.layui-bg-black,.layui-side.layui-bg-black>.layui-left-menu>ul {background-color:#2f4056!important;}
+.layui-side.layui-bg-black,.layui-side.layui-bg-black>.layui-left-menu>ul {background-color:#2f4056}
 .layui-left-menu .layui-nav .layui-nav-child a:hover:not(.layui-this) {background-color:#3b3f4b;}
 /**左侧菜单选中-配色*/
 .layui-layout-admin .layui-nav-tree .layui-this, .layui-layout-admin .layui-nav-tree .layui-this>a, .layui-layout-admin .layui-nav-tree .layui-nav-child dd.layui-this, .layui-layout-admin .layui-nav-tree .layui-nav-child dd.layui-this a {
-    background-color: #1aa094 !important;
+    background-color: #1aa094;
 }
 
 
