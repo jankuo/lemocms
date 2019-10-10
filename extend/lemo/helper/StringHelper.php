@@ -114,7 +114,7 @@ class StringHelper
      * @param int $convert 转换大小写 1大写 0小写
      * @return string
      */
-    public static function  randomNum($length=10, $type='letter', $convert=0)
+    public static function  randomNum($length=10, $type='all', $convert=0)
     {
         $config = array(
             'number'=>'1234567890',
@@ -209,6 +209,70 @@ class StringHelper
         //截取指定长度的昵称
         $clean_text = ds_substing($clean_text,0,20);
         return trim($clean_text);
+    }
+
+
+
+    /**
+     * @param $prifix
+     * @param int $num
+     * @param int $length
+     * @return array 生成卡密
+     */
+    public static  function getCardId($num=1,$length=10,$prifix='HX_')
+    {
+
+        //输出数组
+        $card = array();
+        //填补字符串
+        $pad = '';
+
+        //日期
+        $temp = time();
+        $Y = date('Y', $temp);
+        $M = date('m', $temp);
+        $D = date('d', $temp);
+        $TD = date('YmdHis', $temp);
+
+        //长度
+        $LY = strlen((string)$Y);
+        $LM = strlen((string)$M);
+        $LD = strlen((string)$D);
+        $LTD = strlen((string)$TD);
+
+        //流水号长度
+        $W = 5;
+
+        //根据长度生成填补字串
+        if ($length <= 12) {
+            $pad = $prifix . self::randomNum($length - $W);
+        } else if ($length > 12 && $length <= 16) {
+            $pad = $prifix . (string)$Y . self::randomNum($length - ($LY + $W));
+        } else if ($length > 16 && $length <= 20) {
+            $pad = $prifix . (string)$Y . (string)$M . self::randomNum($length - ($LY + $LM + $W));
+        } else {
+            $pad = $prifix . (string)$TD . self::randomNum($length - ($LTD + $W));
+        }
+        //生成X位流水号
+        for ($i = 0; $i < $num; $i++) {
+            $STR = $pad . str_pad((string)($i + 1), $W, '0', STR_PAD_LEFT);
+            $card[$i] = $STR;
+        }
+
+        return $card;
+
+    }
+    //生成密码
+    public static function getCardPwd($num=1)
+    {
+
+        $pwd = array();
+        for ($i = 0; $i < $num; $i++) {
+            //生成基本随机数
+            $charid = substr(MD5(uniqid(mt_rand(), true)), 8, 16) .self::randomNum(4, '2');
+            $pwd[$i] = strtoupper($charid);
+        }
+        return $pwd;
     }
 
 }
