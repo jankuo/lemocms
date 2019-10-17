@@ -456,7 +456,7 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (125, 'Wechat/UeditUploadVideo', '百度编辑器上传视频', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
 (126, 'Wechat/UeditUploaVoice', '百度编辑器上传音频', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
 (127, 'Wechat/getListImage', '获取图片列表', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
-(128, 'Wechat/getWxAccount', '微信账号', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
+(128, 'Wechat/getWxAccount', '微信账号', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL);
 -- --------------------------------------------------------
 
 --
@@ -1422,14 +1422,6 @@ ALTER TABLE `lm_article`
   ADD UNIQUE KEY `id` (`id`),
   ADD KEY `pid` (`pid`) USING BTREE;
 
---
--- Indexes for table `lm_articles`
---
-ALTER TABLE `lm_articles`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `status` (`id`,`status`,`sort`),
-  ADD KEY `column_id` (`id`,`column_id`,`status`),
-  ADD KEY `sort` (`id`,`column_id`,`status`,`sort`);
 
 --
 -- Indexes for table `lm_article_cate`
@@ -1470,11 +1462,6 @@ ALTER TABLE `lm_config`
 ALTER TABLE `lm_link`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `lm_module`
---
-ALTER TABLE `lm_module`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `lm_oauth2_client`
