@@ -1,3 +1,14 @@
+### v1.0.86
+updated 2019.10.8
+- 版本更新到RC5
+- 修复 adminlog.php 中间件 url 函数错误
+- 修复上传失败的错误 uploads文件引入DataHelper
+- 修复 清除缓存不干净的问题
+- 修复 修复菜单配色无效的问题
+- 修复 修改string和tree助手函数
+- 修复 修复菜单缓存bug;
+- 修复 清除缓存失败
+ 
 ### v1.0.8
 updated 2019.10.5
 - 增加api 接口，使用restful 接口规范,使用方##[api开发文档](api.md)
