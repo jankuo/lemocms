@@ -121,8 +121,8 @@
         $('body').on('blur','.list_order',function() {
             var id = $(this).attr('data-id');
             var sort = $(this).val();
-            $.post('{:url("ruleOrder")}',{id:id,sort:sort},function(res){
-                if(res.code==1){
+            $.post('{:url("ruleSort")}',{id:id,sort:sort},function(res){
+                if(res.code > 0){
                     layer.msg(res.msg,{time:1000,icon:1},function(){
                         location.href = res.url;
                     });
