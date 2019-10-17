@@ -410,6 +410,7 @@ class Auth extends Base
             $sort = Request::param('sort');
             $info = AuthRule::find($id);
             $info->sort = $sort;
+            cache('authRuleList', '');
             $info->save();
             $this->success(lang('edit success'));
         }
