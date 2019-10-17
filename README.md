@@ -61,10 +61,7 @@ Github：https://github.com/yue909/lemocms/issues
 Gitee : https://gitee.com/limingyue0312/lemocms/issues
 
 ### 版权信息
-lemocms 方便二次开发，您可以免费使用到自己或企业的项目中无限制；
-###备注
-二次开发并再次发布的产品必须保留底部版权信息；
-商业开发盈利需要授权;请联系 qq : 994927909；
+lemocms 方便二次开发，您可以方便的使用到自己或企业的项目中；
 
 本项目包含的第三方源码和二进制文件之版权信息另行标注。
 

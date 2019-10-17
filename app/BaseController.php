@@ -194,7 +194,7 @@ abstract class BaseController
             $params = [];
         }
 
-        $response->code($code)->params($params)->with($with);
+        $response->code($code)->with($params);
 
         throw new HttpResponseException($response);
     }

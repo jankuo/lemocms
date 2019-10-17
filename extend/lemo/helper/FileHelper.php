@@ -1,7 +1,8 @@
 <?php
 
 namespace lemo\helper;
-
+use RecursiveIteratorIterator;
+use RecursiveDirectoryIterator;
 class FileHelper
 {
     /**
@@ -24,6 +25,9 @@ class FileHelper
      */
     public static function delDir($dir) {
         //先删除目录下的文件：
+        if(!is_dir($dir)){
+            return true;
+        }
         $dh=opendir($dir);
         while ($file=readdir($dh)) {
             if($file!="." && $file!="..") {
@@ -72,7 +76,7 @@ class FileHelper
     }
 
     /*写入
-    * @param  string  $type 1 为生成控制器
+    * @param  string  $type 1 为生成控制器 2 模型
     */
 
     public static function filePutContents($content,$filepath,$type){
@@ -106,6 +110,9 @@ class FileHelper
      */
     public static function getDirSize($dir)
     {
+        if(!is_dir($dir)){
+            return false;
+        }
         $handle = opendir($dir);
         $sizeResult = 0;
         while (false !== ($FolderOrFile = readdir($handle))) {
@@ -122,6 +129,19 @@ class FileHelper
         return $sizeResult;
     }
 
+    /**
+     * 创建文件
+     *
+     * @param $files
+     */
+    public static function createFile($file,$content)
+    {
+
+        $myfile = fopen($file, "w") or die("Unable to open file!");
+        fwrite($myfile, $content);
+        fclose($myfile);
+        return true;
+    }
     /**
      * 基于数组创建目录
      *

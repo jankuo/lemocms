@@ -206,8 +206,6 @@ class StringHelper
         // Match Dingbats
         $regexDingbats = '/[\x{2700}-\x{27BF}]/u';
         $clean_text = preg_replace($regexDingbats, '', $clean_text);
-        //截取指定长度的昵称
-        $clean_text = ds_substing($clean_text,0,20);
         return trim($clean_text);
     }
 

@@ -518,11 +518,7 @@ class Validate
                 // 没有返回true 则表示验证失败
                 if (!empty($this->batch)) {
                     // 批量验证
-                    if (is_array($result)) {
-                        $this->error = array_merge($this->error, $result);
-                    } else {
-                        $this->error[$key] = $result;
-                    }
+                    $this->error[$key] = $result;
                 } elseif ($this->failException) {
                     throw new ValidateException($result);
                 } else {
@@ -1575,12 +1571,7 @@ class Validate
         }
 
         if (is_array($msg)) {
-            foreach ($msg as $key => $val) {
-                if (is_string($val)) {
-                    $msg[$key] = $this->parseErrorMsg($val, $rule, $title);
-                }
-            }
-            return $msg;
+            return $this->errorMsgIsArray($msg, $rule, $title);
         }
 
         return $this->parseErrorMsg($msg, $rule, $title);
@@ -1602,6 +1593,10 @@ class Validate
             $msg = $this->lang->get($msg);
         }
 
+        if (is_array($msg)) {
+            return $this->errorMsgIsArray($msg, $rule, $title);
+        }
+
         if (is_scalar($rule) && false !== strpos($msg, ':')) {
             // 变量替换
             if (is_string($rule) && strpos($rule, ',')) {
@@ -1620,6 +1615,24 @@ class Validate
             }
         }
 
+        return $msg;
+    }
+
+    /**
+     * 错误信息数组处理
+     * @access protected
+     * @param array $msg   错误信息
+     * @param mixed  $rule  验证规则数据
+     * @param string $title 字段描述名
+     * @return array
+     */
+    protected function errorMsgIsArray(array $msg, $rule, string $title)
+    {
+        foreach ($msg as $key => $val) {
+            if (is_string($val)) {
+                $msg[$key] = $this->parseErrorMsg($val, $rule, $title);
+            }
+        }
         return $msg;
     }
 

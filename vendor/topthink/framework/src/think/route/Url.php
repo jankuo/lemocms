@@ -242,35 +242,13 @@ class Url
             // 解析到控制器
             $url = substr($url, 1);
         } else {
-            // 解析到 应用/控制器/操作
-            $app        = $request->app();
             $controller = $request->controller();
 
-            if ('' == $url) {
-                $action = $request->action();
-            } else {
-                $path       = explode('/', $url);
-                $action     = array_pop($path);
-                $controller = empty($path) ? $controller : array_pop($path);
-                $app        = empty($path) ? $app : array_pop($path);
-            }
+            $path       = explode('/', $url);
+            $action     = array_pop($path);
+            $controller = empty($path) ? $controller : array_pop($path);
 
             $url = $controller . '/' . $action;
-
-            if ($app && $this->app->config->get('app.auto_multi_app')) {
-                $bind = $this->app->config->get('app.domain_bind', []);
-                if ($key = array_search($app, $bind)) {
-                    $domain = true === $domain ? $key : $domain;
-                } else {
-                    $map = $this->app->config->get('app.app_map', []);
-
-                    if ($key = array_search($app, $map)) {
-                        $url = $key . '/' . $url;
-                    } else {
-                        $url = $app . '/' . $url;
-                    }
-                }
-            }
         }
 
         return $url;
@@ -316,6 +294,10 @@ class Url
     protected function getRuleUrl(array $rule, array &$vars = [], $allowDomain = ''): array
     {
         $request = $this->app->request;
+        if (is_string($allowDomain) && false === strpos($allowDomain, '.')) {
+            $allowDomain .= '.' . $request->rootDomain();
+        }
+        $port = $request->port();
 
         foreach ($rule as $item) {
             $url     = $item->getRule();
@@ -324,15 +306,15 @@ class Url
             $suffix  = $item->getSuffix();
 
             if ('-' == $domain) {
-                $domain = $request->host(true);
+                $domain = is_string($allowDomain) ? $allowDomain : $request->host(true);
             }
 
             if (is_string($allowDomain) && $domain != $allowDomain) {
                 continue;
             }
 
-            if (!in_array($request->port(), [80, 443])) {
-                $domain .= ':' . $request->port();
+            if ($port && !in_array($port, [80, 443])) {
+                $domain .= ':' . $port;
             }
 
             if (empty($pattern)) {
@@ -427,10 +409,6 @@ class Url
 
             if (!is_null($match[2])) {
                 $suffix = $match[2];
-            }
-
-            if ($request->app() && $this->app->config->get('app.auto_multi_app') && !$this->app->http->isBindDomain()) {
-                $url = $request->app() . '/' . $url;
             }
         } elseif (!empty($rule) && isset($name)) {
             throw new \InvalidArgumentException('route name not exists:' . $name);

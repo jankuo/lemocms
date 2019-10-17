@@ -15,7 +15,7 @@ use app\admin\model\AuthRule;
 use think\facade\View;
 use think\facade\Db;
 use think\facade\Cache;
-use think\Session;
+use think\facade\Session;
 
 class Index extends Base{
 
@@ -32,12 +32,14 @@ class Index extends Base{
      */
     public function index(){
         // 所有显示的菜单；
-        $menus = Cache::get('adminMenus');
+        $admin_id = Session::get('admin.id');
+//        $menus = Cache::get('adminMenus_'.$admin_id);
+        $menus = '';
 
         if(!$menus){
             $cate = AuthRule::where('menu_status',1)->order('sort asc')->select()->toArray();
             $menus = Menu::authMenu($cate);
-            Cache::set('adminMenus',$menus);
+            Cache::set('adminMenus_'.$admin_id,$menus,'3600');
 
         }
         $href = (string)url('main');

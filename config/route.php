@@ -48,6 +48,8 @@ return [
     'default_jsonp_handler' => 'jsonpReturn',
     // 默认JSONP处理方法
     'var_jsonp_handler'     => 'callback',
+    //是否自动转换URL中的控制器和操作名
+    'url_convert'=>false,
     //跨应用路由
     'cross_app_route'	=>	true,
 ];

@@ -15,7 +15,8 @@
 return [
      \think\middleware\LoadLangPack::class,
 
-    //权限验证
+     \think\middleware\SessionInit::class,
+    //日志
     \app\admin\middleware\AdminLog::class,
 ];
 

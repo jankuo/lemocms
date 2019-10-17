@@ -345,7 +345,12 @@ class Auth extends Base
         }
         $where['id'] = $data['group_id'];
         $where['rules'] = $rls;
+
         if (AuthGroup::update($where)) {
+            $admin = Session::get('admin');
+            $admin['rules'] = $rls;
+            Session::set('admin', $admin);
+
             $this->success(lang('rule assign success'),url('group'));
         } else {
             $this->error(lang('rule assign fail'));

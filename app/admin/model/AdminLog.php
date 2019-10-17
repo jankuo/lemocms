@@ -30,8 +30,8 @@ class AdminLog extends AdminModel
     {
         //入库信息
         $admin_id   = Session::get('admin.id',0);
-        $username   = Session::get('admin.username','Unknown') ;
-        $url        = Request::url();
+        $username   = Session::get('admin.username','Unknown');
+        $url        = Request::pathinfo();
         $title      = self::$log_title;
         $ip         = Request::ip();
         $agent      = Request::server('HTTP_USER_AGENT');
@@ -39,7 +39,6 @@ class AdminLog extends AdminModel
         if(stripos($url,'?')){
             $url = explode('?',$url)[0];
         }
-        $url = strtolower($url);
         if ($content) {
             //去除登录密码
             foreach ($content as $k => $v) {
@@ -49,7 +48,6 @@ class AdminLog extends AdminModel
             }
             $content = json_encode($content);
         }
-
         //登录处理
         if (strpos($url, 'login/index') !== false && Request::isPost()) {
             $title = '[登录成功]';
@@ -57,7 +55,7 @@ class AdminLog extends AdminModel
             //权限
             $auth = Db::name('auth_rule')->column('href','href');
             foreach ($auth as $k=>$v){
-                $auth[$k] = (string)strtolower(url($v));
+                $auth[$k] = Request::pathinfo($v);
             }
             $key = array_search($url,$auth);
             if($key){

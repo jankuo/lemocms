@@ -381,30 +381,30 @@ class Container implements ContainerInterface, ArrayAccess, IteratorAggregate, C
      */
     public function invokeClass(string $class, array $vars = [])
     {
-        try {
-            $reflect = new ReflectionClass($class);
-
-            if ($reflect->hasMethod('__make')) {
-                $method = new ReflectionMethod($class, '__make');
-
-                if ($method->isPublic() && $method->isStatic()) {
-                    $args = $this->bindParams($method, $vars);
-                    return $method->invokeArgs(null, $args);
-                }
-            }
-
-            $constructor = $reflect->getConstructor();
-
-            $args = $constructor ? $this->bindParams($constructor, $vars) : [];
-
-            $object = $reflect->newInstanceArgs($args);
-
-            $this->invokeAfter($class, $object);
-
-            return $object;
-        } catch (ReflectionException $e) {
-            throw new ClassNotFoundException('class not exists: ' . $class, $class, $e);
+        if (!class_exists($class)) {
+            throw new ClassNotFoundException('class not exists: ' . $class, $class);
         }
+
+        $reflect = new ReflectionClass($class);
+
+        if ($reflect->hasMethod('__make')) {
+            $method = new ReflectionMethod($class, '__make');
+
+            if ($method->isPublic() && $method->isStatic()) {
+                $args = $this->bindParams($method, $vars);
+                return $method->invokeArgs(null, $args);
+            }
+        }
+
+        $constructor = $reflect->getConstructor();
+
+        $args = $constructor ? $this->bindParams($constructor, $vars) : [];
+
+        $object = $reflect->newInstanceArgs($args);
+
+        $this->invokeAfter($class, $object);
+
+        return $object;
     }
 
     /**

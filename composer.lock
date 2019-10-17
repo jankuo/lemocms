@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "044ec666ac88656c5200f4890492d05c",
+    "content-hash": "57cada1c232fd31a12c13c53b5f9d442",
     "packages": [
         {
             "name": "cache/adapter-common",
@@ -612,16 +612,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.55",
+            "version": "1.0.57",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "33c91155537c6dc899eacdc54a13ac6303f156e6"
+                "reference": "0e9db7f0b96b9f12dcf6f65bc34b72b1a30ea55a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/33c91155537c6dc899eacdc54a13ac6303f156e6",
-                "reference": "33c91155537c6dc899eacdc54a13ac6303f156e6",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/0e9db7f0b96b9f12dcf6f65bc34b72b1a30ea55a",
+                "reference": "0e9db7f0b96b9f12dcf6f65bc34b72b1a30ea55a",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -698,7 +698,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2019-08-24T11:17:19+00:00"
+            "time": "2019-10-16T21:01:05+00:00"
         },
         {
             "name": "league/flysystem-cached-adapter",
@@ -856,16 +856,16 @@
         },
         {
             "name": "markbaker/matrix",
-            "version": "1.1.4",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MarkBaker/PHPMatrix.git",
-                "reference": "6ea97472b5baf12119b4f31f802835b820dd6d64"
+                "reference": "5348c5a67e3b75cd209d70103f916a93b1f1ed21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MarkBaker/PHPMatrix/zipball/6ea97472b5baf12119b4f31f802835b820dd6d64",
-                "reference": "6ea97472b5baf12119b4f31f802835b820dd6d64",
+                "url": "https://api.github.com/repos/MarkBaker/PHPMatrix/zipball/5348c5a67e3b75cd209d70103f916a93b1f1ed21",
+                "reference": "5348c5a67e3b75cd209d70103f916a93b1f1ed21",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -878,14 +878,13 @@
                 "php": "^5.6.0|^7.0.0"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
-                "phpcompatibility/php-compatibility": "^8.0",
-                "phpdocumentor/phpdocumentor": "2.*",
-                "phploc/phploc": "2.*",
-                "phpmd/phpmd": "2.*",
-                "phpunit/phpunit": "^4.8.35|^5.4.0",
-                "sebastian/phpcpd": "2.*",
-                "squizlabs/php_codesniffer": "^3.3.0"
+                "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
+                "phpcompatibility/php-compatibility": "dev-master",
+                "phploc/phploc": "^4",
+                "phpmd/phpmd": "dev-master",
+                "phpunit/phpunit": "^5.7",
+                "sebastian/phpcpd": "^3.0",
+                "squizlabs/php_codesniffer": "^3.0@dev"
             },
             "type": "library",
             "autoload": {
@@ -928,7 +927,7 @@
                 "matrix",
                 "vector"
             ],
-            "time": "2018-11-04T22:12:12+00:00"
+            "time": "2019-10-06T11:29:25+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1019,16 +1018,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.24.0",
+            "version": "2.25.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "934459c5ac0658bc765ad1e53512c7c77adcac29"
+                "reference": "443fe5f1498147e0fbc792142b5dc43e2e8a533f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/934459c5ac0658bc765ad1e53512c7c77adcac29",
-                "reference": "934459c5ac0658bc765ad1e53512c7c77adcac29",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/443fe5f1498147e0fbc792142b5dc43e2e8a533f",
+                "reference": "443fe5f1498147e0fbc792142b5dc43e2e8a533f",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1081,14 +1080,14 @@
                     "homepage": "http://github.com/kylekatarnls"
                 }
             ],
-            "description": "A API extension for DateTime that supports 281 different languages.",
+            "description": "An API extension for DateTime that supports 281 different languages.",
             "homepage": "http://carbon.nesbot.com",
             "keywords": [
                 "date",
                 "datetime",
                 "time"
             ],
-            "time": "2019-08-31T16:37:55+00:00"
+            "time": "2019-10-14T14:18:59+00:00"
         },
         {
             "name": "opis/closure",
@@ -1215,16 +1214,16 @@
         },
         {
             "name": "overtrue/wechat",
-            "version": "4.2.3",
+            "version": "4.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/wechat.git",
-                "reference": "8271f1c693c3cc4f707a617d86d8eeb131afb926"
+                "reference": "4b6d8fb35bd36c93fa58bdd01a6c4fee9d7b98e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/overtrue/wechat/zipball/8271f1c693c3cc4f707a617d86d8eeb131afb926",
-                "reference": "8271f1c693c3cc4f707a617d86d8eeb131afb926",
+                "url": "https://api.github.com/repos/overtrue/wechat/zipball/4b6d8fb35bd36c93fa58bdd01a6c4fee9d7b98e4",
+                "reference": "4b6d8fb35bd36c93fa58bdd01a6c4fee9d7b98e4",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1252,7 +1251,7 @@
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.15",
                 "mikey179/vfsstream": "^1.6",
-                "mockery/mockery": "^1.0",
+                "mockery/mockery": "^1.2.3",
                 "phpstan/phpstan": "^0.11.12",
                 "phpunit/phpunit": "^7.5"
             },
@@ -1283,7 +1282,7 @@
                 "weixin",
                 "weixin-sdk"
             ],
-            "time": "2019-09-09T08:23:38+00:00"
+            "time": "2019-10-11T14:38:37+00:00"
         },
         {
             "name": "phpoffice/phpspreadsheet",
@@ -1758,16 +1757,16 @@
         },
         {
             "name": "symfony/cache",
-            "version": "v4.3.4",
+            "version": "v4.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
-                "reference": "1d8f7fee990c586f275cde1a9fc883d6b1e2d43e"
+                "reference": "40c62600ebad1ed2defbf7d35523d918a73ab330"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/1d8f7fee990c586f275cde1a9fc883d6b1e2d43e",
-                "reference": "1d8f7fee990c586f275cde1a9fc883d6b1e2d43e",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/40c62600ebad1ed2defbf7d35523d918a73ab330",
+                "reference": "40c62600ebad1ed2defbf7d35523d918a73ab330",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1838,20 +1837,20 @@
                 "caching",
                 "psr6"
             ],
-            "time": "2019-08-26T08:26:39+00:00"
+            "time": "2019-10-04T10:57:53+00:00"
         },
         {
             "name": "symfony/cache-contracts",
-            "version": "v1.1.5",
+            "version": "v1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache-contracts.git",
-                "reference": "ec5524b669744b5f1dc9c66d3c2b091eb7e7f0db"
+                "reference": "af50d14ada9e4e82cfabfabdc502d144f89be0a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache-contracts/zipball/ec5524b669744b5f1dc9c66d3c2b091eb7e7f0db",
-                "reference": "ec5524b669744b5f1dc9c66d3c2b091eb7e7f0db",
+                "url": "https://api.github.com/repos/symfony/cache-contracts/zipball/af50d14ada9e4e82cfabfabdc502d144f89be0a1",
+                "reference": "af50d14ada9e4e82cfabfabdc502d144f89be0a1",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1902,20 +1901,20 @@
                 "interoperability",
                 "standards"
             ],
-            "time": "2019-06-13T11:15:36+00:00"
+            "time": "2019-10-04T21:43:27+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v4.3.4",
+            "version": "v4.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "429d0a1451d4c9c4abe1959b2986b88794b9b7d2"
+                "reference": "6229f58993e5a157f6096fc7145c0717d0be8807"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/429d0a1451d4c9c4abe1959b2986b88794b9b7d2",
-                "reference": "429d0a1451d4c9c4abe1959b2986b88794b9b7d2",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/6229f58993e5a157f6096fc7145c0717d0be8807",
+                "reference": "6229f58993e5a157f6096fc7145c0717d0be8807",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1978,20 +1977,20 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-26T08:55:16+00:00"
+            "time": "2019-10-01T16:40:32+00:00"
         },
         {
             "name": "symfony/event-dispatcher-contracts",
-            "version": "v1.1.5",
+            "version": "v1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher-contracts.git",
-                "reference": "c61766f4440ca687de1084a5c00b08e167a2575c"
+                "reference": "c43ab685673fb6c8d84220c77897b1d6cdbe1d18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher-contracts/zipball/c61766f4440ca687de1084a5c00b08e167a2575c",
-                "reference": "c61766f4440ca687de1084a5c00b08e167a2575c",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher-contracts/zipball/c43ab685673fb6c8d84220c77897b1d6cdbe1d18",
+                "reference": "c43ab685673fb6c8d84220c77897b1d6cdbe1d18",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2042,20 +2041,20 @@
                 "interoperability",
                 "standards"
             ],
-            "time": "2019-06-20T06:46:26+00:00"
+            "time": "2019-09-17T09:54:03+00:00"
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v4.3.4",
+            "version": "v4.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "d804bea118ff340a12e22a79f9c7e7eb56b35adc"
+                "reference": "76590ced16d4674780863471bae10452b79210a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/d804bea118ff340a12e22a79f9c7e7eb56b35adc",
-                "reference": "d804bea118ff340a12e22a79f9c7e7eb56b35adc",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/76590ced16d4674780863471bae10452b79210a5",
+                "reference": "76590ced16d4674780863471bae10452b79210a5",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2103,20 +2102,20 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-26T08:55:16+00:00"
+            "time": "2019-10-04T19:48:13+00:00"
         },
         {
             "name": "symfony/mime",
-            "version": "v4.3.4",
+            "version": "v4.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "987a05df1c6ac259b34008b932551353f4f408df"
+                "reference": "32f71570547b91879fdbd9cf50317d556ae86916"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/987a05df1c6ac259b34008b932551353f4f408df",
-                "reference": "987a05df1c6ac259b34008b932551353f4f408df",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/32f71570547b91879fdbd9cf50317d556ae86916",
+                "reference": "32f71570547b91879fdbd9cf50317d556ae86916",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2168,7 +2167,7 @@
                 "mime",
                 "mime-type"
             ],
-            "time": "2019-08-22T08:16:11+00:00"
+            "time": "2019-09-19T17:00:15+00:00"
         },
         {
             "name": "symfony/polyfill-intl-idn",
@@ -2366,16 +2365,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.3.4",
+            "version": "v4.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "e89969c00d762349f078db1128506f7f3dcc0d4a"
+                "reference": "50556892f3cc47d4200bfd1075314139c4c9ff4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/e89969c00d762349f078db1128506f7f3dcc0d4a",
-                "reference": "e89969c00d762349f078db1128506f7f3dcc0d4a",
+                "url": "https://api.github.com/repos/symfony/process/zipball/50556892f3cc47d4200bfd1075314139c4c9ff4b",
+                "reference": "50556892f3cc47d4200bfd1075314139c4c9ff4b",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2417,7 +2416,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-26T08:26:39+00:00"
+            "time": "2019-09-26T21:17:10+00:00"
         },
         {
             "name": "symfony/psr-http-message-bridge",
@@ -2492,16 +2491,16 @@
         },
         {
             "name": "symfony/service-contracts",
-            "version": "v1.1.6",
+            "version": "v1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "ea7263d6b6d5f798b56a45a5b8d686725f2719a3"
+                "reference": "ffcde9615dc5bb4825b9f6aed07716f1f57faae0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/ea7263d6b6d5f798b56a45a5b8d686725f2719a3",
-                "reference": "ea7263d6b6d5f798b56a45a5b8d686725f2719a3",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/ffcde9615dc5bb4825b9f6aed07716f1f57faae0",
+                "reference": "ffcde9615dc5bb4825b9f6aed07716f1f57faae0",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2552,20 +2551,20 @@
                 "interoperability",
                 "standards"
             ],
-            "time": "2019-08-20T14:44:19+00:00"
+            "time": "2019-09-17T11:12:18+00:00"
         },
         {
             "name": "symfony/translation",
-            "version": "v4.3.4",
+            "version": "v4.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "28498169dd334095fa981827992f3a24d50fed0f"
+                "reference": "fe6193b066c457c144333c06aaa869a2d42a167f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/28498169dd334095fa981827992f3a24d50fed0f",
-                "reference": "28498169dd334095fa981827992f3a24d50fed0f",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/fe6193b066c457c144333c06aaa869a2d42a167f",
+                "reference": "fe6193b066c457c144333c06aaa869a2d42a167f",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2634,20 +2633,20 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-26T08:55:16+00:00"
+            "time": "2019-09-27T14:37:39+00:00"
         },
         {
             "name": "symfony/translation-contracts",
-            "version": "v1.1.6",
+            "version": "v1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation-contracts.git",
-                "reference": "325b17c24f3ee23cbecfa63ba809c6d89b5fa04a"
+                "reference": "364518c132c95642e530d9b2d217acbc2ccac3e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/325b17c24f3ee23cbecfa63ba809c6d89b5fa04a",
-                "reference": "325b17c24f3ee23cbecfa63ba809c6d89b5fa04a",
+                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/364518c132c95642e530d9b2d217acbc2ccac3e6",
+                "reference": "364518c132c95642e530d9b2d217acbc2ccac3e6",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2697,20 +2696,20 @@
                 "interoperability",
                 "standards"
             ],
-            "time": "2019-08-02T12:15:04+00:00"
+            "time": "2019-09-17T11:12:18+00:00"
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.3.4",
+            "version": "v4.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "641043e0f3e615990a0f29479f9c117e8a6698c6"
+                "reference": "bde8957fc415fdc6964f33916a3755737744ff05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/641043e0f3e615990a0f29479f9c117e8a6698c6",
-                "reference": "641043e0f3e615990a0f29479f9c117e8a6698c6",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/bde8957fc415fdc6964f33916a3755737744ff05",
+                "reference": "bde8957fc415fdc6964f33916a3755737744ff05",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2779,11 +2778,11 @@
                 "debug",
                 "dump"
             ],
-            "time": "2019-08-26T08:26:39+00:00"
+            "time": "2019-10-04T19:48:13+00:00"
         },
         {
             "name": "symfony/var-exporter",
-            "version": "v4.3.4",
+            "version": "v4.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-exporter.git",
@@ -2909,12 +2908,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/framework.git",
-                "reference": "9744571904a008bff8567d5fc929ed161cad0f8b"
+                "reference": "6217ae4a9e9beb0c7426e427b535d14f1fe4ab90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/framework/zipball/9744571904a008bff8567d5fc929ed161cad0f8b",
-                "reference": "9744571904a008bff8567d5fc929ed161cad0f8b",
+                "url": "https://api.github.com/repos/top-think/framework/zipball/6217ae4a9e9beb0c7426e427b535d14f1fe4ab90",
+                "reference": "6217ae4a9e9beb0c7426e427b535d14f1fe4ab90",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2969,20 +2968,20 @@
                 "orm",
                 "thinkphp"
             ],
-            "time": "2019-09-20T08:52:29+00:00"
+            "time": "2019-10-14T14:00:20+00:00"
         },
         {
             "name": "topthink/think-captcha",
-            "version": "v3.0.1",
+            "version": "v3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/think-captcha.git",
-                "reference": "9fc0c627d773f6a54a8dd142ebf358f746557a48"
+                "reference": "0b4305da19e118cefd934007875a8112f9352f01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/think-captcha/zipball/9fc0c627d773f6a54a8dd142ebf358f746557a48",
-                "reference": "9fc0c627d773f6a54a8dd142ebf358f746557a48",
+                "url": "https://api.github.com/repos/top-think/think-captcha/zipball/0b4305da19e118cefd934007875a8112f9352f01",
+                "reference": "0b4305da19e118cefd934007875a8112f9352f01",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2999,7 +2998,10 @@
                 "think": {
                     "services": [
                         "think\\captcha\\CaptchaService"
-                    ]
+                    ],
+                    "config": {
+                        "captcha": "src/config.php"
+                    }
                 }
             },
             "autoload": {
@@ -3021,7 +3023,7 @@
                 }
             ],
             "description": "captcha package for thinkphp",
-            "time": "2019-06-06T07:16:01+00:00"
+            "time": "2019-10-03T07:45:11+00:00"
         },
         {
             "name": "topthink/think-factory",
@@ -3067,16 +3069,16 @@
         },
         {
             "name": "topthink/think-helper",
-            "version": "v3.1.2",
+            "version": "v3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/think-helper.git",
-                "reference": "a629c4271fdf3d7e7c6d89089791417cb4796a2c"
+                "reference": "4d85dfd3778623bbb1de3648f1dcd0c82f4439f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/think-helper/zipball/a629c4271fdf3d7e7c6d89089791417cb4796a2c",
-                "reference": "a629c4271fdf3d7e7c6d89089791417cb4796a2c",
+                "url": "https://api.github.com/repos/top-think/think-helper/zipball/4d85dfd3778623bbb1de3648f1dcd0c82f4439f4",
+                "reference": "4d85dfd3778623bbb1de3648f1dcd0c82f4439f4",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3108,7 +3110,7 @@
                 }
             ],
             "description": "The ThinkPHP6 Helper Package",
-            "time": "2019-07-11T04:35:03+00:00"
+            "time": "2019-09-30T02:36:48+00:00"
         },
         {
             "name": "topthink/think-image",
@@ -3157,17 +3159,67 @@
             "time": "2016-09-29T06:05:43+00:00"
         },
         {
+            "name": "topthink/think-multi-app",
+            "version": "v1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/think-multi-app.git",
+                "reference": "1abc0527ad1808beff161d1d163436754060ddc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/top-think/think-multi-app/zipball/1abc0527ad1808beff161d1d163436754060ddc9",
+                "reference": "1abc0527ad1808beff161d1d163436754060ddc9",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=7.1.0",
+                "topthink/framework": "^6.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "think": {
+                    "services": [
+                        "think\\app\\Service"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "think\\app\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "liu21st",
+                    "email": "liu21st@gmail.com"
+                }
+            ],
+            "description": "thinkphp6 multi app support",
+            "time": "2019-10-10T15:42:49+00:00"
+        },
+        {
             "name": "topthink/think-orm",
             "version": "2.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/think-orm.git",
-                "reference": "fc80730c6b617ce5c3c58bef44bf36ddf19955f5"
+                "reference": "8ef883759fc94512bf5c62468c8dc0d8dc176afe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/think-orm/zipball/fc80730c6b617ce5c3c58bef44bf36ddf19955f5",
-                "reference": "fc80730c6b617ce5c3c58bef44bf36ddf19955f5",
+                "url": "https://api.github.com/repos/top-think/think-orm/zipball/8ef883759fc94512bf5c62468c8dc0d8dc176afe",
+                "reference": "8ef883759fc94512bf5c62468c8dc0d8dc176afe",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3205,7 +3257,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2019-09-17T01:26:27+00:00"
+            "time": "2019-10-11T01:34:19+00:00"
         },
         {
             "name": "topthink/think-queue",
@@ -3317,16 +3369,16 @@
         },
         {
             "name": "topthink/think-view",
-            "version": "v1.0.12",
+            "version": "v1.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/think-view.git",
-                "reference": "41dd64d023f312d2e73a14aac81edd25cffa336b"
+                "reference": "90803b73f781db5d42619082c4597afc58b2d4c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/think-view/zipball/41dd64d023f312d2e73a14aac81edd25cffa336b",
-                "reference": "41dd64d023f312d2e73a14aac81edd25cffa336b",
+                "url": "https://api.github.com/repos/top-think/think-view/zipball/90803b73f781db5d42619082c4597afc58b2d4c5",
+                "reference": "90803b73f781db5d42619082c4597afc58b2d4c5",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3356,7 +3408,7 @@
                 }
             ],
             "description": "thinkphp template driver",
-            "time": "2019-09-17T08:05:04+00:00"
+            "time": "2019-10-07T12:23:10+00:00"
         }
     ],
     "packages-dev": [],

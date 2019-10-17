@@ -128,15 +128,19 @@ class Controller extends Dispatch
                 if (!is_int($key)) {
                     if (isset($val['only']) && !in_array($this->request->action(true), array_map(function ($item) {
                             return strtolower($item);
-                        }, $val['only']))) {
+                        }, is_string($val['only']) ? explode(",", $val['only']) : $val['only']))) {
                         continue;
                     } elseif (isset($val['except']) && in_array($this->request->action(true), array_map(function ($item) {
                             return strtolower($item);
-                        }, $val['except']))) {
+                        }, is_string($val['except']) ? explode(',', $val['except']) : $val['except']))) {
                         continue;
                     } else {
                         $val = $key;
                     }
+                }
+
+                if (is_string($val) && strpos($val, ':')) {
+                    $val = explode(':', $val, 2);
                 }
 
                 $this->app->middleware->controller($val);

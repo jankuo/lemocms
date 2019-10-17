@@ -2,6 +2,8 @@
 配色方案（如有需要，请自行配置）
  */
 /**头部-配色*/
+.layui-nav *{font-size: 12px}
+.layui-nav .layui-nav-item a{padding: 0 15px;}
 .layui-layout-admin .layui-header{background-color:#1aa094}
 .layui-header>ul>.layui-nav-item.layui-this,.LM-tool i:hover{background-color:#197971;}
 /**logo-配色*/

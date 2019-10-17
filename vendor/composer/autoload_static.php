@@ -12,10 +12,10 @@ class ComposerStaticInit384a8d7e76ba965cf74b4f3feab22220
         '9b552a3cc426e3287cc811caefa3cf53' => __DIR__ . '/..' . '/topthink/think-helper/src/helper.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
+        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'abede361264e2ae69ec1eee813a101af' => __DIR__ . '/..' . '/markbaker/complex/classes/src/functions/abs.php',
         '21a5860fbef5be28db5ddfbc3cca67c4' => __DIR__ . '/..' . '/markbaker/complex/classes/src/functions/acos.php',
@@ -88,6 +88,7 @@ class ComposerStaticInit384a8d7e76ba965cf74b4f3feab22220
         array (
             'think\\view\\driver\\' => 18,
             'think\\captcha\\' => 14,
+            'think\\app\\' => 10,
             'think\\' => 6,
         ),
         'a' => 
@@ -178,6 +179,10 @@ class ComposerStaticInit384a8d7e76ba965cf74b4f3feab22220
         'think\\captcha\\' => 
         array (
             0 => __DIR__ . '/..' . '/topthink/think-captcha/src',
+        ),
+        'think\\app\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/topthink/think-multi-app/src',
         ),
         'think\\' => 
         array (

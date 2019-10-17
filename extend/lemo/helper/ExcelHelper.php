@@ -33,88 +33,66 @@ class ExcelHelper
      * @throws \PhpOffice\PhpSpreadsheet\Exception
      * @throws \PhpOffice\PhpSpreadsheet\Writer\Exception
      */
-    public static function exportData($list = [], $header = [], $filename = '', $suffix = 'xlsx')
+    public static function exportData($data = [], $header = [], $filename = '', $suffix = '.xlsx')
     {
-        if (!is_array($list) || !is_array($header)) {
-            return false;
+        $filename       .= "_" . date("Y_m_d", time()) . $suffix;
+
+        $spreadsheet    = new Spreadsheet();
+
+        $objPHPExcel    = $spreadsheet->getActiveSheet();
+
+        $key = ord("A"); // 设置表头
+
+        foreach ($header as $v) {
+
+            $colum = chr($key);
+
+            $objPHPExcel->setCellValue($colum . '1', $v);
+
+            $key += 1;
+
         }
 
-        !$filename && $filename = time();
-
-        // 初始化
-        $spreadsheet = new Spreadsheet();
-        $sheet = $spreadsheet->getActiveSheet();
-        // 写入头部
-        $hk = 1;
-        foreach ($header as $k => $v) {
-            $sheet->setCellValue(Coordinate::stringFromColumnIndex($hk) . '1', $v[0]);
-            $hk += 1;
-        }
-
-        // 开始写入内容
         $column = 2;
-        $size = ceil(count($list) / 500);
-        for ($i = 0; $i < $size; $i++) {
-            $buffer = array_slice($list, $i * 500, 500);
 
-            foreach ($buffer as $k => $row) {
-                $span = 1;
+        foreach ($data as $key => $rows) {
+            // 行写入
 
-                foreach ($header as $key => $value) {
-                    // 解析字段
-                    $realData = self::formatting($header[$key], trim(self::formattingField($row, $value[1])), $row);
-                    // 写入excel
-                    $sheet->setCellValue(Coordinate::stringFromColumnIndex($span) . $column, $realData);
-                    $span++;
-                }
+            $span = ord("A");
 
-                $column++;
-                unset($buffer[$k]);
+            foreach ($rows as $keyName => $value) {
+                // 列写入
+
+                $objPHPExcel->setCellValue(chr($span) . $column, $value);
+
+                $span++;
+
             }
+
+            $column++;
+
         }
 
-        // 清除之前的错误输出
-        ob_end_clean();
-        ob_start();
+        //$fileName = iconv("utf-8", "gbk//IGNORE", $fileName); // 重命名表（UTF8编码不需要这一步）
 
-        // 直接输出下载
-        switch ($suffix) {
-            case 'xlsx' :
-                $writer = new Xlsx($spreadsheet);
-                header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8;");
-                header("Content-Disposition: inline;filename=\"{$filename}.xlsx\"");
-                header('Cache-Control: max-age=0');
-                $writer->save('php://output');
-                break;
-            case 'xls' :
-                $writer = new Xls($spreadsheet);
-                header("Content-Type:application/vnd.ms-excel;charset=utf-8;");
-                header("Content-Disposition:inline;filename=\"{$filename}.xls\"");
-                header('Cache-Control: max-age=0');
-                $writer->save('php://output');
-                break;
-            case 'csv' :
-                $writer = new Csv($spreadsheet);
-                header("Content-type:text/csv;charset=utf-8;");
-                header("Content-Disposition:attachment; filename={$filename}.csv");
-                header('Cache-Control: max-age=0');
-                $writer->save('php://output');
-                break;
-            case 'html' :
-                $writer = new Html($spreadsheet);
-                header("Content-Type:text/html;charset=utf-8;");
-                header("Content-Disposition:attachment;filename=\"{$filename}.{$suffix}\"");
-                header('Cache-Control: max-age=0');
-                $writer->save('php://output');
-                break;
-        }
+        header('Content-Type: application/vnd.ms-excel');
 
-        /* 释放内存 */
+        header('Content-Disposition: attachment;filename="' . $filename . $suffix);
+
+        header('Cache-Control: max-age=0');
+
+        $writer = new Xlsx($spreadsheet);
+
+        $writer->save('php://output');
+
+        //删除清空：
+
         $spreadsheet->disconnectWorksheets();
-        unset($spreadsheet);
-        ob_end_flush();
 
-        return true;
+        unset($spreadsheet);
+
+        exit;
+
     }
 
     /**

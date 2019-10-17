@@ -12,7 +12,7 @@ class TreeHelper
         $list =array();
         foreach ($arr as $k=>$v){
             if ($v['pid'] == $pid){
-                $v['child'] = get_tree($arr,$v['id']);
+                $v['child'] = self::getTree($arr,$v['id']);
                 $list[] = $v;
             }
         }

@@ -19,7 +19,7 @@ class DataHelper
      * @param array $values
      * @return string|bool
      **/
-    public static function toXml($values)
+    public static function arrToXml($values)
     {
         if (!is_array($values) || count($values) <= 0) {
             return false;
@@ -41,7 +41,7 @@ class DataHelper
      * @param string $xml
      * @return array|false
      */
-    public static function toArray($xml)
+    public static function xmlToArray($xml)
     {
         if (!$xml) {
             return false;
@@ -64,7 +64,7 @@ class DataHelper
      * @param string $xml
      * @return array|false
      */
-    public static function toJson($array)
+    public static function arrToJson($array)
     {
         if(is_array($array)){
             return json_encode($array);
@@ -75,6 +75,7 @@ class DataHelper
             return '';
         }
     }
+
     /**
      * 将OBJ或者对象转为ARRAY
      * @param string $xml

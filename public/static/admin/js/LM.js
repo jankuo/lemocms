@@ -84,6 +84,7 @@ layui.define(["element", "jquery"], function (exports) {
                 bgcolorId = LM.config('BgColorDefault');
             }
             var bgcolorData = LM.bgColorConfig(bgcolorId);
+            console.log(bgcolorData);
             var styleHtml = '.layui-layout-admin .layui-header{background-color:' + bgcolorData.headerRight + '!important;}\n' +
                 '.layui-header>ul>.layui-nav-item.layui-this,.LM-tool i:hover{background-color:' + bgcolorData.headerRightThis + '!important;}\n' +
                 '.layui-layout-admin .layui-logo {background-color:' + bgcolorData.headerLogo + '!important;}\n' +
@@ -815,7 +816,7 @@ layui.define(["element", "jquery"], function (exports) {
     });
     // 语言切换
     $('.lang').on("click", function () {
-        var url = '/admin/system/enlang';
+        var url = '/index.php/admin/system/enlang';
         var lang = 'zh-cn';
         if($(this).hasClass('en')){
             lang = 'en-us';
@@ -942,7 +943,6 @@ layui.define(["element", "jquery"], function (exports) {
     $('body').on('click', '[data-select-bgcolor]', function () {
         var bgcolorId = $(this).attr('data-select-bgcolor');
         $('.LM-color .color-content ul .layui-this').attr('class', '');
-        console.log(bgcolorId)
         $(this).attr('class', 'layui-this');
         sessionStorage.setItem('LMBgcolorId', bgcolorId);
         LM.initBgColor();

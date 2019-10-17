@@ -34,7 +34,8 @@ class Login extends BaseController {
             $admin_sign= Session::get('admin_sign') == SignHelper::authSign($admin) ? $admin['id'] : 0;
             // 签名验证
             if ($admin && $admin_sign) {
-                return redirect('index/index');
+                
+                 redirect('index/index');
             }
 
             return View::fetch();
@@ -53,7 +54,7 @@ class Login extends BaseController {
                 }
                 $res = self::checkLogin($username, $password,$rememberMe);
             } catch (\Exception $e) {
-                $this->error(lang('login fail')."：{$e->getMessage()}");
+                 $this->error(lang('login fail')."：{$e->getMessage()}");
             }
             $this->success(lang('login success').'...', url('@admin'));
         }
@@ -108,7 +109,7 @@ class Login extends BaseController {
             }
             if($rememberMe){
                 Session::set('admin', $info,7*24*3600);
-                Session::set('admin_sign',  SignHelper::authSign($info),5*24*3600);
+                Session::set('admin_sign',  SignHelper::authSign($info),7*24*3600);
             }else{
                 Session::set('admin', $info);
                 Session::set('admin_sign',  SignHelper::authSign($info));

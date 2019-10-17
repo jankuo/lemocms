@@ -13,10 +13,13 @@
 namespace app\index\controller;
 
 
+use think\facade\View;
+
 class Index extends \app\BaseController{
 
     public function index(){
 
+//        return View::fetch();
        $this->redirect('http://www.lemocms.com');
     }
 
