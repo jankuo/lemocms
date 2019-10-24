@@ -107,6 +107,7 @@ class Login extends BaseController {
             if(!$info['username']){
                 $info['username'] = $info['username'];
             }
+            unset($info['password']);
             if($rememberMe){
                 Session::set('admin', $info,7*24*3600);
                 Session::set('admin_sign',  SignHelper::authSign($info),7*24*3600);

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 17, 2019 at 04:56 AM
--- Server version: 5.7.26
--- PHP Version: 7.0.12
+-- Generation Time: Oct 24, 2019 at 10:54 AM
+-- Server version: 5.6.45-log
+-- PHP Version: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -50,8 +50,7 @@ CREATE TABLE `lm_admin` (
 
 INSERT INTO `lm_admin` (`id`, `username`, `password`, `group_id`, `email`, `realname`, `mobile`, `ip`, `mdemail`, `status`, `avatar`, `create_time`, `update_time`) VALUES
 (1, 'admin', '$2y$12$jJNSWOS.8he.z3s17YCRtesZ1v6F6Ck3zUGBhniRDr2LNHfUUwH5.', 1, '994927909@qq.com', '', '18397423845', '127.0.0.1', '0', 1, '/storage/uploads/20190817\\294faa45405fa24da59c311f55ce313f.png', 1482132862, 1567843792),
-(2, 'yuege', '$2y$12$jJNSWOS.8he.z3s17YCRtesZ1v6F6Ck3zUGBhniRDr2LNHfUUwH5.', 2, '994927909@qq.com', '', '18397423845', '127.0.0.1', '0', 1, '/storage/uploads/20190817\\dc25c2714c46a0d2bee894a7d05eb15f.png', 1535512393, 1571034031),
-(3, 'demo', '$2y$12$jJNSWOS.8he.z3s17YCRtesZ1v6F6Ck3zUGBhniRDr2LNHfUUwH5.', 2, '994927909@qq.com', '', '18397423845', '119.122.91.146', '0', 1, '/storage/uploads/20190817\\a17c794ac7fae7db012aa6e997cf3400.jpg', 1564041575, 1571034159);
+(3, 'demo', '$2y$12$jJNSWOS.8he.z3s17YCRtesZ1v6F6Ck3zUGBhniRDr2LNHfUUwH5.', 2, '994927909@qq.com', '', '18397423845', '119.122.91.146', '0', 1, '/storage/uploads/20190817\\a17c794ac7fae7db012aa6e997cf3400.jpg', 1564041575, 1571843809),
 
 -- --------------------------------------------------------
 
@@ -116,7 +115,7 @@ INSERT INTO `lm_adv` (`id`, `pid`, `media_type`, `ad_name`, `ad_link`, `ad_image
 (84, 4, 0, 'banner6 ', 'https://www.baidu.com', '/storage/uploads/20190818\\8ebd41bd38db53338af00026cb592bc3.png', 1566130740, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566107968, 1566107968),
 (85, 1, 0, '组合套餐', 'https://www.baidu.com', '/storage/uploads/20190818\\674ca52c87c4552352f35d820c3ce33e.png', 0, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566108105, 1567584671),
 (86, 2, 0, '组合套餐', 'https://www.baidu.com', '/storage/uploads/20190818\\cd986a75a1be03d8a7af558fda044ca4.png', 1566130740, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566108149, 1568273418),
-(87, 2, 0, 'banner6 ', 'https://www.baidu.com', '/storage/uploads/20190818\\7e2ca2635af1031871ab121938818a4d.png', 1564588800, 1568908800, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566108542, 1568814075);
+(87, 2, 0, 'banner6 ', 'https://www.baidu.com', '/storage/uploads/20190818\\7e2ca2635af1031871ab121938818a4d.png', 1564588800, 1568908800, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566108542, 1571844529);
 
 -- --------------------------------------------------------
 
@@ -207,7 +206,7 @@ INSERT INTO `lm_adv_position` (`id`, `position_name`, `ad_width`, `ad_height`, `
 (518, 'Ad页面自动增加广告位 518 ', 0, 0, 'Ad页面', '', 1, 0, 1570166613),
 (533, 'Ad页面自动增加广告位 533 ', 0, 0, 'Ad页面', '', 1, 0, 1568708269),
 (534, 'Ad页面自动增加广告位 534 ', 0, 0, 'Ad页面', '', 1, 0, 1568708270),
-(539, '首页', 1080, 300, '其他1', '', 1, 1566111321, 1568708270);
+(539, '首页', 1080, 300, '其他1', '', 1, 1566111321, 1571818062);
 
 -- --------------------------------------------------------
 
@@ -246,7 +245,6 @@ INSERT INTO `lm_article` (`id`, `pid`, `title`, `description`, `content`, `autho
 (1, 1, '基于TP6 layui开发的cms 后台管理系统', '基于TP6 layui开发的cms 后台管理系统', '<p>基于TP6 layui开发的cms 后台管理系统</p>', '', '994927909@qq.com', 'tp6 layui', 1, 1, '', 0, '', 1206, 0, 0, '/storage/uploads/20190826\\b183bf1681077d0bafd37bc17caf2cdc.png', '', 1566799075, 1568798347);
 
 -- --------------------------------------------------------
--- --------------------------------------------------------
 
 --
 -- Table structure for table `lm_article_cate`
@@ -272,13 +270,9 @@ CREATE TABLE `lm_article_cate` (
 --
 
 INSERT INTO `lm_article_cate` (`id`, `title`, `title_alias`, `title_type`, `pid`, `show_in_nav`, `status`, `sort`, `cat_desc`, `keywords`, `create_time`, `update_time`) VALUES
-(1, '新手上路', '', 1, 0, 0, 1, 0, '1233', '', 0, 1568363450),
 (2, '购物指南', '', 1, 0, 0, 1, 2, '', '', 0, 0),
-(3, '售后服务', '', 1, 0, 0, 1, 2, '', '', 0, 1568279565),
-(4, '支付方式', '', 1, 0, 0, 1, 4, '', '', 0, 0),
-(5, '配送方式', '', 1, 0, 0, 1, 5, '', '', 0, 0),
 (6, '系统公告', '', 1, 0, 0, 1, 6, '', '', 0, 0),
-(7, '关于我们', '', 1, 0, 0, 1, 7, '', '', 0, 0),
+(7, '关于我们', '', 1, 0, 0, 1, 7, '', '', 0, 1571644169),
 (8, '测试分类', '测试分类', 0, 7, 0, 1, 50, '', '', 1566801126, 1568276268);
 
 -- --------------------------------------------------------
@@ -302,7 +296,7 @@ CREATE TABLE `lm_auth_group` (
 
 INSERT INTO `lm_auth_group` (`id`, `title`, `status`, `rules`, `create_time`, `update_time`) VALUES
 (1, '超级管理员', 1, '1,2,20,21,40,34,39,73,3,4,5,9,10,11,12,22,13,6,7,8,14,15,16,17,18,19,26,27,28,29,30,31,32,33,35,36,37,38,23,24,41,47,48,49,50,51,52,67,54,55,56,57,58,66,137,138,139,140,42,46,53,43,44,45,68,59,60,61,62,65,74,69,70,71,72,75,129,130,131,132,133,134,135,136,76,77,78,79,80,81,82,83,84,85,86,87,120,121,122,123,124,125,126,127,128,88,95,96,97,98,89,99,100,101,102,90,103,104,91,112,113,114,115,116,92,117,118,119,93,105,106,107,108,109,94,110,111,', 1465114224, 1570844183),
-(2, '测试1', 1, '1,2,20,21,40,34,39,3,9,22,13,6,7,16,26,30,35,38,41,47,48,51,54,57,42,46,45,59,60,74,69,75,76,77,81,82,83,87,120,121,122,123,124,125,126,127,128,88,97,89,99,100,101,102,90,103,104,91,112,113,114,115,116,92,117,118,119,93,105,106,107,108,109,94,110,111,', 1565929191, 1568971953),
+(2, '测试1', 1, '1,2,20,21,40,34,39,3,9,22,13,6,7,16,26,30,35,38,41,47,48,51,54,57,137,138,139,42,46,45,59,60,74,69,75,129,131,133,134,136,76,77,81,82,83,87,120,121,122,123,124,125,126,127,128,88,97,89,99,100,101,102,90,103,104,91,112,113,114,115,116,92,117,118,119,93,105,106,107,108,109,94,110,111,', 1565929191, 1571480312),
 (3, '测试2', 1, NULL, 1567485941, 1567843780);
 
 -- --------------------------------------------------------
@@ -332,8 +326,8 @@ CREATE TABLE `lm_auth_rule` (
 --
 
 INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`, `menu_status`, `icon`, `condition`, `pid`, `sort`, `create_time`, `update_time`) VALUES
-(1, 'System', '系统', 1, 1, 0, 1, 'fa fa-home', '', 0, 0, 1446535750, 0),
-(2, 'System', '系统设置', 1, 1, 0, 1, 'fa fa-gears', '', 1, 0, 1446535789, 0),
+(1, 'System', '系统', 1, 1, 0, 1, 'fa fa-home', '', 0, 8, 1446535750, 1571643311),
+(2, 'System', '系统设置', 1, 1, 0, 1, 'fa fa-gears', '', 1, 0, 1446535789, 1571882291),
 (3, 'Database', '数据库管理', 1, 1, 0, 1, 'fa fa-database', '', 1, 0, 1446535805, 0),
 (4, 'Database/restore', '还原数据库', 2, 1, 0, 1, 'fa fa-database', '', 3, 0, 1446535750, 0),
 (5, 'Database/backup', '数据库备份', 2, 1, 0, 0, 'fa fa-database', '', 3, 0, 1446535834, 0),
@@ -354,7 +348,7 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (20, 'System/index', '站点设置', 1, 1, 0, 1, 'fa fa-gears', '', 2, 0, 0, 1567228601),
 (21, 'Adminlog/index', '日志管理', 1, 1, 0, 1, 'fa fa-life-ring', '', 2, 0, 0, 1566007925),
 (22, 'Database/optimize', '数据库优化', 1, 1, 0, 0, '', '', 3, 0, 0, 0),
-(23, 'Addon', '插件', 1, 1, 0, 1, 'fa fa-flickr', '', 0, 0, 0, 1566053592),
+(23, 'Addon', '插件', 1, 1, 0, 1, 'fa fa-flickr', '', 0, 0, 0, 1571808723),
 (24, 'Addon/index', '插件列表', 1, 1, 0, 1, 'fa fa-globe', '', 23, 0, 0, 0),
 (26, 'Auth/group', '权限组', 1, 1, 0, 1, 'fa fa-globe', '', 6, 0, 0, 0),
 (27, 'Auth/groupDel', '用户组删除', 1, 1, 0, 0, '', '', 26, 0, 0, 0),
@@ -371,13 +365,13 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (38, 'Auth/adminState', '管理员状态', 1, 1, 0, 0, '', '', 35, 0, 0, 0),
 (39, 'Index/password', '修改密码', 1, 1, 0, 0, '', '', 2, 0, 0, 0),
 (40, 'Adminlog/delete', '删除日志', 1, 1, 0, 0, '', '', 21, 0, 0, 0),
-(41, 'Content', '内容', 1, 1, 0, 1, 'fa fa-folder-open', '', 0, 50, 1566092187, 1566092574),
+(41, 'Content', '内容', 1, 1, 0, 1, 'fa fa-folder-open', '', 0, 50, 1566092187, 1571806010),
 (42, 'Link', '链接管理', 1, 1, 0, 1, 'fa fa-link', '', 41, 50, 1566092432, 1566092684),
 (43, 'Link/add', '链接添加', 1, 1, 0, 0, '', '', 46, 50, 1566092486, 1566092801),
 (44, 'Link/delete', '链接删除', 1, 1, 0, 0, '', '', 46, 50, 1566092613, 1566092798),
 (45, 'Link/state', '链接状态', 1, 1, 0, 0, '', '', 46, 50, 1566092677, 1566092795),
 (46, 'Link/index', '链接列表', 1, 1, 0, 1, 'fa fa-link', '', 42, 50, 1566092770, 1566092770),
-(47, 'Adv', '广告管理', 1, 1, 0, 1, 'fa fa-audio-description', '', 41, 0, 0, 0),
+(47, 'Adv', '广告管理', 1, 1, 0, 1, 'fa fa-audio-description', '', 41, 50, 0, 1571493193),
 (48, 'Adv/index', '广告列表', 1, 1, 0, 1, 'fa fa-audio-description', '', 47, 0, 0, 0),
 (49, 'Adv/add', '广告添加', 1, 1, 0, 0, '', '', 48, 0, 0, 0),
 (50, 'Adv/delete', '广告删除', 1, 1, 0, 0, '', '', 48, 0, 0, 0),
@@ -449,20 +443,74 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (118, 'Wechat/replyEdit', '回复编辑', 1, 1, 0, 0, NULL, '', 92, 0, 0, NULL),
 (119, 'Wechat/replayDel', '回复删除', 1, 1, 0, 0, NULL, '', 92, 0, 0, NULL),
 (120, 'Wechat/imageUpload', '图片上传', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
-(121, 'Wechat/videoUpload', '视频上传', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
+(121, 'Wechat/videoUpload', '视频上传', 1, 1, 0, 0, '', '', 87, 0, 0, 1571805944),
 (122, 'Wechat/voiceUpload', '语音上传', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
 (123, 'Wechat/thumbUpload', '缩略图上传', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
 (124, 'Wechat/UeditUploadImage', '百度编辑器上传图片', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
 (125, 'Wechat/UeditUploadVideo', '百度编辑器上传视频', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
 (126, 'Wechat/UeditUploaVoice', '百度编辑器上传音频', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
 (127, 'Wechat/getListImage', '获取图片列表', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
-(128, 'Wechat/getWxAccount', '微信账号', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL);
+(128, 'Wechat/getWxAccount', '微信账号', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
+(129, 'Module/index', '模型管理', 1, 1, 0, 1, 'fa fa-cube', '', 41, 2, 1570584769, 1571493213),
+(130, 'Module/edit', '模型编辑', 1, 1, 0, 0, NULL, '', 129, 0, 0, NULL),
+(131, 'Module/add', '模型添加', 1, 1, 0, 0, NULL, '', 129, 0, 0, NULL),
+(132, 'Module/delete', '模型删除', 1, 1, 0, 0, NULL, '', 129, 0, 0, NULL),
+(133, 'Module/fieldAdd', '模型字段添加', 1, 1, 0, 0, NULL, '', 129, 0, 0, NULL),
+(134, 'Module/fieldedit', '模型字段编辑', 1, 1, 0, 0, NULL, '', 129, 0, 0, NULL),
+(135, 'Module/fielddel', '模型字段删除', 1, 1, 0, 0, NULL, '', 129, 0, 0, NULL),
+(136, 'Module/field', '模型字段列表', 1, 1, 0, 0, NULL, '', 129, 0, 0, NULL),
+(137, 'Column/index', '栏目管理', 1, 1, 0, 1, 'fa fa-align-justify', '', 41, 1, 0, 1571486160),
+(138, 'Column/edit', '栏目编辑', 1, 1, 0, 0, NULL, '', 137, 0, 0, NULL),
+(139, 'Column/add', '栏目添加', 1, 1, 0, 0, NULL, '', 137, 0, 0, NULL),
+(140, 'Column/delete', '栏目删除', 1, 1, 0, 0, NULL, '', 137, 0, 0, NULL),
+(141, 'Module/state', '模型状态', 1, 1, 0, 0, '', '', 129, 50, 1571480361, 1571480361),
+(142, 'Column/state', '栏目状态', 1, 1, 0, 0, NULL, '', 137, 0, 0, NULL),
+(143, 'Wechat/qrcode', '二维码管理', 1, 1, 0, 1, 'fa fa-qrcode', '', 87, 0, 0, 1571879918),
+(144, 'Wechat/qrcodeAdd', '添加二维码', 1, 1, 0, 0, NULL, '', 143, 0, 0, NULL),
+(145, 'Wechat/qrcodeDel', '二维码删除', 1, 1, 0, 0, NULL, '', 143, 0, 0, NULL),
+(146, 'Wechat/qrcodeState', '二维码状态', 1, 1, 0, 0, NULL, '', 143, 0, 0, NULL),
+(147, 'Module/fieldState', '模型字段状态', 1, 1, 0, 0, NULL, '', 129, 0, 0, NULL);
+
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `lm_column`
 --
 
+CREATE TABLE `lm_column` (
+  `id` smallint(5) UNSIGNED NOT NULL,
+  `clname` varchar(255) NOT NULL DEFAULT '' COMMENT '栏目名字',
+  `cldir` varchar(30) NOT NULL DEFAULT '' COMMENT '栏目唯一标识',
+  `pid` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `arrpid` varchar(100) NOT NULL,
+  `arrchildid` varchar(100) NOT NULL DEFAULT ' ',
+  `moduleid` tinyint(2) UNSIGNED NOT NULL DEFAULT '0' COMMENT '模型id',
+  `module` char(24) NOT NULL DEFAULT '' COMMENT '模型名字',
+  `type` tinyint(1) UNSIGNED NOT NULL DEFAULT '0' COMMENT '1 单页，0 普通',
+  `title` varchar(150) NOT NULL DEFAULT '' COMMENT '标题',
+  `keywords` varchar(200) NOT NULL DEFAULT '' COMMENT '关键字',
+  `description` varchar(255) NOT NULL DEFAULT '' COMMENT '描述',
+  `sort` smallint(5) UNSIGNED NOT NULL DEFAULT '0' COMMENT '排序',
+  `is_menu` tinyint(1) UNSIGNED NOT NULL DEFAULT '0' COMMENT '是否菜单',
+  `status` tinyint(1) UNSIGNED NOT NULL DEFAULT '1' COMMENT '是否显示',
+  `click` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '点击量',
+  `thumb` varchar(255) NOT NULL DEFAULT '' COMMENT '图片',
+  `url` varchar(100) NOT NULL DEFAULT '' COMMENT '链接地址',
+  `template_list` varchar(50) NOT NULL DEFAULT '',
+  `template_show` varchar(50) NOT NULL,
+  `page_size` tinyint(4) NOT NULL DEFAULT '15',
+  `create_time` int(11) NOT NULL DEFAULT '0',
+  `update_time` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `lm_column`
+--
+
+INSERT INTO `lm_column` (`id`, `clname`, `cldir`, `pid`, `arrpid`, `arrchildid`, `moduleid`, `module`, `type`, `title`, `keywords`, `description`, `sort`, `is_menu`, `status`, `click`, `thumb`, `url`, `template_list`, `template_show`, `page_size`, `create_time`, `update_time`) VALUES
+(1, '首页', '', 0, '0', '1,4', 12, 'pic', 0, '首页', '首页', '首页', 50, 1, 1, 50, '/storage/uploads/20191012\\efe7bcf1a0750c3349222248b6b4859e.png', '', '', '', 15, 0, 1571465359),
+(2, '论坛', '', 0, '0', '2', 14, 'articles', 0, '论坛', '论坛', '论坛', 50, 1, 1, 100, '', '', '', '', 15, 0, 1571465121),
+(4, 'demo', 'demo', 1, '0,1', '4', 27, 'page', 0, 'demo', 'demo', 'demo', 50, 1, 1, 100, '', '', '', '', 15, 1571458157, 1571708896);
 
 -- --------------------------------------------------------
 
@@ -540,6 +588,106 @@ INSERT INTO `lm_config` (`id`, `code`, `value`, `remark`, `type`, `status`, `cre
 
 -- --------------------------------------------------------
 
+--
+-- Table structure for table `lm_field`
+--
+
+CREATE TABLE `lm_field` (
+  `id` smallint(5) UNSIGNED NOT NULL,
+  `moduleid` float UNSIGNED NOT NULL DEFAULT '0' COMMENT '模型id',
+  `field` varchar(20) NOT NULL DEFAULT '' COMMENT '字段',
+  `name` varchar(30) NOT NULL DEFAULT '' COMMENT '名字',
+  `required` tinyint(1) UNSIGNED NOT NULL DEFAULT '0' COMMENT '是否必须',
+  `minlength` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '最少长度',
+  `maxlength` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '最大长度',
+  `rule` varchar(255) NOT NULL DEFAULT '' COMMENT '规则',
+  `msg` varchar(255) NOT NULL DEFAULT '' COMMENT '错误提示',
+  `type` varchar(20) NOT NULL DEFAULT '' COMMENT '字段类型',
+  `is_search` tinyint(1) DEFAULT '0' COMMENT '是否可以搜索 0  不可以，1 搜索',
+  `value` varchar(50) DEFAULT NULL,
+  `field_define` varchar(100) DEFAULT NULL,
+  `option` text COMMENT '默认值',
+  `sort` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `status` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `create_time` int(11) NOT NULL DEFAULT '0',
+  `update_time` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `lm_field`
+--
+
+INSERT INTO `lm_field` (`id`, `moduleid`, `field`, `name`, `required`, `minlength`, `maxlength`, `rule`, `msg`, `type`, `is_search`, `value`, `field_define`, `option`, `sort`, `status`, `create_time`, `update_time`) VALUES
+(31, 32, 'column_id', '栏目', 1, 0, 6, '', '必须选择一个栏目', 'column_id', 0, '', NULL, '', 1, 1, 1571732224, 0),
+(32, 32, 'title', '标题', 1, 0, 80, '', '标题必须为1-80个字符', 'text', 0, '', NULL, '', 2, 1, 1571732224, 0),
+(33, 32, 'keywords', '关键词', 1, 0, 200, '', '关键词必须在0-200个内', 'text', 0, '', NULL, '', 3, 1, 1571732224, 0),
+(34, 32, 'description', 'SEO简介', 1, 0, 0, '', '', 'textarea', 0, '', NULL, '', 4, 1, 1571732224, 0),
+(35, 32, 'content', '内容', 0, 0, 255, '', '', 'editor', 0, 'ueditor', NULL, '0|ueditor', 5, 1, 1571732224, 0),
+(36, 32, 'create_time', '创建时间', 1, 0, 11, '', '', 'datetime', 0, '', NULL, '', 6, 1, 1571732224, 0),
+(37, 32, 'update_time', '更新时间', 1, 0, 11, '', '', 'datetime', 0, '', NULL, '', 6, 1, 1571732224, 0),
+(38, 32, 'status', '状态', 1, 0, 1, '', '', 'radio', 0, '1', NULL, '0|未发布,1|发布', 7, 1, 1571732224, 0),
+(39, 32, 'recommend', '允许评论', 0, 0, 1, '', '', 'radio', 0, '1', NULL, '0|禁止评论,1|允许评论', 8, 1, 1571732224, 0),
+(40, 32, 'readpoint', '阅读收费', 0, 0, 5, '', '', 'number', 0, '0', NULL, '', 9, 1, 1571732224, 0),
+(41, 32, 'is_read', '是否可阅读', 0, 0, 1, '', '', 'radio', 0, '1', NULL, '0|禁止,1|允许', 9, 1, 1571732224, 0),
+(42, 32, 'hits', '点击次数', 0, 0, 8, '', '', 'number', 0, '1', NULL, '', 10, 1, 1571732224, 0),
+(43, 32, 'visite', '访问权限', 0, 0, 1, '', '', 'radio', 0, '1', NULL, '0|开启,1|关闭', 11, 1, 1571732224, 0),
+(44, 32, 'posid', '推荐位', 0, 0, 1, '', '', 'posid', 0, '', NULL, '', 12, 12, 1571732224, 0),
+(45, 32, 'tags', '标签', 0, 0, 255, '', '', 'text', 0, '', NULL, '', 14, 1, 1571732224, 0),
+(46, 2, 'column_id', '栏目', 1, 1, 6, '', '必须选择一个栏目', 'column_id', 0, '', NULL, '', 1, 1, 1571884340, 0),
+(47, 2, 'title', '标题', 1, 1, 80, '', '标题必须为1-80个字符', 'text', 0, '', NULL, '', 2, 1, 1571884340, 0),
+(48, 2, 'keywords', '关键词', 1, 0, 200, '', '关键词必须在0-200个内', 'text', 0, '', NULL, '', 3, 1, 1571884340, 0),
+(49, 2, 'description', 'SEO简介', 1, 0, 0, '', '', 'textarea', 0, '', NULL, '', 4, 1, 1571884340, 0),
+(50, 2, 'content', '内容', 0, 0, 0, '', '', 'editor', 0, 'ueditor', NULL, '0|ueditor', 5, 1, 1571884340, 0),
+(51, 2, 'create_time', '创建时间', 1, 0, 0, '', '', 'datetime', 0, '', NULL, '', 61, 1, 1571884340, 1571884945),
+(52, 2, 'update_time', '更新时间', 1, 0, 0, '', '', 'datetime', 0, '', NULL, '', 6, 1, 1571884340, 0),
+(53, 2, 'status', '状态', 1, 0, 0, '', '', 'radio', 0, '1', NULL, '0|未发布,1|发布', 7, 1, 1571884340, 0),
+(54, 2, 'recommend', '允许评论', 0, 0, 1, '', '', 'radio', 0, '1', NULL, '0|禁止评论,1|允许评论', 8, 1, 1571884340, 0),
+(55, 2, 'readpoint', '阅读收费', 0, 0, 5, '', '', 'number', 0, '0', NULL, '', 9, 1, 1571884340, 0),
+(56, 2, 'is_read', '是否可阅读', 0, 0, 5, '', '', 'radio', 0, '1', NULL, '0|禁止,1|允许', 9, 1, 1571884340, 0),
+(57, 2, 'hits', '点击次数', 0, 0, 8, '', '', 'number', 0, '1', NULL, '', 10, 1, 1571884340, 0),
+(58, 2, 'visite', '访问权限', 0, 0, 0, '', '', 'radio', 0, '1', NULL, '0|开启,1|关闭', 11, 1, 1571884340, 0),
+(59, 2, 'posid', '推荐位', 0, 0, 0, '', '', 'posid', 0, '', NULL, '', 12, 12, 1571884340, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lm_field_type`
+--
+
+CREATE TABLE `lm_field_type` (
+  `id` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL COMMENT '字段类型',
+  `title` varchar(64) NOT NULL DEFAULT '' COMMENT '中文类型名',
+  `sort` int(4) NOT NULL DEFAULT '0' COMMENT '排序',
+  `default_define` varchar(128) NOT NULL DEFAULT '' COMMENT '默认定义',
+  `isoption` tinyint(1) UNSIGNED NOT NULL DEFAULT '0' COMMENT '是否需要设置选项',
+  `istring` tinyint(1) UNSIGNED NOT NULL DEFAULT '0' COMMENT '是否自由字符',
+  `rules` varchar(256) NOT NULL DEFAULT '' COMMENT '验证规则'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='字段类型表';
+
+--
+-- Dumping data for table `lm_field_type`
+--
+
+INSERT INTO `lm_field_type` (`id`, `name`, `title`, `sort`, `default_define`, `isoption`, `istring`, `rules`) VALUES
+(1, 'text', '输入框', 1, 'varchar(255) NOT NULL DEFAULT \'\'', 0, 1, ''),
+(2, 'checkbox', '复选框', 2, 'varchar(50) NOT NULL DEFAULT \'\'', 1, 0, ''),
+(3, 'textarea', '多行文本', 3, 'varchar(255) NOT NULL DEFAULT \'\'', 0, 1, ''),
+(4, 'radio', '单选按钮', 4, 'char(10) NOT NULL DEFAULT \'\'', 1, 0, ''),
+(5, 'switch', '开关', 5, 'tinyint(2) UNSIGNED NOT NULL DEFAULT \'0\'', 0, 0, 'isBool'),
+(6, 'array', '数组', 6, 'varchar(512) NOT NULL DEFAULT \'\'', 0, 0, ''),
+(7, 'select', '下拉框', 7, 'char(10) NOT NULL DEFAULT \'\'', 1, 0, ''),
+(8, 'image', '单张图', 8, 'int(5) UNSIGNED NOT NULL DEFAULT \'0\'', 0, 0, 'isNumber'),
+(9, 'tags', '标签', 10, 'varchar(255) NOT NULL DEFAULT \'\'', 0, 1, ''),
+(10, 'number', '数字', 11, 'int(10) UNSIGNED NOT NULL DEFAULT \'0\'', 0, 0, 'isNumber'),
+(11, 'datetime', '日期和时间', 12, 'int(10) UNSIGNED NOT NULL DEFAULT \'0\'', 0, 0, ''),
+(12, 'ueditor', '百度编辑器', 13, 'text NOT NULL', 0, 1, ''),
+(13, 'images', '多张图', 9, 'varchar(256) NOT NULL DEFAULT \'\'', 0, 0, ''),
+(14, 'color', '颜色值', 17, 'varchar(7) NOT NULL DEFAULT \'\'', 0, 0, ''),
+(15, 'file', '单文件', 15, 'int(5) UNSIGNED NOT NULL DEFAULT \'0\'', 0, 0, 'isNumber'),
+(16, 'files', '多文件', 16, 'varchar(255) NOT NULL DEFAULT \'\'', 0, 0, '');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `lm_link`
@@ -569,6 +717,33 @@ INSERT INTO `lm_link` (`id`, `name`, `url`, `type_id`, `email`, `qq`, `sort`, `s
 
 -- --------------------------------------------------------
 
+--
+-- Table structure for table `lm_module`
+--
+
+CREATE TABLE `lm_module` (
+  `id` tinyint(3) UNSIGNED NOT NULL,
+  `title` varchar(100) NOT NULL DEFAULT '' COMMENT '模型名称',
+  `name` varchar(50) NOT NULL DEFAULT '' COMMENT '表名',
+  `description` varchar(200) NOT NULL DEFAULT '' COMMENT '描述',
+  `type` tinyint(1) UNSIGNED NOT NULL DEFAULT '0' COMMENT '0 空白，1 文章',
+  `ispage` tinyint(1) DEFAULT '0' COMMENT '是否单页',
+  `listfields` varchar(255) NOT NULL DEFAULT '' COMMENT '列表页查询字段',
+  `template` varchar(255) NOT NULL DEFAULT ' ',
+  `sort` smallint(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT '排序',
+  `status` tinyint(1) UNSIGNED NOT NULL DEFAULT '1' COMMENT '状态',
+  `create_time` int(11) DEFAULT '0',
+  `update_time` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='模型表';
+
+--
+-- Dumping data for table `lm_module`
+--
+
+INSERT INTO `lm_module` (`id`, `title`, `name`, `description`, `type`, `ispage`, `listfields`, `template`, `sort`, `status`, `create_time`, `update_time`) VALUES
+(2, 'pic', 'pic', '', 0, 0, '*', 'a:2:{i:0;s:9:\"list.html\";i:1;s:9:\"show.html\";}', 50, 1, 1571884340, 1571884340);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `lm_oauth2_client`
@@ -601,6 +776,39 @@ INSERT INTO `lm_oauth2_client` (`id`, `store_id`, `title`, `appid`, `appsecret`,
 -- Table structure for table `lm_pic`
 --
 
+CREATE TABLE `lm_pic` (
+  `id` int(11) UNSIGNED NOT NULL COMMENT 'ID',
+  `column_id` smallint(5) UNSIGNED NOT NULL DEFAULT '0' COMMENT '分类ID',
+  `uid` int(8) UNSIGNED NOT NULL DEFAULT '0' COMMENT '用户ID',
+  `username` varchar(40) NOT NULL DEFAULT '' COMMENT '用户名',
+  `title` varchar(120) NOT NULL DEFAULT '' COMMENT '标题',
+  `title_style` varchar(225) NOT NULL DEFAULT '' COMMENT '标题样式',
+  `thumb` varchar(225) NOT NULL DEFAULT '' COMMENT '缩略图',
+  `keywords` varchar(120) NOT NULL DEFAULT '' COMMENT '关键词',
+  `description` mediumtext NOT NULL COMMENT '描述',
+  `content` mediumtext NOT NULL COMMENT '内容',
+  `posid` tinyint(2) UNSIGNED NOT NULL DEFAULT '0' COMMENT '推荐位',
+  `status` tinyint(1) UNSIGNED NOT NULL DEFAULT '0' COMMENT '状态',
+  `recommend` tinyint(1) UNSIGNED NOT NULL DEFAULT '0' COMMENT '允许评论',
+  `visite` varchar(100) NOT NULL DEFAULT '' COMMENT '访问权限',
+  `is_read` smallint(5) NOT NULL DEFAULT '0' COMMENT '是否可阅读',
+  `readpoint` smallint(5) NOT NULL DEFAULT '0' COMMENT '阅读收费',
+  `sort` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '排序',
+  `hits` int(11) UNSIGNED NOT NULL DEFAULT '0' COMMENT '点击',
+  `create_time` int(11) UNSIGNED NOT NULL DEFAULT '0' COMMENT '创建时间',
+  `update_time` int(11) UNSIGNED NOT NULL DEFAULT '0' COMMENT '更新时间'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='lm_pic模型表';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lm_position`
+--
+
+CREATE TABLE `lm_position` (
+  `id` int(11) NOT NULL,
+  `name` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -700,9 +908,9 @@ INSERT INTO `lm_user` (`id`, `store_id`, `email`, `username`, `password`, `paypw
 (37, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524841193, 1568070971, 1524841203, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM7Pct41m8E7oTHtGt6XncCmDgttK7s6Ftws0JibWNhQaC1vVpLrdbbqUKkwIAOxZIKtF30O235LKkw/132', 0, 0, 0, 0, '猪鼓励', 1, '1.00', '0.00', 1, 1, 0, 0, 0, 'd1c78c6eed15cc6f90cd00b4160c1a95', 63, '', 0, 0, NULL, NULL),
 (38, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524842949, 1568711142, 1524842982, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaEIXMLyayEJ2ehsKcQQ1qYmZxJUQs0bAbLk1KOd9QKnVU1dWrX6ZD2F6wDBWtn3xDLl0TlaDCeibSmw/132', 0, 0, 0, 0, '小胡科技&趣闪租', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '774231d44f815bf2380f196d63d18c15', 63, '', 0, 0, NULL, NULL),
 (39, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524877064, 1568272568, 1524877079, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaEJeHCYeLS7zGtp9yP3G7R6v2BH3sLCQvUgfNnlk7oqm1rHq11btzP96dnBF510PVbTpZDzF3yMfLQ/132', 0, 0, 0, 0, '[爱心]等待…', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '3d2660223342811f4f09170aed8d696b', 63, '', 0, 0, NULL, NULL),
-(40, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524877295, 1568070969, 1524877295, 0, '', '', '', 0, 'weixin', 'o9cTBwUDY08LVZUAXIvagXZrrp10', NULL, 'http://thirdwx.qlogo.cn/mmopen/vi_32/cTRpAMg0XXiaeh8tSPPjib3dwobK7N79OzKL1ic42S9KbEKHuvTgWfRjPYphc7kXDsazdJAhlbDCseOPuenjC9KIg/132', 0, 0, 0, 0, '王', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '54a80199155e63b5cc4a3dbc2a27dc84', 63, '', 0, 0, NULL, NULL),
-(41, 1, '994927909@qq.com', '心之所向', '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524877656, 1568070969, 1524877664, 0, '', '', '18397423845', 0, '', NULL, NULL, '/storage/uploads/20190904\\454cd1e3d232615e1cab49a54abe1274.png', 0, 0, 0, 0, 'AM༊྄ཻ ㎕࿐', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '9ca781b13e3dd896fd809ba46ddd9734', 63, '', 0, 0, NULL, NULL),
-(43, 1, '9949279099@qq.com', 'ny8zxovm', '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1567563788, 1568835156, 0, 0, '', '', '18397423846', 0, '', NULL, NULL, '/storage/uploads/20190904\\1b44b01f2becc018458ca9a995871fb8.jpg', 0, 0, 0, 0, NULL, 1, '1.00', '0.00', 1, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL);
+(40, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524877295, 1571732549, 1524877295, 0, '', '', '', 0, 'weixin', 'o9cTBwUDY08LVZUAXIvagXZrrp10', NULL, 'http://thirdwx.qlogo.cn/mmopen/vi_32/cTRpAMg0XXiaeh8tSPPjib3dwobK7N79OzKL1ic42S9KbEKHuvTgWfRjPYphc7kXDsazdJAhlbDCseOPuenjC9KIg/132', 0, 0, 0, 0, '王', 1, '1.00', '0.00', 0, 1, 0, 0, 0, '54a80199155e63b5cc4a3dbc2a27dc84', 63, '', 0, 0, NULL, NULL),
+(41, 1, '994927909@qq.com', '心之所向', '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524877656, 1571744187, 1524877664, 0, '', '', '18397423845', 0, '', NULL, NULL, '/storage/uploads/20190904\\454cd1e3d232615e1cab49a54abe1274.png', 0, 0, 0, 0, 'AM༊྄ཻ ㎕࿐', 1, '1.00', '0.00', 0, 1, 0, 0, 0, '9ca781b13e3dd896fd809ba46ddd9734', 63, '', 0, 0, NULL, NULL),
+(43, 1, '9949279099@qq.com', 'ny8zxovm', '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1567563788, 1571732548, 0, 0, '', '', '18397423846', 0, '', NULL, NULL, '/storage/uploads/20190904\\1b44b01f2becc018458ca9a995871fb8.jpg', 0, 0, 0, 0, NULL, 1, '1.00', '0.00', 0, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -727,14 +935,14 @@ CREATE TABLE `lm_user_level` (
 --
 
 INSERT INTO `lm_user_level` (`id`, `level_name`, `amount`, `discount`, `status`, `sort`, `description`, `create_time`, `update_time`) VALUES
-(1, '倔强青铜', '0.00', 100, 0, NULL, '人生若只如初相见', NULL, 1568795954),
+(1, '倔强青铜', '0.00', 100, 1, NULL, '人生若只如初相见', NULL, 1571708984),
 (2, '秩序白银', '1000.00', 99, 1, NULL, '', NULL, 1568622837),
 (3, '荣耀黄金', '3000.00', 94, 1, NULL, '', NULL, NULL),
 (4, '尊贵铂金', '10000.00', 95, 1, NULL, '', NULL, NULL),
 (5, '永恒钻石', '50000.00', 93, 1, NULL, '', NULL, 1568621710),
-(6, '至尊星耀', '100000.00', 91, 0, NULL, '', NULL, 1568795951),
+(6, '至尊星耀', '100000.00', 91, 1, NULL, '', NULL, 1571708983),
 (7, '最强王者', '3000000.00', 90, 1, NULL, '', NULL, 1568278658),
-(8, '任性', '99999999.99', 70, 0, 0, '', 1568098240, 1568795943);
+(8, '任性', '99999999.99', 70, 1, 0, '', 1568098240, 1571708985);
 
 -- --------------------------------------------------------
 
@@ -807,8 +1015,8 @@ CREATE TABLE `lm_wx_account` (
 --
 
 INSERT INTO `lm_wx_account` (`id`, `store_id`, `wxname`, `aeskey`, `encode`, `app_id`, `app_secret`, `origin_id`, `weixin`, `logo`, `token`, `w_token`, `related`, `create_time`, `update_time`, `tplcontentid`, `share_ticket`, `share_dated`, `authorizer_access_token`, `authorizer_refresh_token`, `authorizer_expires`, `type`, `web_access_token`, `web_refresh_token`, `web_expires`, `qr`, `menu_config`, `status`) VALUES
-(31, 1, 'lemocms', 'adsfda', 0, 'wxecd04cbbfc06a972', 'ec83a45f2a561a90cf5f63e7476bae36', 'gh_e29462503ebe', 'lemomcms', '/storage/uploads/20190905/dfdcecfa905e2858ae45b87542c0c5ab.png', 'b96561beca83877b0df8eda9f0cea2b4', 'b96561beca83877b0df8eda9f0cea2b4', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1490691329, 1568971969, '', '', '', '', '', '', 4, '9_ztdL3qhqHHAgFTIANDMStPvneUubYL0sANeFHEYDXu_qzElDwaQeSNwwhi1EfpDXzFwOeP05e0wMRpsJvQVVjnmhiWtZIqOwj4RwIdhXQnB1WPP0yw4pv8x2c_NA2ykcPKD-V6aTa3mFDKO9YJSaAAALWF', '', 1524884051, '/storage/uploads/20190905/2790a6a9cbb9ca1bcdfaca9b25d0316a.jpg', NULL, 1),
-(32, 1, 'asdfsdf', 'asf', 0, 'asdf', 'adsf', 'asdfasdg', '', '', '', 'asdf', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1567648856, 1568971965, '', '', '', '', '', '', 4, '', '', 0, '', NULL, 0);
+(31, 1, 'lemocms', 'adsfda', 0, 'wxecd04cbbfc06a972', 'ec83a45f2a561a90cf5f63e7476bae36', 'gh_e29462503ebe', 'lemomcms', '/storage/uploads/20190905/dfdcecfa905e2858ae45b87542c0c5ab.png', 'b96561beca83877b0df8eda9f0cea2b4', 'b96561beca83877b0df8eda9f0cea2b4', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1490691329, 1571650342, '', '', '', '', '', '', 4, '9_ztdL3qhqHHAgFTIANDMStPvneUubYL0sANeFHEYDXu_qzElDwaQeSNwwhi1EfpDXzFwOeP05e0wMRpsJvQVVjnmhiWtZIqOwj4RwIdhXQnB1WPP0yw4pv8x2c_NA2ykcPKD-V6aTa3mFDKO9YJSaAAALWF', '', 1524884051, '/storage/uploads/20190905/2790a6a9cbb9ca1bcdfaca9b25d0316a.jpg', NULL, 1),
+(32, 1, 'asdfsdf', 'asf', 0, 'asdf', 'adsf', 'asdfasdg', '', '', '', 'asdf', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1567648856, 1571650342, '', '', '', '', '', '', 4, '', '', 0, '', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -853,7 +1061,18 @@ CREATE TABLE `lm_wx_fans` (
 --
 
 INSERT INTO `lm_wx_fans` (`fans_id`, `wx_aid`, `uid`, `source_uid`, `store_id`, `nickname`, `nickname_encode`, `headimgurl`, `sex`, `language`, `country`, `province`, `city`, `district`, `openid`, `unionid`, `groupid`, `subscribe`, `subscribe_scene`, `remark`, `tag`, `tagid_list`, `subscribe_time`, `unsubscribe_time`, `qr_scene`, `qr_scene_str`, `status`, `update_time`, `create_time`) VALUES
-(1, 31, 0, 0, 1, '🐘 心之所向🐘', '\"\\ud83d\\udc18 \\u5fc3\\u4e4b\\u6240\\u5411\\ud83d\\udc18\"', 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM4VFiaYnBD77jqvXaG55kz8cYgynjUAic5oNcrjkicjIGvVVyRYfLsiceojIlI709OKWPAQr95E2y2Ick6jSHSrIJXgtcn1VnDM4qE/132', 1, 'zh_CN', '中国', '湖南', '衡阳', '', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '', 0, 1, 'ADD_SCENE_QR_CODE', '', '星标组', NULL, 1567587062, 0, '0', '', 1, 1568020511, 1567909800);
+(1, 31, 0, 0, 1, '🐘 心之所向🐘', '\"\\ud83d\\udc18 \\u5fc3\\u4e4b\\u6240\\u5411\\ud83d\\udc18\"', 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM4VFiaYnBD77jqvXaG55kz8cYgynjUAic5oNcrjkicjIGvVVyRYfLsiceojIlI709OKWPAQr95E2y2Ick6jSHSrIJXgtcn1VnDM4qE/132', 1, 'zh_CN', '中国', '湖南', '衡阳', '', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '星标组', '[2]', 1568970767, 0, '0', '', 1, 1571829472, 1567909800),
+(2, 31, 0, 0, 1, '少年智力开发报订阅', '\"\\u5c11\\u5e74\\u667a\\u529b\\u5f00\\u53d1\\u62a5\\u8ba2\\u9605\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k4w5h73kjDCf0o0IXjb7tNuJHk45lY9ZopsqS4rsQ5UxkAgvOqe49UESQyiaHp0jG7u3p1WhiaHpm7g/132', 1, 'zh_CN', '中国', '河北', '石家庄', '', 'oBSasxDCwYJ4QlFRgSbi-SZktfZs', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '其他', '[2]', 1570784081, 0, '0', '', 1, 1571829472, 1571531137),
+(3, 31, 0, 0, 1, 'Paopao', '\"Paopao\"', 'http://thirdwx.qlogo.cn/mmopen/ajNVdqHZLLCEmdSXx8Koibl0D2p6OVM0aCTsefUrCziaRoRUAnOLDFxa96zBN1qjX8BCJ8FQxF7hoicWgQ2Btzfsw/132', 1, 'zh_CN', '中国', '广东', '江门', '', 'oBSasxBP6FhKCkSW9WYv4ckgBZDI', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1570811312, 0, '0', '', 1, 1571829472, 1571531137),
+(4, 31, 0, 0, 1, '牛一', '\"\\u725b\\u4e00\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPK6ibDCEesF2S0aWTzicDlyBsgMXhAIlh2droDM6ic8siccU4VeT0vlAf6Zia6n42kNMGE4CuvYpN5pyjQ/132', 1, 'zh_CN', '中国', '湖北', '襄阳', '', 'oBSasxMmOsGQd0M5E8DqYCvg_7rQ', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1570973591, 0, '0', '', 1, 1571829472, 1571531137),
+(5, 31, 0, 0, 1, '、ζ低调ゐ走这条 街る', '\"\\u3001\\u03b6\\u4f4e\\u8c03\\u3090\\u8d70\\u8fd9\\u6761 \\u8857\\u308b\"', 'http://thirdwx.qlogo.cn/mmopen/BA8GZZ2EGwWjjLn9bP76eEhmg9zfsYuVlbdJT9y3Z5KJFrINxlCHvFX2sTxiaskvJAcAORVibwQQVpJictIv7icH9Q/132', 1, 'zh_CN', '中国', '河南', '郑州', '', 'oBSasxK1y2TGZk_xKIf-ZxWYM5rM', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1568970306, 0, '0', '', 1, 1571829472, 1571531137),
+(6, 31, 0, 0, 1, '周凯', '\"\\u5468\\u51ef\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPKU8tXPlI2HO2oCEPEq5rRBZDwQ9PgESvrBvI2tkIpJG2NGNhA0unHbsxP3ImJjnSRVzMu4MscIbAmR8W7beDjB/132', 1, 'zh_CN', '中国', '四川', '成都', '', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569384811, 0, '0', '', 1, 1571829472, 1571531137),
+(7, 31, 0, 0, 1, '速学通科技', '\"\\u901f\\u5b66\\u901a\\u79d1\\u6280\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6e5erQKVrgMJ6o5ibjmtRTbKlshrzyZ1XjYB970MxjaVlic4T0tXR8hqJ2hGPuVqjicS7lVMXoWgRf8akibu8mAKVK/132', 1, 'zh_CN', '中国', '湖北', '武汉', '', 'oBSasxDaZ8eadp7mTiD_f-esL_ss', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1571115872, 0, '0', '', 1, 1571829472, 1571531137),
+(8, 31, 0, 0, 1, 'Bill', '\"Bill\"', 'http://thirdwx.qlogo.cn/mmopen/BA8GZZ2EGwXAkCnGwmSqWXvtKBx3taFq32ibUlKS1VNib7ITNtWhiaF52poRpDVW2rS5yUbKibmsOCl0nsSvorciamobS3ibtI9nZg/132', 1, 'zh_CN', '中国', '广东', '中山', '', 'oBSasxOBWqWjGWB22bdzjUMnGbAU', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1570544562, 0, '0', '', 1, 1571829472, 1571531137),
+(9, 31, 0, 0, 1, '何若焱', '\"\\u4f55\\u82e5\\u7131\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPIhorsAYYgpicQYAnYDBNicEic5iayaxnIZq4RbybVNeiad7beZXKVpDDicK5Esq43tgPBWDoJuFC1lhVluBFk8AWJf2Z/132', 0, 'zh_CN', '', '', '', '', 'oBSasxBU2xk2JPnP1x_5mtbDlQ1M', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569163118, 0, '0', '', 1, 1571829472, 1571531137),
+(10, 31, 0, 0, 1, 'flystone', '\"flystone\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6e5erQKVrgMOEP1x3FKM94q0k7HAALibB0WwOLhLRPVRJJDRcLo5RXua1fytBsRwhM3cYcCbNsnOH7ibcSrvuo5ic/132', 1, 'zh_CN', '中国', '广东', '广州', '', 'oBSasxPs-IA9dp03EcmHmPmQ88Mw', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569231878, 0, '0', '', 1, 1571829472, 1571531137),
+(11, 31, 0, 0, 1, 'UI中国', '\"UI\\u4e2d\\u56fd\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6RxhlicynFsqzHSC3CVaAdkzDJibg8MQQRcia4vwZt2ap2uXKCrE6pQEjR3hERXROHjPUBgdHyYRZ3aOnAWsIWR1s/132', 0, 'zh_CN', '', '', '', '', 'oBSasxGjfo7053Gelemw58C4oAwc', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '粉丝', '[2]', 1569297240, 0, '0', '', 1, 1571829472, 1571531137),
+(12, 31, 0, 0, 1, '学无止境', '\"\\u5b66\\u65e0\\u6b62\\u5883\"', 'http://thirdwx.qlogo.cn/mmopen/ajNVdqHZLLAksKZWwDKrFzfTM4ZvLRYqZtUnib4FQ26TofEYNF8ibopZibiaVfuqkkgLrfnYvw4oiakiauVb6MsrR4Gw/132', 1, 'zh_CN', '中国', '山东', '济南', '', 'oBSasxH1zjO-jahSXEg2k8Ny1m_Y', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '其他', '[2]', 1571794623, 0, '0', '', 1, 1571829472, 1571794794);
 
 -- --------------------------------------------------------
 
@@ -1293,7 +1512,40 @@ INSERT INTO `lm_wx_msg_history` (`id`, `store_id`, `wx_aid`, `media_id`, `keywor
 (319, 1, 31, 0, 3, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1568970723\",\"MsgType\":\"text\",\"Content\":\"\\u67e5\\u8be2\",\"MsgId\":\"22462261971127568\"}', '查询', 'text', '', 1, 1568970723, 1568970724),
 (321, 1, 31, 0, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1568971170\",\"MsgType\":\"image\",\"PicUrl\":\"http:\\/\\/mmbiz.qpic.cn\\/mmbiz_jpg\\/hrm4Dn6o0vSr3ib6MtFKQnf3SR9odvGLyzeicEEBxID9oybGbbLibmevNAVgVbKflvUTFFIaCjKlfo1mB8icdHA8tQ\\/0\",\"MsgId\":\"22462265413584093\",\"MediaId\":\"3qWYi2UckJWNDAxjrJ_S1GSbu2cJn6Ar7zU9aEAp6GqSFzZs9OXHwymrjrVvr9Ow\"}', 'http://mmbiz.qpic.cn/mmbiz_jpg/hrm4Dn6o0vSr3ib6MtFKQnf3SR9odvGLyzeicEEBxID9oybGbbLibmevNAVgVbKflvUTFFIaCjKlfo1mB8icdHA8tQ/0', 'image', '', 1, 1568971170, 1568971172),
 (322, 1, 31, 0, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1568971194\",\"MsgType\":\"video\",\"MediaId\":\"uv7RanbSRba84YWFBVBRBUXIcn66PUqilzIYt8HKCtc7wD5YtHQxzatrPzS2Wai-\",\"ThumbMediaId\":\"d7QfTY1_GQb3SC0qSqwvYy2dzTaJa4MR2o_P0yBg7RbXZEAUmAw8kBe2dmt8-5Dj\",\"MsgId\":\"22462265765538182\"}', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1568971194\",\"MsgType\":\"video\",\"MediaId\":\"uv7RanbSRba84YWFBVBRBUXIcn66PUqilzIYt8HKCtc7wD5YtHQxzatrPzS2Wai-\",\"ThumbMediaId\":\"d7QfTY1_GQb3SC0qSqwvYy2dzTaJa4MR2o_P0yBg7RbXZEAUmAw8kBe2dmt8-5Dj\",\"MsgId\":\"22462265765538182\"}', 'video', '', 1, 1568971194, 1568971195),
-(323, 1, 31, 0, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1568971247\",\"MsgType\":\"image\",\"PicUrl\":\"http:\\/\\/mmbiz.qpic.cn\\/mmbiz_jpg\\/hrm4Dn6o0vSr3ib6MtFKQnf3SR9odvGLyzeicEEBxID9oybGbbLibmevNAVgVbKflvUTFFIaCjKlfo1mB8icdHA8tQ\\/0\",\"MsgId\":\"22462269944573997\",\"MediaId\":\"lR1a0Sb9Mfqc28PDWsEip5l66WRm5GH_a6OAgfsrdmvXCSkXtYp-cv7smsxd9KHx\"}', 'http://mmbiz.qpic.cn/mmbiz_jpg/hrm4Dn6o0vSr3ib6MtFKQnf3SR9odvGLyzeicEEBxID9oybGbbLibmevNAVgVbKflvUTFFIaCjKlfo1mB8icdHA8tQ/0', 'image', '', 1, 1568971247, 1568971250);
+(323, 1, 31, 0, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1568971247\",\"MsgType\":\"image\",\"PicUrl\":\"http:\\/\\/mmbiz.qpic.cn\\/mmbiz_jpg\\/hrm4Dn6o0vSr3ib6MtFKQnf3SR9odvGLyzeicEEBxID9oybGbbLibmevNAVgVbKflvUTFFIaCjKlfo1mB8icdHA8tQ\\/0\",\"MsgId\":\"22462269944573997\",\"MediaId\":\"lR1a0Sb9Mfqc28PDWsEip5l66WRm5GH_a6OAgfsrdmvXCSkXtYp-cv7smsxd9KHx\"}', 'http://mmbiz.qpic.cn/mmbiz_jpg/hrm4Dn6o0vSr3ib6MtFKQnf3SR9odvGLyzeicEEBxID9oybGbbLibmevNAVgVbKflvUTFFIaCjKlfo1mB8icdHA8tQ/0', 'image', '', 1, 1568971247, 1568971250),
+(324, 1, 31, 0, 0, '学无止境', 'oBSasxH1zjO-jahSXEg2k8Ny1m_Y', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxH1zjO-jahSXEg2k8Ny1m_Y\",\"CreateTime\":\"1571794623\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1571794623, 1571794624),
+(325, 1, 31, 0, 0, '学无止境', 'oBSasxH1zjO-jahSXEg2k8Ny1m_Y', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxH1zjO-jahSXEg2k8Ny1m_Y\",\"CreateTime\":\"1571794626\",\"MsgType\":\"event\",\"Event\":\"VIEW\",\"EventKey\":\"https:\\/\\/developers.weixin.qq.com\\/miniprogram\\/dev\\/api\\/media\\/image\\/wx.previewImage.html\",\"MenuId\":\"426046372\"}', '', 'event', 'VIEW', 1, 1571794626, 1571794626),
+(326, 1, 31, 0, 0, '海阔天空', 'oBSasxFrnkl5SXxaY2Qv7J1Prn08', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxFrnkl5SXxaY2Qv7J1Prn08\",\"CreateTime\":\"1571843469\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1571843469, 1571843470),
+(327, 1, 31, 0, 0, '海阔天空', 'oBSasxFrnkl5SXxaY2Qv7J1Prn08', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxFrnkl5SXxaY2Qv7J1Prn08\",\"CreateTime\":\"1571843472\",\"MsgType\":\"event\",\"Event\":\"VIEW\",\"EventKey\":\"https:\\/\\/developers.weixin.qq.com\\/miniprogram\\/dev\\/api\\/media\\/image\\/wx.previewImage.html\",\"MenuId\":\"426046372\"}', '', 'event', 'VIEW', 1, 1571843472, 1571843472);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lm_wx_qrcode`
+--
+
+CREATE TABLE `lm_wx_qrcode` (
+  `id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `wx_aid` int(11) NOT NULL,
+  `name` varchar(50) DEFAULT '',
+  `qrcode` varchar(255) NOT NULL,
+  `scene_id` int(11) NOT NULL,
+  `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0 临时，1 永久',
+  `ticket` varchar(255) NOT NULL,
+  `expire_seconds` int(11) NOT NULL,
+  `url` varchar(255) NOT NULL DEFAULT ' ',
+  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `create_time` int(11) NOT NULL,
+  `update_time` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `lm_wx_qrcode`
+--
+
+INSERT INTO `lm_wx_qrcode` (`id`, `store_id`, `wx_aid`, `name`, `qrcode`, `scene_id`, `type`, `ticket`, `expire_seconds`, `url`, `status`, `create_time`, `update_time`) VALUES
+(2, 0, 0, '测试', 'https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQE58DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyYndnTDBqNUNlSTQxVVprb2h0Y3EAAgQ9B7FdAwQAjScA', 0, 0, 'gQE58DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyYndnTDBqNUNlSTQxVVprb2h0Y3EAAgQ9B7FdAwQAjScA', 2592000, 'http://weixin.qq.com/q/02bwgL0j5CeI41UZkohtcq', 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1352,10 +1604,11 @@ CREATE TABLE `lm_wx_tag` (
 --
 
 INSERT INTO `lm_wx_tag` (`id`, `tag_id`, `name`, `store_id`, `wx_aid`, `status`, `create_time`, `update_time`) VALUES
-(1, 2, '星标组', 1, 31, 1, 1568000723, 1568969874),
-(2, 100, '粉丝', 1, 31, 1, 1568011092, 1568969874),
-(3, 101, '其他', 1, 31, 1, 1568011258, 1568969874),
-(4, 102, '好友', 1, 31, 1, 1568011277, 1568969874);
+(1, 2, '星标组', 1, 31, 1, 1568000723, 1571736441),
+(2, 100, '粉丝', 1, 31, 1, 1568011092, 1571736441),
+(3, 101, '其他', 1, 31, 1, 1568011258, 1571736441),
+(4, 102, '好友', 1, 31, 1, 1568011277, 1571736441),
+(5, 103, '商业合作伙伴', 1, 31, 0, 1571736441, 1571797553);
 
 -- --------------------------------------------------------
 
@@ -1422,7 +1675,6 @@ ALTER TABLE `lm_article`
   ADD UNIQUE KEY `id` (`id`),
   ADD KEY `pid` (`pid`) USING BTREE;
 
-
 --
 -- Indexes for table `lm_article_cate`
 --
@@ -1446,6 +1698,13 @@ ALTER TABLE `lm_auth_rule`
   ADD UNIQUE KEY `id` (`id`),
   ADD KEY `href` (`href`);
 
+--
+-- Indexes for table `lm_column`
+--
+ALTER TABLE `lm_column`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `listorder` (`sort`),
+  ADD KEY `pid` (`pid`);
 
 --
 -- Indexes for table `lm_config`
@@ -1455,6 +1714,17 @@ ALTER TABLE `lm_config`
   ADD UNIQUE KEY `id` (`id`),
   ADD UNIQUE KEY `code` (`code`);
 
+--
+-- Indexes for table `lm_field`
+--
+ALTER TABLE `lm_field`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `lm_field_type`
+--
+ALTER TABLE `lm_field_type`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `lm_link`
@@ -1462,6 +1732,11 @@ ALTER TABLE `lm_config`
 ALTER TABLE `lm_link`
   ADD PRIMARY KEY (`id`);
 
+--
+-- Indexes for table `lm_module`
+--
+ALTER TABLE `lm_module`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `lm_oauth2_client`
@@ -1470,6 +1745,20 @@ ALTER TABLE `lm_oauth2_client`
   ADD PRIMARY KEY (`id`),
   ADD KEY `client_id` (`appid`);
 
+--
+-- Indexes for table `lm_pic`
+--
+ALTER TABLE `lm_pic`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `status` (`id`,`status`,`sort`),
+  ADD KEY `column_id` (`id`,`column_id`,`status`),
+  ADD KEY `sort` (`id`,`column_id`,`status`,`sort`);
+
+--
+-- Indexes for table `lm_position`
+--
+ALTER TABLE `lm_position`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `lm_user`
@@ -1540,6 +1829,12 @@ ALTER TABLE `lm_wx_msg_history`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `lm_wx_qrcode`
+--
+ALTER TABLE `lm_wx_qrcode`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `lm_wx_reply`
 --
 ALTER TABLE `lm_wx_reply`
@@ -1565,7 +1860,7 @@ ALTER TABLE `lm_wx_type`
 -- AUTO_INCREMENT for table `lm_admin`
 --
 ALTER TABLE `lm_admin`
-  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '管理员ID', AUTO_INCREMENT=4;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '管理员ID', AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `lm_admin_log`
@@ -1591,7 +1886,6 @@ ALTER TABLE `lm_adv_position`
 ALTER TABLE `lm_article`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
-
 --
 -- AUTO_INCREMENT for table `lm_article_cate`
 --
@@ -1608,8 +1902,13 @@ ALTER TABLE `lm_auth_group`
 -- AUTO_INCREMENT for table `lm_auth_rule`
 --
 ALTER TABLE `lm_auth_rule`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 
+--
+-- AUTO_INCREMENT for table `lm_column`
+--
+ALTER TABLE `lm_column`
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `lm_config`
@@ -1617,6 +1916,17 @@ ALTER TABLE `lm_auth_rule`
 ALTER TABLE `lm_config`
   MODIFY `id` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
+--
+-- AUTO_INCREMENT for table `lm_field`
+--
+ALTER TABLE `lm_field`
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+
+--
+-- AUTO_INCREMENT for table `lm_field_type`
+--
+ALTER TABLE `lm_field_type`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `lm_link`
@@ -1624,6 +1934,11 @@ ALTER TABLE `lm_config`
 ALTER TABLE `lm_link`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
+--
+-- AUTO_INCREMENT for table `lm_module`
+--
+ALTER TABLE `lm_module`
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `lm_oauth2_client`
@@ -1631,6 +1946,17 @@ ALTER TABLE `lm_link`
 ALTER TABLE `lm_oauth2_client`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
+--
+-- AUTO_INCREMENT for table `lm_pic`
+--
+ALTER TABLE `lm_pic`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID';
+
+--
+-- AUTO_INCREMENT for table `lm_position`
+--
+ALTER TABLE `lm_position`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `lm_user`
@@ -1660,7 +1986,7 @@ ALTER TABLE `lm_wx_account`
 -- AUTO_INCREMENT for table `lm_wx_fans`
 --
 ALTER TABLE `lm_wx_fans`
-  MODIFY `fans_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '粉丝ID', AUTO_INCREMENT=2;
+  MODIFY `fans_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '粉丝ID', AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `lm_wx_material`
@@ -1684,7 +2010,13 @@ ALTER TABLE `lm_wx_menu`
 -- AUTO_INCREMENT for table `lm_wx_msg_history`
 --
 ALTER TABLE `lm_wx_msg_history`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=324;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=328;
+
+--
+-- AUTO_INCREMENT for table `lm_wx_qrcode`
+--
+ALTER TABLE `lm_wx_qrcode`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `lm_wx_reply`
@@ -1696,7 +2028,7 @@ ALTER TABLE `lm_wx_reply`
 -- AUTO_INCREMENT for table `lm_wx_tag`
 --
 ALTER TABLE `lm_wx_tag`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `lm_wx_type`

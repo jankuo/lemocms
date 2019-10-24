@@ -21,5 +21,5 @@ return [
     'password_secrect'	=> 'lemocms',	//密码加密秘钥
 
     'token'             =>'lemocms',
-
+    
 ];

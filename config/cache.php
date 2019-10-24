@@ -8,6 +8,7 @@ use think\facade\Env;
 return [
     // 默认缓存驱动
     'default' => Env::get('cache.driver', 'file'),
+//    'default' =>'redis',
 
     // 缓存连接方式配置
     'stores'  => [
@@ -25,6 +26,14 @@ return [
             // 序列化机制 例如 ['serialize', 'unserialize']
             'serialize'  => [],
         ],
+        // redis缓存
+        'redis'   =>  [
+            // 驱动方式
+            'type'   => 'redis',
+            // 服务器地址
+            'host'       => '127.0.0.1',
+        ],
         // 更多的缓存连接
     ],
+
 ];

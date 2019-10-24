@@ -9,7 +9,7 @@
 
  + 后台访问地址 域名/index.php/admin 后台账号 admin 密码 123456
 
- + 后台示例地址 http://demo.lemocms.com/index.php/admin   账号demo 密码123456
+ + 后台示例地址 http://demo.lemocms.com/index.php/admin   账号密码加群获取
 
 
 

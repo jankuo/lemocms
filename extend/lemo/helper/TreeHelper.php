@@ -71,7 +71,6 @@ class TreeHelper
         $rulesArr = explode(',',$rules);
         foreach ($cate as $v){
             if ($v['pid'] == $pid) {
-
                 $v['spread'] = true;
                 if(self::authChecked($cate,$v['id'],$rules)){
                     $v['children'] =self::authChecked($cate,$v['id'],$rules);

@@ -47,7 +47,12 @@ class AdminLog extends AdminModel
                 }
             }
             $content = json_encode($content);
+        }elseif (!$content && Request::isGet()){
+            $content = '点击菜单';
+        }elseif (!$content && Request::isPost()){
+            $content = '清除缓存|切换语言';
         }
+
         //登录处理
         if (strpos($url, 'login/index') !== false && Request::isPost()) {
             $title = '[登录成功]';

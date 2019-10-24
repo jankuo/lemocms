@@ -789,6 +789,57 @@ class Wechat extends Base{
         return View::fetch('material_add');
     }
 
+    //素材同步
+    public function materialAysn(){
+        if(Request::isPost()){
+
+            $res = $this->wechatApp->material->list('news', 0, 50);
+            $this->showError($res);
+            foreach ($res['item'] as $k=>$v){
+                $material = WxMaterial::where('media_id',$v['media_id'])->find();
+                if(!$material){
+                    var_dump($v[$k]['content']['news_item'][0]['thumb_url']);die;
+                    $material = ['store_id'=>$this->store_id,
+                        'wx_aid'=>$this->wechatAccount->wx_aid,
+                        'media_id'=>$v['media_id'],
+                        'media_url'=>$v[$k]['content']['news_item'][0]['thumb_url'],
+                        'type'=>"news",
+                        ];
+                    $wxmater = WxMaterial::create($material);
+
+                    foreach ($v['content']['news_item'] as $kk=>$vv){
+                        $info = ['store_id'=>$this->store_id,
+                            'wx_aid'=>$this->wechatAccount->wx_aid,
+                            'material_id'=>$wxmater->id,
+                            'thumb_media_id'=>$vv['thumb_media_id'],
+                            'local_cover'=>$vv['thumb_url'],
+                            'cover'=>$vv['thumb_url'],
+                            'title'=>$vv['title'],
+                            'author'=>$vv['author'],
+                            'show_cover'=>$vv['show_cover_pic'],
+                            'digest'=>$vv['digest'],
+                            'content'=>$vv['content'],
+                            'url'=>$vv['url'],
+                            'content_source_url'=>$vv['content_source_url'],
+                            'need_open_comment'=>$vv['need_open_comment'],
+                            'only_fans_can_comment'=>$vv['only_fans_can_comment'],
+
+
+                        ];
+                        WxMaterialInfo::create($v);
+
+                    }
+                }
+            }
+            $this->success(lang('aysn success'));
+
+        }else{
+
+            $this->error(lang('invalid request'));
+        }
+
+
+    }
     public function materialDel(){
 
         $id = Request::post('id');
@@ -939,6 +990,73 @@ class Wechat extends Base{
         }
         return $res;
 
+    }
+    /**
+     ************************二维码设置**************************
+     */
+    public function qrcode(){
+        if (Request::isPost()) {
+            $list = Db::name('wx_qrcode')->select()->toArray();
+            return $result = ['code' => 0, 'msg' =>lang('get info success'), 'data' => $list,];
+        }
+        return View::fetch();
+    }
+    public function qrcodeAdd(){
+        if(Request::isPost()){
+            $data = Request::param();
+            if($data['type']==0){
+                $data['expire_seconds'] = $data['expire_seconds']?$data['expire_seconds']:2592000;
+                $res = $this->wechatApp->qrcode->temporary('foo',$data['expire_seconds']);
+            }else{
+                $res = $this->wechatApp->qrcode->forever('foo');// 或者 $app->qrcode->forever(56);
+            }
+            $this->showError($res);
+            $data['ticket'] = $res['ticket'];
+            $data['url'] = $res['url'];
+            $data['qrcode'] = $url = $this->wechatApp->qrcode->url($res['ticket']);
+            if(Db::name('wx_qrcode')->insert($data)){
+                $this->success(lang('add success'));
+            }else{
+                $this->error(lang('add fail'));
+            }
+
+        }
+        $view = ['title'=>lang('add'),
+            'info'=>''];
+        View::assign($view);
+        return View::fetch();
+    }
+
+
+    public function qrcodeState(){
+        if(Request::isPost()){
+            $id = Request::param('id');
+            $qr = Db::name('wx_qrcode')->find($id);
+            $status = $qr['status']==1?0:1;
+
+            $res = Db::name('wx_qrcode')->where('id',$qr['id'])->update(['status'=>$status]);
+            if($res){
+                $this->success(lang('edit success'));
+            }else{
+                $this->error(lang('edit fail'));
+            }
+        }
+        $view = ['title'=>lang('add'),
+            'info'=>''];
+        View::assign($view);
+        return View::fetch();
+    }
+
+    public function qrcodeDel(){
+        if(Request::isPost()) {
+            $id = Request::param('id');
+            $res = Db::name('wx_qrcode')->delete($id);
+            if($res){
+                $this->success(lang('delete success'));
+            }else{
+                $this->error(lang('delete fail'));
+            }
+        }
     }
     /**
      ************************回复设置***************************

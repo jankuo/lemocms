@@ -160,9 +160,9 @@ class Base extends B{
      * 清除缓存 出去session缓存
      */
     public function clearData(){
-        $dir = config('admin.clear_cache_dir') ? app()->getRootPath().'runtime\admin' : app()->getRootPath().'runtime';
+        $dir = config('admin.clear_cache_dir') ? app()->getRootPath().'runtime/admin' : app()->getRootPath().'runtime';
         $cache = app()->getRootPath().'runtime/cache';
-        if(FileHelper::delDir($dir) || FileHelper::delDir($cache)){
+        if(FileHelper::delDir($dir) && FileHelper::delDir($cache)){
             $this->success('清除成功');
         }
     }

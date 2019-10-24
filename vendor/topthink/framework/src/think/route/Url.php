@@ -241,6 +241,8 @@ class Url
         } elseif (0 === strpos($url, '@')) {
             // 解析到控制器
             $url = substr($url, 1);
+        } elseif ('' === $url) {
+            $url = $request->controller() . '/' . $request->action();
         } else {
             $controller = $request->controller();
 
@@ -469,8 +471,9 @@ class Url
                 $url .= $suffix . '?' . $vars . $anchor;
             } else {
                 foreach ($vars as $var => $val) {
+                    $val = (string) $val;
                     if ('' !== $val) {
-                        $url .= $depr . $var . $depr . urlencode((string) $val);
+                        $url .= $depr . $var . $depr . urlencode($val);
                     }
                 }
 

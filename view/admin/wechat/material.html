@@ -8,7 +8,8 @@
             <blockquote class="layui-elem-quote">
                 <div class="LM-table">
 
-                    <a href="javascript:;"  class="layui-btn layui-btn-sm layui-btn-warm LM-add">{:lang('add')}{:lang('material')}</a>
+                    <a href="javascript:;"  class="layui-btn layui-btn-sm layui-btn-warm LM-add">{:lang('add')} {:lang('material')}</a>
+                    <a href="javascript:;"  class="layui-btn layui-btn-sm layui-btn-danger LM-aysn">{:lang('aysn')} {:lang('material')}</a>
                 </div>
 
             </blockquote>
@@ -228,6 +229,20 @@
                 maxmin: true,
             });
             layer.full(index);
+        })
+
+        $('.LM-aysn').click(function () {
+            loading =layer.load(1, {shade: [0.1,'#fff']});
+            $.post("{:url('materialAysn')}",{},function(res){
+                layer.close(loading);
+                if(res.code>0){
+                    layer.msg(res.msg,{time:1000,icon:1});
+                    window.reload();
+                }else{
+                    layer.msg(res.msg,{time:1000,icon:2});
+                }
+
+            });
         })
 
     });

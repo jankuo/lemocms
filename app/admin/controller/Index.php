@@ -33,7 +33,7 @@ class Index extends Base{
     public function index(){
         // 所有显示的菜单；
         $admin_id = Session::get('admin.id');
-//        $menus = Cache::get('adminMenus_'.$admin_id);
+        $menus = Cache::get('adminMenus_'.$admin_id);
         $menus = '';
 
         if(!$menus){

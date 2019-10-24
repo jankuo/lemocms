@@ -51,7 +51,8 @@ return [
     'reply'=>'回复',
     'supper man'=>'超级管理',
     'sort' =>'排序',
-
+    'field'=>'字段',
+    'name'=>'名字',
 
     'get info success'=>'获取成功',
     'add success'=>'新增成功',
@@ -105,4 +106,6 @@ return [
     'account is disabled'=>'账号禁用',
     'account is not accessed'=>'账号未成功接入',
     'please check username or password'=>'请检查用户名或密码',
+
+    'qrcode name' =>"二维码名字",
 ];

@@ -9,6 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
+define('ADDON_INIT', 'lemo\\addons\\');
 
 // 事件定义文件
 return [

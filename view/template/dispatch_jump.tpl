@@ -57,7 +57,7 @@
         var interval = setInterval(function(){
             var time = --wait.innerHTML;
             if(time <= 0) {
-                location.href = href;
+                window.location.href = href;
                 clearInterval(interval);
             };
         }, 1000);

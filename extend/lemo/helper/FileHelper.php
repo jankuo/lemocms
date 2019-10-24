@@ -25,9 +25,10 @@ class FileHelper
      */
     public static function delDir($dir) {
         //先删除目录下的文件：
-        if(!is_dir($dir)){
-            return true;
-        }
+//        var_dump(is_dir($dir));
+//        if(!is_dir($dir)){
+//            return true;
+//        }
         $dh=opendir($dir);
         while ($file=readdir($dh)) {
             if($file!="." && $file!="..") {

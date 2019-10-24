@@ -35,7 +35,7 @@ class Token
     public static $accessTokenPrefix = 'accessToken_';
     public static $refreshAccessTokenPrefix = 'refreshAccessToken_';
     public static $expires = 7200;
-    public static $refreshExpires = 60 * 60 * 24 * 30;   //刷新token过期时间
+    public static $refreshExpires = 3600*24*30;   //刷新token过期时间
     /**
      * 测试appid，正式请数据库进行相关验证
      */

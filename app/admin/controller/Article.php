@@ -232,8 +232,11 @@ class Article extends  Base{
             if($child){
                 $this->error(lang('delete child first'));
             }
-            \app\common\model\Article::destroy($id);
-            $this->success(lang('delete success'));
+            if(\app\common\model\ArticleCate::destroy($id)){
+                $this->success(lang('delete success'));
+            }else{
+                $this->error(lang('delete fail'));
+            }
         }
 
     }

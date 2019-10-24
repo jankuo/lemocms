@@ -18,6 +18,7 @@ use app\admin\model\Admin;
 use lemo\helper\SignHelper;
 use lemo\helper\StringHelper;
 use lemo\helper\TreeHelper;
+use think\facade\Cache;
 use think\facade\Config;
 use think\facade\Db;
 use think\facade\Request;
@@ -179,6 +180,152 @@ class Auth extends Base
         }
     }
 
+    /********************************权限管理*******************************/
+    // 权限列表
+    public function adminRule()
+    {
+        if(Request::isPost()){
+            $uid = Session::get('admin.id');
+            $arr = cache('authRuleList_'.$uid);
+            if(!$arr){
+                $arr = Db::name('auth_rule')
+                    ->order('pid asc,sort asc')
+                    ->select()->toArray();
+                foreach($arr as $k=>$v){
+                    $arr[$k]['lay_is_open']=false;
+                }
+                cache('authRuleList_'.$uid, $arr, 3600);
+            }
+            return $result = ['code'=>0,'msg'=>lang('get info success'),'data'=>$arr,'is'=>true,'tip'=>'操作成功'];
+        }
+        return View::fetch('admin_rule');
+    }
+
+    // 权限菜单显示或者隐藏
+    public function ruleState()
+    {
+        if (Request::isPost()) {
+            $id = Request::param('id');
+            $info = AuthRule::find($id);
+            $info->menu_status = $info['menu_status'] == 1 ? 0 : 1;
+            $info->save();
+            $this->success(lang('edit success'));
+
+        }
+    }
+
+    // 设置权限是否验证
+    public function ruleOpen()
+    {
+        if (Request::isPost()) {
+            $id = Request::param('id');
+            $info = AuthRule::find($id);
+            $info->auth_open = $info['auth_open'] == 1 ? 0 : 1;
+            $info->save();
+            $this->success(lang('edit success'));
+        }
+    }
+
+    // 设置权限排序
+    public function ruleSort()
+    {
+        if (Request::isPost()) {
+            $id = Request::param('id');
+            $sort = Request::param('sort');
+            $info = AuthRule::find($id);
+            $info->sort = $sort;
+            $uid = Session::get('admin.id');
+            $info->save();
+            cache('authRuleList_'.$uid, '');
+            $this->success(lang('edit success'));
+        }
+    }
+
+    // 权限删除
+    public function ruleDel()
+    {
+        $id = Request::param('id');
+        $child = AuthRule::where('pid',$id)->find();
+        if ($id && !$child) {
+            AuthRule::destroy($id);
+            $this->success(lang('delete success'));
+        }elseif($child){
+            $this->error(lang('delete child first'));
+
+        }else{
+            $this->error('id'.lang('not exist'));
+        }
+    }
+
+    // 权限批量删除
+    public function ruleSelectDel()
+    {
+        $id = Request::param('id');
+        if ($id) {
+            AuthRule::destroy($id);
+            $this->success(lang('delete success'));
+        }
+
+    }
+
+    // 权限增加
+    public function ruleAdd()
+    {
+        if (Request::isPost()) {
+            $data = Request::post();
+            if (empty($data['title'])) {
+                $this->error(lang('rule name cannot null'));
+            }
+            if (empty($data['sort'])) {
+                $this->error(lang('sort').lang(' cannot null'));
+            }
+            $data['icon'] = $data['icon']?$data['icon']:'fa fa-adjust';
+            if (AuthRule::create($data)) {
+                $this->success(lang('add success'), url('adminRule'));
+            } else {
+                $this->error(lang('add fail'));
+            }
+        } else {
+            $list = Db::name('auth_rule')
+                ->order('sort ASC')
+                ->select();
+            $list = TreeHelper::cateTree($list);
+            $pid = Request::param('id') ? Request::param('id') : 0;
+            $view = [
+                'info' => null,
+                'pid' => $pid,
+                'ruleList' => $list
+            ];
+            View::assign($view);
+            return View::fetch('rule_add');
+        }
+    }
+
+    //权限修改
+    public function ruleEdit()
+    {
+        if (request()->isPost()) {
+            $data = Request::param();
+            $where['id'] = $data['id'];
+            AuthRule::update($data);
+            $this->success(lang('edit success'), url('Auth/adminRule'));
+        } else {
+            $list = Db::name('auth_rule')
+                ->order('sort asc')
+                ->select();
+            $list = TreeHelper::cateTree($list);
+            $id = Request::param('id');
+            $info = AuthRule::find($id)->toArray();
+            $view = [
+                'info' => $info,
+                'ruleList' => $list,
+            ];
+            View::assign($view);
+            return View::fetch('rule_add');
+        }
+    }
+
+
     /*-----------------------用户组管理----------------------*/
 
     // 用户组管理
@@ -311,16 +458,21 @@ class Auth extends Base
     // 用户组显示权限
     public function groupAccess()
     {
-        $admin_rule = AuthRule::field('id, pid, title')
-            ->where('status',1)
-            ->order('sort asc')
-            ->select()->toArray();
-        $rules = AuthGroup::where('id', Request::param('id'))
-            ->where('status',1)
-            ->value('rules');
+        $list = Cache::get('AuthChecked');
+        if(!$list){
+            $admin_rule = AuthRule::field('id, pid, title')
+                ->where('status',1)
+                ->order('sort asc')->cache(3600)
+                ->select()->toArray();
+            $rules = AuthGroup::where('id', Request::param('id'))
+                ->where('status',1)->cache(3600)
+                ->value('rules');
+            $list = TreeHelper::authChecked($admin_rule, $pid = 0, $rules);
+            Cache::set('AuthChecked',$list,3600);
+
+        }
         $group_id = Request::param('id');
         $idList = AuthRule::column('id');
-        $list = TreeHelper::authChecked($admin_rule, $pid = 0, $rules);
         sort($idList);
         $view = [
             'list' => $list,
@@ -357,147 +509,6 @@ class Auth extends Base
         }
     }
 
-    /********************************权限管理*******************************/
-    // 权限列表
-    public function adminRule()
-    {
-        if(Request::isPost()){
-            $arr = cache('authRuleList');
-            if(!$arr){
-                $arr = Db::name('auth_rule')
-                    ->order('pid asc,sort asc')
-                    ->select()->toArray();
-                foreach($arr as $k=>$v){
-                    $arr[$k]['lay_is_open']=false;
-                }
-                cache('authRuleList', $arr, 3600);
-            }
-            return $result = ['code'=>0,'msg'=>lang('get info success'),'data'=>$arr,'is'=>true,'tip'=>'操作成功'];
-        }
-        return View::fetch('admin_rule');
-    }
-
-    // 权限菜单显示或者隐藏
-    public function ruleState()
-    {
-        if (Request::isPost()) {
-            $id = Request::param('id');
-            $info = AuthRule::find($id);
-            $info->menu_status = $info['menu_status'] == 1 ? 0 : 1;
-            $info->save();
-            $this->success(lang('edit success'));
-
-        }
-    }
-
-    // 设置权限是否验证
-    public function ruleOpen()
-    {
-        if (Request::isPost()) {
-            $id = Request::param('id');
-            $info = AuthRule::find($id);
-            $info->auth_open = $info['auth_open'] == 1 ? 0 : 1;
-            $info->save();
-            $this->success(lang('edit success'));
-        }
-    }
-
-    // 设置权限排序
-    public function ruleSort()
-    {
-        if (Request::isPost()) {
-            $id = Request::param('id');
-            $sort = Request::param('sort');
-            $info = AuthRule::find($id);
-            $info->sort = $sort;
-            cache('authRuleList', '');
-            $info->save();
-            $this->success(lang('edit success'));
-        }
-    }
-
-    // 权限删除
-    public function ruleDel()
-    {
-        $id = Request::param('id');
-        $child = AuthRule::where('pid',$id)->find();
-        if ($id && !$child) {
-            AuthRule::destroy($id);
-            $this->success(lang('delete success'));
-        }elseif($child){
-            $this->error(lang('delete child first'));
-
-        }else{
-            $this->error('id'.lang('not exist'));
-        }
-    }
-
-    // 权限批量删除
-    public function ruleSelectDel()
-    {
-        $id = Request::param('id');
-        if ($id) {
-            AuthRule::destroy($id);
-            $this->success(lang('delete success'));
-        }
-
-    }
-
-    // 权限增加
-    public function ruleAdd()
-    {
-        if (Request::isPost()) {
-            $data = Request::post();
-            if (empty($data['title'])) {
-                $this->error(lang('rule name cannot null'));
-            }
-            if (empty($data['sort'])) {
-                $this->error(lang('sort').lang(' cannot null'));
-            }
-            if (AuthRule::create($data)) {
-                $this->success(lang('add success'), url('adminRule'));
-            } else {
-                $this->error(lang('add fail'));
-            }
-        } else {
-            $list = Db::name('auth_rule')
-                ->order('sort ASC')
-                ->select();
-            $list = TreeHelper::cateTree($list);
-            $pid = Request::param('id') ? Request::param('id') : 0;
-            $view = [
-                'info' => null,
-                'pid' => $pid,
-                'ruleList' => $list
-            ];
-            View::assign($view);
-            return View::fetch('rule_add');
-        }
-    }
-
-    //权限修改
-    public function ruleEdit()
-    {
-        if (request()->isPost()) {
-            $data = Request::param();
-            $where['id'] = $data['id'];
-            AuthRule::update($data);
-            $this->success(lang('edit success'), url('Auth/adminRule'));
-        } else {
-            $list = Db::name('auth_rule')
-                ->order('sort asc')
-                ->select();
-            $list = TreeHelper::cateTree($list);
-            $id = Request::param('id');
-            $info = AuthRule::find($id)->toArray();
-            $view = [
-                'info' => $info,
-                'ruleList' => $list,
-            ];
-            View::assign($view);
-            return View::fetch('rule_add');
-        }
-    }
 
 
 }

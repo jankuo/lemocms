@@ -260,16 +260,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.3.3",
+            "version": "6.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba"
+                "reference": "0895c932405407fd3a7368b6910c09a24d26db11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/407b0cb880ace85c9b63c5f9551db498cb2d50ba",
-                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0895c932405407fd3a7368b6910c09a24d26db11",
+                "reference": "0895c932405407fd3a7368b6910c09a24d26db11",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -279,14 +279,15 @@
                 ]
             },
             "require": {
+                "ext-json": "*",
                 "guzzlehttp/promises": "^1.0",
-                "guzzlehttp/psr7": "^1.4",
+                "guzzlehttp/psr7": "^1.6.1",
                 "php": ">=5.5"
             },
             "require-dev": {
                 "ext-curl": "*",
                 "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
-                "psr/log": "^1.0"
+                "psr/log": "^1.1"
             },
             "suggest": {
                 "psr/log": "Required for using the Log middleware"
@@ -298,12 +299,12 @@
                 }
             },
             "autoload": {
-                "files": [
-                    "src/functions_include.php"
-                ],
                 "psr-4": {
                     "GuzzleHttp\\": "src/"
-                }
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -327,7 +328,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2018-04-22T15:46:56+00:00"
+            "time": "2019-10-23T15:58:00+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1018,16 +1019,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.25.2",
+            "version": "2.25.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "443fe5f1498147e0fbc792142b5dc43e2e8a533f"
+                "reference": "d07636581795383e2fea2d711212d30f941f2039"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/443fe5f1498147e0fbc792142b5dc43e2e8a533f",
-                "reference": "443fe5f1498147e0fbc792142b5dc43e2e8a533f",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d07636581795383e2fea2d711212d30f941f2039",
+                "reference": "d07636581795383e2fea2d711212d30f941f2039",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1087,20 +1088,20 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-10-14T14:18:59+00:00"
+            "time": "2019-10-20T11:05:44+00:00"
         },
         {
             "name": "opis/closure",
-            "version": "3.4.0",
+            "version": "3.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/opis/closure.git",
-                "reference": "60a97fff133b1669a5b1776aa8ab06db3f3962b7"
+                "reference": "e79f851749c3caa836d7ccc01ede5828feb762c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opis/closure/zipball/60a97fff133b1669a5b1776aa8ab06db3f3962b7",
-                "reference": "60a97fff133b1669a5b1776aa8ab06db3f3962b7",
+                "url": "https://api.github.com/repos/opis/closure/zipball/e79f851749c3caa836d7ccc01ede5828feb762c7",
+                "reference": "e79f851749c3caa836d7ccc01ede5828feb762c7",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1154,7 +1155,7 @@
                 "serialization",
                 "serialize"
             ],
-            "time": "2019-09-02T21:07:33+00:00"
+            "time": "2019-10-19T18:38:51+00:00"
         },
         {
             "name": "overtrue/socialite",
@@ -2908,12 +2909,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/framework.git",
-                "reference": "6217ae4a9e9beb0c7426e427b535d14f1fe4ab90"
+                "reference": "26f4735a86999760162098bc90b855a1c0d60234"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/framework/zipball/6217ae4a9e9beb0c7426e427b535d14f1fe4ab90",
-                "reference": "6217ae4a9e9beb0c7426e427b535d14f1fe4ab90",
+                "url": "https://api.github.com/repos/top-think/framework/zipball/26f4735a86999760162098bc90b855a1c0d60234",
+                "reference": "26f4735a86999760162098bc90b855a1c0d60234",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2968,7 +2969,7 @@
                 "orm",
                 "thinkphp"
             ],
-            "time": "2019-10-14T14:00:20+00:00"
+            "time": "2019-10-24T04:17:22+00:00"
         },
         {
             "name": "topthink/think-captcha",
@@ -3160,16 +3161,16 @@
         },
         {
             "name": "topthink/think-multi-app",
-            "version": "v1.0.7",
+            "version": "v1.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/think-multi-app.git",
-                "reference": "1abc0527ad1808beff161d1d163436754060ddc9"
+                "reference": "dec89d453ee7138e69211dd21a897d470d4a4e83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/think-multi-app/zipball/1abc0527ad1808beff161d1d163436754060ddc9",
-                "reference": "1abc0527ad1808beff161d1d163436754060ddc9",
+                "url": "https://api.github.com/repos/top-think/think-multi-app/zipball/dec89d453ee7138e69211dd21a897d470d4a4e83",
+                "reference": "dec89d453ee7138e69211dd21a897d470d4a4e83",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3206,7 +3207,7 @@
                 }
             ],
             "description": "thinkphp6 multi app support",
-            "time": "2019-10-10T15:42:49+00:00"
+            "time": "2019-10-23T09:52:39+00:00"
         },
         {
             "name": "topthink/think-orm",
@@ -3214,12 +3215,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/think-orm.git",
-                "reference": "8ef883759fc94512bf5c62468c8dc0d8dc176afe"
+                "reference": "02affaaccade2cdd8bbb2d2f5d15e46113e6eb50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/think-orm/zipball/8ef883759fc94512bf5c62468c8dc0d8dc176afe",
-                "reference": "8ef883759fc94512bf5c62468c8dc0d8dc176afe",
+                "url": "https://api.github.com/repos/top-think/think-orm/zipball/02affaaccade2cdd8bbb2d2f5d15e46113e6eb50",
+                "reference": "02affaaccade2cdd8bbb2d2f5d15e46113e6eb50",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3257,7 +3258,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2019-10-11T01:34:19+00:00"
+            "time": "2019-10-23T02:16:50+00:00"
         },
         {
             "name": "topthink/think-queue",

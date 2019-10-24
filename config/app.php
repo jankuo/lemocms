@@ -24,14 +24,14 @@ return [
     'with_route'       => true,
     // 是否启用事件
     'with_event'       => true,
-    // 自动多应用模式
-    'auto_multi_app'   => true,
     // 应用映射（自动多应用模式有效）
     'app_map'          => [],
     // 域名绑定（自动多应用模式有效）
     'domain_bind'      => [],
     // 禁止URL访问的应用列表（自动多应用模式有效）
     'deny_app_list'    => ['common'],
+    // 开启应用快速访问 如果你完全不需要单应用模式，也可以设置使用严格的多应用模式
+    'app_express'    =>    true,
     // 默认应用
     'default_app'      => 'index',
     // 默认时区
@@ -55,6 +55,4 @@ return [
     'error_message'    => '您访问的内容不存在',
     // 显示错误信息
     'show_error_msg'   => true,
-
-
 ];

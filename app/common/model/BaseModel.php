@@ -3,6 +3,7 @@
 
 namespace app\common\model;
 
+use think\facade\Config;
 use think\Model;
 
 class BaseModel extends Model
@@ -17,6 +18,7 @@ class BaseModel extends Model
     public function __construct(array $data = [])
     {
         parent::__construct($data);
+
     }
 
     public static function getList($where = array(), $pageSize, $order = ['sort', 'id' => 'desc'])
@@ -31,5 +33,12 @@ class BaseModel extends Model
         return self::find($id);
     }
 
+    //表前缀
+    public static function get_table_prefix(){
+
+        return Config::get('database.connections.mysql.prefix');
+
+
+    }
     
 }

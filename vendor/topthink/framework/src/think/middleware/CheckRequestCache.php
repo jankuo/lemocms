@@ -75,10 +75,11 @@ class CheckRequestCache
                 if (strtotime($request->server('HTTP_IF_MODIFIED_SINCE', '')) + $expire > $request->server('REQUEST_TIME')) {
                     // 读取缓存
                     return Response::create()->code(304);
-                } elseif ($this->cache->has($key)) {
-                    list($content, $header) = $this->cache->get($key);
-
-                    return Response::create($content)->header($header);
+                } elseif (($hit = $this->cache->get($key)) !== null) {
+                    list($content, $header, $when) = $hit;
+                    if ($expire === null || $when + $expire > $request->server('REQUEST_TIME')) {
+                        return Response::create($content)->header($header);
+                    }
                 }
             }
         }
@@ -91,7 +92,7 @@ class CheckRequestCache
             $header['Last-Modified'] = gmdate('D, d M Y H:i:s') . ' GMT';
             $header['Expires']       = gmdate('D, d M Y H:i:s', time() + $expire) . ' GMT';
 
-            $this->cache->tag($tag)->set($key, [$response->getContent(), $header], $expire);
+            $this->cache->tag($tag)->set($key, [$response->getContent(), $header, time()], $expire);
         }
 
         return $response;
