@@ -71,8 +71,13 @@ class WechatApp
                 'token' => $this->wechat->w_token,
                 'response_type' => 'array',
             ];
+            $this->wechatApp = cache('wechatapp_'.$this->wechat->id);
+            if(!$this->wechatApp){
+                $this->wechatApp = Factory::officialAccount($this->config);
+                cache('wechatapp_'.$this->wechat->id,$this->wechatApp);
+            }
 
-            $this->wechatApp = Factory::officialAccount($this->config);
+
         } else {
 
             return false;
