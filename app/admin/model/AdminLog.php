@@ -12,9 +12,13 @@
  */
 namespace app\admin\model;
 
+use lemo\helper\DataHelper;
 use think\facade\Request;
 use think\facade\Session;
 use think\facade\Db;
+use think\facade\Route;
+use app\admin\model\AuthRule;
+
 class AdminLog extends AdminModel
 {
 
@@ -31,13 +35,15 @@ class AdminLog extends AdminModel
         //入库信息
         $admin_id   = Session::get('admin.id',0);
         $username   = Session::get('admin.username','Unknown');
-        $url        = Request::pathinfo();
+        $url        = Request::url();
         $title      = self::$log_title;
         $ip         = Request::ip();
         $agent      = Request::server('HTTP_USER_AGENT');
         $content    = Request::param();
+
         if(stripos($url,'?')){
             $url = explode('?',$url)[0];
+            $url = strtolower($url);
         }
         if ($content) {
             //去除登录密码
@@ -52,15 +58,14 @@ class AdminLog extends AdminModel
         }elseif (!$content && Request::isPost()){
             $content = '清除缓存|切换语言';
         }
-
         //登录处理
         if (strpos($url, 'login/index') !== false && Request::isPost()) {
             $title = '[登录成功]';
         }else{
             //权限
-            $auth = Db::name('auth_rule')->column('href','href');
+            $auth = AuthRule::column('href','href');
             foreach ($auth as $k=>$v){
-                $auth[$k] = Request::pathinfo($v);
+                $auth[$k] = strtolower((string)url($v));
             }
             $key = array_search($url,$auth);
             if($key){

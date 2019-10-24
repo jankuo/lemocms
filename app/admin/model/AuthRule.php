@@ -15,6 +15,8 @@
 namespace app\admin\model;
 class AuthRule extends AdminModel
 {
-
-
+    public function __construct(array $data = [])
+    {
+        parent::__construct($data);
+    }
 }

@@ -63,7 +63,7 @@ CREATE TABLE `lm_admin_log` (
   `admin_id` int(10) DEFAULT NULL COMMENT '管理员id',
   `username` varchar(100) DEFAULT NULL,
   `log_url` varchar(100) DEFAULT NULL,
-  `log_content` varchar(255) DEFAULT NULL,
+  `log_content` text DEFAULT NULL,
   `log_title` varchar(100) DEFAULT NULL COMMENT '日志描述',
   `log_agent` varchar(200) DEFAULT NULL,
   `log_ip` varchar(30) DEFAULT NULL COMMENT 'ip地址',
