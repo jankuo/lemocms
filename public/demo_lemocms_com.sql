@@ -657,13 +657,13 @@ INSERT INTO `lm_field` (`id`, `moduleid`, `field`, `name`, `required`, `minlengt
 CREATE TABLE `lm_field_type` (
   `id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL COMMENT '字段类型',
-  `title` varchar(64) NOT NULL DEFAULT '' COMMENT '中文类型名',
+  `title` varchar(64) NOT NULL DEFAULT '' COMMENT '中文名',
   `sort` int(4) NOT NULL DEFAULT '0' COMMENT '排序',
   `default_define` varchar(128) NOT NULL DEFAULT '' COMMENT '默认定义',
   `isoption` tinyint(1) UNSIGNED NOT NULL DEFAULT '0' COMMENT '是否需要设置选项',
   `istring` tinyint(1) UNSIGNED NOT NULL DEFAULT '0' COMMENT '是否自由字符',
   `rules` varchar(256) NOT NULL DEFAULT '' COMMENT '验证规则'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='字段类型表';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COMMENT='字段类型表';
 
 --
 -- Dumping data for table `lm_field_type`
