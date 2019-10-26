@@ -19,10 +19,4 @@ class  WxMaterialInfo extends Common{
         parent::__construct($data);
     }
 
-    public static function addMaterial($data){
-
-
-
-
-    }
 }

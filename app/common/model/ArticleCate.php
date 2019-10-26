@@ -17,6 +17,9 @@ use app\common\model\Common;
 
 class ArticleCate extends Common {
 
-
+    public function __construct(array $data = [])
+    {
+        parent::__construct($data);
+    }
 
 }

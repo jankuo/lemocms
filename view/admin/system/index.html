@@ -1,55 +1,54 @@
 {include file="common/header"/}
 <div class="LM-container">
     <div class="LM-main">
-        <div class="layui-form LM-form">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend>{:lang('config')}{:lang('list')}</legend>
+        </fieldset>
 
-            <div class="layui-tab">
-                <ul class="layui-tab-title">
-
-                    <li class="layui-this">网站设置</li>
-                    <li class="">邮箱设置</li>
-                    <li class="">短信设置</li>
-                    <li class="">上传配置</li>
-
-                </ul>
-
-                <div class="layui-tab-content">
+        <div class="layui-tab">
+            <ul class="layui-tab-title">
+                <li class="layui-this">{:lang('site setting')}</li>
+                <li class="">{:lang('email setting')}</li>
+                <li class="">{:lang('sms setting')}</li>
+                <li class="">{:lang('upload setting')}</li>
+            </ul>
+            <div class="layui-tab-content">
 <!--网站配置-->
                     <div class="layui-tab-item layui-show">
                         <form class="layui-form layui-form-pane" lay-filter="form-config">
 
                             <div class="layui-form-item">
-                                <label class="layui-form-label required">网站名称</label>
+                                <label class="layui-form-label required">{:lang('site name')}</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="site_name" lay-verify="required" lay-reqtext="网站名称不能为空"
-                                           placeholder="请输入网站名称" value="" class="layui-input">
+                                    <input type="text" name="site_name" lay-verify="required" lay-reqtext="{:lang('site name can not empty')}"
+                                           placeholder="{:lang('site name')}" value="" class="layui-input">
                                     <!--                                    <tip>填写自己部署网站的名称。</tip>-->
                                 </div>
                             </div>
                             <div class="layui-form-item">
-                                <label class="layui-form-label required">网站域名</label>
+                                <label class="layui-form-label required">{:lang('site domain')}</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="site_domain" lay-verify="url" lay-reqtext="网站域名不能为空"
-                                           placeholder="请输入网站域名" value="" class="layui-input">
+                                    <input type="text" name="site_domain" lay-verify="url" lay-reqtext="{:lang('site domain can not empty')}"
+                                           placeholder="{:lang('site domain')}" value="" class="layui-input">
                                 </div>
                             </div>
 
                             <div class="layui-form-item">
-                                <label class="layui-form-label required">网站邮箱</label>
+                                <label class="layui-form-label required">{:lang('site email')}</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="site_email" lay-verify="email" lay-reqtext="网站域名不能为空"
-                                           placeholder="请输入网站域名" value="" class="layui-input">
+                                    <input type="text" name="site_email" lay-verify="email" lay-reqtext="{:lang('site email can not empty')}"
+                                           placeholder="{:lang('site email')}" value="" class="layui-input">
                                 </div>
                             </div>
 
 
                             <div class="layui-form-item">
-                                <label class="layui-form-label">网站LOGO</label>
+                                <label class="layui-form-label">{:lang('site logo')}</label>
                                 <input type="hidden" name="site_logo" id="logo">
                                 <div class="layui-input-block">
                                     <div class="layui-upload">
                                         <button type="button" class="layui-btn layui-btn-primary" id="logoBtn"><i
-                                                class="icon icon-upload3"></i>点击上传
+                                                class="icon icon-upload3"></i>{:lang('upload')}
                                         </button>
                                         <div class="layui-upload-list">
                                             <img class="layui-upload-img" id="site_logo">
@@ -60,27 +59,27 @@
                             </div>
 
                             <div class="layui-form-item layui-form-text">
-                                <label class="layui-form-label required">首页标题</label>
+                                <label class="layui-form-label required">{:lang('site title')}</label>
                                 <div class="layui-input-block">
-                                    <textarea name="site_seo_title" class="layui-textarea"></textarea>
+                                    <textarea name="site_seo_title" placeholder="{:lang('site title')}" class="layui-textarea"></textarea>
                                 </div>
                             </div>
                             <div class="layui-form-item layui-form-text">
-                                <label class="layui-form-label">META关键词</label>
+                                <label class="layui-form-label">{:lang('meta keywords')}</label>
                                 <div class="layui-input-block">
                                     <textarea name="site_seo_keywords" class="layui-textarea"
                                               placeholder="多个关键词用英文状态 , 号分割"></textarea>
                                 </div>
                             </div>
                             <div class="layui-form-item layui-form-text">
-                                <label class="layui-form-label">META描述</label>
+                                <label class="layui-form-label">{:lang('meta description')}</label>
                                 <div class="layui-input-block">
                                     <textarea name="site_seo_desc" placeholder="建议200字以内"
                                               class="layui-textarea"></textarea>
                                 </div>
                             </div>
                             <div class="layui-form-item layui-form-text">
-                                <label class="layui-form-label required">版权信息</label>
+                                <label class="layui-form-label required">{:lang('all right')}</label>
                                 <div class="layui-input-block">
                                     <textarea name="site_copyright" class="layui-textarea">© 2019 www.lemocms.com MIT license</textarea>
                                 </div>
@@ -88,8 +87,8 @@
 
                             <div class="layui-form-item">
 
-                                <button type="button" class="layui-btn" lay-submit lay-filter="submit">提交</button>
-                                <button type="reset" class="layui-btn layui-btn-primary" lay-submit lay-filter="cancel">重置</button>
+                                <button type="button" class="layui-btn" lay-submit lay-filter="submit">{:lang('submit')}</button>
+                                <button type="reset" class="layui-btn layui-btn-primary" lay-submit lay-filter="cancel">{:lang('reset')}</button>
 
                             </div>
 
@@ -101,54 +100,54 @@
                         <form class="layui-form layui-form-pane" lay-filter="form-config">
 
                             <div class="layui-form-item">
-                                <label class="layui-form-label required">邮箱服务器</label>
+                                <label class="layui-form-label required">{:lang('email server')}</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="email_host" lay-verify="required" lay-reqtext="邮箱服务器地址不能为空"
-                                           placeholder="请输入邮箱服务器" value="" class="layui-input">
+                                    <input type="text" name="email_host" lay-verify="required" lay-reqtext="{:lang('email server is not empty')}"
+                                           placeholder="{:lang('email server')}" value="" class="layui-input">
                                 </div>
                             </div>
                             <div class="layui-form-item">
-                                <label class="layui-form-label required">邮箱端口</label>
+                                <label class="layui-form-label required">{:lang('email port')}</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="email_port" lay-verify="required" lay-reqtext="端口不能为空"
-                                           placeholder="请输入邮箱端口" value="" class="layui-input">
-                                </div>
-                            </div>
-
-                            <div class="layui-form-item">
-                                <label class="layui-form-label required">邮箱地址</label>
-                                <div class="layui-input-block">
-                                    <input type="text" name="email_addr" lay-verify="required" lay-reqtext="邮箱地址不能为空"
-                                           placeholder="请输入邮箱地址" value="" class="layui-input">
+                                    <input type="text" name="email_port" lay-verify="required" lay-reqtext="{:lang('port can not empty')}"
+                                           placeholder="{:lang('email port')}" value="" class="layui-input">
                                 </div>
                             </div>
 
                             <div class="layui-form-item">
-                                <label class="layui-form-label required">发件人邮箱</label>
+                                <label class="layui-form-label required">{:lang('email addr')}</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="email_id" placeholder="请输入邮箱用户名" value=""
+                                    <input type="text" name="email_addr" lay-verify="required" lay-reqtext="{:lang('email addr can not empty')}"
+                                           placeholder="{:lang('email addr')}" value="" class="layui-input">
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label required">{:lang('send email person')}</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="email_id" placeholder="{:lang('send email person')}" value=""
                                            class="layui-input">
                                 </div>
                             </div>
 
                             <div class="layui-form-item">
-                                <label class="layui-form-label required">邮箱密码</label>
+                                <label class="layui-form-label required">{:lang('email password')}</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="email_pass" placeholder="请输入邮箱密码" value=""
+                                    <input type="text" name="email_pass" placeholder="{:lang('email password')}" value=""
                                            class="layui-input">
                                 </div>
                             </div>
                             <div class="layui-form-item">
-                                <label class="layui-form-label required">邮箱协议</label>
+                                <label class="layui-form-label required">{:lang('server mailbox protocol')}</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="email_secure" placeholder="请输入邮箱发送协议" value=""
+                                    <input type="text" name="email_secure" placeholder="{:lang('Server mailbox protocol')}" value=""
                                            class="layui-input">
                                 </div>
                             </div>
 
                             <div class="layui-form-item">
-                                    <button type="button" class="layui-btn" lay-submit lay-filter="submit">提交</button>
-                                    <button type="reset" class="layui-btn layui-btn-primary" lay-submit lay-filter="cancel">重置</button>
+                                    <button type="button" class="layui-btn" lay-submit lay-filter="submit">{:lang('submit')}</button>
+                                    <button type="reset" class="layui-btn layui-btn-primary" lay-submit lay-filter="cancel">{:lang('reset')}</button>
                             </div>
 
                         </form>
@@ -158,41 +157,41 @@
                     <div class="layui-tab-item">
                         <form class="layui-form layui-form-pane" lay-filter="form-config">
                             <div class="layui-form-item">
-                                <label class="layui-form-label required">阿里短信appid</label>
+                                <label class="layui-form-label required">{:lang('sms appid')}</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="sms_appid" lay-verify="required" placeholder="请输入阿里短信appid" value=""
+                                    <input type="text" name="sms_appid" lay-verify="required" placeholder="{:lang('sms appid')}" value=""
                                            class="layui-input">
                                 </div>
                             </div>
 
                             <div class="layui-form-item">
-                                <label class="layui-form-label required">阿里短信密钥</label>
+                                <label class="layui-form-label required">{:lang('sms appsecret')}</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="sms_secret" lay-verify="required" placeholder="请输入密钥" value=""
+                                    <input type="text" name="sms_secret" lay-verify="required" placeholder="{:lang('sms appsecret')}" value=""
                                            class="layui-input">
                                 </div>
                             </div>
 
                             <div class="layui-form-item">
-                                <label class="layui-form-label required">阿里短信产品名</label>
+                                <label class="layui-form-label required">{:lang('sms product name')}</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="sms_product" lay-verify="required" placeholder="请输入阿里短信产品名" value=""
+                                    <input type="text" name="sms_product" lay-verify="required" placeholder="{:lang('sms product name')}" value=""
                                            class="layui-input">
                                 </div>
                             </div>
 
                             <div class="layui-form-item">
-                                <label class="layui-form-label required">阿里短信模板id</label>
+                                <label class="layui-form-label required">{:lang('sms template id')}</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="sms_template" lay-verify="required" placeholder="请输入阿里短信模板id" value=""
+                                    <input type="text" name="sms_template" lay-verify="required" placeholder="{:lang('sms template id')}" value=""
                                            class="layui-input">
                                 </div>
                             </div>
 
 
                             <div class="layui-form-item">
-                                    <button type="button" class="layui-btn" lay-submit lay-filter="submit">提交</button>
-                                    <button type="reset" class="layui-btn layui-btn-primary" lay-submit lay-filter="cancel">重置</button>
+                                    <button type="button" class="layui-btn" lay-submit lay-filter="submit">{:lang('submit')}</button>
+                                    <button type="reset" class="layui-btn layui-btn-primary" lay-submit lay-filter="cancel">{:lang('reset')}</button>
 
                             </div>
 
@@ -204,7 +203,7 @@
                         <form class="layui-form layui-form-pane" lay-filter="form-config">
 
                             <div class="layui-form-item">
-                                <label class="layui-form-label">文件类型</label>
+                                <label class="layui-form-label">{:lang('file type')}</label>
                                 <div class="layui-input-block">
                                     <input type="text" name="upload_file_type"
                                            value="bmp|png|gif|jpg|jpeg|zip|rar|txt|ppt|xls|doc|mp3|mp4"
@@ -213,19 +212,19 @@
                             </div>
 
                             <div class="layui-form-item">
-                                <label class="layui-form-label">最大文件</label>
+                                <label class="layui-form-label">{:lang('maxfilesize')}</label>
                                 <div class="layui-input-inline" style="width: 80px;">
                                     <input type="text" name="upload_file_max" lay-verify="number" value="2048"
                                            class="layui-input">
                                 </div>
                                 <div class="layui-input-inline layui-input-company"><label class="layui-form-label">M</label></div>
-                                <div class="layui-form-mid layui-word-aux">提示：1 M = 1024 KB</div>
+                                <div class="layui-form-mid layui-word-aux">{:lang('tips')}：1 M = 1024 KB</div>
                             </div>
 
                             <div class="layui-form-item">
                                 <div class="layui-input-inline">
-                                    <button type="button" class="layui-btn" lay-submit lay-filter="submit">提交</button>
-                                    <button type="reset" class="layui-btn layui-btn-primary" lay-submit lay-filter="cancel">重置</button>
+                                    <button type="button" class="layui-btn" lay-submit lay-filter="submit">{:lang('submit')}</button>
+                                    <button type="reset" class="layui-btn layui-btn-primary" lay-submit lay-filter="cancel">{:lang('reset')}</button>
 
                                 </div>
 
@@ -235,12 +234,10 @@
                     </div>
 
                 </div>
-
-            </div>
-
-
         </div>
+
     </div>
+
 </div>
 {include file="common/footer"/}
 <script>

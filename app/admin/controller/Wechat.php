@@ -797,20 +797,18 @@ class Wechat extends Base{
     //素材同步
     public function materialAysn(){
         if(Request::isPost()){
-
             $res = $this->wechatApp->material->list('news', 0, 50);
             $this->showError($res);
             foreach ($res['item'] as $k=>$v){
                 $material = WxMaterial::where('media_id',$v['media_id'])->find();
                 if(!$material){
                     $material = ['store_id'=>$this->store_id,
-                        'wx_aid'=>$this->wechatAccount->wx_aid,
+                        'wx_aid'=>$this->wechatAccount->id,
                         'media_id'=>$v['media_id'],
                         'media_url'=>$v['content']['news_item'][0]['thumb_url'],
                         'type'=>"news",
                         ];
                     $wxmater = WxMaterial::create($material);
-
                     foreach ($v['content']['news_item'] as $kk=>$vv){
                         $info = ['store_id'=>$this->store_id,
                             'wx_aid'=>$this->wechatAccount->wx_aid,

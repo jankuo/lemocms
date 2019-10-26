@@ -51,15 +51,25 @@ class Adminlog extends Base{
 
     /**
      * @throws \Exception
-     * 删除日志
+     * 删除日志 单个+批量
      */
     public function delete(){
+        $id = Request::post('id');
+        if(!$id){
+            $this->error(lang('id is not exist'));
 
-        if(LogModel::destroy(Request::post('id'))){
-             $this->success(lang('delete success'));
+        }
+        if(!is_array($id)){
+            $id = [$id];
+        }
+
+        if(LogModel::destroy($id)){
+            $this->success(lang('delete success'));
         }else{
             $this->error(lang('delete fail'));
         }
+
+
 
     }
 

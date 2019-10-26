@@ -16,7 +16,10 @@ use app\admin\model\AuthRule;
 class AddonMenu extends Common
 {
     protected $name = 'AuthRule';
-
+    public function __construct(array $data = [])
+    {
+        parent::__construct($data);
+    }
     /**
      * 创建菜单
      * @param array $menu

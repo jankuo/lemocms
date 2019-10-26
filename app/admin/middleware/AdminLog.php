@@ -19,6 +19,8 @@ class AdminLog
 
         //进行操作日志的记录
         \app\admin\model\AdminLog::record();
+
+
         //中间件handle方法的返回值必须是一个Response对象。
         return $next($request);
     }

@@ -162,7 +162,10 @@ class Base extends B{
     public function clearData(){
         $dir = config('admin.clear_cache_dir') ? app()->getRootPath().'runtime/admin' : app()->getRootPath().'runtime';
         $cache = app()->getRootPath().'runtime/cache';
-        if(FileHelper::delDir($dir) && FileHelper::delDir($cache)){
+        if(is_dir($cache)){
+           FileHelper::delDir($cache);
+        }
+        if(FileHelper::delDir($dir) ){
             $this->success('清除成功');
         }
     }

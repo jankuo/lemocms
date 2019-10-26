@@ -105,13 +105,14 @@ class Article extends  Base{
 
 
     }
-    public function state(){
-        $data =  Request::post();
+
+    public function state()
+    {
         $id = Request::post('id');
         if (empty($id)) {
             $this->error('data not exist');
         }
-        $info  = \app\common\model\Article::find($id);
+        $info = \app\common\model\Article::find($id);
         $status = $info['status'] == 1 ? 0 : 1;
         $info->status = $status;
         $info->save();
