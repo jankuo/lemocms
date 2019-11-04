@@ -291,11 +291,19 @@ class Auth extends Base
                 ->select();
             $list = TreeHelper::cateTree($list);
             $pid = Request::param('id') ? Request::param('id') : 0;
+            $rule = '';
+            if(Request::get('rule_id')){
+                $rule = Db::name('auth_rule')
+                    ->find(Request::get('rule_id'));
+            }
+
             $view = [
                 'info' => null,
                 'pid' => $pid,
-                'ruleList' => $list
+                'ruleList' => $list,
+                'rule' =>$rule,
             ];
+
             View::assign($view);
             return View::fetch('rule_add');
         }

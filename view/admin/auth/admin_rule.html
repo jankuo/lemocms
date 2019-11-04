@@ -28,6 +28,7 @@
 </script>
 <script type="text/html" id="action">
     <a href="{:url('ruleEdit')}?id={{d.id}}" class="layui-btn layui-btn-xs">{:lang('edit')}</a>
+    <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="add">{:lang('add')}{:lang('child')}</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">{:lang('del')}</a>
 </script>
 <script type="text/html" id="topBtn">
@@ -86,6 +87,16 @@
                     });
                     layer.close(index);
                 });
+            }else if(obj.event === 'add'){
+
+                var index = layer.open({
+                    type: 2,
+                    content: '{:url("ruleAdd")}'+'?rule_id='+data.id,
+                    area: ['800px', '600px'],
+                    maxmin: true
+                });
+                layer.full(index);
+
             }
         });
         form.on('switch(auth_open)', function(obj){

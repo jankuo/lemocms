@@ -108,6 +108,7 @@ class Wechat extends Base{
             }catch (\Exception $e){
                 $this->error($e->getMessage());
             }
+            $data['weixin'] = $data['wxname'];
             $res = WxAccount::create($data);
             if ($res) {
                 $this->success(lang('add success'),url('index'));

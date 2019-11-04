@@ -16,7 +16,8 @@
                         <select name="pid" lay-verify="required" lay-filter="pid">
                             <option value="0">默认顶级</option>
                             {volist name="ruleList" id="vo"}
-                            <option value="{$vo.id}">{$vo.lefthtml}{$vo.title}</option>
+                            <option value="{$vo.id}" {if $rule and $rule['id']==$vo.id}selected
+                            {/if}>{$vo.lefthtml}{$vo.title}</option>
                             {/volist}
                         </select>
                     </div>

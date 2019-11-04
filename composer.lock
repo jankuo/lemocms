@@ -1218,16 +1218,16 @@
         },
         {
             "name": "overtrue/wechat",
-            "version": "4.2.6",
+            "version": "4.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/wechat.git",
-                "reference": "4b6d8fb35bd36c93fa58bdd01a6c4fee9d7b98e4"
+                "reference": "8bf420d99f82eb956b575b33df4b22bf1eadb392"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/overtrue/wechat/zipball/4b6d8fb35bd36c93fa58bdd01a6c4fee9d7b98e4",
-                "reference": "4b6d8fb35bd36c93fa58bdd01a6c4fee9d7b98e4",
+                "url": "https://api.github.com/repos/overtrue/wechat/zipball/8bf420d99f82eb956b575b33df4b22bf1eadb392",
+                "reference": "8bf420d99f82eb956b575b33df4b22bf1eadb392",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1286,7 +1286,7 @@
                 "weixin",
                 "weixin-sdk"
             ],
-            "time": "2019-10-11T14:38:37+00:00"
+            "time": "2019-10-26T23:47:02+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -1878,16 +1878,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "bf73deb2b3b896a9d9c75f3f0d88185d2faa27e2"
+                "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/bf73deb2b3b896a9d9c75f3f0d88185d2faa27e2",
-                "reference": "bf73deb2b3b896a9d9c75f3f0d88185d2faa27e2",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/446d54b4cb6bf489fc9d75f55843658e6f25d801",
+                "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1927,7 +1927,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2019-10-25T08:06:51+00:00"
+            "time": "2019-11-01T11:05:21+00:00"
         },
         {
             "name": "psr/simple-cache",
@@ -2119,16 +2119,16 @@
         },
         {
             "name": "symfony/cache",
-            "version": "v4.3.5",
+            "version": "v4.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
-                "reference": "40c62600ebad1ed2defbf7d35523d918a73ab330"
+                "reference": "30a51b2401ee15bfc7ea98bd7af0f9d80e26e649"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/40c62600ebad1ed2defbf7d35523d918a73ab330",
-                "reference": "40c62600ebad1ed2defbf7d35523d918a73ab330",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/30a51b2401ee15bfc7ea98bd7af0f9d80e26e649",
+                "reference": "30a51b2401ee15bfc7ea98bd7af0f9d80e26e649",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2199,7 +2199,7 @@
                 "caching",
                 "psr6"
             ],
-            "time": "2019-10-04T10:57:53+00:00"
+            "time": "2019-10-30T12:58:49+00:00"
         },
         {
             "name": "symfony/cache-contracts",
@@ -2267,7 +2267,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v4.3.5",
+            "version": "v4.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -2407,16 +2407,16 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v4.3.5",
+            "version": "v4.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "76590ced16d4674780863471bae10452b79210a5"
+                "reference": "38f63e471cda9d37ac06e76d14c5ea2ec5887051"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/76590ced16d4674780863471bae10452b79210a5",
-                "reference": "76590ced16d4674780863471bae10452b79210a5",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/38f63e471cda9d37ac06e76d14c5ea2ec5887051",
+                "reference": "38f63e471cda9d37ac06e76d14c5ea2ec5887051",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2464,20 +2464,20 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-10-04T19:48:13+00:00"
+            "time": "2019-10-30T12:58:49+00:00"
         },
         {
             "name": "symfony/mime",
-            "version": "v4.3.5",
+            "version": "v4.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "32f71570547b91879fdbd9cf50317d556ae86916"
+                "reference": "3c0e197529da6e59b217615ba8ee7604df88b551"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/32f71570547b91879fdbd9cf50317d556ae86916",
-                "reference": "32f71570547b91879fdbd9cf50317d556ae86916",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/3c0e197529da6e59b217615ba8ee7604df88b551",
+                "reference": "3c0e197529da6e59b217615ba8ee7604df88b551",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2529,7 +2529,7 @@
                 "mime",
                 "mime-type"
             ],
-            "time": "2019-09-19T17:00:15+00:00"
+            "time": "2019-10-30T12:58:49+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -2791,16 +2791,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.3.5",
+            "version": "v4.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "50556892f3cc47d4200bfd1075314139c4c9ff4b"
+                "reference": "3b2e0cb029afbb0395034509291f21191d1a4db0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/50556892f3cc47d4200bfd1075314139c4c9ff4b",
-                "reference": "50556892f3cc47d4200bfd1075314139c4c9ff4b",
+                "url": "https://api.github.com/repos/symfony/process/zipball/3b2e0cb029afbb0395034509291f21191d1a4db0",
+                "reference": "3b2e0cb029afbb0395034509291f21191d1a4db0",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2842,7 +2842,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2019-09-26T21:17:10+00:00"
+            "time": "2019-10-28T17:07:32+00:00"
         },
         {
             "name": "symfony/psr-http-message-bridge",
@@ -2981,16 +2981,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v4.3.5",
+            "version": "v4.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "fe6193b066c457c144333c06aaa869a2d42a167f"
+                "reference": "a3aa590ce944afb3434d7a55f81b00927144d5ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/fe6193b066c457c144333c06aaa869a2d42a167f",
-                "reference": "fe6193b066c457c144333c06aaa869a2d42a167f",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/a3aa590ce944afb3434d7a55f81b00927144d5ec",
+                "reference": "a3aa590ce944afb3434d7a55f81b00927144d5ec",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3059,7 +3059,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-09-27T14:37:39+00:00"
+            "time": "2019-10-30T12:53:54+00:00"
         },
         {
             "name": "symfony/translation-contracts",
@@ -3126,16 +3126,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.3.5",
+            "version": "v4.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "bde8957fc415fdc6964f33916a3755737744ff05"
+                "reference": "ea4940845535c85ff5c505e13b3205b0076d07bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/bde8957fc415fdc6964f33916a3755737744ff05",
-                "reference": "bde8957fc415fdc6964f33916a3755737744ff05",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/ea4940845535c85ff5c505e13b3205b0076d07bf",
+                "reference": "ea4940845535c85ff5c505e13b3205b0076d07bf",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3204,11 +3204,11 @@
                 "debug",
                 "dump"
             ],
-            "time": "2019-10-04T19:48:13+00:00"
+            "time": "2019-10-13T12:02:04+00:00"
         },
         {
             "name": "symfony/var-exporter",
-            "version": "v4.3.5",
+            "version": "v4.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-exporter.git",
@@ -3334,12 +3334,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/framework.git",
-                "reference": "0c67b3e7544a49f2a1ae9263efa00d7779462673"
+                "reference": "736b1fcaa2e3d44e947b81a27b725266b6701c95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/framework/zipball/0c67b3e7544a49f2a1ae9263efa00d7779462673",
-                "reference": "0c67b3e7544a49f2a1ae9263efa00d7779462673",
+                "url": "https://api.github.com/repos/top-think/framework/zipball/736b1fcaa2e3d44e947b81a27b725266b6701c95",
+                "reference": "736b1fcaa2e3d44e947b81a27b725266b6701c95",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3394,7 +3394,7 @@
                 "orm",
                 "thinkphp"
             ],
-            "time": "2019-10-25T11:10:21+00:00"
+            "time": "2019-11-04T10:43:29+00:00"
         },
         {
             "name": "topthink/think-captcha",
@@ -3586,16 +3586,16 @@
         },
         {
             "name": "topthink/think-multi-app",
-            "version": "v1.0.10",
+            "version": "v1.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/think-multi-app.git",
-                "reference": "dec89d453ee7138e69211dd21a897d470d4a4e83"
+                "reference": "215f4a6bb88e53ad41b448c61957336eb55ce6f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/think-multi-app/zipball/dec89d453ee7138e69211dd21a897d470d4a4e83",
-                "reference": "dec89d453ee7138e69211dd21a897d470d4a4e83",
+                "url": "https://api.github.com/repos/top-think/think-multi-app/zipball/215f4a6bb88e53ad41b448c61957336eb55ce6f9",
+                "reference": "215f4a6bb88e53ad41b448c61957336eb55ce6f9",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3632,7 +3632,7 @@
                 }
             ],
             "description": "thinkphp6 multi app support",
-            "time": "2019-10-23T09:52:39+00:00"
+            "time": "2019-10-29T06:34:59+00:00"
         },
         {
             "name": "topthink/think-orm",
@@ -3640,12 +3640,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/think-orm.git",
-                "reference": "aac60421e1a8ac81aea6251e971250fb1aed683c"
+                "reference": "38e0a22ca4f390bee4edb5c17ed2c355c40808ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/think-orm/zipball/aac60421e1a8ac81aea6251e971250fb1aed683c",
-                "reference": "aac60421e1a8ac81aea6251e971250fb1aed683c",
+                "url": "https://api.github.com/repos/top-think/think-orm/zipball/38e0a22ca4f390bee4edb5c17ed2c355c40808ca",
+                "reference": "38e0a22ca4f390bee4edb5c17ed2c355c40808ca",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3683,20 +3683,20 @@
                 "database",
                 "orm"
             ],
-            "time": "2019-10-25T13:33:48+00:00"
+            "time": "2019-10-31T05:11:24+00:00"
         },
         {
             "name": "topthink/think-queue",
-            "version": "v3.0.3",
+            "version": "v3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/think-queue.git",
-                "reference": "f92db88b8a4ad3a4a2a53f21c0f370237181f44b"
+                "reference": "a993295b68a483dc3cb2c0fee05683908fa2572e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/think-queue/zipball/f92db88b8a4ad3a4a2a53f21c0f370237181f44b",
-                "reference": "f92db88b8a4ad3a4a2a53f21c0f370237181f44b",
+                "url": "https://api.github.com/repos/top-think/think-queue/zipball/a993295b68a483dc3cb2c0fee05683908fa2572e",
+                "reference": "a993295b68a483dc3cb2c0fee05683908fa2572e",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3748,7 +3748,7 @@
                 }
             ],
             "description": "The ThinkPHP5 Queue Package",
-            "time": "2019-09-03T03:35:38+00:00"
+            "time": "2019-10-13T03:51:32+00:00"
         },
         {
             "name": "topthink/think-template",
