@@ -1,6 +1,6 @@
 ## 微信开发文档
 后台添加微信服务号，以及对应的参数
-微信服务器对接地址   域名/wechat/wechatApi/related?store_id=1
+微信服务器对接地址   域名index.php/wechat/wechatApi/related?store_id=1
 域名换成你服务器的域名 如果添加有多个微信，请把其他微信状态改成未对接,只保留一个
    
 ###控制器调用
