@@ -52,7 +52,7 @@ class Token
     public function __construct(Request $request)
     {
         $this->request = Request::instance();
-        $appid = $this->request->post('appid');
+        $appid = Request::post('appid');
         $oauth2_client = Db::name('oauth2_client')->where('appid', $appid)->find();
         if (!$oauth2_client) {
             return self::returnMsg(401, 'Invalid authorization credentials');
@@ -79,12 +79,12 @@ class Token
         try {
             $accessToken = self::setAccessToken(array_merge($userInfo, Request::post()));  //传入参数应该是根据手机号查询改用户的数据
             return self::returnMsg(200, 'success', $accessToken);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return self::returnMsg(500, 'fail', $e);
         }
     }
 
-    /**
+    /** 小程序
      * @param string $code
      * @param string $encryptedData
      * @param string $iv
@@ -135,7 +135,7 @@ class Token
 	}
 
     /**
-     * 刷新token
+     * token 过期 刷新token
      */
     public function refresh($refresh_token = '', $appid = '')
     {
