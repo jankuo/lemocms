@@ -21,20 +21,25 @@ app\route\api.php中定义了路由规则
 + timestamp 时间戳
 + sign 签名
 
-2、获取access_token、刷新的access_token，过期时间，用户信息
+
+2、 获取access_token、刷新的access_token，过期时间，用户信息
 返回参数：
 + access_token
 + expires_time
-+ refresh_token
-+ refresh_expires_time
++ refresh_token   token的过期时间过期了要 （刷新 ）token;
++ refresh_expires_time //刷新token的过期时间 过期了要（重新生成）token;
 + client{appid,uid,mobile,.....}
 
 3、传递access_token进行请求 
 加密头规则：USERID base64_encode(appid:token:uid) 
 USERID base64_encode('xxxx':'xxxxx':'xxxxx');
 ![image](images/api_header.png)
+ 
+4 客户端比较 access_token ,expires_time 是否过期 
+如果过期了，那么则 请求 v1/token/refresh 参数
 
-
+5 客户端比较 刷新refresh_token ,refresh_expires_time是否过期，过期了则重新返回第一步的步骤;
+重新生成token;
 
 ###[例子]访问相应的url，例如：域名/index.php/v1/user
 
