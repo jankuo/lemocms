@@ -5,13 +5,16 @@
 ![image](images/api.png)
 
 【流程】
-route/api.php中定义了restful资源路由
+app\config\route.php 配置路由
+app\route\api.php中定义了路由规则
+
 
 
 相关流程
 
 1、获取access_token传参
-地址：域名/v1/token
+地址：域名/api/v1/token 
+#### 注意这里是多应用要加应用名api
 参数：
 + appid 分配的appid
 + nonce 随机数
