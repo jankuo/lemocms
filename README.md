@@ -74,9 +74,16 @@ lemocms 方便二次开发，您可以方便的使用到自己或企业的项目
 
 ~~~
 www  WEB部署目录（或者子目录）
-├─app           应用目录
-│  ├─controller      控制器目录
-│  ├─model           模型目录
+├─app           目录
+│  ├─admin      应用目录
+│  ├───controller      控制器目录
+│  ├───model      model目录
+│  ├───config      config目录
+│  ├───route      route目录
+│  ├───view      视图目录
+│  ├─api      应用目录
+│  ├───controller      控制器目录
+│  ├───model      model目录
 │  ├─ ...            更多类库目录
 │  │
 │  ├─common.php         公共函数文件
@@ -103,7 +110,6 @@ www  WEB部署目录（或者子目录）
 │  └─ ...   
 │
 ├─route                 路由定义目录
-│  ├─app_name           应用路由目录
 │  │  ├─route.php       路由定义文件
 │  │  └─ ...   
 │
