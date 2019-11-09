@@ -58,7 +58,6 @@
       <path value="$PROJECT_DIR$/vendor/topthink/think-template" />
       <path value="$PROJECT_DIR$/vendor/topthink/think-multi-app" />
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
-      <path value="$PROJECT_DIR$/vendor/yuege/think-addons" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/vendor/topthink/think-throttle" />
       <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
