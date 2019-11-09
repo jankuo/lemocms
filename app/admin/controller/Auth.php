@@ -325,9 +325,15 @@ class Auth extends Base
             $list = TreeHelper::cateTree($list);
             $id = Request::param('id');
             $info = AuthRule::find($id)->toArray();
+            $rule = '';
+            if(Request::get('rule_id')){
+                $rule = Db::name('auth_rule')
+                    ->find(Request::get('rule_id'));
+            }
             $view = [
                 'info' => $info,
                 'ruleList' => $list,
+                'rule' => $rule,
             ];
             View::assign($view);
             return View::fetch('rule_add');
