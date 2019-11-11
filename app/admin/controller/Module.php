@@ -25,6 +25,7 @@
  */
 namespace app\admin\controller;
 
+use app\common\controller\Backend;
 use app\common\model\Module as M;
 use app\common\model\Field;
 use app\common\model\FieldType;
@@ -34,7 +35,7 @@ use think\facade\Db;
 use think\facade\Request;
 use think\facade\View;
 
-class Module extends Base
+class Module extends Backend
 {
     public $prefix = '';
     public function initialize()

@@ -12,12 +12,13 @@
  */
 namespace app\admin\controller;
 
+use app\common\controller\Backend;
 use think\facade\Request;
 use think\facade\View;
 use app\common\model\Link as LinkModel;
 use think\Validate;
 
-class Link extends Base
+class Link extends Backend
 {
 
 

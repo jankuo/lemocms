@@ -15,6 +15,7 @@ namespace app\admin\controller;
 use app\admin\model\AuthGroup;
 use app\admin\model\AuthRule;
 use app\admin\model\Admin;
+use app\common\controller\Backend;
 use lemo\helper\SignHelper;
 use lemo\helper\StringHelper;
 use lemo\helper\TreeHelper;
@@ -25,7 +26,7 @@ use think\facade\Request;
 use think\facade\Session;
 use think\facade\View;
 
-class Auth extends Base
+class Auth extends Backend
 {
     public $uid = '';
     public function initialize()

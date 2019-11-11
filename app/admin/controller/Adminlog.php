@@ -11,11 +11,12 @@
  * Date: 2019/8/2
  */
 namespace app\admin\controller;
+use app\common\controller\Backend;
 use think\facade\Config;
 use think\facade\Request;
 use app\admin\model\AdminLog as LogModel;
 use think\facade\View;
-class Adminlog extends Base{
+class Adminlog extends Backend {
 
     public function initialize()
     {

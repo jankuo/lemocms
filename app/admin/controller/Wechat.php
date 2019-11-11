@@ -11,6 +11,7 @@
  * Date: 2019/9/4
  */
 namespace app\admin\controller;
+use app\common\controller\Backend;
 use think\facade\Db;
 use think\facade\Request;
 use think\facade\View;
@@ -33,7 +34,7 @@ use EasyWeChat\Kernel\Messages\Voice;
 use EasyWeChat\Kernel\Messages\News;
 use EasyWeChat\Kernel\Messages\NewsItem;
 
-class Wechat extends Base{
+class Wechat extends Backend {
     //图片（image）: 2M，支持bmp/png/jpeg/jpg/gif格式
     //
     //语音（voice）：2M，播放长度不超过60s，mp3/wma/wav/amr格式

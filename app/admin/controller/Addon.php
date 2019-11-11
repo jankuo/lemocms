@@ -14,6 +14,7 @@
 namespace app\admin\controller;
 
 use app\admin\model\AuthRule;
+use app\common\controller\Backend;
 use lemo\helper\FileHelper;
 use lemo\helper\StringHelper;
 use think\db\exception\PDOException;
@@ -28,7 +29,7 @@ use app\common\model\Addon as AddonModel;
 /**
  * 插件控制器
  */
-class Addon extends Base
+class Addon extends Backend
 {
     public function initialize()
     {

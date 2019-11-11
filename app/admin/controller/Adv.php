@@ -12,12 +12,13 @@
  */
 namespace app\admin\controller;
 
+use app\common\controller\Backend;
 use app\common\model\AdvPosition;
 use think\facade\Db;
 use think\facade\Request;
 use think\facade\View;
 use app\common\model\Adv as AdvModel;
-class Adv extends Base{
+class Adv extends Backend {
 
     public function initialize(){
         parent::initialize();

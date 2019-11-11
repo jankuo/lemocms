@@ -11,12 +11,13 @@
  * Date: 2019/8/2
  */
 namespace app\admin\controller;
+use app\common\controller\Backend;
 use think\facade\Config;
 use think\facade\Env;
 use think\facade\Request;
 use lemo\helper\DataHelper;
 
-class Uploads extends Base{
+class Uploads extends Backend{
 
     //上传验证规则
     protected $uploadValidate = [

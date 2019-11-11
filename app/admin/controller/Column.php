@@ -12,6 +12,7 @@
  */
 namespace app\admin\controller;
 
+use app\common\controller\Backend;
 use lemo\helper\TreeHelper;
 use think\facade\Config;
 use think\facade\Db;
@@ -19,7 +20,7 @@ use think\facade\Request;
 use think\facade\View;
 use app\common\model\Column as CModel;
 
-class Column extends Base
+class Column extends Backend
 {
 
     public function initialize()

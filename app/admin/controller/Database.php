@@ -12,13 +12,14 @@
  * Date: 2019/8/2
  */
 namespace app\admin\controller;
+use app\common\controller\Backend;
 use lemo\helper\StringHelper;
 use think\facade\Request;
 use think\facade\View;
 use app\admin\controller\Backup;
 // 需要修改\tp5er\backup connect()
 //以及 $info['name'] = $file->getFilename();
-class Database extends Base
+class Database extends Backend
 {
     protected $db = '';
     function initialize(){

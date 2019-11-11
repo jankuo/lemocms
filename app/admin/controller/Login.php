@@ -14,13 +14,15 @@ namespace app\admin\controller;
 use app\admin\model\Admin;
 use app\admin\model\AuthGroup;
 use app\BaseController;
+use app\common\controller\Backend;
+use app\common\controller\Base;
 use lemo\helper\SignHelper;
 use think\facade\Session;
 use think\facade\View;
 use think\facade\Request;
 use think\captcha\facade\Captcha;
 
-class Login extends BaseController {
+class Login extends Base {
     /*
      * 登录
      */

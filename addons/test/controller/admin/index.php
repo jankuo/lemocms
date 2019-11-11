@@ -1,10 +1,10 @@
 <?php
 namespace addons\test\controller\admin;
 
-use app\admin\controller\Base;
+use app\common\controller\Backend;
 use think\facade\View;
 
-class Index extends Base
+class Index extends Backend
 {
     public function index(){
         echo 1;

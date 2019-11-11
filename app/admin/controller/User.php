@@ -12,14 +12,14 @@
  */
 namespace app\admin\controller;
 
+use app\common\controller\Backend;
 use think\facade\Request;
 use think\facade\View;
 use app\common\model\UserLevel;
 use app\common\model\User as UserModel;
 use think\facade\Db;
-use util\Excel;
 
-class User extends Base{
+class User extends Backend{
 
     public function initialize()
     {

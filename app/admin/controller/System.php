@@ -11,13 +11,14 @@
  * Date: 2019/8/2
  */
 namespace app\admin\controller;
+use app\common\controller\Backend;
 use app\common\model\Config as ConfigModel;
 use app\common\model\ConfigGroup as ConfigGroupModel;
 use app\common\model\FieldType;
 use think\facade\Request;
 use think\facade\Db;
 use think\facade\View;
-class System extends Base {
+class System extends Backend {
 
     public $rules = [
         ['name'=>'email','title'=>'邮件'],

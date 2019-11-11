@@ -11,13 +11,14 @@
  * Date: 2019/8/26
  */
 namespace app\admin\controller;
+use app\common\controller\Backend;
 use app\common\model\ArticleCate;
 use think\facade\Db;
 use think\facade\Lang;
 use think\facade\Request;
 use think\facade\View;
 use lemo\helper\TreeHelper;
-class Article extends  Base{
+class Article extends  Backend {
 
     public function initialize()
     {

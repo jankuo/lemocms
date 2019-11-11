@@ -15,9 +15,10 @@ namespace app\admin\controller;
 
 use app\admin\controller\Base;
 use app\admin\model\AuthRule;
+use app\common\controller\Backend;
 use think\facade\Db;
 use think\facade\Request;
-class Menu extends Base
+class Menu extends Backend
 {
     public function initialize()
     {

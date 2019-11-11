@@ -12,12 +12,13 @@
  */
 namespace app\admin\controller;
 use app\admin\model\AuthRule;
+use app\common\controller\Backend;
 use think\facade\View;
 use think\facade\Db;
 use think\facade\Cache;
 use think\facade\Session;
 
-class Index extends Base{
+class Index extends Backend{
 
     public function initialize()
     {
