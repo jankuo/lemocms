@@ -73,8 +73,7 @@ CREATE TABLE `lm_admin` (
 --
 
 INSERT INTO `lm_admin` (`id`, `username`, `password`, `group_id`, `email`, `realname`, `mobile`, `ip`, `mdemail`, `status`, `avatar`, `create_time`, `update_time`) VALUES
-(1, 'admin', '$2y$12$f51s7AK3JJlwXE4OwRcOIuyg6eQLBel5uee5jgwSQtGPTBW/NQNLO', 1, '994927909@qq.com', '', '18397423845', '127.0.0.1', '0', 1, '/storage/uploads/20190817\\294faa45405fa24da59c311f55ce313f.png', 1482132862, 1567843792),
-(2, 'yuege', '$2y$12$f51s7AK3JJlwXE4OwRcOIuyg6eQLBel5uee5jgwSQtGPTBW/NQNLO', 2, '994927909@qq.com', '', '18397423845', '127.0.0.1', '0', 1, '/storage/uploads/20190817\\dc25c2714c46a0d2bee894a7d05eb15f.png', 1535512393, 1571034031),
+(1, 'admin', '$2y$12$jJNSWOS.8he.z3s17YCRtesZ1v6F6Ck3zUGBhniRDr2LNHfUUwH5.', 1, '994927909@qq.com', '', '18397423845', '127.0.0.1', '0', 1, '/storage/uploads/20190817\\294faa45405fa24da59c311f55ce313f.png', 1482132862, 1567843792),
 (3, 'demo', '$2y$12$jJNSWOS.8he.z3s17YCRtesZ1v6F6Ck3zUGBhniRDr2LNHfUUwH5.', 2, '994927909@qq.com', '', '18397423845', '119.122.91.146', '0', 1, '/storage/uploads/20190817\\a17c794ac7fae7db012aa6e997cf3400.jpg', 1564041575, 1571034159);
 
 -- --------------------------------------------------------
