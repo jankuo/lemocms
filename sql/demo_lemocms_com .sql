@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 14, 2019 at 08:36 AM
--- Server version: 5.7.26
--- PHP Version: 7.0.12
+-- Generation Time: Nov 14, 2019 at 05:29 PM
+-- Server version: 5.7.27-log
+-- PHP Version: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `lemocms`
+-- Database: `demo_lemocms_com`
 --
 
 -- --------------------------------------------------------
@@ -45,7 +45,6 @@ CREATE TABLE `lm_addon` (
   `create_time` int(10) UNSIGNED DEFAULT NULL COMMENT '创建时间',
   `update_time` int(10) UNSIGNED DEFAULT NULL COMMENT '修改时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='公用_插件表';
-
 
 -- --------------------------------------------------------
 
@@ -75,7 +74,7 @@ CREATE TABLE `lm_admin` (
 
 INSERT INTO `lm_admin` (`id`, `username`, `password`, `group_id`, `email`, `realname`, `mobile`, `ip`, `mdemail`, `status`, `avatar`, `create_time`, `update_time`) VALUES
 (1, 'admin', '$2y$12$jJNSWOS.8he.z3s17YCRtesZ1v6F6Ck3zUGBhniRDr2LNHfUUwH5.', 1, '994927909@qq.com', '', '18397423845', '127.0.0.1', '0', 1, '/storage/uploads/20190817\\294faa45405fa24da59c311f55ce313f.png', 1482132862, 1567843792),
-(3, 'demo', '$2y$12$jJNSWOS.8he.z3s17YCRtesZ1v6F6Ck3zUGBhniRDr2LNHfUUwH5.', 2, '994927909@qq.com', '', '18397423845', '119.122.91.146', '0', 1, '/storage/uploads/20190817\\a17c794ac7fae7db012aa6e997cf3400.jpg', 1564041575, 1571034159);
+(3, 'demo', '$2y$12$jJNSWOS.8he.z3s17YCRtesZ1v6F6Ck3zUGBhniRDr2LNHfUUwH5.', 2, '994927909@qq.com', '', '18397423845', '119.122.91.146', '0', 1, '/storage/uploads/20190817\\a17c794ac7fae7db012aa6e997cf3400.jpg', 1564041575, 1573310452);
 
 -- --------------------------------------------------------
 
@@ -88,9 +87,9 @@ CREATE TABLE `lm_admin_log` (
   `admin_id` int(10) DEFAULT NULL COMMENT '管理员id',
   `username` varchar(100) DEFAULT NULL,
   `log_url` varchar(100) DEFAULT NULL,
-  `log_content` longtext,
+  `log_content` text,
   `log_title` varchar(100) DEFAULT NULL COMMENT '日志描述',
-  `log_agent` varchar(255) DEFAULT NULL,
+  `log_agent` varchar(200) DEFAULT NULL,
   `log_ip` varchar(30) DEFAULT NULL COMMENT 'ip地址',
   `create_time` int(11) DEFAULT NULL COMMENT '日志时间',
   `update_time` int(11) DEFAULT NULL,
@@ -102,597 +101,8 @@ CREATE TABLE `lm_admin_log` (
 --
 
 INSERT INTO `lm_admin_log` (`id`, `admin_id`, `username`, `log_url`, `log_content`, `log_title`, `log_agent`, `log_ip`, `create_time`, `update_time`, `status`) VALUES
-(1391, 1, 'admin', '/index.php/admin/wechat/menu.html', '点击菜单', '微信菜单', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1571904996, 1571904996, 1),
-(1392, 1, 'admin', '/index.php/admin/wechat/menu.html', '点击菜单', '微信菜单', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1571904998, 1571904998, 1),
-(1393, 1, 'admin', '/index.php/admin/wechat/menu.html', '点击菜单', '微信菜单', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1571904998, 1571904998, 1),
-(1394, 1, 'admin', '/index.php/admin/wechat/fans.html', '点击菜单', '粉丝列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1571905000, 1571905000, 1),
-(1395, 1, 'admin', '/index.php/admin/wechat/fans.html', '点击菜单', '粉丝列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1571905000, 1571905000, 1),
-(1396, 1, 'admin', '/index.php/admin/wechat/fans.html', '点击菜单', '粉丝列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1571905029, 1571905029, 1),
-(1397, 1, 'admin', '/index.php/admin/wechat/index.html', '点击菜单', '微信列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1571905046, 1571905046, 1),
-(1398, 1, 'admin', '/index.php/admin/wechat/index.html', '点击菜单', '微信列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1571905047, 1571905047, 1),
-(1399, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"uv7b\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572062323, 1572062323, 1),
-(1400, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"hfbq\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572062328, 1572062328, 1),
-(1401, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"hfbq\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572062334, 1572062334, 1),
-(1402, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"lbbk\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572062340, 1572062340, 1),
-(1403, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"vqur\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572062345, 1572062345, 1),
-(1404, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572062356, 1572062356, 1),
-(1405, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572062356, 1572062356, 1),
-(1406, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572062367, 1572062367, 1),
-(1407, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572062562, 1572062562, 1),
-(1408, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572062587, 1572062587, 1),
-(1458, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071056, 1572071056, 1),
-(1459, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071056, 1572071056, 1),
-(1460, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071162, 1572071162, 1),
-(1461, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071583, 1572071583, 1),
-(1462, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071604, 1572071604, 1),
-(1463, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071623, 1572071623, 1),
-(1464, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071623, 1572071623, 1),
-(1465, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071789, 1572071789, 1),
-(1466, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071790, 1572071790, 1),
-(1467, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071849, 1572071849, 1),
-(1468, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071851, 1572071851, 1),
-(1469, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071854, 1572071854, 1),
-(1470, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071863, 1572071863, 1),
-(1471, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071892, 1572071892, 1),
-(1472, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071893, 1572071893, 1),
-(1473, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071975, 1572071975, 1),
-(1474, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071977, 1572071977, 1),
-(1475, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071978, 1572071978, 1),
-(1476, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572071980, 1572071980, 1),
-(1477, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072015, 1572072015, 1),
-(1478, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072017, 1572072017, 1),
-(1479, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072081, 1572072081, 1),
-(1480, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072082, 1572072082, 1),
-(1481, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072083, 1572072083, 1),
-(1482, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072084, 1572072084, 1),
-(1483, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072094, 1572072094, 1),
-(1484, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072096, 1572072096, 1),
-(1485, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072106, 1572072106, 1),
-(1486, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072107, 1572072107, 1),
-(1487, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072110, 1572072110, 1),
-(1488, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072111, 1572072111, 1),
-(1489, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072113, 1572072113, 1),
-(1490, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072171, 1572072171, 1),
-(1491, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072173, 1572072173, 1),
-(1492, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072175, 1572072175, 1),
-(1493, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072175, 1572072175, 1),
-(1494, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072176, 1572072176, 1),
-(1495, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072178, 1572072178, 1),
-(1496, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072183, 1572072183, 1),
-(1497, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072223, 1572072223, 1),
-(1498, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072225, 1572072225, 1),
-(1499, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072226, 1572072226, 1),
-(1500, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072228, 1572072228, 1),
-(1501, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072238, 1572072238, 1),
-(1502, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072240, 1572072240, 1),
-(1503, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072245, 1572072245, 1),
-(1504, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072251, 1572072251, 1),
-(1505, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072278, 1572072278, 1),
-(1506, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072284, 1572072284, 1),
-(1507, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072286, 1572072286, 1),
-(1508, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072291, 1572072291, 1),
-(1509, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072297, 1572072297, 1),
-(1510, 1, 'admin', '/index.php/admin/wechat/reply.html', '点击菜单', '回复设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072305, 1572072305, 1),
-(1511, 1, 'admin', '/index.php/admin/wechat/reply.html', '点击菜单', '回复设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072305, 1572072305, 1),
-(1512, 1, 'admin', '/index.php/admin/wechat/message.html', '点击菜单', '历史消息', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072309, 1572072309, 1),
-(1513, 1, 'admin', '/index.php/admin/wechat/message.html', '点击菜单', '历史消息', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072310, 1572072310, 1),
-(1514, 1, 'admin', '/index.php/admin/wechat/messagereply.html', '{\"wx_aid\":\"undefined\",\"id\":\"323\"}', '消息回复', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072314, 1572072314, 1),
-(1515, 1, 'admin', '/index.php/admin/wechat/tag.html', '点击菜单', '粉丝标签', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072326, 1572072326, 1),
-(1516, 1, 'admin', '/index.php/admin/wechat/tag.html', '点击菜单', '粉丝标签', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072326, 1572072326, 1),
-(1517, 1, 'admin', '/index.php/admin/wechat/message.html', '点击菜单', '历史消息', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072328, 1572072328, 1),
-(1518, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072336, 1572072336, 1),
-(1519, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072343, 1572072343, 1),
-(1520, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072346, 1572072346, 1),
-(1521, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072366, 1572072366, 1),
-(1522, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072677, 1572072677, 1),
-(1523, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072775, 1572072775, 1),
-(1524, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072789, 1572072789, 1),
-(1525, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572072789, 1572072789, 1),
-(1526, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572073055, 1572073055, 1),
-(1527, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572073060, 1572073060, 1),
-(1528, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572073085, 1572073085, 1),
-(1529, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572073085, 1572073085, 1),
-(1530, 1, 'admin', '/index.php/admin/system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572073101, 1572073101, 1),
-(1531, 1, 'admin', '/index.php/admin/adminlog/index.html', '点击菜单', '日志管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572073113, 1572073113, 1),
-(1532, 1, 'admin', '/index.php/admin/adminlog/index.html', '点击菜单', '日志管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572073113, 1572073113, 1),
-(1533, 1, 'admin', '/index.php/admin/adminlog/index.html', '点击菜单', '日志管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572073124, 1572073124, 1),
-(1534, 1, 'admin', '/index.php/admin/adminlog/index.html', '点击菜单', '日志管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572073124, 1572073124, 1),
-(1535, 1, 'admin', '/index.php/admin/system/index.html', '点击菜单', '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572073125, 1572073125, 1),
-(1536, 1, 'admin', '/index.php/admin/system/index.html', '点击菜单', '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572073125, 1572073125, 1),
-(1537, 1, 'admin', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"eax4\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572087762, 1572087762, 1),
-(1538, 1, 'admin', '/index.php/admin/goods/cate.html', '点击菜单', '商品分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572087771, 1572087771, 1),
-(1539, 1, 'admin', '/index.php/admin/goods/index.html', '点击菜单', '商品列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572087790, 1572087790, 1),
-(1540, 1, 'admin', '/index.php/admin/goods/index.html', '点击菜单', '商品列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572087791, 1572087791, 1),
-(1541, 1, 'admin', '/index.php/admin/goods/cate.html', '点击菜单', '商品分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572087792, 1572087792, 1),
-(1542, 1, 'admin', '/index.php/admin/goods/index.html', '点击菜单', '商品列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572087829, 1572087829, 1),
-(1543, 1, 'admin', '/index.php/admin/goods/index.html', '点击菜单', '商品列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572087908, 1572087908, 1),
-(1544, 1, 'admin', '/index.php/admin/goods/cate.html', '点击菜单', '商品分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572087909, 1572087909, 1),
-(1545, 1, 'admin', '/index.php/admin/goods/cate.html', '点击菜单', '商品分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572087910, 1572087910, 1),
-(1546, 1, 'admin', '/index.php/admin/goods/cate.html', '点击菜单', '商品分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572087954, 1572087954, 1),
-(1547, 1, 'admin', '/index.php/admin/goods/cate.html', '点击菜单', '商品分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572087954, 1572087954, 1),
-(1548, 1, 'admin', '/index.php/admin/goods/index.html', '点击菜单', '商品列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572087958, 1572087958, 1),
-(1549, 1, 'admin', '/index.php/admin/goods/index.html', '点击菜单', '商品列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1572087958, 1572087958, 1),
-(1550, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"ucr5\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573181883, 1573181883, 1),
-(1551, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573181893, 1573181893, 1),
-(1552, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573181893, 1573181893, 1),
-(1553, 1, 'admin', '/admin/auth/ruleadd.html', '{\"rule_id\":\"166\"}', '权限增加', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573181940, 1573181940, 1),
-(1554, 1, 'admin', '/admin/auth/ruleadd.html', '{\"rule_id\":\"166\"}', '权限增加', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573181966, 1573181966, 1),
-(1555, 1, 'admin', '/admin/auth/ruleedit.html', '{\"id\":\"166\"}', '权限编辑', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573181976, 1573181976, 1),
-(1556, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573181989, 1573181989, 1),
-(1557, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573182691, 1573182691, 1),
-(1558, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573182730, 1573182730, 1),
-(1559, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573182737, 1573182737, 1),
-(1560, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573182743, 1573182743, 1),
-(1561, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573182773, 1573182773, 1),
-(1562, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573182807, 1573182807, 1),
-(1563, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573182823, 1573182823, 1),
-(1564, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573182863, 1573182863, 1),
-(1565, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573182888, 1573182888, 1),
-(1566, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573182997, 1573182997, 1),
-(1567, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183013, 1573183013, 1),
-(1568, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183030, 1573183030, 1),
-(1569, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183055, 1573183055, 1),
-(1570, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183111, 1573183111, 1),
-(1571, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183115, 1573183115, 1),
-(1572, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183120, 1573183120, 1),
-(1573, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183138, 1573183138, 1),
-(1574, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183142, 1573183142, 1),
-(1575, 1, 'admin', '/admin/addons/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183155, 1573183155, 1),
-(1576, 1, 'admin', '/admin/auth/group.html', '点击菜单', '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183173, 1573183173, 1),
-(1577, 1, 'admin', '/admin/auth/group.html', '点击菜单', '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183173, 1573183173, 1),
-(1578, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183174, 1573183174, 1),
-(1579, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183174, 1573183174, 1),
-(1580, 1, 'admin', '/admin/auth/ruleedit.html', '{\"id\":\"166\"}', '权限编辑', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183178, 1573183178, 1),
-(1581, 1, 'admin', '/admin/auth/ruleedit.html', '{\"id\":\"167\"}', '权限编辑', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183190, 1573183190, 1),
-(1582, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183198, 1573183198, 1),
-(1583, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183199, 1573183199, 1),
-(1584, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183208, 1573183208, 1),
-(1585, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183211, 1573183211, 1),
-(1586, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183223, 1573183223, 1),
-(1587, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183248, 1573183248, 1),
-(1588, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183255, 1573183255, 1),
-(1589, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183281, 1573183281, 1),
-(1590, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183304, 1573183304, 1),
-(1591, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183332, 1573183332, 1),
-(1592, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573183984, 1573183984, 1),
-(1593, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573184142, 1573184142, 1),
-(1594, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573184650, 1573184650, 1),
-(1595, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573184685, 1573184685, 1),
-(1596, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573184743, 1573184743, 1),
-(1597, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187186, 1573187186, 1),
-(1598, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187498, 1573187498, 1),
-(1599, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187509, 1573187509, 1),
-(1600, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187513, 1573187513, 1),
-(1601, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187545, 1573187545, 1),
-(1602, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187583, 1573187583, 1),
-(1603, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187641, 1573187641, 1),
-(1604, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187651, 1573187651, 1),
-(1605, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187660, 1573187660, 1),
-(1606, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187663, 1573187663, 1),
-(1607, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187676, 1573187676, 1),
-(1608, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187682, 1573187682, 1),
-(1609, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187700, 1573187700, 1),
-(1610, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187725, 1573187725, 1),
-(1611, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187905, 1573187905, 1),
-(1612, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187924, 1573187924, 1),
-(1613, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187933, 1573187933, 1),
-(1614, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187947, 1573187947, 1),
-(1615, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573187970, 1573187970, 1),
-(1616, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573188012, 1573188012, 1),
-(1617, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573188019, 1573188019, 1),
-(1618, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573188038, 1573188038, 1),
-(1619, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573188044, 1573188044, 1),
-(1620, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573188057, 1573188057, 1),
-(1621, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573188067, 1573188067, 1),
-(1622, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573188080, 1573188080, 1),
-(1623, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573188438, 1573188438, 1),
-(1624, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573188457, 1573188457, 1),
-(1625, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573188492, 1573188492, 1),
-(1626, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573188514, 1573188514, 1),
-(1627, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573188532, 1573188532, 1),
-(1628, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573188611, 1573188611, 1),
-(1629, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573188698, 1573188698, 1),
-(1630, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573192340, 1573192340, 1),
-(1631, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573192640, 1573192640, 1),
-(1632, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573192717, 1573192717, 1),
-(1633, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573193025, 1573193025, 1),
-(1634, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573193026, 1573193026, 1),
-(1635, 1, 'admin', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"etig\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573193426, 1573193426, 1),
-(1636, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573193441, 1573193441, 1),
-(1637, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573193441, 1573193441, 1),
-(1638, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573193480, 1573193480, 1),
-(1639, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573193734, 1573193734, 1),
-(1640, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573193734, 1573193734, 1),
-(1641, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573193762, 1573193762, 1),
-(1642, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573193855, 1573193855, 1),
-(1643, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573193888, 1573193888, 1),
-(1644, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573193900, 1573193900, 1),
-(1645, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573195569, 1573195569, 1),
-(1646, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573195573, 1573195573, 1),
-(1647, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573195622, 1573195622, 1),
-(1648, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573196141, 1573196141, 1),
-(1649, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573196171, 1573196171, 1),
-(1650, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573196174, 1573196174, 1),
-(1651, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573196302, 1573196302, 1),
-(1652, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573196339, 1573196339, 1),
-(1653, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573196400, 1573196400, 1),
-(1654, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573196419, 1573196419, 1),
-(1655, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573196419, 1573196419, 1);
-INSERT INTO `lm_admin_log` (`id`, `admin_id`, `username`, `log_url`, `log_content`, `log_title`, `log_agent`, `log_ip`, `create_time`, `update_time`, `status`) VALUES
-(1656, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573196503, 1573196503, 1),
-(1657, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573196830, 1573196830, 1),
-(1658, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573196840, 1573196840, 1),
-(1659, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573196849, 1573196849, 1),
-(1660, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573196857, 1573196857, 1),
-(1661, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573196884, 1573196884, 1),
-(1662, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573197018, 1573197018, 1),
-(1663, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573197060, 1573197060, 1),
-(1664, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573197149, 1573197149, 1),
-(1665, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573197336, 1573197336, 1),
-(1666, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573197362, 1573197362, 1),
-(1667, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573197536, 1573197536, 1),
-(1668, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573199754, 1573199754, 1),
-(1669, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573201888, 1573201888, 1),
-(1670, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202421, 1573202421, 1),
-(1671, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202460, 1573202460, 1),
-(1672, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202490, 1573202490, 1),
-(1673, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202505, 1573202505, 1),
-(1674, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202517, 1573202517, 1),
-(1675, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202702, 1573202702, 1),
-(1676, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202740, 1573202740, 1),
-(1677, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202741, 1573202741, 1),
-(1678, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202741, 1573202741, 1),
-(1679, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202741, 1573202741, 1),
-(1680, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202744, 1573202744, 1),
-(1681, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202761, 1573202761, 1),
-(1682, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202762, 1573202762, 1),
-(1683, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202773, 1573202773, 1),
-(1684, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202783, 1573202783, 1),
-(1685, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202805, 1573202805, 1),
-(1686, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202815, 1573202815, 1),
-(1687, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202878, 1573202878, 1),
-(1688, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202888, 1573202888, 1),
-(1689, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202901, 1573202901, 1),
-(1690, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573202909, 1573202909, 1),
-(1691, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573203264, 1573203264, 1),
-(1692, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573204275, 1573204275, 1),
-(1693, 1, 'admin', '/index.php/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573205113, 1573205113, 1),
-(1694, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"nabn\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573257939, 1573257939, 1),
-(1695, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573257964, 1573257964, 1),
-(1696, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573257964, 1573257964, 1),
-(1697, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573257974, 1573257974, 1),
-(1698, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573257989, 1573257989, 1),
-(1699, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573258006, 1573258006, 1),
-(1700, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573258055, 1573258055, 1),
-(1701, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573258061, 1573258061, 1),
-(1702, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573258169, 1573258169, 1),
-(1703, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573258188, 1573258188, 1),
-(1704, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573258209, 1573258209, 1),
-(1705, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573258295, 1573258295, 1),
-(1706, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573258517, 1573258517, 1),
-(1707, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573258775, 1573258775, 1),
-(1708, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573258913, 1573258913, 1),
-(1709, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573258940, 1573258940, 1),
-(1710, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573258994, 1573258994, 1),
-(1711, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573258994, 1573258994, 1),
-(1712, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573259012, 1573259012, 1),
-(1713, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573259016, 1573259016, 1),
-(1714, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573259022, 1573259022, 1),
-(1715, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573259048, 1573259048, 1),
-(1716, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573259073, 1573259073, 1),
-(1717, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573259090, 1573259090, 1),
-(1718, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573259758, 1573259758, 1),
-(1719, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573259758, 1573259758, 1),
-(1720, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573259986, 1573259986, 1),
-(1721, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573260702, 1573260702, 1),
-(1722, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573260703, 1573260703, 1),
-(1723, 1, 'admin', '/admin/auth/ruleedit.html', '{\"id\":\"155\"}', '权限编辑', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573260705, 1573260705, 1),
-(1724, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573261870, 1573261870, 1),
-(1725, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573261872, 1573261872, 1),
-(1726, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573261883, 1573261883, 1),
-(1727, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573262657, 1573262657, 1),
-(1728, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573262706, 1573262706, 1),
-(1729, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573262716, 1573262716, 1),
-(1730, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573262792, 1573262792, 1),
-(1731, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573262824, 1573262824, 1),
-(1732, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573262983, 1573262983, 1),
-(1733, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573263203, 1573263203, 1),
-(1734, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573263231, 1573263231, 1),
-(1735, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573263244, 1573263244, 1),
-(1736, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573263253, 1573263253, 1),
-(1737, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573263265, 1573263265, 1),
-(1738, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573263369, 1573263369, 1),
-(1739, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573263384, 1573263384, 1),
-(1740, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573263424, 1573263424, 1),
-(1741, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573263444, 1573263444, 1),
-(1742, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573263449, 1573263449, 1),
-(1743, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573263455, 1573263455, 1),
-(1744, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573263456, 1573263456, 1),
-(1745, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573263478, 1573263478, 1),
-(1746, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573263544, 1573263544, 1),
-(1747, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573264196, 1573264196, 1),
-(1748, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573264196, 1573264196, 1),
-(1749, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573264936, 1573264936, 1),
-(1750, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573264989, 1573264989, 1),
-(1751, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573264990, 1573264990, 1),
-(1752, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573265018, 1573265018, 1),
-(1753, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573265021, 1573265021, 1),
-(1754, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573265038, 1573265038, 1),
-(1755, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573265088, 1573265088, 1),
-(1756, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573265111, 1573265111, 1),
-(1757, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573265130, 1573265130, 1),
-(1758, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573265317, 1573265317, 1),
-(1759, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573265338, 1573265338, 1),
-(1760, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573265366, 1573265366, 1),
-(1761, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573265519, 1573265519, 1),
-(1762, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573265533, 1573265533, 1),
-(1763, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573265748, 1573265748, 1),
-(1764, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573265764, 1573265764, 1),
-(1765, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573265942, 1573265942, 1),
-(1766, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573265955, 1573265955, 1),
-(1767, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573265969, 1573265969, 1),
-(1768, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573265992, 1573265992, 1),
-(1769, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573266027, 1573266027, 1),
-(1770, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573266270, 1573266270, 1),
-(1771, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573266348, 1573266348, 1),
-(1772, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573266358, 1573266358, 1),
-(1773, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269209, 1573269209, 1),
-(1774, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269247, 1573269247, 1),
-(1775, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269258, 1573269258, 1),
-(1776, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269328, 1573269328, 1),
-(1777, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269357, 1573269357, 1),
-(1778, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269370, 1573269370, 1),
-(1779, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269382, 1573269382, 1),
-(1780, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269394, 1573269394, 1),
-(1781, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269421, 1573269421, 1),
-(1782, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269435, 1573269435, 1),
-(1783, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269440, 1573269440, 1),
-(1784, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269461, 1573269461, 1),
-(1785, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269618, 1573269618, 1),
-(1786, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269625, 1573269625, 1),
-(1787, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269642, 1573269642, 1),
-(1788, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269651, 1573269651, 1),
-(1789, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269861, 1573269861, 1),
-(1790, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269883, 1573269883, 1),
-(1791, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269886, 1573269886, 1),
-(1792, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269899, 1573269899, 1),
-(1793, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269917, 1573269917, 1),
-(1794, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269927, 1573269927, 1),
-(1795, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269943, 1573269943, 1),
-(1796, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269977, 1573269977, 1),
-(1797, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573269983, 1573269983, 1),
-(1798, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573270010, 1573270010, 1),
-(1799, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573270138, 1573270138, 1),
-(1800, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573270727, 1573270727, 1),
-(1801, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573270744, 1573270744, 1),
-(1802, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573270760, 1573270760, 1),
-(1803, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573270767, 1573270767, 1),
-(1804, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573270777, 1573270777, 1),
-(1805, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573270852, 1573270852, 1),
-(1806, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573270858, 1573270858, 1),
-(1807, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573270898, 1573270898, 1),
-(1808, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573270921, 1573270921, 1),
-(1809, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573270927, 1573270927, 1),
-(1810, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573270998, 1573270998, 1),
-(1811, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271038, 1573271038, 1),
-(1812, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271301, 1573271301, 1),
-(1813, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271382, 1573271382, 1),
-(1814, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271387, 1573271387, 1),
-(1815, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271397, 1573271397, 1),
-(1816, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271504, 1573271504, 1),
-(1817, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271512, 1573271512, 1),
-(1818, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271576, 1573271576, 1),
-(1819, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271580, 1573271580, 1),
-(1820, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271607, 1573271607, 1),
-(1821, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271612, 1573271612, 1),
-(1822, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271628, 1573271628, 1),
-(1823, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271662, 1573271662, 1),
-(1824, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271714, 1573271714, 1),
-(1825, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271719, 1573271719, 1),
-(1826, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271790, 1573271790, 1),
-(1827, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271795, 1573271795, 1),
-(1828, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271827, 1573271827, 1),
-(1829, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271831, 1573271831, 1),
-(1830, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271869, 1573271869, 1),
-(1831, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271871, 1573271871, 1),
-(1832, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271875, 1573271875, 1),
-(1833, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271955, 1573271955, 1),
-(1834, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271959, 1573271959, 1),
-(1835, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271965, 1573271965, 1),
-(1836, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573271982, 1573271982, 1),
-(1837, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573272004, 1573272004, 1),
-(1838, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573272009, 1573272009, 1),
-(1839, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573272032, 1573272032, 1),
-(1840, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573272043, 1573272043, 1),
-(1841, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573272048, 1573272048, 1),
-(1842, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573272578, 1573272578, 1),
-(1843, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573272582, 1573272582, 1),
-(1844, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573272619, 1573272619, 1),
-(1845, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573272702, 1573272702, 1),
-(1846, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573272719, 1573272719, 1),
-(1847, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573272719, 1573272719, 1),
-(1848, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573272726, 1573272726, 1),
-(1849, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573272751, 1573272751, 1),
-(1850, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573272794, 1573272794, 1),
-(1851, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573272973, 1573272973, 1),
-(1852, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573272992, 1573272992, 1),
-(1853, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573273455, 1573273455, 1),
-(1854, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573273538, 1573273538, 1),
-(1855, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573273551, 1573273551, 1),
-(1856, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573273574, 1573273574, 1),
-(1857, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573273597, 1573273597, 1),
-(1858, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573273717, 1573273717, 1),
-(1859, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573273753, 1573273753, 1),
-(1860, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573273821, 1573273821, 1),
-(1861, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573275596, 1573275596, 1),
-(1862, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573275617, 1573275617, 1),
-(1863, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573275995, 1573275995, 1),
-(1864, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573276012, 1573276012, 1),
-(1865, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573276029, 1573276029, 1),
-(1866, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573276039, 1573276039, 1),
-(1867, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573276248, 1573276248, 1),
-(1868, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573276513, 1573276513, 1),
-(1869, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573276535, 1573276535, 1),
-(1870, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573276553, 1573276553, 1),
-(1871, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573276577, 1573276577, 1),
-(1872, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573276651, 1573276651, 1),
-(1873, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573276682, 1573276682, 1),
-(1874, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573276692, 1573276692, 1),
-(1875, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573276752, 1573276752, 1),
-(1876, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573276774, 1573276774, 1),
-(1877, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573276799, 1573276799, 1),
-(1878, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573276861, 1573276861, 1),
-(1879, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573276918, 1573276918, 1),
-(1880, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277019, 1573277019, 1);
-INSERT INTO `lm_admin_log` (`id`, `admin_id`, `username`, `log_url`, `log_content`, `log_title`, `log_agent`, `log_ip`, `create_time`, `update_time`, `status`) VALUES
-(1881, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277025, 1573277025, 1),
-(1882, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277043, 1573277043, 1),
-(1883, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277086, 1573277086, 1),
-(1884, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277184, 1573277184, 1),
-(1885, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277384, 1573277384, 1),
-(1886, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277437, 1573277437, 1),
-(1887, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277438, 1573277438, 1),
-(1888, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277507, 1573277507, 1),
-(1889, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277507, 1573277507, 1),
-(1890, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277512, 1573277512, 1),
-(1891, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277591, 1573277591, 1),
-(1892, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277765, 1573277765, 1),
-(1893, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277767, 1573277767, 1),
-(1894, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277777, 1573277777, 1),
-(1895, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277902, 1573277902, 1),
-(1896, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277928, 1573277928, 1),
-(1897, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277946, 1573277946, 1),
-(1898, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573277976, 1573277976, 1),
-(1899, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573278077, 1573278077, 1),
-(1900, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573278314, 1573278314, 1),
-(1901, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573278480, 1573278480, 1),
-(1902, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573278627, 1573278627, 1),
-(1903, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573278748, 1573278748, 1),
-(1904, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573278748, 1573278748, 1),
-(1905, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573278775, 1573278775, 1),
-(1906, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573278794, 1573278794, 1),
-(1907, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573278813, 1573278813, 1),
-(1908, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573278833, 1573278833, 1),
-(1909, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573278865, 1573278865, 1),
-(1910, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573278876, 1573278876, 1),
-(1911, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573278900, 1573278900, 1),
-(1912, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573278968, 1573278968, 1),
-(1913, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573278968, 1573278968, 1),
-(1914, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573278995, 1573278995, 1),
-(1915, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573279026, 1573279026, 1),
-(1916, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573279052, 1573279052, 1),
-(1917, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573279133, 1573279133, 1),
-(1918, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573279154, 1573279154, 1),
-(1919, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573279231, 1573279231, 1),
-(1920, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573279238, 1573279238, 1),
-(1921, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573279244, 1573279244, 1),
-(1922, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573279264, 1573279264, 1),
-(1923, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573283088, 1573283088, 1),
-(1924, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573283089, 1573283089, 1),
-(1925, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573283094, 1573283094, 1),
-(1926, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573283240, 1573283240, 1),
-(1927, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573283248, 1573283248, 1),
-(1928, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573283258, 1573283258, 1),
-(1929, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573285928, 1573285928, 1),
-(1930, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573285946, 1573285946, 1),
-(1931, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573285947, 1573285947, 1),
-(1932, 1, 'admin', '/admin/auth/ruleadd.html', '{\"rule_id\":\"1\"}', '权限增加', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573285950, 1573285950, 1),
-(1933, 1, 'admin', '/admin/auth/ruleadd.html', '{\"rule_id\":\"166\"}', '权限增加', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573285953, 1573285953, 1),
-(1934, 1, 'admin', '/admin/addon/manager.html', '点击菜单', '插件管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573286017, 1573286017, 1),
-(1935, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573286077, 1573286077, 1),
-(1936, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573286077, 1573286077, 1),
-(1937, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573287442, 1573287442, 1),
-(1938, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573287442, 1573287442, 1),
-(1939, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573287447, 1573287447, 1),
-(1940, 1, 'admin', '/admin/adminlog/index.html', '点击菜单', '日志管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573287462, 1573287462, 1),
-(1941, 1, 'admin', '/admin/adminlog/index.html', '点击菜单', '日志管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573287462, 1573287462, 1),
-(1942, 1, 'admin', '/admin/adminlog/index.html', '点击菜单', '日志管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573287477, 1573287477, 1),
-(1943, 1, 'admin', '/admin/adminlog/index.html', '点击菜单', '日志管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573287572, 1573287572, 1),
-(1944, 1, 'admin', '/admin/addon/manager.html', '点击菜单', '插件管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573288358, 1573288358, 1),
-(1945, 1, 'admin', '/admin/addon/manager.html', '点击菜单', '插件管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573288999, 1573288999, 1),
-(1946, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573289006, 1573289006, 1),
-(1947, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573289006, 1573289006, 1),
-(1948, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573289013, 1573289013, 1),
-(1949, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573289013, 1573289013, 1),
-(1950, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573289146, 1573289146, 1),
-(1951, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"8taa\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573290917, 1573290917, 1),
-(1952, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573290925, 1573290925, 1),
-(1953, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573290925, 1573290925, 1),
-(1954, 1, 'admin', '/admin/auth/ruleedit.html', '{\"id\":\"155\"}', '权限编辑', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573290927, 1573290927, 1),
-(1955, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573290954, 1573290954, 1),
-(1956, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573290957, 1573290957, 1),
-(1957, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573290957, 1573290957, 1),
-(1958, 1, 'admin', '/admin/auth/ruleedit.html', '{\"id\":\"155\"}', '权限编辑', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573290959, 1573290959, 1),
-(1959, 1, 'admin', '/admin/auth/adminlist.html', '点击菜单', '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573290964, 1573290964, 1),
-(1960, 1, 'admin', '/admin/auth/adminlist.html', '点击菜单', '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573290964, 1573290964, 1),
-(1961, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573290964, 1573290964, 1),
-(1962, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573290969, 1573290969, 1),
-(1963, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573290970, 1573290970, 1),
-(1964, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573290978, 1573290978, 1),
-(1965, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573291166, 1573291166, 1),
-(1966, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573291166, 1573291166, 1),
-(1967, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573291171, 1573291171, 1),
-(1968, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573291180, 1573291180, 1),
-(1969, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573291197, 1573291197, 1),
-(1970, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573291198, 1573291198, 1),
-(1971, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573291246, 1573291246, 1),
-(1972, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573291247, 1573291247, 1),
-(1973, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573291248, 1573291248, 1),
-(1974, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573291250, 1573291250, 1),
-(1975, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573291251, 1573291251, 1),
-(1976, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573291309, 1573291309, 1),
-(1977, 1, 'admin', '/admin/goods/index.html', '点击菜单', '商品列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573291322, 1573291322, 1),
-(1978, 1, 'admin', '/admin/goods/index.html', '点击菜单', '商品列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573291322, 1573291322, 1),
-(1979, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573291552, 1573291552, 1),
-(1980, 1, 'admin', '/admin/addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573291552, 1573291552, 1),
-(1981, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"hrtf\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461095, 1573461095, 1),
-(1982, 1, 'admin', '/admin/goods/index.html', '点击菜单', '商品列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461112, 1573461112, 1),
-(1983, 1, 'admin', '/admin/goods/index.html', '点击菜单', '商品列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461112, 1573461112, 1),
-(1984, 1, 'admin', '/admin/goods/cate.html', '点击菜单', '商品分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461114, 1573461114, 1),
-(1985, 1, 'admin', '/admin/goods/cate.html', '点击菜单', '商品分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461114, 1573461114, 1),
-(1986, 1, 'admin', '/admin/module/index.html', '点击菜单', '模型管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461129, 1573461129, 1),
-(1987, 1, 'admin', '/admin/module/index.html', '点击菜单', '模型管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461129, 1573461129, 1),
-(1988, 1, 'admin', '/admin/column/index.html', '点击菜单', '栏目管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461129, 1573461129, 1),
-(1989, 1, 'admin', '/admin/column/index.html', '点击菜单', '栏目管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461129, 1573461129, 1),
-(1990, 1, 'admin', '/admin/auth/adminlist.html', '点击菜单', '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461134, 1573461134, 1),
-(1991, 1, 'admin', '/admin/auth/adminlist.html', '点击菜单', '管理员列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461135, 1573461135, 1),
-(1992, 1, 'admin', '/admin/auth/group.html', '点击菜单', '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461137, 1573461137, 1),
-(1993, 1, 'admin', '/admin/auth/group.html', '点击菜单', '权限组', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461137, 1573461137, 1),
-(1994, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461138, 1573461138, 1),
-(1995, 1, 'admin', '/admin/auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461139, 1573461139, 1),
-(1996, 1, 'admin', '/admin/column/index.html', '点击菜单', '栏目管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461214, 1573461214, 1),
-(1997, 1, 'admin', '/admin/column/index.html', '点击菜单', '栏目管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461214, 1573461214, 1),
-(1998, 1, 'admin', '/admin/module/index.html', '点击菜单', '模型管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461217, 1573461217, 1),
-(1999, 1, 'admin', '/admin/module/index.html', '点击菜单', '模型管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461217, 1573461217, 1),
-(2000, 1, 'admin', '/admin/column/index.html', '点击菜单', '栏目管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461733, 1573461733, 1),
-(2001, 1, 'admin', '/admin/column/index.html', '点击菜单', '栏目管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461733, 1573461733, 1),
-(2002, 1, 'admin', '/admin/column/index.html', '点击菜单', '栏目管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461747, 1573461747, 1),
-(2003, 1, 'admin', '/admin/column/index.html', '点击菜单', '栏目管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461750, 1573461750, 1),
-(2004, 1, 'admin', '/admin/column/index.html', '点击菜单', '栏目管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461750, 1573461750, 1),
-(2005, 1, 'admin', '/admin/link/index.html', '点击菜单', '链接列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461751, 1573461751, 1),
-(2006, 1, 'admin', '/admin/link/index.html', '点击菜单', '链接列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461751, 1573461751, 1),
-(2007, 1, 'admin', '/admin/adv/index.html', '点击菜单', '广告列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461753, 1573461753, 1),
-(2008, 1, 'admin', '/admin/adv/index.html', '点击菜单', '广告列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461753, 1573461753, 1),
-(2009, 1, 'admin', '/admin/link/index.html', '点击菜单', '链接列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461754, 1573461754, 1),
-(2010, 1, 'admin', '/admin/adv/pos.html', '点击菜单', '广告位置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461757, 1573461757, 1),
-(2011, 1, 'admin', '/admin/adv/pos.html', '点击菜单', '广告位置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461757, 1573461757, 1),
-(2012, 1, 'admin', '/admin/article/index.html', '点击菜单', '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461761, 1573461761, 1),
-(2013, 1, 'admin', '/admin/article/index.html', '点击菜单', '文章列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461761, 1573461761, 1),
-(2014, 1, 'admin', '/admin/article/articlecate.html', '点击菜单', '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461762, 1573461762, 1),
-(2015, 1, 'admin', '/admin/article/articlecate.html', '点击菜单', '文章分类', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461762, 1573461762, 1),
-(2016, 1, 'admin', '/admin/goods/index.html', '点击菜单', '商品列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461773, 1573461773, 1),
-(2017, 1, 'admin', '/admin/goods/index.html', '点击菜单', '商品列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461779, 1573461779, 1),
-(2018, 1, 'admin', '/admin/goods/index.html', '点击菜单', '商品列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461888, 1573461888, 1),
-(2019, 1, 'admin', '/admin/goods/index.html', '点击菜单', '商品列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461889, 1573461889, 1),
-(2020, 1, 'admin', '/admin/goods/index.html', '点击菜单', '商品列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461891, 1573461891, 1),
-(2021, 1, 'admin', '/admin/column/index.html', '点击菜单', '栏目管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461934, 1573461934, 1),
-(2022, 1, 'admin', '/admin/column/index.html', '点击菜单', '栏目管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461934, 1573461934, 1),
-(2023, 1, 'admin', '/admin/module/index.html', '点击菜单', '模型管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461936, 1573461936, 1),
-(2024, 1, 'admin', '/admin/module/index.html', '点击菜单', '模型管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461936, 1573461936, 1),
-(2025, 1, 'admin', '/admin/link/index.html', '点击菜单', '链接列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461937, 1573461937, 1),
-(2026, 1, 'admin', '/admin/link/index.html', '点击菜单', '链接列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461937, 1573461937, 1),
-(2027, 1, 'admin', '/admin/goods/index.html', '点击菜单', '商品列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461942, 1573461942, 1),
-(2028, 1, 'admin', '/admin/goods/index.html', '点击菜单', '商品列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '127.0.0.1', 1573461942, 1573461942, 1);
+(1, 3, 'demo', '/index.php/admin/wechat/menu.html', '点击菜单', '微信菜单', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36', '171.117.48.56', 1573723403, 1573723403, 1),
+(2, 3, 'demo', '/index.php/admin/wechat/menu.html', '点击菜单', '微信菜单', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36', '171.117.48.56', 1573723404, 1573723404, 1);
 
 -- --------------------------------------------------------
 
@@ -732,12 +142,12 @@ INSERT INTO `lm_adv` (`id`, `pid`, `media_type`, `ad_name`, `ad_link`, `ad_image
 (4, 2, 0, '轮播', 'javascript:void(0);', '/public/upload/ad/2018/04-13/8099744a886c2cfad7c837e28aee9d52.jpg', 1451577600, 1767283200, '', '', '', 0, 0, 1, 0, 0, '#f1e6d2', 0, 0),
 (7, 2, 0, '其他', 'javascript:void(0);', '/public/upload/ad/2018/04-13/7009c820b93bcf31d3e42df31d78ed71.jpg', 1451577600, 1767283200, '', '', '', 0, 0, 1, 0, 0, '#f1dcf7', 0, 1567574061),
 (12, 2, 0, '其他', 'javascript:void(0);', '/public/upload/ad/2018/04-24/44aa330b056f5b090b6d6ac8a9a072dd.jpg', 1451577600, 1767283200, '', '', '', 0, 0, 1, 0, 0, '#000000', 0, 0),
-(82, 1, 0, '', 'https://www.baidu.com', '/storage/uploads/20190818\\0c2a7f85348cd9ae508ca860388fa021.png', 0, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566107420, 1566107420),
-(83, 1, 0, '组合套餐', 'https://www.baidu.com', '/storage/uploads/20190818\\2db9e450c251d0d21dac3d3384134bb0.png', 1566130740, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566107921, 1567934004),
-(84, 4, 0, 'banner6 ', 'https://www.baidu.com', '/storage/uploads/20190818\\8ebd41bd38db53338af00026cb592bc3.png', 1566130740, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566107968, 1566107968),
-(85, 1, 0, '组合套餐', 'https://www.baidu.com', '/storage/uploads/20190818\\674ca52c87c4552352f35d820c3ce33e.png', 0, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566108105, 1567584671),
-(86, 2, 0, '组合套餐', 'https://www.baidu.com', '/storage/uploads/20190818\\cd986a75a1be03d8a7af558fda044ca4.png', 1566130740, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566108149, 1568273418),
-(87, 2, 0, 'banner6 ', 'https://www.baidu.com', '/storage/uploads/20190818\\7e2ca2635af1031871ab121938818a4d.png', 1564588800, 1568908800, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566108542, 1568814075);
+(82, 1, 0, '', 'https://www.baidu.com', '/storage/uploads/20190818\\0c2a7f85348cd9ae508ca860388fa021.png', 0, 0, '', '994927909@qq.com', '', 0, 0, 0, 50, 0, '', 1566107420, 1573696473),
+(83, 1, 0, '组合套餐', 'https://www.baidu.com', '/storage/uploads/20190818\\2db9e450c251d0d21dac3d3384134bb0.png', 1566130740, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566107921, 1572491129),
+(84, 4, 0, 'banner6 ', 'https://www.baidu.com', '/storage/uploads/20190818\\8ebd41bd38db53338af00026cb592bc3.png', 1566130740, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566107968, 1572930757),
+(85, 1, 0, '组合套餐', 'https://www.baidu.com', '/storage/uploads/20190818\\674ca52c87c4552352f35d820c3ce33e.png', 0, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566108105, 1572845406),
+(86, 2, 0, '组合套餐', 'https://www.baidu.com', '/storage/uploads/20190818\\cd986a75a1be03d8a7af558fda044ca4.png', 1566130740, 0, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566108149, 1572491126),
+(87, 2, 0, 'banner6 ', 'https://www.baidu.com', '/storage/uploads/20190818\\7e2ca2635af1031871ab121938818a4d.png', 1564588800, 1568908800, '', '994927909@qq.com', '', 0, 0, 1, 50, 0, '', 1566108542, 1572967086);
 
 -- --------------------------------------------------------
 
@@ -827,8 +237,8 @@ INSERT INTO `lm_adv_position` (`id`, `position_name`, `ad_width`, `ad_height`, `
 (517, 'Ad页面自动增加广告位 517 ', 0, 0, 'Ad页面', '', 1, 0, 1570166613),
 (518, 'Ad页面自动增加广告位 518 ', 0, 0, 'Ad页面', '', 1, 0, 1570166613),
 (533, 'Ad页面自动增加广告位 533 ', 0, 0, 'Ad页面', '', 1, 0, 1568708269),
-(534, 'Ad页面自动增加广告位 534 ', 0, 0, 'Ad页面', '', 1, 0, 1568708270),
-(539, '首页', 1080, 300, '其他1', '', 1, 1566111321, 1568708270);
+(534, 'Ad页面自动增加广告位 534 ', 0, 0, 'Ad页面', '', 1, 0, 1572867856),
+(539, '首页', 1080, 300, '其他1', '', 1, 1566111321, 1573579364);
 
 -- --------------------------------------------------------
 
@@ -864,7 +274,7 @@ CREATE TABLE `lm_article` (
 --
 
 INSERT INTO `lm_article` (`id`, `pid`, `title`, `description`, `content`, `author`, `author_email`, `keywords`, `article_type`, `status`, `file_url`, `open_type`, `link`, `click`, `publish_time`, `sort`, `thumb`, `tags`, `create_time`, `update_time`) VALUES
-(1, 1, '基于TP6 layui开发的cms 后台管理系统', '基于TP6 layui开发的cms 后台管理系统', '<p>基于TP6 layui开发的cms 后台管理系统</p>', '', '994927909@qq.com', 'tp6 layui', 1, 1, '', 0, '', 1206, 0, 0, '/storage/uploads/20190826\\b183bf1681077d0bafd37bc17caf2cdc.png', '', 1566799075, 1568798347);
+(1, 0, '基于TP6 layui开发的cms 后台管理系统', '基于TP6 layui开发的cms 后台管理系统', '<p>基于TP6 layui开发的cms 后台管理系统</p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887696120781.jpg\" title=\"1571887559457804.jpg\"/></p><p class=\"txt-con\" style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\">砀山酥梨，安徽省砀山县特产，中国国家地理标志产品。砀山酥梨栽培历史悠久，是中国传统三大名梨之首，以其汁多味甜且具有润肺止作用而驰名中外。砀山酥梨已有千年历史，古时候作为贡梨上奉给朝廷。砀山酥梨不仅酥脆爽口，入口即化，营养价值与养生价值也极高。<br/>当所有实体零售都具有明显的&quot;电商&quot;基因特征之时，传统意义上的&quot;电商&quot;将不复存在，引导城市人了解乡村和乡村产品，帮助砀山县优质产品开拓新渠道，能够推动城乡资源协调，价值共享。在新零售体系下，线上线下和物流结合在一起。对砀山酥梨在互联网时代，新零售时代，建立强势本土品牌，丰富产品渠道具有重要意义，也是砀山酥梨等水果产品对新零售的重大实践。通过分析砀山酥梨产品现状，融合线上线下+物流的新零售商业模式，以交互性的展示方式进行综合性、系统性的设计配合以砀山梨文化，进行砀山&quot;趣果&quot;品牌升级，建立城乡资源协调，价值共享的新渠道。<br/><br/>现存问题：品牌形象不统一/亟待开发零售渠道<br/>解决问题：品牌形象升级/开拓零售新渠道</p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887696461242.jpg\" title=\"1571887559242116.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887696287088.jpg\" title=\"1571887559833359.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887697981019.jpg\" title=\"1571887560320348.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887697120360.jpg\" title=\"1571887561358113.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887697868403.jpg\" title=\"1571887563944492.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887697756330.jpg\" title=\"1571887565166431.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887698973584.jpg\" title=\"1571887565209280.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887698601135.jpg\" title=\"1571887566610692.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887698397963.jpg\" title=\"1571887567938692.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887698828665.jpg\" title=\"1571887568145575.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887698515451.jpg\" title=\"1571887568507688.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887699396115.jpg\" title=\"1571887569384432.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887699604381.jpg\" title=\"1571887570809086.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887699967873.jpg\" title=\"1571887570156687.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887699515377.jpg\" title=\"1571887570358602.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887699477326.jpg\" title=\"1571887571628842.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887700396108.jpg\" title=\"1571887573350219.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887578370932.jpg\" title=\"1571887578370932.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887587768979.jpg\" title=\"1571887587768979.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887700590667.jpg\" title=\"1571887588112710.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887700586080.jpg\" title=\"1571887589562965.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887701817657.jpg\" title=\"1571887592239872.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887701568718.jpg\" title=\"1571887593663115.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887701942606.jpg\" title=\"1571887596303637.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887701169909.jpg\" title=\"1571887598242782.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887702153954.jpg\" title=\"1571887601870162.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887702625862.jpg\" title=\"1571887607178606.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887702485589.jpg\" title=\"1571887610989569.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887702581477.jpg\" title=\"1571887614139457.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887621355998.jpg\" title=\"1571887621355998.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887625781655.jpg\" title=\"1571887625781655.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887703425807.jpg\" title=\"1571887626477847.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887703775797.jpg\" title=\"1571887628619574.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887704532721.jpg\" title=\"1571887631392414.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887704749867.jpg\" title=\"1571887632616743.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887704369836.jpg\" title=\"1571887634318856.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887704749385.jpg\" title=\"1571887636220252.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887705612157.jpg\" title=\"1571887637776881.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887705146025.jpg\" title=\"1571887639244130.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887705809889.jpg\" title=\"1571887640637882.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887705528190.jpg\" title=\"1571887641917159.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887705249948.jpg\" title=\"1571887642780899.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887706684427.jpg\" title=\"1571887642446784.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887706385929.jpg\" title=\"1571887643303607.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887706164480.jpg\" title=\"1571887644666756.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887706976222.jpg\" title=\"1571887644163718.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887707391109.jpg\" title=\"1571887645492295.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887707878682.jpg\" title=\"1571887649861251.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887707646939.jpg\" title=\"1571887652944264.jpg\"/></p><p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow-wrap: break-word; max-width: 100%; line-height: 32px; color: rgb(119, 119, 119); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, Tahoma, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);\"><img src=\"https://img.sheboo.cn/uploads/ueditor/image/20191024/1571887707987802.jpg\" title=\"1571887655949048.jpg\"/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p>asdfasdfadfasdf</p><p>asdfasd</p><p>fasdfas</p><p>fadfas</p><p>fsadf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdf</p><p>asdfasdfasdf</p>', '', '994927909@qq.com', 'tp6 layui', 1, 1, '', 0, '', 1206, 0, 0, '/storage/uploads/20190826\\b183bf1681077d0bafd37bc17caf2cdc.png', '', 1566799075, 1573117437);
 
 -- --------------------------------------------------------
 
@@ -892,14 +302,10 @@ CREATE TABLE `lm_article_cate` (
 --
 
 INSERT INTO `lm_article_cate` (`id`, `title`, `title_alias`, `title_type`, `pid`, `show_in_nav`, `status`, `sort`, `cat_desc`, `keywords`, `create_time`, `update_time`) VALUES
-(1, '新手上路', '', 1, 0, 0, 1, 0, '1233', '', 0, 1568363450),
-(2, '购物指南', '', 1, 0, 0, 1, 2, '', '', 0, 0),
-(3, '售后服务', '', 1, 0, 0, 1, 2, '', '', 0, 1568279565),
-(4, '支付方式', '', 1, 0, 0, 1, 4, '', '', 0, 0),
-(5, '配送方式', '', 1, 0, 0, 1, 5, '', '', 0, 0),
-(6, '系统公告', '', 1, 0, 0, 1, 6, '', '', 0, 0),
-(7, '关于我们', '', 1, 0, 0, 1, 7, '', '', 0, 0),
-(8, '测试分类', '测试分类', 0, 7, 0, 1, 50, '', '', 1566801126, 1568276268);
+(2, '购物指南', '', 1, 0, 0, 1, 2, '', '', 0, 1573324157),
+(6, '系统公告', '', 1, 0, 0, 1, 6, '', '', 0, 1573324156),
+(7, '关于我们', '', 1, 0, 0, 1, 7, '', '', 0, 1573203137),
+(8, '测试分类', '测试分类', 0, 7, 0, 1, 50, '', '', 1566801126, 1573203136);
 
 -- --------------------------------------------------------
 
@@ -921,9 +327,9 @@ CREATE TABLE `lm_auth_group` (
 --
 
 INSERT INTO `lm_auth_group` (`id`, `title`, `status`, `rules`, `create_time`, `update_time`) VALUES
-(1, '超级管理员', 1, '1,2,20,21,40,34,39,73,3,4,5,9,10,11,12,22,13,6,7,8,14,15,16,17,18,19,26,27,28,29,30,31,32,33,35,36,37,38,23,24,41,47,48,49,50,51,52,67,54,55,56,57,58,66,137,138,139,140,129,130,131,132,133,134,135,136,42,46,53,43,44,45,68,59,60,61,62,65,74,69,70,71,72,75,76,77,78,79,80,81,82,83,84,85,86,87,120,121,122,123,124,125,126,127,128,88,95,96,97,98,89,99,100,101,102,90,103,104,91,112,113,114,115,116,92,117,118,119,93,105,106,107,108,109,94,110,111,', 1465114224, 1571723724),
-(2, '测试1', 1, '1,2,20,21,40,34,39,3,9,22,13,6,7,16,26,30,35,38,41,47,48,51,54,57,42,46,45,59,60,74,69,75,76,77,81,82,83,87,120,121,122,123,124,125,126,127,128,88,97,89,99,100,101,102,90,103,104,91,112,113,114,115,116,92,117,118,119,93,105,106,107,108,109,94,110,111,', 1565929191, 1568971953),
-(3, '测试2', 1, NULL, 1567485941, 1567843780);
+(1, '超级管理员', 1, '23,24,1,2,20,21,40,34,39,73,3,4,5,9,10,11,12,22,13,6,7,8,14,15,16,17,18,19,26,27,28,29,30,31,32,33,35,36,37,38,41,137,138,139,140,142,129,130,131,132,133,134,135,136,147,141,42,46,53,43,44,45,68,47,48,49,50,51,52,67,54,55,56,57,58,66,59,60,61,62,65,74,69,70,71,72,75,76,77,78,79,80,81,82,83,84,85,86,87,120,121,122,123,124,125,126,127,128,143,144,145,146,88,95,96,97,98,89,99,100,101,102,90,103,104,91,112,113,114,115,116,92,117,118,119,93,105,106,107,108,109,94,110,111,', 1465114224, 1571885709),
+(2, '测试1', 1, '1,2,20,21,40,34,39,3,9,22,13,6,7,16,26,30,35,38,41,137,142,129,131,133,134,136,147,141,42,46,45,47,48,51,54,57,59,60,74,69,75,76,77,81,82,83,87,120,121,122,123,124,125,126,127,128,143,144,145,146,88,97,89,99,100,101,102,90,103,104,91,112,113,114,115,116,92,117,118,119,93,105,106,107,108,109,94,110,111,', 1565929191, 1573405169),
+(3, '测试2', 1, NULL, 1567485941, 1573405171);
 
 -- --------------------------------------------------------
 
@@ -958,7 +364,7 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (4, 'Database/restore', '还原数据库', 2, 1, 0, 1, 'fa fa-database', '', 3, 0, 1446535750, 0),
 (5, 'Database/backup', '数据库备份', 2, 1, 0, 0, 'fa fa-database', '', 3, 0, 1446535834, 0),
 (6, 'Auth', '权限管理', 1, 1, 0, 1, 'fa fa-cog', '', 1, 0, 0, 0),
-(7, 'Admin/Auth/adminRule', '权限列表', 1, 1, 0, 1, 'fa fa-cog', '', 6, 0, 0, 0),
+(7, 'Auth/adminRule', '权限列表', 1, 1, 0, 1, 'fa fa-cog', '', 6, 0, 0, 0),
 (8, 'Auth/ruleEdit', '权限编辑', 2, 1, 0, 0, 'fa fa-cog', '', 7, 0, 0, 0),
 (9, 'Database/repair', '数据库修复', 2, 1, 0, 0, '', '', 3, 0, 0, 0),
 (10, 'Database/import', '数据还原', 2, 1, 0, 0, '', '', 3, 0, 0, 0),
@@ -1022,7 +428,7 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (73, 'System/site', '站点修改', 1, 1, 0, 0, '', '', 2, 50, 1567225373, 1567225410),
 (74, 'Article/state', '文章状态', 1, 1, 0, 0, '', '', 60, 50, 1567225947, 1567225947),
 (75, 'Article/cateState', '文章分类状态', 1, 1, 0, 0, '', '', 69, 50, 1567225975, 1567225975),
-(76, 'User', '会员', 1, 1, 0, 1, 'fa fa-address-card-o', '', 0, 50, 1567327942, 1567564188),
+(76, 'User', '会员', 1, 1, 0, 1, 'fa fa-address-card-o', '', 0, 30, 1567327942, 1573460133),
 (77, 'User/index', '会员管理', 1, 1, 0, 1, 'fa fa-address-card-o', '', 76, 50, 1567327992, 1567327992),
 (78, 'User/add', '会员添加', 1, 1, 0, 0, NULL, '', 77, 0, 0, NULL),
 (79, 'User/del', '会员删除', 1, 1, 0, 0, NULL, '', 77, 0, 0, NULL),
@@ -1066,7 +472,7 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (117, 'Wechat/replyAdd', '添加回复', 1, 1, 0, 0, NULL, '', 92, 0, 0, NULL),
 (118, 'Wechat/replyEdit', '回复编辑', 1, 1, 0, 0, NULL, '', 92, 0, 0, NULL),
 (119, 'Wechat/replayDel', '回复删除', 1, 1, 0, 0, NULL, '', 92, 0, 0, NULL),
-(120, 'Wechat/imageUpload', '图片上传', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
+(120, 'Wechat/imageUpload', '图片上传', 1, 1, 0, 0, NULL, '', 87, 0, 0, 1573177034),
 (121, 'Wechat/videoUpload', '视频上传', 1, 1, 0, 0, '', '', 87, 0, 0, 1571805944),
 (122, 'Wechat/voiceUpload', '语音上传', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
 (123, 'Wechat/thumbUpload', '缩略图上传', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
@@ -1101,19 +507,8 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (152, 'System/configState', '配置状态', 1, 1, 0, 0, NULL, '', 148, 0, 0, NULL),
 (153, 'System/configGroupAdd', '配置组添加', 1, 1, 0, 0, NULL, '', 148, 0, 0, NULL),
 (154, 'System/configGroupDel', '配置组删除', 1, 1, 0, 0, NULL, '', 148, 0, 0, NULL),
-(155, 'Goods', '商品', 1, 1, 0, 1, 'fa fa-align-justify', '', 0, 0, 0, 1573260707),
-(156, 'Goods/index', '商品列表', 1, 1, 0, 1, 'fa fa-align-justify', '', 155, 0, 0, NULL),
-(157, 'Goods/add', '商品新增', 1, 1, 0, 0, NULL, '', 157, 0, 0, NULL),
-(158, 'Goods/edit', '商品编辑', 1, 1, 0, 0, NULL, '', 157, 0, 0, NULL),
-(159, 'Goods/delete', '商品删除', 1, 1, 0, 0, NULL, '', 157, 0, 0, NULL),
-(160, 'Goods/state', '商品状态', 1, 1, 0, 0, NULL, '', 157, 0, 0, NULL),
-(161, 'Goods/cate', '商品分类', 1, 1, 0, 1, 'fa fa-align-justify', '', 155, 0, 0, NULL),
-(162, 'Goods/cateAdd', '商品分类新增', 1, 1, 0, 0, NULL, '', 161, 0, 0, NULL),
-(163, 'Goods/cateEdit', '商品分类编辑', 1, 1, 0, 0, NULL, '', 161, 0, 0, NULL),
-(164, 'Goods/cateDel', '商品分类删除', 1, 1, 0, 0, NULL, '', 161, 0, 0, NULL),
-(165, 'Goods/cateState', '商品分类状态', 1, 1, 0, 0, NULL, '', 161, 0, 0, NULL),
-(166, 'Addon', '插件', 1, 1, 0, 1, 'fa fa-apple', '', 0, 50, 1573181931, 1573183182),
-(167, 'Addon/index', '插件列表', 1, 1, 0, 1, 'fa fa-align-justify', '', 166, 50, 1573181960, 1573183194);
+(155, 'Addon', '插件', 1, 1, 0, 1, 'fa fa-asterisk', '', 0, 50, 1573194155, 1573194155),
+(156, 'Addon/index', '插件列表', 1, 1, 0, 1, 'fa fa-align-justify', '', 155, 50, 1573194187, 1573194187);
 
 -- --------------------------------------------------------
 
@@ -1152,9 +547,9 @@ CREATE TABLE `lm_column` (
 --
 
 INSERT INTO `lm_column` (`id`, `clname`, `cldir`, `pid`, `arrpid`, `arrchildid`, `moduleid`, `module`, `type`, `title`, `keywords`, `description`, `sort`, `is_menu`, `status`, `click`, `thumb`, `url`, `template_list`, `template_show`, `page_size`, `create_time`, `update_time`) VALUES
-(1, '首页', '', 0, '0', '1,4', 12, 'pic', 0, '首页', '首页', '首页', 50, 1, 1, 50, '/storage/uploads/20191012\\efe7bcf1a0750c3349222248b6b4859e.png', '', '', '', 15, 0, 1571465359),
-(2, '论坛', '', 0, '0', '2', 14, 'articles', 0, '论坛', '论坛', '论坛', 50, 1, 1, 100, '', '', '', '', 15, 0, 1571465121),
-(4, 'demo', 'demo', 1, '0,1', '4', 27, 'page', 0, 'demo', 'demo', 'demo', 50, 1, 1, 100, '', '', '', '', 15, 1571458157, 1571708896);
+(1, '首页', '', 0, '0', '1,4', 12, 'pic', 0, '首页', '首页', '首页', 50, 1, 1, 50, '/storage/uploads/20191012\\efe7bcf1a0750c3349222248b6b4859e.png', '', '', '', 15, 0, 1573720371),
+(2, '论坛', '', 0, '0', '2', 14, 'articles', 0, '论坛', '论坛', '论坛', 50, 1, 1, 100, '', '', '', '', 15, 0, 1573720370),
+(4, 'demo', 'demo', 1, '0,1', '4', 27, 'page', 0, 'demo', 'demo', 'demo', 50, 1, 1, 100, '', '', '', '', 15, 1571458157, 1573720368);
 
 -- --------------------------------------------------------
 
@@ -1178,7 +573,7 @@ CREATE TABLE `lm_config` (
 --
 
 INSERT INTO `lm_config` (`id`, `code`, `value`, `remark`, `type`, `status`, `create_time`, `update_time`) VALUES
-(1, 'site_name', 'lemocms', '网站名称', 'site', 1, 0, 1572067821),
+(1, 'site_name', 'lemocms', '网站名称', 'site', 1, 0, 0),
 (2, 'site_phone', '3', '网站客服服务电话', 'site', 1, 0, 0),
 (3, 'site_state', '1', '状态', 'site', 1, 0, 0),
 (4, 'site_logo', '/storage/uploads/logo.png', '网站logo图', 'site', 1, 0, 0),
@@ -1190,8 +585,8 @@ INSERT INTO `lm_config` (`id`, `code`, `value`, `remark`, `type`, `status`, `cre
 (10, 'site_copyright', 'LEMOCMS版权所有@2019', '底部版权信息', 'site', 1, 0, 0),
 (11, 'captcha_status_login', '1', '会员登录是否需要验证码', 'site', 1, 0, 0),
 (12, 'captcha_status_register', '1', '会员注册是否验证码', 'site', 1, 0, 0),
-(14, 'sms_appid', 'LTAIqRqdkin5TiSh', '短信平台账号', 'sms', 1, 0, 0),
-(15, 'sms_secret', 'invnSswn6pa0vDVJaGdkUU27I4a6Sa', '短信平台密钥', 'sms', 1, 0, 0),
+(14, 'sms_appid', 'LTAIesI7qxnHLgKE', '短信平台账号', 'sms', 1, 0, 0),
+(15, 'sms_secret', 'sbA6wnefJLD7pv7WipcxL0M3IMb3l9', '短信平台密钥', 'sms', 1, 0, 0),
 (16, 'email_host', 'smtp.qq.com', '邮箱地址', 'email', 1, 0, 0),
 (17, 'email_port', '25', '邮箱端口', 'email', 1, 0, 0),
 (18, 'email_addr', '994927909@qq.com', '邮箱发件人地址', 'email', 1, 0, 0),
@@ -1216,7 +611,6 @@ INSERT INTO `lm_config` (`id`, `code`, `value`, `remark`, `type`, `status`, `cre
 (37, 'sms_register', '0', '是否手机注册', 'mobile', 1, 0, 0),
 (38, 'sms_login', '0', '是否手机登录', 'mobile', 1, 0, 0),
 (39, 'sms_password', '0', '是否手机找回密码', 'mobile', 1, 0, 0),
-(41, 'weixin_appid', '', '微信appid', 'weixin', 1, 0, 0),
 (43, 'baidu_ak', '22bb7221fc279a484895afcc6a0bb33a', '百度地图AK密钥', 'baidu', 1, 0, 0),
 (44, 'site_licence', '', '营业执照', 'site', 1, 0, 0),
 (45, 'site_domain', 'https://www.lemocms.com', '网站地址', 'site', 1, 0, 0),
@@ -1227,8 +621,8 @@ INSERT INTO `lm_config` (`id`, `code`, `value`, `remark`, `type`, `status`, `cre
 (50, 'upload_water', '1', '水印开始关闭', 'upload', 1, 0, 0),
 (51, 'upload_water_position', '', '水印位置', 'upload', 1, 0, 0),
 (52, 'sms_product', 'lemocms', '产品', 'sms', 1, 0, 0),
-(53, 'sms_template', 'SMS_133215034', '模板id', 'sms', 1, 0, 0),
-(54, 'site_version', 'v1.0.8', '版本', 'site', 1, NULL, NULL);
+(53, 'sms_template', 'SMS_158941284', '模板id', 'sms', 1, 0, 0),
+(54, 'site_version', 'v1.0.9', '版本', 'site', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1255,7 +649,8 @@ INSERT INTO `lm_config_group` (`id`, `name`, `title`) VALUES
 (6, 'sina', '新浪'),
 (7, 'im', 'im'),
 (8, 'upload', '上传'),
-(9, 'mobile', '手机');
+(9, 'mobile', '手机'),
+(10, '百度', '百度配置');
 
 -- --------------------------------------------------------
 
@@ -1303,7 +698,43 @@ INSERT INTO `lm_field` (`id`, `moduleid`, `field`, `name`, `required`, `minlengt
 (42, 32, 'hits', '点击次数', 0, 0, 8, '', '', 'number', 0, '1', NULL, '', 10, 1, 1571732224, 0),
 (43, 32, 'visite', '访问权限', 0, 0, 1, '', '', 'radio', 0, '1', NULL, '0|开启,1|关闭', 11, 1, 1571732224, 0),
 (44, 32, 'posid', '推荐位', 0, 0, 1, '', '', 'posid', 0, '', NULL, '', 12, 12, 1571732224, 0),
-(45, 32, 'tags', '标签', 0, 0, 255, '', '', 'text', 0, '', NULL, '', 14, 1, 1571732224, 0);
+(45, 32, 'tags', '标签', 0, 0, 255, '', '', 'text', 0, '', NULL, '', 14, 1, 1571732224, 0),
+(46, 2, 'column_id', '栏目', 1, 1, 6, '', '必须选择一个栏目', 'column_id', 0, '', NULL, '', 1, 1, 1571884340, 0),
+(47, 2, 'title', '标题', 1, 1, 80, '', '标题必须为1-80个字符', 'text', 0, '', NULL, '', 2, 1, 1571884340, 0),
+(48, 2, 'keywords', '关键词', 1, 0, 200, '', '关键词必须在0-200个内', 'text', 0, '', NULL, '', 3, 1, 1571884340, 0),
+(49, 2, 'description', 'SEO简介', 1, 0, 0, '', '', 'textarea', 0, '', NULL, '', 4, 1, 1571884340, 0),
+(50, 2, 'content', '内容', 0, 0, 0, '', '', 'editor', 0, 'ueditor', NULL, '0|ueditor', 5, 1, 1571884340, 0),
+(51, 2, 'create_time', '创建时间', 1, 0, 0, '', '', 'datetime', 0, '', NULL, '', 61, 1, 1571884340, 1571884945),
+(52, 2, 'update_time', '更新时间', 1, 0, 0, '', '', 'datetime', 0, '', NULL, '', 6, 1, 1571884340, 0),
+(53, 2, 'status', '状态', 1, 0, 0, '', '', 'radio', 0, '1', NULL, '0|未发布,1|发布', 7, 1, 1571884340, 0),
+(54, 2, 'recommend', '允许评论', 0, 0, 1, '', '', 'radio', 0, '1', NULL, '0|禁止评论,1|允许评论', 8, 1, 1571884340, 0),
+(55, 2, 'readpoint', '阅读收费', 0, 0, 5, '', '', 'number', 0, '0', NULL, '', 9, 1, 1571884340, 0),
+(56, 2, 'is_read', '是否可阅读', 0, 0, 5, '', '', 'radio', 0, '1', NULL, '0|禁止,1|允许', 9, 1, 1571884340, 0),
+(57, 2, 'hits', '点击次数', 0, 0, 8, '', '', 'number', 0, '1', NULL, '', 10, 1, 1571884340, 0),
+(58, 2, 'visite', '访问权限', 0, 0, 0, '', '', 'radio', 0, '1', NULL, '0|开启,1|关闭', 11, 1, 1571884340, 0),
+(59, 2, 'posid', '推荐位', 0, 0, 0, '', '', 'posid', 0, '', NULL, '', 12, 12, 1571884340, 0),
+(60, 3, 'column_id', '栏目', 1, 0, 6, '', '必须选择一个栏目', 'column_id', 0, '', NULL, '', 1, 1, 1572145912, 0),
+(61, 3, 'title', '标题', 1, 0, 180, '', '标题必须为1-180个字符', 'text', 0, '', NULL, '', 2, 1, 1572145912, 0),
+(62, 3, 'keywords', '关键词', 1, 0, 80, '', '', 'text', 0, '', NULL, '', 3, 1, 1572145912, 0),
+(63, 3, 'description', 'SEO简介', 1, 0, 0, '', '', 'textarea', 0, '', NULL, '', 4, 1, 1572145912, 0),
+(64, 3, 'tags', '标签', 0, 0, 0, '', '', 'text', 0, '', NULL, '', 5, 1, 1, 0),
+(65, 3, 'content', '内容', 0, 0, 0, '', '', 'editor', 0, 'ueditor', NULL, '0|ueditor', 6, 1, 1572145912, 0),
+(78, 6, 'column_id', '栏目', 1, 0, 6, '', '必须选择一个栏目', 'column_id', 0, '', NULL, '', 1, 1, 1572870621, 0),
+(79, 6, 'title', '标题', 1, 0, 80, '', '标题必须为1-80个字符', 'text', 0, '', NULL, '', 2, 1, 1572870621, 0),
+(80, 6, 'keywords', '关键词', 1, 0, 200, '', '关键词必须在0-200个内', 'text', 0, '', NULL, '', 3, 1, 1572870621, 0),
+(81, 6, 'description', 'SEO简介', 1, 0, 0, '', '', 'textarea', 0, '', NULL, '', 4, 1, 1572870621, 0),
+(82, 6, 'content', '内容', 0, 0, 255, '', '', 'editor', 0, 'ueditor', NULL, '0|ueditor', 5, 1, 1572870621, 0),
+(83, 6, 'create_time', '创建时间', 1, 0, 11, '', '', 'datetime', 0, '', NULL, '', 6, 1, 1572870621, 0),
+(84, 6, 'update_time', '更新时间', 1, 0, 11, '', '', 'datetime', 0, '', NULL, '', 6, 1, 1572870621, 0),
+(85, 6, 'status', '状态', 1, 0, 1, '', '', 'radio', 0, '1', NULL, '0|未发布,1|发布', 7, 1, 1572870621, 0),
+(86, 6, 'recommend', '允许评论', 0, 0, 1, '', '', 'radio', 0, '1', NULL, '0|禁止评论,1|允许评论', 8, 1, 1572870621, 0),
+(87, 6, 'readpoint', '阅读收费', 0, 0, 5, '', '', 'number', 0, '0', NULL, '', 9, 1, 1572870621, 0),
+(88, 6, 'is_read', '是否可阅读', 0, 0, 1, '', '', 'radio', 0, '1', NULL, '0|禁止,1|允许', 9, 1, 1572870621, 0),
+(89, 6, 'hits', '点击次数', 0, 0, 8, '', '', 'number', 0, '1', NULL, '', 10, 1, 1572870621, 0),
+(90, 6, 'visite', '访问权限', 0, 0, 1, '', '', 'radio', 0, '1', NULL, '0|开启,1|关闭', 11, 1, 1572870621, 0),
+(91, 6, 'posid', '推荐位', 0, 0, 1, '', '', 'posid', 0, '', NULL, '', 12, 1, 1572870621, 0),
+(92, 6, 'tags', '标签', 0, 0, 255, '', '', 'text', 0, '', NULL, '', 14, 1, 1572870621, 0),
+(93, 6, 'occ_id', '土味乡情', 0, 0, 0, '', '', 'files', 0, '', 'varchar(255) NOT NULL DEFAULT \'\'', NULL, 50, 1, 1573720440, 1573720440);
 
 -- --------------------------------------------------------
 
@@ -1368,9 +799,9 @@ CREATE TABLE `lm_link` (
 --
 
 INSERT INTO `lm_link` (`id`, `name`, `url`, `type_id`, `email`, `qq`, `sort`, `status`, `create_time`, `update_time`) VALUES
-(23, 'lemocms', 'https://www.lemocms.com', 0, '994927909@qq.com', '994927909', 50, 1, 1566102829, 1568359676),
-(25, '百度', 'https://www.baidu.com', 0, '994927909@qq.com', '994927909', 50, 1, 1566103165, 1566103165),
-(26, '新浪', 'https://www.sina.com', 0, '994927909@qq.com', '994927909', 50, 1, 1566103233, 1566103233);
+(23, 'lemocms', 'https://www.lemocms.com', 0, '994927909@qq.com', '994927909', 50, 1, 1566102829, 1573373684),
+(25, '百度', 'https://www.baidu.com', 0, '994927909@qq.com', '994927909', 50, 1, 1566103165, 1573640285),
+(26, '新浪', 'https://www.sina.com', 0, '994927909@qq.com', '994927909', 50, 1, 1566103233, 1573640288);
 
 -- --------------------------------------------------------
 
@@ -1392,13 +823,6 @@ CREATE TABLE `lm_module` (
   `create_time` int(11) DEFAULT '0',
   `update_time` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='模型表';
-
---
--- Dumping data for table `lm_module`
---
-
-INSERT INTO `lm_module` (`id`, `title`, `name`, `description`, `type`, `ispage`, `listfields`, `template`, `sort`, `status`, `create_time`, `update_time`) VALUES
-(32, '图片模型', 'pic', '图片模型', 0, 0, '*', 'a:2:{i:0;s:9:\"list.html\";i:1;s:9:\"show.html\";}', 50, 1, 1571732224, 1571732224);
 
 -- --------------------------------------------------------
 
@@ -1500,45 +924,15 @@ CREATE TABLE `lm_user` (
 INSERT INTO `lm_user` (`id`, `store_id`, `email`, `username`, `password`, `paypwd`, `sex`, `birthday`, `user_money`, `frozen_money`, `distribut_money`, `underling_number`, `pay_points`, `address_id`, `create_time`, `update_time`, `last_login`, `login_num`, `last_ip`, `qq`, `mobile`, `mobile_validated`, `oauth`, `openid`, `unionid`, `avatar`, `province`, `city`, `district`, `email_validated`, `nickname`, `level_id`, `discount`, `total_amount`, `status`, `is_distribut`, `first_leader`, `second_leader`, `third_leader`, `token`, `message_mask`, `push_id`, `distribut_level`, `is_vip`, `min_qrcode`, `poster`) VALUES
 (1, 1, '15915407513@163.com', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, -28800, '100000.00', '0.00', '0.00', 0, 100000, 0, 1523235674, NULL, 1523235674, 0, '', '', '', 0, '', NULL, NULL, '/public/upload/user/1/head_pic//1673d08c39ff9d1103611a7585a8ae0f.jpg', 0, 0, 0, 1, '15915407513@163.com', 4, '0.94', '4939.90', 1, 0, 0, 0, 0, '81953a80817fdf7c25e682ca3311abc9', 63, '0', 0, 0, NULL, NULL),
 (2, 1, '123', NULL, '519475228fe35ad067744465c42a19b2', '5317bc949fb15f19cdf1be43cf9a5ae6', 2, 662659200, '1376.12', '100.00', '1120.00', 1, 57409, 0, 1523238708, NULL, 1524877594, 0, '', '', '15915407513', 1, '', NULL, NULL, '/public/upload/head_pic/20180426/a803dc7558982208df046e7e9e558125.jpg', 0, 0, 0, 0, '15915407513', 7, '0.91', '135988.54', 1, 1, 0, 0, 0, 'e9f5a1dc07f3674e5234667126f14d6a', 63, '140fe1da9e8bbcb28d2', 3, 0, NULL, NULL),
-(3, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '90600d68b0f56d90c4c34284d8dfd138', 0, 1524067200, '4057.47', '0.00', '0.00', 0, 49513, 0, 1523266058, NULL, 0, 0, '', '', '18515156363', 1, '', NULL, NULL, '/public/upload/head_pic/20180419/fec83644525cdd715416db8789cfe222.jpg', 0, 0, 0, 0, '青春', 4, '0.94', '9559.07', 1, 1, 0, 0, 0, '', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
-(4, 1, '15636363522@qq.com', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, -28800, '0.00', '0.00', '0.00', 0, 110, 0, 1523266117, NULL, 1523266117, 0, '', '', '', 0, '', NULL, NULL, '/public/upload/user/4/head_pic//7268f1d4ce9879694c2ec7da77d4dfbb.png', 0, 0, 0, 1, '15636363522@qq.com', 1, '1.00', '0.00', 1, 0, 0, 0, 0, 'eaf8b23d80d7513ab4ffcf3b1129f668', 63, '0', 0, 0, NULL, NULL),
+(3, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '90600d68b0f56d90c4c34284d8dfd138', 0, 1524067200, '4057.47', '0.00', '0.00', 0, 49513, 0, 1523266058, 1573454861, 0, 0, '', '', '18515156363', 1, '', NULL, NULL, '/public/upload/head_pic/20180419/fec83644525cdd715416db8789cfe222.jpg', 0, 0, 0, 0, '青春', 4, '0.94', '9559.07', 0, 1, 0, 0, 0, '', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
+(4, 1, '15636363522@qq.com', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, -28800, '0.00', '0.00', '0.00', 0, 110, 0, 1523266117, 1573454860, 1523266117, 0, '', '', '', 0, '', NULL, NULL, '/public/upload/user/4/head_pic//7268f1d4ce9879694c2ec7da77d4dfbb.png', 0, 0, 0, 1, '15636363522@qq.com', 1, '1.00', '0.00', 1, 0, 0, 0, 0, 'eaf8b23d80d7513ab4ffcf3b1129f668', 63, '0', 0, 0, NULL, NULL),
 (5, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '49830.22', '0.00', '0.00', 0, 2410, 0, 1523588976, NULL, 1523588976, 0, '', '', '15766212618', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '15766212618', 4, '0.94', '7687.08', 1, 1, 0, 0, 0, '91fa24fa9b42dfc79fc37d0acec4ba51', 63, '0', 0, 0, NULL, NULL),
 (6, 1, '461799220@qq.com', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '1000.00', '0.00', '0.00', 0, 100, 0, 1523601798, NULL, 0, 0, '', '461799220', '18664316869', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '单测试1', 1, '1.00', '0.00', 1, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
 (7, 1, '', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1523608222, NULL, 1523608222, 0, '', '', '15274857485', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '15274857485', 1, '1.00', '0.00', 1, 0, 3, 0, 0, '001b3f89dc686ad2f53f5481e8c9fb30', 63, '0', 0, 0, NULL, NULL),
-(8, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '100000.00', '0.00', '0.00', 0, 100000, 0, 1523857661, 1568191348, 1540191996, 0, '', '', '13800138006', 1, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/vi_32/c58Iiaib1aPodvKHMMGR9ZYmq7XGFUgppvhxgQKrJxdlZTAauZ8dTucEguiamsncVDR3h32TMO4YzppDmSuHIGI9w/132', 0, 0, 0, 0, 'summer', 2, '1.00', '55.00', 0, 0, 3, 0, 0, '', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
+(8, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '100000.00', '0.00', '0.00', 0, 100000, 0, 1523857661, 1573459471, 1540191996, 0, '', '', '13800138006', 1, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/vi_32/c58Iiaib1aPodvKHMMGR9ZYmq7XGFUgppvhxgQKrJxdlZTAauZ8dTucEguiamsncVDR3h32TMO4YzppDmSuHIGI9w/132', 0, 0, 0, 0, 'summer', 2, '1.00', '55.00', 1, 0, 3, 0, 0, '', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
 (9, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 2, 1524153600, '18527.80', '0.00', '0.00', 0, 100210, 0, 1523861478, NULL, 0, 0, '', '1546515984', '15274851525', 0, '', NULL, NULL, '/public/upload/head_pic/20180420/b147d911d2d5b3ff252fa948d96fb5d3.jpg', 0, 0, 0, 0, 'nana', 2, '1.00', '871.20', 1, 1, 0, 0, 0, '', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
-(10, 1, '1522585@qq.com', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 2, -28800, '5649.60', '0.00', '0.00', 0, 1100, 0, 1523864842, 1568191345, 1524801341, 0, '', '', '15919919433', 0, '', NULL, NULL, '/public/upload/head_pic/20180423/a20e71149cc243fc2df4c6eb5caadbbd.jpg', 0, 0, 0, 0, '等待', 4, '0.94', '6808.66', 0, 1, 0, 0, 0, 'cedbd4ca79a15888d4fd3a636834294f', 63, '140fe1da9e8bbcb28d2', 0, 0, NULL, NULL),
-(11, 1, '', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1523933777, 1568191292, 1523933777, 0, '', '', '18585859674', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '18585859674', 1, '1.00', '0.00', 0, 1, 0, 0, 0, '2ba708bb3b18ff3b133d19802ddc8559', 63, '0', 0, 0, NULL, NULL),
-(12, 1, '1546515984@11.com', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '1824.00', '0.00', '0.00', 0, 2400, 0, 1524023190, NULL, 1524023190, 0, '', '', '18576762477', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '18576762477', 2, '1.00', '88.00', 1, 1, 0, 0, 0, '55a01f6a994fa693a5c6364839475bc9', 63, '0', 0, 0, NULL, NULL),
-(13, 1, '15274851694@qq.co', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524188790, NULL, 0, 0, '', '', '', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '32', 1, '1.00', '0.00', 1, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
-(14, 1, '18516589423@qq.com', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524188838, NULL, 0, 0, '', '', '', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '3434', 1, '1.00', '0.00', 1, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
-(15, 1, '', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524189831, NULL, 1524189831, 0, '', '', '15274851515', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '15274851515', 2, '1.00', '0.00', 1, 1, 0, 0, 0, '002322068d39e76fbc9afbaa98001828', 63, '0', 0, 0, NULL, NULL),
-(16, 1, '123@qq.com', NULL, '519475228fe35ad067744465c42a19b2', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524470536, NULL, 0, 0, '', '', '13978520397', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '125', 3, '1.00', '0.00', 1, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
-(17, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 1524499200, '8977.90', '0.00', '0.00', 0, 190, 0, 1524554349, NULL, 1524822517, 0, '', '', '15247471414', 1, '', NULL, NULL, '/public/upload/head_pic/20180424/47684cc3e684a14cc2aae4a9294bf87e.jpg', 0, 0, 0, 0, '15247471414', 3, '0.99', '1266.00', 1, 1, 0, 0, 0, 'af20aa77641d815ff645ee524d2cdd73', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
-(18, 1, '', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524623385, NULL, 1524623385, 0, '', '', '15889560679', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '15889560679', 2, '1.00', '0.00', 1, 1, 0, 0, 0, '94c54e14ccdddf8f39ffa86262ea2b2e', 63, '0', 0, 0, NULL, NULL),
-(19, 1, '258282@163.com', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1524706705, NULL, 0, 0, '', '', '15915407591', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '添加会员', 2, '1.00', '0.00', 1, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
-(20, 1, '', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524714610, NULL, 1524714610, 0, '', '', '18515858596', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '18515858596', 2, '1.00', '0.00', 1, 1, 0, 0, 0, '2ffa0713419b11ca86b8f3c81744a387', 63, '0', 0, 0, NULL, NULL),
-(21, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 1524672000, '49256.00', '0.00', '0.00', 0, 100, 0, 1524723726, NULL, 0, 0, '', '', '15274851596', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '路人甲', 2, '1.00', '744.00', 1, 1, 3, 0, 0, '', 63, '100d855909727631376', 0, 0, NULL, NULL),
-(22, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '57.62', '0.00', '0.00', 0, 44985, 0, 1524726905, NULL, 1524738073, 0, '', '', '13243434343', 1, '', NULL, NULL, '/public/upload/head_pic/20180427/dd96cecf4bc0bd6414351cd9574d01e7.jpg', 0, 0, 0, 0, '13243434343', 3, '0.99', '1760.14', 1, 1, 0, 0, 0, '16bc4823350241a1d942777f58e74457', 63, '', 0, 0, NULL, NULL),
-(23, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '996778.79', '0.00', '0.00', 0, 1997520, 0, 1524730504, NULL, 1524824026, 0, '', '', '18679683657', 1, '', NULL, NULL, 'https://thirdqq.qlogo.cn/qqapp/1106296395/B0C344E52B6012FDABEE9ECD0557C0CC/100', 0, 0, 0, 0, '18679683657', 2, '1.00', '973.60', 1, 1, 0, 0, 0, '4ce10de3f32357294373107e321a8b60', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
-(24, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '98942.66', '0.00', '210.00', 1, 700, 0, 1524795728, NULL, 1524877186, 0, '', '', '18516589423', 1, '', NULL, NULL, '/public/upload/head_pic/20180427/76c696c4fef54d356f31ac6ac5e7836b.png', 0, 0, 0, 0, '18516589423', 3, '0.99', '1503.34', 1, 1, 0, 0, 0, '7eb905f8c6a08e6400e9d3d3e2c5e8f7', 63, '100d855909727631376', 3, 0, NULL, NULL),
-(25, 1, '424077952@qq.com', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 1524758400, '900.00', '100.00', '0.00', 0, 1650, 0, 1524801616, NULL, 0, 0, '', '', '15915407197', 0, '', NULL, NULL, '/public/upload/head_pic/20180427/349394fbb68b9b83d84acc8ea8b9bcae.jpg', 0, 0, 0, 0, '15915407197', 4, '0.94', '8406.10', 1, 0, 0, 0, 0, '', 63, '140fe1da9e8bbcb28d2', 0, 0, NULL, NULL),
-(26, 1, '', NULL, '', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524807993, NULL, 0, 0, '', '', '', 0, 'wx', 'oGMnQ1HqUFRg4dum-GVONjO5jnno', NULL, 'http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIia8vDXHVeygaglict2Dl5T083zryibRSQznmOp5lpgjbyR8fwMcwgNhPAaY5LPHYGM0eOePV2icCJ2g/132', 0, 0, 0, 0, '咻咻', 2, '1.00', '152.00', 1, 1, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
-(28, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524823542, NULL, 1524823548, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaELISygfibpicKgw6UDPAMkC8heWGaoia4UWwzwKXfCOJ2yWPLMKVmPUAeeHdicOCGSniccDOiaRr7ribAxeQ/132', 0, 0, 0, 0, '承诺', 1, '1.00', '0.00', 1, 1, 0, 0, 0, 'd1ebce2f921d4d6a976523dc6c4c0bb8', 63, '', 0, 0, NULL, NULL),
-(29, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524823620, NULL, 1524823620, 0, '', '', '', 0, 'weixin', 'o9cTBwb9m33ZB0MCH3N816ZKAjfg', NULL, 'http://thirdwx.qlogo.cn/mmopen/vi_32/h3xnlXLyIUwuUdl1tlHZGiatDgjthtMHUVkFg8tX9VPUGfnWHjDaynTKs0fMfWpoPLSOmCaVL5Es92iar7BPtnaA/132', 0, 0, 0, 0, '海南本土歌手陈建强', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '6f953ee36d49c10eada4b030feb57336', 63, '', 0, 0, NULL, NULL),
-(30, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524823875, NULL, 1524823901, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/uJrMaWkMNhuNZVicusbq7252Wb3ia2mz9R5d4GYs7niatXvibiafDJQlcicTT9QEcFu8uMgia25yLRtlNyVOIo483KPLsuPaQEbIO4ic/132', 0, 0, 0, 0, '独一无二', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '3cafd0658e0a7184e63b252fc07023cf', 63, '', 0, 0, NULL, NULL),
-(31, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '99498.00', '0.00', '0.00', 0, 100, 0, 1524825281, 1567846512, 1524825281, 0, '', '', '18516589633', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '18516589633', 3, '0.99', '1019.00', 1, 1, 24, 0, 0, '4f5b5aa5d7aed92baabd8a80616846e0', 63, '0', 0, 0, NULL, NULL),
-(32, 1, '', NULL, '', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524825369, NULL, 1524877618, 0, '', '', '', 0, 'weixin', 'o9cTBwS0VxKjNkxe6NM9sYIorhAM', NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '傅傅', 3, '0.99', '2378.60', 1, 1, 2, 0, 0, 'a552ca2c3b6ad9c02cf45afb44d7d6e4', 63, '', 0, 0, NULL, NULL),
-(33, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '4710767206f1985084aee312c1e8c15c', 2, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524825395, 1568273466, 1524827692, 0, '', '', '13923797247', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '你值得拥有', 1, '1.00', '0.00', 1, 0, 0, 0, 0, '7a790bd2706dc332db102b6b2080d2b1', 63, '', 0, 0, NULL, NULL),
-(34, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524828616, 1568786997, 1524828729, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/1eiaFuQxQFhwfU2lUVgOuoLudu9NbLgOZB6GtoRAG5ZtOeOeMW9iaqegd2zF3ltgLmpQYmpF6xZGCPoibzMVT5PyVVuFQbLRpics/132', 0, 0, 0, 0, '哦', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '5479315adb1092740b3533f5747355c0', 63, '', 0, 0, NULL, NULL),
-(35, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524834667, 1568070975, 1524834676, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/1eiaFuQxQFhxicd52FQVGFnVc8HPcwxversDFAjm9MvIO0vibtiaGibrjnMyN7EnN9uEpJ8J4iaLeicw2z35wwmVZ8CPQnEMibh1YSF6/132', 0, 0, 0, 0, '呼拉耶', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '70a24136b0a7608762722d8ccd8900a9', 63, '', 0, 0, NULL, NULL),
-(36, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524841123, NULL, 1524841142, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/kYOuNqHYNuAHbhuCfOrlyDqibMK5Za5HRl7AVuq2ib0Je0UPMozwY9xQHxVcoIYUFvFhmgo1GeRViaxqXvAk8yhu61NBxLhmXF1/132', 0, 0, 0, 0, '睿佳科技李健', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '78a50ff12ab85f8bc8221ecc2994306d', 63, '', 0, 0, NULL, NULL),
-(37, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524841193, 1568070971, 1524841203, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM7Pct41m8E7oTHtGt6XncCmDgttK7s6Ftws0JibWNhQaC1vVpLrdbbqUKkwIAOxZIKtF30O235LKkw/132', 0, 0, 0, 0, '猪鼓励', 1, '1.00', '0.00', 1, 1, 0, 0, 0, 'd1c78c6eed15cc6f90cd00b4160c1a95', 63, '', 0, 0, NULL, NULL),
-(38, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524842949, 1568711142, 1524842982, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaEIXMLyayEJ2ehsKcQQ1qYmZxJUQs0bAbLk1KOd9QKnVU1dWrX6ZD2F6wDBWtn3xDLl0TlaDCeibSmw/132', 0, 0, 0, 0, '小胡科技&趣闪租', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '774231d44f815bf2380f196d63d18c15', 63, '', 0, 0, NULL, NULL),
-(39, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524877064, 1568272568, 1524877079, 0, '', '', '', 0, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaEJeHCYeLS7zGtp9yP3G7R6v2BH3sLCQvUgfNnlk7oqm1rHq11btzP96dnBF510PVbTpZDzF3yMfLQ/132', 0, 0, 0, 0, '[爱心]等待…', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '3d2660223342811f4f09170aed8d696b', 63, '', 0, 0, NULL, NULL),
-(40, 1, '', NULL, '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524877295, 1568070969, 1524877295, 0, '', '', '', 0, 'weixin', 'o9cTBwUDY08LVZUAXIvagXZrrp10', NULL, 'http://thirdwx.qlogo.cn/mmopen/vi_32/cTRpAMg0XXiaeh8tSPPjib3dwobK7N79OzKL1ic42S9KbEKHuvTgWfRjPYphc7kXDsazdJAhlbDCseOPuenjC9KIg/132', 0, 0, 0, 0, '王', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '54a80199155e63b5cc4a3dbc2a27dc84', 63, '', 0, 0, NULL, NULL),
-(41, 1, '994927909@qq.com', '心之所向', '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1524877656, 1568070969, 1524877664, 0, '', '', '18397423845', 0, '', NULL, NULL, '/storage/uploads/20190904\\454cd1e3d232615e1cab49a54abe1274.png', 0, 0, 0, 0, 'AM༊྄ཻ ㎕࿐', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '9ca781b13e3dd896fd809ba46ddd9734', 63, '', 0, 0, NULL, NULL),
-(43, 1, '9949279099@qq.com', 'ny8zxovm', '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1567563788, 1568835156, 0, 0, '', '', '18397423846', 0, '', NULL, NULL, '/storage/uploads/20190904\\1b44b01f2becc018458ca9a995871fb8.jpg', 0, 0, 0, 0, NULL, 1, '1.00', '0.00', 1, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL);
+(10, 1, '1522585@qq.com', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 2, -28800, '5649.60', '0.00', '0.00', 0, 1100, 0, 1523864842, 1573609954, 1524801341, 0, '', '', '15919919433', 0, '', NULL, NULL, '/public/upload/head_pic/20180423/a20e71149cc243fc2df4c6eb5caadbbd.jpg', 0, 0, 0, 0, '等待', 4, '0.94', '6808.66', 0, 1, 0, 0, 0, 'cedbd4ca79a15888d4fd3a636834294f', 63, '140fe1da9e8bbcb28d2', 0, 0, NULL, NULL),
+(11, 1, '', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1523933777, 1573544844, 1523933777, 0, '', '', '18585859674', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '18585859674', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '2ba708bb3b18ff3b133d19802ddc8559', 63, '0', 0, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1563,14 +957,14 @@ CREATE TABLE `lm_user_level` (
 --
 
 INSERT INTO `lm_user_level` (`id`, `level_name`, `amount`, `discount`, `status`, `sort`, `description`, `create_time`, `update_time`) VALUES
-(1, '倔强青铜', '0.00', 100, 0, NULL, '人生若只如初相见', NULL, 1568795954),
-(2, '秩序白银', '1000.00', 99, 1, NULL, '', NULL, 1568622837),
-(3, '荣耀黄金', '3000.00', 94, 1, NULL, '', NULL, NULL),
-(4, '尊贵铂金', '10000.00', 95, 1, NULL, '', NULL, NULL),
-(5, '永恒钻石', '50000.00', 93, 1, NULL, '', NULL, 1568621710),
-(6, '至尊星耀', '100000.00', 91, 0, NULL, '', NULL, 1568795951),
-(7, '最强王者', '3000000.00', 90, 1, NULL, '', NULL, 1568278658),
-(8, '任性', '99999999.99', 70, 0, 0, '', 1568098240, 1568795943);
+(1, '倔强青铜', '0.00', 100, 1, NULL, '人生若只如初相见', NULL, 1573720352),
+(2, '秩序白银', '1000.00', 99, 1, NULL, '', NULL, 1573720351),
+(3, '荣耀黄金', '3000.00', 94, 1, NULL, '', NULL, 1573720350),
+(4, '尊贵铂金', '10000.00', 95, 1, NULL, '', NULL, 1573720350),
+(5, '永恒钻石', '50000.00', 93, 1, NULL, '', NULL, 1573720349),
+(6, '至尊星耀', '100000.00', 91, 1, NULL, '', NULL, 1573720349),
+(7, '最强王者', '3000000.00', 90, 1, NULL, '', NULL, 1573720348),
+(8, '任性', '99999999.99', 70, 1, 0, '', 1568098240, 1573720347);
 
 -- --------------------------------------------------------
 
@@ -1643,8 +1037,8 @@ CREATE TABLE `lm_wx_account` (
 --
 
 INSERT INTO `lm_wx_account` (`id`, `store_id`, `wxname`, `aeskey`, `encode`, `app_id`, `app_secret`, `origin_id`, `weixin`, `logo`, `token`, `w_token`, `related`, `create_time`, `update_time`, `tplcontentid`, `share_ticket`, `share_dated`, `authorizer_access_token`, `authorizer_refresh_token`, `authorizer_expires`, `type`, `web_access_token`, `web_refresh_token`, `web_expires`, `qr`, `menu_config`, `status`) VALUES
-(31, 1, 'lemocms', 'adsfda', 0, 'wxecd04cbbfc06a972', 'ec83a45f2a561a90cf5f63e7476bae36', 'gh_e29462503ebe', 'lemomcms', '/storage/uploads/20190905/dfdcecfa905e2858ae45b87542c0c5ab.png', 'b96561beca83877b0df8eda9f0cea2b4', 'b96561beca83877b0df8eda9f0cea2b4', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1490691329, 1568971969, '', '', '', '', '', '', 4, '9_ztdL3qhqHHAgFTIANDMStPvneUubYL0sANeFHEYDXu_qzElDwaQeSNwwhi1EfpDXzFwOeP05e0wMRpsJvQVVjnmhiWtZIqOwj4RwIdhXQnB1WPP0yw4pv8x2c_NA2ykcPKD-V6aTa3mFDKO9YJSaAAALWF', '', 1524884051, '/storage/uploads/20190905/2790a6a9cbb9ca1bcdfaca9b25d0316a.jpg', NULL, 1),
-(32, 1, 'asdfsdf', 'asf', 0, 'asdf', 'adsf', 'asdfasdg', '', '', '', 'asdf', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1567648856, 1568971965, '', '', '', '', '', '', 4, '', '', 0, '', NULL, 0);
+(31, 1, 'lemocms', 'adsfda', 0, 'wxecd04cbbfc06a972', 'ec83a45f2a561a90cf5f63e7476bae36', 'gh_e29462503ebe', 'lemomcms', '/storage/uploads/20190905/dfdcecfa905e2858ae45b87542c0c5ab.png', 'b96561beca83877b0df8eda9f0cea2b4', 'b96561beca83877b0df8eda9f0cea2b4', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1490691329, 1573719475, '', '', '', '', '', '', 4, '9_ztdL3qhqHHAgFTIANDMStPvneUubYL0sANeFHEYDXu_qzElDwaQeSNwwhi1EfpDXzFwOeP05e0wMRpsJvQVVjnmhiWtZIqOwj4RwIdhXQnB1WPP0yw4pv8x2c_NA2ykcPKD-V6aTa3mFDKO9YJSaAAALWF', '', 1524884051, '/storage/uploads/20190905/2790a6a9cbb9ca1bcdfaca9b25d0316a.jpg', NULL, 1),
+(32, 1, 'asdfsdf', 'asf', 0, 'asdf', 'adsf', 'asdfasdg', '', '', '', 'asdf', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1567648856, 1573719475, '', '', '', '', '', '', 4, '', '', 0, '', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -1689,7 +1083,40 @@ CREATE TABLE `lm_wx_fans` (
 --
 
 INSERT INTO `lm_wx_fans` (`fans_id`, `wx_aid`, `uid`, `source_uid`, `store_id`, `nickname`, `nickname_encode`, `headimgurl`, `sex`, `language`, `country`, `province`, `city`, `district`, `openid`, `unionid`, `groupid`, `subscribe`, `subscribe_scene`, `remark`, `tag`, `tagid_list`, `subscribe_time`, `unsubscribe_time`, `qr_scene`, `qr_scene_str`, `status`, `update_time`, `create_time`) VALUES
-(1, 31, 0, 0, 1, '🐘 心之所向🐘', '\"\\ud83d\\udc18 \\u5fc3\\u4e4b\\u6240\\u5411\\ud83d\\udc18\"', 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM4VFiaYnBD77jqvXaG55kz8cYgynjUAic5oNcrjkicjIGvVVyRYfLsiceojIlI709OKWPAQr95E2y2Ick6jSHSrIJXgtcn1VnDM4qE/132', 1, 'zh_CN', '中国', '湖南', '衡阳', '', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '', 0, 1, 'ADD_SCENE_QR_CODE', '', '星标组', NULL, 1567587062, 0, '0', '', 1, 1568020511, 1567909800);
+(1, 32, 0, 0, 1, '🐘 心之所向🐘', '\"\\ud83d\\udc18 \\u5fc3\\u4e4b\\u6240\\u5411\\ud83d\\udc18\"', 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM4VFiaYnBD77jqvXaG55kz8cYgynjUAic5oNcrjkicjIGvVVyRYfLsiceojIlI709OKWPAQr95E2y2Ick6jSHSrIJXgtcn1VnDM4qE/132', 1, 'zh_CN', '中国', '湖南', '衡阳', '', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '星标组', '[2]', 1568970767, 0, '0', '', 1, 1572230913, 1567909800),
+(2, 32, 0, 0, 1, '少年智力开发报订阅', '\"\\u5c11\\u5e74\\u667a\\u529b\\u5f00\\u53d1\\u62a5\\u8ba2\\u9605\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k4w5h73kjDCf0o0IXjb7tNuJHk45lY9ZopsqS4rsQ5UxkAgvOqe49UESQyiaHp0jG7u3p1WhiaHpm7g/132', 1, 'zh_CN', '中国', '河北', '石家庄', '', 'oBSasxDCwYJ4QlFRgSbi-SZktfZs', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '其他', '[2]', 1570784081, 0, '0', '', 1, 1572230913, 1571531137),
+(3, 32, 0, 0, 1, 'Paopao', '\"Paopao\"', 'http://thirdwx.qlogo.cn/mmopen/ajNVdqHZLLCEmdSXx8Koibl0D2p6OVM0aCTsefUrCziaRoRUAnOLDFxa96zBN1qjX8BCJ8FQxF7hoicWgQ2Btzfsw/132', 1, 'zh_CN', '中国', '广东', '江门', '', 'oBSasxBP6FhKCkSW9WYv4ckgBZDI', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1570811312, 0, '0', '', 1, 1572230913, 1571531137),
+(4, 32, 0, 0, 1, '牛一', '\"\\u725b\\u4e00\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPK6ibDCEesF2S0aWTzicDlyBsgMXhAIlh2droDM6ic8siccU4VeT0vlAf6Zia6n42kNMGE4CuvYpN5pyjQ/132', 1, 'zh_CN', '中国', '湖北', '襄阳', '', 'oBSasxMmOsGQd0M5E8DqYCvg_7rQ', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1570973591, 0, '0', '', 1, 1572230913, 1571531137),
+(5, 32, 0, 0, 1, '、ζ低调ゐ走这条 街る', '\"\\u3001\\u03b6\\u4f4e\\u8c03\\u3090\\u8d70\\u8fd9\\u6761 \\u8857\\u308b\"', 'http://thirdwx.qlogo.cn/mmopen/BA8GZZ2EGwWjjLn9bP76eEhmg9zfsYuVlbdJT9y3Z5KJFrINxlCHvFX2sTxiaskvJAcAORVibwQQVpJictIv7icH9Q/132', 1, 'zh_CN', '中国', '河南', '郑州', '', 'oBSasxK1y2TGZk_xKIf-ZxWYM5rM', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1568970306, 0, '0', '', 1, 1572230913, 1571531137),
+(6, 32, 0, 0, 1, '周凯', '\"\\u5468\\u51ef\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPKU8tXPlI2HO2oCEPEq5rRBZDwQ9PgESvrBvI2tkIpJG2NGNhA0unHbsxP3ImJjnSRVzMu4MscIbAmR8W7beDjB/132', 1, 'zh_CN', '中国', '四川', '成都', '', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569384811, 0, '0', '', 1, 1572230913, 1571531137),
+(7, 32, 0, 0, 1, 'IT速学通', '\"\\u901f\\u5b66\\u901a\\u79d1\\u6280\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6e5erQKVrgMJ6o5ibjmtRTbKlshrzyZ1XjYB970MxjaVlic4T0tXR8hqJ2hGPuVqjicS7lVMXoWgRf8akibu8mAKVK/132', 1, 'zh_CN', '中国', '湖北', '武汉', '', 'oBSasxDaZ8eadp7mTiD_f-esL_ss', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1571115872, 0, '0', '', 1, 1572230913, 1571531137),
+(8, 32, 0, 0, 1, 'Bill', '\"Bill\"', 'http://thirdwx.qlogo.cn/mmopen/BA8GZZ2EGwXAkCnGwmSqWXvtKBx3taFq32ibUlKS1VNib7ITNtWhiaF52poRpDVW2rS5yUbKibmsOCl0nsSvorciamobS3ibtI9nZg/132', 1, 'zh_CN', '中国', '广东', '中山', '', 'oBSasxOBWqWjGWB22bdzjUMnGbAU', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1570544562, 0, '0', '', 1, 1572230913, 1571531137),
+(9, 32, 0, 0, 1, '何若焱', '\"\\u4f55\\u82e5\\u7131\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPIhorsAYYgpicQYAnYDBNicEic5iayaxnIZq4RbybVNeiad7beZXKVpDDicK5Esq43tgPBWDoJuFC1lhVluBFk8AWJf2Z/132', 0, 'zh_CN', '', '', '', '', 'oBSasxBU2xk2JPnP1x_5mtbDlQ1M', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569163118, 0, '0', '', 1, 1572230913, 1571531137),
+(10, 32, 0, 0, 1, 'flystone', '\"flystone\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6e5erQKVrgMOEP1x3FKM94q0k7HAALibB0WwOLhLRPVRJJDRcLo5RXua1fytBsRwhM3cYcCbNsnOH7ibcSrvuo5ic/132', 1, 'zh_CN', '中国', '广东', '广州', '', 'oBSasxPs-IA9dp03EcmHmPmQ88Mw', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569231878, 0, '0', '', 1, 1572230913, 1571531137),
+(11, 32, 0, 0, 1, 'UI中国', '\"UI\\u4e2d\\u56fd\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6RxhlicynFsqzHSC3CVaAdkzDJibg8MQQRcia4vwZt2ap2uXKCrE6pQEjR3hERXROHjPUBgdHyYRZ3aOnAWsIWR1s/132', 0, 'zh_CN', '', '', '', '', 'oBSasxGjfo7053Gelemw58C4oAwc', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '粉丝', '[2]', 1569297240, 0, '0', '', 1, 1572230913, 1571531137),
+(12, 32, 0, 0, 1, '学无止境', '\"\\u5b66\\u65e0\\u6b62\\u5883\"', 'http://thirdwx.qlogo.cn/mmopen/ajNVdqHZLLAksKZWwDKrFzfTM4ZvLRYqZtUnib4FQ26TofEYNF8ibopZibiaVfuqkkgLrfnYvw4oiakiauVb6MsrR4Gw/132', 1, 'zh_CN', '中国', '山东', '济南', '', 'oBSasxH1zjO-jahSXEg2k8Ny1m_Y', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '其他', '[2]', 1571794623, 0, '0', '', 1, 1572230913, 1571794794),
+(13, 32, 0, 0, 1, 'lyq', '\"lyq\"', 'http://thirdwx.qlogo.cn/mmopen/BA8GZZ2EGwXYBCKkicUlNZ3N9yw90ficpUB7vYuRUVvjZMpZkaouRPQEJfZHsOtJRVnSyZaQQ5QHvBsPMqTZEWdA/132', 1, 'zh_CN', '阿鲁巴', '', '', '', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1571896759, 0, '0', '', 1, 1572230913, 1571909844),
+(14, 32, 0, 0, 1, '阳光', '\"\\u9633\\u5149\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPK85QMCfMKAxOV0ZYUz3TT2icZFXJz6ic4TmEK4swqlFO516NBqiaHXzM7geb2BF3ag1rNrXz1Q5dYnqkZu6ia66sQK/132', 1, 'zh_CN', '中国', '', '', '', 'oBSasxE74GTlVwALB0mYBhCYD604', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1571893220, 0, '0', '', 1, 1572230913, 1571909844),
+(15, 31, 0, 0, 1, '少年智力开发报订阅', '\"\\u5c11\\u5e74\\u667a\\u529b\\u5f00\\u53d1\\u62a5\\u8ba2\\u9605\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k4w5h73kjDCf0o0IXjb7tNuJHk45lY9ZopsqS4rsQ5UxkAgvOqe49UESQyiaHp0jG7u3p1WhiaHpm7g/132', 1, 'zh_CN', '中国', '河北', '石家庄', '', 'oBSasxDCwYJ4QlFRgSbi-SZktfZs', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1570784081, 0, '0', '', 1, 1573720523, 1572318076),
+(16, 31, 0, 0, 1, '🐘 心之所向🐘', '\"\\ud83d\\udc18 \\u5fc3\\u4e4b\\u6240\\u5411\\ud83d\\udc18\"', 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM4VFiaYnBD77jqvXaG55kz8cYgynjUAic5oNcrjkicjIGvVVyRYfLsiceojIlI709OKWPAQr95E2y2Ick6jSHSrIJXgtcn1VnDM4qE/132', 1, 'zh_CN', '中国', '湖南', '衡阳', '', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1568970767, 0, '0', '', 1, 1573720523, 1572318076),
+(17, 31, 0, 0, 1, 'Paopao', '\"Paopao\"', 'http://thirdwx.qlogo.cn/mmopen/ajNVdqHZLLCEmdSXx8Koibl0D2p6OVM0aCTsefUrCziaRoRUAnOLDFxa96zBN1qjX8BCJ8FQxF7hoicWgQ2Btzfsw/132', 1, 'zh_CN', '中国', '广东', '江门', '', 'oBSasxBP6FhKCkSW9WYv4ckgBZDI', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1570811312, 0, '0', '', 1, 1573720523, 1572318076),
+(18, 31, 0, 0, 1, '学无止境', '\"\\u5b66\\u65e0\\u6b62\\u5883\"', 'http://thirdwx.qlogo.cn/mmopen/ajNVdqHZLLAksKZWwDKrFzfTM4ZvLRYqZtUnib4FQ26TofEYNF8ibopZibiaVfuqkkgLrfnYvw4oiakiauVb6MsrR4Gw/132', 1, 'zh_CN', '中国', '山东', '济南', '', 'oBSasxH1zjO-jahSXEg2k8Ny1m_Y', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1571794623, 0, '0', '', 1, 1573720523, 1572318076),
+(19, 31, 0, 0, 1, '牛一', '\"\\u725b\\u4e00\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPK6ibDCEesF2S0aWTzicDlyBsgMXhAIlh2droDM6ic8siccU4VeT0vlAf6Zia6n42kNMGE4CuvYpN5pyjQ/132', 1, 'zh_CN', '中国', '湖北', '襄阳', '', 'oBSasxMmOsGQd0M5E8DqYCvg_7rQ', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1570973591, 0, '0', '', 1, 1573720523, 1572318076),
+(20, 31, 0, 0, 1, '、ζ低调ゐ走这条 街る', '\"\\u3001\\u03b6\\u4f4e\\u8c03\\u3090\\u8d70\\u8fd9\\u6761 \\u8857\\u308b\"', 'http://thirdwx.qlogo.cn/mmopen/BA8GZZ2EGwWjjLn9bP76eEhmg9zfsYuVlbdJT9y3Z5KJFrINxlCHvFX2sTxiaskvJAcAORVibwQQVpJictIv7icH9Q/132', 1, 'zh_CN', '中国', '河南', '郑州', '', 'oBSasxK1y2TGZk_xKIf-ZxWYM5rM', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1568970306, 0, '0', '', 1, 1573720523, 1572318076),
+(21, 31, 0, 0, 1, 'lyq', '\"lyq\"', 'http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaEIJ13iaF4FwznlxdFKibqDpw0hVD6dy7K86hKDrCbZzXyzicvagmt6F4eN2VGLXAF14tSrXobibWPcVQQ/132', 1, 'zh_CN', '阿鲁巴', '', '', '', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1571896759, 0, '0', '', 1, 1573720523, 1572318076),
+(22, 31, 0, 0, 1, '周凯', '\"\\u5468\\u51ef\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPKU8tXPlI2HO2oCEPEq5rRBZDwQ9PgESvrBvI2tkIpJG2NGNhA0unHbsxP3ImJjnSRVzMu4MscIbAmR8W7beDjB/132', 1, 'zh_CN', '中国', '四川', '成都', '', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569384811, 0, '0', '', 1, 1573720523, 1572318076),
+(23, 31, 0, 0, 1, 'IT速学通', '\"IT\\u901f\\u5b66\\u901a\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6e5erQKVrgMJ6o5ibjmtRTbKlshrzyZ1XjYB970MxjaVmVgU0u9OPoZicOiaWa0sgc8eibVnyxyV6HcHgoskE8EulC/132', 1, 'zh_CN', '中国', '湖北', '武汉', '', 'oBSasxDaZ8eadp7mTiD_f-esL_ss', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1571115872, 0, '0', '', 1, 1573720523, 1572318076),
+(24, 31, 0, 0, 1, 'Bill', '\"Bill\"', 'http://thirdwx.qlogo.cn/mmopen/BA8GZZ2EGwXAkCnGwmSqWXvtKBx3taFq32ibUlKS1VNib7ITNtWhiaF52poRpDVW2rS5yUbKibmsOCl0nsSvorciamobS3ibtI9nZg/132', 1, 'zh_CN', '中国', '广东', '中山', '', 'oBSasxOBWqWjGWB22bdzjUMnGbAU', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '星标组', '[2]', 1570544562, 0, '0', '', 1, 1573720523, 1572318076),
+(25, 31, 0, 0, 1, '何若焱', '\"\\u4f55\\u82e5\\u7131\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPIhorsAYYgpicQYAnYDBNicEic5iayaxnIZq4RbybVNeiad7beZXKVpDDicK5Esq43tgPBWDoJuFC1lhVluBFk8AWJf2Z/132', 0, 'zh_CN', '', '', '', '', 'oBSasxBU2xk2JPnP1x_5mtbDlQ1M', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569163118, 0, '0', '', 1, 1573720523, 1572318076),
+(26, 31, 0, 0, 1, 'flystone', '\"flystone\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6e5erQKVrgMOEP1x3FKM94q0k7HAALibB0WwOLhLRPVRJJDRcLo5RXua1fytBsRwhM3cYcCbNsnOH7ibcSrvuo5ic/132', 1, 'zh_CN', '中国', '广东', '广州', '', 'oBSasxPs-IA9dp03EcmHmPmQ88Mw', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569231878, 0, '0', '', 1, 1573720523, 1572318076),
+(27, 31, 0, 0, 1, '阳光', '\"\\u9633\\u5149\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPK85QMCfMKAxOV0ZYUz3TT2icZFXJz6ic4TmEK4swqlFO516NBqiaHXzM7geb2BF3ag1rNrXz1Q5dYnqkZu6ia66sQK/132', 1, 'zh_CN', '中国', '', '', '', 'oBSasxE74GTlVwALB0mYBhCYD604', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '粉丝', '[2]', 1571893220, 0, '0', '', 1, 1573720523, 1572318076),
+(28, 31, 0, 0, 1, 'UI中国', '\"UI\\u4e2d\\u56fd\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6RxhlicynFsqzHSC3CVaAdkzDJibg8MQQRcia4vwZt2ap2uXKCrE6pQEjR3hERXROHjPUBgdHyYRZ3aOnAWsIWR1s/132', 0, 'zh_CN', '', '', '', '', 'oBSasxGjfo7053Gelemw58C4oAwc', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569297240, 0, '0', '', 1, 1573720523, 1572318076),
+(29, 31, 0, 0, 1, '多一点辣椒', '\"\\u591a\\u4e00\\u70b9\\u8fa3\\u6912\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPJFoj3ibYf0Xf1G6WwYiaW2AcUxXh7yeAeib47LgAFLIUWSqJyvZWib8NTRKNEprjuEd9oefg7db91WttDWvaWjTJkG/132', 1, 'zh_CN', '中国', '湖南', '岳阳', '', 'oBSasxLaECL0109tkNDXIeW8wfSs', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '好友', '[2]', 1572456933, 0, '0', 'foo', 1, 1573720523, 1572530547),
+(30, 31, 0, 0, 1, 'Mr.Yin🙈', '\"Mr.Yin\\ud83d\\ude48\"', 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM7Nbsss8E9XNNIpLTDeFqickoLuTG1xhReibqV7rq35ia1STyEfhLQLvIrEZw8Bsk18xaxH0jP5KjLsw/132', 1, 'zh_CN', '中国', '北京', '朝阳', '', 'oBSasxM9SF1iyF5L0cT49atZ9I3M', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '粉丝', '[2]', 1573205950, 0, '0', '', 1, 1573720523, 1573323289),
+(31, 31, 0, 0, 1, 'demo1', '\"demo1\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6yMGKHich2zlzu6UwEkic4ic0BgibXfSE6cRKKPlOJU0ZSicFF4z29A6mibuy386sbqW8iaDicOjn3PS90TG62ico5CTVbm/132', 1, 'zh_CN', '中国', '广东', '广州', '', 'oBSasxI7krlXCQtb4VKpi7woKra0', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1572786547, 0, '0', 'foo', 1, 1573720523, 1573323289),
+(32, 31, 0, 0, 1, 'AAA新房团购-二手房交易-房联陈俊', '\"AAA\\u65b0\\u623f\\u56e2\\u8d2d-\\u4e8c\\u624b\\u623f\\u4ea4\\u6613-\\u623f\\u8054\\u9648\\u4fca\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6e5erQKVrgMADjfugQu99Ty7SEzaVH4pDTsVbDHp25Lic9QywqNiaib5uTeYJu4d37RnLhjN8yXsqnOwpxKBPcAD4/132', 1, 'zh_CN', '中国', '江西', '九江', '', 'oBSasxEzh4b72SPdBuBcVY0-iw60', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1573528978, 0, '0', '', 1, 1573720523, 1573544898),
+(33, 31, 0, 0, 1, '橙子吃橙子吃撑🍊', '\"\\u6a59\\u5b50\\u5403\\u6a59\\u5b50\\u5403\\u6491\\ud83c\\udf4a\"', 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM6HGYLViaBH6KmguI0xibZDaem961EbhYH6Q19upNScu6apB0JeiaEAw0ia80v0pIraibVpToibZIdrEnVkbUadExYXIlcP3X0lH6Abs/132', 1, 'zh_CN', '安道尔', '', '', '', 'oBSasxCS4GoeDw11Bi-wjMP3KOyg', '', 0, 1, 'ADD_SCENE_QR_CODE', '', '好友', '[]', 1573484677, 0, '0', '', 1, 1573720530, 1573544898),
+(34, 31, 0, 0, 1, '灯泡🤗', '\"\\u706f\\u6ce1\\ud83e\\udd17\"', 'http://thirdwx.qlogo.cn/mmopen/FMuxcDB3FibIrFwjFCDcR2s5Pj0VMPJf07nw7un6GzGzKWVicTrg4jRt3MkYiagWluzz8c4V9EGC1lOhgJWspA2e3y856DqvMk5/132', 2, 'zh_CN', '澳大利亚', '西澳大利亚', '卡尔古利', '', 'oBSasxHYOKaNP-ZGVT_hvZ4grgtg', '', 0, 1, 'ADD_SCENE_QR_CODE', '', '粉丝', '[]', 1573719750, 0, '0', '', 1, 1573720528, 1573720009);
 
 -- --------------------------------------------------------
 
@@ -1703,10 +1130,10 @@ CREATE TABLE `lm_wx_material` (
   `wx_aid` int(11) DEFAULT NULL,
   `media_id` varchar(64) DEFAULT '' COMMENT '微信媒体id',
   `file_name` varchar(255) DEFAULT NULL COMMENT '视频文件名',
-  `local_cover` varchar(255) DEFAULT NULL COMMENT '本地地址',
   `media_url` varchar(255) DEFAULT NULL,
+  `local_cover` varchar(255) NOT NULL DEFAULT ' ',
   `type` varchar(10) NOT NULL COMMENT '图片（image）、视频（video）、语音 （voice）、图文（news）音乐（music）',
-  `des` varchar(150) NOT NULL COMMENT '视频描述',
+  `des` varchar(150) DEFAULT ' ' COMMENT '视频描述',
   `create_time` int(11) DEFAULT NULL,
   `update_time` int(10) UNSIGNED DEFAULT NULL COMMENT '更新时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -1715,19 +1142,24 @@ CREATE TABLE `lm_wx_material` (
 -- Dumping data for table `lm_wx_material`
 --
 
-INSERT INTO `lm_wx_material` (`id`, `store_id`, `wx_aid`, `media_id`, `file_name`, `local_cover`, `media_url`, `type`, `des`, `create_time`, `update_time`) VALUES
-(12, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vdbn80qbO14UQcNSOMmJhd0', NULL, NULL, 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZgdnibLXpLOJpNQJceeNicswYUsKqe8IialcHA9tSkGq6m8AD4E58dxIlQ/0?wx_fmt=jpeg', 'image', '', 1568707569, 1568707569),
-(13, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vb3MwnW37vEF4yLXEsztgao', NULL, NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZpuoImzdQPGVticJY8cwP9neeiaOFTxOKmYzia2nPJiabgeESiavIuUmnUEw/0?wx_fmt=png', 'image', '', 1568708249, 1568708249),
-(14, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vdzNbXT6nfF5icgcGBMWVfI', NULL, NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZpuoImzdQPGVticJY8cwP9neeiaOFTxOKmYzia2nPJiabgeESiavIuUmnUEw/0?wx_fmt=png', 'image', '', 1568708380, 1568708380),
-(15, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vcw1Ic8rbsNrgOsnszx0OJI', NULL, NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZpuoImzdQPGVticJY8cwP9neeiaOFTxOKmYzia2nPJiabgeESiavIuUmnUEw/0?wx_fmt=png', 'image', '', 1568708436, 1568708436),
-(16, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vYTODIACSEV3c_UjoJlQoNo', NULL, NULL, 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZgdnibLXpLOJpNQJceeNicswYUsKqe8IialcHA9tSkGq6m8AD4E58dxIlQ/0?wx_fmt=jpeg', 'image', '', 1568708449, 1568708449),
-(17, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vWJohUlSRgKE0O3vNSzysB0', NULL, NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibObCXqbVj5SL2ZsDxlJ7iaic7iaL0ubiac0ZceFOJ9LybTGsSM563OGB5IDfK7tvpczBEjLj9dyb06mI8g/0?wx_fmt=png', 'image', '', 1568768779, 1568768779),
-(18, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vSVojMabllGj8dlCXt43gxc', NULL, NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibObCXqbVj5SL2ZsDxlJ7iaic7iaL0ubiac0ZceFOJ9LybTGsSM563OGB5IDfK7tvpczBEjLj9dyb06mI8g/0?wx_fmt=png', 'image', '', 1568769663, 1568769663),
-(19, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vTeRfZgpyG6WM3xEIYMqs4g', NULL, NULL, 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibObCXqbVj5SL2ZsDxlJ7iaic7iaDqkayiaz14l4AHVlCAYyVicFqb0Q95iaaYabtveniag4mNUICBbaypPXjA/0?wx_fmt=jpeg', 'image', '', 1568770822, 1568770822),
-(26, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vf4uLVp3tFomLPazcjB6IOM', NULL, NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOafHyBKbh42d34tu7iagashY3TkAG8vQGvkn0jKYur0219iaibtkvyMP2UrXxPA6QcZOfkgBmd2kOZZA/0?wx_fmt=png', 'image', '', 1568856598, 1568856598),
-(32, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vZ7L6evjz2HyZQWuwq_JBLI', NULL, NULL, NULL, 'news', '', 1568858056, 1568858056),
-(37, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vWtBCrMpwwR_IHX2MpGrpoc', NULL, NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOYE5UibSIrwLn6mFYy8L2SN7HvCEAvQAGna6ZxmLotrx93hfqof9aoRmICxfIJjkTn8ZFdvO4wiaPAg/0?wx_fmt=png', 'image', '', 1568946808, 1568946808),
-(38, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vY2nYvRwar_haUm9ks0LoJw', NULL, NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOYE5UibSIrwLn6mFYy8L2SN7HvCEAvQAGna6ZxmLotrx93hfqof9aoRmICxfIJjkTn8ZFdvO4wiaPAg/0?wx_fmt=png', 'image', '', 1568947771, 1568947771);
+INSERT INTO `lm_wx_material` (`id`, `store_id`, `wx_aid`, `media_id`, `file_name`, `media_url`, `local_cover`, `type`, `des`, `create_time`, `update_time`) VALUES
+(13, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vb3MwnW37vEF4yLXEsztgao', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZpuoImzdQPGVticJY8cwP9neeiaOFTxOKmYzia2nPJiabgeESiavIuUmnUEw/0?wx_fmt=png', ' ', 'image', '', 1568708249, 1568708249),
+(14, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vdzNbXT6nfF5icgcGBMWVfI', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZpuoImzdQPGVticJY8cwP9neeiaOFTxOKmYzia2nPJiabgeESiavIuUmnUEw/0?wx_fmt=png', ' ', 'image', '', 1568708380, 1568708380),
+(15, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vcw1Ic8rbsNrgOsnszx0OJI', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZpuoImzdQPGVticJY8cwP9neeiaOFTxOKmYzia2nPJiabgeESiavIuUmnUEw/0?wx_fmt=png', ' ', 'image', '', 1568708436, 1568708436),
+(16, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vYTODIACSEV3c_UjoJlQoNo', NULL, 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZgdnibLXpLOJpNQJceeNicswYUsKqe8IialcHA9tSkGq6m8AD4E58dxIlQ/0?wx_fmt=jpeg', ' ', 'image', '', 1568708449, 1568708449),
+(17, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vWJohUlSRgKE0O3vNSzysB0', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibObCXqbVj5SL2ZsDxlJ7iaic7iaL0ubiac0ZceFOJ9LybTGsSM563OGB5IDfK7tvpczBEjLj9dyb06mI8g/0?wx_fmt=png', ' ', 'image', '', 1568768779, 1568768779),
+(18, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vSVojMabllGj8dlCXt43gxc', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibObCXqbVj5SL2ZsDxlJ7iaic7iaL0ubiac0ZceFOJ9LybTGsSM563OGB5IDfK7tvpczBEjLj9dyb06mI8g/0?wx_fmt=png', ' ', 'image', '', 1568769663, 1568769663),
+(19, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vTeRfZgpyG6WM3xEIYMqs4g', NULL, 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibObCXqbVj5SL2ZsDxlJ7iaic7iaDqkayiaz14l4AHVlCAYyVicFqb0Q95iaaYabtveniag4mNUICBbaypPXjA/0?wx_fmt=jpeg', ' ', 'image', '', 1568770822, 1568770822),
+(26, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vf4uLVp3tFomLPazcjB6IOM', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOafHyBKbh42d34tu7iagashY3TkAG8vQGvkn0jKYur0219iaibtkvyMP2UrXxPA6QcZOfkgBmd2kOZZA/0?wx_fmt=png', ' ', 'image', '', 1568856598, 1568856598),
+(37, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vWtBCrMpwwR_IHX2MpGrpoc', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOYE5UibSIrwLn6mFYy8L2SN7HvCEAvQAGna6ZxmLotrx93hfqof9aoRmICxfIJjkTn8ZFdvO4wiaPAg/0?wx_fmt=png', ' ', 'image', '', 1568946808, 1568946808),
+(38, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vY2nYvRwar_haUm9ks0LoJw', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOYE5UibSIrwLn6mFYy8L2SN7HvCEAvQAGna6ZxmLotrx93hfqof9aoRmICxfIJjkTn8ZFdvO4wiaPAg/0?wx_fmt=png', ' ', 'image', '', 1568947771, 1568947771),
+(39, 1, 31, 'Mkk-XekVsp2Cvr5VktS-veKqXIwPxSeaPBRdg2wCZ-0', NULL, 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibObRqRGPibX3Wu6qXkv1kaXMibyicwyxCPj8hQrJ2bCSB1bU0aTnc7r1EticVxsKt9ibkVjm1gj5t2iaKRGw/0?wx_fmt=jpeg', ' ', 'image', '', 1571909414, 1571909414),
+(40, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vcdzMZNPWcKspdy2Mt8V3Pw', NULL, 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibObRqRGPibX3Wu6qXkv1kaXMibyicwyxCPj8hQrJ2bCSB1bU0aTnc7r1EticVxsKt9ibkVjm1gj5t2iaKRGw/0?wx_fmt=jpeg', ' ', 'image', '', 1571909420, 1571909420),
+(45, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vaeUc8MoS4WO7dOKJXvM6P8', NULL, 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibOZtf6vv7hL24HeMpcwqUI9oGpHAMKHT2FKevgkuoD636icHHCUmCBxO9wlpHRAtuS7c3M8UOia3nspA/0?wx_fmt=jpeg', ' ', 'image', ' ', 1572454287, 1572454287),
+(46, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vTFi0SiiaAKNOMl-dUwGKWM', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOa1WWBbKJLyGeQlFbCLBGeymE4MFmib9h6NlBA0Q9puRlQHoibVwZT2ujGdpPqib8JG5xjgia6a40nmCQ/0?wx_fmt=png', ' ', 'image', ' ', 1573719588, 1573719588),
+(50, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vUT0p2_YYCaW_dn84FviKBY', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOa1WWBbKJLyGeQlFbCLBGeyWP9jwjWqpiarU5F2WgdoMGwiccOFXfhJIiciaU8H3jjUmSYbHibP6wEuibXA/0?wx_fmt=png', ' ', 'image', ' ', 1573719883, 1573719883),
+(58, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vT6z0Fbis24GVHUlhQDnfPM', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOa1WWBbKJLyGeQlFbCLBGey80nbt8LsjQIDErt9iaXQkyGpFDU8ItdaxVhFCNNQYsrmEammliaj1ZOQ/0?wx_fmt=png', '/storage/uploads/20191114/c7db80925c5cc60f1355ffd5bea9b77e.png', 'image', ' ', 1573721314, 1573721314),
+(59, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vRcOhdqmkt7bWiTBZ8H9J78', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOa1WWBbKJLyGeQlFbCLBGeyJbrtECP8Bru3diaVf7Lla1ODdbkKPTkhKia6HM6c9xo92MPRCJr5TMMQ/0?wx_fmt=png', '/storage/uploads/20191114/2c88a2d1da7169e4c3695bfc66c5a46a.png', 'image', ' ', 1573723415, 1573723415);
 
 -- --------------------------------------------------------
 
@@ -1753,18 +1185,16 @@ CREATE TABLE `lm_wx_material_info` (
   `need_open_comment` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Uint32 是否打开评论，0不打开，1打开',
   `only_fans_can_comment` tinyint(1) DEFAULT '1' COMMENT 'Uint32 是否粉丝才可评论，0所有人可评论，1粉丝才可评论',
   `sort` int(11) NOT NULL DEFAULT '0' COMMENT '排序号',
-  `hits` int(11) NOT NULL DEFAULT '0' COMMENT '阅读次数',
-  `create_time` int(11) DEFAULT NULL,
-  `update_time` int(11) DEFAULT NULL
+  `hits` int(11) NOT NULL DEFAULT '0' COMMENT '阅读次数'
 ) ENGINE=InnoDB AVG_ROW_LENGTH=712 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `lm_wx_material_info`
 --
 
-INSERT INTO `lm_wx_material_info` (`id`, `store_id`, `wx_aid`, `material_id`, `thumb_media_id`, `local_cover`, `cover`, `title`, `author`, `show_cover`, `digest`, `content`, `url`, `content_source_url`, `need_open_comment`, `only_fans_can_comment`, `sort`, `hits`, `create_time`, `update_time`) VALUES
-(53, 1, 31, 32, 'Mkk-XekVsp2Cvr5VktS-vf4uLVp3tFomLPazcjB6IOM', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOafHyBKbh42d34tu7iagashY3TkAG8vQGvkn0jKYur0219iaibtkvyMP2UrXxPA6QcZOfkgBmd2kOZZA/0?wx_fmt=png', '1', '1', 1, '1', '<p>1</p>', 'http://mp.weixin.qq.com/s?__biz=MzI5OTYxNjI2MQ==&mid=100000046&idx=1&sn=1e6384955fbc4351557633554e7b6778&chksm=6c9290445be519522f735cf999721ba0a4c2d170f585639c1367c2f34e5e4aa59d16609253b6#rd', '1', 1, 0, 0, 0, NULL, NULL),
-(54, 1, 31, 32, 'Mkk-XekVsp2Cvr5VktS-vZUxI_gpEP8F61ypD7kPKao', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOafHyBKbh42d34tu7iagashYhus2hLcovAMWBqQllicMeQKyiaQABFn4wibLtUyBdK8BXeQ945BSoia4eg/0?wx_fmt=png', '2', '2', 0, '2', '<p>2</p>', 'http://mp.weixin.qq.com/s?__biz=MzI5OTYxNjI2MQ==&mid=100000046&idx=2&sn=cb91de1204dc89ee0fb01732545a70c8&chksm=6c9290445be51952d2580b1e9fee7edb2df8bc8d55be597489e6a30fdd3ab1784e4c9a916238#rd', '2', 1, 0, 0, 0, NULL, NULL);
+INSERT INTO `lm_wx_material_info` (`id`, `store_id`, `wx_aid`, `material_id`, `thumb_media_id`, `local_cover`, `cover`, `title`, `author`, `show_cover`, `digest`, `content`, `url`, `content_source_url`, `need_open_comment`, `only_fans_can_comment`, `sort`, `hits`) VALUES
+(53, 1, 31, 32, 'Mkk-XekVsp2Cvr5VktS-vf4uLVp3tFomLPazcjB6IOM', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOafHyBKbh42d34tu7iagashY3TkAG8vQGvkn0jKYur0219iaibtkvyMP2UrXxPA6QcZOfkgBmd2kOZZA/0?wx_fmt=png', '1', '1', 1, '1', '<p>1</p>', 'http://mp.weixin.qq.com/s?__biz=MzI5OTYxNjI2MQ==&mid=100000046&idx=1&sn=1e6384955fbc4351557633554e7b6778&chksm=6c9290445be519522f735cf999721ba0a4c2d170f585639c1367c2f34e5e4aa59d16609253b6#rd', '1', 1, 0, 0, 0),
+(54, 1, 31, 32, 'Mkk-XekVsp2Cvr5VktS-vZUxI_gpEP8F61ypD7kPKao', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOafHyBKbh42d34tu7iagashYhus2hLcovAMWBqQllicMeQKyiaQABFn4wibLtUyBdK8BXeQ945BSoia4eg/0?wx_fmt=png', '2', '2', 0, '2', '<p>2</p>', 'http://mp.weixin.qq.com/s?__biz=MzI5OTYxNjI2MQ==&mid=100000046&idx=2&sn=cb91de1204dc89ee0fb01732545a70c8&chksm=6c9290445be51952d2580b1e9fee7edb2df8bc8d55be597489e6a30fdd3ab1784e4c9a916238#rd', '2', 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -2132,7 +1562,55 @@ INSERT INTO `lm_wx_msg_history` (`id`, `store_id`, `wx_aid`, `media_id`, `keywor
 (319, 1, 31, 0, 3, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1568970723\",\"MsgType\":\"text\",\"Content\":\"\\u67e5\\u8be2\",\"MsgId\":\"22462261971127568\"}', '查询', 'text', '', 1, 1568970723, 1568970724),
 (321, 1, 31, 0, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1568971170\",\"MsgType\":\"image\",\"PicUrl\":\"http:\\/\\/mmbiz.qpic.cn\\/mmbiz_jpg\\/hrm4Dn6o0vSr3ib6MtFKQnf3SR9odvGLyzeicEEBxID9oybGbbLibmevNAVgVbKflvUTFFIaCjKlfo1mB8icdHA8tQ\\/0\",\"MsgId\":\"22462265413584093\",\"MediaId\":\"3qWYi2UckJWNDAxjrJ_S1GSbu2cJn6Ar7zU9aEAp6GqSFzZs9OXHwymrjrVvr9Ow\"}', 'http://mmbiz.qpic.cn/mmbiz_jpg/hrm4Dn6o0vSr3ib6MtFKQnf3SR9odvGLyzeicEEBxID9oybGbbLibmevNAVgVbKflvUTFFIaCjKlfo1mB8icdHA8tQ/0', 'image', '', 1, 1568971170, 1568971172),
 (322, 1, 31, 0, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1568971194\",\"MsgType\":\"video\",\"MediaId\":\"uv7RanbSRba84YWFBVBRBUXIcn66PUqilzIYt8HKCtc7wD5YtHQxzatrPzS2Wai-\",\"ThumbMediaId\":\"d7QfTY1_GQb3SC0qSqwvYy2dzTaJa4MR2o_P0yBg7RbXZEAUmAw8kBe2dmt8-5Dj\",\"MsgId\":\"22462265765538182\"}', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1568971194\",\"MsgType\":\"video\",\"MediaId\":\"uv7RanbSRba84YWFBVBRBUXIcn66PUqilzIYt8HKCtc7wD5YtHQxzatrPzS2Wai-\",\"ThumbMediaId\":\"d7QfTY1_GQb3SC0qSqwvYy2dzTaJa4MR2o_P0yBg7RbXZEAUmAw8kBe2dmt8-5Dj\",\"MsgId\":\"22462265765538182\"}', 'video', '', 1, 1568971194, 1568971195),
-(323, 1, 31, 0, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1568971247\",\"MsgType\":\"image\",\"PicUrl\":\"http:\\/\\/mmbiz.qpic.cn\\/mmbiz_jpg\\/hrm4Dn6o0vSr3ib6MtFKQnf3SR9odvGLyzeicEEBxID9oybGbbLibmevNAVgVbKflvUTFFIaCjKlfo1mB8icdHA8tQ\\/0\",\"MsgId\":\"22462269944573997\",\"MediaId\":\"lR1a0Sb9Mfqc28PDWsEip5l66WRm5GH_a6OAgfsrdmvXCSkXtYp-cv7smsxd9KHx\"}', 'http://mmbiz.qpic.cn/mmbiz_jpg/hrm4Dn6o0vSr3ib6MtFKQnf3SR9odvGLyzeicEEBxID9oybGbbLibmevNAVgVbKflvUTFFIaCjKlfo1mB8icdHA8tQ/0', 'image', '', 1, 1568971247, 1568971250);
+(323, 1, 31, 0, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1568971247\",\"MsgType\":\"image\",\"PicUrl\":\"http:\\/\\/mmbiz.qpic.cn\\/mmbiz_jpg\\/hrm4Dn6o0vSr3ib6MtFKQnf3SR9odvGLyzeicEEBxID9oybGbbLibmevNAVgVbKflvUTFFIaCjKlfo1mB8icdHA8tQ\\/0\",\"MsgId\":\"22462269944573997\",\"MediaId\":\"lR1a0Sb9Mfqc28PDWsEip5l66WRm5GH_a6OAgfsrdmvXCSkXtYp-cv7smsxd9KHx\"}', 'http://mmbiz.qpic.cn/mmbiz_jpg/hrm4Dn6o0vSr3ib6MtFKQnf3SR9odvGLyzeicEEBxID9oybGbbLibmevNAVgVbKflvUTFFIaCjKlfo1mB8icdHA8tQ/0', 'image', '', 1, 1568971247, 1568971250),
+(324, 1, 31, 0, 0, '学无止境', 'oBSasxH1zjO-jahSXEg2k8Ny1m_Y', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxH1zjO-jahSXEg2k8Ny1m_Y\",\"CreateTime\":\"1571794623\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1571794623, 1571794624),
+(325, 1, 31, 0, 0, '学无止境', 'oBSasxH1zjO-jahSXEg2k8Ny1m_Y', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxH1zjO-jahSXEg2k8Ny1m_Y\",\"CreateTime\":\"1571794626\",\"MsgType\":\"event\",\"Event\":\"VIEW\",\"EventKey\":\"https:\\/\\/developers.weixin.qq.com\\/miniprogram\\/dev\\/api\\/media\\/image\\/wx.previewImage.html\",\"MenuId\":\"426046372\"}', '', 'event', 'VIEW', 1, 1571794626, 1571794626),
+(326, 1, 31, 0, 0, '海阔天空', 'oBSasxFrnkl5SXxaY2Qv7J1Prn08', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxFrnkl5SXxaY2Qv7J1Prn08\",\"CreateTime\":\"1571843469\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1571843469, 1571843470),
+(327, 1, 31, 0, 0, '海阔天空', 'oBSasxFrnkl5SXxaY2Qv7J1Prn08', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxFrnkl5SXxaY2Qv7J1Prn08\",\"CreateTime\":\"1571843472\",\"MsgType\":\"event\",\"Event\":\"VIEW\",\"EventKey\":\"https:\\/\\/developers.weixin.qq.com\\/miniprogram\\/dev\\/api\\/media\\/image\\/wx.previewImage.html\",\"MenuId\":\"426046372\"}', '', 'event', 'VIEW', 1, 1571843472, 1571843472);
+INSERT INTO `lm_wx_msg_history` (`id`, `store_id`, `wx_aid`, `media_id`, `keyword_id`, `nickname`, `openid`, `content_json`, `content`, `type`, `event`, `status`, `create_time`, `update_time`) VALUES
+(328, 1, 31, 0, 0, '阳光', 'oBSasxE74GTlVwALB0mYBhCYD604', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxE74GTlVwALB0mYBhCYD604\",\"CreateTime\":\"1571893221\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1571893221, 1571893221),
+(329, 1, 31, 0, 0, '阳光', 'oBSasxE74GTlVwALB0mYBhCYD604', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxE74GTlVwALB0mYBhCYD604\",\"CreateTime\":\"1571893223\",\"MsgType\":\"event\",\"Event\":\"VIEW\",\"EventKey\":\"https:\\/\\/developers.weixin.qq.com\\/miniprogram\\/dev\\/api\\/media\\/image\\/wx.previewImage.html\",\"MenuId\":\"426046372\"}', '', 'event', 'VIEW', 1, 1571893223, 1571893223),
+(330, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571896759\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1571896759, 1571896760),
+(331, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571896767\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484041\",\"Longitude\":\"118.038612\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1571896767, 1571896767),
+(332, 1, 31, 0, 4, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571896771\",\"MsgType\":\"text\",\"Content\":\"\\u662f\\u5417\",\"MsgId\":\"22504148776476430\"}', '是吗', 'text', '', 1, 1571896771, 1571896771),
+(333, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571896775\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484102\",\"Longitude\":\"118.038612\",\"Precision\":\"35.000000\"}', '', 'event', 'LOCATION', 1, 1571896775, 1571896775),
+(334, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571896779\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484102\",\"Longitude\":\"118.038612\",\"Precision\":\"35.000000\"}', '', 'event', 'LOCATION', 1, 1571896779, 1571896779),
+(335, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571896785\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484102\",\"Longitude\":\"118.038612\",\"Precision\":\"35.000000\"}', '', 'event', 'LOCATION', 1, 1571896785, 1571896785),
+(336, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571896791\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484102\",\"Longitude\":\"118.038612\",\"Precision\":\"35.000000\"}', '', 'event', 'LOCATION', 1, 1571896791, 1571896791),
+(337, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571896797\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484102\",\"Longitude\":\"118.038612\",\"Precision\":\"35.000000\"}', '', 'event', 'LOCATION', 1, 1571896797, 1571896797),
+(338, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571897401\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484108\",\"Longitude\":\"118.038559\",\"Precision\":\"35.000000\"}', '', 'event', 'LOCATION', 1, 1571897401, 1571897401),
+(339, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571897407\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484041\",\"Longitude\":\"118.038612\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1571897407, 1571897407),
+(340, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571897413\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484041\",\"Longitude\":\"118.038612\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1571897413, 1571897413),
+(341, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571897419\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484041\",\"Longitude\":\"118.038612\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1571897419, 1571897419),
+(342, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571897426\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484041\",\"Longitude\":\"118.038612\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1571897426, 1571897427),
+(343, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571897433\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484041\",\"Longitude\":\"118.038612\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1571897433, 1571897433),
+(344, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571897439\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484041\",\"Longitude\":\"118.038612\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1571897439, 1571897439),
+(345, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571897445\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484041\",\"Longitude\":\"118.038612\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1571897445, 1571897445),
+(346, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571897451\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484041\",\"Longitude\":\"118.038612\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1571897451, 1571897451),
+(347, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571897460\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484041\",\"Longitude\":\"118.038612\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1571897460, 1571897461),
+(348, 1, 31, 0, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1571908532\",\"MsgType\":\"event\",\"Event\":\"SCAN\",\"EventKey\":\"foo\",\"Ticket\":\"gQE58DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyYndnTDBqNUNlSTQxVVprb2h0Y3EAAgQ9B7FdAwQAjScA\"}', '', 'event', 'SCAN', 1, 1571908532, 1571908533);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lm_wx_qrcode`
+--
+
+CREATE TABLE `lm_wx_qrcode` (
+  `id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `wx_aid` int(11) NOT NULL,
+  `name` varchar(50) DEFAULT '',
+  `qrcode` varchar(255) NOT NULL,
+  `scene_id` int(11) NOT NULL,
+  `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0 临时，1 永久',
+  `ticket` varchar(255) NOT NULL,
+  `expire_seconds` int(11) NOT NULL,
+  `url` varchar(255) NOT NULL DEFAULT ' ',
+  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `create_time` int(11) NOT NULL,
+  `update_time` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -2163,11 +1641,16 @@ INSERT INTO `lm_wx_reply` (`id`, `store_id`, `wx_aid`, `rule`, `keyword`, `type`
 (1, 1, 31, '12852', '你好吗', 'subscribe', 'image', '很好', 12, 1, 1524204226, 1568970661),
 (2, 1, 31, '12852', '你好', 'keyword', 'text', '你好，很高兴为你服务，', NULL, 1, 0, 1524204244),
 (3, 1, 31, '12852', '查询', 'keyword', 'text', '那不是我的菜', NULL, 1, 0, 1524204255),
-(4, 1, 31, '售后退货', '是吗1213121111333333', 'default', 'image', '售后退货，七天无理由退货', 0, 1, 0, 1568880566),
+(4, 1, 31, '售后退货', '是吗', 'default', 'image', '售后退货，七天无理由退货', 0, 1, 0, 1572954343),
 (5, 1, 31, '售后退货', NULL, 'keyword', 'news', '售后退货，七天无理由退货', NULL, 1, 0, 1524446154),
 (6, 1, 31, '欢迎关注lemocms', '你好1', 'keyword', 'text', '你好，很高兴为你服务，', 0, 1, 0, 1568880267),
 (7, 1, 31, NULL, '你好哦', 'keyword', 'news', '', 30, 1, 1568880788, 1568880788),
-(8, 1, 31, NULL, '图片', 'keyword', 'image', '', 12, 1, 1568940255, 1568940255);
+(8, 1, 31, NULL, '图片', 'keyword', 'image', '', 12, 1, 1568940255, 1568940255),
+(9, 1, 31, NULL, '1', 'keyword', '', '1', 0, 1, 1572424035, 1572424035),
+(10, 1, 31, NULL, '1', 'keyword', '', '1', 0, 1, 1572424039, 1572424039),
+(11, 1, 31, NULL, '是对', 'keyword', '', '是对', 0, 1, 1572491231, 1572491231),
+(12, 1, 31, NULL, '测试', 'keyword', '', '收到测试回复', 0, 1, 1573719773, 1573719773),
+(13, 1, 31, NULL, '123', 'keyword', '', '测试', 0, 1, 1573722151, 1573722151);
 
 -- --------------------------------------------------------
 
@@ -2191,10 +1674,12 @@ CREATE TABLE `lm_wx_tag` (
 --
 
 INSERT INTO `lm_wx_tag` (`id`, `tag_id`, `name`, `store_id`, `wx_aid`, `status`, `create_time`, `update_time`) VALUES
-(1, 2, '星标组', 1, 31, 1, 1568000723, 1568969874),
-(2, 100, '粉丝', 1, 31, 1, 1568011092, 1568969874),
-(3, 101, '其他', 1, 31, 1, 1568011258, 1568969874),
-(4, 102, '好友', 1, 31, 1, 1568011277, 1568969874);
+(1, 2, '星标组', 1, 31, 1, 1568000723, 1572404059),
+(2, 100, '粉丝', 1, 31, 1, 1568011092, 1572404059),
+(3, 101, '其他', 1, 31, 1, 1568011258, 1572404059),
+(4, 102, '好友', 1, 31, 1, 1568011277, 1572404059),
+(5, 103, '商业合作伙伴', 1, 31, 1, 1571736441, 1573206411),
+(6, 103, '商业合作伙伴9', 1, 31, 1, 1572404059, 1572404059);
 
 -- --------------------------------------------------------
 
@@ -2420,6 +1905,12 @@ ALTER TABLE `lm_wx_msg_history`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `lm_wx_qrcode`
+--
+ALTER TABLE `lm_wx_qrcode`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `lm_wx_reply`
 --
 ALTER TABLE `lm_wx_reply`
@@ -2451,13 +1942,13 @@ ALTER TABLE `lm_addon`
 -- AUTO_INCREMENT for table `lm_admin`
 --
 ALTER TABLE `lm_admin`
-  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '管理员ID', AUTO_INCREMENT=4;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '管理员ID', AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `lm_admin_log`
 --
 ALTER TABLE `lm_admin_log`
-  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=2029;
+  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `lm_adv`
@@ -2493,7 +1984,7 @@ ALTER TABLE `lm_auth_group`
 -- AUTO_INCREMENT for table `lm_auth_rule`
 --
 ALTER TABLE `lm_auth_rule`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=280;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
 
 --
 -- AUTO_INCREMENT for table `lm_column`
@@ -2511,13 +2002,13 @@ ALTER TABLE `lm_config`
 -- AUTO_INCREMENT for table `lm_config_group`
 --
 ALTER TABLE `lm_config_group`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `lm_field`
 --
 ALTER TABLE `lm_field`
-  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `lm_field_type`
@@ -2535,7 +2026,7 @@ ALTER TABLE `lm_link`
 -- AUTO_INCREMENT for table `lm_module`
 --
 ALTER TABLE `lm_module`
-  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `lm_oauth2_client`
@@ -2553,7 +2044,7 @@ ALTER TABLE `lm_position`
 -- AUTO_INCREMENT for table `lm_user`
 --
 ALTER TABLE `lm_user`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=44;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `lm_user_level`
@@ -2577,13 +2068,13 @@ ALTER TABLE `lm_wx_account`
 -- AUTO_INCREMENT for table `lm_wx_fans`
 --
 ALTER TABLE `lm_wx_fans`
-  MODIFY `fans_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '粉丝ID', AUTO_INCREMENT=2;
+  MODIFY `fans_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '粉丝ID', AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `lm_wx_material`
 --
 ALTER TABLE `lm_wx_material`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '微信公众号素材', AUTO_INCREMENT=39;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '微信公众号素材', AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `lm_wx_material_info`
@@ -2601,19 +2092,25 @@ ALTER TABLE `lm_wx_menu`
 -- AUTO_INCREMENT for table `lm_wx_msg_history`
 --
 ALTER TABLE `lm_wx_msg_history`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=324;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=349;
+
+--
+-- AUTO_INCREMENT for table `lm_wx_qrcode`
+--
+ALTER TABLE `lm_wx_qrcode`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `lm_wx_reply`
 --
 ALTER TABLE `lm_wx_reply`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '微信关键词回复表', AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '微信关键词回复表', AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `lm_wx_tag`
 --
 ALTER TABLE `lm_wx_tag`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `lm_wx_type`
