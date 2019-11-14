@@ -44,10 +44,8 @@ class WechatApi extends Base
         $this->store_id =  $wechatApp->store_id;
         $this->wx_aid =  $wechatApp->wechat->id;
 
-        $this->wechatApp = cache('wechatapp_'.$this->wx_aid);
         if(!$this->wechatApp){
             $this->wechatApp = $wechatApp->wechatApp;
-            cache('wechatapp_'.$this->wx_aid,$this->wechatApp);
         }
         $this->where= ['store_id'=>$this->store_id,'wx_aid'=>$this->wx_aid];
         $this->getMessage();
@@ -77,12 +75,6 @@ class WechatApi extends Base
     {
 
         $this->wechatApp->server->push(function ($message) {
-            $file = './log.txt';
-            if (!$file) {
-                mkdir('./log.txt', '777', true);
-            }
-            $files = fopen($file, 'a+');
-            fwrite($files, json_encode($message));
             try{
                 $this->addMsg($message);
 

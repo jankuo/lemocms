@@ -74,7 +74,6 @@ class WechatApp
             $this->wechatApp = cache('wechatapp_'.$this->wechat->id);
             if(!$this->wechatApp){
                 $this->wechatApp = Factory::officialAccount($this->config);
-                cache('wechatapp_'.$this->wechat->id,$this->wechatApp);
             }
 
 
