@@ -74,7 +74,7 @@ class Wechat extends Backend {
             $this->wechatApp = cache('wechatapp_'.$this->wechatAccount->id);
             if(!$this->wechatApp){
                 $this->wechatApp = $wechatApp->wechatApp;
-                cache('wechatapp_'.$this->wechatAccount->id,$this->wechatApp);
+//                cache('wechatapp_'.$this->wechatAccount->id,$this->wechatApp);
             }
             $this->where= ['store_id'=>$this->store_id,'wx_aid'=>$this->wechatAccount->id];
 
@@ -276,8 +276,7 @@ class Wechat extends Backend {
             }
             $keys = Request::post('keys','','trim');
             $page = Request::post('page') ? Request::post('page') : 1;
-            $list=Db::name('wx_fans')
-                ->where('nickname','like','%'.$keys.'%')
+            $list=WxFans::where('nickname','like','%'.$keys.'%')
                 ->where('wx_aid',$wx_aid)
                 ->order('fans_id desc')
                 ->paginate(['list_rows' => $this->pageSize, 'page' => $page])
@@ -1133,6 +1132,9 @@ class Wechat extends Backend {
             if(!$data['type']){
                 $data['type']='keyword';
             }
+            if($data['data']){
+                $data['msg_type'] ='text';
+            }
             $res = WxReply::create($data);
             if ($res) {
                 $this->success(lang('add success'),url('index'));
@@ -1254,8 +1256,7 @@ class Wechat extends Backend {
             //获取表单上传文件
             $file = request()->file($fileKey[$i]);
             try {
-                validate($type)
-                    ->check(DataHelper::objToArray($file));
+                validate($type)->check(DataHelper::objToArray($file));
                 $savename = \think\facade\Filesystem::disk('public')->putFile('uploads', $file);
 
                 $path[] = '/storage/' . $savename;

@@ -237,7 +237,7 @@ class WechatApi extends Base
      */
     public function getSubscribeReply()
     {
-        $weixin_replay = Db::name('wx_replay');
+        $weixin_replay = new WxReply();
         $info = $weixin_replay
             ->where($this->where)
             ->where('type', 'subscribe')
@@ -272,6 +272,7 @@ class WechatApi extends Base
 
     protected function getWeixinReplyDetail($info)
     {
+
         $msg_type = $info->msg_type;
         $material_id = $info->material_id;
         $media_id = '';

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 14, 2019 at 05:29 PM
+-- Generation Time: Nov 15, 2019 at 05:17 PM
 -- Server version: 5.7.27-log
 -- PHP Version: 7.3.10
 
@@ -101,8 +101,55 @@ CREATE TABLE `lm_admin_log` (
 --
 
 INSERT INTO `lm_admin_log` (`id`, `admin_id`, `username`, `log_url`, `log_content`, `log_title`, `log_agent`, `log_ip`, `create_time`, `update_time`, `status`) VALUES
-(1, 3, 'demo', '/index.php/admin/wechat/menu.html', '点击菜单', '微信菜单', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36', '171.117.48.56', 1573723403, 1573723403, 1),
-(2, 3, 'demo', '/index.php/admin/wechat/menu.html', '点击菜单', '微信菜单', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36', '171.117.48.56', 1573723404, 1573723404, 1);
+(1, 3, 'demo', '/index.php/admin/wechat/reply.html', '点击菜单', '回复设置', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36', '171.117.49.81', 1573807729, 1573807729, 1),
+(2, 3, 'demo', '/index.php/admin/wechat/reply.html', '点击菜单', '回复设置', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36', '171.117.49.81', 1573807729, 1573807729, 1),
+(3, 3, 'demo', '/index.php/admin/wechat/reply.html', '{\"type\":\"subscribe\"}', '回复设置', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36', '171.117.49.81', 1573807730, 1573807730, 1),
+(4, 3, 'demo', '/index.php/admin/wechat/reply.html', '{\"type\":\"default\"}', '回复设置', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36', '171.117.49.81', 1573807804, 1573807804, 1),
+(5, 3, 'demo', '/index.php/admin/wechat/reply.html', '{\"type\":\"subscribe\"}', '回复设置', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36', '171.117.49.81', 1573807810, 1573807810, 1),
+(6, 3, 'demo', '/index.php/admin/wechat/reply.html', '点击菜单', '回复设置', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36', '171.117.49.81', 1573807888, 1573807888, 1),
+(7, 3, 'demo', '/index.php/admin/wechat/reply.html', '点击菜单', '回复设置', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36', '171.117.49.81', 1573807888, 1573807888, 1),
+(8, 3, 'demo', '/index.php/admin/wechat/reply.html', '{\"type\":\"subscribe\"}', '回复设置', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36', '171.117.49.81', 1573807890, 1573807890, 1),
+(9, 1, 'admin', '/index.php/admin/wechat/reply.html', '{\"type\":\"subscribe\"}', '回复设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573807898, 1573807898, 1),
+(10, 1, 'admin', '/index.php/admin/wechat/index.html', '点击菜单', '微信列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573807915, 1573807915, 1),
+(11, 1, 'admin', '/index.php/admin/wechat/index.html', '点击菜单', '微信列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573807915, 1573807915, 1),
+(12, 1, 'admin', '/index.php/admin/wechat/message.html', '点击菜单', '历史消息', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573807965, 1573807965, 1),
+(13, 1, 'admin', '/index.php/admin/wechat/qrcode.html', '点击菜单', '二维码管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573807968, 1573807968, 1),
+(14, 1, 'admin', '/index.php/admin/wechat/qrcode.html', '点击菜单', '二维码管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573807968, 1573807968, 1),
+(15, 1, 'admin', '/index.php/admin/wechat/reply.html', '点击菜单', '回复设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573807971, 1573807971, 1),
+(16, 1, 'admin', '/index.php/admin/wechat/replyedit.html', '{\"id\":\"1\"}', '回复编辑', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573807973, 1573807973, 1),
+(17, 1, 'admin', '/index.php/admin/wechat/reply.html', '{\"type\":\"subscribe\"}', '回复设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573807983, 1573807983, 1),
+(18, 1, 'admin', '/index.php/admin/wechat/replyedit.html', '{\"id\":\"1\"}', '回复编辑', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573807988, 1573807988, 1),
+(19, 1, 'admin', '/index.php/admin/wechat/index.html', '点击菜单', '微信列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573807993, 1573807993, 1),
+(20, 1, 'admin', '/index.php/admin/wechat/tag.html', '点击菜单', '粉丝标签', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573808022, 1573808022, 1),
+(21, 1, 'admin', '/index.php/admin/wechat/tag.html', '点击菜单', '粉丝标签', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573808022, 1573808022, 1),
+(22, 1, 'admin', '/index.php/admin/wechat/reply.html', '点击菜单', '回复设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573808022, 1573808022, 1),
+(23, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"5p4r\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36', '124.115.220.214', 1573808027, 1573808027, 1),
+(24, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"admin\",\"captcha\":\"ruu7\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36', '124.115.220.214', 1573808037, 1573808037, 1),
+(25, 1, 'admin', '/index.php/admin/wechat/index.html', '点击菜单', '微信列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573808184, 1573808184, 1),
+(26, 1, 'admin', '/index.php/admin/wechat/message.html', '点击菜单', '历史消息', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573808200, 1573808200, 1),
+(27, 1, 'admin', '/index.php/admin/wechat/message.html', '点击菜单', '历史消息', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573808202, 1573808202, 1),
+(28, 1, 'admin', '/index.php/admin/wechat/reply.html', '点击菜单', '回复设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573808348, 1573808348, 1),
+(29, 1, 'admin', '/index.php/admin/wechat/replyedit.html', '{\"id\":\"1\"}', '回复编辑', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573808353, 1573808353, 1),
+(30, 1, 'admin', '/index.php/admin/wechat/replyedit.html', '{\"id\":\"1\"}', '回复编辑', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573808444, 1573808444, 1),
+(31, 1, 'admin', '/index.php/admin/wechat/index.html', '点击菜单', '微信列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573808476, 1573808476, 1),
+(32, 3, 'demo', '/index.php/admin/wechat/message.html', '点击菜单', '历史消息', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36', '171.117.49.81', 1573808578, 1573808578, 1),
+(33, 3, 'demo', '/index.php/admin/wechat/message.html', '点击菜单', '历史消息', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36', '171.117.49.81', 1573808578, 1573808578, 1),
+(34, 3, 'demo', '/index.php/admin/wechat/qrcode.html', '点击菜单', '二维码管理', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36', '171.117.49.81', 1573808742, 1573808742, 1),
+(35, 3, 'demo', '/index.php/admin/wechat/qrcode.html', '点击菜单', '二维码管理', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36', '171.117.49.81', 1573808742, 1573808742, 1),
+(36, 1, 'admin', '/index.php/admin/wechat/tag.html', '点击菜单', '粉丝标签', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573808963, 1573808963, 1),
+(37, 1, 'admin', '/index.php/admin/wechat/reply.html', '点击菜单', '回复设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573808963, 1573808963, 1),
+(38, 3, 'demo', '/index.php/admin/wechat/qrcode.html', '点击菜单', '二维码管理', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36', '171.117.49.81', 1573808992, 1573808992, 1),
+(39, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"4245\",\"captcha\":\"2\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36', '61.144.96.37', 1573809265, 1573809265, 1),
+(40, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"4245\",\"captcha\":\"22\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36', '61.144.96.37', 1573809265, 1573809265, 1),
+(41, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"4245\",\"captcha\":\"22\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36', '61.144.96.37', 1573809267, 1573809267, 1),
+(42, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"4245\",\"captcha\":\"22\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36', '61.144.96.37', 1573809267, 1573809267, 1),
+(43, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"4245\",\"captcha\":\"22\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36', '61.144.96.37', 1573809267, 1573809267, 1),
+(44, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"4245\",\"captcha\":\"vwk2\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36', '61.144.96.37', 1573809276, 1573809276, 1),
+(45, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"4245\",\"captcha\":\"vwk2\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36', '61.144.96.37', 1573809277, 1573809277, 1),
+(46, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"4245\",\"captcha\":\"vwk2\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36', '61.144.96.37', 1573809278, 1573809278, 1),
+(47, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"4245\",\"captcha\":\"vwk2\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36', '61.144.96.37', 1573809278, 1573809278, 1),
+(48, 0, 'Unknown', '/admin/login/index.html', '{\"username\":\"4245\",\"captcha\":\"vwk2\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36', '61.144.96.37', 1573809278, 1573809278, 1),
+(49, 1, 'admin', '/index.php/admin/wechat/qrcode.html', '点击菜单', '二维码管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.70 Safari/537.36', '121.35.101.213', 1573809324, 1573809324, 1);
 
 -- --------------------------------------------------------
 
@@ -238,7 +285,7 @@ INSERT INTO `lm_adv_position` (`id`, `position_name`, `ad_width`, `ad_height`, `
 (518, 'Ad页面自动增加广告位 518 ', 0, 0, 'Ad页面', '', 1, 0, 1570166613),
 (533, 'Ad页面自动增加广告位 533 ', 0, 0, 'Ad页面', '', 1, 0, 1568708269),
 (534, 'Ad页面自动增加广告位 534 ', 0, 0, 'Ad页面', '', 1, 0, 1572867856),
-(539, '首页', 1080, 300, '其他1', '', 1, 1566111321, 1573579364);
+(539, '首页', 1080, 300, '其他1', '', 1, 1566111321, 1573784187);
 
 -- --------------------------------------------------------
 
@@ -439,7 +486,7 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (84, 'User/levelDel', '会员等级删除', 1, 1, 0, 0, '', '', 82, 50, 1567568283, 1567568283),
 (85, 'User/levelAdd', '会员等级添加', 1, 1, 0, 0, '', '', 82, 50, 1567568305, 1567568333),
 (86, 'User/levelEdit', '会员等级编辑', 1, 1, 0, 0, '', '', 82, 50, 1567568357, 1567568372),
-(87, 'Wechat', '微信', 1, 1, 0, 1, 'fa fa-comments-o', '', 0, 50, 1567605987, 1567605987),
+(87, 'Wechat', '微信', 1, 1, 0, 1, 'fa fa-comments-o', '', 0, 50, 1567605987, 1573786930),
 (88, 'Wechat/index', '微信列表', 1, 1, 0, 1, 'fa fa-wechat', '', 87, 50, 1567606015, 1567606076),
 (89, 'Wechat/menu', '微信菜单', 1, 1, 0, 1, 'fa fa-comments-o', '', 87, 50, 1567651630, 1567651630),
 (90, 'Wechat/fans', '粉丝列表', 1, 1, 0, 1, 'fa fa-address-card-o', '', 87, 50, 1567844064, 1567844064),
@@ -799,7 +846,7 @@ CREATE TABLE `lm_link` (
 --
 
 INSERT INTO `lm_link` (`id`, `name`, `url`, `type_id`, `email`, `qq`, `sort`, `status`, `create_time`, `update_time`) VALUES
-(23, 'lemocms', 'https://www.lemocms.com', 0, '994927909@qq.com', '994927909', 50, 1, 1566102829, 1573373684),
+(23, 'lemocms', 'https://www.lemocms.com', 0, '994927909@qq.com', '994927909', 50, 0, 1566102829, 1573741568),
 (25, '百度', 'https://www.baidu.com', 0, '994927909@qq.com', '994927909', 50, 1, 1566103165, 1573640285),
 (26, '新浪', 'https://www.sina.com', 0, '994927909@qq.com', '994927909', 50, 1, 1566103233, 1573640288);
 
@@ -1037,8 +1084,7 @@ CREATE TABLE `lm_wx_account` (
 --
 
 INSERT INTO `lm_wx_account` (`id`, `store_id`, `wxname`, `aeskey`, `encode`, `app_id`, `app_secret`, `origin_id`, `weixin`, `logo`, `token`, `w_token`, `related`, `create_time`, `update_time`, `tplcontentid`, `share_ticket`, `share_dated`, `authorizer_access_token`, `authorizer_refresh_token`, `authorizer_expires`, `type`, `web_access_token`, `web_refresh_token`, `web_expires`, `qr`, `menu_config`, `status`) VALUES
-(31, 1, 'lemocms', 'adsfda', 0, 'wxecd04cbbfc06a972', 'ec83a45f2a561a90cf5f63e7476bae36', 'gh_e29462503ebe', 'lemomcms', '/storage/uploads/20190905/dfdcecfa905e2858ae45b87542c0c5ab.png', 'b96561beca83877b0df8eda9f0cea2b4', 'b96561beca83877b0df8eda9f0cea2b4', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1490691329, 1573719475, '', '', '', '', '', '', 4, '9_ztdL3qhqHHAgFTIANDMStPvneUubYL0sANeFHEYDXu_qzElDwaQeSNwwhi1EfpDXzFwOeP05e0wMRpsJvQVVjnmhiWtZIqOwj4RwIdhXQnB1WPP0yw4pv8x2c_NA2ykcPKD-V6aTa3mFDKO9YJSaAAALWF', '', 1524884051, '/storage/uploads/20190905/2790a6a9cbb9ca1bcdfaca9b25d0316a.jpg', NULL, 1),
-(32, 1, 'asdfsdf', 'asf', 0, 'asdf', 'adsf', 'asdfasdg', '', '', '', 'asdf', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1567648856, 1573719475, '', '', '', '', '', '', 4, '', '', 0, '', NULL, 0);
+(31, 1, 'lemocms', 'adsfda', 0, 'wxecd04cbbfc06a972', 'ec83a45f2a561a90cf5f63e7476bae36', 'gh_8b042cc4ccf9', 'lemomcms', '/storage/uploads/20190905/dfdcecfa905e2858ae45b87542c0c5ab.png', 'weixin', 'weixins', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1490691329, 1573788884, '', '', '', '', '', '', 4, '9_ztdL3qhqHHAgFTIANDMStPvneUubYL0sANeFHEYDXu_qzElDwaQeSNwwhi1EfpDXzFwOeP05e0wMRpsJvQVVjnmhiWtZIqOwj4RwIdhXQnB1WPP0yw4pv8x2c_NA2ykcPKD-V6aTa3mFDKO9YJSaAAALWF', '', 1524884051, '/storage/uploads/20190905/2790a6a9cbb9ca1bcdfaca9b25d0316a.jpg', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -1097,26 +1143,26 @@ INSERT INTO `lm_wx_fans` (`fans_id`, `wx_aid`, `uid`, `source_uid`, `store_id`, 
 (12, 32, 0, 0, 1, '学无止境', '\"\\u5b66\\u65e0\\u6b62\\u5883\"', 'http://thirdwx.qlogo.cn/mmopen/ajNVdqHZLLAksKZWwDKrFzfTM4ZvLRYqZtUnib4FQ26TofEYNF8ibopZibiaVfuqkkgLrfnYvw4oiakiauVb6MsrR4Gw/132', 1, 'zh_CN', '中国', '山东', '济南', '', 'oBSasxH1zjO-jahSXEg2k8Ny1m_Y', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '其他', '[2]', 1571794623, 0, '0', '', 1, 1572230913, 1571794794),
 (13, 32, 0, 0, 1, 'lyq', '\"lyq\"', 'http://thirdwx.qlogo.cn/mmopen/BA8GZZ2EGwXYBCKkicUlNZ3N9yw90ficpUB7vYuRUVvjZMpZkaouRPQEJfZHsOtJRVnSyZaQQ5QHvBsPMqTZEWdA/132', 1, 'zh_CN', '阿鲁巴', '', '', '', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1571896759, 0, '0', '', 1, 1572230913, 1571909844),
 (14, 32, 0, 0, 1, '阳光', '\"\\u9633\\u5149\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPK85QMCfMKAxOV0ZYUz3TT2icZFXJz6ic4TmEK4swqlFO516NBqiaHXzM7geb2BF3ag1rNrXz1Q5dYnqkZu6ia66sQK/132', 1, 'zh_CN', '中国', '', '', '', 'oBSasxE74GTlVwALB0mYBhCYD604', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1571893220, 0, '0', '', 1, 1572230913, 1571909844),
-(15, 31, 0, 0, 1, '少年智力开发报订阅', '\"\\u5c11\\u5e74\\u667a\\u529b\\u5f00\\u53d1\\u62a5\\u8ba2\\u9605\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k4w5h73kjDCf0o0IXjb7tNuJHk45lY9ZopsqS4rsQ5UxkAgvOqe49UESQyiaHp0jG7u3p1WhiaHpm7g/132', 1, 'zh_CN', '中国', '河北', '石家庄', '', 'oBSasxDCwYJ4QlFRgSbi-SZktfZs', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1570784081, 0, '0', '', 1, 1573720523, 1572318076),
-(16, 31, 0, 0, 1, '🐘 心之所向🐘', '\"\\ud83d\\udc18 \\u5fc3\\u4e4b\\u6240\\u5411\\ud83d\\udc18\"', 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM4VFiaYnBD77jqvXaG55kz8cYgynjUAic5oNcrjkicjIGvVVyRYfLsiceojIlI709OKWPAQr95E2y2Ick6jSHSrIJXgtcn1VnDM4qE/132', 1, 'zh_CN', '中国', '湖南', '衡阳', '', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1568970767, 0, '0', '', 1, 1573720523, 1572318076),
-(17, 31, 0, 0, 1, 'Paopao', '\"Paopao\"', 'http://thirdwx.qlogo.cn/mmopen/ajNVdqHZLLCEmdSXx8Koibl0D2p6OVM0aCTsefUrCziaRoRUAnOLDFxa96zBN1qjX8BCJ8FQxF7hoicWgQ2Btzfsw/132', 1, 'zh_CN', '中国', '广东', '江门', '', 'oBSasxBP6FhKCkSW9WYv4ckgBZDI', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1570811312, 0, '0', '', 1, 1573720523, 1572318076),
-(18, 31, 0, 0, 1, '学无止境', '\"\\u5b66\\u65e0\\u6b62\\u5883\"', 'http://thirdwx.qlogo.cn/mmopen/ajNVdqHZLLAksKZWwDKrFzfTM4ZvLRYqZtUnib4FQ26TofEYNF8ibopZibiaVfuqkkgLrfnYvw4oiakiauVb6MsrR4Gw/132', 1, 'zh_CN', '中国', '山东', '济南', '', 'oBSasxH1zjO-jahSXEg2k8Ny1m_Y', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1571794623, 0, '0', '', 1, 1573720523, 1572318076),
-(19, 31, 0, 0, 1, '牛一', '\"\\u725b\\u4e00\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPK6ibDCEesF2S0aWTzicDlyBsgMXhAIlh2droDM6ic8siccU4VeT0vlAf6Zia6n42kNMGE4CuvYpN5pyjQ/132', 1, 'zh_CN', '中国', '湖北', '襄阳', '', 'oBSasxMmOsGQd0M5E8DqYCvg_7rQ', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1570973591, 0, '0', '', 1, 1573720523, 1572318076),
-(20, 31, 0, 0, 1, '、ζ低调ゐ走这条 街る', '\"\\u3001\\u03b6\\u4f4e\\u8c03\\u3090\\u8d70\\u8fd9\\u6761 \\u8857\\u308b\"', 'http://thirdwx.qlogo.cn/mmopen/BA8GZZ2EGwWjjLn9bP76eEhmg9zfsYuVlbdJT9y3Z5KJFrINxlCHvFX2sTxiaskvJAcAORVibwQQVpJictIv7icH9Q/132', 1, 'zh_CN', '中国', '河南', '郑州', '', 'oBSasxK1y2TGZk_xKIf-ZxWYM5rM', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1568970306, 0, '0', '', 1, 1573720523, 1572318076),
-(21, 31, 0, 0, 1, 'lyq', '\"lyq\"', 'http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaEIJ13iaF4FwznlxdFKibqDpw0hVD6dy7K86hKDrCbZzXyzicvagmt6F4eN2VGLXAF14tSrXobibWPcVQQ/132', 1, 'zh_CN', '阿鲁巴', '', '', '', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1571896759, 0, '0', '', 1, 1573720523, 1572318076),
-(22, 31, 0, 0, 1, '周凯', '\"\\u5468\\u51ef\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPKU8tXPlI2HO2oCEPEq5rRBZDwQ9PgESvrBvI2tkIpJG2NGNhA0unHbsxP3ImJjnSRVzMu4MscIbAmR8W7beDjB/132', 1, 'zh_CN', '中国', '四川', '成都', '', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569384811, 0, '0', '', 1, 1573720523, 1572318076),
-(23, 31, 0, 0, 1, 'IT速学通', '\"IT\\u901f\\u5b66\\u901a\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6e5erQKVrgMJ6o5ibjmtRTbKlshrzyZ1XjYB970MxjaVmVgU0u9OPoZicOiaWa0sgc8eibVnyxyV6HcHgoskE8EulC/132', 1, 'zh_CN', '中国', '湖北', '武汉', '', 'oBSasxDaZ8eadp7mTiD_f-esL_ss', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1571115872, 0, '0', '', 1, 1573720523, 1572318076),
-(24, 31, 0, 0, 1, 'Bill', '\"Bill\"', 'http://thirdwx.qlogo.cn/mmopen/BA8GZZ2EGwXAkCnGwmSqWXvtKBx3taFq32ibUlKS1VNib7ITNtWhiaF52poRpDVW2rS5yUbKibmsOCl0nsSvorciamobS3ibtI9nZg/132', 1, 'zh_CN', '中国', '广东', '中山', '', 'oBSasxOBWqWjGWB22bdzjUMnGbAU', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '星标组', '[2]', 1570544562, 0, '0', '', 1, 1573720523, 1572318076),
-(25, 31, 0, 0, 1, '何若焱', '\"\\u4f55\\u82e5\\u7131\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPIhorsAYYgpicQYAnYDBNicEic5iayaxnIZq4RbybVNeiad7beZXKVpDDicK5Esq43tgPBWDoJuFC1lhVluBFk8AWJf2Z/132', 0, 'zh_CN', '', '', '', '', 'oBSasxBU2xk2JPnP1x_5mtbDlQ1M', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569163118, 0, '0', '', 1, 1573720523, 1572318076),
-(26, 31, 0, 0, 1, 'flystone', '\"flystone\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6e5erQKVrgMOEP1x3FKM94q0k7HAALibB0WwOLhLRPVRJJDRcLo5RXua1fytBsRwhM3cYcCbNsnOH7ibcSrvuo5ic/132', 1, 'zh_CN', '中国', '广东', '广州', '', 'oBSasxPs-IA9dp03EcmHmPmQ88Mw', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569231878, 0, '0', '', 1, 1573720523, 1572318076),
-(27, 31, 0, 0, 1, '阳光', '\"\\u9633\\u5149\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPK85QMCfMKAxOV0ZYUz3TT2icZFXJz6ic4TmEK4swqlFO516NBqiaHXzM7geb2BF3ag1rNrXz1Q5dYnqkZu6ia66sQK/132', 1, 'zh_CN', '中国', '', '', '', 'oBSasxE74GTlVwALB0mYBhCYD604', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '粉丝', '[2]', 1571893220, 0, '0', '', 1, 1573720523, 1572318076),
-(28, 31, 0, 0, 1, 'UI中国', '\"UI\\u4e2d\\u56fd\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6RxhlicynFsqzHSC3CVaAdkzDJibg8MQQRcia4vwZt2ap2uXKCrE6pQEjR3hERXROHjPUBgdHyYRZ3aOnAWsIWR1s/132', 0, 'zh_CN', '', '', '', '', 'oBSasxGjfo7053Gelemw58C4oAwc', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569297240, 0, '0', '', 1, 1573720523, 1572318076),
-(29, 31, 0, 0, 1, '多一点辣椒', '\"\\u591a\\u4e00\\u70b9\\u8fa3\\u6912\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPJFoj3ibYf0Xf1G6WwYiaW2AcUxXh7yeAeib47LgAFLIUWSqJyvZWib8NTRKNEprjuEd9oefg7db91WttDWvaWjTJkG/132', 1, 'zh_CN', '中国', '湖南', '岳阳', '', 'oBSasxLaECL0109tkNDXIeW8wfSs', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '好友', '[2]', 1572456933, 0, '0', 'foo', 1, 1573720523, 1572530547),
-(30, 31, 0, 0, 1, 'Mr.Yin🙈', '\"Mr.Yin\\ud83d\\ude48\"', 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM7Nbsss8E9XNNIpLTDeFqickoLuTG1xhReibqV7rq35ia1STyEfhLQLvIrEZw8Bsk18xaxH0jP5KjLsw/132', 1, 'zh_CN', '中国', '北京', '朝阳', '', 'oBSasxM9SF1iyF5L0cT49atZ9I3M', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '粉丝', '[2]', 1573205950, 0, '0', '', 1, 1573720523, 1573323289),
-(31, 31, 0, 0, 1, 'demo1', '\"demo1\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6yMGKHich2zlzu6UwEkic4ic0BgibXfSE6cRKKPlOJU0ZSicFF4z29A6mibuy386sbqW8iaDicOjn3PS90TG62ico5CTVbm/132', 1, 'zh_CN', '中国', '广东', '广州', '', 'oBSasxI7krlXCQtb4VKpi7woKra0', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1572786547, 0, '0', 'foo', 1, 1573720523, 1573323289),
-(32, 31, 0, 0, 1, 'AAA新房团购-二手房交易-房联陈俊', '\"AAA\\u65b0\\u623f\\u56e2\\u8d2d-\\u4e8c\\u624b\\u623f\\u4ea4\\u6613-\\u623f\\u8054\\u9648\\u4fca\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6e5erQKVrgMADjfugQu99Ty7SEzaVH4pDTsVbDHp25Lic9QywqNiaib5uTeYJu4d37RnLhjN8yXsqnOwpxKBPcAD4/132', 1, 'zh_CN', '中国', '江西', '九江', '', 'oBSasxEzh4b72SPdBuBcVY0-iw60', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1573528978, 0, '0', '', 1, 1573720523, 1573544898),
-(33, 31, 0, 0, 1, '橙子吃橙子吃撑🍊', '\"\\u6a59\\u5b50\\u5403\\u6a59\\u5b50\\u5403\\u6491\\ud83c\\udf4a\"', 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM6HGYLViaBH6KmguI0xibZDaem961EbhYH6Q19upNScu6apB0JeiaEAw0ia80v0pIraibVpToibZIdrEnVkbUadExYXIlcP3X0lH6Abs/132', 1, 'zh_CN', '安道尔', '', '', '', 'oBSasxCS4GoeDw11Bi-wjMP3KOyg', '', 0, 1, 'ADD_SCENE_QR_CODE', '', '好友', '[]', 1573484677, 0, '0', '', 1, 1573720530, 1573544898),
-(34, 31, 0, 0, 1, '灯泡🤗', '\"\\u706f\\u6ce1\\ud83e\\udd17\"', 'http://thirdwx.qlogo.cn/mmopen/FMuxcDB3FibIrFwjFCDcR2s5Pj0VMPJf07nw7un6GzGzKWVicTrg4jRt3MkYiagWluzz8c4V9EGC1lOhgJWspA2e3y856DqvMk5/132', 2, 'zh_CN', '澳大利亚', '西澳大利亚', '卡尔古利', '', 'oBSasxHYOKaNP-ZGVT_hvZ4grgtg', '', 0, 1, 'ADD_SCENE_QR_CODE', '', '粉丝', '[]', 1573719750, 0, '0', '', 1, 1573720528, 1573720009);
+(15, 31, 0, 0, 1, '少年智力开发报订阅', '\"\\u5c11\\u5e74\\u667a\\u529b\\u5f00\\u53d1\\u62a5\\u8ba2\\u9605\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k4w5h73kjDCf0o0IXjb7tNuJHk45lY9ZopsqS4rsQ5UxkAgvOqe49UESQyiaHp0jG7u3p1WhiaHpm7g/132', 1, 'zh_CN', '中国', '河北', '石家庄', '', 'oBSasxDCwYJ4QlFRgSbi-SZktfZs', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1570784081, 0, '0', '', 1, 1573785402, 1572318076),
+(16, 31, 0, 0, 1, '🐘 心之所向🐘', '\"\\ud83d\\udc18 \\u5fc3\\u4e4b\\u6240\\u5411\\ud83d\\udc18\"', 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM4VFiaYnBD77jqvXaG55kz8cYgynjUAic5oNcrjkicjIGvVVyRYfLsiceojIlI709OKWPAQr95E2y2Ick6jSHSrIJXgtcn1VnDM4qE/132', 1, 'zh_CN', '中国', '湖南', '衡阳', '', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1573787383, 0, '0', '', 1, 1573787386, 1572318076),
+(17, 31, 0, 0, 1, 'Paopao', '\"Paopao\"', 'http://thirdwx.qlogo.cn/mmopen/ajNVdqHZLLCEmdSXx8Koibl0D2p6OVM0aCTsefUrCziaRoRUAnOLDFxa96zBN1qjX8BCJ8FQxF7hoicWgQ2Btzfsw/132', 1, 'zh_CN', '中国', '广东', '江门', '', 'oBSasxBP6FhKCkSW9WYv4ckgBZDI', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1570811312, 0, '0', '', 1, 1573785402, 1572318076),
+(18, 31, 0, 0, 1, '学无止境', '\"\\u5b66\\u65e0\\u6b62\\u5883\"', 'http://thirdwx.qlogo.cn/mmopen/ajNVdqHZLLAksKZWwDKrFzfTM4ZvLRYqZtUnib4FQ26TofEYNF8ibopZibiaVfuqkkgLrfnYvw4oiakiauVb6MsrR4Gw/132', 1, 'zh_CN', '中国', '山东', '济南', '', 'oBSasxH1zjO-jahSXEg2k8Ny1m_Y', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1571794623, 0, '0', '', 1, 1573785402, 1572318076),
+(19, 31, 0, 0, 1, '牛一', '\"\\u725b\\u4e00\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPK6ibDCEesF2S0aWTzicDlyBsgMXhAIlh2droDM6ic8siccU4VeT0vlAf6Zia6n42kNMGE4CuvYpN5pyjQ/132', 1, 'zh_CN', '中国', '湖北', '襄阳', '', 'oBSasxMmOsGQd0M5E8DqYCvg_7rQ', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1570973591, 0, '0', '', 1, 1573785402, 1572318076),
+(20, 31, 0, 0, 1, '、ζ低调ゐ走这条 街る', '\"\\u3001\\u03b6\\u4f4e\\u8c03\\u3090\\u8d70\\u8fd9\\u6761 \\u8857\\u308b\"', 'http://thirdwx.qlogo.cn/mmopen/BA8GZZ2EGwWjjLn9bP76eEhmg9zfsYuVlbdJT9y3Z5KJFrINxlCHvFX2sTxiaskvJAcAORVibwQQVpJictIv7icH9Q/132', 1, 'zh_CN', '中国', '河南', '郑州', '', 'oBSasxK1y2TGZk_xKIf-ZxWYM5rM', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1568970306, 0, '0', '', 1, 1573785402, 1572318076),
+(21, 31, 0, 0, 1, 'lyq', '\"lyq\"', 'http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaEIJ13iaF4FwznlxdFKibqDpw0hVD6dy7K86hKDrCbZzXyzicvagmt6F4eN2VGLXAF14tSrXobibWPcVQQ/132', 1, 'zh_CN', '阿鲁巴', '', '', '', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1571896759, 0, '0', '', 1, 1573785402, 1572318076),
+(22, 31, 0, 0, 1, '周凯', '\"\\u5468\\u51ef\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPKU8tXPlI2HO2oCEPEq5rRBZDwQ9PgESvrBvI2tkIpJG2NGNhA0unHbsxP3ImJjnSRVzMu4MscIbAmR8W7beDjB/132', 1, 'zh_CN', '中国', '四川', '成都', '', 'oBSasxOrNTAGtcrkOFG_8gKQ7HfI', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569384811, 0, '0', '', 1, 1573785403, 1572318076),
+(23, 31, 0, 0, 1, 'IT速学通', '\"IT\\u901f\\u5b66\\u901a\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6e5erQKVrgMJ6o5ibjmtRTbKlshrzyZ1XjYB970MxjaVmVgU0u9OPoZicOiaWa0sgc8eibVnyxyV6HcHgoskE8EulC/132', 1, 'zh_CN', '中国', '湖北', '武汉', '', 'oBSasxDaZ8eadp7mTiD_f-esL_ss', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1571115872, 0, '0', '', 1, 1573785403, 1572318076),
+(24, 31, 0, 0, 1, 'Bill', '\"Bill\"', 'http://thirdwx.qlogo.cn/mmopen/BA8GZZ2EGwXAkCnGwmSqWXvtKBx3taFq32ibUlKS1VNib7ITNtWhiaF52poRpDVW2rS5yUbKibmsOCl0nsSvorciamobS3ibtI9nZg/132', 1, 'zh_CN', '中国', '广东', '中山', '', 'oBSasxOBWqWjGWB22bdzjUMnGbAU', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '星标组', '[2]', 1570544562, 0, '0', '', 1, 1573785403, 1572318076),
+(25, 31, 0, 0, 1, '何若焱', '\"\\u4f55\\u82e5\\u7131\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPIhorsAYYgpicQYAnYDBNicEic5iayaxnIZq4RbybVNeiad7beZXKVpDDicK5Esq43tgPBWDoJuFC1lhVluBFk8AWJf2Z/132', 0, 'zh_CN', '', '', '', '', 'oBSasxBU2xk2JPnP1x_5mtbDlQ1M', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569163118, 0, '0', '', 1, 1573785403, 1572318076),
+(26, 31, 0, 0, 1, 'flystone', '\"flystone\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6e5erQKVrgMOEP1x3FKM94q0k7HAALibB0WwOLhLRPVRJJDRcLo5RXua1fytBsRwhM3cYcCbNsnOH7ibcSrvuo5ic/132', 1, 'zh_CN', '中国', '广东', '广州', '', 'oBSasxPs-IA9dp03EcmHmPmQ88Mw', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569231878, 0, '0', '', 1, 1573785403, 1572318076),
+(27, 31, 0, 0, 1, '阳光', '\"\\u9633\\u5149\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPK85QMCfMKAxOV0ZYUz3TT2icZFXJz6ic4TmEK4swqlFO516NBqiaHXzM7geb2BF3ag1rNrXz1Q5dYnqkZu6ia66sQK/132', 1, 'zh_CN', '中国', '', '', '', 'oBSasxE74GTlVwALB0mYBhCYD604', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '粉丝', '[2]', 1571893220, 0, '0', '', 1, 1573785403, 1572318076),
+(28, 31, 0, 0, 1, 'UI中国', '\"UI\\u4e2d\\u56fd\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6RxhlicynFsqzHSC3CVaAdkzDJibg8MQQRcia4vwZt2ap2uXKCrE6pQEjR3hERXROHjPUBgdHyYRZ3aOnAWsIWR1s/132', 0, 'zh_CN', '', '', '', '', 'oBSasxGjfo7053Gelemw58C4oAwc', '', 2, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[2]', 1569297240, 0, '0', '', 1, 1573785403, 1572318076),
+(29, 31, 0, 0, 1, '多一点辣椒', '\"\\u591a\\u4e00\\u70b9\\u8fa3\\u6912\"', 'http://thirdwx.qlogo.cn/mmopen/iatZI1Yp2aPJFoj3ibYf0Xf1G6WwYiaW2AcUxXh7yeAeib47LgAFLIUWSqJyvZWib8NTRKNEprjuEd9oefg7db91WttDWvaWjTJkG/132', 1, 'zh_CN', '中国', '湖南', '岳阳', '', 'oBSasxLaECL0109tkNDXIeW8wfSs', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '好友', '[2]', 1572456933, 0, '0', 'foo', 1, 1573785403, 1572530547),
+(30, 31, 0, 0, 1, 'Mr.Yin🙈', '\"Mr.Yin\\ud83d\\ude48\"', 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM7Nbsss8E9XNNIpLTDeFqickoLuTG1xhReibqV7rq35ia1STyEfhLQLvIrEZw8Bsk18xaxH0jP5KjLsw/132', 1, 'zh_CN', '中国', '北京', '朝阳', '', 'oBSasxM9SF1iyF5L0cT49atZ9I3M', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '粉丝', '[2]', 1573205950, 0, '0', '', 1, 1573785402, 1573323289),
+(31, 31, 0, 0, 1, 'demo1', '\"demo1\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6yMGKHich2zlzu6UwEkic4ic0BgibXfSE6cRKKPlOJU0ZSicFF4z29A6mibuy386sbqW8iaDicOjn3PS90TG62ico5CTVbm/132', 1, 'zh_CN', '中国', '广东', '广州', '', 'oBSasxI7krlXCQtb4VKpi7woKra0', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1572786547, 0, '0', 'foo', 1, 1573785402, 1573323289),
+(32, 31, 0, 0, 1, 'AAA新房团购-二手房交易-房联陈俊', '\"AAA\\u65b0\\u623f\\u56e2\\u8d2d-\\u4e8c\\u624b\\u623f\\u4ea4\\u6613-\\u623f\\u8054\\u9648\\u4fca\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k6e5erQKVrgMADjfugQu99Ty7SEzaVH4pDTsVbDHp25Lic9QywqNiaib5uTeYJu4d37RnLhjN8yXsqnOwpxKBPcAD4/132', 1, 'zh_CN', '中国', '江西', '九江', '', 'oBSasxEzh4b72SPdBuBcVY0-iw60', '', 0, 1, 'ADD_SCENE_QR_CODE', '', NULL, '[]', 1573528978, 0, '0', '', 1, 1573785403, 1573544898),
+(33, 31, 0, 0, 1, '橙子吃橙子吃撑🍊', '\"\\u6a59\\u5b50\\u5403\\u6a59\\u5b50\\u5403\\u6491\\ud83c\\udf4a\"', 'http://thirdwx.qlogo.cn/mmopen/Q3auHgzwzM6HGYLViaBH6KmguI0xibZDaem961EbhYH6Q19upNScu6apB0JeiaEAw0ia80v0pIraibVpToibZIdrEnVkbUadExYXIlcP3X0lH6Abs/132', 1, 'zh_CN', '安道尔', '', '', '', 'oBSasxCS4GoeDw11Bi-wjMP3KOyg', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '好友', '[2]', 1573484677, 0, '0', '', 1, 1573785403, 1573544898),
+(34, 31, 0, 0, 1, '灯泡🤗', '\"\\u706f\\u6ce1\\ud83e\\udd17\"', 'http://thirdwx.qlogo.cn/mmopen/FMuxcDB3FibIrFwjFCDcR2s5Pj0VMPJf07nw7un6GzGzKWVicTrg4jRt3MkYiagWluzz8c4V9EGC1lOhgJWspA2e3y856DqvMk5/132', 2, 'zh_CN', '澳大利亚', '西澳大利亚', '卡尔古利', '', 'oBSasxHYOKaNP-ZGVT_hvZ4grgtg', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '粉丝', '[2]', 1573719750, 0, '0', '', 1, 1573785403, 1573720009);
 
 -- --------------------------------------------------------
 
@@ -1143,23 +1189,10 @@ CREATE TABLE `lm_wx_material` (
 --
 
 INSERT INTO `lm_wx_material` (`id`, `store_id`, `wx_aid`, `media_id`, `file_name`, `media_url`, `local_cover`, `type`, `des`, `create_time`, `update_time`) VALUES
-(13, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vb3MwnW37vEF4yLXEsztgao', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZpuoImzdQPGVticJY8cwP9neeiaOFTxOKmYzia2nPJiabgeESiavIuUmnUEw/0?wx_fmt=png', ' ', 'image', '', 1568708249, 1568708249),
-(14, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vdzNbXT6nfF5icgcGBMWVfI', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZpuoImzdQPGVticJY8cwP9neeiaOFTxOKmYzia2nPJiabgeESiavIuUmnUEw/0?wx_fmt=png', ' ', 'image', '', 1568708380, 1568708380),
-(15, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vcw1Ic8rbsNrgOsnszx0OJI', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZpuoImzdQPGVticJY8cwP9neeiaOFTxOKmYzia2nPJiabgeESiavIuUmnUEw/0?wx_fmt=png', ' ', 'image', '', 1568708436, 1568708436),
-(16, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vYTODIACSEV3c_UjoJlQoNo', NULL, 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibOZINeTRG2sFC5LeVGH67lbZgdnibLXpLOJpNQJceeNicswYUsKqe8IialcHA9tSkGq6m8AD4E58dxIlQ/0?wx_fmt=jpeg', ' ', 'image', '', 1568708449, 1568708449),
-(17, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vWJohUlSRgKE0O3vNSzysB0', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibObCXqbVj5SL2ZsDxlJ7iaic7iaL0ubiac0ZceFOJ9LybTGsSM563OGB5IDfK7tvpczBEjLj9dyb06mI8g/0?wx_fmt=png', ' ', 'image', '', 1568768779, 1568768779),
-(18, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vSVojMabllGj8dlCXt43gxc', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibObCXqbVj5SL2ZsDxlJ7iaic7iaL0ubiac0ZceFOJ9LybTGsSM563OGB5IDfK7tvpczBEjLj9dyb06mI8g/0?wx_fmt=png', ' ', 'image', '', 1568769663, 1568769663),
-(19, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vTeRfZgpyG6WM3xEIYMqs4g', NULL, 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibObCXqbVj5SL2ZsDxlJ7iaic7iaDqkayiaz14l4AHVlCAYyVicFqb0Q95iaaYabtveniag4mNUICBbaypPXjA/0?wx_fmt=jpeg', ' ', 'image', '', 1568770822, 1568770822),
-(26, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vf4uLVp3tFomLPazcjB6IOM', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOafHyBKbh42d34tu7iagashY3TkAG8vQGvkn0jKYur0219iaibtkvyMP2UrXxPA6QcZOfkgBmd2kOZZA/0?wx_fmt=png', ' ', 'image', '', 1568856598, 1568856598),
-(37, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vWtBCrMpwwR_IHX2MpGrpoc', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOYE5UibSIrwLn6mFYy8L2SN7HvCEAvQAGna6ZxmLotrx93hfqof9aoRmICxfIJjkTn8ZFdvO4wiaPAg/0?wx_fmt=png', ' ', 'image', '', 1568946808, 1568946808),
-(38, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vY2nYvRwar_haUm9ks0LoJw', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOYE5UibSIrwLn6mFYy8L2SN7HvCEAvQAGna6ZxmLotrx93hfqof9aoRmICxfIJjkTn8ZFdvO4wiaPAg/0?wx_fmt=png', ' ', 'image', '', 1568947771, 1568947771),
-(39, 1, 31, 'Mkk-XekVsp2Cvr5VktS-veKqXIwPxSeaPBRdg2wCZ-0', NULL, 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibObRqRGPibX3Wu6qXkv1kaXMibyicwyxCPj8hQrJ2bCSB1bU0aTnc7r1EticVxsKt9ibkVjm1gj5t2iaKRGw/0?wx_fmt=jpeg', ' ', 'image', '', 1571909414, 1571909414),
-(40, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vcdzMZNPWcKspdy2Mt8V3Pw', NULL, 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibObRqRGPibX3Wu6qXkv1kaXMibyicwyxCPj8hQrJ2bCSB1bU0aTnc7r1EticVxsKt9ibkVjm1gj5t2iaKRGw/0?wx_fmt=jpeg', ' ', 'image', '', 1571909420, 1571909420),
-(45, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vaeUc8MoS4WO7dOKJXvM6P8', NULL, 'http://mmbiz.qpic.cn/mmbiz_jpg/nKp1y5rQibOZtf6vv7hL24HeMpcwqUI9oGpHAMKHT2FKevgkuoD636icHHCUmCBxO9wlpHRAtuS7c3M8UOia3nspA/0?wx_fmt=jpeg', ' ', 'image', ' ', 1572454287, 1572454287),
 (46, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vTFi0SiiaAKNOMl-dUwGKWM', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOa1WWBbKJLyGeQlFbCLBGeymE4MFmib9h6NlBA0Q9puRlQHoibVwZT2ujGdpPqib8JG5xjgia6a40nmCQ/0?wx_fmt=png', ' ', 'image', ' ', 1573719588, 1573719588),
-(50, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vUT0p2_YYCaW_dn84FviKBY', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOa1WWBbKJLyGeQlFbCLBGeyWP9jwjWqpiarU5F2WgdoMGwiccOFXfhJIiciaU8H3jjUmSYbHibP6wEuibXA/0?wx_fmt=png', ' ', 'image', ' ', 1573719883, 1573719883),
 (58, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vT6z0Fbis24GVHUlhQDnfPM', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOa1WWBbKJLyGeQlFbCLBGey80nbt8LsjQIDErt9iaXQkyGpFDU8ItdaxVhFCNNQYsrmEammliaj1ZOQ/0?wx_fmt=png', '/storage/uploads/20191114/c7db80925c5cc60f1355ffd5bea9b77e.png', 'image', ' ', 1573721314, 1573721314),
-(59, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vRcOhdqmkt7bWiTBZ8H9J78', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOa1WWBbKJLyGeQlFbCLBGeyJbrtECP8Bru3diaVf7Lla1ODdbkKPTkhKia6HM6c9xo92MPRCJr5TMMQ/0?wx_fmt=png', '/storage/uploads/20191114/2c88a2d1da7169e4c3695bfc66c5a46a.png', 'image', ' ', 1573723415, 1573723415);
+(59, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vRcOhdqmkt7bWiTBZ8H9J78', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOa1WWBbKJLyGeQlFbCLBGeyJbrtECP8Bru3diaVf7Lla1ODdbkKPTkhKia6HM6c9xo92MPRCJr5TMMQ/0?wx_fmt=png', '/storage/uploads/20191114/2c88a2d1da7169e4c3695bfc66c5a46a.png', 'image', ' ', 1573723415, 1573723415),
+(61, 1, 31, 'Mkk-XekVsp2Cvr5VktS-vd3ujeY0Ji6pS77T5FmLmPM', NULL, 'http://mmbiz.qpic.cn/mmbiz_png/nKp1y5rQibOa1WWBbKJLyGeQlFbCLBGeyWP9jwjWqpiarU5F2WgdoMGwiccOFXfhJIiciaU8H3jjUmSYbHibP6wEuibXA/0?wx_fmt=png', ' ', 'news', ' ', 1573785315, 1573785315);
 
 -- --------------------------------------------------------
 
@@ -1572,7 +1605,6 @@ INSERT INTO `lm_wx_msg_history` (`id`, `store_id`, `wx_aid`, `media_id`, `keywor
 (329, 1, 31, 0, 0, '阳光', 'oBSasxE74GTlVwALB0mYBhCYD604', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxE74GTlVwALB0mYBhCYD604\",\"CreateTime\":\"1571893223\",\"MsgType\":\"event\",\"Event\":\"VIEW\",\"EventKey\":\"https:\\/\\/developers.weixin.qq.com\\/miniprogram\\/dev\\/api\\/media\\/image\\/wx.previewImage.html\",\"MenuId\":\"426046372\"}', '', 'event', 'VIEW', 1, 1571893223, 1571893223),
 (330, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571896759\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1571896759, 1571896760),
 (331, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571896767\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484041\",\"Longitude\":\"118.038612\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1571896767, 1571896767),
-(332, 1, 31, 0, 4, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571896771\",\"MsgType\":\"text\",\"Content\":\"\\u662f\\u5417\",\"MsgId\":\"22504148776476430\"}', '是吗', 'text', '', 1, 1571896771, 1571896771),
 (333, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571896775\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484102\",\"Longitude\":\"118.038612\",\"Precision\":\"35.000000\"}', '', 'event', 'LOCATION', 1, 1571896775, 1571896775),
 (334, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571896779\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484102\",\"Longitude\":\"118.038612\",\"Precision\":\"35.000000\"}', '', 'event', 'LOCATION', 1, 1571896779, 1571896779),
 (335, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571896785\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484102\",\"Longitude\":\"118.038612\",\"Precision\":\"35.000000\"}', '', 'event', 'LOCATION', 1, 1571896785, 1571896785),
@@ -1585,10 +1617,46 @@ INSERT INTO `lm_wx_msg_history` (`id`, `store_id`, `wx_aid`, `media_id`, `keywor
 (342, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571897426\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484041\",\"Longitude\":\"118.038612\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1571897426, 1571897427),
 (343, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571897433\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484041\",\"Longitude\":\"118.038612\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1571897433, 1571897433),
 (344, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571897439\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484041\",\"Longitude\":\"118.038612\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1571897439, 1571897439),
-(345, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571897445\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484041\",\"Longitude\":\"118.038612\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1571897445, 1571897445),
-(346, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571897451\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484041\",\"Longitude\":\"118.038612\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1571897451, 1571897451),
-(347, 1, 31, 0, 0, 'lyq', 'oBSasxNSVb3ttEptnlfTqoWSiOpk', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxNSVb3ttEptnlfTqoWSiOpk\",\"CreateTime\":\"1571897460\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"24.484041\",\"Longitude\":\"118.038612\",\"Precision\":\"15.000000\"}', '', 'event', 'LOCATION', 1, 1571897460, 1571897461),
-(348, 1, 31, 0, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1571908532\",\"MsgType\":\"event\",\"Event\":\"SCAN\",\"EventKey\":\"foo\",\"Ticket\":\"gQE58DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyYndnTDBqNUNlSTQxVVprb2h0Y3EAAgQ9B7FdAwQAjScA\"}', '', 'event', 'SCAN', 1, 1571908532, 1571908533);
+(349, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806196\",\"MsgType\":\"text\",\"Content\":\"\\uff0c\\u6a21\\u5757\",\"MsgId\":\"22531486508577884\"}', '，模块', 'text', '', 1, 1573806196, 1573806196),
+(350, 1, 31, NULL, 13, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806226\",\"MsgType\":\"text\",\"Content\":\"123\",\"MsgId\":\"22531487122132930\"}', '123', 'text', '', 1, 1573806226, 1573806226),
+(351, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806245\",\"MsgType\":\"text\",\"Content\":\"87\",\"MsgId\":\"22531487182233688\"}', '87', 'text', '', 1, 1573806245, 1573806245),
+(352, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806271\",\"MsgType\":\"text\",\"Content\":\"545\",\"MsgId\":\"22531485655531862\"}', '545', 'text', '', 1, 1573806271, 1573806272),
+(353, 1, 31, NULL, 13, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806280\",\"MsgType\":\"text\",\"Content\":\"123\",\"MsgId\":\"22531485772183586\"}', '123', 'text', '', 1, 1573806280, 1573806280),
+(354, 1, 31, NULL, 13, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806283\",\"MsgType\":\"text\",\"Content\":\"123\",\"MsgId\":\"22531484831535512\"}', '123', 'text', '', 1, 1573806283, 1573806284),
+(355, 1, 31, NULL, 13, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806474\",\"MsgType\":\"text\",\"Content\":\"123\",\"MsgId\":\"22531490748582037\"}', '123', 'text', '', 1, 1573806474, 1573806475),
+(356, 1, 31, NULL, 13, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806478\",\"MsgType\":\"text\",\"Content\":\"123\",\"MsgId\":\"22531489521152053\"}', '123', 'text', '', 1, 1573806478, 1573806479),
+(357, 1, 31, NULL, 13, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806482\",\"MsgType\":\"text\",\"Content\":\"123\",\"MsgId\":\"22531491552868796\"}', '123', 'text', '', 1, 1573806482, 1573806482),
+(358, 1, 31, NULL, 13, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806510\",\"MsgType\":\"text\",\"Content\":\"123\",\"MsgId\":\"22531489068997732\"}', '123', 'text', '', 1, 1573806510, 1573806510),
+(359, 1, 31, NULL, 13, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806513\",\"MsgType\":\"text\",\"Content\":\"123\",\"MsgId\":\"22531492445302601\"}', '123', 'text', '', 1, 1573806513, 1573806514),
+(360, 1, 31, NULL, 13, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806516\",\"MsgType\":\"text\",\"Content\":\"123\",\"MsgId\":\"22531491023435971\"}', '123', 'text', '', 1, 1573806516, 1573806517),
+(361, 1, 31, NULL, 13, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806519\",\"MsgType\":\"text\",\"Content\":\"123\",\"MsgId\":\"22531489347910212\"}', '123', 'text', '', 1, 1573806519, 1573806519),
+(362, 1, 31, NULL, 13, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806557\",\"MsgType\":\"text\",\"Content\":\"123\",\"MsgId\":\"22531489887428972\"}', '123', 'text', '', 1, 1573806557, 1573806558),
+(363, 1, 31, NULL, 13, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806562\",\"MsgType\":\"text\",\"Content\":\"123\",\"MsgId\":\"22531489298085000\"}', '123', 'text', '', 1, 1573806562, 1573806562),
+(364, 1, 31, NULL, 13, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806624\",\"MsgType\":\"text\",\"Content\":\"123\",\"MsgId\":\"22531492987522128\"}', '123', 'text', '', 1, 1573806624, 1573806624),
+(365, 1, 31, NULL, 13, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806668\",\"MsgType\":\"text\",\"Content\":\"123\",\"MsgId\":\"22531494588986585\"}', '123', 'text', '', 1, 1573806668, 1573806669),
+(366, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806694\",\"MsgType\":\"text\",\"Content\":\"1\",\"MsgId\":\"22531496748712275\"}', '1', 'text', '', 1, 1573806694, 1573806695),
+(367, 1, 31, NULL, 13, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806699\",\"MsgType\":\"text\",\"Content\":\"123\",\"MsgId\":\"22531496737979271\"}', '123', 'text', '', 1, 1573806699, 1573806700),
+(368, 1, 31, NULL, 13, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806710\",\"MsgType\":\"text\",\"Content\":\"123\",\"MsgId\":\"22531493055585089\"}', '123', 'text', '', 1, 1573806710, 1573806711),
+(369, 1, 31, NULL, 13, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573806760\",\"MsgType\":\"text\",\"Content\":\"123\",\"MsgId\":\"22531494969318756\"}', '123', 'text', '', 1, 1573806760, 1573806761),
+(370, 1, 31, NULL, 16, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573807075\",\"MsgType\":\"text\",\"Content\":\"cece\",\"MsgId\":\"22531498521448447\"}', 'cece', 'text', '', 1, 1573807075, 1573807076),
+(371, 1, 31, NULL, 17, '灯泡🤗', 'oBSasxHYOKaNP-ZGVT_hvZ4grgtg', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxHYOKaNP-ZGVT_hvZ4grgtg\",\"CreateTime\":\"1573807311\",\"MsgType\":\"text\",\"Content\":\"\\u54c8\\u54c8\",\"MsgId\":\"22531505292143358\"}', '哈哈', 'text', '', 1, 1573807311, 1573807312),
+(372, 1, 31, NULL, 0, '灯泡🤗', 'oBSasxHYOKaNP-ZGVT_hvZ4grgtg', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxHYOKaNP-ZGVT_hvZ4grgtg\",\"CreateTime\":\"1573807792\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1573807792, 1573807793),
+(373, 1, 31, NULL, 1, '灯泡🤗', 'oBSasxHYOKaNP-ZGVT_hvZ4grgtg', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxHYOKaNP-ZGVT_hvZ4grgtg\",\"CreateTime\":\"1573807799\",\"MsgType\":\"text\",\"Content\":\"\\u4f60\\u597d\\u5417\",\"MsgId\":\"22531509604228602\"}', '你好吗', 'text', '', 1, 1573807799, 1573807799),
+(374, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573807926\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1573807926, 1573807926),
+(375, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573807932\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"22.548687\",\"Longitude\":\"113.932716\",\"Precision\":\"290.000000\"}', '', 'event', 'LOCATION', 1, 1573807932, 1573807932),
+(376, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573807938\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"22.549339\",\"Longitude\":\"113.928802\",\"Precision\":\"357.000000\"}', '', 'event', 'LOCATION', 1, 1573807938, 1573807939),
+(377, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573807944\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"22.549339\",\"Longitude\":\"113.928802\",\"Precision\":\"357.000000\"}', '', 'event', 'LOCATION', 1, 1573807944, 1573807944),
+(378, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573807950\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"22.549339\",\"Longitude\":\"113.928802\",\"Precision\":\"357.000000\"}', '', 'event', 'LOCATION', 1, 1573807950, 1573807950),
+(379, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573807956\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"22.549339\",\"Longitude\":\"113.928802\",\"Precision\":\"357.000000\"}', '', 'event', 'LOCATION', 1, 1573807956, 1573807956),
+(380, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573807981\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"22.548687\",\"Longitude\":\"113.932716\",\"Precision\":\"290.000000\"}', '', 'event', 'LOCATION', 1, 1573807981, 1573807981),
+(381, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573807985\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"22.549339\",\"Longitude\":\"113.928802\",\"Precision\":\"357.000000\"}', '', 'event', 'LOCATION', 1, 1573807985, 1573807985),
+(382, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573808194\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1573808194, 1573808195),
+(383, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573808469\",\"MsgType\":\"event\",\"Event\":\"LOCATION\",\"Latitude\":\"22.548691\",\"Longitude\":\"113.932724\",\"Precision\":\"291.000000\"}', '', 'event', 'LOCATION', 1, 1573808469, 1573808470),
+(384, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573808486\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1573808486, 1573808486),
+(385, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573808583\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1573808583, 1573808584),
+(386, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573808705\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1573808705, 1573808706),
+(387, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573808843\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1573808843, 1573808843),
+(388, 1, 31, NULL, 0, '🐘 心之所向🐘', 'oBSasxCSibhs0U_O8d1QCLRR6woQ', '{\"ToUserName\":\"gh_8b042cc4ccf9\",\"FromUserName\":\"oBSasxCSibhs0U_O8d1QCLRR6woQ\",\"CreateTime\":\"1573808934\",\"MsgType\":\"event\",\"Event\":\"subscribe\",\"EventKey\":null}', '', 'event', 'subscribe', 1, 1573808934, 1573808934);
 
 -- --------------------------------------------------------
 
@@ -1602,15 +1670,22 @@ CREATE TABLE `lm_wx_qrcode` (
   `wx_aid` int(11) NOT NULL,
   `name` varchar(50) DEFAULT '',
   `qrcode` varchar(255) NOT NULL,
-  `scene_id` int(11) NOT NULL,
+  `scene_id` int(11) DEFAULT NULL,
   `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0 临时，1 永久',
   `ticket` varchar(255) NOT NULL,
   `expire_seconds` int(11) NOT NULL,
   `url` varchar(255) NOT NULL DEFAULT ' ',
   `status` tinyint(4) NOT NULL DEFAULT '1',
-  `create_time` int(11) NOT NULL,
-  `update_time` int(11) NOT NULL
+  `create_time` int(11) DEFAULT NULL,
+  `update_time` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `lm_wx_qrcode`
+--
+
+INSERT INTO `lm_wx_qrcode` (`id`, `store_id`, `wx_aid`, `name`, `qrcode`, `scene_id`, `type`, `ticket`, `expire_seconds`, `url`, `status`, `create_time`, `update_time`) VALUES
+(1, 31, 1, 'demo', 'https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQG88DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyczFCWDBkNUNlSTQxX0hWUk50Y2YAAgTrbM5dAwQAjScA', NULL, 0, 'gQG88DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyczFCWDBkNUNlSTQxX0hWUk50Y2YAAgTrbM5dAwQAjScA', 2592000, 'http://weixin.qq.com/q/02s1BX0d5CeI41_HVRNtcf', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1638,19 +1713,13 @@ CREATE TABLE `lm_wx_reply` (
 --
 
 INSERT INTO `lm_wx_reply` (`id`, `store_id`, `wx_aid`, `rule`, `keyword`, `type`, `msg_type`, `data`, `material_id`, `status`, `create_time`, `update_time`) VALUES
-(1, 1, 31, '12852', '你好吗', 'subscribe', 'image', '很好', 12, 1, 1524204226, 1568970661),
-(2, 1, 31, '12852', '你好', 'keyword', 'text', '你好，很高兴为你服务，', NULL, 1, 0, 1524204244),
-(3, 1, 31, '12852', '查询', 'keyword', 'text', '那不是我的菜', NULL, 1, 0, 1524204255),
-(4, 1, 31, '售后退货', '是吗', 'default', 'image', '售后退货，七天无理由退货', 0, 1, 0, 1572954343),
-(5, 1, 31, '售后退货', NULL, 'keyword', 'news', '售后退货，七天无理由退货', NULL, 1, 0, 1524446154),
-(6, 1, 31, '欢迎关注lemocms', '你好1', 'keyword', 'text', '你好，很高兴为你服务，', 0, 1, 0, 1568880267),
-(7, 1, 31, NULL, '你好哦', 'keyword', 'news', '', 30, 1, 1568880788, 1568880788),
-(8, 1, 31, NULL, '图片', 'keyword', 'image', '', 12, 1, 1568940255, 1568940255),
-(9, 1, 31, NULL, '1', 'keyword', '', '1', 0, 1, 1572424035, 1572424035),
-(10, 1, 31, NULL, '1', 'keyword', '', '1', 0, 1, 1572424039, 1572424039),
-(11, 1, 31, NULL, '是对', 'keyword', '', '是对', 0, 1, 1572491231, 1572491231),
-(12, 1, 31, NULL, '测试', 'keyword', '', '收到测试回复', 0, 1, 1573719773, 1573719773),
-(13, 1, 31, NULL, '123', 'keyword', '', '测试', 0, 1, 1573722151, 1573722151);
+(1, 1, 31, '12852', '你好吗', 'subscribe', 'text', '很好1212', 0, 1, 1524204226, 1573808358),
+(4, 1, 31, '售后退货', '是吗', 'default', 'image', '', 0, 1, 0, 1572954343),
+(13, 1, 31, NULL, '123', 'keyword', 'text', '测试', 0, 1, 1573722151, 1573722151),
+(14, 1, 31, NULL, '123456789', 'keyword', 'text', '1234567', 0, 1, 1573804314, 1573804314),
+(15, 1, 31, NULL, '新增', 'keyword', 'text', '12121', 0, 1, 1573806804, 1573806804),
+(16, 1, 31, NULL, 'cece', 'keyword', 'text', 'sadf', 0, 1, 1573807059, 1573807059),
+(17, 1, 31, NULL, '哈哈', 'keyword', 'text', '123', 0, 1, 1573807272, 1573807272);
 
 -- --------------------------------------------------------
 
@@ -1948,7 +2017,7 @@ ALTER TABLE `lm_admin`
 -- AUTO_INCREMENT for table `lm_admin_log`
 --
 ALTER TABLE `lm_admin_log`
-  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=3;
+  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `lm_adv`
@@ -2074,7 +2143,7 @@ ALTER TABLE `lm_wx_fans`
 -- AUTO_INCREMENT for table `lm_wx_material`
 --
 ALTER TABLE `lm_wx_material`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '微信公众号素材', AUTO_INCREMENT=60;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '微信公众号素材', AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `lm_wx_material_info`
@@ -2092,19 +2161,19 @@ ALTER TABLE `lm_wx_menu`
 -- AUTO_INCREMENT for table `lm_wx_msg_history`
 --
 ALTER TABLE `lm_wx_msg_history`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=349;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=389;
 
 --
 -- AUTO_INCREMENT for table `lm_wx_qrcode`
 --
 ALTER TABLE `lm_wx_qrcode`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `lm_wx_reply`
 --
 ALTER TABLE `lm_wx_reply`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '微信关键词回复表', AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '微信关键词回复表', AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `lm_wx_tag`
