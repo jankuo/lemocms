@@ -1238,7 +1238,7 @@ CREATE TABLE `lm_wx_msg_history` (
   `id` int(10) UNSIGNED NOT NULL,
   `store_id` int(10) UNSIGNED DEFAULT '1' COMMENT '商户id',
   `wx_aid` int(11) DEFAULT NULL COMMENT '微信账号id',
-  `media_id` int(11) NOT NULL,
+  `media_id` int(11) DEFAULT NULL,
   `keyword_id` int(10) DEFAULT '0' COMMENT '关键字id',
   `nickname` varchar(150) DEFAULT NULL COMMENT '昵称',
   `openid` varchar(50) DEFAULT '',
