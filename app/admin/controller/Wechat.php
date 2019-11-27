@@ -829,7 +829,7 @@ class Wechat extends Backend {
 
 
                         ];
-                        WxMaterialInfo::create($v);
+                        WxMaterialInfo::create($info);
 
                     }
                 }
