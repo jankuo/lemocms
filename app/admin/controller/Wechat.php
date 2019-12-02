@@ -92,7 +92,7 @@ class Wechat extends Backend {
         if (Request::isPost()) {
             $list = Db::name('wx_account')->alias('a')
                 ->leftJoin('wx_type t','t.type_id=a.type')
-                ->field('a.*,t.name as type_name')
+                ->field('a.*,t.name as type_name')->cache(3600)
                 ->select()->toArray();
 
             return $result = ['code' => 0, 'msg' =>lang('get info success'), 'data' => $list,];
@@ -140,7 +140,7 @@ class Wechat extends Backend {
                 $this->error(lang('edit fail'));
             }
         }
-        $info = WxAccount::find(Request::get('id'));
+        $info = WxAccount::cache(3600)->find(Request::get('id'));
         $view = [
             'info' => $info,
             'title' => '修改',
@@ -153,7 +153,7 @@ class Wechat extends Backend {
 
         $id = Request::post('id');
         if($id){
-            $info = WxAccount::find($id);
+            $info = WxAccount::cache(3600)->find($id);
             $info->status = $info->status==1?0:1;
             if($info->status==1){
                 $list = WxAccount::where('status',1)->where('id','<>',$info->id)->select();
@@ -199,7 +199,7 @@ class Wechat extends Backend {
     }
     public function getWxAccount(){
 
-        $info =  WxAccount::order('status desc')->select();
+        $info =  WxAccount::cache(3600)->order('status desc')->select();
 
         return $info;
 
@@ -207,13 +207,18 @@ class Wechat extends Backend {
 
     public function changeApp(){
         $appid = Request::post('app_id');
-        $isAPP = WxAccount::where('app_id',$appid)->value('status');
+        $isAPP = WxAccount::cache(3600)->where('app_id',$appid)->value('status');
         $button['button']=[];
         if(!$isAPP){
             $this->error('失败','',$button);
         }
         //获取当前菜单
-        $menu = $this->wechatApp->menu->list();
+        $menu = cache('wx_menus');
+        if(!$menu){
+
+            $menu = $this->wechatApp->menu->list();
+            cache('wx_menus',$menu);
+        }
         if(isset($menu['menu'])){
 
             $button = $menu['menu'];
@@ -228,7 +233,7 @@ class Wechat extends Backend {
     public function addWeixinMenu(){
         $data = Request::post();
         $app_id = $data['app_id'];
-        $isApp = WxAccount::where('store_id',$this->store_id)->where('app_id',$app_id)->value('status');
+        $isApp = WxAccount::where('store_id',$this->store_id)->cache(3600)->where('app_id',$app_id)->value('status');
         if($isApp !=1){
             $this->error(lang('account is not accessed'));
         }
@@ -278,7 +283,7 @@ class Wechat extends Backend {
             $page = Request::post('page') ? Request::post('page') : 1;
             $list=WxFans::where('nickname','like','%'.$keys.'%')
                 ->where('wx_aid',$wx_aid)
-                ->order('fans_id desc')
+                ->order('fans_id desc')->cache(3600)
                 ->paginate(['list_rows' => $this->pageSize, 'page' => $page])
                 ->toArray();
             $tag = WxTag::where('store_id',$this->store_id)->where('wx_aid',$wx_aid)
@@ -324,6 +329,7 @@ class Wechat extends Backend {
                 $v['tagid_list'] = json_encode($v['tagid_list']);
 
                 $fans = $WxFansModel::where($this->where)
+                    ->cache(3600)
                     ->where('openid',$v['openid'])
                     ->find();
                 if($fans){
@@ -354,9 +360,9 @@ class Wechat extends Backend {
         if(Request::isPost()){
             $id = Request::post('id');
             $tag = Request::post('tag');
-            $wxFans = WxFans::where('fans_id',$id)->find();
+            $wxFans = WxFans::where('fans_id',$id)->cache(3600)->find();
             $tags = WxTag::where('store_id',$this->store_id)
-                ->where('wx_aid',$wxFans->wx_aid)->find();
+                ->where('wx_aid',$wxFans->wx_aid)->cache(3600)->find();
             $wxFans->tag = $tag;
             $res = $this->wechatApp->user_tag->tagUsers([$wxFans->openid],$tags['tag_id']);
             if($res){
@@ -386,6 +392,7 @@ class Wechat extends Backend {
                 ->where('name','like','%'.$keys.'%')
                 ->where('wx_aid',$wx_aid)
                 ->order('id desc')
+                ->cache(3600)
                 ->paginate(['list_rows' => $this->pageSize, 'page' => $page])
                 ->toArray();
 
@@ -393,7 +400,7 @@ class Wechat extends Backend {
         }
 
 
-        $wxaccount = WxAccount::where('store_id',$this->store_id)->select();
+        $wxaccount = WxAccount::where('store_id',$this->store_id)->cache(3600)->select();
 
         $view = ['title'=>lang('tag'), 'info'=>'', 'wxaccount'=>$wxaccount];
         View::assign($view);
@@ -646,9 +653,7 @@ class Wechat extends Backend {
         if (Request::isPost()) {
             $wx_aid = Request::post('wx_aid');
             if(!$wx_aid){
-                $wx_aid = WxAccount::where('status',1)
-                    ->where('store_id',$this->store_id)
-                    ->value('id');
+                $wx_aid = $this->wechatAccount->id;
             }
             if(!$wx_aid){
                 return $result = ['code' => 0,'msg' => lang('account is not accessed'),];
@@ -777,9 +782,7 @@ class Wechat extends Backend {
                 // 回滚事务
                 Db::rollback();
                 $this->error($e->getMessage());
-
             }
-            
         }
         $id = Request::get('id');
         $info = WxMaterialInfo::where('material_id',$id)->select()->toArray();
@@ -798,7 +801,11 @@ class Wechat extends Backend {
     //素材同步
     public function materialAysn(){
         if(Request::isPost()){
-            $res = $this->wechatApp->material->list('news', 0, 50);
+            $res = cache('materialList');
+            if(!$res){
+                $res = $this->wechatApp->material->list('news', 0, 50);
+                cache('materialList',$res,3600);
+            }
             $this->showError($res);
             foreach ($res['item'] as $k=>$v){
                 $material = WxMaterial::where('media_id',$v['media_id'])->find();
@@ -826,8 +833,6 @@ class Wechat extends Backend {
                             'content_source_url'=>$vv['content_source_url'],
                             'need_open_comment'=>$vv['need_open_comment'],
                             'only_fans_can_comment'=>$vv['only_fans_can_comment'],
-
-
                         ];
                         WxMaterialInfo::create($info);
 
