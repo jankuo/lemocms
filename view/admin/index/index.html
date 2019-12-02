@@ -113,8 +113,12 @@
         var $ = layui.jquery,
             element = layui.element,
             layer = layui.layer;
-            LM.init(menus);
-
+        if(layui.cache.menus){
+            menus = layui.cache.menus;
+        }else{
+            layui.cache.menus = menus;
+        }
+        LM.init(menus);
 
     });
 </script>
