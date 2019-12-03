@@ -46,8 +46,15 @@ if (!function_exists('getConfigByCode')) {
     }
 }
 /*
- * 百度编辑器内容
+ * 百度编辑器内容 多个编辑器单独引入js，重复会导致出错
  */
+if (!function_exists('build_ueditor_js')) {
+    function build_ueditor_js($params = array()){
+
+     return $include_js = '<script type="text/javascript" charset="utf-8" src="/static/plugins/ueditor/ueditor.config.js"></script> <script type="text/javascript" charset="utf-8" src="/static/plugins/ueditor/ueditor.all.min.js""> </script><script type="text/javascript" charset="utf-8" src="' . $lang . '"></script>';
+    }
+}
+
 if (!function_exists('build_ueditor')) {
 function build_ueditor($params = array())
 {
@@ -94,16 +101,23 @@ function build_ueditor($params = array())
             $lang = '/static/plugins/ueditor/lang/zh-cn/zh-cn.js';
             break;
     }
-    $include_js = '<script type="text/javascript" charset="utf-8" src="/static/plugins/ueditor/ueditor.config.js"></script> <script type="text/javascript" charset="utf-8" src="/static/plugins/ueditor/ueditor.all.min.js""> </script><script type="text/javascript" charset="utf-8" src="' . $lang . '"></script>';
+    if($params['type']==0 || !isset($params['type']) ){
+
+        $include_js = '<script type="text/javascript" charset="utf-8" src="/static/plugins/ueditor/ueditor.config.js"></script> <script type="text/javascript" charset="utf-8" src="/static/plugins/ueditor/ueditor.all.min.js""> </script><script type="text/javascript" charset="utf-8" src="' . $lang . '"></script>';
+    }elseif($params['type']==1 ){
+        $include_js = '';
+    }
+
     $content = json_encode($content);
     $str = <<<EOT
 $include_js
 <script type="text/javascript">
-var ue = UE.getEditor('{$name}',{
+var ue_{$name} = UE.getEditor('{$name}',{
     toolbars:[{$theme_config}],
         });
+
     if($content){
-ue.ready(function() {
+ue_{$name}.ready(function() {
        this.setContent($content);	
 })
    }
