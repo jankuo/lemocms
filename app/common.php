@@ -49,8 +49,19 @@ if (!function_exists('getConfigByCode')) {
  * 百度编辑器内容 多个编辑器单独引入js，重复会导致出错
  */
 if (!function_exists('build_ueditor_js')) {
-    function build_ueditor_js($params = array()){
-
+    function build_ueditor_js(){
+    /* 配置界面语言 */
+    switch (config('default_lang')) {
+        case 'zh-cn':
+            $lang = '/static/plugins/ueditor/lang/zh-cn/zh-cn.js';
+            break;
+        case 'en-us':
+            $lang =  '/static/plugins/ueditor/lang/en/en.js';
+            break;
+        default:
+            $lang = '/static/plugins/ueditor/lang/zh-cn/zh-cn.js';
+            break;
+    }
      return $include_js = '<script type="text/javascript" charset="utf-8" src="/static/plugins/ueditor/ueditor.config.js"></script> <script type="text/javascript" charset="utf-8" src="/static/plugins/ueditor/ueditor.all.min.js""> </script><script type="text/javascript" charset="utf-8" src="' . $lang . '"></script>';
     }
 }
@@ -89,21 +100,10 @@ function build_ueditor($params = array())
             $theme_config = $themes['normal'];
             break;
     }
-    /* 配置界面语言 */
-    switch (config('default_lang')) {
-        case 'zh-cn':
-            $lang = '/static/plugins/ueditor/lang/zh-cn/zh-cn.js';
-            break;
-        case 'en-us':
-            $lang =  '/static/plugins/ueditor/lang/en/en.js';
-            break;
-        default:
-            $lang = '/static/plugins/ueditor/lang/zh-cn/zh-cn.js';
-            break;
-    }
-    if($params['type']==0 || !isset($params['type']) ){
 
-        $include_js = '<script type="text/javascript" charset="utf-8" src="/static/plugins/ueditor/ueditor.config.js"></script> <script type="text/javascript" charset="utf-8" src="/static/plugins/ueditor/ueditor.all.min.js""> </script><script type="text/javascript" charset="utf-8" src="' . $lang . '"></script>';
+    if(!isset($params['type']) || (isset($params['type']) && $params['type']==0)  ){
+
+        $include_js = build_ueditor_js();
     }elseif($params['type']==1 ){
         $include_js = '';
     }
