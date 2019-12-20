@@ -379,7 +379,6 @@ if ($_GET['c'] = 'start' && isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUE
                         var url = 'index.php/admin';
                         $('form').append($('<a class="layui-btn" href="' + url + '" id="btn-admin" style="background:#bc420c">访问后台</a>'));
                         <?php $_SESSION['install_ok'] = 'installed'; ?>
-                        localStorage.setItem("install_ok", "installed");
                     } else {
                         $('#error').show().text(res);
                         that.prop('disabled', false).text('点击安装');
