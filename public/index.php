@@ -16,7 +16,11 @@ if (version_compare(PHP_VERSION, '7.1.0', '<')) {
     header("Content-type: text/html; charset=utf-8");
     die('PHP 7.1.0 及以上版本系统才可运行~ ');
 }
-
+if (!is_file('./install.lock'))
+{
+    header("location:/install.php");
+    exit;
+}
 
 require __DIR__ . '/../vendor/autoload.php';
 

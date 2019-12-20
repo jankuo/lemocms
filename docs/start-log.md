@@ -1,3 +1,7 @@
+### v1.2.20191220 版本更新
+ - 新增：安装程序，一键安装,导入数据库;
+
+
 ### v1.1.20191111 版本更新
  - 前后台控制器分离,插件需要后台的须继承app\common\controller\Backend;
  - 前后台控制器分离,插件需要前台的须继承app\common\controller\Frontend;

@@ -1,12 +1,12 @@
 ### 导读
-+ Lemocms v1.1 本系统长期更新,欢迎star和提出和反馈问题 
-+ QQ群1：[455018252](https://jq.qq.com/?_wv=1027&k=5RWLxx7) 加群获取账号密码（看置顶公告）
-+ QQ群2：[455019756](https://jq.qq.com/?_wv=1027&k=52oRd8O) 
++ Lemocms v1.2 本系统长期更新,欢迎star和提出和反馈问题 
++ QQ群1：[455018252](https://jq.qq.com/?_wv=1027&k=5RWLxx7) 加群获取账号密码(群满)（看置顶公告）
++ QQ群2：[455019756](https://jq.qq.com/?_wv=1027&k=52oRd8O)  加群获取账号密码
 
 + 演示地址 ： https://demo.lemocms.com/index.php/admin/login/index.html
  
 ### 前言
-Lemocms v1.1管理系统：为二次开发而生，让开发变得更简单
+Lemocms v1.2管理系统：为二次开发而生，让开发变得更简单
  + 这是一款快速、高效、便捷、灵活的应用开发框架。
  + 采用最新thinkphp6框架，后续随官网升级而升级
  + layui采用最新layui2.5.5 框架
@@ -29,18 +29,25 @@ Lemocms v1.1管理系统：为二次开发而生，让开发变得更简单
 
 
 ### 系统快照
+【系统 - 安装】
+
+![image](docs/images/install.jpg)
 
 【系统 - 首页】
+
 ![image](docs/images/index.png)
 
 【系统 - 内容管理】
+
 ![image](docs/images/content.png)
 
 【系统 - 会员管理】
+
 ![image](docs/images/user.png)
 
 
 【系统 - 微信管理】
+
 ![image](docs/images/wechat1.png)
 ![image](docs/images/wechat2.png)
 ![image](docs/images/wechat3.png)

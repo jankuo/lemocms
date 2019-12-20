@@ -58,7 +58,7 @@ class Login extends Base {
             } catch (\Exception $e) {
                  $this->error(lang('login fail')."：{$e->getMessage()}");
             }
-            $this->success(lang('login success').'...', url('@admin'));
+            $this->success(lang('login success').'...', '/index.php/admin/index');
         }
     }
 
