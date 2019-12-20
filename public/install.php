@@ -354,19 +354,18 @@ if ($_GET['c'] = 'start' && isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUE
 
     layui.use(['layer','jquery','form'],function (res) {
         var layer = layui.layer,$ = layui.$,form=layui.form;
+        //水波
         $(function () {
             $('body').ripples({
                 resolution: 512,
                 dropRadius: 20, //px
                 perturbance: 0.04,
             });
-        })
-
+        });
 
         //监听提交
         form.on('submit(submit)', function(data){
             var that = $(this);
-
             that.text('安装中...').prop('disabled', true);
             $.post('', data.field)
                 .done(function (res) {
