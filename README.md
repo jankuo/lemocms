@@ -5,6 +5,12 @@
 
 + 演示地址 ： https://demo.lemocms.com/index.php/admin/login/index.html
  
+
+###[开发文档](docs/developer.md)
+
+###[更新历史](docs/start-log.md) 
+
+
 ### 前言
 Lemocms v1.2管理系统：为二次开发而生，让开发变得更简单
  + 这是一款快速、高效、便捷、灵活的应用开发框架。
@@ -21,10 +27,6 @@ Lemocms v1.2管理系统：为二次开发而生，让开发变得更简单
  + 插件管理
  + restful api 接口
  + ...更多
-  
-###[开发文档](docs/developer.md)
-
-###[更新历史](docs/start-log.md) 
 
 
 
