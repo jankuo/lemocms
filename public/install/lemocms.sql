@@ -467,7 +467,6 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (144, 'Wechat/qrcodeAdd', '添加二维码', 1, 1, 0, 0, NULL, '', 143, 0, 0, NULL),
 (145, 'Wechat/qrcodeDel', '二维码删除', 1, 1, 0, 0, NULL, '', 143, 0, 0, NULL),
 (146, 'Wechat/qrcodeState', '二维码状态', 1, 1, 0, 0, NULL, '', 143, 0, 0, NULL),
-(147, 'Module/fieldState', '模型字段状态', 1, 1, 0, 0, NULL, '', 129, 0, 0, NULL),
 (148, 'System/configlist', '配置列表', 1, 1, 0, 1, 'fa fa-align-justify', '', 2, 0, 0, NULL),
 (149, 'System/configAdd', '添加配置', 1, 1, 0, 0, NULL, '', 148, 0, 0, NULL),
 (150, 'System/configEdit', '编辑配置', 1, 1, 0, 0, NULL, '', 148, 0, 0, NULL),
@@ -1710,13 +1709,6 @@ ALTER TABLE `lm_auth_rule`
   ADD UNIQUE KEY `id` (`id`),
   ADD KEY `href` (`href`);
 
---
--- Indexes for table `lm_column`
---
-ALTER TABLE `lm_column`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `listorder` (`sort`),
-  ADD KEY `pid` (`pid`);
 
 --
 -- Indexes for table `lm_config`
@@ -1750,11 +1742,6 @@ ALTER TABLE `lm_field_type`
 ALTER TABLE `lm_link`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `lm_module`
---
-ALTER TABLE `lm_module`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `lm_oauth2_client`
@@ -1919,11 +1906,6 @@ ALTER TABLE `lm_auth_group`
 ALTER TABLE `lm_auth_rule`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
 
---
--- AUTO_INCREMENT for table `lm_column`
---
-ALTER TABLE `lm_column`
-  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `lm_config`
@@ -1956,10 +1938,6 @@ ALTER TABLE `lm_link`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT for table `lm_module`
---
-ALTER TABLE `lm_module`
-  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `lm_oauth2_client`
