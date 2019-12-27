@@ -220,70 +220,6 @@ CREATE TABLE `lm_adv_position` (
 INSERT INTO `lm_adv_position` (`id`, `position_name`, `ad_width`, `ad_height`, `position_desc`, `position_style`, `status`, `create_time`, `update_time`) VALUES
 (1, 'Cart页面自动增加广告位 1 ', 0, 0, 'Cart页面', '', 1, 0, 0),
 (2, 'Index页面自动增加广告位 2 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(4, 'Topic页面自动增加广告位 4 ', 0, 0, 'Topic页面', '', 1, 0, 0),
-(9, 'Index页面自动增加广告位 9 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(10, 'Index页面自动增加广告位 10 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(11, 'Index页面自动增加广告位 11 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(12, 'Index页面自动增加广告位 12 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(13, 'Index页面自动增加广告位 13 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(14, 'Index页面自动增加广告位 14 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(15, 'Index页面自动增加广告位 15 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(16, 'Index页面自动增加广告位 16 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(17, 'Index页面自动增加广告位 17 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(18, 'Index页面自动增加广告位 18 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(19, 'Index页面自动增加广告位 19 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(20, 'Index页面自动增加广告位 20 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(21, 'Index页面自动增加广告位 21 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(22, 'Index页面自动增加广告位 22 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(23, 'Index页面自动增加广告位 23 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(24, 'Index页面自动增加广告位 24 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(25, 'Index页面自动增加广告位 25 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(26, 'Index页面自动增加广告位 26 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(27, 'Index页面自动增加广告位 27 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(28, 'Index页面自动增加广告位 28 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(49, 'Index页面自动增加广告位 49 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(50, 'Index页面自动增加广告位 50 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(51, 'Index页面自动增加广告位 51 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(52, 'Index页面自动增加广告位 52 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(101, 'Index页面自动增加广告位 101 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(102, 'Index页面自动增加广告位 102 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(103, 'Index页面自动增加广告位 103 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(104, 'Index页面自动增加广告位 104 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(105, 'Index页面自动增加广告位 105 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(106, 'Index页面自动增加广告位 106 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(107, 'Index页面自动增加广告位 107 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(108, 'Index页面自动增加广告位 108 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(204, 'Activity页面自动增加广告位 204 ', 0, 0, 'Activity页面', '', 1, 0, 0),
-(205, 'Activity页面自动增加广告位 205 ', 0, 0, 'Activity页面', '', 1, 0, 0),
-(206, 'Activity页面自动增加广告位 206 ', 0, 0, 'Activity页面', '', 1, 0, 0),
-(207, 'Activity页面自动增加广告位 207 ', 0, 0, 'Activity页面', '', 1, 0, 0),
-(208, 'Activity页面自动增加广告位 208 ', 0, 0, 'Activity页面', '', 1, 0, 0),
-(300, 'Index页面自动增加广告位 300 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(301, 'Index页面自动增加广告位 301 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(302, 'Index页面自动增加广告位 302 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(303, 'Index页面自动增加广告位 303 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(304, 'Index页面自动增加广告位 304 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(305, 'Index页面自动增加广告位 305 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(306, 'Index页面自动增加广告位 306 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(307, 'Index页面自动增加广告位 307 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(400, 'Index页面自动增加广告位 400 ', 0, 0, 'Index页面', '', 1, 0, 0),
-(401, 'Goods页面自动增加广告位 401 ', 0, 0, 'Goods页面', '', 1, 0, 0),
-(500, 'Ad页面自动增加广告位 500 ', 0, 0, 'Ad页面', '', 1, 0, 0),
-(506, 'Ad页面自动增加广告位 506 ', 0, 0, 'Ad页面', '', 1, 0, 0),
-(507, 'Ad页面自动增加广告位 507 ', 0, 0, 'Ad页面', '', 1, 0, 0),
-(508, 'Ad页面自动增加广告位 508 ', 0, 0, 'Ad页面', '', 1, 0, 0),
-(509, 'Ad页面自动增加广告位 509 ', 0, 0, 'Ad页面', '', 1, 0, 0),
-(510, 'Ad页面自动增加广告位 510 ', 0, 0, 'Ad页面', '', 1, 0, 1568279473),
-(511, 'Ad页面自动增加广告位 511 ', 0, 0, 'Ad页面', '', 1, 0, 1568708267),
-(512, 'Ad页面自动增加广告位 512 ', 0, 0, 'Ad页面', '', 1, 0, 1568708267),
-(513, 'Ad页面自动增加广告位 513 ', 0, 0, 'Ad页面', '', 1, 0, 1568708267),
-(514, 'Ad页面自动增加广告位 514 ', 0, 0, 'Ad页面', '', 1, 0, 1568708268),
-(515, 'Ad页面自动增加广告位 515 ', 0, 0, 'Ad页面', '', 1, 0, 1568708268),
-(516, 'Ad页面自动增加广告位 516 ', 0, 0, 'Ad页面', '', 1, 0, 1568708268),
-(517, 'Ad页面自动增加广告位 517 ', 0, 0, 'Ad页面', '', 1, 0, 1570166613),
-(518, 'Ad页面自动增加广告位 518 ', 0, 0, 'Ad页面', '', 1, 0, 1570166613),
-(533, 'Ad页面自动增加广告位 533 ', 0, 0, 'Ad页面', '', 1, 0, 1568708269),
-(534, 'Ad页面自动增加广告位 534 ', 0, 0, 'Ad页面', '', 1, 0, 1572867856),
 (539, '首页', 1080, 300, '其他1', '', 1, 1566111321, 1573784187);
 
 -- --------------------------------------------------------
@@ -527,20 +463,6 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (126, 'Wechat/UeditUploaVoice', '百度编辑器上传音频', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
 (127, 'Wechat/getListImage', '获取图片列表', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
 (128, 'Wechat/getWxAccount', '微信账号', 1, 1, 0, 0, NULL, '', 87, 0, 0, NULL),
-(129, 'Module/index', '模型管理', 1, 1, 0, 1, 'fa fa-cube', '', 41, 2, 1570584769, 1571493213),
-(130, 'Module/edit', '模型编辑', 1, 1, 0, 0, NULL, '', 129, 0, 0, NULL),
-(131, 'Module/add', '模型添加', 1, 1, 0, 0, NULL, '', 129, 0, 0, NULL),
-(132, 'Module/delete', '模型删除', 1, 1, 0, 0, NULL, '', 129, 0, 0, NULL),
-(133, 'Module/fieldAdd', '模型字段添加', 1, 1, 0, 0, NULL, '', 129, 0, 0, NULL),
-(134, 'Module/fieldedit', '模型字段编辑', 1, 1, 0, 0, NULL, '', 129, 0, 0, NULL),
-(135, 'Module/fielddel', '模型字段删除', 1, 1, 0, 0, NULL, '', 129, 0, 0, NULL),
-(136, 'Module/field', '模型字段列表', 1, 1, 0, 0, NULL, '', 129, 0, 0, NULL),
-(137, 'Column/index', '栏目管理', 1, 1, 0, 1, 'fa fa-align-justify', '', 41, 1, 0, 1571486160),
-(138, 'Column/edit', '栏目编辑', 1, 1, 0, 0, NULL, '', 137, 0, 0, NULL),
-(139, 'Column/add', '栏目添加', 1, 1, 0, 0, NULL, '', 137, 0, 0, NULL),
-(140, 'Column/delete', '栏目删除', 1, 1, 0, 0, NULL, '', 137, 0, 0, NULL),
-(141, 'Module/state', '模型状态', 1, 1, 0, 0, '', '', 129, 50, 1571480361, 1571480361),
-(142, 'Column/state', '栏目状态', 1, 1, 0, 0, NULL, '', 137, 0, 0, NULL),
 (143, 'Wechat/qrcode', '二维码管理', 1, 1, 0, 1, 'fa fa-qrcode', '', 87, 55, 0, 1571919893),
 (144, 'Wechat/qrcodeAdd', '添加二维码', 1, 1, 0, 0, NULL, '', 143, 0, 0, NULL),
 (145, 'Wechat/qrcodeDel', '二维码删除', 1, 1, 0, 0, NULL, '', 143, 0, 0, NULL),
@@ -558,44 +480,6 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `lm_column`
---
-
-CREATE TABLE `lm_column` (
-  `id` smallint(5) UNSIGNED NOT NULL,
-  `clname` varchar(255) NOT NULL DEFAULT '' COMMENT '栏目名字',
-  `cldir` varchar(30) NOT NULL DEFAULT '' COMMENT '栏目唯一标识',
-  `pid` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
-  `arrpid` varchar(100) NOT NULL,
-  `arrchildid` varchar(100) NOT NULL DEFAULT ' ',
-  `moduleid` tinyint(2) UNSIGNED NOT NULL DEFAULT '0' COMMENT '模型id',
-  `module` char(24) NOT NULL DEFAULT '' COMMENT '模型名字',
-  `type` tinyint(1) UNSIGNED NOT NULL DEFAULT '0' COMMENT '1 单页，0 普通',
-  `title` varchar(150) NOT NULL DEFAULT '' COMMENT '标题',
-  `keywords` varchar(200) NOT NULL DEFAULT '' COMMENT '关键字',
-  `description` varchar(255) NOT NULL DEFAULT '' COMMENT '描述',
-  `sort` smallint(5) UNSIGNED NOT NULL DEFAULT '0' COMMENT '排序',
-  `is_menu` tinyint(1) UNSIGNED NOT NULL DEFAULT '0' COMMENT '是否菜单',
-  `status` tinyint(1) UNSIGNED NOT NULL DEFAULT '1' COMMENT '是否显示',
-  `click` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '点击量',
-  `thumb` varchar(255) NOT NULL DEFAULT '' COMMENT '图片',
-  `url` varchar(100) NOT NULL DEFAULT '' COMMENT '链接地址',
-  `template_list` varchar(50) NOT NULL DEFAULT '',
-  `template_show` varchar(50) NOT NULL,
-  `page_size` tinyint(4) NOT NULL DEFAULT '15',
-  `create_time` int(11) NOT NULL DEFAULT '0',
-  `update_time` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `lm_column`
---
-
-INSERT INTO `lm_column` (`id`, `clname`, `cldir`, `pid`, `arrpid`, `arrchildid`, `moduleid`, `module`, `type`, `title`, `keywords`, `description`, `sort`, `is_menu`, `status`, `click`, `thumb`, `url`, `template_list`, `template_show`, `page_size`, `create_time`, `update_time`) VALUES
-(1, '首页', '', 0, '0', '1,4', 12, 'pic', 0, '首页', '首页', '首页', 50, 1, 1, 50, '/storage/uploads/20191012\\efe7bcf1a0750c3349222248b6b4859e.png', '', '', '', 15, 0, 1573720371),
-(2, '论坛', '', 0, '0', '2', 14, 'articles', 0, '论坛', '论坛', '论坛', 50, 1, 1, 100, '', '', '', '', 15, 0, 1573720370),
-(4, 'demo', 'demo', 1, '0,1', '4', 27, 'page', 0, 'demo', 'demo', 'demo', 50, 1, 1, 100, '', '', '', '', 15, 1571458157, 1573720368);
 
 -- --------------------------------------------------------
 
@@ -849,26 +733,7 @@ INSERT INTO `lm_link` (`id`, `name`, `url`, `type_id`, `email`, `qq`, `sort`, `s
 (25, '百度', 'https://www.baidu.com', 0, '994927909@qq.com', '994927909', 50, 1, 1566103165, 1573640285),
 (26, '新浪', 'https://www.sina.com', 0, '994927909@qq.com', '994927909', 50, 1, 1566103233, 1573640288);
 
--- --------------------------------------------------------
 
---
--- Table structure for table `lm_module`
---
-
-CREATE TABLE `lm_module` (
-  `id` tinyint(3) UNSIGNED NOT NULL,
-  `title` varchar(100) NOT NULL DEFAULT '' COMMENT '模型名称',
-  `name` varchar(50) NOT NULL DEFAULT '' COMMENT '表名',
-  `description` varchar(200) NOT NULL DEFAULT '' COMMENT '描述',
-  `type` tinyint(1) UNSIGNED NOT NULL DEFAULT '0' COMMENT '0 空白，1 文章',
-  `ispage` tinyint(1) DEFAULT '0' COMMENT '是否单页',
-  `listfields` varchar(255) NOT NULL DEFAULT '' COMMENT '列表页查询字段',
-  `template` varchar(255) NOT NULL DEFAULT ' ',
-  `sort` smallint(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT '排序',
-  `status` tinyint(1) UNSIGNED NOT NULL DEFAULT '1' COMMENT '状态',
-  `create_time` int(11) DEFAULT '0',
-  `update_time` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='模型表';
 
 -- --------------------------------------------------------
 

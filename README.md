@@ -6,6 +6,7 @@
 + 演示地址 ： https://demo.lemocms.com/index.php/admin/login/index.html
  
 
+
 ###[开发文档](docs/developer.md)
 
 ###[更新历史](docs/start-log.md) 
@@ -58,6 +59,16 @@ Lemocms v1.2管理系统：为二次开发而生，让开发变得更简单
 
 
 
+### 版权信息
+
+lemocms 方便二次开发，您可以方便的使用到自己或企业的项目中,你可以免费学习或者使用
+
+禁止在lemocms整体或任何部分基础上发展任何派生版本、修改版本或第三方版本用于重新分发，经发现必追责。
+
+
+本项目包含的第三方源码和二进制文件之版权信息另行标注。
+版权所有Copyright © 2018-2020 by lemocms [www.lemocms.com](https://www.lemocms.com) All rights reserved。
+
 
 若此项目能得到你的青睐，支持开源项目，可以捐赠支持作者持续开发与维护,这样小哥哥小姐姐更加努力哦。
 
@@ -71,12 +82,6 @@ QQ群：[455018252](https://jq.qq.com/?_wv=1027&k=5RWLxx7)
 Github：https://github.com/yue909/lemocms/issues
 Gitee : https://gitee.com/limingyue0312/lemocms/issues
 
-### 版权信息
-lemocms 方便二次开发，您可以方便的使用到自己或企业的项目中；
-
-本项目包含的第三方源码和二进制文件之版权信息另行标注。
-
-版权所有Copyright © 2018-2020 by lemocms [www.lemocms.com](https://www.lemocms.com) All rights reserved。
 
 ## 项目目录结构
 
