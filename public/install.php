@@ -35,6 +35,7 @@ $databaseConfigFile = "../config" . DS . "database.php";
 
 if (is_file($lockFile)) {
     $msg = "当前已经安装{$siteName}，如果需要重新安装，请手动移除lemocms/public/install.lock文件";
+
 } else {
     if (version_compare(PHP_VERSION, '7.1.0', '<')) {
         $msg = "当前版本(" . PHP_VERSION . ")过低，请使用PHP7.1.0以上版本";
@@ -244,6 +245,11 @@ if ($_GET['c'] = 'start' && isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUE
     <div class="layui-row">
         <div class="layui-col-md4 layui-col-md-offset4" >
             <form class="layui-form" action="./install?c=start" >
+            <?php if ($msg): ?>
+                <div class="error">
+                    <?php echo $msg; ?>
+                </div>
+            <?php endif; ?>
             <div id="error" style="display:none"></div>
             <div id="success" style="display:none"></div>
             <div id="warmtips" style="display:none"></div>
@@ -345,8 +351,6 @@ if ($_GET['c'] = 'start' && isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUE
     <div class="layui-col-md4 layui-col-md-offset4" style="margin-bottom: 120px;background: none"></div>
 
 </div>
-
-
 
 <script type="text/javascript" src="./static/plugins/jquery-3.4.1/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="./install/js/jquery.ripples.js"></script>
