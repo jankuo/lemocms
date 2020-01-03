@@ -1,5 +1,4 @@
 body {margin:15px 15px 15px 15px;background:#f2f2f2;}
-.fr{float: right}  .fl{float: left} .clearfix{clear: both;}
 .LM-container {border:1px solid #f2f2f2;border-radius:5px;background-color:#ffffff}
 .LM-main {margin:10px 10px 10px 10px;}
 
@@ -8,6 +7,8 @@ body {margin:15px 15px 15px 15px;background:#f2f2f2;}
 .LM-form>.layui-form-item>.layui-form-label {width:120px !important;}
 .LM-form>.layui-form-item>.layui-input-block {margin-left:150px !important;}
 .LM-form>.layui-form-item>.layui-input-block >tip {display:inline-block;margin-top:10px;line-height:10px;font-size:10px;color:#a29c9c;}
+
+.fr{float: right}  .fl{float: left} .clearfix{clear: both;}
 /**
  手机自适应样式
 */
