@@ -136,7 +136,7 @@ if ($_GET['c'] = 'start' && isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUE
         }
 // 创建数据库并选中
         if (!$link->select_db($mysqlDatabase)) {
-            $create_sql = 'CREATE DATAbase IF NOT EXISTS ' . $mysqlDatabase . ' DEFAULT CHARACTER SET utf8mb4;';
+            $create_sql = 'CREATE DATABASE IF NOT EXISTS ' . $mysqlDatabase . ' DEFAULT CHARACTER SET utf8mb4;';
             $link->query($create_sql) or die('创建数据库失败');
             $link->select_db($mysqlDatabase);
         }
@@ -149,18 +149,14 @@ if ($_GET['c'] = 'start' && isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUE
         $config = [
         // 默认使用的数据库连接配置
         'default'         =>'mysql',
-
         // 自定义时间查询规则
         'time_query_rule' => [],
-
         // 自动写入时间戳字段
         // true为自动识别类型 false关闭
         // 字符串则明确指定时间字段类型 支持 int timestamp datetime date
         'auto_timestamp'  => true,
-
         // 时间字段取出后的默认时间格式
         'datetime_format' => 'Y-m-d H:i:s',
-
         // 数据库连接配置信息
         'connections'     => [
                 'mysql' => [
@@ -214,7 +210,7 @@ if ($_GET['c'] = 'start' && isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUE
         }
 
         $password = password_hash($adminPassword, PASSWORD_BCRYPT,['cost'=>12]);
-        $result = $link->query("UPDATE {$mysqlPreFix}admin SET `username` = '{$adminUserName}',`password` = '{$password}' WHERE `username` = 'admin'");
+        $result = $link->query("UPDATE {$mysqlPreFix}admin SET `email`='{$email}',`username` = '{$adminUserName}',`password` = '{$password}' WHERE `username` = 'admin'");
         if (!$result) {
             die("安装数据库失败！:$error");
         }
