@@ -16,7 +16,7 @@ use app\common\controller\Backend;
 use lemo\helper\StringHelper;
 use think\facade\Request;
 use think\facade\View;
-use app\admin\controller\Backup;
+use app\common\lib\Backup;
 // 需要修改\tp5er\backup connect()
 //以及 $info['name'] = $file->getFilename();
 class Database extends Backend

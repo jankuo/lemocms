@@ -3,7 +3,7 @@
 // | Author: tp5er <tp5er@qq.com>
 // | QQ Group: 368683534
 // +----------------------------------------------------------------------
-namespace app\admin\controller;
+namespace app\common\lib;
 use think\facade\Db;
 use think\facade\Config;
 class Backup
