@@ -70,6 +70,7 @@ class ComposerStaticInit384a8d7e76ba965cf74b4f3feab22220
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'O' => 
         array (
@@ -225,6 +226,10 @@ class ComposerStaticInit384a8d7e76ba965cf74b4f3feab22220
         'Psr\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'Overtrue\\Socialite\\' => 
         array (
