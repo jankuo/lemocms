@@ -16,17 +16,9 @@ use \think\facade\Db;
 error_reporting(0);
 
 
-if (!function_exists('getRegionById')) {
-
-    function getRegionById($id)
-    {
-        return Db::name('region')->find($id);
-    }
-}
-
 /**
  * @return mixed
- * 获取站点信息
+ * 获取用户更信息
  */
 if (!function_exists('getUserById')) {
 
