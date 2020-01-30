@@ -98,7 +98,11 @@ class StringHelper
         return $slice;
     }
 
-
+    /**
+     * @param $content
+     * @return string|string
+     * 字符串替换
+     */
     public static function htmlReplace($content){
         $content=str_replace("&lt;", "<", $content);
         $content=str_replace("&gt;", ">", $content);
@@ -271,6 +275,29 @@ class StringHelper
             $pwd[$i] = strtoupper($charid);
         }
         return $pwd;
+    }
+
+    //获取加密token
+    public function getToken($data){
+        $arr = '';
+        if(is_array($data)){
+            foreach ($data as $val) {
+                $arr.=$val;
+            }
+        }
+        if(is_object($data)){
+            $data = get_object_vars($data);
+            foreach ($data as $val) {
+                $arr.=$val;
+            }
+
+        }
+        if(is_string($data)){
+            $arr = $data;
+        }
+
+        $token = md5($arr);
+        return $token;
     }
 
 }

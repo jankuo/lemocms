@@ -9,11 +9,32 @@
 // | Author: 
 // +----------------------------------------------------------------------
 
-
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 use \think\facade\Db; 
 
 error_reporting(0);
 
+
+if (!function_exists('getRegionById')) {
+
+    function getRegionById($id)
+    {
+        return Db::name('region')->find($id);
+    }
+}
+
+/**
+ * @return mixed
+ * 获取站点信息
+ */
+if (!function_exists('getUserById')) {
+
+    function getUserById($id)
+    {
+        return Db::name('user')->find($id);
+    }
+}
 /**
  * @return mixed
  * 获取站点信息
@@ -46,26 +67,8 @@ if (!function_exists('getConfigByCode')) {
     }
 }
 /*
- * 百度编辑器内容 多个编辑器单独引入js，重复会导致出错
+ * 百度编辑器内容
  */
-if (!function_exists('build_ueditor_js')) {
-    function build_ueditor_js(){
-    /* 配置界面语言 */
-    switch (config('default_lang')) {
-        case 'zh-cn':
-            $lang = '/static/plugins/ueditor/lang/zh-cn/zh-cn.js';
-            break;
-        case 'en-us':
-            $lang =  '/static/plugins/ueditor/lang/en/en.js';
-            break;
-        default:
-            $lang = '/static/plugins/ueditor/lang/zh-cn/zh-cn.js';
-            break;
-    }
-     return $include_js = '<script type="text/javascript" charset="utf-8" src="/static/plugins/ueditor/ueditor.config.js"></script> <script type="text/javascript" charset="utf-8" src="/static/plugins/ueditor/ueditor.all.min.js""> </script><script type="text/javascript" charset="utf-8" src="' . $lang . '"></script>';
-    }
-}
-
 if (!function_exists('build_ueditor')) {
 function build_ueditor($params = array())
 {
@@ -100,24 +103,28 @@ function build_ueditor($params = array())
             $theme_config = $themes['normal'];
             break;
     }
-
-    if(!isset($params['type']) || (isset($params['type']) && $params['type']==0)  ){
-
-        $include_js = build_ueditor_js();
-    }elseif($params['type']==1 ){
-        $include_js = '';
+    /* 配置界面语言 */
+    switch (config('default_lang')) {
+        case 'zh-cn':
+            $lang = '/static/plugins/ueditor/lang/zh-cn/zh-cn.js';
+            break;
+        case 'en-us':
+            $lang =  '/static/plugins/ueditor/lang/en/en.js';
+            break;
+        default:
+            $lang = '/static/plugins/ueditor/lang/zh-cn/zh-cn.js';
+            break;
     }
-
+    $include_js = '<script type="text/javascript" charset="utf-8" src="/static/plugins/ueditor/ueditor.config.js"></script> <script type="text/javascript" charset="utf-8" src="/static/plugins/ueditor/ueditor.all.min.js""> </script><script type="text/javascript" charset="utf-8" src="' . $lang . '"></script>';
     $content = json_encode($content);
     $str = <<<EOT
 $include_js
 <script type="text/javascript">
-var ue_{$name} = UE.getEditor('{$name}',{
+var ue = UE.getEditor('{$name}',{
     toolbars:[{$theme_config}],
         });
-
     if($content){
-ue_{$name}.ready(function() {
+ue.ready(function() {
        this.setContent($content);	
 })
    }
@@ -187,5 +194,96 @@ if (!function_exists('isMobile')) {
             }
         }
         return false;
+    }
+}
+
+//是否https;
+
+if (!function_exists('is_https')) {
+    function is_https() {
+        if ( !empty($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) !== 'off') {
+            return true;
+        } elseif ( isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ) {
+            return true;
+        } elseif ( !empty($_SERVER['HTTP_FRONT_END_HTTPS']) && strtolower($_SERVER['HTTP_FRONT_END_HTTPS']) !== 'off') {
+            return true;
+        }
+        return false;
+    }
+
+
+}
+
+/**
+ * 获取http类型
+ */
+if(!function_exists('get_http_type')) {
+    function get_http_type()
+    {
+        return $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
+
+    }
+}
+/**
+ * 从前日期
+ */
+
+if (!function_exists('timeAgo')) {
+
+    function timeAgo($posttime)
+    {
+        //当前时间的时间戳
+        $nowtimes = strtotime(date('Y-m-d H:i:s'), time());
+        //之前时间参数的时间戳
+        $posttimes = strtotime($posttime);
+        //相差时间戳
+        $counttime = $nowtimes - $posttimes;
+
+        //进行时间转换
+        if ($counttime <= 10) {
+
+            return '刚刚';
+
+        } else if ($counttime > 10 && $counttime <= 30) {
+
+            return '刚才';
+
+        } else if ($counttime > 30 && $counttime <= 60) {
+
+            return '刚一会';
+
+        } else if ($counttime > 60 && $counttime <= 120) {
+
+            return '1分钟前';
+
+        } else if ($counttime > 120 && $counttime <= 180) {
+
+            return '2分钟前';
+
+        } else if ($counttime > 180 && $counttime < 3600) {
+
+            return intval(($counttime / 60)) . '分钟前';
+
+        } else if ($counttime >= 3600 && $counttime < 3600 * 24) {
+
+            return intval(($counttime / 3600)) . '小时前';
+
+        } else if ($counttime >= 3600 * 24 && $counttime < 3600 * 24 * 2) {
+
+            return '昨天';
+
+        } else if ($counttime >= 3600 * 24 * 2 && $counttime < 3600 * 24 * 3) {
+
+            return '前天';
+
+        } else if ($counttime >= 3600 * 24 * 3 && $counttime <= 3600 * 24 * 20) {
+
+            return intval(($counttime / (3600 * 24))) . '天前';
+
+        } else {
+
+            return $posttime;
+
+        }
     }
 }
