@@ -278,7 +278,7 @@ class StringHelper
     }
 
     //获取加密token
-    public function getToken($data){
+    public static function getToken($data){
         $arr = '';
         if(is_array($data)){
             foreach ($data as $val) {
