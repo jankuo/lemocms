@@ -11,8 +11,12 @@
  * Date: 2019/9/26
  */
 namespace lemo\helper;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
-class MailHelper{
+use think\facade\Db;
+class MailHelper {
 
     /**
      * 邮件发送
@@ -23,14 +27,13 @@ class MailHelper{
      * @throws phpmailerException
      */
     public static function sendEmail($to,$subject='',$content=''){
-        vendor('phpmailer.PHPMailerAutoload'); ////require_once vendor/phpmailer/PHPMailerAutoload.php';
         //判断openssl是否开启
         $openssl_funcs = get_extension_funcs('openssl');
         if(!$openssl_funcs){
-            return array('status'=>-1 , 'msg'=>'请先开启openssl扩展');
+            return array('code'=>0 , 'msg'=>'请先开启openssl扩展');
         }
         $mail = new PHPMailer;
-        $config = tpCache('smtp');
+        $config = Db::name('config')->where('type','email')->cache(3600)->column('value','code');
         $mail->CharSet  = 'UTF-8'; //设定邮件编码，默认ISO-8859-1，如果发中文此项必须设置，否则乱码
         $mail->isSMTP();
         //Enable SMTP debugging
@@ -39,21 +42,21 @@ class MailHelper{
         // 2 = client and server messages
         $mail->SMTPDebug = 0;
         //调试输出格式
-        //$mail->Debugoutput = 'html';
+        $mail->Debugoutput = 'html';
         //smtp服务器
-        $mail->Host = $config['smtp_server'];
+        $mail->Host = $config['email_host'];
         //端口 - likely to be 25, 465 or 587
-        $mail->Port = $config['smtp_port'];
+        $mail->Port = $config['email_port'];
 
-        if($mail->Port == 465) $mail->SMTPSecure = 'ssl';// 使用安全协议
+        $mail->SMTPSecure =$config['email_secure'];// 使用安全协议
         //Whether to use SMTP authentication
         $mail->SMTPAuth = true;
         //用户名
-        $mail->Username = $config['smtp_user'];
+        $mail->Username = $config['email_addr'];
         //密码
-        $mail->Password = $config['smtp_pwd'];
+        $mail->Password = $config['email_pass'];
         //Set who the message is to be sent from
-        $mail->setFrom($config['smtp_user']);
+        $mail->setFrom($config['email_addr']);
         //回复地址
         //$mail->addReplyTo('replyto@example.com', 'First Last');
         //接收邮件方
@@ -68,18 +71,22 @@ class MailHelper{
         $mail->isHTML(true);// send as HTML
         //标题
         $mail->Subject = $subject;
+        //邮箱正文
+        $mail->Body = $content;
         //HTML内容转换
-        $mail->msgHTML($content);
+//        $mail->msgHTML($content);
         //Replace the plain text body with one created manually
         //$mail->AltBody = 'This is a plain-text message body';
         //添加附件
         //$mail->addAttachment('images/phpmailer_mini.png');
         //send the message, check for errors
-        if (!$mail->send()) {
-            return array('status'=>-1 , 'msg'=>'发送失败: '.$mail->ErrorInfo);
-        } else {
-            return array('status'=>1 , 'msg'=>'发送成功');
+        try {
+            $mail->send();
+            return  array('code'=>1 , 'msg'=>'成功');
+        }catch (Exception $e){
+            return array('code'=>0 , 'msg'=>$e->getMessage());
         }
+
     }
 
 
