@@ -3,11 +3,12 @@
 ### 如果对你有帮助，请帮忙点个赞
 
 + Lemocms v1.2 本系统长期更新,欢迎star和提出和反馈问题 
-+ QQ群1：[455018252](https://jq.qq.com/?_wv=1027&k=5RWLxx7) 加群获取账号密码(群满)（看置顶公告）
 + QQ群2：[455019756](https://jq.qq.com/?_wv=1027&k=52oRd8O)  加群获取账号密码
++ QQ群1：[455018252](https://jq.qq.com/?_wv=1027&k=5RWLxx7) 加群获取账号密码(群满)（看置顶公告）
 
 + 演示地址 ： https://demo.lemocms.com/index.php/admin/login/index.html
  
++ 社区地址 ： https://bbs.lemocms.com/index.php;  社区代码获取 需要授权 
 
 
 ###[开发文档](docs/developer.md)
