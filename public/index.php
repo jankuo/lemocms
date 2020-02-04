@@ -11,12 +11,11 @@
 
 // [ 应用入口文件 ]
 namespace think;
-
 if (version_compare(PHP_VERSION, '7.1.0', '<')) {
     header("Content-type: text/html; charset=utf-8");
     die('PHP 7.1.0 及以上版本系统才可运行~ ');
 }
-if (!is_file('./install.lock'))
+if (!is_file($_SERVER['DOCUMENT_ROOT'].'/install.lock'))
 {
     header("location:/install.php");
     exit;

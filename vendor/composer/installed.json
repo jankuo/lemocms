@@ -1388,17 +1388,17 @@
     },
     {
         "name": "symfony/cache",
-        "version": "v4.4.3",
-        "version_normalized": "4.4.3.0",
+        "version": "v4.4.4",
+        "version_normalized": "4.4.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/cache.git",
-            "reference": "31e57957c43da2351299978aa52c44a53a89ef73"
+            "reference": "0198a01c8d918d6d717f96dfdcba9582bc5f6468"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/cache/zipball/31e57957c43da2351299978aa52c44a53a89ef73",
-            "reference": "31e57957c43da2351299978aa52c44a53a89ef73",
+            "url": "https://api.github.com/repos/symfony/cache/zipball/0198a01c8d918d6d717f96dfdcba9582bc5f6468",
+            "reference": "0198a01c8d918d6d717f96dfdcba9582bc5f6468",
             "shasum": "",
             "mirrors": [
                 {
@@ -1436,7 +1436,7 @@
             "symfony/dependency-injection": "^3.4|^4.1|^5.0",
             "symfony/var-dumper": "^4.4|^5.0"
         },
-        "time": "2020-01-09T21:41:08+00:00",
+        "time": "2020-01-29T14:35:06+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1541,8 +1541,8 @@
     },
     {
         "name": "symfony/event-dispatcher",
-        "version": "v4.4.3",
-        "version_normalized": "4.4.3.0",
+        "version": "v4.4.4",
+        "version_normalized": "4.4.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/event-dispatcher.git",
@@ -1685,17 +1685,17 @@
     },
     {
         "name": "symfony/http-foundation",
-        "version": "v4.4.3",
-        "version_normalized": "4.4.3.0",
+        "version": "v4.4.4",
+        "version_normalized": "4.4.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/http-foundation.git",
-            "reference": "c33998709f3fe9b8e27e0277535b07fbf6fde37a"
+            "reference": "491a20dfa87e0b3990170593bc2de0bb34d828a5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/http-foundation/zipball/c33998709f3fe9b8e27e0277535b07fbf6fde37a",
-            "reference": "c33998709f3fe9b8e27e0277535b07fbf6fde37a",
+            "url": "https://api.github.com/repos/symfony/http-foundation/zipball/491a20dfa87e0b3990170593bc2de0bb34d828a5",
+            "reference": "491a20dfa87e0b3990170593bc2de0bb34d828a5",
             "shasum": "",
             "mirrors": [
                 {
@@ -1713,7 +1713,7 @@
             "predis/predis": "~1.0",
             "symfony/expression-language": "^3.4|^4.0|^5.0"
         },
-        "time": "2020-01-04T13:00:46+00:00",
+        "time": "2020-01-31T09:11:17+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1748,8 +1748,8 @@
     },
     {
         "name": "symfony/mime",
-        "version": "v5.0.3",
-        "version_normalized": "5.0.3.0",
+        "version": "v5.0.4",
+        "version_normalized": "5.0.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/mime.git",
@@ -2084,8 +2084,8 @@
     },
     {
         "name": "symfony/process",
-        "version": "v4.4.3",
-        "version_normalized": "4.4.3.0",
+        "version": "v4.4.4",
+        "version_normalized": "4.4.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/process.git",
@@ -2280,8 +2280,8 @@
     },
     {
         "name": "symfony/translation",
-        "version": "v5.0.3",
-        "version_normalized": "5.0.3.0",
+        "version": "v5.0.4",
+        "version_normalized": "5.0.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/translation.git",
@@ -2430,17 +2430,17 @@
     },
     {
         "name": "symfony/var-dumper",
-        "version": "v4.4.3",
-        "version_normalized": "4.4.3.0",
+        "version": "v4.4.4",
+        "version_normalized": "4.4.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/var-dumper.git",
-            "reference": "7cfa470bc3b1887a7b2a47c0a702a84ad614fa92"
+            "reference": "46b53fd714568af343953c039ff47b67ce8af8d6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/var-dumper/zipball/7cfa470bc3b1887a7b2a47c0a702a84ad614fa92",
-            "reference": "7cfa470bc3b1887a7b2a47c0a702a84ad614fa92",
+            "url": "https://api.github.com/repos/symfony/var-dumper/zipball/46b53fd714568af343953c039ff47b67ce8af8d6",
+            "reference": "46b53fd714568af343953c039ff47b67ce8af8d6",
             "shasum": "",
             "mirrors": [
                 {
@@ -2469,7 +2469,7 @@
             "ext-intl": "To show region name in time zone dump",
             "symfony/console": "To use the ServerDumpCommand and/or the bin/var-dump-server script"
         },
-        "time": "2020-01-04T13:00:46+00:00",
+        "time": "2020-01-25T12:44:29+00:00",
         "bin": [
             "Resources/bin/var-dump-server"
         ],
@@ -2514,8 +2514,8 @@
     },
     {
         "name": "symfony/var-exporter",
-        "version": "v5.0.3",
-        "version_normalized": "5.0.3.0",
+        "version": "v5.0.4",
+        "version_normalized": "5.0.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/var-exporter.git",
@@ -3162,17 +3162,17 @@
     },
     {
         "name": "yuege/think-addons",
-        "version": "v0.31",
-        "version_normalized": "0.31.0.0",
+        "version": "v0.4",
+        "version_normalized": "0.4.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/yue909/think-addons.git",
-            "reference": "8dcc386d9224dc25d3eb918549ccba36a5bb9e0c"
+            "reference": "de01fa32ef1123c8ea0111bc3e4115a5556d219d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yue909/think-addons/zipball/8dcc386d9224dc25d3eb918549ccba36a5bb9e0c",
-            "reference": "8dcc386d9224dc25d3eb918549ccba36a5bb9e0c",
+            "url": "https://api.github.com/repos/yue909/think-addons/zipball/de01fa32ef1123c8ea0111bc3e4115a5556d219d",
+            "reference": "de01fa32ef1123c8ea0111bc3e4115a5556d219d",
             "shasum": "",
             "mirrors": [
                 {
@@ -3187,7 +3187,7 @@
             "topthink/think-helper": "^3.0.0",
             "topthink/think-view": "^1.0"
         },
-        "time": "2019-11-27T00:47:02+00:00",
+        "time": "2020-02-04T06:13:01+00:00",
         "type": "library",
         "extra": {
             "think": {

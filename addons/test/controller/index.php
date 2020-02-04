@@ -11,11 +11,15 @@ class Index extends Base
     }
     public function link()
     {
-        echo 'hello link1';
+        echo 'hello link11';
+
+        hook('testhook', ['id'=>1]);
+
+
     }
 
     public function add(){
 
-        return View::fetch();
+        return view();
     }
 }

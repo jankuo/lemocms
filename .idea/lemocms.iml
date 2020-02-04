@@ -19,6 +19,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/overtrue/socialite" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/overtrue/wechat" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpmailer/phpmailer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/pimple/pimple" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
