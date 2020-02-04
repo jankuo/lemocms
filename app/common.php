@@ -27,6 +27,14 @@ if (!function_exists('getUserById')) {
         return Db::name('user')->find($id);
     }
 }
+
+if (!function_exists('getRegionById')) {
+
+    function getRegionById($id)
+    {
+        return Db::name('region')->find($id);
+    }
+}
 /**
  * @return mixed
  * 获取站点信息
