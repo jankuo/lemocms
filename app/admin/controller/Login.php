@@ -40,14 +40,14 @@ class Login extends Base {
                  redirect('index/index');
             }
 
-            return View::fetch();
+            return view();
 
         } else {
 
-            $username = Request::post('username', '', 'lemo\helper\StringHelper::filterWords');
-            $password = Request::post('password', '', 'lemo\helper\StringHelper::filterWords');
-            $captcha = Request::post('captcha', '', 'lemo\helper\StringHelper::filterWords');
-            $rememberMe = Request::post('rememberMe');
+            $username = $this->request->post('username', '', 'lemo\helper\StringHelper::filterWords');
+            $password = $this->request->post('password', '', 'lemo\helper\StringHelper::filterWords');
+            $captcha = $this->request->post('captcha', '', 'lemo\helper\StringHelper::filterWords');
+            $rememberMe = $this->request->post('rememberMe');
             // 用户信息验证
 
             try {
@@ -58,7 +58,7 @@ class Login extends Base {
             } catch (\Exception $e) {
                  $this->error(lang('login fail')."：{$e->getMessage()}");
             }
-            $this->success(lang('login success').'...', '/index.php/admin/index');
+            $this->success(lang('login success').'...', url('@admin'));
         }
     }
 

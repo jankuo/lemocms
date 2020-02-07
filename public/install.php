@@ -108,7 +108,7 @@ if ($_GET['c'] = 'start' && isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUE
     if (!$sql) {
         throw new Exception("无法读取/public/install/lemocms.sql文件，请检查是否有读权限");
     }
-//替换表前缀
+    //替换表前缀
     $sql = str_replace("`lm_", "`{$mysqlPreFix}", $sql);
     try {
         //链接数据库
@@ -116,25 +116,25 @@ if ($_GET['c'] = 'start' && isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUE
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"
         ));
-// 连接数据库
+        // 连接数据库
         $link = @new mysqli("{$host}:{$port}", $mysqlUserName, $mysqlPassword);
-// 获取错误信息
+        // 获取错误信息
         $error = $link->connect_error;
         if (!is_null($error)) {
-// 转义防止和alert中的引号冲突
+        // 转义防止和alert中的引号冲突
             $error = addslashes($error);
             die("数据库链接失败:$error");
         }
-// 设置字符集
+        // 设置字符集
         $link->query("SET NAMES 'utf8mb4'");
 
-//检测是否支持innodb存储引擎
+        //检测是否支持innodb存储引擎
         $pdoStatement = $pdo->query("SHOW VARIABLES LIKE 'innodb_version'");
         $result = $pdoStatement->fetch();
         if (!$result) {
             throw new Exception("当前数据库不支持innodb存储引擎，请开启后再重新尝试安装");
         }
-// 创建数据库并选中
+        // 创建数据库并选中
         if (!$link->select_db($mysqlDatabase)) {
             $create_sql = 'CREATE DATABASE IF NOT EXISTS ' . $mysqlDatabase . ' DEFAULT CHARACTER SET utf8mb4;';
             $link->query($create_sql) or die('创建数据库失败');
@@ -142,8 +142,8 @@ if ($_GET['c'] = 'start' && isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUE
         }
         $pdo->query("USE `{$mysqlDatabase}`");
         $pdo->exec($sql);
-//        //插入数据库
-//        $link->multi_query($sql);
+    //        //插入数据库
+    //        $link->multi_query($sql);
         $databaseConfig= @file_get_contents($databaseConfigFile);
         //替换数据库相关配置
         $config = [
@@ -204,7 +204,7 @@ if ($_GET['c'] = 'start' && isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUE
         if (!$putConfig) {
             die('安装失败、请确定database.php是否有写入权限！:'.$error);
         }
-        $result = @file_put_contents($lockFile, 1);
+        $result = @file_put_contents($lockFile, 'ok');
         if (!$result) {
             die("安装失败、请确定install.lock是否有写入权限！:$error");
         }

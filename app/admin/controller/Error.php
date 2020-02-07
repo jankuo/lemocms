@@ -20,6 +20,6 @@ class Error extends Base {
 
     public function __call($method, $args)
     {
-        return View::fetch('error/error');
+        return view('error/error');
     }
 }

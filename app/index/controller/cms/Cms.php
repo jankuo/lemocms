@@ -1,4 +1,5 @@
 <?php
+
 /**
  * lemocms
  * ============================================================================
@@ -8,28 +9,23 @@
  * 采用最新Thinkphp6实现
  * ============================================================================
  * Author: yuege
- * Date: 2019/9/2
+ * Date: 2019/8/2
  */
-namespace app\common\model;
 
-class  User extends Common{
+namespace app\index\controller\cms;
 
-    public function __construct(array $data = [])
+
+use think\facade\View;
+
+class Cms extends \app\BaseController
+{
+
+    public function index()
     {
-        parent::__construct($data);
-    }
+        var_dump($this->request->controller());
+        var_dump($this->request->action());
 
-    public function getProvince(){
-
-        $this->hasOne('Region','province','id');
-    }
-    public function getCity(){
-
-        $this->hasOne('Region','city','id');
-    }
-    public function getDistrict(){
-
-        $this->hasOne('Region','district','id');
+//        return View::fetch();
     }
 
 }

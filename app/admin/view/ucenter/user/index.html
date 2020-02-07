@@ -1,0 +1,179 @@
+{include file="common/header"/}
+<div class="LM-container">
+    <div class="LM-main">
+            <fieldset class="layui-elem-field layui-field-title">
+                <legend>{:lang('user')}{:lang('list')}</legend>
+                <blockquote class="layui-elem-quote">
+                    <div class="LM-table">
+                        <div class="layui-inline">
+                            <input type="text" id='keys' name="keys" lay-verify="required"
+                                   placeholder="{:lang('pleaseEnter')}" autocomplete="off" class="layui-input">
+                        </div>
+                        <a  href="javascript:;" class="layui-btn data-add-btn layui-btn-sm" lay-submit="" lay-filter="add" id="search">
+                            {:lang('search')}
+                        </a>
+                        <a href="{:url('add')}" class="layui-btn layui-btn-sm layui-btn-warm">{:lang('add')}{:lang('user')}</a>
+                        <a href="javascript:;"  class="layui-btn layui-btn-sm layui-btn-danger" id="delAll">{:lang('delete checked')}</a>
+
+                    </div>
+
+                </blockquote>
+
+            </fieldset>
+
+            <table class="layui-table" id="list" lay-filter="list"></table>
+    </div>
+</div>
+
+
+<script type="text/html" id="action">
+    <a href="{:url('edit')}?id={{d.id}}" class="layui-btn  layui-btn-xs" lay-event="edit">{:lang('edit')}</a>
+    <a  class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">{:lang('del')}</a>
+</script>
+<script type="text/html" id="status">
+    <input type="checkbox" name="status" value="{{d.id}}" lay-skin="switch" lay-text="开启|关闭" lay-filter="status" {{ d.status == 1 ? 'checked' : '' }}>
+</script>
+<script type="text/html" id="sex">
+    {{# if(d.sex==1){ }}
+    男
+    {{# }else if( d.sex==2){ }}
+    女
+    {{# }else{ }}
+        保密
+    {{# } }}
+</script>
+<script type="text/html" id="avatar">
+    {{d.avatar}}<img src="/static/admin/images/image.gif" onmouseover="layer.tips('<img src={{d.avatar}}>',this,{tips: [1, '#fff']});" onmouseout="layer.closeAll();">
+</script>
+
+<script type="text/html" id="last_login">
+    {{layui.util.toDateString(d.last_login*1000, 'yyyy-MM-dd HH:mm:ss')}}
+</script>
+<script type="text/html" id="create_time">
+    {{layui.util.toDateString(d.create_time*1000, 'yyyy-MM-dd HH:mm:ss')}}
+</script>
+<!--<script type="text/html" id="update_time">-->
+<!--    {{layui.util.toDateString(d.update_time*1000, 'yyyy-MM-dd HH:mm:ss')}}-->
+<!--</script>-->
+
+<script type="text/html" id="toolbar">
+    <div class="layui-btn-container">
+<!--        <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>-->
+<!--        <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>-->
+<!--        <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>-->
+    </div>
+</script>
+{include file="common/footer"/}
+<script>
+    layui.use(['form', 'table'], function () {
+        var $ = layui.jquery,
+            form = layui.form,
+            table = layui.table;
+
+        var tableIn = table.render({
+            elem: '#list',
+            url: '{:url("index")}',
+            method: 'post',
+            title: '用户数据表',
+            toolbar: '#toolbar', //开启头部工具栏，并为其绑定左侧模板
+
+            defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
+                title: '提示'
+                ,layEvent: 'LAYTABLE_TIPS'
+                ,icon: 'layui-icon-tips' }],
+            cols: [[
+                {checkbox: true, fixed: true},
+                {field: 'id', title: 'ID', width: 80, fixed: true, sort: true},
+                {field: 'username', title: '名字', width: 120,},
+                {field: 'email', title: '邮箱', width: 120, },
+                {field: 'mobile', title: '手机', width: 120, },
+                {field: 'sex', title: '性别', width: 120, templet:"#sex"},
+                {field: 'level_name', title: '会员等级', width: 120, },
+                {field: 'avatar', title: '头像', width: 120,templet:"#avatar" },
+                // {field: 'store_id', title: '店铺id', width: 120,sort: true},
+                {field: 'status', title: '状态', width: 180, templet:'#status'},
+                {field: 'create_time', title: '注册时间', width: 180,templet:'#create_time'},
+                // {field: 'update_time', title: '更新时间', width: 180,templet:'#update_time'},
+                {field: 'last_login', title: '最后登录时间', width: 180,templet:'#last_login'},
+
+                {title:'操作',width:150, toolbar: '#action',align:"center"},
+
+            ]],
+            limits: [10, 15, 20, 25, 50, 100],
+            limit: 15,
+            page: true
+        });
+
+
+
+        table.on('tool(list)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'del'){
+                layer.confirm('{:lang("Are you sure you want to delete it")}', function(index){
+                    loading =layer.load(1, {shade: [0.1,'#fff']});
+                    $.post("{:url('delete')}",{id:data.id},function(res){
+                        layer.close(loading);
+                        layer.close(index);
+                        if(res.code>0){
+                            layer.msg(res.msg,{time:1000,icon:1});
+                            obj.del();
+                        }else{
+                            layer.msg(res.msg,{time:1000,icon:2});
+                        }
+                    });
+                });
+            }
+
+        });
+
+        form.on('switch(status)', function(data){
+                loading =layer.load(1, {shade: [0.1,'#fff']});
+                $.post("{:url('state')}",{id:data.value},function(res){
+                    layer.close(loading);
+                    if(res.code>0){
+                        layer.msg(res.msg,{time:1000,icon:1});
+                    }else{
+                        layer.msg(res.msg,{time:1000,icon:2});
+                    }
+                });
+        });
+
+        $('#search').click(function () {
+            var $keys = $('#keys').val();
+            if(!$keys){
+                return layer.msg('请输入关键词');
+            }
+
+            tableIn.reload({ page: {page: 1},where: {keys: $keys}});
+
+        })
+        $('#delAll').click(function(){
+            layer.confirm("{:lang('Are you sure you want to delete it')}", {icon: 3}, function(index) {
+                layer.close(index);
+                var checkStatus = table.checkStatus('list'); //test即为参数id设定的值
+                var ids = [];
+                console.log(checkStatus.data)
+                $(checkStatus.data).each(function (index, item) {
+                    ids.push(item.id);
+                });
+                if(ids==''){
+                    layer.msg("{:lang('please choose data')}", {time: 1000, icon: 2});
+                    return false;
+                }
+                var loading = layer.load(1, {shade: [0.1, '#fff']});
+                $.post("{:url('delAll')}", {ids: ids}, function (res) {
+                    layer.close(loading);
+                    if (res.code > 0) {
+                        layer.msg(res.msg, {time: 1000, icon: 1});
+                        tableIn.reload();
+                    } else {
+                        layer.msg(res.msg, {time: 1000, icon: 2});
+                    }
+                });
+            });
+        })
+
+    });
+
+
+</script>

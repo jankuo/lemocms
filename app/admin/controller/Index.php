@@ -17,7 +17,7 @@ use think\facade\View;
 use think\facade\Db;
 use think\facade\Cache;
 use think\facade\Session;
-
+use app\common\lib\Menu;
 class Index extends Backend{
 
     public function initialize()
@@ -47,7 +47,7 @@ class Index extends Backend{
         $home = ["href"=>$href,"icon"=>"fa fa-home","title"=>"首页"];
         $menusinit =['menus'=>$menus,'home'=>$home];
         View::assign('menus',json_encode($menusinit));
-        return View::fetch();
+        return view();
 
     }
 
@@ -78,7 +78,8 @@ class Index extends Backend{
         }
 
         View::assign('config', $config);
-        return View::fetch();
+
+        return view();
     }
 
 

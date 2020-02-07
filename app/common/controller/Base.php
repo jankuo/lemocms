@@ -11,7 +11,6 @@
  * Date: 2019/9/21
  */
 
-
 namespace app\common\controller;
 
 use app\BaseController;
