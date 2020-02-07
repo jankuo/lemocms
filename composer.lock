@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c2831bd9ea444c73a024c454ce2d130",
+    "content-hash": "317903192eeaf01022166f1ed007be06",
     "packages": [
         {
             "name": "easywechat-composer/easywechat-composer",
@@ -2989,16 +2989,16 @@
         },
         {
             "name": "yuege/think-addons",
-            "version": "v0.88",
+            "version": "v0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yue909/think-addons.git",
-                "reference": "8fb44bf5da836fa46e545addf34d9ae9cfe6e54a"
+                "reference": "be53a1e3a1f96977f3e393fdd5e5a7e1f1a5b6fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yue909/think-addons/zipball/8fb44bf5da836fa46e545addf34d9ae9cfe6e54a",
-                "reference": "8fb44bf5da836fa46e545addf34d9ae9cfe6e54a",
+                "url": "https://api.github.com/repos/yue909/think-addons/zipball/be53a1e3a1f96977f3e393fdd5e5a7e1f1a5b6fa",
+                "reference": "be53a1e3a1f96977f3e393fdd5e5a7e1f1a5b6fa",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3039,7 +3039,7 @@
                     "email": "994927909@qq.com"
                 }
             ],
-            "time": "2020-02-06T04:10:56+00:00"
+            "time": "2020-02-06T09:10:52+00:00"
         }
     ],
     "packages-dev": [

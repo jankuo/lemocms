@@ -30,7 +30,7 @@
         "topthink/think-throttle": "^1.0",
         "overtrue/wechat": "^4.2",
         "ramsey/uuid": "^3.8",
-        "yuege/think-addons": "^0.88",
+        "yuege/think-addons": "^0.9",
         "phpmailer/phpmailer": "^6.1"
 
 
