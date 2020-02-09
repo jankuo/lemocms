@@ -44,13 +44,14 @@ class Backend extends \app\common\controller\Base
     public function authCheck(){
 
         $allow = [
-            'index/index',
-            'index/main',
-            'index/cleardata',
-            'index/logout',
-            'login/password',
+            'admin/index/index',
+            'admin/index/main',
+            'admin/index/cleardata',
+            'admin/index/logout',
+            'admin/login/password',
         ];
-        $route = strtolower(Request::controller()).'/'.strtolower(Request::action());
+
+        $route = app('http')->getName().'/'.strtolower(Request::controller()).'/'.strtolower(Request::action());
         if(session('admin.id')!==1){
             $this->hrefId = Db::name('auth_rule')->where('href',$route)->value('id');
             //当前管理员权限
@@ -128,6 +129,7 @@ class Backend extends \app\common\controller\Base
 
         }
     }
+
     public function base(){
         if (!Request::isPost()){
             return View::fetch('admin/password');

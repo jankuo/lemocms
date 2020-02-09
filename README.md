@@ -15,7 +15,7 @@
 + QQ群2：[455019756](https://jq.qq.com/?_wv=1027&k=52oRd8O) 
 + QQ群1：[455018252](https://jq.qq.com/?_wv=1027&k=5RWLxx7) (群已满)
 
-+ 演示地址 ： https://demo.lemocms.com/index.php/admin/login/index.html  demo 123456
++ 演示地址 ： https://demo.lemocms.com/index.php/admin/login/index.html  账号密码 demo 123456 禁止修改数据
  
 + 社区地址 ： https://bbs.lemocms.com/index.php;  社区代码获取 需要授权 
 
