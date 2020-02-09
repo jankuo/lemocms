@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "317903192eeaf01022166f1ed007be06",
+    "content-hash": "3de68ee9be9457ca8fe5ebb2eef48709",
     "packages": [
         {
             "name": "easywechat-composer/easywechat-composer",
@@ -638,16 +638,16 @@
         },
         {
             "name": "overtrue/socialite",
-            "version": "2.0.13",
+            "version": "2.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/socialite.git",
-                "reference": "abd1f54da0434f4824d9873dd86dbcf26fdc0c92"
+                "reference": "a18f195b0d370350752187e78d33c835a41db703"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/overtrue/socialite/zipball/abd1f54da0434f4824d9873dd86dbcf26fdc0c92",
-                "reference": "abd1f54da0434f4824d9873dd86dbcf26fdc0c92",
+                "url": "https://api.github.com/repos/overtrue/socialite/zipball/a18f195b0d370350752187e78d33c835a41db703",
+                "reference": "a18f195b0d370350752187e78d33c835a41db703",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -657,6 +657,7 @@
                 ]
             },
             "require": {
+                "ext-json": "*",
                 "guzzlehttp/guzzle": "~5.0|~6.0",
                 "php": ">=7.0",
                 "symfony/http-foundation": "^2.7|^3.0|^4.0"
@@ -693,7 +694,7 @@
                 "wechat",
                 "weibo"
             ],
-            "time": "2020-01-17T04:27:42+00:00"
+            "time": "2020-02-07T05:12:10+00:00"
         },
         {
             "name": "overtrue/wechat",
@@ -2989,16 +2990,16 @@
         },
         {
             "name": "yuege/think-addons",
-            "version": "v0.9",
+            "version": "v1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yue909/think-addons.git",
-                "reference": "be53a1e3a1f96977f3e393fdd5e5a7e1f1a5b6fa"
+                "reference": "154502a423fa46e35fad157372c478eb6ab557cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yue909/think-addons/zipball/be53a1e3a1f96977f3e393fdd5e5a7e1f1a5b6fa",
-                "reference": "be53a1e3a1f96977f3e393fdd5e5a7e1f1a5b6fa",
+                "url": "https://api.github.com/repos/yue909/think-addons/zipball/154502a423fa46e35fad157372c478eb6ab557cf",
+                "reference": "154502a423fa46e35fad157372c478eb6ab557cf",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3039,7 +3040,7 @@
                     "email": "994927909@qq.com"
                 }
             ],
-            "time": "2020-02-06T09:10:52+00:00"
+            "time": "2020-02-09T06:08:31+00:00"
         }
     ],
     "packages-dev": [

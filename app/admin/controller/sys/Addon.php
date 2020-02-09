@@ -122,8 +122,9 @@ class Addon extends Backend
                 }
             }
         }
-        self::updateAddonsInfo($name,1);
+
         try {
+            self::updateAddonsInfo($name,1);
             self::updateAdddonsConfig();
 
         }catch (\Exception $e){
@@ -303,7 +304,7 @@ class Addon extends Backend
      */
     protected static function getDestAssetsDir($name)
     {
-        $assetsDir = app()->getRootPath() . str_replace("/", DIRECTORY_SEPARATOR, "public/static/{$name}/");
+        $assetsDir = app()->getRootPath() . str_replace("/", DIRECTORY_SEPARATOR, "public/static/addons/{$name}");
         if (!is_dir($assetsDir)) {
             mkdir($assetsDir, 0755, true);
         }

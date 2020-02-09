@@ -86,7 +86,7 @@
             if(obj.event === 'del'){
                 layer.confirm('{:lang("Are you sure you want to delete it")}', function(index){
                     loading =layer.load(1, {shade: [0.1,'#fff']});
-                    $.post("{:url('replayDel')}",{id:data.id},function(res){
+                    $.post("{:url('replyDel')}",{id:data.id},function(res){
                         layer.close(loading);
                         layer.close(index);
                         if(res.code>0){

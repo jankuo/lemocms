@@ -197,6 +197,7 @@ class Wechat extends Backend {
         return view();
 
     }
+    //获取微信账号
     public function getWxAccount(){
 
         $info =  WxAccount::cache(3600)->order('status desc')->select();
@@ -204,7 +205,7 @@ class Wechat extends Backend {
         return $info;
 
     }
-
+    //更改app
     public function changeApp(){
         $appid = Request::post('app_id');
         $isAPP = WxAccount::cache(3600)->where('app_id',$appid)->value('status');
@@ -1181,7 +1182,7 @@ class Wechat extends Backend {
         return view('reply_add');
 
     }
-    public function replayDel(){
+    public function replyDel(){
 
         $id = Request::post('id');
         WxReply::destroy($id);
@@ -1189,9 +1190,6 @@ class Wechat extends Backend {
 
     }
 
-    /**
-     ************************二维码管理***************************
-     */
 
 
     /**
