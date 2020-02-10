@@ -68,6 +68,7 @@ class ComposerStaticInit384a8d7e76ba965cf74b4f3feab22220
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
+            'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
             'PHPMailer\\PHPMailer\\' => 20,
@@ -218,6 +219,10 @@ class ComposerStaticInit384a8d7e76ba965cf74b4f3feab22220
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Psr\\EventDispatcher\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/event-dispatcher/src',
         ),
         'Psr\\Container\\' => 
         array (
