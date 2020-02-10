@@ -21,7 +21,7 @@ class BaseModel extends Model
 
     }
 
-    public static function getList($where = array(), $pageSize, $order = ['sort', 'id' => 'desc'])
+    public static function getList($where = array(), $pageSize=10, $order = ['sort', 'id' => 'desc'])
     {
         return self::where($where)->where($order)->select();
 
