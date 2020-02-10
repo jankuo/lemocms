@@ -89,7 +89,8 @@ class System extends Backend {
                 $this->error(lang('field already exist'));
 
             }else{
-                if(ConfigModel::create($data)){
+                $model = new ConfigModel();
+                if($model->add($data)){
                     $this->success(lang('edit success'));
                 }else{
                     $this->error(lang('edit fail'));
@@ -113,7 +114,8 @@ class System extends Backend {
         if(Request::isPost()){
             $info = ConfigModel::find($id);
             $data = $this->request->post();
-            if($info->update($data)){
+            $model = new ConfigModel();
+            if($model::edit($data)){
                 $this->success(lang('edit success'));
             }else{
                 $this->error(lang('edit fail'));
@@ -147,14 +149,13 @@ class System extends Backend {
 //    配置状态
     public function configState(){
         $id = $this->request->post('id');
+        $data = $this->request->post();
 
         if (empty($id)) {
             $this->error('data not exist');
         }
-        $info = ConfigModel::find($id);
-        $status = $info['status'] == 1 ? 0 : 1;
-        $info->status = $status;
-        $info->save();
+        $model = new ConfigModel();
+        $model->state($data);
         $this->success(lang('edit success'));
     }
 
@@ -180,7 +181,8 @@ class System extends Backend {
                 $this->error(lang('field already exist'));
 
             }else {
-                if (ConfigGroupModel::create($data)) {
+                $model = new ConfigGroupModel();
+                if ($model->add($data)) {
                     $this->success(lang('edit success'));
                 } else {
                     $this->error(lang('edit fail'));
@@ -205,8 +207,8 @@ class System extends Backend {
             $this->error(lang('group has config').lang('delete fail'));
 
         }
-        if( ConfigGroupModel::destroy($id)){
-
+        $model = new ConfigGroupModel();
+        if ($model->del($id)) {
             $this->success(lang('delete success'));
         }else{
             $this->error(lang('delete fail'));

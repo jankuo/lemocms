@@ -106,7 +106,6 @@ class Database extends Backend
         $time = input('post.time');
         if($this->db->delFile($time)){
             $this->success(lang('delete success')) ;
-
         }else{
             $this->error(lang('delete fail')) ;
 

@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS `__PREFIX__wx_account`;
 CREATE TABLE IF NOT EXISTS  `__PREFIX__wx_account` (
    `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '表id',
   `store_id` int(11) NOT NULL DEFAULT '1' COMMENT 'uid',
@@ -36,7 +37,7 @@ CREATE TABLE IF NOT EXISTS  `__PREFIX__wx_account` (
 INSERT INTO `__PREFIX__wx_account` (`id`, `store_id`, `wxname`, `aeskey`, `encode`, `app_id`, `app_secret`, `origin_id`, `weixin`, `logo`, `token`, `w_token`, `related`, `create_time`, `update_time`, `tplcontentid`, `share_ticket`, `share_dated`, `authorizer_access_token`, `authorizer_refresh_token`, `authorizer_expires`, `type`, `web_access_token`, `web_refresh_token`, `web_expires`, `qr`, `menu_config`, `status`) VALUES
 (1, 1, 'lemocms', 'adsfda', 0, 'wxecd04cbbfc06a972', 'ec83a45f2a561a90cf5f63e7476bae36', 'gh_8b042cc4ccf9', 'lemomcms', '/storage/uploads/20190905/dfdcecfa905e2858ae45b87542c0c5ab.png', 'weixin', 'weixins', 'https://demo.lemocms.com/wechat/wechatApi/related?store_id=1', 1490691329, 1580223682, '', '', '', '', '', '', 4, '9_ztdL3qhqHHAgFTIANDMStPvneUubYL0sANeFHEYDXu_qzElDwaQeSNwwhi1EfpDXzFwOeP05e0wMRpsJvQVVjnmhiWtZIqOwj4RwIdhXQnB1WPP0yw4pv8x2c_NA2ykcPKD-V6aTa3mFDKO9YJSaAAALWF', '', 1524884051, '/storage/uploads/20190905/2790a6a9cbb9ca1bcdfaca9b25d0316a.jpg', NULL, 1);
 
-
+DROP TABLE IF EXISTS `__PREFIX__wx_fans`;
 CREATE TABLE IF NOT EXISTS `__PREFIX__wx_fans` (
   `fans_id` int(11) NOT NULL AUTO_INCREMENT COMMENT  '粉丝ID',
   `wx_aid` int(11) DEFAULT NULL COMMENT '微信账户id',
@@ -80,6 +81,7 @@ INSERT INTO `__PREFIX__wx_fans` (`fans_id`, `wx_aid`, `uid`, `source_uid`, `stor
 (2, 32, 0, 0, 1, '少年智力开发报订阅', '\"\\u5c11\\u5e74\\u667a\\u529b\\u5f00\\u53d1\\u62a5\\u8ba2\\u9605\"', 'http://thirdwx.qlogo.cn/mmopen/7jOTIafB9k4w5h73kjDCf0o0IXjb7tNuJHk45lY9ZopsqS4rsQ5UxkAgvOqe49UESQyiaHp0jG7u3p1WhiaHpm7g/132', 1, 'zh_CN', '中国', '河北', '石家庄', '', 'oBSasxDCwYJ4QlFRgSbi-SZktfZs', '', 2, 1, 'ADD_SCENE_QR_CODE', '', '其他', '[2]', 1570784081, 0, '0', '', 1, 1572230913, 1571531137);
 
 
+DROP TABLE IF EXISTS `__PREFIX__wx_material`;
 
 CREATE TABLE IF NOT EXISTS `__PREFIX__wx_material` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '微信公众号素材',
@@ -100,6 +102,7 @@ CREATE TABLE IF NOT EXISTS `__PREFIX__wx_material` (
 
 
 
+DROP TABLE IF EXISTS `__PREFIX__wx_material_info`;
 
 CREATE TABLE IF NOT EXISTS `__PREFIX__wx_material_info` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id',
@@ -124,6 +127,7 @@ CREATE TABLE IF NOT EXISTS `__PREFIX__wx_material_info` (
 ) ENGINE=InnoDB   AUTO_INCREMENT=1  DEFAULT CHARSET=utf8mb4;
 
 --
+DROP TABLE IF EXISTS `__PREFIX__wx_menu`;
 
 CREATE TABLE IF NOT EXISTS `__PREFIX__wx_menu` (
 
@@ -153,8 +157,7 @@ INSERT INTO `__PREFIX__wx_menu` (`id`, `store_id`, `wx_aid`, `menu_name`, `ico`,
 (4, 0, NULL, '百度', '', 3, 1, 0, 'http://bbs.lemocms.com/', 0, 1, 1542783759, 0);
 
 
-
-
+DROP TABLE IF EXISTS `__PREFIX__wx_msg_history`;
 CREATE TABLE IF NOT EXISTS `__PREFIX__wx_msg_history` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `store_id` int(10) UNSIGNED DEFAULT '1' COMMENT '商户id',
@@ -175,6 +178,7 @@ CREATE TABLE IF NOT EXISTS `__PREFIX__wx_msg_history` (
 
 
 
+DROP TABLE IF EXISTS `__PREFIX__wx_qrcode`;
 
 CREATE TABLE IF NOT EXISTS `__PREFIX__wx_qrcode` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -194,6 +198,7 @@ CREATE TABLE IF NOT EXISTS `__PREFIX__wx_qrcode` (
 )  ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COMMENT='微信二维码';
 
 
+DROP TABLE IF EXISTS `__PREFIX__wx_reply`;
 
 CREATE TABLE IF NOT EXISTS `__PREFIX__wx_reply` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '微信关键词回复表',
@@ -212,6 +217,7 @@ CREATE TABLE IF NOT EXISTS `__PREFIX__wx_reply` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COMMENT='微信回复表';
 
 
+DROP TABLE IF EXISTS `__PREFIX__wx_tag`;
 
 CREATE TABLE IF NOT EXISTS `__PREFIX__wx_tag` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -225,6 +231,8 @@ CREATE TABLE IF NOT EXISTS `__PREFIX__wx_tag` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB   AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COMMENT='微信用户标签表';
 
+
+DROP TABLE IF EXISTS `__PREFIX__wx_type`;
 
 CREATE TABLE IF NOT EXISTS  `__PREFIX__wx_type` (
   `type_id` tinyint(5) NOT NULL,

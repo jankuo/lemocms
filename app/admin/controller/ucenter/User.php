@@ -48,13 +48,13 @@ class User extends Backend{
         if (Request::isPost()) {
             $data = $this->request->post();
             try{
-                $this->validate($data, 'ucenter/User');
+                $this->validate($data, 'User');
             }catch (\Exception $e){
                 $this->error($e->getMessage());
             }
 
-
-            $res = UserModel::create($data);
+            $model = new UserModel();
+            $res =$model->add($data);
             if ($res) {
                 $this->success(lang('add success'),url('index'));
             } else {
@@ -80,7 +80,8 @@ class User extends Backend{
             } catch (\Exception $e) {
                 $this->error($e->getMessage());
             }
-            $res = UserModel::update($data);
+            $model = new UserModel();
+            $res =$model->edit($data);
             if ($res) {
                 $this->success(lang('edit success'), url('index'));
             } else {
@@ -99,12 +100,11 @@ class User extends Backend{
 
     }
     public function state(){
-
+        $data = $this->request->post();
         $id = $this->request->post('id');
         if($id){
-            $info = UserModel::find($id);
-            $info->status = $info->status==1?0:1;
-            $info->save();
+            $model = new UserModel();
+            $res =$model->state($data);
             $this->success(lang('edit success'));
 
         }else{
@@ -114,8 +114,8 @@ class User extends Backend{
     public function delete(){
         $id = $this->request->post('id');
         if($id){
-
-            UserModel::destroy($id);
+            $model = new UserModel();
+            $res =$model->del($id);
             $this->success(lang('delete success'));
 
         }else{
@@ -125,7 +125,8 @@ class User extends Backend{
     public function delAll(){
         $ids = $this->request->post('ids');
         if($ids){
-            $res = \app\common\model\ucenter\User::destroy($ids);
+            $model = new UserModel();
+            $res =$model->del($ids);
             if(!$res)$this->error(lang('delete fail'));
 
             $this->success(lang('delete success'));
@@ -156,12 +157,12 @@ class User extends Backend{
         if (Request::isPost()) {
             $data = $this->request->post();
             try{
-                $this->validate($data, 'ucenter/UserLevel');
+                $this->validate($data, 'UserLevel');
             }catch (\Exception $e){
                 $this->error($e->getMessage());
             }
-
-            $res = UserLevel::create($data);
+            $model = new UserLevel();
+            $res = $model->add($data);
             if ($res) {
                 $this->success(lang('add success'),url('levelIndex'));
             } else {
@@ -181,11 +182,12 @@ class User extends Backend{
         if (Request::isPost()) {
             $data = $this->request->post();
             try {
-                $this->validate($data, 'ucenter/UserLevel');
+                $this->validate($data, 'UserLevel');
             } catch (\Exception $e) {
                 $this->error($e->getMessage());
             }
-            $res = UserLevel::update($data);
+            $model = new UserLevel();
+            $res = $model->edit($data);
             if ($res) {
                 $this->success(lang('edit success'), url('levelIndex'));
             } else {
@@ -205,10 +207,11 @@ class User extends Backend{
     public function levelState(){
 
         $id = $this->request->post('id');
+        $id = $this->request->post('id');
         if($id){
-            $info = UserLevel::find($id);
-            $info->status = $info->status==1?0:1;
-            $info->save();
+            $data = $this->request->post();
+            $model = new UserLevel();
+            $model->state($data);
             $this->success(lang('edit success'));
         }else{
             $this->error(lang('invalid data'));
@@ -219,7 +222,8 @@ class User extends Backend{
 
         $id = $this->request->post('id');
         if($id){
-            UserLevel::destroy($id);
+            $model = new UserLevel();
+            $model->del($id);
             $this->success(lang('delete success'));
         }else{
             $this->error(lang('invalid data'));

@@ -75,7 +75,7 @@ class Auth extends Backend
         if (Request::isPost()) {
             $data = $this->request->post();
             try{
-                $this->validate($data, 'sys/Admin');
+                $this->validate($data, 'Admin');
             }catch (\Exception $e){
                 $this->error($e->getMessage());
             }
@@ -85,24 +85,25 @@ class Auth extends Backend
             }
             $data['password'] = password_hash($data['password'],PASSWORD_BCRYPT, SignHelper::passwordSalt());
             //添加
-            $result = Admin::create($data);
+            $model = new Admin();
+            $result = $model->add($data);
             if ($result) {
                 $this->success(lang('add success'), url('sys.Auth/adminList'));
             } else {
                 $this->error(lang('add fail'));
             }
-        } else {
-            $info = '';
-            $auth_group = AuthGroup::where('status', 1)
-                ->select();
-            $view = [
-                'info'  =>$info,
-                'authGroup' => $auth_group,
-                'title' => lang('add'),
-            ];
-            View::assign($view);
-            return view();
         }
+        $info = '';
+        $auth_group = AuthGroup::where('status', 1)
+            ->select();
+        $view = [
+            'info'  =>$info,
+            'authGroup' => $auth_group,
+            'title' => lang('add'),
+        ];
+        View::assign($view);
+        return view();
+
     }
 
     // 管理员删除
@@ -124,6 +125,7 @@ class Auth extends Backend
     public function adminState()
     {
         if (Request::isPost()) {
+            $data = $this->request->post();
             $id = $this->request->post('id');
             if (empty($id)) {
                 $this->error('id'.lang('not exist'));
@@ -131,15 +133,8 @@ class Auth extends Backend
             if ($id == 1) {
                 $this->error(lang('supper man cannot edit state'));
             }
-//            if($this->uid==3){
-//                $this->error(lang('test data cannot edit'));
-//
-//            }
-
-            $admin = Admin::find($id);
-            $status = $admin['status'] == 1 ? 0 : 1;
-            $admin->status = $status;
-            $admin->save();
+            $model = new Admin();
+            $model->state($data);
             $this->success(lang('edit success'));
         }
     }
@@ -161,9 +156,10 @@ class Auth extends Backend
                 $data['password'] = $this->request->post('password', '123456', 'lemo\helper\StringHelper::filterWords');
                 $data['password'] = password_hash($data['password'],PASSWORD_BCRYPT, SignHelper::passwordSalt());
             }
-            Admin::update($data);
+            $model = new Admin();
+            $model->edit($data);
             if($this->uid==$data['id']){
-                Session::set('admin',null);
+                session('admin',null);
             }
             $this->success(lang('edit success'), url('sys.Auth/adminList'));
 
@@ -388,7 +384,7 @@ class Auth extends Backend
         if (Request::isPost()) {
             $data = $this->request->post();
             try {
-                $this->validate($data, 'sys/AuthGroup');
+                $this->validate($data, 'AuthGroup');
             } catch (\Exception $e) {
                 $this->error($e->getMessage());
             }
@@ -417,7 +413,7 @@ class Auth extends Backend
                 $this->error(lang('supper man cannot edit'));
             }
             try{
-                $this->validate($data, 'sys/AuthGroup');
+                $this->validate($data, 'AuthGroup');
             }catch (\Exception $e){
                 $this->error($e->getMessage());
             }
@@ -517,7 +513,7 @@ class Auth extends Backend
         if (AuthGroup::update($where)) {
             $admin = Session::get('admin');
             $admin['rules'] = $rls;
-            Session::set('admin', $admin);
+            session('admin', $admin);
 
             $this->success(lang('rule assign success'),url('sys.Auth/group'));
         } else {

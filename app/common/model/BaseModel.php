@@ -40,5 +40,58 @@ class BaseModel extends Model
 
 
     }
+
+    public function add($data){
+        $result = $this->save($data);
+        if($result) {
+            return $result;
+        } else {
+            return '';
+        }
+    }
+
+    public function edit($data){
+        $info  = $this->find($data['id']);
+        $result = $info->save($data);
+        if($result) {
+            return $result;
+        } else {
+            return '';
+        }
+    }
+
+    public function del($ids){
+        if(is_array($ids)){
+
+            $info  = $this->where('id','in',$ids)->select();
+        }else{
+            $info  = $this->find($ids);
+        }
+        $result = $info->delete();
+        if($result) {
+            return $result;
+        } else {
+            return '';
+        }
+    }
+
+    public function state($data){
+        $id = $data['id'];
+        $field =  $data['field'];
+        if (empty($id)) {
+           return '';
+        }
+        $info = $this->find($id);
+        $info->$field = $info->$field == 1 ? 0 : 1;
+        $result = $info->save();
+       if($result){
+           return $result;
+       }else{
+           return '';
+       }
+
+    }
+
+
     
 }

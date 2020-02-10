@@ -61,8 +61,9 @@ class Adminlog extends Backend {
         if(!is_array($id)){
             $id = [$id];
         }
+        $model = new LogModel();
 
-        if(LogModel::destroy($id)){
+        if( $model->del($id)){
             $this->success(lang('delete success'));
         }else{
             $this->error(lang('delete fail'));

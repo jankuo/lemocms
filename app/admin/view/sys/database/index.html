@@ -62,7 +62,7 @@
             });
             obj.addClass('layui-btn-disabled');
             obj.html('备份进行中...');
-            $.post("{:url('database/backup')}",{tables:a},function(data){
+            $.post("{:url('admin/sys.database/backup')}",{tables:a},function(data){
                 if(data.code==1){
                     layer.msg(data.msg,{time:1000,icon:1},function(){
                         tableIn.reload();
@@ -83,7 +83,7 @@
             });
             obj.addClass('layui-btn-disabled');
             obj.html('优化进行中...');
-            $.post("{:url('database/optimize')}",{tables:a},function(data){
+            $.post("{:url('admin/sys.database/optimize')}",{tables:a},function(data){
                 if(data.code==1){
                     layer.msg(data.msg,{time:1000,icon:1},function(){
                         tableIn.reload();
@@ -104,7 +104,7 @@
             });
             obj.addClass('layui-btn-disabled');
             obj.html('修复进行中...');
-            $.post("{:url('database/repair')}",{tables:a},function(data){
+            $.post("{:url('admin/sys.database/repair')}",{tables:a},function(data){
                 if(data.code==1){
                     layer.msg(data.msg,{time:1000,icon:1},function(){
                         tableIn.reload();

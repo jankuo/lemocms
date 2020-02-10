@@ -40,6 +40,22 @@ class TreeHelper
         }
         return $arr;
     }
+
+    //分类树
+    public static function categoryTree($cate , $lefthtml = '|— ' , $pid = 0 , $level = 0 ){
+        $arr = array();
+        foreach ($cate as $v){
+            if ($v['pid'] == $pid) {
+                $v['level']      = $level + 1;
+                $v['lefthtml'] = str_repeat($lefthtml,$level);
+                $v['lcatename']   = $v['lefthtml'].$v['catename'];
+                $arr[] = $v;
+                $arr = array_merge($arr, self::categoryTree($cate, $lefthtml, $v['id'], $level+1));
+            }
+        }
+        return $arr;
+    }
+
     /**
      * 传递一个父级分类ID返回所有子分类
      * @param $cate

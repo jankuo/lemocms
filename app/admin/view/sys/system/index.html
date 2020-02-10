@@ -279,7 +279,7 @@
         //提交监听
         form.on('submit(submit)', function (data) {
             loading =layer.load(1, {shade: [0.1,'#fff']});
-            $.post("{:url('system/site')}",data.field,function(res){
+            $.post("{:url('admin/sys.system/site')}",data.field,function(res){
                 layer.close(loading);
                 if(res.code > 0){
                     layer.msg(res.msg,{icon: 1, time: 1000},function(){

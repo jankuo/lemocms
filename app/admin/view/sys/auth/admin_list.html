@@ -61,8 +61,8 @@
         form.on('switch(status)', function(obj){
             loading =layer.load(1, {shade: [0.1,'#fff']});
             var id = this.value;
-            var is_open = obj.elem.checked===true?1:0;
-            $.post('{:url("adminState")}',{'id':id,'is_open':is_open},function (res) {
+            var field = obj.elem.name;
+            $.post('{:url("adminState")}',{'id':id,'field':field},function (res) {
                 layer.close(loading);
                 if (res.code>0) {
                     tableIn.reload();
