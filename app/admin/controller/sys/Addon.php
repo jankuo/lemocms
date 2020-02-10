@@ -369,7 +369,7 @@ class Addon extends Backend
 
     //添加管理菜单
     protected function addAddonManager(){
-        $addon_auth =  AuthRule::where('href','admin/addon.addon')->cache(3600)->find();
+        $addon_auth =  AuthRule::where('href','admin/addon')->cache(3600)->find();
         $data = array(
             "title" => '插件管理',
             'href'=>'admin/Addon/manager',

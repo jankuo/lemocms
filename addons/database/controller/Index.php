@@ -8,22 +8,19 @@
  * 采用最新Thinkphp6实现
  * ============================================================================
  * Author: yuege
- * Date: 2019/11/7
+ * Date: 2019/8/2
  */
+namespace addons\database\controller;
 
-return [
-    'display' => [
-        'title' => '是否显示:',
-        'type' => 'radio',
-        'rule' => 'required',
-        'content' => [
-            '1' => '显示',
-            '0' => '不显示'
-        ],
-        'msg'     => '',
-        'tips'     => '',
-        'ok'      => '',
-        'value'   => 1,
 
-    ],
-];
+use think\addons\Controller;
+
+class Index extends Controller {
+
+    public function index()
+    {
+
+        return $this->view->fetch();
+    }
+
+}

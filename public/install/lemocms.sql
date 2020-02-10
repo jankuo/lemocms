@@ -185,17 +185,9 @@ CREATE TABLE `lm_auth_rule` (
 INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`, `menu_status`, `icon`, `condition`, `pid`, `sort`, `create_time`, `update_time`) VALUES
 (1, 'admin/Sys.System', '系统', 1, 1, 0, 1, 'fa fa-home', '', 0, 50, 1446535750, 1581250778),
 (2, 'admin/Sys.System', '系统设置', 1, 1, 0, 1, 'fa fa-gears', '', 1, 0, 1446535789, 1571882291),
-(3, 'admin/Sys.Database', '数据库管理', 1, 1, 0, 1, 'fa fa-database', '', 1, 0, 1446535805, 0),
-(4, 'admin/Sys.Database/restore', '还原数据库', 2, 1, 0, 1, 'fa fa-database', '', 3, 0, 1446535750, 0),
-(5, 'admin/Sys.Database/backup', '数据库备份', 2, 1, 0, 0, 'fa fa-database', '', 3, 0, 1446535834, 0),
 (6, 'admin/Sys.Auth', '权限管理', 1, 1, 0, 1, 'fa fa-cog', '', 1, 0, 0, 0),
 (7, 'admin/Sys.Auth/adminRule', '权限列表', 1, 1, 0, 1, 'fa fa-cog', '', 6, 0, 0, 0),
 (8, 'admin/Sys.Auth/ruleEdit', '权限编辑', 2, 1, 0, 0, 'fa fa-cog', '', 7, 0, 0, 0),
-(9, 'admin/Sys.Database/repair', '数据库修复', 2, 1, 0, 0, '', '', 3, 0, 0, 0),
-(10, 'admin/Sys.Database/import', '数据还原', 2, 1, 0, 0, '', '', 3, 0, 0, 0),
-(11, 'admin/Sys.Database/downFile', '数据下载', 2, 1, 0, 0, '', '', 3, 0, 0, 0),
-(12, 'admin/Sys.Database/delSqlFiles', '删除数据库', 2, 1, 0, 0, '', '', 3, 0, 0, 0),
-(13, 'admin/Sys.Database/index', '数据库列表', 1, 1, 0, 1, 'fa fa-database', '', 3, 1, 0, 0),
 (14, 'admin/Sys.Auth/ruleState', '菜单显示或者隐藏', 2, 1, 0, 0, '', '', 7, 0, 0, 0),
 (15, 'admin/Sys.Auth/ruleOpen', '权限是否验证', 2, 1, 0, 0, '', '', 7, 0, 0, 0),
 (16, 'admin/Sys.Auth/ruleSort', '权限排序', 2, 1, 0, 0, '', '', 7, 0, 0, 0),
@@ -204,7 +196,6 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (19, 'admin/Sys.Auth/ruleAdd', '权限增加', 2, 1, 0, 0, '', '', 7, 0, 0, 0),
 (20, 'admin/Sys.System/index', '站点设置', 1, 1, 0, 1, 'fa fa-gears', '', 2, 0, 0, 1567228601),
 (21, 'admin/Sys.Adminlog/index', '日志管理', 1, 1, 0, 1, 'fa fa-life-ring', '', 2, 0, 0, 1566007925),
-(22, 'admin/Sys.Database/optimize', '数据库优化', 1, 1, 0, 0, '', '', 3, 0, 0, 0),
 (26, 'admin/Sys.Auth/group', '权限组', 1, 1, 0, 1, 'fa fa-globe', '', 6, 0, 0, 0),
 (27, 'admin/Sys.Auth/groupDel', '用户组删除', 1, 1, 0, 0, '', '', 26, 0, 0, 0),
 (28, 'admin/Sys.Auth/groupAdd', '用户组添加', 1, 1, 0, 0, '', '', 26, 0, 0, 0),
@@ -239,7 +230,7 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (152, 'admin/Sys.System/configState', '配置状态', 1, 1, 0, 0, NULL, '', 148, 0, 0, NULL),
 (153, 'admin/Sys.System/configGroupAdd', '配置组添加', 1, 1, 0, 0, NULL, '', 148, 0, 0, NULL),
 (154, 'admin/Sys.System/configGroupDel', '配置组删除', 1, 1, 0, 0, NULL, '', 148, 0, 0, NULL),
-(174, 'admin/addon.addon', '插件管理', 1, 1, 0, 1, 'fa fa-futbol-o', '', 0, 50, 1580880615, 1580880717),
+(174, 'admin/addon', '插件管理', 1, 1, 0, 1, 'fa fa-futbol-o', '', 0, 50, 1580880615, 1580880717),
 (175, 'admin/sys.addon/index', '插件列表', 1, 1, 0, 1, 'fa fa-adjust', '', 174, 50, 1580880674, 1580880674);
 
 -- --------------------------------------------------------
