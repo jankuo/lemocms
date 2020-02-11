@@ -12,14 +12,12 @@
  */
 namespace app\index\controller;
 
-
 use think\facade\View;
 
 class Index extends \app\BaseController{
 
     public function index(){
-        echo '欢迎访问lemocms,开启您的旅途吧';
-//        return View::fetch();
+        return view();
     }
 
 }

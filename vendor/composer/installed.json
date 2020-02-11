@@ -3218,17 +3218,17 @@
     },
     {
         "name": "yuege/think-addons",
-        "version": "v1.1",
-        "version_normalized": "1.1.0.0",
+        "version": "v1.3",
+        "version_normalized": "1.3.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/yue909/think-addons.git",
-            "reference": "a03b9b8823566c87d800f3cd050e3ab412b5c63a"
+            "reference": "ab51ab82e26a7554d8d945890bbd965279c1f94f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yue909/think-addons/zipball/a03b9b8823566c87d800f3cd050e3ab412b5c63a",
-            "reference": "a03b9b8823566c87d800f3cd050e3ab412b5c63a",
+            "url": "https://api.github.com/repos/yue909/think-addons/zipball/ab51ab82e26a7554d8d945890bbd965279c1f94f",
+            "reference": "ab51ab82e26a7554d8d945890bbd965279c1f94f",
             "shasum": "",
             "mirrors": [
                 {
@@ -3243,7 +3243,7 @@
             "topthink/think-helper": "^3.0.0",
             "topthink/think-view": "^1.0"
         },
-        "time": "2020-02-10T12:40:13+00:00",
+        "time": "2020-02-11T05:13:58+00:00",
         "type": "library",
         "extra": {
             "think": {

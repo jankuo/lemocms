@@ -16,13 +16,13 @@ namespace app\admin\controller\sys;
 use app\admin\model\AuthRule;
 use app\common\controller\Backend;
 use lemo\helper\FileHelper;
+use think\addons\Service;
 use think\db\exception\PDOException;
 use think\Exception;
 use think\facade\Request;
 use think\facade\View;
 use app\common\model\Addon as AddonModel;
-use RecursiveDirectoryIterator;
-use RecursiveIteratorIterator;
+
 /**
  * 插件控制器
  */
@@ -108,15 +108,15 @@ class Addon extends Backend
             $this->error(lang('addon install fail'));
         }
         importsql($name);//导入数据库
-        $sourceAssetsDir = self::getSourceAssetsDir($name);
-        $destAssetsDir = self::getDestAssetsDir($name);
+        $sourceAssetsDir = Service::getSourceAssetsDir($name);
+        $destAssetsDir = Service::getDestAssetsDir($name);
         if (is_dir($sourceAssetsDir)) {
             FileHelper::copyDir($sourceAssetsDir, $destAssetsDir);
         }
         //复制文件到目录
-        if(self::getCheckDirs()){
-            foreach (self::getCheckDirs() as $k => $dir) {
-                $sourcedir = self::getAddonsPath($name). $dir;
+        if(Service::getCheckDirs()){
+            foreach (Service::getCheckDirs() as $k => $dir) {
+                $sourcedir = Service::getAddonsNamePath($name). $dir;
                 if (is_dir($sourcedir)) {
                     FileHelper::copyDir($sourcedir, app()->getRootPath() . $dir);
                 }
@@ -124,8 +124,8 @@ class Addon extends Backend
         }
 
         try {
-            self::updateAddonsInfo($name,1);
-            self::updateAdddonsConfig();
+            Service::updateAddonsInfo($name,1);
+            Service::updateAdddonsConfig();
 
         }catch (\Exception $e){
             $this->error($e->getMessage());
@@ -166,19 +166,19 @@ class Addon extends Backend
         //卸载sql;
         uninstallsql($name);
         // 移除插件基础资源目录
-        $destAssetsDir = self::getDestAssetsDir($name);
+        $destAssetsDir = Service::getDestAssetsDir($name);
         if (is_dir($destAssetsDir)) {
             FileHelper::delDir($destAssetsDir);
         }
         //删除文件
-        $list = self::getGlobalAddonsFiles($name);
+        $list = Service::getGlobalAddonsFiles($name);
         foreach ($list as $k => $v) {
             @unlink(app()->getRootPath() . $v);
         }
-        self::updateAddonsInfo($name,0);
+        Service::updateAddonsInfo($name,0);
 
         try {
-            self::updateAdddonsConfig();
+            Service::updateAdddonsConfig();
 
         }catch (\Exception $e){
             $this->error($e->getMessage());
@@ -243,7 +243,7 @@ class Addon extends Backend
                 }
                 $params = serialize($params);
                 if($info->save(['config'=>$params])){
-                    self::updateAdddonsConfig();
+                    Service::updateAdddonsConfig();
                     $this->success(lang('edit success'));
                 }else{
                     $this->error(lang('edit fail'));
@@ -252,8 +252,8 @@ class Addon extends Backend
             $this->error(lang('Parameter %s can not be empty', []));
         }
 
-        $name = Request::get("name");
-        $id = Request::get("id");
+        $name = $this->request->get("name");
+        $id = $this->request->get("id");
         if (!$name) {
             $this->error(lang('Parameter addon name can not be empty'));
         }
@@ -287,29 +287,7 @@ class Addon extends Backend
         return $addons;
     }
 
-    /**
-     * 获取插件源资源文件夹
-     * @param string $name 插件名称
-     * @return  string
-     */
-    protected static function getSourceAssetsDir($name)
-    {
-        return app()->getRootPath() . 'addons/' . $name . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR;
-    }
 
-    /**
-     * 获取插件目标资源文件夹
-     * @param string $name 插件名称
-     * @return  string
-     */
-    protected static function getDestAssetsDir($name)
-    {
-        $assetsDir = app()->getRootPath() . str_replace("/", DIRECTORY_SEPARATOR, "public/static/addons/{$name}");
-        if (!is_dir($assetsDir)) {
-            mkdir($assetsDir, 0755, true);
-        }
-        return $assetsDir;
-    }
 
     //获取菜单配置
     protected function get_menu_config($class){
@@ -396,90 +374,5 @@ class Addon extends Backend
 
     }
 
-
-    //获取插件目录
-    protected static function getAddonsPath($name){
-
-        return app()->getRootPath().'addons'.DIRECTORY_SEPARATOR.$name.DIRECTORY_SEPARATOR;
-    }
-    /**
-     * 获取检测的全局文件夹目录
-     * @return  array
-     */
-    protected static  function getCheckDirs()
-    {
-        return [
-            'app',
-        ];
-    }
-
-    /**
-     * 获取插件在全局的文件
-     * @param   int $onlyconflict 冲突
-     * @param   string $name 插件名称
-     * @return  array
-     */
-    protected  static function getGlobalAddonsFiles($name, $onlyconflict = false)
-    {
-        $list = [];
-        $addonDir = self::getAddonsPath($name);
-        // 扫描插件目录是否有覆盖的文件
-        foreach (self::getCheckDirs() as $k => $dir) {
-            $checkDir = app()->getRootPath() . DIRECTORY_SEPARATOR . $dir . DIRECTORY_SEPARATOR;
-            if (!is_dir($checkDir))
-                continue;
-            //检测到存在插件外目录
-            if (is_dir($addonDir . $dir)) {
-                //匹配出所有的文件
-                $files = new RecursiveIteratorIterator(
-                    new RecursiveDirectoryIterator($addonDir . $dir, RecursiveDirectoryIterator::SKIP_DOTS), RecursiveIteratorIterator::CHILD_FIRST
-                );
-                foreach ($files as $fileinfo) {
-                    if ($fileinfo->isFile()) {
-                        $filePath = $fileinfo->getPathName();
-                        $path = str_replace($addonDir, '', $filePath);
-                        if ($onlyconflict) {
-                            $destPath = app()->getRootPath() . $path;
-                            if (is_file($destPath)) {
-                                if (filesize($filePath) != filesize($destPath) || md5_file($filePath) != md5_file($destPath)) {
-                                    $list[] = $path;
-                                }
-                            }
-                        } else {
-                            $list[] = $path;
-                        }
-                    }
-                }
-            }
-        }
-        return $list;
-    }
-
-    //更新addons 文件；
-    protected static function updateAdddonsConfig(){
-        $config = get_addons_autoload_config(true);
-        if ($config['autoload'])
-            return '';
-        $file = app()->getRootPath() . 'config' . DIRECTORY_SEPARATOR . 'addons.php';
-        if (!FileHelper::isWritable($file)) {
-            throw new \Exception("addons.php文件没有写入权限");
-        }
-
-        if ($handle = fopen($file, 'w')) {
-            fwrite($handle, "<?php\n\n" . "return " . var_export($config, TRUE) . ";");
-            fclose($handle);
-        } else {
-            throw new Exception("文件没有写入权限");
-        }
-        return true;
-    }
-    //更新插件状态
-    protected static function updateAddonsInfo($name,$state=1){
-        $addonslist  = get_addons_list();
-        $addonslist[$name]['status'] =$state;
-        session('addonslist',$addonslist);
-
-
-    }
 
 }
