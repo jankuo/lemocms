@@ -21,14 +21,18 @@ class Token extends Validate
 
     protected $rule = [
         'appid'       =>  'require',
-        'mobile'      =>    'require',
+        'appsecret'       =>  'require',
+        'username'      =>    'require',
+        'password'      =>    'require|min:6',
         'nonce'       =>  'require',
         'timestamp'   =>  'number|require',
         'sign'        =>  'require'
     ];
     protected $message  =   [
         'appid.require'    => 'appid不能为空',
-        'mobile.require'   =>'mobile不能为空',
+        'appsecret.require'    => 'appsecret不能为空',
+        'username.require'   =>'mobile不能为空',
+        'password.require'   =>'password不能为空',
         'nonce.require'    => '随机数不能为空',
         'timestamp.number' => '时间戳格式错误',
         'sign.require'     => '签名不能为空',

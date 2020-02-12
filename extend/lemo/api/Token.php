@@ -16,9 +16,10 @@ use think\facade\Request;
 use lemo\api\Send;
 use lemo\api\Oauth;
 use think\facade\Cache;
-use app\api\util\wxBizDataCrypt;
+use lemo\api\util\wxBizDataCrypt;
 use app\common\model\WxFans;
 use think\facade\Db;
+use think\Lang;
 
 /**
  * 生成token
@@ -50,13 +51,22 @@ class Token
      * @param Request $request Request对象
      */
     public function __construct(Request $request)
-    {
+    {   //跨域
+//        header('Access-Control-Allow-Origin:*');
+//        header('Access-Control-Allow-Headers:Accept,Referer,Host,Keep-Alive,User-Agent,X-Requested-With,Cache-Control,Content-Type,Cookie,token');
+//        header('Access-Control-Allow-Credentials:true');
+//        header('Access-Control-Allow-Methods:GET, POST, PATCH, PUT, DELETE,OPTIONS');
+
         $this->request = Request::instance();
         $appid = Request::post('appid');
+        $appsecret = Request::post('appsecret');
         $oauth2_client = Db::name('oauth2_client')->where('appid', $appid)->find();
         if (!$oauth2_client) {
             return self::returnMsg(401, 'Invalid authorization credentials');
 
+        }
+        if($oauth2_client['appsecret']!=$appsecret){
+            return self::returnMsg('401',lang('appsecret is not right'));
         }
         self::$appid = $oauth2_client['appid'];
         self::$appsecret = $oauth2_client['appsecret'];
@@ -74,7 +84,7 @@ class Token
         }
         self::checkParams(Request::post());  //参数校验
         //数据库已经有一个用户,这里需要根据input('mobile')去数据库查找有没有这个用户
-        $userInfo = self::getUser(Request::post('mobile'));
+        $userInfo = self::getUser(Request::post('username'),Request::post('username'));
         //虚拟一个uid返回给调用方
         try {
             $accessToken = self::setAccessToken(array_merge($userInfo, Request::post()));  //传入参数应该是根据手机号查询改用户的数据
@@ -241,14 +251,22 @@ class Token
         cache(self::$refreshAccessTokenPrefix . $appid, $refresh_token, self::$refreshExpires);
     }
 
-    protected static function getUser($mobile)
+    protected static function getUser($username,$password)
     {
-        $user = Db::name('user')->where('mobile', $mobile)->find();
+        $user = Db::name('user')->where('username', $username)
+            ->whereOr('mobile',$username)
+            ->whereOr('email',$username)->find();
         if ($user) {
-            $user['uid'] = $user['id'];
-            return $user;
+            if(password_verify($password,$user['password'])){
+                $user['uid'] = $user['id'];
+                return $user;
+            }else{
+                return self::returnMsg(401, lang('密码错误'));
+
+            }
+
         } else {
-            return self::returnMsg(401, '用户不存在');
+            return self::returnMsg(401, lang('Account is not exist'));
         }
     }
 }

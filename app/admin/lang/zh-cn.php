@@ -148,6 +148,9 @@ return [
     'sms setting'=>'短信设置',
     'upload setting'=>'上传设置',
 
+//    addons
 
-
+    'login tips'=> '登录提示：此处为lemocms官方账号',
+    'Your password'=> '账号',
+    'username or email'=> '账号或密码',
 ];

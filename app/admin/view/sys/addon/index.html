@@ -6,9 +6,34 @@
         </fieldset>
 
         <table class="layui-table layui-hide" id="list" lay-filter="list"></table>
+
     </div>
 </div>
 
+<!--登陆页面-->
+<div style="display: none;padding: 20px" id="login">
+    <blockquote class="layui-elem-quote layui-text">
+        登录提示：账号为 <a href="https://bbs.lemocms.com">lemocms</a> 官方账号
+    </blockquote>
+    <br>
+    <br>
+    <form class="layui-form layui-form-pane" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label">账号<i class="fa fa-user"></i></label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" id="inputUsername" value=""
+                       placeholder="{:lang('username or email')}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">密码<i class="fa fa-lock"></i></label>
+            <div class="layui-input-block">
+                <input type="password" class="layui-input" id="inputPassword" value=""
+                       placeholder="{:lang('Your password')}">
+            </div>
+        </div>
+    </form>
+</div>
 
 <script type="text/html" id="action">
     {{# if(d.install==1){ }}
@@ -44,105 +69,18 @@
 </script>
 
 {include file="common/footer"/}
+<script src="/static/plugins/md5/md5.min.js"></script>
 <script>
-    layui.use(['form', 'table'], function () {
-        var $ = layui.jquery,
-            form = layui.form,
-            table = layui.table;
+    var data = {};
+    layui.config({
+        base: "/static/admin/js/",
+        version: true
+    }).extend({
+        Addon: "Addon"
+    }).use(['element', 'layer', 'Addon'], function () {
 
-        var tableIn = table.render({
-            elem: '#list',
-            url: '{:url("index")}',
-            method: 'post',
-            cols: [[
-                {checkbox: true, fixed: true},
-                {field: 'title', title: '名称', width: 120,sort:true,},
-                {field: 'name', title: '标识', width: 100,sort:true,templet:'#name'},
-                {field: 'description', title: '描述', minWidth: 220, sort:true,},
-                {field: 'version', title: '插件版本', width: 60,sort:true,},
-                {field: 'require', title: '适用版本', width: 60,sort:true},
-                {field: 'author', title: '作者', width: 120,sort:true},
-                {field: 'create_time', title: '添加时间', width: 180,templet:'#create_time'},
-                // {field: 'update_time', title: '修改时间', width: 180,templet:'#update_time'},
-                {title:'操作',width:250, toolbar: '#action',align:"center"}
-
-            ]],
-            limits: [10, 15, 20, 25, 50, 100],
-            limit: 15,
-            page: true
-        });
-
-
-
-        table.on('tool(list)', function(obj){
-            var data = obj.data;
-            if(obj.event === 'install'){
-                layer.confirm('{:lang("Are you sure you want to install it")}', function(index){
-                    loading =layer.load(1, {shade: [0.1,'#fff']});
-                    $.post("{:url('install')}",{name:data.name},function(res){
-                        layer.close(loading);
-                        layer.close(index);
-                        if(res.code>0){
-                            layer.msg(res.msg,{time:1000,icon:1});
-                            tableIn.reload()
-                        }else{
-                            layer.msg(res.msg,{time:1000,icon:2});
-                        }
-                    });
-                });
-            }
-            if(obj.event === 'uninstall'){
-                layer.confirm('{:lang("Are you sure you want to uninstall it")}', function(index){
-                    loading =layer.load(1, {shade: [0.1,'#fff']});
-                    $.post("{:url('uninstall')}",{id:data.id,name:data.name},function(res){
-                        layer.close(loading);
-                        layer.close(index);
-                        if(res.code>0){
-                            layer.msg(res.msg,{time:2000,icon:1});
-                            tableIn.reload()
-                        }else{
-                            layer.msg(res.msg,{time:2000,icon:2});
-                        }
-                    });
-                });
-            }
-            if(obj.event === 'status'){
-
-                layer.confirm('{:lang("Are you sure you want to change it")}', function(index){
-                    loading =layer.load(1, {shade: [0.1,'#fff']});
-                    $.post("{:url('state')}",{id:data.id,name:data.name},function(res){
-                        layer.close(loading);
-                        layer.close(index);
-                        if(res.code>0){
-                            layer.msg(res.msg,{time:2000,icon:1});
-                            tableIn.reload()
-                        }else{
-                            layer.msg(res.msg,{time:2000,icon:2});
-                        }
-                    });
-                });
-            }
-
-
-            if(obj.event === 'config'){
-                var id = data.id;
-                var name =data.name;
-                var index = layer.open({
-                    type: 2,
-                    content: '{:url("config")}?id='+id+'&name='+name,
-                    area: ['600px', '800px'],
-                    maxmin: true
-                });
-                layer.full(index)
-
-            }
-            return false;
-        });
-
-
-
+        Addon.init(data);
 
     });
-
 
 </script>
