@@ -31,7 +31,7 @@ layui.define(["element", "jquery",'form', 'table'], function (exports) {
         table.on('tool(list)', function(obj){
             var data = obj.data;
             if(obj.event === 'install'){
-                if(Addon.getUserinfo().hasOwnProperty('client')){
+                if(Addon.getUserinfo() && Addon.getUserinfo().hasOwnProperty('client')){
                     layer.confirm('Are you sure you want to install it', function(index){
                         loading =layer.load(1, {shade: [0.1,'#fff']});
                         $.post("install",{name:data.name},function(res){
