@@ -345,8 +345,17 @@ if ($_GET['c'] = 'start' && isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUE
                 <button type="submit" class="layui-btn" lay-submit="" lay-filter="submit" style="width: 80%;">立即安装</button>
             </div>
             </form>
+
+
+            <br>
+            <div class="footer">
+                <h5>Powered by <font>lemocms-tp6</font><font class="orange"></font></h5>
+                <h6>版权所有 2018-2020 © <a href="https://www.lemocms.com" target="_blank">lemocms-tp6</a></h6>
+            </div>
         </div>
+
     </div>
+
     <div class="layui-col-md4 layui-col-md-offset4" style="margin-bottom: 120px;background: none"></div>
 
 </div>
