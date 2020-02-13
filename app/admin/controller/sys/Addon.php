@@ -19,6 +19,7 @@ use lemo\helper\FileHelper;
 use think\addons\Service;
 use think\db\exception\PDOException;
 use think\Exception;
+use think\facade\Db;
 use think\facade\Request;
 use think\facade\View;
 use app\common\model\Addon as AddonModel;
@@ -305,6 +306,10 @@ class Addon extends Backend
                 $v['pid'] = $pid;
                 if(AuthRule::where('href',$v['href'])->find()){
                     continue;
+                }
+
+                if(strpos(trim($v,'/'),'admin/')==false){
+                    $v = 'admin/'.strtolower(trim($v,'/'));
                 }
                 $menu = AuthRule::create($v);
                 if ($hasChild) {

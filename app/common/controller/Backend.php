@@ -56,7 +56,6 @@ class Backend extends \app\common\controller\Base
             $this->hrefId = Db::name('auth_rule')->where('href',$route)->value('id');
             //当前管理员权限
             $map['a.id'] = Session::get('admin.id');
-
             $rules=Db::name('admin')->alias('a')
                 ->join('auth_group ag','a.group_id = ag.id','left')
                 ->where($map)

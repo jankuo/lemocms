@@ -87,6 +87,9 @@ if ($_GET['c'] = 'start' && isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUE
     if (version_compare(PHP_VERSION, '7.1.0', '<')) {
        die("当前版本(" . PHP_VERSION . ")过低，请使用PHP7.1.0以上版本");
     }
+    if (!extension_loaded("PDO")) {
+        die ("当前未开启PDO，无法进行安装" );
+    }
     //判断两次输入是否一致
     if ($adminPassword != $rePassword) {
          die('两次输入密码不一致！');
