@@ -20,7 +20,7 @@
 .layui-header-menu,.layui-header {height:60px !important;}
 .layui-header-menu > .layui-nav-item {color:#1b1d21;height:60px !important;line-height:60px !important;}
 .layui-header > .layui-layout-right > .layui-nav-item {height:60px !important;line-height:60px !important;}
-.layui-layout-left {left:295px!important;}
+.layui-layout-left {left:250px!important;}
 .layui-nav.layui-layout-left.layui-header-menu.mobile.layui-hide-xs {font-weight:bold;transition:all .2s;}
 
 /**头部样式（缩放） */
@@ -36,7 +36,7 @@
 .LM-mini .layui-layout-admin .layui-logo h1 {display:none;}
 
 /**缩放工具（通用） */
-.LM-tool {position:absolute!important;top:0;left:235px;width:60px;height:100%;line-height:60px;text-align:center;color:#ffffff!important;transition:all .2s;}
+.LM-tool {position:absolute!important;top:0;left:200px;width:60px;height:100%;line-height:60px;text-align:center;color:#ffffff!important;transition:all .2s;}
 /**缩放工具（缩放） */
 .LM-mini .LM-tool {left:95px!important;}
 .LM-tool i {display:block;color:#fff;width:32px;height:32px;line-height:32px;border-radius:3px;text-align:center;margin-top:15px;cursor:pointer;}
@@ -53,21 +53,20 @@
 #top_tabs_box>.layui-tab-title>.layui-this>i:first-child {color:#009688;}
 #top_tabs_box>.layui-tab-title li {border-right:1px solid #e2e2e2;font-size: 12.5px!important;}
 #top_tabs_box>.layui-tab-title .layui-this {color:#000000;}
-#top_tabs_box>.layui-tab-title .layui-this:after {margin-top:33px;width: 100%;border: none;height: 2px;background-color: #243346;}
-#top_tabs_box {padding-right:138px;height:34px;border-bottom:1px solid #e2e2e2;}
+#top_tabs_box>.layui-tab-title .layui-this:after {margin-top:33px;width: 100%;border: none;height: 2px;background-color: #5fb878;}
+#top_tabs_box {padding-right:70px;height:34px;border-bottom:1px solid #e2e2e2;}
 #top_tabs_box > .layui-tab-title ,#top_tabs_box > .closeBox {height:35px !important;}
 #top_tabs_box > .layui-tab-title > li ,#top_tabs_box > .closeBox > li {line-height:35px !important;}
 #top_tabs {position:absolute;border-bottom:none;}
 
 /**多窗口页面操作下拉**/
-.closeBox {position:absolute;right:15px;background-color:#fff !important;color:#000;border-left:1px solid #e2e2e2;border-bottom:1px solid #e2e2e2;padding:0 10px !important;}
+.closeBox {position:absolute;right:5px;background-color:#fff !important;color:#000;border-left:1px solid #e2e2e2;border-bottom:1px solid #e2e2e2;padding:0 10px !important;}
 .closeBox .layui-nav-item {line-height:40px;}
-.closeBox .layui-nav-item > a,.closeBox .layui-nav-item > a:hover {color:#000;}
-.closeBox .layui-nav-child {top:40px;}
+.closeBox .layui-nav-item > a,.closeBox .layui-nav-item > a:hover {color:#000;padding: 0 12px;}
+.closeBox .layui-nav-child {top:40px;right: 0!important;left:auto;min-width: 90px}
+.closeBox .layui-nav-child a{padding: 0 10px;}
 .closeBox .layui-nav-bar {display:none;}
 .closeBox a i.caozuo {font-size:20px;position:absolute;top:1px;left:0;}
-.closeBox a span.layui-nav-more {border-color:#333 transparent transparent;}
-.closeBox a span.layui-nav-more.layui-nav-mored {border-color:transparent transparent #333;}
 
 /**左侧菜单栏 (通用) */
 .layui-side.layui-bg-black {transition:all .2s;}
@@ -76,7 +75,6 @@
 .layui-left-menu .layui-nav .layui-nav-item a {height:40px;line-height:40px;padding-right:30px;}
 .layui-left-menu .layui-nav .layui-nav-item>a {padding-top:5px;padding-bottom:5px;}
 .layui-left-menu .layui-nav .layui-nav-child .layui-nav-child {background:0 0!important}
-.layui-left-menu .layui-nav .layui-nav-more {right:15px;}
 /**左侧菜单栏 (正常) */
 .LM-all .layui-nav-itemed .layui-nav-child a ,.LM-all .layui-left-menu .layui-nav .layui-nav-child a{padding-left:35px;}
 .LM-all .layui-left-menu .layui-nav .layui-nav-child .layui-nav-child a {padding-left:45px;}
@@ -105,6 +103,9 @@
 
 
 /**其它 */
+.layui-tab-title li{min-width: auto}
+#top_tabs_box>.layui-tab-title{padding: 0 10px;}
+.layui-tab-title li .layui-tab-close{margin-left: 5px;}
 .layui-tab-item {width:100% !important;height:100% !important;}
 .layui-nav-item.layui-this {background-color:#1b1d21;}
 .layui-width-height {width:100%;height:95%;}
@@ -151,15 +152,18 @@
 */
 @media screen and (max-width:750px) {
     #top_tabs_box {border-bottom:0px!important;}
+    .layui-nav *{font-size: 12px!important;}
     .layui-layout-admin .layui-body .layui-tab-item.layui-show{border-top:1px solid #e2e2e2;}
-    .LM-mini .LM-tool {left:15px !important;}
+    .LM-mini .LM-tool {left:5px !important;}
+    /*.layui-header-menu li a{padding: 0 15px 0 0 !important;}*/
     .LM-tool i:hover {background-color:transparent!important;}
     .LM-all .layui-layout-left.layui-header-menu {transition:all .2s;float:right;right:5px;}
-    .LM-all .layui-header-menu > .layui-nav-item {float:right;right:0px;}
+    .LM-all .layui-header-menu > .layui-nav-item {float:right;right:30%;}
     .LM-mini .layui-layout-left.layui-header-menu {left:50px !important;transition:all .2s;}
-    .layui-layout-admin .layui-nav.layui-layout-right {margin-right:15px!important;}
+    .layui-layout-admin .layui-nav.layui-layout-right {margin-right:5px!important;}
+    .layui-layout-admin .layui-nav.layui-layout-right>li:first-child{display: none}
     .layui-layout-admin .layui-nav.layui-layout-right>li:not(.LM-setting) {width:40px!important;}
-    .layui-layout-admin .layui-nav.layui-layout-right>li:not(.LM-setting) a {padding:0 15px;}
+    .layui-layout-admin .layui-nav.layui-layout-right>li:not(.LM-setting) a {padding:0 10px;}
     .LM-mini .layui-layout-admin .layui-body {left:0px!important;}
     .layui-layout-admin .layui-body .clildFrame.layui-tab-content {top:0px!important;}
     .layui-layout-admin .layui-body .clildFrame.layui-tab-content {overflow:scroll;able-layout:fixed;word-wrap:break-word;word-break:break-all;-webkit-overflow-scrolling:touch!important;}

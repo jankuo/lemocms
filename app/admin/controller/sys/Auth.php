@@ -109,9 +109,15 @@ class Auth extends Backend
     // 管理员删除
     public function adminDel()
     {
-        $id = $this->request->post('id');
-        if ($id > 1) {
-            Admin::destroy($id);
+        $ids = $this->request->post('ids');
+        if (!empty($ids)) {
+            $model = new Admin();
+            foreach ($ids as $k=>$id) {
+                if($id==1){
+                    unset($ids[$k]);
+                }
+            }
+            $model->del($ids);
             $this->success(lang('delete success'));
         } else {
             $this->error(lang('supper man cannot delete'));
@@ -202,27 +208,19 @@ class Auth extends Backend
     // 权限菜单显示或者隐藏
     public function ruleState()
     {
-        if (Request::isPost()) {
-            $id = Request::param('id');
-            $info = AuthRule::find($id);
-            $info->menu_status = $info['menu_status'] == 1 ? 0 : 1;
-            $info->save();
-            $this->success(lang('edit success'));
+        if ($this->request->isPost()) {
+            $data = $this->request->post();
+            $id = $this->request->post('id');
+            if (empty($id)) {
+                $this->error('id'.lang('not exist'));
+            }
 
-        }
-    }
-
-    // 设置权限是否验证
-    public function ruleOpen()
-    {
-        if (Request::isPost()) {
-            $id = Request::param('id');
-            $info = AuthRule::find($id);
-            $info->auth_open = $info['auth_open'] == 1 ? 0 : 1;
-            $info->save();
+            $model = new AuthRule();
+            $model->state($data);
             $this->success(lang('edit success'));
         }
     }
+
 
     // 设置权限排序
     public function ruleSort()
@@ -240,10 +238,11 @@ class Auth extends Backend
     // 权限删除
     public function ruleDel()
     {
-        $id = Request::param('id');
-        $child = AuthRule::where('pid',$id)->find();
-        if ($id && !$child) {
-            AuthRule::destroy($id);
+        $ids = Request::param('ids');
+        $model = new AuthRule();
+        $child =$model::where('pid','in',$ids)->find();
+        if ($ids && !$child) {
+            $model->del($ids);
             $this->success(lang('delete success'));
         }elseif($child){
             $this->error(lang('delete child first'));
@@ -253,17 +252,6 @@ class Auth extends Backend
         }
     }
 
-    // 权限批量删除
-    public function ruleSelectDel()
-    {
-        $ids = Request::param('ids');
-        if ($ids) {
-
-            AuthRule::destroy($ids);
-            $this->success(lang('delete success'));
-        }
-
-    }
 
     // 权限增加
     public function ruleAdd()
@@ -277,6 +265,9 @@ class Auth extends Backend
                 $this->error(lang('sort').lang(' cannot null'));
             }
             $data['icon'] = $data['icon']?$data['icon']:'fa fa-adjust';
+            if(strpos(trim($data['href'],'/'),'admin/')==false){
+                $data['href'] = 'admin/'.trim($data['href'],'/');
+            }
             if (AuthRule::create($data)) {
                 $this->success(lang('add success'), url('sys.Auth/adminRule'));
             } else {
@@ -300,7 +291,6 @@ class Auth extends Backend
                 'ruleList' => $list,
                 'rule' =>$rule,
             ];
-
             View::assign($view);
             return view('rule_add');
         }
@@ -368,9 +358,10 @@ class Auth extends Backend
     // 用户组删除
     public function groupDel()
     {
-        $id = $this->request->post('id');
-        if ($id > 1) {
-            AuthGroup::destroy($id);
+        $ids = $this->request->post('ids');
+        if ($ids > 1) {
+            $model  = new AuthGroup();
+            $model->del($ids);
             $this->success(lang('delete success'));
         } else {
             $this->error(lang('supper man cannot delete'));
@@ -390,7 +381,7 @@ class Auth extends Backend
             }
             $result = AuthGroup::create($data);
             if ($result) {
-                $this->success(lang('add success'), 'Auth/adminGroup');
+                $this->success(lang('add success'), url('sys.Auth/group'));
             } else {
                 $this->error(lang('add fail'));
             }
@@ -455,34 +446,18 @@ class Auth extends Backend
         }
     }
 
-    // 用户组批量删除
-    public function groupSelectDel()
-    {
-        $id = $this->request->post('id');
-        if ($id > 1) {
-            AuthGroup::destroy($id);
-            $this->success(lang('delete success'));
-        } else {
-            $this->error(lang('delete fail'));
-        }
-    }
 
     // 用户组显示权限
     public function groupAccess()
     {
-        $list = Cache::get('AuthChecked');
-        if(!$list){
-            $admin_rule = AuthRule::field('id, pid, title')
-                ->where('status',1)
-                ->order('sort asc')->cache(3600)
-                ->select()->toArray();
-            $rules = AuthGroup::where('id', Request::param('id'))
-                ->where('status',1)->cache(3600)
-                ->value('rules');
-            $list = TreeHelper::authChecked($admin_rule, $pid = 0, $rules);
-            Cache::set('AuthChecked',$list,3600);
-
-        }
+        $admin_rule = AuthRule::field('id, pid, title')
+            ->where('status',1)
+            ->order('sort asc')->cache(3600)
+            ->select()->toArray();
+        $rules = AuthGroup::where('id', Request::param('id'))
+            ->where('status',1)
+            ->value('rules');
+        $list = TreeHelper::authChecked($admin_rule, $pid = 0, $rules);
         $group_id = Request::param('id');
         $idList = AuthRule::column('id');
         sort($idList);
@@ -509,18 +484,15 @@ class Auth extends Backend
         }
         $where['id'] = $data['group_id'];
         $where['rules'] = $rls;
-
         if (AuthGroup::update($where)) {
             $admin = Session::get('admin');
             $admin['rules'] = $rls;
-            session('admin', $admin);
-
+            Session::set('admin', $admin);
             $this->success(lang('rule assign success'),url('sys.Auth/group'));
         } else {
             $this->error(lang('rule assign fail'));
         }
     }
-
 
 
 }

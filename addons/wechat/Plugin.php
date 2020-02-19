@@ -28,13 +28,14 @@ class Plugin extends Addons    // 需继承think\Addons类
         'description' => '微信菜单，粉丝，回复等插件-lemocms微信管理插件',    // 插件简介
         'status' => 1,    // 状态
         'author' => 'yuege',
-        'require' => '0.2',
-        'version' => '0.2',
+        'require' => '0.3',
+        'version' => '0.3',
         'website' => ''
 
     ];
     public $menu = [
-        [
+        'is_nav'=>0,//1导航栏；0 非导航栏
+        'menu'=> [
             'href' => 'admin/wechat',
             'title' => '微信管理',
             'status' => 1,

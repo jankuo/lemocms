@@ -10,8 +10,8 @@
                         <input type="text" name="keys" id="keys" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
 
                     </div>
-                    <button class="layui-btn data-add-btn layui-btn-sm" lay-submit="" lay-filter="add" id="search">搜索</button>
-                    <a href="{:url('adminAdd')}" class="layui-btn layui-btn-sm layui-btn-warm">{:lang('add')}{:lang('admin')}</a>
+                    <button class="layui-btn data-add-btn layui-btn-sm" lay-submit="" lay-filter="search" id="search">搜索</button>
+                    <a data-href='{:url("adminAdd")}' href="javascript:;" class="layui-btn layui-btn-sm layui-btn-warm add">{:lang('add')}{:lang('admin')}</a>
 
                 </div>
 
@@ -23,26 +23,34 @@
     </div>
 </div>
 {include file="common/footer"/}
+
 <script type="text/html" id="action">
-    <a href="{:url('adminEdit')}?id={{d.id}}" class="layui-btn layui-btn-xs">{:lang('edit')}</a>
+    <a data-href="{:url('adminEdit')}?id={{d.id}}" class="layui-btn layui-btn-xs" lay-event="edit">{:lang('edit')}</a>
     {{# if(d.id==1){ }}
     <a href="#" class="layui-btn layui-btn-xs layui-btn-disabled">{:lang('del')}</a>
     {{# }else{  }}
-    <a href="#" class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">{:lang('del')}</a>
+    <a data-href="{:url('adminDel')}" class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">{:lang('del')}</a>
     {{# } }}
 </script>
 <script type="text/html" id="status">
     {{# if(d.id==1){ }}
-    <input type="checkbox" disabled name="status" value="{{d.id}}" lay-skin="switch" lay-text="开启|关闭" lay-filter="status" checked>
+    <input data-href="{:url('adminState')}" type="checkbox" disabled name="status" value="{{d.id}}" lay-skin="switch" lay-text="开启|关闭" lay-filter="status" checked>
     {{# }else{  }}
-    <input type="checkbox" name="status" value="{{d.id}}" lay-skin="switch" lay-text="开启|关闭" lay-filter="status" {{ d.status == 1 ? 'checked' : '' }}>
+    <input data-href="{:url('adminState')}" type="checkbox" name="status" value="{{d.id}}" lay-skin="switch" lay-text="开启|关闭" lay-filter="status" {{ d.status == 1 ? 'checked' : '' }}>
     {{# } }}
 </script>
-
 <script>
-    layui.use(['table','form','layer'], function() {
-        var table = layui.table,form = layui.form,$ = layui.jquery;
-        var tableIn = table.render({
+    var tableIn;
+    layui.config({
+        base: "/static/admin/js/",
+        version: true
+    }).extend({
+        Admin: 'Admin'
+    }).use(['element', 'layer', 'Admin'], function () {
+        var $ = layui.jquery,
+            form = layui.form,
+            table = layui.table;
+        tableIn = table.render({
             elem: '#list',
             url: '{:url("adminList")}',
             method:'post',
@@ -58,53 +66,6 @@
                 ,{title:'操作',width:150, toolbar: '#action',align:"center"}
             ]]
         });
-        form.on('switch(status)', function(obj){
-            loading =layer.load(1, {shade: [0.1,'#fff']});
-            var id = this.value;
-            var field = obj.elem.name;
-            $.post('{:url("adminState")}',{'id':id,'field':field},function (res) {
-                layer.close(loading);
-                if (res.code>0) {
-                    tableIn.reload();
-                }else{
-                    layer.msg(res.msg,{time:1000,icon:2});
-                    return false;
-                }
-            })
-        });
-        table.on('tool(list)', function(obj){
-            var data = obj.data;
-            if(obj.event === 'del'){
-                layer.confirm('{:lang("Are you sure you want to delete it")}', function(index){
-                    $.post("{:url('adminDel')}",{id:data.id},function(res){
-                        if (res.code>0) {
-                            layer.msg(res.msg,{time:1000,icon:1});
-                            obj.del();
-                        }else{
-                            layer.msg(res.msg,{time:1000,icon:2});
-                        }
-                    });
-                    layer.close(index);
-                });
-            }
-        });
-        $('#LM-add').click(function () {
-            var index = layer.open({
-                type: 2,
-                content: '{:url("adminAdd")}',
-                area: ['800px', '600px'],
-                maxmin: true
-            });
-            layer.full(index);
-        })
-        $('#search').click(function () {
-            var $keys = $('#keys').val();
-            if(!$keys){
-                return layer.msg('请输入关键词');
-            }
 
-            tableIn.reload({ page: {page: 1},where: {keys: $keys}});
-
-        })
     });
 </script>

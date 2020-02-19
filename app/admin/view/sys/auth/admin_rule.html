@@ -6,19 +6,19 @@
                 <legend>权限{:lang('list')}</legend>
             </fieldset>
             <blockquote class="layui-elem-quote">
-                <a href="{:url('ruleAdd')}" class="layui-btn layui-btn-sm LM-add">{:lang('add')}路由</a>
+                <a data-href="{:url('ruleAdd')}" class="layui-btn layui-btn-sm add">{:lang('add')}路由</a>
                 <a class="layui-btn layui-btn-normal layui-btn-sm" onclick="openAll();">展开或折叠全部</a>
             </blockquote>
-            <table class="layui-table" id="treeGrid" lay-filter="treeGrid"></table>
+            <table class="layui-table" id="list" lay-filter="list"></table>
         </div>
     </div>
 </div>
 
 <script type="text/html" id="auth">
-    <input type="checkbox" name="auth_open" value="{{d.id}}" lay-skin="switch" lay-text="是|否" lay-filter="auth_open" {{ d.auth_open == 0 ? 'checked' : '' }}>
+    <input type="checkbox" name="auth_open" data-href="{:url('ruleState')}" value="{{d.id}}" lay-skin="switch" lay-text="是|否" lay-filter="status" {{ d.auth_open == 0 ? 'checked' : '' }}>
 </script>
 <script type="text/html" id="status">
-    <input type="checkbox" name="menu_status" value="{{d.id}}" lay-skin="switch" lay-text="显示|隐藏" lay-filter="menu_status" {{ d.menu_status == 1 ? 'checked' : '' }}>
+    <input type="checkbox" name="menu_status" data-href="{:url('ruleState')}" value="{{d.id}}" lay-skin="switch" lay-text="显示|隐藏" lay-filter="status" {{ d.menu_status == 1 ? 'checked' : '' }}>
 </script>
 <script type="text/html" id="order">
     <input name="{{d.id}}" data-id="{{d.id}}" class="list_order layui-input" value=" {{d.sort}}" size="10"/>
@@ -27,26 +27,27 @@
     <span class="icon {{d.icon}}"></span>
 </script>
 <script type="text/html" id="action">
-    <a href="{:url('ruleEdit')}?id={{d.id}}" class="layui-btn layui-btn-xs">{:lang('edit')}</a>
-    <a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="add">{:lang('add')}{:lang('child')}</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">{:lang('del')}</a>
+    <a class="layui-btn layui-btn-xs" data-href="{:url('ruleEdit')}?id={{d.id}}" lay-event="edit">{:lang('edit')}</a>
+    <a class="layui-btn layui-btn-xs layui-btn-warm"  data-href="{:url('ruleAdd')}?id={{d.id}}" lay-event="add">{:lang('add')}{:lang('child')}</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs"  data-href="ruleDel" lay-event="del">{:lang('del')}</a>
 </script>
 <script type="text/html" id="topBtn">
-    <a href="{:url('ruleAdd')}" class="layui-btn layui-btn-sm">{:lang('add')}权限</a>
+    <a data-href="{:url('ruleAdd')}" class="layui-btn layui-btn-sm" lay-event="add">{:lang('add')}权限</a>
 </script>
 {include file="common/footer"/}
 <script>
-    var editObj=null,ptable=null,treeGrid=null,tableId='treeGrid',layer=null;
+    var tableIn=null, treeGrid=null,tableId='list',layer=null, Admin =null;
+
     layui.config({
-        base: '/static/plugins/layui/extend/'
+        base: '/static/',
+        version: true
     }).extend({
-        treeGrid: 'treeGrid/treeGrid'
+        treeGrid: 'plugins/layui/extend/treeGrid/treeGrid',
     }).use(['jquery','treeGrid','layer','form'], function(){
         var $=layui.jquery ,form = layui.form;
         treeGrid = layui.treeGrid;
         layer=layui.layer;
-
-        ptable=treeGrid.render({
+        tableIn=treeGrid.render({
             id:tableId
             ,elem: '#'+tableId
             ,idField:'id'
@@ -58,12 +59,12 @@
             ,height:'full-140'
             ,isFilter:false
             ,iconOpen:true//是否显示图标【默认显示】
-            ,isOpenDefault:true//节点默认是展开还是折叠【默认展开】
+            // ,isOpenDefault:true//节点默认是展开还是折叠【默认展开】
             ,cols: [[
                 {field: 'id', title: '{:lang("id")}', width: 70, fixed: true},
                 {field: 'icon', align: 'center',title: '{:lang("icon")}', width: 60,templet: '#icon'},
                 {field: 'title', title: '权限名称', width: 200},
-                {field: 'href', title: '控制器/方法', width: 200},
+                {field: 'href', title: '控制器/方法', minwidth: 200},
                 {field: 'auth_open',align: 'center', title: '是否验证权限', width: 150,toolbar: '#auth'},
                 {field: 'menu_status',align: 'center',title: '菜单{:lang("status")}', width: 150,toolbar: '#status'},
                 {field: 'sort',align: 'center', title: '{:lang("order")}', width: 80, templet: '#order'},
@@ -71,83 +72,55 @@
             ]]
             ,page:false
         });
-        treeGrid.on('tool('+tableId+')',function (obj) {
+        treeGrid.on('tool(list)', function(obj){
             var data = obj.data;
+            var url = $(this).attr('data-href');
             if(obj.event === 'del'){
-                layer.confirm('{:lang("Are you sure you want to delete it")}', function(index){
-                    var loading = layer.load(1, {shade: [0.1, '#fff']});
-                    $.post("{:url('ruleDel')}",{id:data.id},function(res){
+                layer.confirm('Are you sure you want to delete it', function(index){
+                    loading =layer.load(1, {shade: [0.1,'#fff']});
+                    $.post(url?url:'delete',{ids:[data.id]},function(res){
                         layer.close(loading);
-                        if(res.code==1){
+                        layer.close(index);
+                        if(res.code>0){
                             layer.msg(res.msg,{time:1000,icon:1});
                             obj.del();
                         }else{
                             layer.msg(res.msg,{time:1000,icon:2});
                         }
                     });
-                    layer.close(index);
                 });
             }else if(obj.event === 'add'){
-
-                var index = layer.open({
+                var iframe = layer.open({
                     type: 2,
-                    content: '{:url("ruleAdd")}'+'?rule_id='+data.id,
+                    content: url?url:'add',
                     area: ['800px', '600px'],
                     maxmin: true
                 });
-                layer.full(index);
+                layer.full(iframe);
+
+            }else if(obj.event === 'edit'){
+
+                var iframe = layer.open({
+                    type: 2,
+                    content: url?url:'edit',
+                    area: ['600px', '800px'],
+                    maxmin: true
+                });
+                layer.full(iframe);
 
             }
-        });
-        form.on('switch(auth_open)', function(obj){
-            loading =layer.load(1, {shade: [0.1,'#fff']});
-            var id = this.value;
-            var auth_open = obj.elem.checked===true?0:1;
-            $.post('{:url("ruleOpen")}',{'id':id,'auth_open':auth_open},function (res) {
-                layer.close(loading);
-                if (res.code==1) {
-                    treeGrid.render;
-                }else{
-                    layer.msg(res.msg,{time:1000,icon:2});
-                    treeGrid.render;
-                    return false;
-                }
-            })
-        });
-        form.on('switch(menu_status)', function(obj){
-            loading =layer.load(1, {shade: [0.1,'#fff']});
-            var id = this.value;
-            var menu_status = obj.elem.checked===true?1:0;
-            $.post('{:url("ruleState")}',{'id':id,'menu_status':menu_status},function (res) {
-                layer.close(loading);
-                if (res.code==1) {
-                    treeGrid.render;
-                }else{
-                    layer.msg(res.msg,{time:1000,icon:2});
-                    treeGrid.render;
-                    return false;
-                }
-            })
-        });
-        $('body').on('blur','.list_order',function() {
-            var id = $(this).attr('data-id');
-            var sort = $(this).val();
-            $.post('{:url("ruleSort")}',{id:id,sort:sort},function(res){
-                if(res.code > 0){
-                    layer.msg(res.msg,{time:1000,icon:1},function(){
-                        location.href = res.url;
-                    });
-                }else{
-                    layer.msg(res.msg,{time:1000,icon:2});
-                    treeGrid.render;
-                }
-            })
-        })
 
-
+        });
 
     });
-
+    layui.config({
+        base: '/static/',
+        version: true
+    }).extend({
+        Admin: 'admin/js/Admin',
+    }).use(['Admin'], function(){
+        Admin = layui.Admin
+    });
     function openAll() {
         var treedata=treeGrid.getDataTreeList(tableId);
         treeGrid.treeOpenAll(tableId,!treedata[0][treeGrid.config.cols.isOpen]);

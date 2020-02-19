@@ -30,5 +30,8 @@ class User extends Validate
         'mobile|联系电话' => [
             'unique'  => 'user',
         ],
+        'username|用户名' => [
+            'unique'  => 'user',
+        ],
     ];
 }

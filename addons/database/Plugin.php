@@ -34,7 +34,8 @@ class Plugin extends Addons    // 需继承think\Addons类
 
     ];
     public $menu = [
-        [
+        'is_nav'=>0,//1导航栏；0 非导航栏
+        'menu'=> [
             'href' => 'admin/database',
             'title' => '数据库管理',
             'status' => 1,

@@ -53,17 +53,12 @@ class Adminlog extends Backend {
      * 删除日志 单个+批量
      */
     public function delete(){
-        $id = $this->request->post('id');
-        if(!$id){
+        $ids = $this->request->post('ids');
+        if(!$ids){
             $this->error(lang('id is not exist'));
-
-        }
-        if(!is_array($id)){
-            $id = [$id];
         }
         $model = new LogModel();
-
-        if( $model->del($id)){
+        if( $model->del($ids)){
             $this->success(lang('delete success'));
         }else{
             $this->error(lang('delete fail'));

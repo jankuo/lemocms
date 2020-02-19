@@ -16,7 +16,7 @@
                     <div class="layui-input-block">
                         <input type="hidden" name="id">
                         <button type="button" class="layui-btn" lay-submit="" lay-filter="submit">{:lang('submit')}</button>
-                        <a href="{:url('group')}" class="layui-btn layui-btn-primary">{:lang('back')}</a>
+                        <a data-href="{:url('group')}" class="layui-btn layui-btn-primary back">{:lang('back')}</a>
                     </div>
                 </div>
             </form>
@@ -27,51 +27,15 @@
 
 {include file="common/footer"/}
 <script>
-    layui.use(['form', 'layer','upload'], function () {
-        var form = layui.form, layer = layui.layer,$= layui.jquery,upload = layui.upload;
+    layui.config({
+        base: "/static/admin/js/",
+        version: true
+    }).extend({
+        Admin: 'Admin'
+    }).use(['element','form', 'layer', 'Admin','form',], function () {
+        var form = layui.form, $= layui.jquery;
         var info = {:json_encode($info)};
         form.val("form", info);
-
         form.render();
-        form.on('submit(submit)', function (data) {
-            loading =layer.load(1, {shade: [0.1,'#fff']});
-            $.post("", data.field, function (res) {
-                layer.close(loading);
-                if (res.code > 0) {
-                    layer.msg(res.msg, {time: 1800, icon: 1}, function () {
-                        location.href = res.url;
-                    });
-                } else {
-                    layer.msg(res.msg, {time: 1800, icon: 2});
-                }
-            });
-        });
-        //普通图片上传
-        var uploadInt = upload.render({
-            elem: '#addBtn'
-            ,url: '{:url("admin/sys.uploads/uploads")}'
-            ,before: function(obj){
-                //预读本地文件示例，不支持ie8
-                obj.preview(function(index, file, result){
-                    $('#addPic').attr('src', result); //图片链接（base64）
-                });
-            },
-            done: function(res){
-                if(res.code>0){
-                    $('#avatar').val(res.url);
-                }else{
-                    //如果上传失败
-                    return layer.msg('上传失败');
-                }
-            }
-            ,error: function(){
-                //演示失败状态，并实现重传
-                var notice = $('#notice');
-                notice.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
-                notice.find('.demo-reload').on('click', function(){
-                    uploadInt.upload();
-                });
-            }
-        });
     });
 </script>

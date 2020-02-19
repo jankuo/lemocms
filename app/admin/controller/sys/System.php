@@ -115,7 +115,7 @@ class System extends Backend {
             $info = ConfigModel::find($id);
             $data = $this->request->post();
             $model = new ConfigModel();
-            if($model::edit($data)){
+            if($model->edit($data)){
                 $this->success(lang('edit success'));
             }else{
                 $this->error(lang('edit fail'));

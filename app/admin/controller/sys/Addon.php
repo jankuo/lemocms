@@ -96,14 +96,18 @@ class Addon extends Backend
         //安装插件
         $install = $class->install();
         // 安装菜单
-        $this->addAddonManager();
-        list($menu,$pid)=$this->get_menu_config($class);
+        $menu_config=$this->get_menu_config($class);
+        if(isset($menu_config['is_nav']) && $menu_config['is_nav']==1){
+            $pid = 0;
+        }else{
+            $pid = $this->addAddonManager()->id;
+        }
+        $menu[] = $menu_config['menu'];
         $this->addAddonMenu($menu,$pid);
         //添加数据库
         $info = get_addons_info($name);
         $info['status'] = 1;
         $info['config'] =  serialize($class->getConfig(true));
-
         $res = AddonModel::create($info);
         if (!$res) {
             $this->error(lang('addon install fail'));
@@ -162,7 +166,8 @@ class Addon extends Backend
         $class = get_addons_instance($name);
         $uninstall = $class->uninstall();
         //删除菜单
-        list($menu,$pid)=$this->get_menu_config($class);
+        $menu_config=$this->get_menu_config($class);
+        $menu[] = $menu_config['menu'];
         $this->delAddonMenu($menu);
         //卸载sql;
         uninstallsql($name);
@@ -250,7 +255,7 @@ class Addon extends Backend
                     $this->error(lang('edit fail'));
                 }
             }
-            $this->error(lang('Parameter %s can not be empty', []));
+            $this->error(lang('Parameter can not be empty'));
         }
 
         $name = $this->request->get("name");
@@ -293,9 +298,7 @@ class Addon extends Backend
     //获取菜单配置
     protected function get_menu_config($class){
         $menu = $class->menu;
-        $addon_rule = AuthRule::where('href','admin/Addon/manager')->find();
-        $pid = $addon_rule->id;
-        return list($menu,$pid) = [$menu,$pid];
+        return $menu;
     }
     //添加菜单
     protected function addAddonMenu($menu,$pid = 0){
@@ -303,9 +306,9 @@ class Addon extends Backend
         foreach ($menu as $k=>$v){
             $hasChild = isset($v['menulist']) && $v['menulist'] ? true : false;
             try {
-                $v['pid'] = $pid;
+               $v['pid'] = $pid ;
                 if(strpos(trim($v['href'],'/'),'admin/')==false){
-                    $v['href'] = 'admin/'.strtolower(trim($v['href'],'/'));
+                    $v['href'] = 'admin/'.trim($v['href'],'/');
                 }
                 if(AuthRule::where('href',$v['href'])->find()){
                     continue;
@@ -328,7 +331,7 @@ class Addon extends Backend
             $hasChild = isset($v['menulist']) && $v['menulist'] ? true : false;
             try {
                 if(strpos(trim($v['href'],'/'),'admin/')==false){
-                    $v['href'] = 'admin/'.strtolower(trim($v['href'],'/'));
+                    $v['href'] = 'admin/'.trim($v['href'],'/');
                 }
                 $menu_rule = AuthRule::where('href',$v['href'])->find();
                 if($menu_rule){
@@ -353,7 +356,6 @@ class Addon extends Backend
 
 
     }
-
     //添加管理菜单
     protected function addAddonManager(){
         $addon_auth =  AuthRule::where('href','admin/addon')->cache(3600)->find();

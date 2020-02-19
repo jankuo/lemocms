@@ -21,6 +21,7 @@ use think\facade\Session;
 use think\facade\View;
 use think\facade\Request;
 use think\captcha\facade\Captcha;
+use think\exception\ValidateException;
 
 class Login extends Base {
     /*
@@ -36,14 +37,12 @@ class Login extends Base {
             $admin_sign= Session::get('admin_sign') == SignHelper::authSign($admin) ? $admin['id'] : 0;
             // 签名验证
             if ($admin && $admin_sign) {
-                
                  redirect('index/index');
             }
 
             return view();
 
         } else {
-
             $username = $this->request->post('username', '', 'lemo\helper\StringHelper::filterWords');
             $password = $this->request->post('password', '', 'lemo\helper\StringHelper::filterWords');
             $captcha = $this->request->post('captcha', '', 'lemo\helper\StringHelper::filterWords');

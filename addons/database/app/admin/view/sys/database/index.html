@@ -29,7 +29,7 @@
             form = layui.form,
             table = layui.table;
 
-        table.render({
+        var tableIn = table.render({
             elem: '#list',
             url: '{:url("index")}',
             method: 'post',

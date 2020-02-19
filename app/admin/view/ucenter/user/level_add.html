@@ -63,7 +63,7 @@
                     <div class="layui-input-inline">
                         <input type="hidden" name="id"  >
                         <button type="button" class="layui-btn" lay-submit="" lay-filter="submit">{:lang('submit')}</button>
-                        <a href="{:url('levelIndex')}" class="layui-btn layui-btn-primary">{:lang('back')}</a>
+                        <a data-href="{:url('levelIndex')}" class="layui-btn layui-btn-primary back">{:lang('back')}</a>
                     </div>
                 </div>
             </form>
@@ -74,29 +74,20 @@
 
 {include file="common/footer"/}
 <script>
-    layui.use(['form', 'layer','upload','laydate'], function () {
-        var form = layui.form,layer = layui.layer,$= layui.jquery,upload = layui.upload;
+    layui.config({
+        base: "/static/admin/js/",
+        version: true
+    }).extend({
+        Admin:'Admin',
+    }).use(['form','Admin'], function () {
+        var $ = layui.$;
+        var form = layui.form;
         var info = '';
-
         info = {:json_encode($info)};
         form.val("form", info);
         if(info){
             $('#addPic').attr('src',info.avatar);
         }
         form.render();
-        form.on('submit(submit)', function (data) {
-            loading =layer.load(1, {shade: [0.1,'#fff']});
-            $.post("", data.field, function (res) {
-                layer.close(loading);
-                if (res.code > 0) {
-                    layer.msg(res.msg, {time: 1800, icon: 1}, function () {
-                        location.href = res.url;
-                    });
-                } else {
-                    layer.msg(res.msg, {time: 1800, icon: 2});
-                }
-            });
-        });
-
     });
 </script>

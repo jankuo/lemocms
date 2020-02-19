@@ -15,7 +15,7 @@
             <div class="layui-tab-content">
 <!--网站配置-->
                     <div class="layui-tab-item layui-show">
-                        <form class="layui-form layui-form-pane" lay-filter="form-config">
+                        <form class="layui-form layui-form-pane" action="{:url('site')}" lay-filter="form-config">
 
                             <div class="layui-form-item">
                                 <label class="layui-form-label required">{:lang('site name')}</label>
@@ -44,14 +44,14 @@
 
                             <div class="layui-form-item">
                                 <label class="layui-form-label">{:lang('site logo')}</label>
-                                <input type="hidden" name="site_logo" id="logo">
+                                <input type="hidden" name="addPic" id="avatar">
                                 <div class="layui-input-block">
                                     <div class="layui-upload">
-                                        <button type="button" class="layui-btn layui-btn-primary" id="logoBtn"><i
+                                        <button type="button" class="layui-btn layui-btn-primary" id="uploads"><i
                                                 class="icon icon-upload3"></i>{:lang('upload')}
                                         </button>
                                         <div class="layui-upload-list">
-                                            <img class="layui-upload-img" id="site_logo">
+                                            <img class="layui-upload-img" id="addPic">
                                             <p id="demoText"></p>
                                         </div>
                                     </div>
@@ -97,7 +97,7 @@
 
 <!--邮箱设置-->
                     <div class="layui-tab-item">
-                        <form class="layui-form layui-form-pane" lay-filter="form-config">
+                        <form class="layui-form layui-form-pane" action="{:url('site')}" lay-filter="form-config">
 
                             <div class="layui-form-item">
                                 <label class="layui-form-label required">{:lang('email server')}</label>
@@ -155,7 +155,7 @@
 
 <!--                    短信设置-->
                     <div class="layui-tab-item">
-                        <form class="layui-form layui-form-pane" lay-filter="form-config">
+                        <form class="layui-form layui-form-pane" action="{:url('site')}" lay-filter="form-config">
                             <div class="layui-form-item">
                                 <label class="layui-form-label required">{:lang('sms appid')}</label>
                                 <div class="layui-input-block">
@@ -200,7 +200,7 @@
 
 <!--上传配置-->
                     <div class="layui-tab-item">
-                        <form class="layui-form layui-form-pane" lay-filter="form-config">
+                        <form class="layui-form layui-form-pane" action="{:url('site')}" lay-filter="form-config">
 
                             <div class="layui-form-item">
                                 <label class="layui-form-label">{:lang('file type')}</label>
@@ -241,54 +241,18 @@
 </div>
 {include file="common/footer"/}
 <script>
-    layui.use(['form', 'layer','upload','element'], function () {
-        var form = layui.form,layer = layui.layer,upload = layui.upload,$ = layui.jquery,element = layui.element;
+    var tableIn;
+    layui.config({
+        base: "/static/admin/js/",
+        version: true
+    }).extend({
+        Admin: 'Admin'
+    }).use(['element','form', 'layer', 'Admin','table'], function () {
+        var form = layui.form,$ = layui.jquery,element = layui.element;
         var config = {$config|raw};
-
         form.val("form-config", config);
-        $('#site_logo').attr('src',config.site_logo);
+        $('#addPic').attr('src',config.site_logo);
 
-        //普通图片上传
-        var uploadInst = upload.render({
-            elem: '#logoBtn'
-            ,url: '{:url("admin/sys.uploads/uploads")}'
-            ,before: function(obj){
-                //预读本地文件示例，不支持ie8
-                obj.preview(function(index, file, result){
-                    $('#site_logo').attr('src', result); //图片链接（base64）
-                });
-            }
-            ,done: function(res){
-                //上传成功
-                if(res.code>0){
-                    $('#logo').val(res.url);
-                }else{
-                    //如果上传失败
-                    return layer.msg('上传失败');
-                }
-            }
-            ,error: function(){
-                //演示失败状态，并实现重传
-                var demoText = $('#demoText');
-                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
-                demoText.find('.demo-reload').on('click', function(){
-                    uploadInst.upload();
-                });
-            }
-        });
-        //提交监听
-        form.on('submit(submit)', function (data) {
-            loading =layer.load(1, {shade: [0.1,'#fff']});
-            $.post("{:url('admin/sys.system/site')}",data.field,function(res){
-                layer.close(loading);
-                if(res.code > 0){
-                    layer.msg(res.msg,{icon: 1, time: 1000},function(){
-                        location.href = res.url;
-                    });
-                }else{
-                    layer.msg(res.msg,{icon: 2, time: 1000});
-                }
-            });
-        })
+
     })
 </script>

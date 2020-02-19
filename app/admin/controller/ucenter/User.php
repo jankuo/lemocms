@@ -112,28 +112,15 @@ class User extends Backend{
         }
     }
     public function delete(){
-        $id = $this->request->post('id');
-        if($id){
-            $model = new UserModel();
-            $res =$model->del($id);
-            $this->success(lang('delete success'));
-
-        }else{
-            $this->error(lang('invalid data'));
-        }
-    }
-    public function delAll(){
         $ids = $this->request->post('ids');
         if($ids){
             $model = new UserModel();
             $res =$model->del($ids);
-            if(!$res)$this->error(lang('delete fail'));
-
             $this->success(lang('delete success'));
+
         }else{
             $this->error(lang('invalid data'));
         }
-
     }
 
     /**---------------用户等级--------------------**/
@@ -220,10 +207,10 @@ class User extends Backend{
 
     public function levelDel(){
 
-        $id = $this->request->post('id');
-        if($id){
+        $ids = $this->request->post('ids');
+        if($ids){
             $model = new UserLevel();
-            $model->del($id);
+            $model->del($ids);
             $this->success(lang('delete success'));
         }else{
             $this->error(lang('invalid data'));

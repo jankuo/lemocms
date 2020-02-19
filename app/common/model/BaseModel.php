@@ -52,6 +52,7 @@ class BaseModel extends Model
 
     public function edit($data){
         $info  = $this->find($data['id']);
+        unset($data['id']);
         $result = $info->save($data);
         if($result) {
             return $result;

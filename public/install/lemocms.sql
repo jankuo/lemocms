@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 09, 2020 at 09:01 PM
+-- Generation Time: Feb 19, 2020 at 03:29 PM
 -- Server version: 5.7.27-log
 -- PHP Version: 7.3.10
 
@@ -74,7 +74,7 @@ CREATE TABLE `lm_admin` (
 
 INSERT INTO `lm_admin` (`id`, `username`, `password`, `group_id`, `email`, `realname`, `mobile`, `ip`, `mdemail`, `status`, `avatar`, `create_time`, `update_time`) VALUES
 (1, 'admin', '$2y$12$jJNSWOS.8he.z3s17YCRtesZ1v6F6Ck3zUGBhniRDr2LNHfUUwH5.', 1, '994927909@qq.com', '', '18397423845', '127.0.0.1', '0', 1, '/storage/uploads/20190817\\294faa45405fa24da59c311f55ce313f.png', 1482132862, 1577337495),
-(3, 'demo', '$2y$12$jJNSWOS.8he.z3s17YCRtesZ1v6F6Ck3zUGBhniRDr2LNHfUUwH5.', 1, '994927909@qq.com', '', '18397423845', '119.122.91.146', '0', 1, '/storage/uploads/20190817\\a17c794ac7fae7db012aa6e997cf3400.jpg', 1564041575, 1581248965);
+(3, 'demo', '$2y$12$jJNSWOS.8he.z3s17YCRtesZ1v6F6Ck3zUGBhniRDr2LNHfUUwH5.', 1, '994927909@qq.com', '', '18397423845', '119.122.91.146', '0', 1, '/storage/uploads/20190817\\a17c794ac7fae7db012aa6e997cf3400.jpg', 1564041575, 1581824839);
 
 -- --------------------------------------------------------
 
@@ -96,43 +96,32 @@ CREATE TABLE `lm_admin_log` (
   `status` tinyint(1) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `lm_admin_log`
+-- Table structure for table `lm_attach`
 --
 
-INSERT INTO `lm_admin_log` (`id`, `admin_id`, `username`, `log_url`, `log_content`, `log_title`, `log_agent`, `log_ip`, `create_time`, `update_time`, `status`) VALUES
-(1, 0, 'Unknown', '/index.php/admin/login/index.html', '{\"username\":\"demo\",\"captcha\":\"32\",\"rememberMe\":\"true\"}', '[登录成功]', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252892, 1581252892, 1),
-(2, 3, 'demo', '/index.php/admin/sys.system/index.html', '点击菜单', '站点设置', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252902, 1581252902, 1),
-(3, 3, 'demo', '/index.php/admin/sys.system/index.html', '点击菜单', '站点设置', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252902, 1581252902, 1),
-(4, 3, 'demo', '/index.php/admin/sys.adminlog/index.html', '点击菜单', '日志管理', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252903, 1581252903, 1),
-(5, 3, 'demo', '/index.php/admin/sys.adminlog/index.html', '点击菜单', '日志管理', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252903, 1581252903, 1),
-(6, 3, 'demo', '/index.php/admin/sys.system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252905, 1581252905, 1),
-(7, 3, 'demo', '/index.php/admin/sys.system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252905, 1581252905, 1),
-(8, 3, 'demo', '/index.php/admin/sys.auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252908, 1581252908, 1),
-(9, 3, 'demo', '/index.php/admin/sys.auth/adminrule.html', '点击菜单', '权限列表', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252908, 1581252908, 1),
-(10, 3, 'demo', '/index.php/admin/sys.auth/group.html', '点击菜单', '权限组', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252909, 1581252909, 1),
-(11, 3, 'demo', '/index.php/admin/sys.auth/group.html', '点击菜单', '权限组', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252909, 1581252909, 1),
-(12, 3, 'demo', '/index.php/admin/sys.auth/adminlist.html', '点击菜单', '管理员列表', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252909, 1581252909, 1),
-(13, 3, 'demo', '/index.php/admin/sys.auth/adminlist.html', '点击菜单', '管理员列表', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252909, 1581252909, 1),
-(14, 3, 'demo', '/index.php/admin/sys.addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252911, 1581252911, 1),
-(15, 3, 'demo', '/index.php/admin/sys.addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252911, 1581252911, 1),
-(16, 3, 'demo', '/index.php/admin/ucenter.user/index.html', '点击菜单', '会员管理', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252927, 1581252927, 1),
-(17, 3, 'demo', '/index.php/admin/ucenter.user/index.html', '点击菜单', '会员管理', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252927, 1581252927, 1),
-(18, 3, 'demo', '/index.php/admin/ucenter.user/levelindex.html', '点击菜单', '会员等级', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252928, 1581252928, 1),
-(19, 3, 'demo', '/index.php/admin/ucenter.user/levelindex.html', '点击菜单', '会员等级', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252928, 1581252928, 1),
-(20, 3, 'demo', '/index.php/admin/sys.addon/index.html', '点击菜单', '插件列表', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', '14.205.58.36', 1581252934, 1581252934, 1),
-(21, 1, 'admin', '/index.php/admin/sys.system/index.html', '点击菜单', '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', '163.125.177.90', 1581253138, 1581253138, 1),
-(22, 1, 'admin', '/index.php/admin/sys.system/index.html', '点击菜单', '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', '163.125.177.90', 1581253138, 1581253138, 1),
-(23, 1, 'admin', '/index.php/admin/sys.adminlog/index.html', '点击菜单', '日志管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', '163.125.177.90', 1581253140, 1581253140, 1),
-(24, 1, 'admin', '/index.php/admin/sys.adminlog/index.html', '点击菜单', '日志管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', '163.125.177.90', 1581253140, 1581253140, 1),
-(25, 1, 'admin', '/index.php/admin/sys.system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', '163.125.177.90', 1581253143, 1581253143, 1),
-(26, 1, 'admin', '/index.php/admin/sys.system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', '163.125.177.90', 1581253143, 1581253143, 1),
-(27, 1, 'admin', '/index.php/admin/sys.system/configedit.html', '{\"id\":\"1\"}', '编辑配置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', '163.125.177.90', 1581253145, 1581253145, 1),
-(28, 1, 'admin', '/index.php/admin/sys.system/configedit.html', '{\"id\":\"4\"}', '编辑配置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', '163.125.177.90', 1581253153, 1581253153, 1),
-(29, 1, 'admin', '/index.php/admin/sys.system/configedit.html', '{\"id\":\"9\"}', '编辑配置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', '163.125.177.90', 1581253157, 1581253157, 1),
-(30, 1, 'admin', '/index.php/admin/sys.system/index.html', '点击菜单', '站点设置', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', '163.125.177.90', 1581253220, 1581253220, 1),
-(31, 1, 'admin', '/index.php/admin/sys.adminlog/index.html', '点击菜单', '日志管理', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', '163.125.177.90', 1581253223, 1581253223, 1),
-(32, 1, 'admin', '/index.php/admin/sys.system/configlist.html', '点击菜单', '配置列表', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', '163.125.177.90', 1581253223, 1581253223, 1);
+CREATE TABLE `lm_attach` (
+  `id` int(11) NOT NULL,
+  `admin_id` int(11) NOT NULL DEFAULT '0' COMMENT '管理员id',
+  `user_id` int(11) NOT NULL DEFAULT '0' COMMENT '用户表id',
+  `name` varchar(255) DEFAULT NULL COMMENT '文件名',
+  `thumb` varchar(255) DEFAULT NULL COMMENT '缩略图',
+  `path` varchar(255) DEFAULT NULL COMMENT '路径',
+  `url` varchar(255) DEFAULT NULL COMMENT '完整地址',
+  `ext` varchar(5) DEFAULT NULL COMMENT '后缀',
+  `size` int(11) DEFAULT '0' COMMENT '大小',
+  `width` varchar(30) DEFAULT '0' COMMENT '宽度',
+  `height` varchar(30) DEFAULT '0' COMMENT '高度',
+  `md5` char(32) DEFAULT NULL,
+  `mime` varchar(80) DEFAULT NULL,
+  `driver` varchar(20) DEFAULT 'local',
+  `create_time` int(11) DEFAULT NULL,
+  `update_time` int(11) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `sort` int(5) NOT NULL DEFAULT '50'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -154,7 +143,7 @@ CREATE TABLE `lm_auth_group` (
 --
 
 INSERT INTO `lm_auth_group` (`id`, `title`, `status`, `rules`, `create_time`, `update_time`) VALUES
-(1, '超级管理员', 1, '76,77,78,79,80,81,82,83,84,85,86,174,175,1467,1468,1469,1470,1471,1472,1473,1474,1475,1476,1477,1478,1479,1480,1481,1482,1483,1484,1485,1486,1487,1488,1489,1490,1491,1492,1493,1494,1495,1496,1497,1498,1499,1500,1501,1502,1503,1504,1505,1506,1507,1508,1509,1510,1511,1512,1513,1514,1515,1516,1517,1518,1519,1520,1521,1522,1523,1524,1525,1526,1527,1528,1529,1530,1531,1532,1533,1534,1535,1536,1537,1538,1539,1,2,20,21,40,34,39,148,149,150,151,152,153,154,73,3,4,5,9,10,11,12,22,13,6,7,8,14,15,16,17,18,19,26,27,28,29,30,31,32,33,35,36,37,38,', 1465114224, 1581249333);
+(1, '超级管理员', 1, '174,175,2603,2604,2615,2617,2616,2610,2614,2613,2612,2611,2618,2622,2621,2620,2619,2605,2608,2609,2607,2606,2624,2628,2627,2626,2625,2623,2638,2643,2646,2645,2644,2639,2642,2641,2640,1,6,26,33,32,31,30,29,28,27,35,38,37,36,7,19,18,17,16,15,14,8,2,34,39,21,40,20,148,154,152,151,150,149,153,73,1659,1660,1663,1661,1662,1664,76,82,86,85,84,83,77,78,79,80,81,', 1465114224, 1582014376);
 
 -- --------------------------------------------------------
 
@@ -183,7 +172,7 @@ CREATE TABLE `lm_auth_rule` (
 --
 
 INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`, `menu_status`, `icon`, `condition`, `pid`, `sort`, `create_time`, `update_time`) VALUES
-(1, 'admin/Sys.System', '系统', 1, 1, 0, 1, 'fa fa-home', '', 0, 50, 1446535750, 1581250778),
+(1, 'admin/Sys.System', '系统', 1, 1, 0, 1, 'fa fa-home', '', 0, 50, 1446535750, 1581825710),
 (2, 'admin/Sys.System', '系统设置', 1, 1, 0, 1, 'fa fa-gears', '', 1, 0, 1446535789, 1571882291),
 (6, 'admin/Sys.Auth', '权限管理', 1, 1, 0, 1, 'fa fa-cog', '', 1, 0, 0, 0),
 (7, 'admin/Sys.Auth/adminRule', '权限列表', 1, 1, 0, 1, 'fa fa-cog', '', 6, 0, 0, 0),
@@ -197,7 +186,7 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (20, 'admin/Sys.System/index', '站点设置', 1, 1, 0, 1, 'fa fa-gears', '', 2, 0, 0, 1567228601),
 (21, 'admin/Sys.Adminlog/index', '日志管理', 1, 1, 0, 1, 'fa fa-life-ring', '', 2, 0, 0, 1566007925),
 (26, 'admin/Sys.Auth/group', '权限组', 1, 1, 0, 1, 'fa fa-globe', '', 6, 0, 0, 0),
-(27, 'admin/Sys.Auth/groupDel', '用户组删除', 1, 1, 0, 0, '', '', 26, 0, 0, 0),
+(27, 'admin/Sys.Auth/groupDel', '用户组删除', 1, 1, 0, 0, '', '', 26, 0, 0, 1581662964),
 (28, 'admin/Sys.Auth/groupAdd', '用户组添加', 1, 1, 0, 0, '', '', 26, 0, 0, 0),
 (29, 'admin/Sys.Auth/groupEdit', '用户组修改', 1, 1, 0, 0, '', '', 26, 0, 0, 0),
 (30, 'admin/Sys.Auth/groupState', '用户组状态修改', 1, 1, 0, 0, '', '', 26, 0, 0, 0),
@@ -212,17 +201,17 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (39, 'admin/Index/password', '修改密码', 1, 1, 0, 0, '', '', 2, 0, 0, 0),
 (40, 'admin/Sys.Adminlog/delete', '广告编辑', 1, 1, 0, 0, '', '', 21, 50, 1566264200, 1567229266),
 (73, 'admin/Sys.System/site', '站点修改', 1, 1, 0, 0, '', '', 2, 50, 1567225373, 1567225410),
-(76, 'admin/Ucenter.User', '会员', 1, 1, 0, 1, 'fa fa-address-card-o', '', 0, 100, 1567327942, 1581250798),
-(77, 'admin/Ucenter.User/index', '会员管理', 1, 1, 0, 1, 'fa fa-address-card-o', '', 76, 50, 1567327992, 1567327992),
-(78, 'admin/Ucenter.User/add', '会员添加', 1, 1, 0, 0, NULL, '', 77, 0, 0, NULL),
-(79, 'admin/Ucenter.User/del', '会员删除', 1, 1, 0, 0, NULL, '', 77, 0, 0, NULL),
+(76, 'admin/Ucenter.User', '会员', 1, 1, 0, 1, 'fa fa-address-card-o', '', 0, 100, 1567327942, 1581825718),
+(77, 'admin/Ucenter.User/index', '会员管理', 1, 1, 0, 1, 'fa fa-address-card-o', '', 76, 50, 1567327992, 1581662864),
+(78, 'admin/Ucenter.User/add', '会员添加', 1, 1, 0, 0, NULL, '', 77, 0, 0, 1581662843),
+(79, 'admin/Ucenter.User/delete', '会员删除', 1, 1, 0, 0, NULL, '', 77, 0, 0, NULL),
 (80, 'admin/Ucenter.User/edit', '会员编辑', 1, 1, 0, 0, NULL, '', 77, 0, 0, NULL),
 (81, 'admin/Ucenter.User/state', '会员状态', 1, 1, 0, 0, NULL, '', 77, 0, 0, NULL),
 (82, 'admin/Ucenter.User/levelIndex', '会员等级', 1, 1, 0, 1, 'fa fa-align-center', '', 76, 50, 1567563846, 1567565085),
-(83, 'admin/Ucenter.User/levelState', '会员等级状态', 1, 1, 0, 0, '', '', 82, 50, 1567568251, 1567568323),
-(84, 'admin/Ucenter.User/levelDel', '会员等级删除', 1, 1, 0, 0, '', '', 82, 50, 1567568283, 1567568283),
+(83, 'admin/Ucenter.User/levelState', '会员等级状态', 1, 1, 0, 0, '', '', 82, 50, 1567568251, 1581662817),
+(84, 'admin/Ucenter.User/levelDel', '会员等级删除', 1, 1, 0, 0, '', '', 82, 50, 1567568283, 1581662829),
 (85, 'admin/Ucenter.User/levelAdd', '会员等级添加', 1, 1, 0, 0, '', '', 82, 50, 1567568305, 1567568333),
-(86, 'admin/Ucenter.User/levelEdit', '会员等级编辑', 1, 1, 0, 0, '', '', 82, 50, 1567568357, 1567568372),
+(86, 'admin/Ucenter.User/levelEdit', '会员等级编辑', 1, 1, 0, 0, 'fa fa-adjust', '', 82, 50, 1567568357, 1581858492),
 (148, 'admin/Sys.System/configlist', '配置列表', 1, 1, 0, 1, 'fa fa-align-justify', '', 2, 0, 0, NULL),
 (149, 'admin/Sys.System/configAdd', '添加配置', 1, 1, 0, 0, NULL, '', 148, 0, 0, NULL),
 (150, 'admin/Sys.System/configEdit', '编辑配置', 1, 1, 0, 0, NULL, '', 148, 0, 0, NULL),
@@ -230,8 +219,13 @@ INSERT INTO `lm_auth_rule` (`id`, `href`, `title`, `type`, `status`, `auth_open`
 (152, 'admin/Sys.System/configState', '配置状态', 1, 1, 0, 0, NULL, '', 148, 0, 0, NULL),
 (153, 'admin/Sys.System/configGroupAdd', '配置组添加', 1, 1, 0, 0, NULL, '', 148, 0, 0, NULL),
 (154, 'admin/Sys.System/configGroupDel', '配置组删除', 1, 1, 0, 0, NULL, '', 148, 0, 0, NULL),
-(174, 'admin/addon', '插件管理', 1, 1, 0, 1, 'fa fa-futbol-o', '', 0, 50, 1580880615, 1580880717),
-(175, 'admin/sys.addon/index', '插件列表', 1, 1, 0, 1, 'fa fa-adjust', '', 174, 50, 1580880674, 1580880674);
+(174, 'admin/addon', '插件管理', 1, 1, 1, 1, 'fa fa-futbol-o', '', 0, 1, 1580880615, 1582014450),
+(175, 'admin/sys.addon/index', '插件列表', 1, 1, 0, 1, 'fa fa-adjust', '', 174, 50, 1580880674, 1580880674),
+(1659, 'admin/attach', '附件管理', 1, 1, 0, 1, 'fa fa-adjust', '', 1, 50, 1581588790, 1581588790),
+(1660, 'admin/sys.attach/index', '附件列表', 1, 1, 0, 1, 'fa fa-adjust', '', 1659, 50, 1581588855, 1581588855),
+(1661, 'admin/sys.attach/add', '附件上传', 1, 1, 0, 0, 'fa fa-adjust', '', 1660, 50, 1581588904, 1581588989),
+(1662, 'admin/sys.attach/delete', '附件删除', 1, 1, 0, 0, 'fa fa-adjust', '', 1660, 50, 1581588934, 1581588934),
+(1663, 'admin/sys.attach/select', '附件选择', 1, 1, 0, 0, 'fa fa-adjust', '', 1660, 50, 1581588960, 1581588960);
 
 -- --------------------------------------------------------
 
@@ -255,13 +249,13 @@ CREATE TABLE `lm_config` (
 --
 
 INSERT INTO `lm_config` (`id`, `code`, `value`, `remark`, `type`, `status`, `create_time`, `update_time`) VALUES
-(1, 'site_name', 'lemocms', '网站名称', 'site', 1, 0, 0),
-(2, 'site_phone', '3', '网站客服服务电话', 'site', 1, 0, 0),
-(3, 'site_state', '1', '状态', 'site', 1, 0, 0),
-(4, 'site_logo', '/storage/uploads/logo.png', '网站logo图', 'site', 1, 0, 0),
-(5, 'site_mobile_logo', 'site_mobile_logo.png', '默认网站手机端logo', 'site', 1, 0, 0),
-(6, 'site_logowx', 'site_logowx.jpg', '微信网站二维码', 'site', 1, 0, 0),
-(7, 'site_icp', '2', 'ICP备案号', 'site', 1, 0, 0),
+(1, 'site_name', 'lemocms', '网站名称', 'site', 1, 0, 1581900083),
+(2, 'site_phone', '3', '网站客服服务电话', 'site', 1, 0, 1581831391),
+(3, 'site_state', '1', '状态', 'site', 1, 0, 1581825436),
+(4, 'site_logo', '/storage/uploads/logo.png', '网站logo图1', 'site', 0, 0, 1581996172),
+(5, 'site_mobile_logo', 'site_mobile_logo.png', '默认网站手机端logo', 'site', 0, 0, 1581825453),
+(6, 'site_logowx', 'site_logowx.jpg', '微信网站二维码', 'site', 0, 0, 1581825453),
+(7, 'site_icp', '2', 'ICP备案号', 'site', 0, 0, 1581825454),
 (8, 'site_tel400', '40002541852', '解释,备注', 'site', 1, 0, 0),
 (9, 'site_email', '858761000@qq.com', '电子邮件', 'site', 1, 0, 0),
 (10, 'site_copyright', 'LEMOCMS版权所有@2019', '底部版权信息', 'site', 1, 0, 0),
@@ -269,13 +263,13 @@ INSERT INTO `lm_config` (`id`, `code`, `value`, `remark`, `type`, `status`, `cre
 (12, 'captcha_status_register', '1', '会员注册是否验证码', 'site', 1, 0, 0),
 (14, 'sms_appid', 'LTAIesI7qxnHLgKE', '短信平台账号', 'sms', 1, 0, 0),
 (15, 'sms_secret', 'sbA6wnefJLD7pv7WipcxL0M3IMb3l9', '短信平台密钥', 'sms', 1, 0, 0),
-(16, 'email_host', 'SMTP.163.com', '邮箱地址', 'email', 1, 0, 0),
-(17, 'email_port', '465', '邮箱端口', 'email', 1, 0, 0),
-(18, 'email_addr', 'limingyue0312@163.com', '邮箱发件人地址', 'email', 1, 0, 0),
-(19, 'email_id', 'limingyue0312@163.com', '身份验证用户名', 'email', 1, 0, 0),
-(20, 'email_pass', 'limingyue0312', '用户名密码', 'email', 1, 0, 0),
-(21, 'email_secure', 'ssl', '邮箱发送协议', 'email', 1, 0, 0),
-(22, 'upload_file_type', 'bmp|png|gif|jpg|jpeg|zip|rar|txt|ppt|xls|doc|mp3|mp4', '图片上传保存方式', 'upload', 1, 0, 0),
+(16, 'email_host', 'smtp.qq.com', '邮箱地址', 'email', 1, 0, 0),
+(17, 'email_port', '25', '邮箱端口', 'email', 1, 0, 0),
+(18, 'email_addr', '994927909@qq.com', '邮箱发件人地址', 'email', 1, 0, 0),
+(19, 'email_id', '994927909@qq.com', '身份验证用户名', 'email', 1, 0, 0),
+(20, 'email_pass', '11211', '用户名密码', 'email', 1, 0, 0),
+(21, 'email_secure', 'smtp', '邮箱发送协议', 'email', 1, 0, 0),
+(22, 'upload_file_type', 'bmp|png|gif|jpg|jpeg|zip|rar|txt|ppt|xls|doc|mp3|mp4|php', '图片上传保存方式', 'upload', 1, 0, 0),
 (23, 'cache_open', '0', '是否开启缓存', 'site', 1, 0, 0),
 (24, 'alioss_accessid', '', 'accessid', 'oss', 1, 0, 0),
 (25, 'alioss_accesssecret', '', 'oss_accesssecret', 'oss', 1, 0, 0),
@@ -304,7 +298,10 @@ INSERT INTO `lm_config` (`id`, `code`, `value`, `remark`, `type`, `status`, `cre
 (51, 'upload_water_position', '', '水印位置', 'upload', 1, 0, 0),
 (52, 'sms_product', 'lemocms', '产品', 'sms', 1, 0, 0),
 (53, 'sms_template', 'SMS_158941284', '模板id', 'sms', 1, 0, 0),
-(54, 'site_version', 'v1.6', '版本', 'site', 1, NULL, NULL);
+(54, 'site_version', 'v1.7', '版本', 'site', 1, NULL, NULL),
+(56, 'djrn', 'd', '', 'site', 1, 1581833955, 1581833955),
+(57, '3edc', '1', '1', 'site', 1, 1581996383, 1581996383),
+(58, 'eddd', '3333', '3333', 'site', 1, 1582019173, 1582019173);
 
 -- --------------------------------------------------------
 
@@ -362,16 +359,16 @@ INSERT INTO `lm_field_type` (`id`, `name`, `title`, `sort`, `default_define`, `i
 (4, 'radio', '单选按钮', 4, 'char(10) NOT NULL DEFAULT \'\'', 1, 0, ''),
 (5, 'switch', '开关', 5, 'tinyint(2) UNSIGNED NOT NULL DEFAULT \'0\'', 0, 0, 'isBool'),
 (6, 'array', '数组', 6, 'varchar(512) NOT NULL DEFAULT \'\'', 0, 0, ''),
-(7, 'select', '下拉框', 7, 'char(10) NOT NULL DEFAULT \'\'', 1, 0, ''),
-(8, 'image', '单张图', 8, 'int(5) UNSIGNED NOT NULL DEFAULT \'0\'', 0, 0, 'isNumber'),
+(7, 'select', '下拉框', 7, 'varchar(10) NOT NULL DEFAULT \'\'', 1, 0, ''),
+(8, 'image', '单张图', 8, 'varchar(255) NOT NULL DEFAULT \'\'', 0, 0, ''),
 (9, 'tags', '标签', 10, 'varchar(255) NOT NULL DEFAULT \'\'', 0, 1, ''),
-(10, 'number', '数字', 11, 'int(10) UNSIGNED NOT NULL DEFAULT \'0\'', 0, 0, 'isNumber'),
-(11, 'datetime', '日期和时间', 12, 'int(10) UNSIGNED NOT NULL DEFAULT \'0\'', 0, 0, ''),
-(12, 'ueditor', '百度编辑器', 13, 'text NOT NULL', 0, 1, ''),
+(10, 'number', '数字', 11, 'int(11) UNSIGNED NOT NULL DEFAULT \'0\'', 0, 0, 'isNumber'),
+(11, 'datetime', '日期和时间', 12, 'int(11) UNSIGNED NOT NULL DEFAULT \'0\'', 0, 0, ''),
+(12, 'ueditor', '百度编辑器', 13, 'text NOT NULL  DEFAULT \'\'', 0, 1, ''),
 (13, 'images', '多张图', 9, 'varchar(256) NOT NULL DEFAULT \'\'', 0, 0, ''),
 (14, 'color', '颜色值', 17, 'varchar(7) NOT NULL DEFAULT \'\'', 0, 0, ''),
-(15, 'file', '单文件', 15, 'int(5) UNSIGNED NOT NULL DEFAULT \'0\'', 0, 0, 'isNumber'),
-(16, 'files', '多文件', 16, 'varchar(255) NOT NULL DEFAULT \'\'', 0, 0, '');
+(15, 'file', '单文件', 15, 'varcgar(255) NOT NULL DEFAULT \' \'', 0, 0, ''),
+(16, 'files', '多文件', 16, 'varchar(255) NOT NULL DEFAULT \' \'', 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -47961,7 +47958,7 @@ CREATE TABLE `lm_user` (
   `create_time` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '注册时间',
   `update_time` int(11) DEFAULT NULL,
   `last_login` int(11) UNSIGNED NOT NULL DEFAULT '0' COMMENT '最后登录时间',
-  `login_num` int(11) NOT NULL COMMENT '登录次数',
+  `login_num` int(11) DEFAULT '0' COMMENT '登录次数',
   `last_ip` varchar(15) NOT NULL DEFAULT '' COMMENT '最后登录ip',
   `qq` varchar(20) NOT NULL DEFAULT '' COMMENT 'QQ',
   `mobile` varchar(20) NOT NULL DEFAULT '' COMMENT '手机号码',
@@ -47997,17 +47994,9 @@ CREATE TABLE `lm_user` (
 --
 
 INSERT INTO `lm_user` (`id`, `store_id`, `email`, `username`, `password`, `paypwd`, `sex`, `birthday`, `user_money`, `frozen_money`, `distribut_money`, `underling_number`, `pay_points`, `address_id`, `create_time`, `update_time`, `last_login`, `login_num`, `last_ip`, `qq`, `mobile`, `mobile_validated`, `oauth`, `openid`, `unionid`, `avatar`, `province`, `city`, `district`, `email_validated`, `nickname`, `level_id`, `discount`, `total_amount`, `status`, `is_distribut`, `first_leader`, `second_leader`, `third_leader`, `token`, `message_mask`, `push_id`, `distribut_level`, `is_vip`, `min_qrcode`, `poster`) VALUES
-(1, 1, '15915407513@163.com', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, -28800, '100000.00', '0.00', '0.00', 0, 100000, 0, 1523235674, NULL, 1523235674, 0, '', '', '', 0, '', NULL, NULL, '/public/upload/user/1/head_pic//1673d08c39ff9d1103611a7585a8ae0f.jpg', 0, 0, 0, 1, '15915407513@163.com', 4, '0.94', '4939.90', 1, 0, 0, 0, 0, '81953a80817fdf7c25e682ca3311abc9', 63, '0', 0, 0, NULL, NULL),
-(2, 1, '123', NULL, '519475228fe35ad067744465c42a19b2', '5317bc949fb15f19cdf1be43cf9a5ae6', 2, 662659200, '1376.12', '100.00', '1120.00', 1, 57409, 0, 1523238708, NULL, 1524877594, 0, '', '', '15915407513', 1, '', NULL, NULL, '/public/upload/head_pic/20180426/a803dc7558982208df046e7e9e558125.jpg', 0, 0, 0, 0, '15915407513', 7, '0.91', '135988.54', 1, 1, 0, 0, 0, 'e9f5a1dc07f3674e5234667126f14d6a', 63, '140fe1da9e8bbcb28d2', 3, 0, NULL, NULL),
-(3, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '90600d68b0f56d90c4c34284d8dfd138', 0, 1524067200, '4057.47', '0.00', '0.00', 0, 49513, 0, 1523266058, 1573454861, 0, 0, '', '', '18515156363', 1, '', NULL, NULL, '/public/upload/head_pic/20180419/fec83644525cdd715416db8789cfe222.jpg', 0, 0, 0, 0, '青春', 4, '0.94', '9559.07', 0, 1, 0, 0, 0, '', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
-(4, 1, '15636363522@qq.com', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, -28800, '0.00', '0.00', '0.00', 0, 110, 0, 1523266117, 1574844266, 1523266117, 0, '', '', '', 0, '', NULL, NULL, '/public/upload/user/4/head_pic//7268f1d4ce9879694c2ec7da77d4dfbb.png', 0, 0, 0, 1, '15636363522@qq.com', 1, '1.00', '0.00', 0, 0, 0, 0, 0, 'eaf8b23d80d7513ab4ffcf3b1129f668', 63, '0', 0, 0, NULL, NULL),
-(5, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '49830.22', '0.00', '0.00', 0, 2410, 0, 1523588976, 1574844266, 1523588976, 0, '', '', '15766212618', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '15766212618', 4, '0.94', '7687.08', 0, 1, 0, 0, 0, '91fa24fa9b42dfc79fc37d0acec4ba51', 63, '0', 0, 0, NULL, NULL),
-(6, 1, '461799220@qq.com', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '1000.00', '0.00', '0.00', 0, 100, 0, 1523601798, NULL, 0, 0, '', '461799220', '18664316869', 0, '', NULL, NULL, NULL, 0, 0, 0, 0, '单测试1', 1, '1.00', '0.00', 1, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
-(7, 1, '', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1523608222, 1577260812, 1523608222, 0, '', '', '15274857485', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '15274857485', 1, '1.00', '0.00', 1, 0, 3, 0, 0, '001b3f89dc686ad2f53f5481e8c9fb30', 63, '0', 0, 0, NULL, NULL),
-(8, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 0, 0, '100000.00', '0.00', '0.00', 0, 100000, 0, 1523857661, 1580137648, 1540191996, 0, '', '', '13800138006', 1, '', NULL, NULL, 'http://thirdwx.qlogo.cn/mmopen/vi_32/c58Iiaib1aPodvKHMMGR9ZYmq7XGFUgppvhxgQKrJxdlZTAauZ8dTucEguiamsncVDR3h32TMO4YzppDmSuHIGI9w/132', 0, 0, 0, 0, 'summer', 2, '1.00', '55.00', 0, 0, 3, 0, 0, '', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
-(9, 1, '', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 2, 1524153600, '18527.80', '0.00', '0.00', 0, 100210, 0, 1523861478, 1579614603, 0, 0, '', '1546515984', '15274851525', 0, '', NULL, NULL, '/public/upload/head_pic/20180420/b147d911d2d5b3ff252fa948d96fb5d3.jpg', 0, 0, 0, 0, 'nana', 2, '1.00', '871.20', 1, 1, 0, 0, 0, '', 63, '190e35f7e07c8658ec6', 0, 0, NULL, NULL),
-(10, 1, '1522585@qq.com', NULL, '519475228fe35ad067744465c42a19b2', '519475228fe35ad067744465c42a19b2', 2, -28800, '5649.60', '0.00', '0.00', 0, 1100, 0, 1523864842, 1577718363, 1524801341, 0, '', '', '15919919433', 0, '', NULL, NULL, '/public/upload/head_pic/20180423/a20e71149cc243fc2df4c6eb5caadbbd.jpg', 0, 0, 0, 0, '等待', 4, '0.94', '6808.66', 1, 1, 0, 0, 0, 'cedbd4ca79a15888d4fd3a636834294f', 63, '140fe1da9e8bbcb28d2', 0, 0, NULL, NULL),
-(11, 1, '', NULL, '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1523933777, 1580137645, 1523933777, 0, '', '', '18585859674', 1, '', NULL, NULL, '/public/images/icon_goods_thumb_empty_300.png', 0, 0, 0, 0, '18585859674', 1, '1.00', '0.00', 1, 1, 0, 0, 0, '2ba708bb3b18ff3b133d19802ddc8559', 63, '0', 0, 0, NULL, NULL);
+(7, 1, '9033100326@qq.com', 'ny8zxovm', '519475228fe35ad067744465c42a19b2', NULL, 0, 0, '0.00', '0.00', '0.00', 0, 100, 0, 1523608222, 1582085633, 1523608222, 0, '', '', '15274857485', 1, '', NULL, NULL, '/storage/uploads/20200217/badf68589b41f560e76257c5a4a8893c.jpg', 0, 0, 0, 0, '15274857485', 1, '1.00', '0.00', 1, 0, 3, 0, 0, '001b3f89dc686ad2f53f5481e8c9fb30', 63, '0', 0, 0, NULL, NULL),
+(13, 1, '994927909@qq.com', 'ces', '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1581900766, 1582086004, 1581933805, 1, '27.38.173.227', '', '18397423845', 0, '', NULL, NULL, '/storage/uploads/20200216/8bbf8203b6b66185f10149b35a1cb75b.jpg', 0, 0, 0, 0, NULL, 1, '1.00', '0.00', 1, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL),
+(14, 1, '123@163.com', 'admin', '', NULL, 1, 0, '0.00', '0.00', '0.00', 0, 0, 0, 1581943304, 1582085206, 0, 0, '', '', '18812345678', 0, '', NULL, NULL, '/storage/uploads/20200216/8bbf8203b6b66185f10149b35a1cb75b.jpg', 0, 0, 0, 0, NULL, 2, '1.00', '0.00', 1, 0, 0, 0, 0, '', 63, '', 0, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -48039,7 +48028,8 @@ INSERT INTO `lm_user_level` (`id`, `level_name`, `amount`, `discount`, `status`,
 (5, '永恒钻石', '50000.00', 93, 1, NULL, '', NULL, 1576723983),
 (6, '至尊星耀', '100000.00', 91, 1, NULL, '', NULL, 1576724646),
 (7, '最强王者', '3000000.00', 90, 1, NULL, '', NULL, 1580137654),
-(8, '任性', '99999999.99', 70, 1, 0, '', 1568098240, 1580499030);
+(8, '任性', '99999999.99', 70, 1, 0, '', 1568098240, 1581661725),
+(10, '其他', '99999.00', 100, 1, 0, '测试', 1581309013, 1581935452);
 
 --
 -- Indexes for dumped tables
@@ -48067,6 +48057,12 @@ ALTER TABLE `lm_admin_log`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`) USING BTREE,
   ADD KEY `admin_id` (`admin_id`);
+
+--
+-- Indexes for table `lm_attach`
+--
+ALTER TABLE `lm_attach`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `lm_auth_group`
@@ -48144,37 +48140,43 @@ ALTER TABLE `lm_user_level`
 -- AUTO_INCREMENT for table `lm_addon`
 --
 ALTER TABLE `lm_addon`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键', AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键', AUTO_INCREMENT=147;
 
 --
 -- AUTO_INCREMENT for table `lm_admin`
 --
 ALTER TABLE `lm_admin`
-  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '管理员ID', AUTO_INCREMENT=5;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '管理员ID', AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `lm_admin_log`
 --
 ALTER TABLE `lm_admin_log`
-  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=33;
+  MODIFY `id` bigint(16) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id';
+
+--
+-- AUTO_INCREMENT for table `lm_attach`
+--
+ALTER TABLE `lm_attach`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `lm_auth_group`
 --
 ALTER TABLE `lm_auth_group`
-  MODIFY `id` smallint(8) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '分组id', AUTO_INCREMENT=4;
+  MODIFY `id` smallint(8) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '分组id', AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `lm_auth_rule`
 --
 ALTER TABLE `lm_auth_rule`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1540;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2803;
 
 --
 -- AUTO_INCREMENT for table `lm_config`
 --
 ALTER TABLE `lm_config`
-  MODIFY `id` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `lm_config_group`
@@ -48204,13 +48206,13 @@ ALTER TABLE `lm_region`
 -- AUTO_INCREMENT for table `lm_user`
 --
 ALTER TABLE `lm_user`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=12;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `lm_user_level`
 --
 ALTER TABLE `lm_user_level`
-  MODIFY `id` smallint(4) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=9;
+  MODIFY `id` smallint(4) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '表id', AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -33,7 +33,8 @@ layui.define(["element", "jquery",'form', 'table'], function (exports) {
             if(obj.event === 'install'){
                 if(Addon.getUserinfo() && Addon.getUserinfo().hasOwnProperty('client')){
                     layer.confirm('Are you sure you want to install it', function(index){
-                        loading =layer.load(1, {shade: [0.1,'#fff']});
+                        loading =layer.load(0, {shade: [0.1,'#fff']});
+
                         $.post("install",{name:data.name},function(res){
                             layer.close(loading);
                             layer.close(index);
@@ -166,23 +167,6 @@ layui.define(["element", "jquery",'form', 'table'], function (exports) {
             layer.close(loading);
         };
 
-        /**
-         * 成功
-         * @param title
-         * @returns {*}
-         */
-        this.msg_success = function (title) {
-            return layer.msg(title, {icon: 1, shade: this.shade, scrollbar: false, time: 2000, shadeClose: true});
-        };
-
-        /**
-         * 失败
-         * @param title
-         * @returns {*}
-         */
-        this.msg_error = function (title) {
-            return layer.msg(title, {icon: 1, shade: this.shade, scrollbar: false, time: 3000, shadeClose: true});
-        };
         /*
       时间错
        */

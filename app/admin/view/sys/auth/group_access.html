@@ -20,7 +20,7 @@
                     <div class="layui-input-inline">
                         <input type="hidden" name="id"  >
                         <button type="button" class="layui-btn" lay-submit="" lay-filter="submit">{:lang('submit')}</button>
-                        <a href="{:url('group')}" class="layui-btn layui-btn-primary">{:lang('back')}</a>
+                        <a data-href="{:url('group')}" class="layui-btn layui-btn-primary back">{:lang('back')}</a>
                     </div>
                 </div>
             </form>
@@ -64,20 +64,20 @@
 
             }
         })
-        form.on('submit(submit)', function (data) {
+        form.on('submit(submit)', function (obj) {
             loading =layer.load(1, {shade: [0.1,'#fff']});
             var data  = tree.getChecked('treebox');
-            console.log(data);
-            console.log(data);
             $.post("groupSetaccess", {rules:data,group_id:'{$group_id}'}, function (res) {
                 layer.close(loading);
                 if (res.code > 0) {
                     layer.msg(res.msg, {time: 1800, icon: 1}, function () {
-                        location.href = res.url;
+                        layer.closeAll();
+                        window.parent.location.href = res.url;
                     });
                 } else {
                     layer.msg(res.msg, {time: 1800, icon: 2});
                 }
+
             });
         });
 

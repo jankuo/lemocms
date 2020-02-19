@@ -7,7 +7,7 @@
                 <legend>{:lang('add')}权限节点</legend>
             </fieldset>
             <blockquote class="layui-elem-quote">
-                1、控制器/方法 例如 Wechat/index
+                1、控制器/方法 例如 Wechat/index 或者 admin/wechat/index
             </blockquote>
             <form class="layui-form layui-form-pane" lay-filter="form">
                 <div class="layui-form-item">
@@ -108,7 +108,6 @@
         });
         form.on('submit(submit)', function (data) {
             // 提交到方法 默认为本身
-            console.log(data.field);
             if(data.field.icon=='fa undefined'){
                 data.field.icon = icon;
             }

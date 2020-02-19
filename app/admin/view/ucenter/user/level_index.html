@@ -8,29 +8,22 @@
                     <div class="layui-inline">
                         <input type="text" id='keys' name="keys" lay-verify="required" placeholder="{:lang('pleaseEnter')}" autocomplete="off" class="layui-input">
                     </div>
-                    <button class="layui-btn data-add-btn layui-btn-sm" lay-submit="" lay-filter="add" id="search">{:lang('search')}</button>
-
-                    <a href="{:url('levelAdd')}"  class="layui-btn layui-btn-sm layui-btn-warm" >{:lang('add')}会员等级</a>
-
+                    <button class="layui-btn data-add-btn layui-btn-sm" lay-submit="" lay-filter="search" id="search">{:lang('search')}</button>
+                    <a data-href="{:url('levelAdd')}"  class="layui-btn layui-btn-sm layui-btn-warm add" >{:lang('add')}会员等级</a>
                 </div>
-
               </blockquote>
-
         </fieldset>
-
-
-
         <table class="layui-table" id="list" lay-filter="list"></table>
     </div>
 </div>
 
 
 <script type="text/html" id="action">
-    <a href="{:url('levelEdit')}?id={{d.id}}" class="layui-btn  layui-btn-xs" lay-event="edit">{:lang('edit')}</a>
-    <a  class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">{:lang('del')}</a>
+    <a data-href="{:url('levelEdit')}?id={{d.id}}" class="layui-btn  layui-btn-xs" lay-event="edit">{:lang('edit')}</a>
+    <a data-href="{:url('levelDel')}?id={{d.id}}" class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">{:lang('del')}</a>
 </script>
 <script type="text/html" id="status">
-    <input type="checkbox" name="status" value="{{d.id}}" lay-skin="switch" lay-text="开启|关闭" lay-filter="status" {{ d.status == 1 ? 'checked' : '' }}>
+    <input data-href="{:url('levelState')}" type="checkbox" name="status" value="{{d.id}}" lay-skin="switch" lay-text="开启|关闭" lay-filter="status" {{ d.status == 1 ? 'checked' : '' }}>
 </script>
 
 <script type="text/html" id="image">
@@ -43,12 +36,18 @@
 
 {include file="common/footer"/}
 <script>
-    layui.use(['form', 'table'], function () {
+    var tableIn = null;
+    layui.config({
+        base: "/static/admin/js/",
+        version: true
+    }).extend({
+       Admin: 'Admin',
+    }).use(['table','Admin'], function () {
         var $ = layui.jquery,
             form = layui.form,
             table = layui.table;
 
-        var tableIn = table.render({
+         tableIn = table.render({
             elem: '#list',
             url: '{:url("levelIndex")}',
             method: 'post',
@@ -71,50 +70,6 @@
             limit: 15,
             page: true
         });
-
-        table.on('tool(list)', function(obj){
-            var data = obj.data;
-            if(obj.event === 'del'){
-                layer.confirm('{:lang("Are you sure you want to delete it")}', function(index){
-                    loading =layer.load(1, {shade: [0.1,'#fff']});
-                    $.post("{:url('levelDel')}",{id:data.id},function(res){
-                        layer.close(loading);
-                        layer.close(index);
-                        if(res.code>0){
-                            layer.msg(res.msg,{time:1000,icon:1});
-                            obj.del();
-                        }else{
-                            layer.msg(res.msg,{time:1000,icon:2});
-                        }
-                    });
-                });
-            }
-
-
-        });
-
-        form.on('switch(status)', function(data){
-                loading =layer.load(1, {shade: [0.1,'#fff']});
-                field = data.elem.name;
-                $.post("{:url('levelState')}",{id:data.value,field:field},function(res){
-                    layer.close(loading);
-                    if(res.code>0){
-                        layer.msg(res.msg,{time:1000,icon:1});
-                    }else{
-                        layer.msg(res.msg,{time:1000,icon:2});
-                    }
-                });
-        });
-
-        $('#search').click(function () {
-            var $keys = $('#keys').val();
-            if(!$keys){
-                return layer.msg('请输入关键词');
-            }
-
-            tableIn.reload({ page: {page: 1},where: {keys: $keys}});
-
-        })
 
 
     });

@@ -52,7 +52,7 @@
                     loading = layer.load(1, {shade: [0.1, '#fff']});
                     $.post('{:url("delSqlFiles")}',{time: data.time}, function (res) {
                         layer.close(loading);
-                        if (res.code > 1) {
+                        if (res.code > 0) {
                             layer.msg(res.msg, {time: 1000,icon:1});
                             obj.del();
                         }else{
