@@ -36,6 +36,8 @@ class Backend extends \app\common\controller\Base
             $this->redirect(url('/admin/login/index'));
         }
         $this->authCheck();
+        //过滤html标签
+//        $this->request->filter('trim,strip_tags,htmlspecialchars');
     }
 
     /**
