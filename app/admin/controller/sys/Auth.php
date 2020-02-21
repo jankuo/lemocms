@@ -269,7 +269,7 @@ class Auth extends Backend
                 $data['href'] = 'admin/'.trim($data['href'],'/');
             }
             if (AuthRule::create($data)) {
-                $this->success(lang('add success'), url('sys.Auth/adminRule'));
+                $this->success(lang('add success'),url('sys.Auth/adminRule'));
             } else {
                 $this->error(lang('add fail'));
             }
@@ -284,7 +284,6 @@ class Auth extends Backend
                 $rule = Db::name('auth_rule')
                     ->find(Request::get('rule_id'));
             }
-
             $view = [
                 'info' => null,
                 'pid' => $pid,

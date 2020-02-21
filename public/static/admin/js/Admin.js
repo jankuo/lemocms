@@ -176,7 +176,16 @@ layui.define(['form','layer', 'table','upload'], function (exports) {
             window.parent.location.href=url;
 
         });
-
+        $('body').on('click','#selectAttach',function(data) {
+            var url = $(this).attr('data-href');
+            iframe = layer.open({
+                type: 2,
+                content: url?url:'add',
+                area: ['800px', '600px'],
+                maxmin: true
+            });
+            layui.full(iframe)
+        })
         if($('#uploads')){
             //普通图片上传
             var uploadInt = upload.render({

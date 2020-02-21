@@ -66,6 +66,16 @@ if (!function_exists('getConfigByCode')) {
 
     }
 }
+
+//获取配置信息
+if (!function_exists('url')) {
+
+    function url($str)
+    {
+       return (string) \think\facade\Route::buildUrl($str);
+
+    }
+}
 /*
  * 百度编辑器内容
  */

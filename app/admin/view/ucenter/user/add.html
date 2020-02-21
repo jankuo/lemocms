@@ -98,14 +98,6 @@
             $('#addPic').attr('src',info.avatar);
         }
         form.render();
-        $('#selectAttach').click(function (data) {
-            var url = $(this).attr('data-href');
-            iframe = layer.open({
-                type: 2,
-                content: url?url:'add',
-                area: ['800px', '600px'],
-                maxmin: true
-            });
-        })
+
     });
 </script>

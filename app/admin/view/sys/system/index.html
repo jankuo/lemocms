@@ -44,11 +44,13 @@
 
                             <div class="layui-form-item">
                                 <label class="layui-form-label">{:lang('site logo')}</label>
-                                <input type="hidden" name="addPic" id="avatar">
+                                <input type="hidden" name="addPic" id="avatar" class="attach">
                                 <div class="layui-input-block">
                                     <div class="layui-upload">
                                         <button type="button" class="layui-btn layui-btn-primary" id="uploads"><i
                                                 class="icon icon-upload3"></i>{:lang('upload')}
+                                            <button type="button" class="layui-btn layui-btn-primary" id="selectAttach" data-href="{:url('sys.attach/select')}?mime=image"><i class="icon icon-upload3"></i>{:lang('select attach')}</button>
+
                                         </button>
                                         <div class="layui-upload-list">
                                             <img class="layui-upload-img" id="addPic">

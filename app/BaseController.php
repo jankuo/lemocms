@@ -19,6 +19,8 @@ use think\Validate;
 use think\response\Redirect;
 use HttpEncodingException;
 use think\Response;
+use function GuzzleHttp\Psr7\str;
+
 /**
  * 控制器基础类
  */
@@ -121,18 +123,19 @@ abstract class BaseController
             $url = $_SERVER["HTTP_REFERER"];
         } elseif ($url) {
             $url = (strpos($url, '://') || 0 === strpos($url, '/')) ? $url : app('route')->buildUrl($url);
+
         }
 
         $result = [
             'code' => 1,
             'msg'  => $msg,
             'data' => $data,
-            'url'  => $url,
+            'url'  =>(string)$url,
             'wait' => $wait,
         ];
 
         $type = $this->getResponseType();
-        if ($type == 'html'){
+        if (strtolower($type) == 'html'){
             $response = view($this->app->config->get('app.dispatch_success_tmpl'), $result);
         } else if ($type == 'json') {
             $response = json($result);
@@ -150,7 +153,7 @@ abstract class BaseController
      * @param  array     $header 发送的Header信息
      * @return void
      */
-    protected function error($msg = '', string $url = null, $data = '', int $wait = 3, array $header = [])
+    protected function error($msg = '',  $url = null, $data = '', int $wait = 3, array $header = [])
     {
         if (is_null($url)) {
             $url = $this->request->isAjax() ? '' : 'javascript:history.back(-1);';
@@ -162,7 +165,7 @@ abstract class BaseController
             'code' => 0,
             'msg'  => $msg,
             'data' => $data,
-            'url'  => $url,
+            'url'  =>(string)$url,
             'wait' => $wait,
         ];
 
