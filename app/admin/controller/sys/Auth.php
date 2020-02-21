@@ -265,7 +265,7 @@ class Auth extends Backend
                 $this->error(lang('sort').lang(' cannot null'));
             }
             $data['icon'] = $data['icon']?$data['icon']:'fa fa-adjust';
-            if(strpos(trim($data['href'],'/'),'admin/')==false){
+            if(strpos(trim($data['href'],'/'),'admin/')===false){
                 $data['href'] = 'admin/'.trim($data['href'],'/');
             }
             if (AuthRule::create($data)) {
@@ -299,8 +299,11 @@ class Auth extends Backend
         if (request()->isPost()) {
             $data = Request::param();
             $data['icon'] = $data['icon']?$data['icon']:'fa fa-adjust';
-            $where['id'] = $data['id'];
-            AuthRule::update($data);
+            if(strpos(trim($data['href'],'/'),'admin/')===false){
+                $data['href'] = 'admin/'.trim($data['href'],'/');
+            }
+            $model = new AuthRule();
+            $model->edit($data);
             $this->success(lang('edit success'), url('sys.Auth/adminRule'));
         } else {
             $list = Db::name('auth_rule')
