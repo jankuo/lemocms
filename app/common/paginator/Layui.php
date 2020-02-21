@@ -31,6 +31,7 @@ class Layui extends Paginator{
         }
     }
     //尾页
+
     protected function last() {
         if ($this->hasMore) {
             return "<a href='" . $this->url($this->lastPage) . "' title='尾页'>尾页</a>";
@@ -185,18 +186,13 @@ class Layui extends Paginator{
      */
     protected function css(){
         return '  <style type="text/css">
-            .pagination p{
-                margin:0;
-                cursor:pointer
-            }
             .pagination{
                 height:40px;
                 padding:20px 0px;
             }
             .pagination a{
-                display:block;
-                float:left;
-                margin-right:10px;
+                display:inline-block;
+                margin-right:5px;
                 padding:2px 12px;
                 height:24px;
                 border:1px #cccccc solid;
@@ -217,7 +213,9 @@ class Layui extends Paginator{
                 color:#fff;
             }
             .pagination p{
-                float:left;
+                margin:0;
+                display: inline-block;
+                cursor:pointer;
                 padding:2px 12px;
                 font-size:12px;
                 height:24px;
@@ -225,7 +223,7 @@ class Layui extends Paginator{
                 color:#bbb;
                 border:1px #ccc solid;
                 background:#fcfcfc;
-                margin-right:8px;
+               
             }
             .pagination p.pageRemark{
                 border-style:none;
