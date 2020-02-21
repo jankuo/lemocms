@@ -21,7 +21,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">{:lang('username')}</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="username" lay-verify="required" placeholder="{:lang('pleaseEnter')}登录用户名" class="layui-input">
+                        <input type="text" name="username" lay-verify="required" placeholder="{:lang('pleaseEnter')}登录用户名" class="layui-input {if $info && $info.id!==1}layui-disabled{/if}"  {if  $info && $info.id!==1}readonly="readonly"{/if}>
                     </div>
                     <div class="layui-form-mid layui-word-aux">
                         用户名在4到25个字符之间。
