@@ -307,7 +307,7 @@ class Addon extends Backend
             $hasChild = isset($v['menulist']) && $v['menulist'] ? true : false;
             try {
                $v['pid'] = $pid ;
-                if(strpos(trim($v['href'],'/'),'admin/')==false){
+                if(strpos(trim($v['href'],'/'),'admin/')===false){
                     $v['href'] = 'admin/'.trim($v['href'],'/');
                 }
                 if(AuthRule::where('href',$v['href'])->find()){
@@ -330,7 +330,7 @@ class Addon extends Backend
         foreach ($menu as $k=>$v){
             $hasChild = isset($v['menulist']) && $v['menulist'] ? true : false;
             try {
-                if(strpos(trim($v['href'],'/'),'admin/')==false){
+                if(strpos(trim($v['href'],'/'),'admin/')===false){
                     $v['href'] = 'admin/'.trim($v['href'],'/');
                 }
                 $menu_rule = AuthRule::where('href',$v['href'])->find();

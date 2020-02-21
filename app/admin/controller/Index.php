@@ -40,7 +40,7 @@ class Index extends Backend{
         if(!$menus){
             $cate = AuthRule::where('menu_status',1)->order('sort asc')->select()->toArray();
             $menus = Menu::authMenu($cate);
-            Cache::set('adminMenus_'.$admin_id,$menus,'3600');
+            cache('adminMenus_'.$admin_id,$menus,['expire'=>3600]);
 
         }
         $href = (string)url('main');

@@ -812,7 +812,7 @@ layui.define(["element", "jquery"], function (exports) {
      * 刷新
      */
     $('body').on('click', '[data-refresh]', function () {
-        var url = '/index.php/admin/index/clearData';
+        var url = '/index.php/admin/Index/clearData';
         $.post(url, function (res) {
             if (res.code == 0) {
                 LM.msg_error('刷新失败');

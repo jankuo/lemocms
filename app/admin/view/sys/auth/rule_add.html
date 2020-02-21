@@ -16,7 +16,7 @@
                         <select name="pid" lay-verify="required" lay-filter="pid">
                             <option value="0">默认顶级</option>
                             {volist name="ruleList" id="vo"}
-                            <option value="{$vo.id}" {if $info and $info['id']==$vo.id}selected
+                            <option value="{$vo.id}" {if $rule and $rule['id']==$vo.id}selected
                             {/if}>{$vo.lefthtml}{$vo.title}</option>
                             {/volist}
                         </select>
@@ -105,6 +105,13 @@
             success: function (d) {
                 $('#iconPicker').val('fa '+ d.icon);
             }
+        });
+        //返回页面
+        $('body').on('click','.back',function() {
+            var url = $(this).attr('data-href');
+            layer.closeAll();
+            window.parent.location.href=url;
+
         });
         form.on('submit(submit)', function (data) {
             // 提交到方法 默认为本身

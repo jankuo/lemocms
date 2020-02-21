@@ -38,7 +38,7 @@ class Backend extends \app\common\controller\Base
         $this->pageSize = $this->request->param('limit')?$this->request->param('limit'):15;
         $this->authCheck();
 //        过滤html标签
-        $this->request->filter('trim,strip_tags,htmlspecialchars');
+//        $this->request->filter('trim,strip_tags,htmlspecialchars');
     }
 
     /**
@@ -49,12 +49,12 @@ class Backend extends \app\common\controller\Base
         $allow = [
             'admin/index/index',
             'admin/index/main',
-            'admin/index/cleardata',
+            'admin/index/clearData',
             'admin/index/logout',
             'admin/login/password',
         ];
-
-        $route = app('http')->getName().'/'.strtolower(Request::controller()).'/'.strtolower(Request::action());
+        $route = app('http')->getName().'/'.strtolower(Request::controller()).'/'.(Request::action());
+//        var_dump($route);die;
         if(session('admin.id')!==1){
             $this->hrefId = Db::name('auth_rule')->where('href',$route)->value('id');
             //当前管理员权限
@@ -71,12 +71,13 @@ class Backend extends \app\common\controller\Base
             if($this->hrefId){
                 // 不在权限里面，并且请求为post
                 if(!in_array($this->hrefId,$this->adminRules)){
-                    $this->error(lang('permission denied'));exit();
+                    $this->error(lang('permission denied'));
+//                    exit();
                 }
             }else{
                 if(!in_array($route,$allow)) {
                     $this->error(lang('permission denied'));
-                    exit();
+//                    exit();
                 }
 
             }
