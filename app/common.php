@@ -70,9 +70,9 @@ if (!function_exists('getConfigByCode')) {
 //重写url 助手函数
 if (!function_exists('url')) {
 
-    function url($str)
+    function url($url='', array $vars = [], $suffix = true, $domain = false)
     {
-       return (string) \think\facade\Route::buildUrl($str);
+        return  (string) \think\facade\Route::buildUrl($url, $vars)->suffix($suffix)->domain($domain);
 
     }
 }

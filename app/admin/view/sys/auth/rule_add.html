@@ -16,7 +16,7 @@
                         <select name="pid" lay-verify="required" lay-filter="pid">
                             <option value="0">默认顶级</option>
                             {volist name="ruleList" id="vo"}
-                            <option value="{$vo.id}" {if $rule and $rule['id']==$vo.id}selected
+                            <option value="{$vo.id}" {if $info and $info['id']==$vo.id}selected
                             {/if}>{$vo.lefthtml}{$vo.title}</option>
                             {/volist}
                         </select>
@@ -61,7 +61,7 @@
                 <div class="layui-form-item">
                     <div class="layui-input-inline">
                         <button type="button" class="layui-btn" lay-submit="" lay-filter="submit">立即提交</button>
-                        <a href="{:url('adminRule')}" class="layui-btn layui-btn-primary">返回</a>
+                        <a data-href="{:url('adminRule')}" class="layui-btn layui-btn-primary back">返回</a>
                     </div>
                 </div>
             </form>

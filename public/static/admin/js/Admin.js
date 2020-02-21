@@ -184,7 +184,7 @@ layui.define(['form','layer', 'table','upload'], function (exports) {
                 area: ['800px', '600px'],
                 maxmin: true
             });
-            layui.full(iframe)
+            layer.full(iframe)
         })
         if($('#uploads')){
             //普通图片上传

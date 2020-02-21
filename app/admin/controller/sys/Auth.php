@@ -278,7 +278,6 @@ class Auth extends Backend
                 ->order('sort ASC')
                 ->select();
             $list = TreeHelper::cateTree($list);
-            $pid = Request::param('id') ? Request::param('id') : 0;
             $rule = '';
             if(Request::get('rule_id')){
                 $rule = Db::name('auth_rule')
@@ -286,7 +285,6 @@ class Auth extends Backend
             }
             $view = [
                 'info' => null,
-                'pid' => $pid,
                 'ruleList' => $list,
                 'rule' =>$rule,
             ];
