@@ -35,6 +35,7 @@ class Backend extends \app\common\controller\Base
         if (!session('admin.id') && !session('admin')) {
             $this->redirect(url('/admin/login/index'));
         }
+        $this->pageSize = $this->request->param('limit')?$this->request->param('limit'):15;
         $this->authCheck();
 //        过滤html标签
         $this->request->filter('trim,strip_tags,htmlspecialchars');
