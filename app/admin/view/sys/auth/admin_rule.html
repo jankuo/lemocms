@@ -27,9 +27,9 @@
     <span class="icon {{d.icon}}"></span>
 </script>
 <script type="text/html" id="action">
-    <a class="layui-btn layui-btn-xs" data-href="{:url('ruleEdit')}?id={{d.id}}" lay-event="edit">{:lang('edit')}</a>
-    <a class="layui-btn layui-btn-xs layui-btn-warm"  data-href="{:url('ruleAdd')}?id={{d.id}}" lay-event="add">{:lang('add')}{:lang('child')}</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs"  data-href="ruleDel" lay-event="del">{:lang('del')}</a>
+    <a class="layui-btn layui-btn-xs" data-href="{:url('ruleEdit')}?rule_id={{d.id}}" lay-event="edit">{:lang('edit')}</a>
+    <a class="layui-btn layui-btn-xs layui-btn-warm"  data-href="{:url('ruleAdd')}?rule_id={{d.id}}" lay-event="add">{:lang('add')}{:lang('child')}</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs"  data-href="{:url('ruleDel')}" lay-event="del">{:lang('del')}</a>
 </script>
 <script type="text/html" id="topBtn">
     <a data-href="{:url('ruleAdd')}" class="layui-btn layui-btn-sm" lay-event="add">{:lang('add')}权限</a>

@@ -42,7 +42,7 @@
 </script>
 <script type="text/html" id="mime">
 
-    {{# if(d.mime=='image/jpeg' || d.mime=='image/gif')  { }}
+    {{# if(d.mime=='image/jpeg' || d.mime=='image/gif' || d.mime=='image/png' || d.mime=='image/webp' || d.mime=='image/bmp')  { }}
     <img src="/static/admin/images/filetype/image.jpg" alt="图片" width="50">
     {{# }else if(d.mime=='application/pdf') { }}
     <img src="/static/admin/images/filetype/pdf.jpg" alt="pdf" width="50">

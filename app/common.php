@@ -67,7 +67,7 @@ if (!function_exists('getConfigByCode')) {
     }
 }
 
-//获取配置信息
+//重写url 助手函数
 if (!function_exists('url')) {
 
     function url($str)
