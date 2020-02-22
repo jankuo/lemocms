@@ -70,8 +70,8 @@ return [
 	'semail addr' => '邮箱地址',
 	'email port' => '邮箱端口',
 	'server mailbox protocol' => '邮箱协议',
-	'email password' => '邮箱密码',
-	'send email person' => '邮箱密码',
+	'email password' => '邮箱授权密码',
+	'send email person' => '发送者邮箱',
 
 	'all right' => '所有权',
 	'site name' => '网站名',
@@ -127,8 +127,6 @@ return [
 	'backup success' => '备份成功',
 	'backup fail' => '备份失败',
 	'restore success' => '还原成功',
-
-
 	'captcha error' => '验证码错误',
 	'login success' => '登录成功',
 	'login fail' => '登录失败',
