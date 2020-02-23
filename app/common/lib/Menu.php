@@ -30,7 +30,7 @@ class Menu extends Backend
         $authrules = explode(',',session('admin.rules'));
         $list =array();
         foreach ($arr as $k=>$v){
-            $v['href'] = strtolower(url($v['href']));
+            $v['href'] = url($v['href']);
             if (session('admin.id') != 1) {
                 if ($v['pid'] == $pid){
                     if(in_array($v['id'],$authrules)){

@@ -59,7 +59,22 @@
                 <div class="layui-form-mid layui-word-aux">{if $vo.tips}{$vo.tips|raw}{/if}</div>
             </div>
             {/case}
-
+            {case value="image"}
+            <div class="layui-form-item">
+                <label class="layui-form-label">{$vo.title}</label>
+                <input type="hidden" name="config[{$k}]" id="avatar" value="{$vo.value}">
+                <div class="layui-input-inline">
+                    <div class="layui-upload">
+                        <button type="button" class="layui-btn layui-btn-primary" id="uploads"><i class="icon icon-upload3"></i>点击上传</button>
+                        <div class="layui-upload-list">
+                            <img class="layui-upload-img"  src="{$vo.value}" id="addPic">
+                            <p id="notice"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-mid layui-word-aux">{if $vo.tips}{$vo.tips|raw}{/if}</div>
+            </div>
+            {/case}
             {case value="array"}
             <div class="layui-form-item">
                 <label class="layui-form-label">{$vo.title}</label>
@@ -77,7 +92,7 @@
                         <div class="layui-input-inline">
                             <input type="text" name="config[{$k}][{$i}][value]" lay-verify="{$vo.rule}" placeholder="请输入值" autocomplete="off" class="layui-input" value="{$v}">                        </div>
                     </div>
-
+                    <br>
                     {/foreach}
                 </div>
 
@@ -98,23 +113,12 @@
 
 {include file="common/footer"/}
 <script>
-    layui.use('form', function () {
-        var $ = layui.jquery,
-            form = layui.form;
-        form.on("submit(submit)",function (data) {
-            loading =layer.load(1, {shade: [0.1,'#fff']});
-            $.post("", data.field, function (res) {
-                layer.close(loading);
-                if (res.code > 0) {
-                    layer.msg(res.msg, {time: 1800, icon: 1}, function () {
-                       parent.window.location.reload()
-                    });
-                } else {
-                    layer.msg(res.msg, {time: 1800, icon: 2});
-                }
-            });
-            return false;
-        })
+    layui.config({
+        base: "/static/admin/js/",
+        version: true
+    }).extend({
+        Admin:'Admin',
+    }).use(['Admin'], function () {
 
 
     });

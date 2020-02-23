@@ -18,6 +18,7 @@ use app\admin\model\AuthRule;
 use app\common\controller\base;
 use lemo\helper\FileHelper;
 use lemo\helper\SignHelper;
+use think\facade\Cache;
 use think\facade\Db;
 use think\facade\Request;
 use think\facade\Session;
@@ -168,10 +169,7 @@ class Backend extends \app\common\controller\Base
      */
     public function clearData(){
         $dir = config('admin.clear_cache_dir') ? app()->getRootPath().'runtime/admin' : app()->getRootPath().'runtime';
-        $cache = app()->getRootPath().'runtime/cache';
-        if(is_dir($cache)){
-            FileHelper::delDir($cache);
-        }
+        Cache::clear();
         if(FileHelper::delDir($dir) ){
             $this->success('清除成功');
         }

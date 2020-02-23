@@ -78,7 +78,7 @@ class Addon extends Backend
         $name = $this->request->post("name");
 //        插件名是否为空
         if (!$name) {
-            $this->error(lang('Parameter %s can not be empty', ['name']));
+            $this->error(lang('parameter %s can not be empty', ['name']));
         }
         //插件名是否符合规范
         if (!preg_match("/^[a-zA-Z0-9]+$/", $name)) {
@@ -147,7 +147,7 @@ class Addon extends Backend
     {
         $name = $this->request->post("name");
         if (!$name) {
-            $this->error(lang('Parameter Addon name can not be empty'));
+            $this->error(lang('parameter Addon name can not be empty'));
         }
 //        插件名匹配
         if (!preg_match("/^[a-zA-Z0-9]+$/", $name)) {
@@ -202,7 +202,7 @@ class Addon extends Backend
         $name = $this->request->post("name");
 
         if (!$id) {
-            $this->error(lang('Parameter %s can not be empty', ['id']));
+            $this->error(lang('parameter %s can not be empty', ['id']));
         }
         if (!preg_match("/^[a-zA-Z0-9]+$/", $name)) {
             $this->error(lang('Addon name is not correct'));
@@ -228,8 +228,7 @@ class Addon extends Backend
             $name   =  $this->request->get("name");
             $info = AddonModel::find(input('id'));
             if ($params) {
-                $class = get_addons_instance($name);
-                $config = $class->getConfig(true);
+                $config = @unserialize($info->config);
                 foreach ($config as $k => &$v) {
                     if (isset($params[$k])) {
                         if ($v['type'] == 'array') {
@@ -247,32 +246,29 @@ class Addon extends Backend
                         $v['value'] = $value;
                     }
                 }
-                $params = serialize($params);
-                if($info->save(['config'=>$params])){
+                $config = serialize($config);
+                if($info->save(['config'=>$config])){
                     Service::updateAdddonsConfig();
                     $this->success(lang('edit success'));
                 }else{
                     $this->error(lang('edit fail'));
                 }
             }
-            $this->error(lang('Parameter can not be empty'));
+            $this->error(lang('parameter can not be empty'));
         }
-
         $name = $this->request->get("name");
         $id = $this->request->get("id");
         if (!$name) {
-            $this->error(lang('Parameter addon name can not be empty'));
+            $this->error(lang('addon name can not be empty'));
         }
         if (!preg_match("/^[a-zA-Z0-9]+$/", $name)) {
             $this->error(lang('addon name is not correct'));
         }
-
         $info = AddonModel::find($id);
         if (!$info) {
             $this->error(lang('addon config is not found'));
         }
-
-        $info->config = get_addons_instance($name)->getConfig(true);
+        $info->config = $info->config ? unserialize($info->config):get_addons_instance($name)->getConfig(true);
 //        //模板引擎初始化
 //        View::engine('Think')->config([
 //            'view_path' => 'view' .DIRECTORY_SEPARATOR.'admin'. DIRECTORY_SEPARATOR

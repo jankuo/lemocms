@@ -24,7 +24,7 @@
 .layui-nav.layui-layout-left.layui-header-menu.mobile.layui-hide-xs {font-weight:bold;transition:all .2s;}
 
 /**头部样式（缩放） */
-.LM-mini .layui-layout-left.layui-header-menu.layui-hide-xs {left:155px!important;}
+.LM-mini .layui-layout-left.layui-header-menu.layui-hide-xs {left:105px!important;}
 
 /**logo演示（通用） */
 .layui-layout-admin .layui-logo {font-weight:bold;color:#ffffff!important;height:60px!important;line-height:60px !important;overflow:hidden;line-height:64px;transition:all .2s!important;}
@@ -38,7 +38,7 @@
 /**缩放工具（通用） */
 .LM-tool {position:absolute!important;top:0;left:200px;width:60px;height:100%;line-height:60px;text-align:center;color:#ffffff!important;transition:all .2s;}
 /**缩放工具（缩放） */
-.LM-mini .LM-tool {left:95px!important;}
+.LM-mini .LM-tool {left:65px!important;}
 .LM-tool i {display:block;color:#fff;width:32px;height:32px;line-height:32px;border-radius:3px;text-align:center;margin-top:15px;cursor:pointer;}
 
 /**tab选项卡 */

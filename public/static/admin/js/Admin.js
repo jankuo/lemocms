@@ -200,6 +200,7 @@ layui.define(['form','layer', 'table','upload'], function (exports) {
                 done: function(res){
                     if(res.code>0){
                         $('#avatar').val(res.url);
+                        return msg_error('上传成功');
                     }else{
                         //如果上传失败
                         return msg_error('上传失败');
