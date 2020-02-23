@@ -47945,7 +47945,7 @@ CREATE TABLE `lm_user` (
   `store_id` int(11) DEFAULT '1',
   `email` varchar(60) NOT NULL DEFAULT '' COMMENT '邮件',
   `username` varchar(255) DEFAULT NULL,
-  `password` varchar(32) NOT NULL DEFAULT '' COMMENT '密码',
+  `password` varchar(100) NOT NULL DEFAULT '' COMMENT '密码',
   `paypwd` varchar(32) DEFAULT NULL COMMENT '支付密码',
   `sex` tinyint(1) UNSIGNED NOT NULL DEFAULT '0' COMMENT '0 保密 1 男 2 女',
   `birthday` int(11) NOT NULL DEFAULT '0' COMMENT '生日',
