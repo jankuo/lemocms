@@ -698,16 +698,16 @@
         },
         {
             "name": "overtrue/wechat",
-            "version": "4.2.14",
+            "version": "4.2.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/wechat.git",
-                "reference": "cb859e567917d6b9d2fb16465efc8aed000af3b7"
+                "reference": "2d2ec7088d2186415773900937cd97e844a7f205"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/overtrue/wechat/zipball/cb859e567917d6b9d2fb16465efc8aed000af3b7",
-                "reference": "cb859e567917d6b9d2fb16465efc8aed000af3b7",
+                "url": "https://api.github.com/repos/overtrue/wechat/zipball/2d2ec7088d2186415773900937cd97e844a7f205",
+                "reference": "2d2ec7088d2186415773900937cd97e844a7f205",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -767,7 +767,7 @@
                 "weixin",
                 "weixin-sdk"
             ],
-            "time": "2020-02-13T11:11:01+00:00"
+            "time": "2020-02-25T08:05:41+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -2489,12 +2489,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/framework.git",
-                "reference": "4a7f74e3a7bd74d8374aacd4d31726f6d0482e77"
+                "reference": "8c479e40b6f3aabcf4528ff949cf8c7f2f509475"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/framework/zipball/4a7f74e3a7bd74d8374aacd4d31726f6d0482e77",
-                "reference": "4a7f74e3a7bd74d8374aacd4d31726f6d0482e77",
+                "url": "https://api.github.com/repos/top-think/framework/zipball/8c479e40b6f3aabcf4528ff949cf8c7f2f509475",
+                "reference": "8c479e40b6f3aabcf4528ff949cf8c7f2f509475",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2549,7 +2549,7 @@
                 "orm",
                 "thinkphp"
             ],
-            "time": "2020-02-15T02:39:10+00:00"
+            "time": "2020-02-25T06:55:31+00:00"
         },
         {
             "name": "topthink/think-captcha",
