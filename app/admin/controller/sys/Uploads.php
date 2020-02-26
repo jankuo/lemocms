@@ -13,6 +13,7 @@
 namespace app\admin\controller\sys;
 use app\common\controller\Backend;
 use app\common\model\Attach as AttachModel;
+use lemo\helper\FileHelper;
 use think\facade\Config;
 use think\facade\Env;
 use think\facade\Request;
@@ -48,10 +49,11 @@ class Uploads extends Backend{
     }
 
 
-    public function uploads($type='file'){
-
+    public function uploads(){
         //获取上传文件表单字段名
-        $file =request()->file('file');
+        $type = input('type','file');
+        $path = input('path','uploads');
+        $file =request()->file('file') ? request()->file('file'): request()->file('upfile');
         $file_size = $file->getSize();
         $md5 = $file->md5();
         $sha1 = $file->sha1();;
@@ -78,7 +80,7 @@ class Uploads extends Backend{
                 }
                 validate($validate)
                     ->check(DataHelper::objToArray($file));
-                $savename = \think\facade\Filesystem::disk('public')->putFile('uploads', $file);
+                $savename = \think\facade\Filesystem::disk('public')->putFile($path, $file);
                 $path = '/storage/' . $savename;
             } catch (\think\exception\ValidateException $e) {
                 $path = '';
@@ -115,6 +117,7 @@ class Uploads extends Backend{
                 ];
                 $attach = AttachModel::create($data);
                 $result['code'] = 1;
+                $result['state'] = 'SUCCESS'; //兼容百度
                 $result['id'] =$attach->id;
                 $result["url"] = $path;
                 $result['msg'] = lang('upload success');
@@ -124,10 +127,12 @@ class Uploads extends Backend{
                 $result['url'] = '';
                 $result['msg'] = $error;
                 $result['code'] = 0;
+                $result['state'] = 'ERROR'; //兼容百度
                 return json($result);
             }
 
         }else{
+            $result['state'] = 'SUCCESS'; //兼容百度
             $result['code'] = 1;
             $result['id'] =$attach->id;
             //分辨是否截图上传，截图上传只能上传一个，非截图上传可以上传多个
@@ -136,6 +141,21 @@ class Uploads extends Backend{
             return json($result);
         }
 
+    }
+
+    public function getList(){
+        $path = input('path','uploads');
+        $paths = app()->getRootPath().'public/storage/'.$path;
+        $type = input('type','image');
+        $list = FileHelper::getFileList($paths,$type);
+        $data = ['state'=>'SUCCESS','start'=>0,'total'=>count($list),'list'=>[]];
+        if($list){
+            foreach ($list[0] as $k=>$v) {
+                $data['list'][$k]['url'] = str_replace( app()->getRootPath().'public','',$v);
+                $data['list'][$k]['mtime'] = mime_content_type($v);
+            }
+        }
+        return json($data);
     }
 
 }

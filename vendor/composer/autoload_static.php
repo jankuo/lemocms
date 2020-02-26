@@ -30,6 +30,7 @@ class ComposerStaticInit384a8d7e76ba965cf74b4f3feab22220
         't' => 
         array (
             'think\\view\\driver\\' => 18,
+            'think\\trace\\' => 12,
             'think\\middleware\\' => 17,
             'think\\captcha\\' => 14,
             'think\\app\\' => 10,
@@ -108,6 +109,10 @@ class ComposerStaticInit384a8d7e76ba965cf74b4f3feab22220
         'think\\view\\driver\\' => 
         array (
             0 => __DIR__ . '/..' . '/topthink/think-view/src',
+        ),
+        'think\\trace\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/topthink/think-trace/src',
         ),
         'think\\middleware\\' => 
         array (

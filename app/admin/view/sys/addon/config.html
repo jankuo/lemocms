@@ -65,7 +65,7 @@
                 <input type="hidden" name="config[{$k}]" id="avatar" value="{$vo.value}">
                 <div class="layui-input-inline">
                     <div class="layui-upload">
-                        <button type="button" class="layui-btn layui-btn-primary" id="uploads"><i class="icon icon-upload3"></i>点击上传</button>
+                        <button type="button" class="layui-btn layui-btn-primary" data-path="{$info.name}" id="uploads"><i class="icon icon-upload3"></i>点击上传</button>
                         <div class="layui-upload-list">
                             <img class="layui-upload-img"  src="{$vo.value}" id="addPic">
                             <p id="notice"></p>
@@ -119,7 +119,6 @@
     }).extend({
         Admin:'Admin',
     }).use(['Admin'], function () {
-
 
     });
 

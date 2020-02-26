@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'think\\view\\driver\\' => array($vendorDir . '/topthink/think-view/src'),
+    'think\\trace\\' => array($vendorDir . '/topthink/think-trace/src'),
     'think\\middleware\\' => array($vendorDir . '/topthink/think-throttle/src'),
     'think\\captcha\\' => array($vendorDir . '/topthink/think-captcha/src'),
     'think\\app\\' => array($vendorDir . '/topthink/think-multi-app/src'),

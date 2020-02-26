@@ -185,4 +185,34 @@ class FileHelper
         self::mkdirs(dirname($path));
         return file_put_contents($path, "\r\n" . $content, FILE_APPEND);
     }
+
+
+    public static function getFileList($path,$type='')
+    {
+        $list = [];
+        $temp_list = scandir($path);
+        foreach ($temp_list as $file) {
+            //排除根目录
+            if ($file != ".." && $file != ".") {
+                if (is_dir($path . "/" . $file)) {
+                    //子文件夹，进行递归
+                    $list[] = self::getFileList($path . "/" . $file,$type);
+                } else {
+                    if($type==''){
+                        //根目录下的文件
+                        $list[] = $file;
+                    }else{
+                        $fileType = mime_content_type($path.'/'.$file);
+                        if(strpos($fileType,$type)!==false){
+                            $list[] = $path.'/'.$file;
+                        }
+
+                    }
+
+                }
+            }
+        }
+        return $list;
+
+    }
 }

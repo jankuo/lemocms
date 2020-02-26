@@ -12,7 +12,7 @@ layui.define(['form','layer', 'table','upload'], function (exports) {
             * @returns {*}
         */
         function msg_success (title) {
-             layer.msg(title, {icon: 1, shade: this.shade, scrollbar: false, time: 2000, shadeClose: true});
+            layer.msg(title, {icon: 1, shade: this.shade, scrollbar: false, time: 2000, shadeClose: true});
         };
 
         /**
@@ -21,7 +21,7 @@ layui.define(['form','layer', 'table','upload'], function (exports) {
          * @returns {*}
          */
         function msg_error(title) {
-             layer.msg(title, {icon: 1, shade: this.shade, scrollbar: false, time: 3000, shadeClose: true});
+            layer.msg(title, {icon: 1, shade: this.shade, scrollbar: false, time: 3000, shadeClose: true});
         };
         table.on('tool('+tablelist+')', function(obj){
             var data = obj.data;
@@ -87,10 +87,15 @@ layui.define(['form','layer', 'table','upload'], function (exports) {
                 layer.close(loading);
                 if (res.code > 0) {
                     layer.msg(res.msg, {time: 1800, icon: 1}, function () {
+                        iframe = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
                         if(iframe){
+                            iframe = parent.layer.getFrameIndex(iframe);
+                            parent.layer.close(iframe)
                             layer.closeAll();
                             window.parent.location.href = res.url;
                         }else{
+                            iframe = parent.layer.getFrameIndex(iframe);
+                            layer.close(iframe)
                             window.location.href = res.url;
 
                         }
@@ -158,7 +163,9 @@ layui.define(['form','layer', 'table','upload'], function (exports) {
         $('body').on('blur','.list_order',function() {
             var id = $(this).attr('data-id');
             var sort = $(this).val();
-            $.post('ruleSort',{id:id,sort:sort},function(res){
+            url = $(this).attr('data-href');
+            url = url?url:'ruleSort'
+            $.post(url,{id:id,sort:sort},function(res){
                 if(res.code > 0){
                     layer.msg(res.msg,{time:1000,icon:1},function(){
                         location.href = res.url;
@@ -188,9 +195,11 @@ layui.define(['form','layer', 'table','upload'], function (exports) {
         })
         if($('#uploads')){
             //普通图片上传
+            var path = $('#uploads').attr('data-path');
+            var type = $('#uploads').attr('data-type')
             var uploadInt = upload.render({
                 elem: '#uploads'
-                ,url: '/admin/sys.uploads/uploads'
+                ,url: '/admin/sys.uploads/uploads?path='+path+'&type='+type
                 ,before: function(obj){
                     //预读本地文件示例，不支持ie8
                     obj.preview(function(index, file, result){
