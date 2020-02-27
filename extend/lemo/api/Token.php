@@ -51,11 +51,7 @@ class Token
      * @param Request $request Request对象
      */
     public function __construct(Request $request)
-    {   //跨域
-//        header('Access-Control-Allow-Origin:*');
-//        header('Access-Control-Allow-Headers:Accept,Referer,Host,Keep-Alive,User-Agent,X-Requested-With,Cache-Control,Content-Type,Cookie,token');
-//        header('Access-Control-Allow-Credentials:true');
-//        header('Access-Control-Allow-Methods:GET, POST, PATCH, PUT, DELETE,OPTIONS');
+    {
 
         $this->request = Request::instance();
         $appid = Request::post('appid');
@@ -84,7 +80,7 @@ class Token
         }
         self::checkParams(Request::post());  //参数校验
         //数据库已经有一个用户,这里需要根据input('mobile')去数据库查找有没有这个用户
-        $userInfo = self::getUser(Request::post('username'),Request::post('username'));
+        $userInfo = self::getUser(Request::post('username'),Request::post('password'));
         //虚拟一个uid返回给调用方
         try {
             $accessToken = self::setAccessToken(array_merge($userInfo, Request::post()));  //传入参数应该是根据手机号查询改用户的数据

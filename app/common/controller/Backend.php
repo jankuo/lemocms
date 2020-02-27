@@ -20,6 +20,7 @@ use lemo\helper\FileHelper;
 use lemo\helper\SignHelper;
 use think\facade\Cache;
 use think\facade\Db;
+use think\facade\Lang;
 use think\facade\Request;
 use think\facade\Session;
 use think\facade\View;
@@ -36,12 +37,24 @@ class Backend extends \app\common\controller\Base
         if (!session('admin.id') && !session('admin')) {
             $this->redirect(url('/admin/login/index'));
         }
+        $controller = $this->request->controller();
+        if(strpos($controller,'.')!==false){
+            $module = explode('.',$controller)[0];
+        }else{
+            $module = $controller;
+        }
         $this->pageSize = $this->request->param('limit')?$this->request->param('limit'):15;
         $this->authCheck();
-//        过滤html标签
-//        $this->request->filter('trim,strip_tags,htmlspecialchars');
+        //加载语言包
+        $this->loadlang(strtolower($module));
     }
-
+    //加载插件语言
+    protected function loadlang($name)
+    {
+        Lang::load([
+            $this->app->getAppPath() . 'lang'.DIRECTORY_SEPARATOR. Lang::getLangset().DIRECTORY_SEPARATOR. $name.'.php'
+        ]);
+    }
     /**
      * 验证权限
      */
@@ -55,7 +68,6 @@ class Backend extends \app\common\controller\Base
             'admin/login/password',
         ];
         $route = app('http')->getName().'/'.strtolower(Request::controller()).'/'.(Request::action());
-//        var_dump($route);die;
         if(session('admin.id')!==1){
             $this->hrefId = Db::name('auth_rule')->where('href',$route)->value('id');
             //当前管理员权限
@@ -73,12 +85,12 @@ class Backend extends \app\common\controller\Base
                 // 不在权限里面，并且请求为post
                 if(!in_array($this->hrefId,$this->adminRules)){
                     $this->error(lang('permission denied'));
-//                    exit();
+                    exit();
                 }
             }else{
                 if(!in_array($route,$allow)) {
                     $this->error(lang('permission denied'));
-//                    exit();
+                    exit();
                 }
 
             }
@@ -91,6 +103,7 @@ class Backend extends \app\common\controller\Base
      */
     public function logout()
     {
+        session('admin',null);
         Session::clear();
         $this->success(lang('logout success'), '@admin/login');
     }

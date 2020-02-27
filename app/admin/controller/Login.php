@@ -37,7 +37,8 @@ class Login extends Base {
             if ($admin && $admin_sign) {
                  redirect('index/index');
             }
-            return view();
+            $view = ['loginbg'=>"/static/admin/images/bg.jpg"];
+            return view('',$view);
 
         } else {
             $username = $this->request->post('username', '', 'lemo\helper\StringHelper::filterWords');
@@ -55,7 +56,7 @@ class Login extends Base {
                  $this->error(lang('login fail')."：{$e->getMessage()}");
             }
 
-            $this->success(lang('login success').'...');
+            $this->success(lang('login success').'...',url('index/index'));
         }
     }
 
