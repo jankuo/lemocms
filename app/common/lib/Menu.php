@@ -28,6 +28,10 @@ class Menu extends Backend
     //获取左侧主菜单
     public static function authMenu($arr,$pid=0,$rules=[]){
         $authrules = explode(',',session('admin.rules'));
+        $authopen = AuthRule::where('auth_open',1)->column('id');
+        if($authopen){
+            $authrules = array_unique(array_merge($authrules,$authopen));
+        }
         $list =array();
         foreach ($arr as $k=>$v){
             $v['href'] = url($v['href']);

@@ -16,5 +16,5 @@ use app\Request;
 return [
     'think\Request'          => Request::class,
     'think\exception\Handle' => ExceptionHandle::class,
-    'think\Paginator' => 'app\common\paginator\Layui',
+//    'think\Paginator' => 'app\common\paginator\Layui',
 ];

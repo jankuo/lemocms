@@ -18,8 +18,6 @@ use app\admin\model\Admin;
 use app\common\controller\Backend;
 use lemo\helper\SignHelper;
 use lemo\helper\StringHelper;
-use lemo\helper\TreeHelper;
-use think\facade\Cache;
 use think\facade\Config;
 use think\facade\Db;
 use think\facade\Request;
@@ -211,12 +209,26 @@ class Auth extends Backend
         if ($this->request->isPost()) {
             $data = $this->request->post();
             $id = $this->request->post('id');
+
             if (empty($id)) {
                 $this->error('id'.lang('not exist'));
             }
+            $model  = new AuthRule();
+            $field = $data['field'];
+            $auth = AuthRule::find($id);
+            $ids = AuthRule::getAuthChildIds($id);
+            if($auth->$field==1){
+                $auth->$field=0;
+                $model->where('id','in',$ids)->save([$field=>0]);
+            }else{
+                $auth->$field=1;
+                $model->where('id','in',$ids)->save([$field=>1]);
 
-            $model = new AuthRule();
-            $model->state($data);
+            }
+            $auth->save();
+
+
+
             $this->success(lang('edit success'));
         }
     }
@@ -277,7 +289,7 @@ class Auth extends Backend
             $list = Db::name('auth_rule')
                 ->order('sort ASC')
                 ->select();
-            $list = TreeHelper::cateTree($list);
+            $list = AuthRule::cateTree($list);
             $rule = '';
             if(Request::get('rule_id')){
                 $rule = Db::name('auth_rule')
@@ -309,7 +321,7 @@ class Auth extends Backend
             $list = Db::name('auth_rule')
                 ->order('sort asc')
                 ->select();
-            $list = TreeHelper::cateTree($list);
+            $list = AuthRule::cateTree($list);
             $id = Request::param('id');
             $info = AuthRule::find($id)->toArray();
             $rule = '';
@@ -457,7 +469,7 @@ class Auth extends Backend
         $rules = AuthGroup::where('id', Request::param('id'))
             ->where('status',1)
             ->value('rules');
-        $list = TreeHelper::authChecked($admin_rule, $pid = 0, $rules);
+        $list = AuthRule::authChecked($admin_rule, $pid = 0, $rules);
         $group_id = Request::param('id');
         $idList = AuthRule::column('id');
         sort($idList);
@@ -477,7 +489,7 @@ class Auth extends Backend
             $this->error(lang('please choose rule'));
         }
         $data = $this->request->post();
-        $rules = TreeHelper::authNormal($rules);
+        $rules = AuthRule::authNormal($rules);
         $rls = '';
         foreach ($rules as $k=>$v){
             $rls.=$v['id'].',';

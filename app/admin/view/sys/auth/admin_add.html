@@ -9,7 +9,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">所属用户组</label>
                     <div class="layui-input-inline">
-                        <select name="group_id" lay-verify="required" {if $info.group_id !=1 }disabled{/if}>
+                        <select name="group_id" lay-verify="required" {if !empty($info) && $info.group_id !=1 }disabled{/if}>
                             <option value="">请选择用户组</option>
                             {volist name="authGroup" id="vo"}
                             <option value="{$vo.id}" {if !empty($info) && $info.group_id==$vo.id} selected {/if} >{$vo.title}</option>
