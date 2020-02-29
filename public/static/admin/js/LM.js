@@ -529,9 +529,6 @@ layui.define(["element", "jquery"], function (exports) {
                 contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                 async: false,
                 error: function (xhr, textstatus, thrown) {
-                    console.log(textstatus)
-                    console.log(thrown)
-                    console.log(xhr)
                     msg = 'Status:' + xhr.status + '，' + xhr.statusText + '，请稍后再试！';
                 }
             });
@@ -652,6 +649,50 @@ layui.define(["element", "jquery"], function (exports) {
             }).resize();
         };
 
+        /**
+         * 进入全屏
+         */
+        this.fullScreen = function () {
+            var el = document.documentElement;
+            var rfs = el.requestFullScreen || el.webkitRequestFullScreen;
+            if (typeof rfs != "undefined" && rfs) {
+                rfs.call(el);
+            } else if (typeof window.ActiveXObject != "undefined") {
+                var wscript = new ActiveXObject("WScript.Shell");
+                if (wscript != null) {
+                    wscript.SendKeys("{F11}");
+                }
+            } else if (el.msRequestFullscreen) {
+                el.msRequestFullscreen();
+            } else if (el.oRequestFullscreen) {
+                el.oRequestFullscreen();
+            } else {
+                layuimini.msg_error('浏览器不支持全屏调用！');
+            }
+        };
+
+        /**
+         * 退出全屏
+         */
+        this.exitFullScreen = function () {
+            var el = document;
+            var cfs = el.cancelFullScreen || el.webkitCancelFullScreen || el.exitFullScreen;
+            if (typeof cfs != "undefined" && cfs) {
+                cfs.call(el);
+            } else if (typeof window.ActiveXObject != "undefined") {
+                var wscript = new ActiveXObject("WScript.Shell");
+                if (wscript != null) {
+                    wscript.SendKeys("{F11}");
+                }
+            } else if (el.msExitFullscreen) {
+                el.msExitFullscreen();
+            } else if (el.oRequestFullscreen) {
+                el.oCancelFullScreen();
+            } else {
+                layuimini.msg_error('浏览器不支持全屏调用！');
+            }
+        };
+
 
     };
 
@@ -675,7 +716,7 @@ layui.define(["element", "jquery"], function (exports) {
      */
     $('body').on('click', '[data-tab]', function () {
         var loading = layer.load(0, {shade: false, time: 2 * 1000});
-        var tabId = $(this).attr('data-tab'),
+        var tabId = $(this).attr('data-tab-id'),
             href = $(this).attr('data-tab'),
             title = $(this).html(),
             target = $(this).attr('target');
@@ -683,6 +724,7 @@ layui.define(["element", "jquery"], function (exports) {
             layer.close(loading);
             return false;
         }
+
         title = title.replace('style="display: none;"', '');
 
         // 拼接参数
@@ -939,7 +981,6 @@ layui.define(["element", "jquery"], function (exports) {
             }
         }
     });
-
     /**
      * 弹出配色方案
      */
@@ -970,6 +1011,21 @@ layui.define(["element", "jquery"], function (exports) {
         layer.close(loading);
     });
 
+    /**
+     * 全屏
+     */
+    $('body').on('click', '[data-check-screen]', function () {
+        var check = $(this).attr('data-check-screen');
+        if (check == 'full') {
+            LM.fullScreen();
+            $(this).attr('data-check-screen', 'exit');
+            $(this).html('<i class="fa fa-compress"></i>');
+        } else {
+            LM.exitFullScreen();
+            $(this).attr('data-check-screen', 'full');
+            $(this).html('<i class="fa fa-arrows-alt"></i>');
+        }
+    });
     /**
      * 选择配色方案
      */

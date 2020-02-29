@@ -15,7 +15,6 @@ namespace app\common\controller;
 
 use app\admin\model\Admin;
 use app\admin\model\AuthRule;
-use app\common\controller\base;
 use lemo\helper\FileHelper;
 use lemo\helper\SignHelper;
 use think\facade\Cache;
@@ -26,7 +25,7 @@ use think\facade\Session;
 use think\facade\View;
 class Backend extends \app\common\controller\Base
 {
-    public $pageSize=15;
+//    use Curd;
     public $menu = '';
     public $adminRules='';
     public $hrefId='';
@@ -43,7 +42,6 @@ class Backend extends \app\common\controller\Base
         }else{
             $module = $controller;
         }
-        $this->pageSize = $this->request->param('limit')?$this->request->param('limit'):15;
         $this->authCheck();
         //加载语言包
         $this->loadlang(strtolower($module));
@@ -104,7 +102,7 @@ class Backend extends \app\common\controller\Base
     public function logout()
     {
         session('admin',null);
-        Session::clear();
+//        Session::clear();
         $this->success(lang('logout success'), '@admin/login');
     }
 

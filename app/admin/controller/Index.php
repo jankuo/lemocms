@@ -36,7 +36,7 @@ class Index extends Backend{
         $admin_id = Session::get('admin.id');
         $menus = Cache::get('adminMenus_'.$admin_id);
         if(!$menus){
-            $cate = AuthRule::where('menu_status',1)->whereOr('auth_open',1)->order('sort asc')->select()->toArray();
+            $cate = AuthRule::where('menu_status',1)->order('sort asc')->select()->toArray();
             $menus = Menu::authMenu($cate);
             cache('adminMenus_'.$admin_id,$menus,['expire'=>3600]);
 
