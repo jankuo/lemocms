@@ -64,6 +64,7 @@ class Backend extends \app\common\controller\Base
             'admin/index/clearData',
             'admin/index/logout',
             'admin/login/password',
+            'admin/index/menus',
         ];
         $route = app('http')->getName().'/'.strtolower(Request::controller()).'/'.(Request::action());
         if(session('admin.id')!==1){

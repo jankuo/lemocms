@@ -34,6 +34,21 @@ class Index extends Backend{
     public function index(){
         // 所有显示的菜单；
         $admin_id = Session::get('admin.id');
+//        $menus = Cache::get('adminMenus_'.$admin_id);
+//        if(!$menus){
+//            $cate = AuthRule::where('menu_status',1)->order('sort asc')->select()->toArray();
+//            $menus = Menu::authMenu($cate);
+//            cache('adminMenus_'.$admin_id,$menus,['expire'=>3600]);
+//
+//        }
+//        $href = (string)url('main');
+//        $home = ["href"=>$href,"icon"=>"fa fa-home","title"=>"首页"];
+//        $menusinit =['menus'=>$menus,'home'=>$home];
+//        View::assign('menus',json_encode($menusinit));
+        return view();
+    }
+    public function menus(){
+        $admin_id = Session::get('admin.id');
         $menus = Cache::get('adminMenus_'.$admin_id);
         if(!$menus){
             $cate = AuthRule::where('menu_status',1)->order('sort asc')->select()->toArray();
@@ -43,9 +58,9 @@ class Index extends Backend{
         }
         $href = (string)url('main');
         $home = ["href"=>$href,"icon"=>"fa fa-home","title"=>"首页"];
-        $menusinit =['menus'=>$menus,'home'=>$home];
-        View::assign('menus',json_encode($menusinit));
-        return view();
+        $logoInfo = ["title"=> "LEMOCMS", "image"=> "/static/admin/images/logo.png", "href"=>"https://www.lemocms.com"];
+        $menusinit =['menuInfo'=>$menus,'homeInfo'=>$home,'logoInfo'=>$logoInfo];
+       return  json($menusinit);
 
     }
 

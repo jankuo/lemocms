@@ -88,11 +88,10 @@ class Login extends Base {
             if(!$info){
                 throw new \Exception(lang('please check username or password'));
             }
-            if($info['status']==0){
+            if($info->status==0){
                 throw new \Exception(lang('account is disabled'));
             }
-            if(!password_verify($password,$info['password'])){
-
+            if(!password_verify($password,$info->password)){
                 throw new \Exception(lang('please check username or password'));
 
             }

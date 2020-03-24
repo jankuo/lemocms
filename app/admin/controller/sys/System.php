@@ -15,11 +15,12 @@ use app\common\controller\Backend;
 use app\common\model\Config as ConfigModel;
 use app\common\model\ConfigGroup as ConfigGroupModel;
 use app\common\model\FieldType;
+use app\common\traits\Curd;
 use think\facade\Request;
 use think\facade\Db;
 use think\facade\View;
 class System extends Backend {
-
+    use Curd;
     public $rules = [
         ['name'=>'email','title'=>'邮件'],
         ['name'=>'url','title'=>'网址'],

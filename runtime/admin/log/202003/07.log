@@ -1,0 +1,11 @@
+[2020-03-07T17:53:02+08:00][sql] CONNECT:[ UseTime:0.002432s ] mysql:host=127.0.0.1;port=3306;dbname=speed;charset=utf8mb4
+[2020-03-07T17:53:02+08:00][sql] SHOW FULL COLUMNS FROM `sp_auth_rule` [ RunTime:0.047518s ]
+[2020-03-07T17:53:02+08:00][sql] SELECT `href`,`href` FROM `sp_auth_rule` [ RunTime:0.007138s ]
+[2020-03-07T17:53:02+08:00][sql] CONNECT:[ UseTime:0.002083s ] mysql:host=127.0.0.1;port=3306;dbname=speed;charset=utf8mb4
+[2020-03-07T17:53:02+08:00][sql] SHOW FULL COLUMNS FROM `sp_auth_rule` [ RunTime:0.004221s ]
+[2020-03-07T17:53:02+08:00][sql] SELECT `href`,`href` FROM `sp_auth_rule` [ RunTime:0.000343s ]
+[2020-03-07T17:53:02+08:00][sql] SHOW FULL COLUMNS FROM `sp_config` [ RunTime:0.003121s ]
+[2020-03-07T17:53:02+08:00][sql] SELECT `value` FROM `sp_config` WHERE  `code` = 'site_name' LIMIT 1 [ RunTime:0.000520s ]
+[2020-03-07T17:53:03+08:00][sql] CONNECT:[ UseTime:0.001135s ] mysql:host=127.0.0.1;port=3306;dbname=speed;charset=utf8mb4
+[2020-03-07T17:53:03+08:00][sql] SHOW FULL COLUMNS FROM `sp_auth_rule` [ RunTime:0.002237s ]
+[2020-03-07T17:53:03+08:00][sql] SELECT `href`,`href` FROM `sp_auth_rule` [ RunTime:0.000372s ]
