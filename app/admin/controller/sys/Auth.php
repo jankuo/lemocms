@@ -80,11 +80,12 @@ class Auth extends Backend
             }catch (\Exception $e){
                 $this->error($e->getMessage());
             }
-            $data['password'] = StringHelper::filterWords($data['password']);
-            if(!$data['password']){
-                $data['password']='123456';
-            }
-            $data['password'] = password_hash($data['password'],PASSWORD_BCRYPT, SignHelper::passwordSalt());
+
+                $data['password'] = StringHelper::filterWords($data['password']);
+                if(!$data['password']){
+                    $data['password']='123456';
+                }
+                $data['password'] = password_hash($data['password'],PASSWORD_BCRYPT, SignHelper::passwordSalt());
             //添加
             $model = new Admin();
             $result = $model->add($data);
@@ -174,7 +175,8 @@ class Auth extends Backend
             $id = Request::param('id')?Request::param('id'):$this->uid;
             if ($id) {
                 $auth_group = AuthGroup::select();
-                $admin = Admin::find($id);
+                $admin = Admin::find($id)->toArray();
+                unset($admin['password']);
                 $view = [
                     'info' => $admin,
                     'authGroup' => $auth_group,

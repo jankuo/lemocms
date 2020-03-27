@@ -68,7 +68,6 @@ class TreeHelper
         foreach ($rules as $v) {
             if ($v['pid'] == $pid) {
                 $arr[] = $v;
-                $arr[] = $v;
                 $arr = array_merge($arr, self::getChildsRule($rules, $v['id']));
             }
         }
