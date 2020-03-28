@@ -1,9 +1,3 @@
-/**
- * date:2020/02/28
- * author:Mr.Chung
- * version:2.0
- * description:lemo tab框架扩展
- */
 layui.define(["jquery", "layer"], function (exports) {
     var $ = layui.$,
         layer = layui.layer;
