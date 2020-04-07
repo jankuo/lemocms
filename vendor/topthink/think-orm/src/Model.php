@@ -141,7 +141,7 @@ abstract class Model implements JsonSerializable, ArrayAccess, Arrayable, Jsonab
 
     /**
      * 方法注入
-     * @var Closure[]
+     * @var Closure[][]
      */
     protected static $macro = [];
 
@@ -159,13 +159,16 @@ abstract class Model implements JsonSerializable, ArrayAccess, Arrayable, Jsonab
     /**
      * 设置方法注入
      * @access public
-     * @param string  $method
+     * @param string $method
      * @param Closure $closure
      * @return void
      */
     public static function macro(string $method, Closure $closure)
     {
-        static::$macro[$method] = $closure;
+        if (!isset(static::$macro[static::class])) {
+            static::$macro[static::class] = [];
+        }
+        static::$macro[static::class][$method] = $closure;
     }
 
     /**
@@ -781,9 +784,9 @@ abstract class Model implements JsonSerializable, ArrayAccess, Arrayable, Jsonab
 
             foreach ($dataSet as $key => $data) {
                 if ($this->exists || (!empty($auto) && isset($data[$pk]))) {
-                    $result[$key] = self::update($data, [], [], $suffix);
+                    $result[$key] = static::update($data, [], [], $suffix);
                 } else {
-                    $result[$key] = self::create($data, $this->field, $this->replace, $suffix);
+                    $result[$key] = static::create($data, $this->field, $this->replace, $suffix);
                 }
             }
 
@@ -1043,8 +1046,8 @@ abstract class Model implements JsonSerializable, ArrayAccess, Arrayable, Jsonab
 
     public function __call($method, $args)
     {
-        if (isset(static::$macro[$method])) {
-            return call_user_func_array(static::$macro[$method]->bindTo($this, static::class), $args);
+        if (isset(static::$macro[static::class][$method])) {
+            return call_user_func_array(static::$macro[static::class][$method]->bindTo($this, static::class), $args);
         }
 
         if ('withattr' == strtolower($method)) {
@@ -1056,8 +1059,8 @@ abstract class Model implements JsonSerializable, ArrayAccess, Arrayable, Jsonab
 
     public static function __callStatic($method, $args)
     {
-        if (isset(static::$macro[$method])) {
-            return call_user_func_array(static::$macro[$method]->bindTo(null, static::class), $args);
+        if (isset(static::$macro[static::class][$method])) {
+            return call_user_func_array(static::$macro[static::class][$method]->bindTo(null, static::class), $args);
         }
 
         $model = new static();
