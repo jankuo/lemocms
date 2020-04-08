@@ -1,0 +1,131 @@
+[2020-04-08T02:44:13+00:00][sql] CONNECT:[ UseTime:0.002143s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:44:13+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.002159s ]
+[2020-04-08T02:44:13+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000408s ]
+[2020-04-08T02:44:18+00:00][sql] CONNECT:[ UseTime:0.011113s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:44:18+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.002132s ]
+[2020-04-08T02:44:18+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000414s ]
+[2020-04-08T02:44:21+00:00][sql] CONNECT:[ UseTime:0.010805s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:44:21+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.002656s ]
+[2020-04-08T02:44:21+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000673s ]
+[2020-04-08T02:44:21+00:00][sql] SHOW FULL COLUMNS FROM `lm_config` [ RunTime:0.002088s ]
+[2020-04-08T02:44:21+00:00][sql] SELECT `value` FROM `lm_config` WHERE  `code` = 'site_name' LIMIT 1 [ RunTime:0.000496s ]
+[2020-04-08T02:44:21+00:00][sql] CONNECT:[ UseTime:0.001118s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:44:21+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.002407s ]
+[2020-04-08T02:44:21+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000397s ]
+[2020-04-08T02:44:26+00:00][sql] CONNECT:[ UseTime:0.001529s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:44:26+00:00][sql] SHOW FULL COLUMNS FROM `lm_admin_log` [ RunTime:0.048913s ]
+[2020-04-08T02:44:26+00:00][sql] INSERT INTO `lm_admin_log` SET `log_title` = '[登录成功]' , `log_content` = '{\"username\":\"admin\",\"captcha\":\"30\",\"rememberMe\":\"true\"}' , `log_url` = '/index.php/admin/login/index' , `admin_id` = 0 , `username` = 'Unknown' , `log_agent` = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36' , `log_ip` = '127.0.0.1' , `create_time` = 1586313866 , `update_time` = 1586313866 [ RunTime:0.001176s ]
+[2020-04-08T02:44:26+00:00][sql] SHOW FULL COLUMNS FROM `lm_admin` [ RunTime:0.035126s ]
+[2020-04-08T02:44:26+00:00][sql] SELECT * FROM `lm_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000823s ]
+[2020-04-08T02:44:27+00:00][sql] CONNECT:[ UseTime:0.011552s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:44:27+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.002027s ]
+[2020-04-08T02:44:27+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000387s ]
+[2020-04-08T02:44:32+00:00][sql] CONNECT:[ UseTime:0.010652s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:44:32+00:00][sql] SHOW FULL COLUMNS FROM `lm_admin_log` [ RunTime:0.002341s ]
+[2020-04-08T02:44:32+00:00][sql] INSERT INTO `lm_admin_log` SET `log_title` = '[登录成功]' , `log_content` = '{\"username\":\"admin\",\"captcha\":\"28\",\"rememberMe\":\"true\"}' , `log_url` = '/index.php/admin/login/index' , `admin_id` = 0 , `username` = 'Unknown' , `log_agent` = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36' , `log_ip` = '127.0.0.1' , `create_time` = 1586313871 , `update_time` = 1586313871 [ RunTime:0.000469s ]
+[2020-04-08T02:44:32+00:00][sql] SHOW FULL COLUMNS FROM `lm_admin` [ RunTime:0.002115s ]
+[2020-04-08T02:44:32+00:00][sql] SELECT * FROM `lm_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000445s ]
+[2020-04-08T02:44:32+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_group` [ RunTime:0.089678s ]
+[2020-04-08T02:44:32+00:00][sql] SELECT `rules` FROM `lm_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000444s ]
+[2020-04-08T02:44:35+00:00][sql] CONNECT:[ UseTime:0.011063s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:44:35+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.002025s ]
+[2020-04-08T02:44:35+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000424s ]
+[2020-04-08T02:44:36+00:00][sql] CONNECT:[ UseTime:0.001127s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:44:36+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.001959s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000324s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT * FROM `lm_auth_rule` WHERE  `menu_status` = 1 ORDER BY `sort` ASC [ RunTime:0.000592s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `id` FROM `lm_auth_rule` WHERE  `auth_open` = 1 [ RunTime:0.000458s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `id` FROM `lm_auth_rule` WHERE  `auth_open` = 1 [ RunTime:0.000325s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `id` FROM `lm_auth_rule` WHERE  `auth_open` = 1 [ RunTime:0.000474s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `id` FROM `lm_auth_rule` WHERE  `auth_open` = 1 [ RunTime:0.000499s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `id` FROM `lm_auth_rule` WHERE  `auth_open` = 1 [ RunTime:0.000352s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `id` FROM `lm_auth_rule` WHERE  `auth_open` = 1 [ RunTime:0.000343s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `id` FROM `lm_auth_rule` WHERE  `auth_open` = 1 [ RunTime:0.000592s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `id` FROM `lm_auth_rule` WHERE  `auth_open` = 1 [ RunTime:0.000385s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `id` FROM `lm_auth_rule` WHERE  `auth_open` = 1 [ RunTime:0.000455s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `id` FROM `lm_auth_rule` WHERE  `auth_open` = 1 [ RunTime:0.000274s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `id` FROM `lm_auth_rule` WHERE  `auth_open` = 1 [ RunTime:0.000252s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `id` FROM `lm_auth_rule` WHERE  `auth_open` = 1 [ RunTime:0.000309s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `id` FROM `lm_auth_rule` WHERE  `auth_open` = 1 [ RunTime:0.000375s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `id` FROM `lm_auth_rule` WHERE  `auth_open` = 1 [ RunTime:0.000314s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `id` FROM `lm_auth_rule` WHERE  `auth_open` = 1 [ RunTime:0.000358s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `id` FROM `lm_auth_rule` WHERE  `auth_open` = 1 [ RunTime:0.000240s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `id` FROM `lm_auth_rule` WHERE  `auth_open` = 1 [ RunTime:0.000760s ]
+[2020-04-08T02:44:36+00:00][sql] CONNECT:[ UseTime:0.001434s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:44:36+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.002077s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000298s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT VERSION() AS ver [ RunTime:0.000237s ]
+[2020-04-08T02:44:36+00:00][sql] SHOW FULL COLUMNS FROM `lm_config` [ RunTime:0.002167s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `value` FROM `lm_config` WHERE  `code` = 'site_name' LIMIT 1 [ RunTime:0.000385s ]
+[2020-04-08T02:44:36+00:00][sql] SELECT `value` FROM `lm_config` WHERE  `code` = 'site_version' LIMIT 1 [ RunTime:0.000311s ]
+[2020-04-08T02:45:29+00:00][sql] CONNECT:[ UseTime:0.001227s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:45:29+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.000973s ]
+[2020-04-08T02:45:29+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000429s ]
+[2020-04-08T02:45:31+00:00][sql] CONNECT:[ UseTime:0.001100s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:45:31+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.000780s ]
+[2020-04-08T02:45:31+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000302s ]
+[2020-04-08T02:45:31+00:00][sql] CONNECT:[ UseTime:0.002666s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:45:31+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.000948s ]
+[2020-04-08T02:45:31+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000420s ]
+[2020-04-08T02:45:31+00:00][sql] SELECT VERSION() AS ver [ RunTime:0.000289s ]
+[2020-04-08T02:45:31+00:00][sql] SHOW FULL COLUMNS FROM `lm_config` [ RunTime:0.004082s ]
+[2020-04-08T02:45:31+00:00][sql] SELECT `value` FROM `lm_config` WHERE  `code` = 'site_name' LIMIT 1 [ RunTime:0.000513s ]
+[2020-04-08T02:45:31+00:00][sql] SELECT `value` FROM `lm_config` WHERE  `code` = 'site_version' LIMIT 1 [ RunTime:0.000403s ]
+[2020-04-08T02:45:32+00:00][sql] CONNECT:[ UseTime:0.001141s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:45:32+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.000801s ]
+[2020-04-08T02:45:32+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000277s ]
+[2020-04-08T02:45:32+00:00][sql] SELECT * FROM `lm_auth_rule` WHERE  `href` = 'admin/sys.addon/index' LIMIT 1 [ RunTime:0.000470s ]
+[2020-04-08T02:45:32+00:00][sql] SHOW FULL COLUMNS FROM `lm_admin_log` [ RunTime:0.002176s ]
+[2020-04-08T02:45:32+00:00][sql] INSERT INTO `lm_admin_log` SET `log_title` = '插件列表' , `log_content` = '点击菜单' , `log_url` = '/index.php/admin/sys.addon/index.html' , `admin_id` = 1 , `username` = 'admin' , `log_agent` = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36' , `log_ip` = '127.0.0.1' , `create_time` = 1586313931 , `update_time` = 1586313931 [ RunTime:0.000390s ]
+[2020-04-08T02:45:33+00:00][sql] CONNECT:[ UseTime:0.001067s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:45:33+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.000730s ]
+[2020-04-08T02:45:33+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000306s ]
+[2020-04-08T02:45:33+00:00][sql] SHOW FULL COLUMNS FROM `lm_addon` [ RunTime:0.061684s ]
+[2020-04-08T02:45:33+00:00][sql] SELECT * FROM `lm_addon` ORDER BY `id` DESC [ RunTime:0.000347s ]
+[2020-04-08T02:45:39+00:00][sql] CONNECT:[ UseTime:0.001189s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:45:39+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.001085s ]
+[2020-04-08T02:45:39+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000428s ]
+[2020-04-08T02:45:39+00:00][sql] SHOW FULL COLUMNS FROM `lm_config` [ RunTime:0.001908s ]
+[2020-04-08T02:45:39+00:00][sql] SELECT `code`,`value` FROM `lm_config` WHERE  `type` IN ('site','email','upload','sms') [ RunTime:0.000554s ]
+[2020-04-08T02:45:41+00:00][sql] CONNECT:[ UseTime:0.001059s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:45:41+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.001685s ]
+[2020-04-08T02:45:41+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000561s ]
+[2020-04-08T02:45:41+00:00][sql] CONNECT:[ UseTime:0.001770s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:45:41+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.000730s ]
+[2020-04-08T02:45:41+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000339s ]
+[2020-04-08T02:45:41+00:00][sql] SHOW FULL COLUMNS FROM `lm_admin_log` [ RunTime:0.001979s ]
+[2020-04-08T02:45:41+00:00][sql] SELECT COUNT(*) AS think_count FROM `lm_admin_log` WHERE  `status` = 1  AND ( `username` LIKE '%%' OR `log_title` LIKE '%%' ) [ RunTime:0.000476s ]
+[2020-04-08T02:45:41+00:00][sql] SELECT * FROM `lm_admin_log` WHERE  `status` = 1  AND ( `username` LIKE '%%' OR `log_title` LIKE '%%' ) ORDER BY `id` DESC LIMIT 0,15 [ RunTime:0.000387s ]
+[2020-04-08T02:45:42+00:00][sql] CONNECT:[ UseTime:0.001744s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:45:42+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.000850s ]
+[2020-04-08T02:45:42+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000424s ]
+[2020-04-08T02:45:43+00:00][sql] CONNECT:[ UseTime:0.001155s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:45:43+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.001916s ]
+[2020-04-08T02:45:43+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000378s ]
+[2020-04-08T02:45:43+00:00][sql] SHOW FULL COLUMNS FROM `lm_config` [ RunTime:0.002591s ]
+[2020-04-08T02:45:43+00:00][sql] SELECT COUNT(*) AS think_count FROM `lm_config` WHERE  `code` LIKE '%%' [ RunTime:0.000449s ]
+[2020-04-08T02:45:43+00:00][sql] SELECT * FROM `lm_config` WHERE  `code` LIKE '%%' LIMIT 0,15 [ RunTime:0.000352s ]
+[2020-04-08T02:45:44+00:00][sql] CONNECT:[ UseTime:0.010601s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:45:44+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.000880s ]
+[2020-04-08T02:45:44+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000475s ]
+[2020-04-08T02:45:45+00:00][sql] CONNECT:[ UseTime:0.001320s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:45:45+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.001953s ]
+[2020-04-08T02:45:45+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000278s ]
+[2020-04-08T02:45:45+00:00][sql] SELECT * FROM `lm_auth_rule` ORDER BY `pid` ASC,`sort` ASC [ RunTime:0.000601s ]
+[2020-04-08T02:45:46+00:00][sql] CONNECT:[ UseTime:0.002355s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:45:46+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.000875s ]
+[2020-04-08T02:45:46+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000425s ]
+[2020-04-08T02:45:47+00:00][sql] CONNECT:[ UseTime:0.001197s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:45:47+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.000795s ]
+[2020-04-08T02:45:47+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000260s ]
+[2020-04-08T02:45:47+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_group` [ RunTime:0.002655s ]
+[2020-04-08T02:45:47+00:00][sql] SELECT COUNT(*) AS think_count FROM `lm_auth_group` [ RunTime:0.043315s ]
+[2020-04-08T02:45:47+00:00][sql] SELECT * FROM `lm_auth_group` LIMIT 0,15 [ RunTime:0.000342s ]
+[2020-04-08T02:45:48+00:00][sql] CONNECT:[ UseTime:0.010986s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:45:48+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.000850s ]
+[2020-04-08T02:45:48+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000544s ]
+[2020-04-08T02:45:49+00:00][sql] CONNECT:[ UseTime:0.001146s ] mysql:host=127.0.0.1;port=3306;dbname=lemocms111;charset=utf8mb4
+[2020-04-08T02:45:49+00:00][sql] SHOW FULL COLUMNS FROM `lm_auth_rule` [ RunTime:0.000677s ]
+[2020-04-08T02:45:49+00:00][sql] SELECT `href`,`href` FROM `lm_auth_rule` [ RunTime:0.000259s ]
+[2020-04-08T02:45:49+00:00][sql] SHOW FULL COLUMNS FROM `lm_admin` [ RunTime:0.002266s ]
+[2020-04-08T02:45:49+00:00][sql] SELECT `a`.*,`ag`.`title` FROM `lm_admin` `a` LEFT JOIN `lm_auth_group` `ag` ON `a`.`group_id`=`ag`.`id` [ RunTime:0.002589s ]

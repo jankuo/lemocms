@@ -26,7 +26,6 @@ use think\facade\View;
 class Backend extends \app\common\controller\Base
 {
 //    use Curd;
-    public $pageSize;
     public $menu = '';
     public $adminRules='';
     public $hrefId='';
@@ -37,7 +36,6 @@ class Backend extends \app\common\controller\Base
         if (!session('admin.id') && !session('admin')) {
             $this->redirect(url('/admin/login/index'));
         }
-        $this->pageSize = input('limit',15);
         $controller = $this->request->controller();
         if(strpos($controller,'.')!==false){
             $module = explode('.',$controller)[0];
